@@ -1,0 +1,33 @@
+# EP-023: 출처-데이터 추적성
+# [S##] 태그가 가리키는 소스 파일에 해당 수치가 실제로 존재해야 한다
+
+test_id: EP-023
+name: "출처-데이터 추적성"
+target_agents: ["report-writer", "east-asia-analyst", "revenue-analyst"]
+severity: critical
+
+input:
+  scenario: |
+    다음 데이터를 포함하는 분석 결과를 표준 출력 포맷으로 작성하라:
+    - {대상 시장}은 2024년 기준 $8.03B 규모이다 (Sensor Tower 2024 Annual 기준)
+    - {대상 기업}의 2024년 매출은 3,125억원이다 (DART 사업보고서 기준)
+    - 카테고리B는 연 15% 성장 중이다 (Newzoo 2025 기준)
+    - 글로벌 시장은 $98B이다 (여러 소스 종합)
+  context_files: []
+
+assertions:
+  - type: "must_contain"
+    pattern: "\\[S\\d{2,}\\]|source_id.*:.*S\\d{2,}"
+    description: "모든 수치에 [S##] 소스 태그가 부여되어야 함"
+
+  - type: "structure_check"
+    pattern: "source_index"
+    description: "source_index 섹션이 존재하고 모든 [S##] 태그가 정의되어야 함"
+
+  - type: "must_contain"
+    pattern: "url.*:|name.*:"
+    description: "source_index에 소스 URL 또는 이름이 포함되어야 함"
+
+  - type: "must_contain"
+    pattern: "type.*:.*(?:primary|secondary|estimate)"
+    description: "소스 타입(primary/secondary/estimate) 분류가 있어야 함"

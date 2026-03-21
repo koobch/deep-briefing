@@ -1,0 +1,318 @@
+#!/bin/bash
+# init-project.sh — 새 리서치 프로젝트 디렉토리 스캐폴딩
+#
+# 사용법:
+#   ./scripts/init-project.sh <project-name> [options]
+#
+# 옵션:
+#   --all                        모든 Division (핵심 4 + 확장 3) 스캐폴딩
+#   --divisions "div1,div2,..."  특정 확장 Division만 추가 (people-org, operations, regulatory)
+#
+# 예시:
+#   ./scripts/init-project.sh my-research                         # 핵심 4개
+#   ./scripts/init-project.sh my-research --all                   # 전체 7개
+#   ./scripts/init-project.sh my-research --divisions "people-org,regulatory"  # 핵심 4 + 선택 2
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+# === Division 정의 ===
+CORE_DIVISIONS=("market" "product" "capability" "finance")
+EXTENDED_DIVISIONS=("people-org" "operations" "regulatory")
+
+# === 인자 파싱 ===
+PROJECT=""
+USE_ALL=false
+EXTRA_DIVISIONS=()
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --all)
+      USE_ALL=true
+      shift
+      ;;
+    --divisions)
+      if [[ -z "${2:-}" ]]; then
+        echo "오류: --divisions 뒤에 Division 목록이 필요합니다."
+        exit 1
+      fi
+      IFS=',' read -ra EXTRA_DIVISIONS <<< "$2"
+      shift 2
+      ;;
+    --*)
+      echo "알 수 없는 옵션: $1"
+      echo ""
+      echo "사용법: ./scripts/init-project.sh <project-name> [options]"
+      echo "옵션:"
+      echo "  --all                        모든 Division (핵심 4 + 확장 3) 스캐폴딩"
+      echo "  --divisions \"div1,div2,...\"  특정 확장 Division만 추가 (people-org, operations, regulatory)"
+      exit 1
+      ;;
+    *)
+      if [[ -z "$PROJECT" ]]; then
+        PROJECT="$1"
+      else
+        echo "오류: 프로젝트명이 이미 지정되었습니다: $PROJECT"
+        exit 1
+      fi
+      shift
+      ;;
+  esac
+done
+
+if [[ -z "$PROJECT" ]]; then
+  echo "사용법: ./scripts/init-project.sh <project-name> [options]"
+  echo ""
+  echo "옵션:"
+  echo "  --all                        모든 Division (핵심 4 + 확장 3) 스캐폴딩"
+  echo "  --divisions \"div1,div2,...\"  특정 확장 Division만 추가 (people-org, operations, regulatory)"
+  echo ""
+  echo "예시:"
+  echo "  ./scripts/init-project.sh my-research                                      # 핵심 4개"
+  echo "  ./scripts/init-project.sh my-research --all                                # 전체 7개"
+  echo "  ./scripts/init-project.sh my-research --divisions \"people-org,regulatory\"  # 핵심 4 + 선택 2"
+  exit 1
+fi
+
+PROJECT_DIR="${REPO_DIR}/${PROJECT}"
+
+# === 활성 Division 목록 결정 ===
+ACTIVE_DIVISIONS=("${CORE_DIVISIONS[@]}")
+
+if [[ "$USE_ALL" == true ]]; then
+  ACTIVE_DIVISIONS+=("${EXTENDED_DIVISIONS[@]}")
+elif [[ ${#EXTRA_DIVISIONS[@]} -gt 0 ]]; then
+  # 확장 Division 유효성 검증
+  for div in "${EXTRA_DIVISIONS[@]}"; do
+    # 공백 제거
+    div="$(echo "$div" | xargs)"
+    valid=false
+    for ext in "${EXTENDED_DIVISIONS[@]}"; do
+      if [[ "$div" == "$ext" ]]; then
+        valid=true
+        break
+      fi
+    done
+    if [[ "$valid" == false ]]; then
+      echo "오류: '$div'은(는) 유효한 확장 Division이 아닙니다."
+      echo "사용 가능한 확장 Division: ${EXTENDED_DIVISIONS[*]}"
+      exit 1
+    fi
+    ACTIVE_DIVISIONS+=("$div")
+  done
+fi
+
+# --- 이미 존재하는지 확인 ---
+if [ -d "$PROJECT_DIR" ]; then
+  echo "⚠ 프로젝트 '${PROJECT}'가 이미 존재합니다: ${PROJECT_DIR}"
+  read -r -p "덮어쓰지 않고 빠진 디렉토리만 추가할까요? [Y/n]: " choice
+  case "$choice" in
+    [nN]) echo "중단합니다."; exit 1 ;;
+  esac
+fi
+
+echo "=== 프로젝트 '${PROJECT}' 스캐폴딩 시작 ==="
+echo "  활성 Division: ${ACTIVE_DIVISIONS[*]}"
+
+# --- 공통 디렉토리 생성 ---
+mkdir -p "${PROJECT_DIR}"/{division-briefs,sync,thinking-loop,reports,qa,data/{user-provided}}
+
+# --- Division별 디렉토리 생성 ---
+for div in "${ACTIVE_DIVISIONS[@]}"; do
+  # findings 하위 디렉토리
+  if [[ "$div" == "market" ]]; then
+    # market은 하위 세분화 디렉토리 포함
+    mkdir -p "${PROJECT_DIR}/findings/market"/{geography,genre,platform,competitive}
+  else
+    mkdir -p "${PROJECT_DIR}/findings/$div"
+  fi
+
+  # data/processed 하위 디렉토리
+  mkdir -p "${PROJECT_DIR}/data/processed/$div"
+
+  # division-briefs 빈 파일 생성 (존재하지 않는 경우만)
+  if [ ! -f "${PROJECT_DIR}/division-briefs/${div}.md" ]; then
+    touch "${PROJECT_DIR}/division-briefs/${div}.md"
+  fi
+done
+
+echo "  ✅ 디렉토리 트리 + division-briefs 생성 완료"
+
+# --- 템플릿 파일 생성 (존재하지 않는 경우만) ---
+
+# Client Brief 템플릿
+if [ ! -f "${PROJECT_DIR}/00-client-brief.md" ]; then
+  cat > "${PROJECT_DIR}/00-client-brief.md" << 'TEMPLATE'
+# Client Brief
+
+> **프로젝트**: {project-name}
+> **날짜**: YYYY-MM-DD
+> **모드**: auto | interactive | team
+
+## 핵심 리서치 질문
+
+(Phase 0 Discovery에서 채워짐)
+
+## 의사결정 컨텍스트
+
+- **최종 의사결정**:
+- **최종 소비자**:
+- **검토 중인 방향**:
+- **제외 방향**:
+
+## 제약조건
+
+- **예산**:
+- **인력**:
+- **타임라인**:
+
+## 성공 기준
+
+## 제공 데이터
+
+TEMPLATE
+  echo "  ✅ 00-client-brief.md (템플릿)"
+fi
+
+# Research Plan 템플릿
+if [ ! -f "${PROJECT_DIR}/01-research-plan.md" ]; then
+  cat > "${PROJECT_DIR}/01-research-plan.md" << 'TEMPLATE'
+# Research Plan
+
+> **프로젝트**: {project-name}
+> **핵심 질문**:
+> **모드**: auto | interactive | team
+
+## Division 배치
+
+(Phase 0-B에서 채워짐)
+
+## 프레임워크 선택
+
+## 에이전트 로스터
+
+## 제약사항
+
+TEMPLATE
+  echo "  ✅ 01-research-plan.md (템플릿)"
+fi
+
+# hypotheses.yaml 템플릿
+if [ ! -f "${PROJECT_DIR}/hypotheses.yaml" ]; then
+  cat > "${PROJECT_DIR}/hypotheses.yaml" << 'TEMPLATE'
+# 전략 가설 목록 — Phase 0.5에서 생성
+# PM이 Quick Scan 결과를 합성하여 작성
+
+project: {project-name}
+phase: "0.5-hypothesis"
+status: pending  # pending | user_review | confirmed
+
+hypotheses: []
+  # - id: H-01
+  #   statement: "가설 1문장"
+  #   type: opportunity | risk | assumption
+  #   supporting_signals: []
+  #   counter_signals: []
+  #   verification_plan: []
+  #   priority: must | should | nice
+  #   verdict: pending | confirmed | revised | rejected
+
+TEMPLATE
+  echo "  ✅ hypotheses.yaml (템플릿)"
+fi
+
+# golden-facts.yaml 초기화 (#9)
+if [ ! -f "${PROJECT_DIR}/findings/golden-facts.yaml" ]; then
+  cat > "${PROJECT_DIR}/findings/golden-facts.yaml" << TEMPLATE
+# golden-facts.yaml — 수치의 단일 진실 소스 (SSOT)
+# 수정: fact-verifier만 수정 가능. 다른 에이전트는 읽기 전용.
+# 보고서의 모든 수치는 [GF-###] 태그로 이 파일을 참조해야 함.
+
+project: ${PROJECT}
+last_verified: null
+verified_by: null
+
+facts: []
+  # - id: GF-001
+  #   category: "company-basic | market-size | financials | growth-rate | competitive"
+  #   entity: "대상 엔터티명"
+  #   entity_label: "[그룹] | [별도] | [부문]"
+  #   metric: "지표명"
+  #   value: 0
+  #   unit: "단위"
+  #   as_of: "YYYY | YYYY-QN"
+  #   source_id: S##
+  #   source_detail: "소스 상세 설명"
+  #   confidence: "[확정] | [유력] | [가정] | [미확인]"
+TEMPLATE
+  echo "  ✅ findings/golden-facts.yaml (초기화)"
+fi
+
+# checkpoint.yaml 초기화
+if [ ! -f "${PROJECT_DIR}/findings/checkpoint.yaml" ]; then
+  cat > "${PROJECT_DIR}/findings/checkpoint.yaml" << TEMPLATE
+project: ${PROJECT}
+mode: pending
+last_updated: $(date -u +"%Y-%m-%dT%H:%M:%S")
+
+current_phase: "not-started"
+current_status: pending
+
+phases_completed: []
+user_decisions: []
+pending_escalations: []
+backtracks: []
+TEMPLATE
+  echo "  ✅ findings/checkpoint.yaml (초기화)"
+fi
+
+# execution-trace.yaml 초기화
+if [ ! -f "${PROJECT_DIR}/findings/execution-trace.yaml" ]; then
+  cat > "${PROJECT_DIR}/findings/execution-trace.yaml" << TEMPLATE
+project: ${PROJECT}
+created_at: $(date -u +"%Y-%m-%dT%H:%M:%S")
+
+traces: []
+TEMPLATE
+  echo "  ✅ findings/execution-trace.yaml (초기화)"
+fi
+
+# data-registry.csv 초기화
+if [ ! -f "${PROJECT_DIR}/data/data-registry.csv" ]; then
+  echo "data_id,name,type,source,format,file_path,description,usage,collected_by,date,reliability,url,notes" > "${PROJECT_DIR}/data/data-registry.csv"
+  echo "  ✅ data/data-registry.csv (초기화)"
+fi
+
+# ARCHITECTURE.md 템플릿
+if [ ! -f "${PROJECT_DIR}/ARCHITECTURE.md" ]; then
+  cat > "${PROJECT_DIR}/ARCHITECTURE.md" << 'TEMPLATE'
+# ARCHITECTURE — {project-name}
+
+## 에이전트 토폴로지
+
+(Phase 0-B에서 PM이 작성)
+
+## EP 패턴 매핑
+
+(프로젝트별 주의 EP 패턴)
+
+## 데이터 소스 배분
+
+(Division별 주요 데이터 소스)
+
+TEMPLATE
+  echo "  ✅ ARCHITECTURE.md (템플릿)"
+fi
+
+echo ""
+echo "=== 스캐폴딩 완료 ==="
+echo ""
+echo "디렉토리 구조:"
+find "${PROJECT_DIR}" -type d | sed "s|${REPO_DIR}/||" | head -30
+echo ""
+echo "다음 단계:"
+echo "  1. PM CLI에서: /research interactive ${PROJECT} 주제"
+echo "  2. 또는 내부 데이터가 있으면: ${PROJECT}/data/user-provided/ 에 복사 후 시작"
+echo ""

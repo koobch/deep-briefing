@@ -1,0 +1,8 @@
+# Research Orchestrator V2 — Python 의존성
+# 설치: pip install -r requirements.txt
+
+requests>=2.28.0        # HTTP 클라이언트 (API 호출)
+pyyaml>=6.0             # YAML 출력 포맷
+python-dotenv>=1.0.0    # .env 파일에서 API 키 로드
+matplotlib>=3.7.0       # 차트/그래프 렌더링 (generate-charts.py)
+python-pptx>=0.6.21     # PPTX 생성 (generate-ppt.py)

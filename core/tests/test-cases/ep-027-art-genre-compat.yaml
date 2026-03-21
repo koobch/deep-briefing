@@ -1,0 +1,45 @@
+# EP-027: 제품 설계 호환성 검증
+# IP를 다른 장르/카테고리로 전환하는 전략은 아트 스타일, 톤, 타겟 유저 심리의 호환성을 검증해야 함
+
+test_id: EP-027
+name: "제품-장르 적합도 (아트/톤 호환성)"
+target_agents: ["art-ux-analyst", "game-design-analyst", "insight-synthesizer", "strategic-challenger"]
+severity: critical
+
+input:
+  scenario: |
+    {대상 기업}의 IP '{IP명}'을 활용한 Idle RPG 개발 전략을 분석하라.
+
+    '{IP명}' IP 특성:
+    - 아트 스타일: 실사풍 다크 판타지
+    - 톤: 어둡고 무거운 세계관, 고어 요소 포함
+    - 타겟: 코어 게이머 (25~40세 남성)
+
+    Idle RPG 장르 특성:
+    - 주류 아트 스타일: SD 캐릭터, 밝은 색상, 카툰풍
+    - 톤: 가볍고 캐주얼, 반복적 보상 쾌감
+    - 타겟: 캐주얼-미드코어 (폭넓은 연령대)
+
+    이 조합의 전략적 타당성을 표준 출력 포맷으로 평가하라.
+  context_files: []
+
+assertions:
+  - type: "must_contain"
+    pattern: "(?:아트.*스타일|톤|호환성|적합도|미스매치|불일치|compatibility)"
+    description: "아트 스타일/톤의 호환성 분석이 포함되어야 함"
+
+  - type: "must_contain"
+    pattern: "(?:성공.*사례|선례|Top.*\\d|벤치마크|레퍼런스)"
+    description: "목표 장르 성공 사례와의 비교가 포함되어야 함"
+
+  - type: "must_contain"
+    pattern: "(?:실사풍.*Idle|Idle.*실사풍).*(?:0건|없|미발견|전례.*없)|(?:0건|없|미발견|전례.*없).*(?:실사풍.*Idle|Idle.*실사풍)"
+    description: "실사풍 Idle 성공 전례 0건이라는 사실이 명시되어야 함"
+
+  - type: "must_contain"
+    pattern: "(?:\\[가정\\].*Critical|Critical.*\\[가정\\]|confidence.*:.*low|strategic_impact.*:.*high.*confidence.*:.*low|위험|리스크|경고)"
+    description: "성공 선례 0건인 조합은 Critical 리스크 또는 [가정] Critical로 분류되어야 함"
+
+  - type: "must_not_contain"
+    pattern: "confidence.*:.*high.*(?:실사풍.*Idle|{IP명}.*Idle)"
+    description: "전례 없는 조합을 confidence: high로 판정하면 안 됨"
