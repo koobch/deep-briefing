@@ -93,9 +93,10 @@ Step 2: Division 간 교차 모순 검증
   3. 엔터티 라벨 일치 체크 ([그룹]/[별도] 통일)
   4. 시점/정의 일관성 체크
   5. 불일치 발견 시 severity 판정:
-     - critical: 전략 방향에 영향
-     - major: 보고서 신뢰성에 영향
-     - minor: 정밀도 이슈
+     - critical: 전략 방향에 영향 (unified_severity: P1)
+     - major: 보고서 신뢰성에 영향 (unified_severity: P2)
+     - minor: 정밀도 이슈 (unified_severity: P3)
+     > 통합 심각도 매핑: core/protocols/severity-framework.md 참조. 모든 이슈 출력 시 unified_severity 필드 필수.
 
 Step 3: 방법론 감사
   각 Division의 strategic_impact: high Claim에 대해:

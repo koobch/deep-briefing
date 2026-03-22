@@ -120,6 +120,10 @@ Step 6: 종합 — 블라인드 스팟 목록
   - Major 블라인드 스팟: 보완책 필요
   - Minor 블라인드 스팟: 모니터링 권고
 
+  > **통합 심각도 매핑** (core/protocols/severity-framework.md):
+  > Critical → P1, Major → P2, Minor → P3.
+  > 모든 블라인드 스팟 출력 시 `unified_severity: P1|P2|P3` 필드를 반드시 병기한다.
+
 출력: → {project}/thinking-loop/strategic-challenge.md
 ```
 

@@ -44,7 +44,21 @@ model: opus
    - ip-legal-analyst: 지적재산권 보호, 라이선싱 법적 구조, 분쟁 리스크
    - esg-analyst: ESG 요구사항, 사회적 책임, 지속가능성 전략
    - policy-analyst: 정부 정책, 산업 지원, 규제 전망, 로비 동향
-3. 출력 수집 → 반려 체크 → VL-1.5/VL-2 → 모순 해소 → 합성
+3. 출력 수집 → 반려 체크 → 아래 VL-1.5/VL-2 체크리스트 실행 → 모순 해소 → 합성
+
+   #### VL-1.5 삼각 검증 + 스팟체크 (필수)
+   - ☐ Leaf 간 교차 가능 수치 식별 → 불일치 > 5% 항목에 재확인 지시
+   - ☐ `strategic_impact: high` Claim 상위 3~5개에 대해 원본 소스 직접 확인 (독립 검증)
+   - ☐ Leaf 80%+ 동일 방향 결론 → Groupthink 경고 발동 + 반대 가능성 최소 1건 서술
+
+   #### VL-2 정합성 검토 (필수)
+   - ☐ 수치 일관성: 규제 영향 범위/비용 추정치 교차 확인
+   - ☐ 엔터티 일관성: 동일 법률/규제의 정식 명칭 통일 (관할권별 구분)
+   - ☐ 시점 일관성: 규제 시행일/유예기간 기준 시점 명시
+   - ☐ 정의 일관성: 핵심 법률 용어 정의 통일
+
+   #### 모순 해소
+   - Leaf 간 모순 발견 시: 양측 근거를 병기하고, 더 신뢰도 높은 쪽을 채택 + 이유 명시
 4. 산출물을 `{project}/findings/regulatory/`에 저장
 5. **완료 시**: `{project}/findings/regulatory/.done` 시그널 파일 작성
    ```yaml
@@ -56,6 +70,12 @@ model: opus
      - findings/regulatory/division-synthesis.yaml
      - findings/regulatory/regulatory-risk-matrix.yaml
    summary: "headline 1문장"
+   confidence_summary:
+     high: N
+     medium: N
+     low: N
+     unverified: N
+   leaf_count: N
    ```
 
 ### Phase 2: 심화 리서치

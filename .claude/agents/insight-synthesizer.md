@@ -107,10 +107,18 @@ Step 3: 전략 보강/수정 종합
   - 시나리오 구조: BASE / UPSIDE / DOWNSIDE
 
 Step 4: 수렴 판정
+
+  > **사전 단계: 심각도 통일 매핑** (core/protocols/severity-framework.md)
+  > 모든 입력 이슈를 통합 등급으로 변환 후 카운트한다:
+  > - logic-prober: critical→P1, major→P2, minor→P3
+  > - strategic-challenger: Critical→P1, Major→P2, Minor→P3
+  > - red-team: Strong→P1, Moderate→P2, Weak→P3
+  > - fact-verifier: critical→P1, major→P2, minor→P3
+
   4개 조건 모두 충족 = 수렴:
 
-  ☐ 논리 단절 0건:
-    - logic-prober의 gap_classification 목록에서 critical/major 전수 확인
+  ☐ 논리 단절 P1/P2 0건:
+    - logic-prober의 gap_classification 목록에서 P1(critical)/P2(major) 전수 확인
     - 각 단절에 해소 방법 명시: Claim 수정 | Evidence 보강 | Claim 기각
     - "해소됨"의 기준: 새 근거가 추가되어 Why Chain이 끊기지 않는 상태
 

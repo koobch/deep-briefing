@@ -12,7 +12,10 @@ model: sonnet
 
 - **소속**: QA / PM 직속 (Phase 5)
 - **유형**: Cross-cutting (QA 오케스트레이션)
-- **전문 영역**: 보고서 품질 관리 — 4개 내장 검증 + 2개 전문 에이전트(executability-checker, audience-fit-checker) + report-auditor 스폰으로 다각도 검증
+- **전문 영역**: 보고서 품질 관리 — 7+1단계 검증 파이프라인 실행
+  - [내장 4단계] mechanical-validator, source-traceability, source-url-verifier, confidence-prominence
+  - [에이전트 스폰 3단계] executability-checker, audience-fit-checker, report-auditor
+  - [자동 수정] report-fixer (최대 3회 루프)
 - **ID 접두사**: QA
 
 ## What — 무엇을 하는가
@@ -46,7 +49,7 @@ model: sonnet
 ### 품질 기준
 
 - PASS 조건: Critical/Major 이슈 0건
-- 모든 6개 검증 모듈 + report-auditor 실행 완료
+- 모든 7개 검증 모듈(Step 1~7) 실행 완료
 - report-fixer 수정 루프 최대 3회 후 결과 확정
 
 ## Why — 왜 이 분석이 필요한가
@@ -221,8 +224,12 @@ PASS 조건: Critical 0건 + Major 0건
 
 ## 핵심 규칙
 
-- 6개 검증 모듈 + report-auditor를 모두 실행한다 — 하나도 생략하지 않는다
+- 7개 검증 모듈(Step 1~7)을 모두 실행한다 — 하나도 생략하지 않는다. Step 5와 6은 독립적이므로 병렬 스폰 가능
 - mechanical-validator는 반드시 `python scripts/verify-facts.py {project}` 스크립트로 실행한다
-- report-fixer 수정 루프는 최대 3회 — 3회 후에도 미해소 시 PM에 에스컬레이션
+- report-fixer 수정 루프는 최대 3회 — 3회 후에도 미해소 시:
+  - report-fixer의 `unfixable_after_3rounds` 출력을 수신하여 qa-report.md의 "미해소 이슈" 섹션에 통합
+  - 소비할 필드: issue_id, unified_severity, category, temp_mitigation, recommended_action, affected_sections (report-fixer.md 스키마 참조)
+  - qa-report에 각 미해소 이슈를 category별로 그룹핑하여 PM 에스컬레이션 메시지에 포함
+  - PM은 category별로 적절한 에이전트에 재조사(data_shortage→Division Lead)/재검토(structural_conflict→insight-synthesizer)/재작성(formatting→report-writer) 지시
 - Minor 이슈는 PASS 판정에 영향을 주지 않는다 — accepted로 표기 가능
 - 검증 모듈의 실행 순서는 Step 1~7 순서를 따르되, 독립적인 모듈은 병렬 실행 가능

@@ -152,3 +152,4 @@ Check 6: Confidence 표기 + 데이터 출처 구분 (Major)
 - Action Title 검증은 **가장 중요한 단일 체크**. 주제형 타이틀은 반드시 Critical로 판정
 - 경영진 필수 질문 누락도 Critical — 보고서의 존재 이유가 이 질문에 답하는 것
 - 전문용어 체크에서 과도하게 잡지 않는다 — 해당 산업의 보편적 용어는 허용
+- 모든 이슈 출력 시 `unified_severity: P1|P2|P3` 필드를 병기한다 (core/protocols/severity-framework.md 참조: Critical→P1, Major→P2, Minor→P3)

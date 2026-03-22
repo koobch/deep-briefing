@@ -135,16 +135,28 @@ Step 4: 수정 결과 반환
 fix_result:
   fixed:
     - issue_id: {QA-##}
+      severity: {원본 모듈 라벨}    # 예: Critical, Major, Minor
+      unified_severity: P1 | P2 | P3
       change: "수정 내용 요약"
       files_modified: [report-docs.md, report-slides.md]
   unfixable:
     - issue_id: {QA-##}
+      severity: {원본 모듈 라벨}
+      unified_severity: P1 | P2
       reason: "수정 불가 사유"
       suggestion: "대안 제안"
+  unfixable_after_3rounds:        # 3회 루프 후에도 잔존하는 이슈 (해당 시)
+    - issue_id: "{QA-##}"
+      unified_severity: P1 | P2
+      category: data_shortage | structural_conflict | formatting
+      temp_mitigation: "적용한 임시 완화 조치"
+      recommended_action: "PM에 권고하는 다음 행동"
+      affected_sections: ["해당 보고서 섹션"]
   summary:
     total_issues: {N}
     fixed: {N}
     unfixable: {N}
+    unfixable_after_3rounds: {N}
 ```
 
 ## Knowledge — 도메인 지식
@@ -170,3 +182,38 @@ fix_result:
 - 수정으로 인해 다른 이슈가 발생하면 해당 이슈도 함께 수정
 - 수정 불가 시 억지로 수정하지 않는다 — 수정 불가 판정 후 qa-orchestrator에 에스컬레이션
 - 보고서의 전략 방향이나 결론을 변경하지 않는다 — 표현/수치/태그 수준의 수정만 수행
+
+## 3회 반복 후 미해소 처리 프로토콜
+
+3회 수정 루프 후에도 P1(Critical)/P2(Major) 이슈가 잔존하는 경우:
+
+### 1. 잔존 이슈 분류 (3가지 유형)
+
+| 유형 | 설명 | PM 권고 행동 |
+|------|------|-------------|
+| **데이터 부족형** | 새로운 리서치/데이터가 필요하여 수정 불가 | Division에 재조사 지시 |
+| **구조적 모순형** | 전략 방향 자체의 문제 | insight-synthesizer에 재검토 요청 |
+| **표현/포맷형** | 보고서 구조 재작성 필요 | report-writer에 해당 섹션 재작성 지시 |
+
+### 2. 임시 완화 조치 (보고서에 즉시 적용)
+
+- 해당 수치/주장에 `[검증 미완료]` 라벨 부착
+- Executive Summary에서 해당 주장의 confidence를 `low`로 하향 조정
+- 리스크 섹션에 "미해소 QA 이슈"로 명시 (이슈 ID + 내용 + 유형)
+
+### 3. fix_result에 unfixable_after_3rounds 섹션 추가
+
+```yaml
+unfixable_after_3rounds:
+  - issue_id: "{QA-##}"
+    unified_severity: P1 | P2
+    category: data_shortage | structural_conflict | formatting
+    temp_mitigation: "적용한 임시 완화 조치"
+    recommended_action: "PM에 권고하는 다음 행동"
+    affected_sections: ["해당 보고서 섹션"]
+```
+
+### 4. PM 에스컬레이션
+
+- `unfixable_after_3rounds` 섹션이 비어있지 않으면 PM에게 즉시 보고
+- PM은 사용자에게 미해소 이슈 목록 + 권고 행동을 제시하여 의사결정 요청

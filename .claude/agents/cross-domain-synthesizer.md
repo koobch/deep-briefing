@@ -88,10 +88,33 @@ Step 1: Division 출력 매핑
 
 Step 2: 교차 인사이트 도출 (구체적 절차)
 
-  2-a. Claim 매칭:
-    - Step 1에서 추출한 strategic_impact: high Claim을 Division 쌍별로 교차 매칭
-    - 매칭 기준: 동일 엔터티, 동일 시장, 동일 지표, 인과 연결 가능성
-    - 모든 Division 쌍을 검토 (N개 Division이면 N*(N-1)/2 쌍)
+  2-a. Claim 매칭 (3-Pass 알고리즘):
+    모든 Division 쌍을 검토 (N개 Division이면 N*(N-1)/2 쌍)
+
+    Pass 1 — 엔터티/지표 직접 매칭:
+      - Division 쌍의 Claim에서 동일 엔터티명(기업/제품/시장) 또는 동일 지표명을 대조
+      - 동일 엔터티를 참조하는 Claim 쌍 추출
+      - 예: Market "기업A 매출 성장 12%" ↔ Finance "기업A 영업이익률 하락"
+      - 매칭 강도: strong
+
+    Pass 2 — 인과 관계 매칭:
+      - 한 Division Claim의 결론이 다른 Division Claim의 전제가 되는 관계 탐색
+      - 패턴: "{Division A} Claim이 참이면 → {Division B} Claim에 영향"
+      - 예: Capability "AI 인력 부족" → Product "AI 기반 신제품 출시 지연 리스크"
+      - 매칭 강도: strong (명시적 인과) 또는 moderate (암시적 인과)
+
+    Pass 3 — 테마 매칭:
+      - Pass 1~2에서 놓친 간접 연결 탐색
+      - 동일 테마/키워드를 공유하는 Claim 쌍 (예: "규제 강화", "비용 압박", "인재 경쟁")
+      - 매칭 강도: weak (약한 연결 — 인사이트 도출 시 추가 논증 필요)
+
+    다중 매칭 처리: 동일 Claim 쌍이 여러 Pass에서 매칭될 수 있다 (예: entity + causal 동시). 이 경우 모든 매칭을 보존하되, primary_match_type을 가장 강한 유형(entity > causal > theme)으로 태깅한다. 인사이트 도출 시 다중 관점을 활용하되, 인사이트 건수 카운트에서는 Claim 쌍 단위로 1건으로 센다.
+
+    매칭 결과 기록: 각 매칭 쌍에 아래 필드를 태깅:
+      - match_types: [entity, causal, theme 중 해당하는 것 모두] — 다중 매칭 시 배열로 보존
+      - primary_match_type: entity | causal | theme — 가장 강한 유형 1개
+      - match_strength: strong | moderate | weak
+      - relationship: synergy | gap | amplification | tension
 
   2-b. 관계 판정 (4유형):
     - 시너지: "A의 발견 + B의 발견 → 개별로는 보이지 않던 새로운 기회/위협"

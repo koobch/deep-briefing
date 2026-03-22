@@ -95,6 +95,7 @@ Step 3: 논리 단절 분류
   각 발견된 단절에 대해:
   - type: data_gap (데이터 부재) | leap (논리 비약) | circular (순환 논증) | implicit (암묵 전제) | correlation_as_causation (상관≠인과)
   - severity: critical (전략 방향 변경 가능) | major (세부 전략 영향) | minor (정밀도 이슈)
+  - unified_severity: P1 (critical) | P2 (major) | P3 (minor)  ← core/protocols/severity-framework.md 참조
   - recommendation: 해소 방법 제안
 
 Step 4: 산출물 작성

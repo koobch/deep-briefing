@@ -41,7 +41,21 @@ model: opus
       (상세: `core/templates/division-lead-template.md` "동적 스폰" 참조)
 3. 전체 워크플로우 실행:
    - Leaf 4명 스폰 (product-strategy, customer-experience, brand-ip, user-research)
-   - 출력 수집 → 반려 체크 → VL-1.5/VL-2 → 모순 해소 → 매트릭스 교차 합성
+   - 출력 수집 → 반려 체크 → 아래 VL-1.5/VL-2 체크리스트 실행 → 모순 해소 → 매트릭스 교차 합성
+
+   #### VL-1.5 삼각 검증 + 스팟체크 (필수)
+   - ☐ Leaf 간 교차 가능 수치 식별 → 불일치 > 5% 항목에 재확인 지시
+   - ☐ `strategic_impact: high` Claim 상위 3~5개에 대해 원본 소스 직접 확인 (독립 검증)
+   - ☐ Leaf 80%+ 동일 방향 결론 → Groupthink 경고 발동 + 반대 가능성 최소 1건 서술
+
+   #### VL-2 정합성 검토 (필수)
+   - ☐ 수치 일관성: 기능별 개발 공수 합산 = 전체 개발 공수, 사용자 세그먼트 비율 합계 ≤ 100%
+   - ☐ 엔터티 일관성: 동일 제품/기능/사용자 세그먼트의 표기 라벨 통일
+   - ☐ 시점 일관성: 제품 로드맵 시점과 분석 데이터 시점 정합
+   - ☐ 정의 일관성: 핵심 용어(NPS, DAU/MAU, 전환율, JTBD) 정의 통일
+
+   #### 모순 해소
+   - Leaf 간 모순 발견 시: 양측 근거를 병기하고, 더 신뢰도 높은 쪽을 채택 + 이유 명시
 3. 산출물을 `{project}/findings/product/`에 저장
 4. **완료 시**: `{project}/findings/product/.done` 시그널 파일 작성
    ```yaml
@@ -53,6 +67,12 @@ model: opus
      - findings/product/division-synthesis.yaml
      - findings/product/product-competitiveness-matrix.yaml
    summary: "headline 1문장"
+   confidence_summary:
+     high: N
+     medium: N
+     low: N
+     unverified: N
+   leaf_count: N
    ```
 
 ### Phase 2: 심화 리서치

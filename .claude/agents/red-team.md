@@ -136,6 +136,10 @@ Step 6: 반론 강도 종합 판정
     - 반증 시도 실패 (전략이 견고함을 확인)
     - 극단적 시나리오에서만 문제
 
+  > **통합 심각도 매핑** (core/protocols/severity-framework.md):
+  > Strong → P1, Moderate → P2, Weak → P3.
+  > 모든 반론 출력 시 `unified_severity: P1|P2|P3` 필드를 반드시 병기한다.
+
 출력:
   → {project}/thinking-loop/red-team-report.md
 ```

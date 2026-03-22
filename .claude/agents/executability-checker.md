@@ -153,3 +153,4 @@ Check 5: 우선순위 매트릭스 존재 (Major)
 - 데이터 부족으로 구체화할 수 없는 항목은 "[클라이언트 확인 필요]" 표기를 인정한다 — 빈칸보다 낫다
 - 리소스 현실성은 조직 규모 정보가 있을 때만 엄격 판정. 없으면 WARN 처리
 - 순환 의존은 절대적 Critical — 논리적으로 실행 불가능한 계획은 경영진 신뢰를 잃는다
+- 모든 이슈 출력 시 `unified_severity: P1|P2|P3` 필드를 병기한다 (core/protocols/severity-framework.md 참조: Critical→P1, Major→P2, Minor→P3)

@@ -1250,6 +1250,9 @@ PM 세션이 시작될 때 반드시 실행한다.
 
 ## Phase 전환 규칙 (Checkpoint 업데이트)
 
+> **Phase 전환 판정은 `core/orchestration/sync-protocol.md`의 "Phase 전환 조건 테이블"을 따른다.**
+> 각 전환 시 아래 절차를 실행하고, 모드별(Auto/Interactive/Team) 사용자 게이트 여부를 확인한다.
+
 Phase가 전환될 때 **매번** 실행한다.
 
 ```

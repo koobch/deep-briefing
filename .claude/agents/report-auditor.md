@@ -197,3 +197,4 @@ audit_result:
 - 이슈 발견 시 수정을 직접 하지 않는다 — report-fixer가 수정
 - Executive Summary에만 있고 본문에 없는 주장은 반드시 critical로 분류
 - "그래서 뭐?(So What)"에 답하지 못하는 Evidence 블록은 major로 분류
+- 모든 이슈 출력 시 `unified_severity: P1|P2|P3` 필드를 병기한다 (core/protocols/severity-framework.md 참조: Critical→P1, Major→P2, Minor→P3)
