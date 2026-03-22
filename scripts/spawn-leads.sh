@@ -12,7 +12,8 @@
 # Division 자동 감지:
 #   {project}/division-briefs/*.md 파일에서 Division 이름을 자동 추출.
 #   파일명 = Division 이름, 에이전트 = {파일명}-lead
-#   예: market.md → market-lead, people-culture.md → people-culture-lead
+#   예: market.md → market-lead, people-org.md → people-org-lead
+#   ⚠ people-culture-lead는 deprecated → people-org-lead 사용
 #
 # 예시:
 #   ./scripts/spawn-leads.sh my-research --attach         # 4 Division
@@ -78,9 +79,21 @@ fi
 
 DIVISIONS=()
 AGENTS=()
+DEPRECATED_AGENTS=("people-culture")  # deprecated Division 목록
+
 for brief in "${BRIEFS_DIR}"/*.md; do
   [ -f "$brief" ] || continue
   div=$(basename "$brief" .md)
+
+  # deprecated 에이전트 감지
+  for dep in "${DEPRECATED_AGENTS[@]}"; do
+    if [[ "$div" == "$dep" ]]; then
+      echo "  ⚠️  ${div}-lead는 deprecated. people-org-lead를 사용하세요."
+      echo "      division-briefs/${div}.md → division-briefs/people-org.md로 변경 필요"
+      continue 2  # 이 Division 건너뛰기
+    fi
+  done
+
   DIVISIONS+=("$div")
   AGENTS+=("${div}-lead")
 done
@@ -232,21 +245,63 @@ SESSION_NAME="$2"
 IFS=',' read -ra DIVS <<< "$3"
 TOTAL=${#DIVS[@]}
 COMPLETED=0
+ELAPSED=0
+TIMEOUT=7200  # 2시간 타임아웃 (초)
+CHECK_INTERVAL=10
+HEALTH_CHECK_INTERVAL=60  # 1분마다 pane 상태 확인
+LAST_HEALTH_CHECK=0
+
+# pane 매핑 파일
+PANE_MAP="/tmp/research-v2-pane-map.txt"
 
 while [ "$COMPLETED" -lt "$TOTAL" ]; do
   COMPLETED=0
+  STALLED_DIVS=()
+
   for div in "${DIVS[@]}"; do
-    [ -f "${PROJECT_DIR}/findings/${div}/.done" ] && ((COMPLETED++))
+    if [ -f "${PROJECT_DIR}/findings/${div}/.done" ]; then
+      ((COMPLETED++))
+    else
+      STALLED_DIVS+=("$div")
+    fi
   done
 
   if [ "$COMPLETED" -lt "$TOTAL" ]; then
-    sleep 10
+    # 타임아웃 체크
+    if [ "$ELAPSED" -ge "$TIMEOUT" ]; then
+      echo ""
+      echo "⚠️ 타임아웃 (${TIMEOUT}초) 초과. 미완료 Division: ${STALLED_DIVS[*]}"
+      echo "   수동 확인 필요: tmux attach -t ${SESSION_NAME}"
+      if command -v osascript &>/dev/null; then
+        osascript -e "display notification \"Division 리서치 타임아웃: ${STALLED_DIVS[*]}\" with title \"Deep-Briefing ⚠️\" sound name \"Basso\""
+      fi
+      exit 1
+    fi
+
+    # pane 생존 확인 (1분마다)
+    if [ -f "$PANE_MAP" ] && [ $((ELAPSED - LAST_HEALTH_CHECK)) -ge "$HEALTH_CHECK_INTERVAL" ]; then
+      LAST_HEALTH_CHECK=$ELAPSED
+      for div in "${STALLED_DIVS[@]}"; do
+        PANE_ID=$(grep "^${div}=" "$PANE_MAP" 2>/dev/null | cut -d= -f2)
+        if [ -n "$PANE_ID" ]; then
+          # pane이 존재하는지 확인
+          if ! tmux list-panes -t "$SESSION_NAME" -F '#{pane_id}' 2>/dev/null | grep -Fxq "$PANE_ID"; then
+            echo "⚠️ [${div}] pane ${PANE_ID} 사망 감지 (경과: ${ELAPSED}초)"
+            echo "   해당 Division CLI가 비정상 종료되었습니다."
+            echo "   대응: PM CLI에서 해당 Division만 재투입하거나, 나머지로 진행하세요."
+          fi
+        fi
+      done
+    fi
+
+    sleep "$CHECK_INTERVAL"
+    ELAPSED=$((ELAPSED + CHECK_INTERVAL))
   fi
 done
 
 echo ""
 echo "============================================"
-echo "  ✅ ${TOTAL}개 Division 리서치 완료!"
+echo "  ✅ ${TOTAL}개 Division 리서치 완료! (소요: ${ELAPSED}초)"
 echo "  PM CLI에서 Sync Round 1을 시작하세요."
 echo "============================================"
 echo ""

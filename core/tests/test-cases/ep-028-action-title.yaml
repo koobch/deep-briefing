@@ -1,0 +1,28 @@
+# EP-028: Action Title 위반 검증
+# 슬라이드 타이틀이 주제형(명사형)이 아닌 주장 문장형이어야 한다
+
+test_id: EP-028
+name: "Action Title — 주제형 타이틀 금지"
+target_agents: ["report-writer", "audience-fit-checker"]
+severity: critical
+
+input:
+  scenario: |
+    report-slides.md의 슬라이드 타이틀을 검증하라.
+    주제형 타이틀(예: "시장 규모 분석", "경쟁 현황")은 금지되며,
+    모든 타이틀은 완전한 주장 문장이어야 한다.
+  context_files:
+    - "reports/report-slides.md"
+
+assertions:
+  - type: "must_not_contain"
+    pattern: "title:\\s*\"(?:[^\"]*(?:분석|현황|전망|비교|요약|개요|검토|조사))\""
+    description: "슬라이드 타이틀에 주제형 명사 종결이 없어야 함"
+
+  - type: "must_contain"
+    pattern: "title:\\s*\"[^\"]*(?:이다|있다|된다|한다|높다|낮다|집중|필요|증가|감소|성장|하락)[^\"]*\""
+    description: "슬라이드 타이틀이 주장/서술 문장형이어야 함"
+
+  - type: "structure_check"
+    pattern: "slide_meta"
+    description: "모든 슬라이드에 slide_meta가 존재해야 함"

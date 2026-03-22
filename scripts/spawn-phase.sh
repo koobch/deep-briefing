@@ -51,8 +51,12 @@ done
 
 if [ -n "$TARGET_DIVISIONS" ]; then
   IFS=',' read -ra DIVISIONS <<< "$TARGET_DIVISIONS"
-else
+elif [ ${#ALL_DIVISIONS[@]} -gt 0 ]; then
   DIVISIONS=("${ALL_DIVISIONS[@]}")
+else
+  echo "❌ division-briefs/*.md 파일이 없습니다."
+  echo "  init-project.sh를 먼저 실행하세요."
+  exit 1
 fi
 
 NUM="${#DIVISIONS[@]}"
@@ -129,9 +133,9 @@ echo "pane 매핑: cat ${PANE_MAP_FILE}"
 CHECKPOINT="${REPO_DIR}/${PROJECT}/findings/checkpoint.yaml"
 if [ -f "$CHECKPOINT" ]; then
   # current_phase 업데이트 (sed로 간이 갱신)
-  sed -i '' "s/current_phase:.*/current_phase: \"phase-${PHASE}\"/" "$CHECKPOINT"
-  sed -i '' "s/current_status:.*/current_status: in-progress/" "$CHECKPOINT"
-  sed -i '' "s/last_updated:.*/last_updated: $(date -u +"%Y-%m-%dT%H:%M:%S")/" "$CHECKPOINT"
+  sed -i.bak "s/current_phase:.*/current_phase: \"phase-${PHASE}\"/" "$CHECKPOINT"
+  sed -i.bak "s/current_status:.*/current_status: in-progress/" "$CHECKPOINT"
+  sed -i.bak "s/last_updated:.*/last_updated: $(date -u +"%Y-%m-%dT%H:%M:%S")/" "$CHECKPOINT"
   echo "checkpoint.yaml 갱신: phase-${PHASE}, in-progress"
 fi
 
@@ -188,8 +192,8 @@ DIVISION_LIST=$(IFS=,; echo "${DIVISIONS[*]}")
       echo "✅ ${NUM}개 Division Phase ${PHASE} 완료!"
       echo "$STATUS_LINE"
       if [ -f "$CHECKPOINT" ]; then
-        sed -i '' "s/current_status:.*/current_status: completed/" "$CHECKPOINT"
-        sed -i '' "s/last_updated:.*/last_updated: $(date -u +"%Y-%m-%dT%H:%M:%S")/" "$CHECKPOINT"
+        sed -i.bak "s/current_status:.*/current_status: completed/" "$CHECKPOINT"
+        sed -i.bak "s/last_updated:.*/last_updated: $(date -u +"%Y-%m-%dT%H:%M:%S")/" "$CHECKPOINT"
       fi
       if command -v osascript &>/dev/null; then
         osascript -e "display notification \"Phase ${PHASE} 완료!\" with title \"Deep-Briefing\" sound name \"Glass\""

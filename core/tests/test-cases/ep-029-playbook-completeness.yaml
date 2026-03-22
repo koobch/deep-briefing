@@ -1,0 +1,35 @@
+# EP-029: Implementation Playbook 완전성 검증
+# 실행 카드에 필수 필드(담당, 마일스톤, KPI, 의존성)가 모두 존재해야 한다
+
+test_id: EP-029
+name: "Implementation Playbook — 필수 필드 완전성"
+target_agents: ["report-writer", "executability-checker"]
+severity: critical
+
+input:
+  scenario: |
+    report-docs.md의 Implementation Playbook 섹션을 검증하라.
+    각 전략 이니셔티브의 실행 카드에 필수 필드가 모두 존재하는지 확인한다.
+  context_files:
+    - "reports/report-docs.md"
+
+assertions:
+  - type: "must_contain"
+    pattern: "(?:담당|소유|책임|ownership)"
+    description: "각 이니셔티브에 담당 조직/역할이 명시되어야 함"
+
+  - type: "must_contain"
+    pattern: "(?:마일스톤|milestone|90일|180일|1년|단계)"
+    description: "각 이니셔티브에 마일스톤이 명시되어야 함"
+
+  - type: "must_contain"
+    pattern: "(?:KPI|성공.*지표|목표.*수치|측정)"
+    description: "각 이니셔티브에 성공 KPI가 명시되어야 함"
+
+  - type: "must_contain"
+    pattern: "(?:의존|선행|dependency|선후)"
+    description: "이니셔티브 간 의존 관계가 명시되어야 함"
+
+  - type: "must_contain"
+    pattern: "(?:Impact.*Feasibility|우선순위.*매트릭스|Quick Win|Strategic Bet)"
+    description: "우선순위 매트릭스(Impact×Feasibility)가 존재해야 함"

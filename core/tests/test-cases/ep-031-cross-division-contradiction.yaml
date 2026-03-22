@@ -1,0 +1,31 @@
+# EP-031: Cross-Division 모순 검증
+# 서로 다른 Division의 Claim이 직접적으로 모순되면 안 된다 (미해소 시 명시 필수)
+
+test_id: EP-031
+name: "Cross-Division 모순 — 미해소 긴장 명시 필수"
+target_agents: ["cross-domain-synthesizer", "fact-verifier", "report-writer"]
+severity: major
+
+input:
+  scenario: |
+    Division 간 모순을 검증하라.
+    예: Market Division은 "시장이 연 15% 성장"이라 하고,
+    Finance Division은 "업계 매출 정체"라 하는 경우.
+    모순이 있으면 tension으로 태깅하고 해소 또는 명시적 기록이 필요하다.
+  context_files:
+    - "sync/round-1-briefing.md"
+    - "sync/tension-resolution.yaml"
+    - "reports/report-docs.md"
+
+assertions:
+  - type: "must_contain"
+    pattern: "(?:tension|T-\\d+|긴장|모순)"
+    description: "Division 간 모순이 tension으로 식별되어야 함"
+
+  - type: "must_contain"
+    pattern: "(?:resolved|해소|resolution|accepted_as_tradeoff)"
+    description: "각 tension에 해소 상태가 기록되어야 함"
+
+  - type: "must_contain"
+    pattern: "(?:미해소.*불확실|unresolved|리스크.*섹션)"
+    description: "미해소 tension은 보고서 리스크 섹션에 명시되어야 함"

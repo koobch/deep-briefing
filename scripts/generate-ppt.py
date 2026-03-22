@@ -67,8 +67,21 @@ def findChartsForSlide(slideClaims, charts):
     return matched
 
 
-def addChartToSlide(slide, chartPath, position="right"):
+def validateActionTitle(title):
+    """Action Title 기본 검증 — 주제형 타이틀 경고"""
+    # 주제형 패턴: 명사형 종결
+    themePatterns = ['분석', '현황', '전망', '비교', '요약', '개요', '검토', '조사']
+    for p in themePatterns:
+        if title.strip().endswith(p):
+            return False, f"주제형 타이틀 감지: '{title}' ('{p}'로 종결)"
+    if len(title.strip()) < 5:
+        return False, f"타이틀 너무 짧음: '{title}'"
+    return True, None
+
+
+def addChartToSlide(slide, chartPath, chartType="standard", position="right"):
     """슬라이드에 차트 이미지를 추가.
+    chartType: 차트 유형에 따라 레이아웃 자동 조정
     position: "right" = 우측 배치, "bottom" = 하단 배치
     """
     from pptx.util import Inches
@@ -77,8 +90,18 @@ def addChartToSlide(slide, chartPath, position="right"):
     if not imgPath.exists():
         return False
 
+    # 차트 유형별 레이아웃 설정
+    layoutConfig = {
+        "marimekko": {"x": Inches(1.5), "y": Inches(3.0), "w": Inches(10.0), "h": Inches(3.5)},
+        "harveyball": {"x": Inches(7.5), "y": Inches(1.5), "w": Inches(5.0), "h": Inches(5.0)},
+    }
+
     try:
-        if position == "right":
+        if chartType in layoutConfig:
+            # 특수 차트 유형: 전용 레이아웃
+            cfg = layoutConfig[chartType]
+            slide.shapes.add_picture(str(imgPath), cfg["x"], cfg["y"], cfg["w"], cfg["h"])
+        elif position == "right":
             # 우측 배치: 슬라이드 오른쪽 영역에 차트 삽입
             slide.shapes.add_picture(
                 str(imgPath), Inches(7.5), Inches(1.5), Inches(5.3), Inches(4.0)
@@ -114,6 +137,10 @@ def parseSlidesMd(filePath):
         slidePattern = r'## (?:Slide|슬라이드)\s+(\d+):\s*(.*?)\n(.*?)(?=## (?:Slide|슬라이드|별첨)\s+[\dA-Z]+[:\.]|---|\Z)'
         matches = re.findall(slidePattern, content, re.DOTALL)
         for num, title, body in matches:
+            # Action Title 검증
+            isValid, msg = validateActionTitle(title.strip())
+            if not isValid:
+                print(f"  ⚠️ Slide {num}: {msg}")
             slides.append({
                 'slide_id': int(num),
                 'title': title.strip(),

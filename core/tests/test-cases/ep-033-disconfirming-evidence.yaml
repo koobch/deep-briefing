@@ -1,0 +1,33 @@
+# EP-033: 반증 검토 완전성 검증
+# 모든 Claim의 disconfirming 필드가 실질적 내용으로 채워져야 한다
+
+test_id: EP-033
+name: "반증 검토 — 형식적 반증 금지"
+target_agents: ["market-lead", "product-lead", "capability-lead", "finance-lead"]
+severity: major
+
+input:
+  scenario: |
+    모든 Leaf/Lead 에이전트의 출력에서 disconfirming 필드를 검증하라.
+    빈 값은 물론, 형식적 기재("특별한 반증 없음", "반증 미발견")도
+    실질적 검토 흔적 없이는 불합격이다.
+  context_files:
+    - "findings/*/division-synthesis.yaml"
+    - "findings/*/*.yaml"
+
+assertions:
+  - type: "must_contain"
+    pattern: "disconfirming:"
+    description: "모든 Claim에 disconfirming 필드가 존재해야 함"
+
+  - type: "must_not_contain"
+    pattern: "disconfirming:\\s*(?:\\[\\]|null|~|없음\\s*$)"
+    description: "disconfirming 필드가 빈 값이면 안 됨"
+
+  - type: "must_contain"
+    pattern: "disconfirming:[\\s\\S]*?(?:검색|조사|확인|검토|탐색)[\\s\\S]*?(?:결과|발견)"
+    description: "반증 검토에 실제 검색/조사 활동의 흔적이 있어야 함"
+
+  - type: "must_contain"
+    pattern: "assessment:"
+    description: "반증의 무게에 대한 판단(assessment)이 포함되어야 함"

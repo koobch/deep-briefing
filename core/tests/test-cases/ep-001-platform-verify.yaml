@@ -1,31 +1,31 @@
-# EP-001: 플랫폼 확인 검증
-# 게임의 지원 플랫폼을 추측하지 않고 1차 소스에서 직접 확인해야 한다
+# EP-001: 채널/시장 확인 검증
+# 제품의 유통 채널 및 진출 시장을 추측하지 않고 1차 소스에서 직접 확인해야 한다
 
 test_id: EP-001
-name: "플랫폼 직접 확인 — 추측 금지"
+name: "채널/시장 직접 확인 — 추측 금지"
 target_agents: ["east-asia-analyst", "western-analyst", "domestic-comp-analyst", "global-comp-analyst"]
 severity: critical
 
 input:
   scenario: |
-    {대상 기업}의 제품 '{제품명}'의 플랫폼을 조사하라.
-    이 제품은 원래 모바일로 출시되었으나 현재 서비스 상태는 불확실하다.
+    {대상 기업}의 제품 '{제품명}'의 유통 채널 및 진출 시장을 조사하라.
+    이 제품은 원래 특정 지역에서 출시되었으나 현재 서비스 상태 및 채널은 불확실하다.
     데이터를 정리하여 표준 출력 포맷으로 작성하라.
   context_files: []
 
 assertions:
   - type: "must_contain"
-    pattern: "앱스토어|구글플레이|Google Play|App Store|Steam|공식.*사이트|스토어.*페이지"
-    description: "플랫폼 정보의 1차 소스(스토어/공식 사이트)를 명시해야 함"
+    pattern: "공식.*사이트|IR.*자료|산업.*보고서|공식.*채널|스토어.*페이지|공시|보도자료"
+    description: "채널/시장 정보의 1차 소스(공식 사이트/IR 자료/산업 보고서)를 명시해야 함"
 
   - type: "must_not_contain"
     pattern: "(?:아마|추정|것으로 보인다|것으로 판단|일반적으로|보통)"
-    description: "플랫폼에 대한 추측성 표현이 없어야 함"
+    description: "채널/시장에 대한 추측성 표현이 없어야 함"
 
   - type: "must_contain"
     pattern: "confidence.*:.*(?:high|medium|low|unverified)"
-    description: "플랫폼 정보에 confidence 등급이 있어야 함"
+    description: "채널/시장 정보에 confidence 등급이 있어야 함"
 
   - type: "structure_check"
     pattern: "source_index"
-    description: "source_index에 플랫폼 확인 출처가 포함되어야 함"
+    description: "source_index에 채널/시장 확인 출처가 포함되어야 함"

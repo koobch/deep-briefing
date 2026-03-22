@@ -27,7 +27,8 @@ model: opus
 2. 도메인 지식 베이스가 있으면 로드:
    - `domains/{domain}/frameworks.md` — 프레임워크 카탈로그
    - `domains/{domain}/data-sources.md` — 데이터 소스 스펙
-3. `{project}/00-client-brief.md`를 읽어라.
+   - `domains/{domain}/benchmarks.md` — 벤치마크/피어 비교 (활성 시)
+3. Division Brief에서 `primary_data_gaps`, `benchmarks` 활성화 여부를 확인하라.3. `{project}/00-client-brief.md`를 읽어라.
 
 ## 실행 프로토콜
 

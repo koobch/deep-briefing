@@ -117,7 +117,7 @@ echo "=== 프로젝트 '${PROJECT}' 스캐폴딩 시작 ==="
 echo "  활성 Division: ${ACTIVE_DIVISIONS[*]}"
 
 # --- 공통 디렉토리 생성 ---
-mkdir -p "${PROJECT_DIR}"/{division-briefs,sync,thinking-loop,reports,qa,data/{user-provided}}
+mkdir -p "${PROJECT_DIR}"/{division-briefs,sync,thinking-loop,reports,qa,data/{user-provided},agents}
 
 # --- Division별 디렉토리 생성 ---
 for div in "${ACTIVE_DIVISIONS[@]}"; do
@@ -219,6 +219,13 @@ hypotheses: []
   #   priority: must | should | nice
   #   verdict: pending | confirmed | revised | rejected
 
+primary_data_gaps: []
+  # - question: "공개 데이터로 답할 수 없는 질문"
+  #   why_needed: "이 답이 없으면 어떤 가설이 검증 불가한지"
+  #   ideal_source: "이상적 데이터 소스"
+  #   fallback: "대안 접근법"
+  #   impact_if_missing: high | medium | low
+
 TEMPLATE
   echo "  ✅ hypotheses.yaml (템플릿)"
 fi
@@ -277,6 +284,25 @@ created_at: $(date -u +"%Y-%m-%dT%H:%M:%S")
 traces: []
 TEMPLATE
   echo "  ✅ findings/execution-trace.yaml (초기화)"
+fi
+
+# sync/tension-resolution.yaml 초기화
+if [ ! -f "${PROJECT_DIR}/sync/tension-resolution.yaml" ]; then
+  cat > "${PROJECT_DIR}/sync/tension-resolution.yaml" << TEMPLATE
+# tension-resolution.yaml — Division 간 긴장 해소 기록
+# Sync Round 2에서 PM이 관리
+
+project: ${PROJECT}
+tension_resolution: []
+  # - id: T-01
+  #   type: data_error | perspective_gap | real_tension
+  #   description: "긴장 내용"
+  #   between: [division-a, division-b]
+  #   resolution: "해소 방법 + 결과"
+  #   resolved_by: "fact-verifier | cross-domain-synthesizer | 사용자"
+  #   status: resolved | escalated | accepted_as_tradeoff
+TEMPLATE
+  echo "  ✅ sync/tension-resolution.yaml (초기화)"
 fi
 
 # data-registry.csv 초기화

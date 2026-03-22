@@ -5,7 +5,7 @@
 
 ## 목적
 
-EP-001~027이 문서화되어 있지만 에이전트가 실행 시 실제로 따르는지 확인할 방법이 없었다.
+EP-001~033이 문서화되어 있지만 에이전트가 실행 시 실제로 따르는지 확인할 방법이 없었다.
 이 테스트 인프라는 에이전트를 시나리오와 함께 호출하고, 출력이 EP 규칙을 준수하는지 assertion으로 검증한다.
 
 ## 구조
@@ -19,7 +19,7 @@ core/tests/
     ├── ep-002-entity-label.yaml       # 엔터티 라벨 혼동 방지
     ├── ep-023-source-traceability.yaml # 출처-데이터 추적성
     ├── ep-026-assumption-gate.yaml    # 전제 확신도 등급
-    └── ep-027-art-genre-compat.yaml   # 제품-장르 적합도
+    └── ep-027-art-genre-compat.yaml   # 제품-시장 적합도
 ```
 
 ## 테스트 케이스 형식

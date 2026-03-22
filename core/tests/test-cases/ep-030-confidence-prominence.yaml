@@ -1,0 +1,29 @@
+# EP-030: Confidence-Prominence 불일치 검증
+# low/medium confidence 수치가 Executive Summary나 슬라이드 전면에 사용되면 안 된다
+
+test_id: EP-030
+name: "Confidence-Prominence — 불확실한 수치의 과잉 노출 금지"
+target_agents: ["report-writer", "qa-orchestrator", "audience-fit-checker"]
+severity: major
+
+input:
+  scenario: |
+    report-docs.md의 Executive Summary와 report-slides.md에서
+    confidence: low 또는 medium인 수치가 핵심 메시지로 사용되고 있는지 검증하라.
+  context_files:
+    - "reports/report-docs.md"
+    - "reports/report-slides.md"
+    - "findings/golden-facts.yaml"
+
+assertions:
+  - type: "must_not_contain"
+    pattern: "Executive Summary[\\s\\S]{0,2000}(?:\\[가정\\]|\\[미확인\\])"
+    description: "Executive Summary에 [가정]/[미확인] 라벨 수치가 핵심 메시지로 사용되지 않아야 함"
+
+  - type: "must_contain"
+    pattern: "(?:\\[확정\\]|\\[유력\\]|confidence.*:.*high)"
+    description: "슬라이드 전면 수치는 [확정] 또는 [유력] 등급이어야 함"
+
+  - type: "must_not_contain"
+    pattern: "(?:보수.*에서도|최소한|적어도)[^.]*(?:\\[가정\\]|confidence.*low)"
+    description: "낙관적 프레이밍과 low confidence 수치의 조합 금지"

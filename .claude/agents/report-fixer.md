@@ -28,6 +28,9 @@ model: sonnet
 - Executive Summary-본문 불일치 수정
 - confidence 라벨 누락 보완
 - 슬라이드-본문 수치 불일치 수정
+- Action Title 위반 수정 (주제형 → 주장 문장형)
+- SCR 스토리라인 단절 보완
+- Implementation Playbook 필수 필드 보충
 
 제외 (다른 에이전트 관할):
 - 보고서 전면 재작성 → report-writer
@@ -94,6 +97,12 @@ Step 1: 이슈 분류 및 우선순위
   - Executive Summary 불일치: 본문에 맞춰 Executive Summary 수정
   - confidence 라벨 누락: 해당 Claim의 confidence 태그 추가
   - 슬라이드-본문 불일치: 본문 기준으로 슬라이드 수정
+  - Action Title 위반: 해당 슬라이드 본문의 핵심 Claim(Layer 0)을 추출하여 주장 문장형 타이틀로 변환
+  - SCR 단절: 슬라이드 시퀀스에서 Situation→Complication→Resolution 흐름이 끊긴 지점을 보완
+  - Playbook 불완전: Division 출력에서 담당/마일스톤/KPI/의존성 추론. 추론 불가 시 "[클라이언트 확인 필요]"
+  - Why So 누락: 해당 섹션의 Evidence를 요약하여 "왜 이 결론인가" 논리 경로 보충
+  - MECE 위반: 중복 섹션 병합 권고 또는 누락 차원을 Division 출력에서 찾아 보충
+  - 프레임워크 미반영: Research Plan에서 선택된 프레임워크를 해당 Division 출력에서 찾아 보고서에 명시적으로 삽입 (예: "Porter 분석 결과: ~")
 
 Step 2: 최소 변경 수정
   각 이슈에 대해:

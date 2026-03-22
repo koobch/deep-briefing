@@ -45,8 +45,8 @@ VL-1: Leaf Agent
    │ "독립"의 정의:                                    │
    │ - 서로 다른 원본 데이터에 기반                      │
    │ - 뉴스 A가 뉴스 B를 인용 → 1개로 카운트            │
-   │ - DART 공시 + Sensor Tower 추정 → 2개 (원본 상이)  │
-   │ - Newzoo 보고서 + Newzoo 인용 기사 → 1개           │
+   │ - DART 공시 + 산업 보고서 추정 → 2개 (원본 상이)    │
+   │ - A 보고서 + A 인용 기사 → 1개 (원본 동일)         │
    └─────────────────────────────────────────────────┘
 
 2. 소스 신뢰도 분류
@@ -122,7 +122,7 @@ Division Lead가 리프 출력을 수집한 직후, VL-2 정합성 검토 전에
    예시 (Market Division):
    geography: "한국 시장 = $8.0B"
    platform:  "글로벌 $98B × 한국 비중 8.2% = $8.03B"
-   category:  "카테고리A $4.2B + 카테고리B $2.1B + ... = $8.0B"
+   category:  "카테고리A $4.2B + 세그먼트B $2.1B + ... = $8.0B"
 
 2. 교차 실행
    불일치 판정 기준: 5% 이상 차이
@@ -142,7 +142,7 @@ Division Lead가 리프 출력을 수집한 직후, VL-2 정합성 검토 전에
 | 교차 유형 | 예시 |
 |----------|------|
 | 지역별 합산 = 전체 | 동아시아 + 서구 + 이머징 = 글로벌 |
-| 카테고리별 합산 = 전체 | 카테고리A + 카테고리B + ... = 전체 |
+| 카테고리별 합산 = 전체 | 카테고리A + 세그먼트B + ... = 전체 |
 | 플랫폼별 합산 = 전체 | Mobile + PC + Console = 지역 전체 |
 | 경쟁사 점유율 합산 | 개별 점유율 합 ≤ 100% |
 | 매출 = 가격 × 볼륨 | ARPU × MAU = 매출 |
@@ -193,7 +193,7 @@ VL-1.5 완료 후, Division 합성(synthesis) 전에 실행.
 
 ```
 1. 수치 일관성 (Numerical Consistency)
-   - 부분 합 = 전체 (장르별 합산이 플랫폼 전체와 일치)
+   - 부분 합 = 전체 (세그먼트별 합산이 전체와 일치)
    - 비율 합 ≤ 100% (점유율 등)
    - 전년 대비 증감율과 절대값의 정합성
    - 같은 지표가 다른 리프에서 다른 값으로 인용되지 않는지
@@ -267,14 +267,14 @@ Sync Round 때 — PM이 fact-verifier를 스폰.
 
    Operations ↔ Product:
    - 운영 프로세스 역량과 제품 복잡도의 정합성
-   - 라이브 서비스 운영 요구사항과 현재 운영 체계의 갭
+   - 서비스 운영 요구사항과 현재 운영 체계의 갭
 
    Operations ↔ Finance:
    - 운영 비용과 매출 구조의 정합성
    - 프로세스 효율화 투자의 ROI 현실성
 
    Regulatory ↔ Product:
-   - 규제 요구사항(확률 공시, 연령등급, 개인정보)과 제품 설계의 충돌
+   - 규제 요구사항(인허가, 개인정보, 산업 규제)과 제품 설계의 충돌
    - 지역별 규제 차이가 글로벌 출시 전략에 미치는 영향
 
    Regulatory ↔ Finance:
@@ -350,12 +350,12 @@ fact_verification_report:
   methodology_flags:
     - id: FM-01
       agent: {agent-id}
-      issue: "카테고리B CAGR 15%를 단일 소스에 의존"
+      issue: "세그먼트B CAGR 15%를 단일 소스에 의존"
       recommendation: "독립 소스 2개 이상으로 교차 확인 필요"
 
   critical_premises_verified:
-    - premise: "카테고리B CAGR 15%+"
-      used_in: "전체 전략 방향 — 카테고리B 진입 근거"
+    - premise: "세그먼트B CAGR 15%+"
+      used_in: "전체 전략 방향 — 세그먼트B 진입 근거"
       verification: pass | fail | partial
       detail: "검증 과정 및 결과"
 

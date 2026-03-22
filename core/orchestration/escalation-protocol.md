@@ -42,6 +42,7 @@ Leaf → Lead (또는 Sub-lead) → Division Lead → PM → 사용자
 | 핵심 가설 반증됨 | 중대 | Lead → PM | Claim rejected 기록 + 대안 가설 제시 |
 | Division 전제 붕괴 | 치명 | PM → 사용자 | 리서치 방향 재설정 필요 |
 | 리프 간 해소 불가 모순 | 중간 | Lead → PM | key_tensions 기록 + Sync Round에서 처리 |
+| Red Team Moderate 반론 다수 | 중간 | PM | insight-synthesizer 보강으로 해소 가능 여부 판단 |
 
 ### Type 3: Division 간 이슈
 
@@ -51,7 +52,18 @@ Leaf → Lead (또는 Sub-lead) → Division Lead → PM → 사용자
 | Division 간 Claim 모순 | 중대 | fact-verifier → PM | 교차 검증 후 해소 또는 사용자 판단 |
 | 전략 핵심 전제 검증 실패 | 치명 | PM → 사용자 | 전략 방향 재설정 |
 
-### Type 4: 시스템 이슈
+### Type 4: 사고 루프 / QA 이슈
+
+| 상황 | 심각도 | 처리 주체 | 대응 |
+|------|--------|----------|------|
+| Red Team Strong 반론 2건+ | 중대 | PM | 전략 기반 취약 — insight-synthesizer 보강 후 재검증. 사용자에 보고 |
+| Red Team Strong 반론으로 핵심 전제 반증 | 치명 | PM → 사용자 | 전략 방향 재검토 필요 |
+| audience-fit-checker Critical: 핵심 질문 미답변 | 중대 | PM | 보고서 구조 재검토 — report-writer 재스폰 가능 |
+| audience-fit-checker Critical: Action Title 전수 위반 | 중대 | PM | report-fixer 수정 루프로 해소 |
+| executability-checker Critical: 순환 의존 | 중대 | PM | 실행 계획 전면 재설계 — report-writer 재스폰 |
+| Phase 5 QA 3회 수정 후에도 Critical 잔존 | 치명 | PM → 사용자 | 잔여 이슈 목록 + 대안 제시 |
+
+### Type 5: 시스템 이슈
 
 | 상황 | 심각도 | 처리 주체 | 대응 |
 |------|--------|----------|------|
@@ -59,6 +71,30 @@ Leaf → Lead (또는 Sub-lead) → Division Lead → PM → 사용자
 | 재스폰 후 재실패 | 중간 | Lead → PM | data_gap 처리 또는 다른 리프에 범위 재배분 |
 | API 쿼터 소진 | 중간 | PM | 남은 쿼터 재배분 또는 대체 소스 |
 | 전체 Division 실패 | 치명 | PM → 사용자 | 해당 Division 분석 없이 진행 가능한지 판단 |
+| API 호출 반복 실패 (3회+) | 중간 | Lead → PM | 해당 API 없이 웹 검색 대체. confidence 1단계 하향 |
+| API 쿼터 전체 소진 | 중대 | PM → 사용자 | 쿼터 증가 또는 수동 데이터 수집 전환 |
+
+### Type 6: QA 최종 실패 후 사용자 안내
+
+Phase 5 QA가 3회 수정 루프 후에도 Critical이 잔존하면:
+
+```
+PM → 사용자 메시지:
+
+  ⚠️ QA 자동 수정 3회 실패 — Critical 이슈 {N}건 잔존
+
+  잔존 이슈:
+  1. [{모듈}] {이슈 요약}
+  2. [{모듈}] {이슈 요약}
+
+  선택지:
+  A. 수동 수정 후 QA 재실행 (PM이 구체적 수정 가이드 제공)
+  B. 이슈를 "Known Limitation"으로 수용하고 보고서 확정
+  C. 해당 섹션 삭제 후 보고서 축소 확정
+  D. Phase 4(report-writer)부터 재실행
+
+  추천: [PM이 이슈 성격에 따라 A~D 중 추천]
+```
 
 ---
 
@@ -160,7 +196,7 @@ Leaf → Lead (또는 Sub-lead) → Division Lead → PM → 사용자
 승인: Lead 자율 판단 (PM 보고만)
 
 예시:
-leaf-agent-A: "카테고리B CAGR 15%"
+leaf-agent-A: "세그먼트B CAGR 15%"
 leaf-agent-B: "주요 지역별 합산 결과 12%에 가까움"
 → leaf-agent-A에 재확인 지시
 ```

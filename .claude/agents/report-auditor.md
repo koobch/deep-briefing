@@ -26,6 +26,8 @@ model: sonnet
 - Executive Summary와 본문 일치 확인
 - 결론이 근거에서 논리적으로 도출되었는지 (비약 없는지)
 - 보고서 내 자기모순 탐지
+- SCR 구조 검증: Situation→Complication→Resolution 흐름이 보고서 전체를 관통하는지
+- 미해소 긴장(tension) 반영 검증: tension-resolution에서 미해소된 항목이 리스크 섹션에 명시되었는지
 
 제외 (다른 에이전트 관할):
 - 수치 정합성 (mechanical-validator) → qa-orchestrator 내부
@@ -43,6 +45,8 @@ model: sonnet
 - 모든 주요 Claim에 대해 Evidence 연결 검증 완료
 - 논리 비약 발견 시 구체적 위치와 유형 명시
 - Executive Summary의 모든 주장이 본문에서 근거 확인 가능
+- SCR 구조가 Executive Summary에서 명확히 드러나는지 확인
+- 미해소 tension이 "리스크 및 미해소 불확실성" 섹션에 누락 없이 반영되었는지 확인
 
 ## Why — 왜 이 분석이 필요한가
 
@@ -76,6 +80,8 @@ model: sonnet
 입력:
   - {project}/reports/report-docs.md — 상세 보고서
   - {project}/reports/report-slides.md — 경영진 슬라이드
+  - {project}/sync/tension-resolution.yaml — 미해소 긴장 목록 (리스크 섹션 반영 검증용)
+  - {project}/00-client-brief.md — 핵심 질문 (답변 커버리지 교차 확인)
 
 Step 1: Claim → Evidence 연결 검증
   보고서의 각 주요 주장(Claim)에 대해:
@@ -108,11 +114,42 @@ Step 5: 결론 도출 검증
   - 데이터에서 지지하지 않는 추론이 포함되지 않았는가?
   - 인과관계와 상관관계가 혼동되지 않았는가?
 
-Step 6: 보고서 내 자기모순 탐지
+Step 6: 논리 완결성 심층 체크
+  위 Step 1~5를 통과한 후에도 다음을 추가 검증:
+  ☐ 모든 "→" 연결(A이므로 B)에 인과 근거 존재
+     - "매출 증가 → 경쟁력 강화" 같은 비약 탐지 (매출 증가가 왜 경쟁력인지?)
+  ☐ 상관관계를 인과관계로 오인한 주장 없음
+     - "A와 B가 동시에 증가 → A가 B를 유발" 패턴 탐지
+  ☐ "Why So → So What" 쌍 완전성
+     - "Why So" 없는 주장: 근거 없이 결론만 있음 → FAIL
+     - "So What" 없는 분석: 사실만 나열, 시사점 미제시 → FAIL
+     - 모든 핵심 발견 섹션이 "Why So(논리 경로) → So What(행동 시사점)" 쌍으로 구성
+  ☐ MECE 구조 검증
+     - 보고서 핵심 발견 섹션들이 상호배타(ME)인가? (중복 논거 없는가?)
+     - 전체포괄(CE)인가? (Client Brief 핵심 질문 중 미다룬 차원이 없는가?)
+     - 중복 발견 시 → 병합 권고
+     - 누락 발견 시 → 누락 차원 명시 + 보충 권고
+  ☐ 전략 제안의 전제가 보고서 내에서 검증됨
+     - 미검증 전제 → "미해소 리스크" 섹션에 명시되어야 함
+  ☐ 숫자 해석 정확성
+     - "2배 증가"가 실제 데이터(100→200)와 일치하는지
+     - 퍼센트 계산 오류 탐지 (base 혼동 등)
+  ☐ SCR 구조 관통 여부
+     - Executive Summary에 Situation → Complication → Resolution이 명확히 드러나는가
+     - 슬라이드 시퀀스가 SCR 흐름을 따르는가
+  ☐ 미해소 긴장(tension) 반영
+     - tension-resolution.yaml의 미해소 항목이 "리스크" 섹션에 전수 반영되었는가
+
+Step 7: 보고서 내 자기모순 탐지
   - 같은 지표에 대해 다른 값을 사용하는 곳이 없는가?
   - 한 섹션의 결론이 다른 섹션의 결론과 모순되지 않는가?
 
-Step 7: 결과 반환
+Step 8: 프레임워크 적용 반영 확인
+  - Research Plan에서 선택된 프레임워크가 보고서에 반영되었는가?
+  - 프레임워크 분석 결과가 명시적으로 표기되었는가? (예: "Porter 분석 결과: ~")
+  - 프레임워크 없이 도출된 결론은 없는가?
+
+Step 9: 결과 반환
   qa-orchestrator에 반환:
   - 이슈 목록 (각각 severity: critical/major/minor)
   - 이슈 위치 (보고서 내 섹션/줄)

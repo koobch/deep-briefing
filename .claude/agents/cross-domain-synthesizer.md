@@ -24,7 +24,8 @@ model: opus
 - 전체 활성 Division의 division_summary + key_findings 통합
 - Division 간 교차 인사이트 도출 (개별 Division에서 보이지 않는 패턴)
 - Division 간 tension을 전략적 선택지로 구조화
-- 핵심 불확실성 식별 (사고 루프 입력)
+- tension 해소 기록 지원: PM이 sync/tension-resolution.yaml에 기록할 데이터 제공
+- 핵심 불확실성 식별 (사고 루프 + red-team 입력)
 - strategic_impact: high Claim의 Division 간 연결 매핑
 
 제외 (다른 에이전트 관할):
@@ -48,7 +49,7 @@ model: opus
 
 - **최종 의사결정 기여**: Division별 분석만으로는 보이지 않는 통합 전략 인사이트를 제공
 - **블라인드 스팟 방지**: Division 간 교차 지점에서 발생하는 기회/위험을 누락 방지
-- **의존하는 에이전트**: logic-prober (교차 인사이트를 검증 입력으로 사용), strategic-challenger (도전 대상으로 사용), insight-synthesizer (전략 통합 기반), report-writer (보고서 구조의 뼈대)
+- **의존하는 에이전트**: logic-prober (교차 인사이트를 검증 입력으로 사용), strategic-challenger (도전 대상으로 사용), red-team (반증 대상으로 사용), insight-synthesizer (전략 통합 기반), report-writer (보고서 구조의 뼈대)
 
 ## When — 언제 동작하는가
 
@@ -85,12 +86,33 @@ Step 1: Division 출력 매핑
   - Division 간 동일 엔터티/지표를 참조하는 Claim 식별
   - cross_domain 태깅 (implications, questions) 수집
 
-Step 2: 교차 인사이트 도출
-  Division 간 연결 지점에서:
-  - 시너지 패턴: "Division A의 발견 + Division B의 발견 → 새로운 인사이트"
-  - 갭 패턴: "Division A가 전제하는 것을 Division B가 뒷받침하지 못함"
-  - 증폭 패턴: "여러 Division이 같은 방향을 가리킴 → 강한 신호"
-  - 상충 패턴: "Division A와 B의 결론이 상반됨 → 전략적 선택 필요"
+Step 2: 교차 인사이트 도출 (구체적 절차)
+
+  2-a. Claim 매칭:
+    - Step 1에서 추출한 strategic_impact: high Claim을 Division 쌍별로 교차 매칭
+    - 매칭 기준: 동일 엔터티, 동일 시장, 동일 지표, 인과 연결 가능성
+    - 모든 Division 쌍을 검토 (N개 Division이면 N*(N-1)/2 쌍)
+
+  2-b. 관계 판정 (4유형):
+    - 시너지: "A의 발견 + B의 발견 → 개별로는 보이지 않던 새로운 기회/위협"
+    - 갭: "A가 전제하는 것을 B가 뒷받침하지 못함 → 전략의 약점"
+    - 증폭: "여러 Division이 같은 방향 → 강한 확신 신호"
+    - 상충: "A와 B의 결론이 상반 → 전략적 선택 필요"
+
+  2-c. "So What" 테스트 (필수):
+    각 인사이트가 다음 질문에 답하는지 확인:
+    - "그래서 뭘 해야 하는가?" 또는 "그래서 뭘 하지 말아야 하는가?"
+    - 답할 수 없으면 인사이트가 아니라 관찰(observation)일 뿐 → 탈락
+
+    탈락 패턴 (인사이트로 인정하지 않음):
+    - "시장이 성장 중이고 제품도 준비됨" → 뻔한 병렬 나열
+    - "A Division과 B Division 모두 긍정적" → 단순 합산
+    - 누구나 데이터 없이도 말할 수 있는 것 → 비자명(non-obvious) 아님
+
+  2-d. 최소 기준:
+    - 비자명 인사이트 3건+ 도출
+    - 3건 미달 시: Division 출력을 재검토하여 추가 매칭 시도
+    - 그래도 미달: "교차 인사이트 부족 — Division 간 독립성이 높음"으로 기록 + PM 보고
 
 Step 3: Tension 구조화
   미해소 tension 각각에 대해:

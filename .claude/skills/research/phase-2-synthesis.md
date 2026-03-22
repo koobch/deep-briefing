@@ -76,15 +76,19 @@ Lead CLI들은 Phase 2 완료 후 종료 가능. 이후는 PM CLI에서 진행:
    - 상세: `core/protocols/fact-check-protocol.md` 교차검증 규칙 참조
 2. logic-prober 스폰 (Agent) → Why Chain (수직 검증)
 3. strategic-challenger 스폰 (Agent) → 5-레인 도전 (수평 검증)
-4. insight-synthesizer 스폰 (Agent) → 도전 결과 반영
-5. PM 수렴 판정 (최대 2회 반복)
+4. red-team 스폰 (Agent) → 적대적 반론 구성 (Devil's Advocate)
+   - Team/Interactive 모드: 기본 활성화
+   - Auto 모드: `--deep` 옵션 시에만 활성화
+   - 산출물: `{project}/thinking-loop/red-team-report.md`
+5. insight-synthesizer 스폰 (Agent) → 도전 결과 + Red Team 결과 반영
+6. PM 수렴 판정 (최대 2회 반복)
 
 ## Phase 4: 보고서 생성 + PPT 매핑
 
 ### Step 4-A: 보고서 생성
 1. report-writer 스폰 (Agent)
 2. 산출물: `{project}/reports/report-docs.md` + `report-slides.md`
-3. report-slides.md에 slide_target 메타데이터 포함 (output-format.md 참조)
+3. report-slides.md에 slide_meta 메타데이터 포함 (output-format.md 참조)
 
 ### Step 4-B: PPT 매핑 + 생성
 1. 슬라이드 구성을 사용자에게 확인 (Interactive/Team)

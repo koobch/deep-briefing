@@ -12,7 +12,7 @@ model: sonnet
 
 - **소속**: QA / PM 직속 (Phase 5)
 - **유형**: Cross-cutting (QA 오케스트레이션)
-- **전문 영역**: 보고서 품질 관리 — 6개 검증 모듈 + report-auditor 스폰으로 다각도 검증
+- **전문 영역**: 보고서 품질 관리 — 4개 내장 검증 + 2개 전문 에이전트(executability-checker, audience-fit-checker) + report-auditor 스폰으로 다각도 검증
 - **ID 접두사**: QA
 
 ## What — 무엇을 하는가
@@ -121,16 +121,24 @@ Step 4: confidence-prominence-checker
   - "보수에서도 X" 같은 낙관적 프레이밍이 실제 데이터 하단과 일치하는지 검증
   - confidence 라벨이 슬라이드에서 누락되면 FAIL
 
-Step 5: executability-checker
-  - 실행 카드의 담당 인원 × 기간 vs 가용 리소스 비교
-  - 선후 의존관계 태스크의 시점 정합성
-  - 동시 태스크 수가 조직 규모 대비 현실적인지
+Step 5: executability-checker 스폰 (Agent 도구)
+  executability-checker.md 에이전트를 스폰하여 위임:
+  - Check 1: 실행 카드 필수 필드 완전성 (담당/마일스톤/KPI/의존성)
+  - Check 2: 태스크 의존성 정합성 (순환 의존, 시점 역전)
+  - Check 3: 리소스 현실성 (동시 진행 태스크 수, 인력 규모 대비)
+  - Check 4: KPI 측정 가능성 (수치+단위+시점 존재 여부)
+  - Check 5: 우선순위 매트릭스 존재 (Impact × Feasibility)
+  결과를 수신하여 qa-report에 통합
 
-Step 6: audience-fit-checker
-  - 슬라이드 수 vs 발표 시간 적합성 (1슬라이드 = 1.5~2분)
-  - 전문용어 첫 등장 시 정의 동반 여부
-  - 내부 데이터 vs 외부 추정치 비율 명시 여부
-  - 경영진 필수 질문 3개에 대한 답 존재 여부
+Step 6: audience-fit-checker 스폰 (Agent 도구)
+  audience-fit-checker.md 에이전트를 스폰하여 위임:
+  - Check 1: Action Title 검증 (모든 슬라이드 타이틀이 주장 문장형인지)
+  - Check 2: 스토리라인 일관성 (SCR 흐름, 논리적 연결)
+  - Check 3: 슬라이드 분량 적합성 (슬라이드 수 vs 발표 시간)
+  - Check 4: 전문용어 + 두문자어 정의 여부
+  - Check 5: 경영진 필수 질문 커버리지
+  - Check 6: Confidence 표기 + 데이터 출처 구분
+  결과를 수신하여 qa-report에 통합
 
 Step 7: report-auditor 스폰 (Agent 도구)
   - 논리 완결성 감사 위임

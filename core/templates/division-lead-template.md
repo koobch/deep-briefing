@@ -70,6 +70,20 @@
    core/protocols/output-format.md 표준 스키마를 준수하라.
    core/protocols/fact-check-protocol.md VL-1 자가 검증을 수행하라."
 - 도메인 지식이 필요하면 domains/{domain}/frameworks.md, data-sources.md 경로를 전달
+- 벤치마크 활성 시 domains/{domain}/benchmarks.md 경로도 전달
+- Leaf 프롬프트 구성 시 `core/templates/leaf-agent-template.md`의 구조를 참조
+
+### 도메인 특화 도구 활성화
+
+Research Plan에 `benchmarks: active`인 경우 (PM이 Phase 0에서 판정):
+- 피어 그룹 정보를 리프에게 전달 (Client Brief 또는 Research Plan 참조)
+- 리프 출력에 벤치마크 비교 데이터 포함 지시
+- Division 합성 시 피어 비교 매트릭스 생성
+
+Finance Division 전용:
+- Scenario P&L 생성 지시 (Phase 1-2)
+- 민감도 분석 지시 (핵심 가정 ±변동 → 이익 영향)
+- 상세: finance-lead.md "시나리오 P&L + 민감도 분석" 섹션 참조
 
 리프 간 의존성:
 - 리프 간 직접 통신 불가 — 반드시 Lead를 경유
@@ -115,13 +129,13 @@ Step 2: 교차 매트릭스 구성 (해당 시)
   │ 지역C        │ 고성장  │ 미미    │ 미미     │
   ├──────────────┼─────────┼─────────┼──────────┤
   │ 카테고리A    │ 정체    │ 성장    │ 성장     │
-  │ 카테고리B    │ 고성장  │ 해당없음│ 해당없음 │
+  │ 세그먼트B    │ 고성장  │ 해당없음│ 해당없음 │
   │ 카테고리C    │ 성숙    │ 성숙    │ 성숙     │
   └──────────────┴─────────┴─────────┴──────────┘
 
 Step 3: 교차 인사이트 도출
   매트릭스에서 패턴을 읽는다:
-  - 최대 기회 셀: "지역C × 플랫폼X × 카테고리B = 고성장 + 저경쟁"
+  - 최대 기회 셀: "지역C × 플랫폼X × 세그먼트B = 고성장 + 저경쟁"
   - 위험 셀: "지역A × 플랫폼X × 카테고리A = 정체 + 고경쟁"
   - 비대칭 셀: "플랫폼Y × 카테고리A = 성장 중이지만 진입장벽 높음"
 
@@ -139,14 +153,54 @@ Step 4: 교차 인사이트를 Claim으로 격상
 - 발산 지점 (리프 간 의견 분열 — 이것이 핵심 논점)
 ```
 
+### 결론 다양성 체크 (Groupthink 방지)
+
+```
+Leaf 합성 전 필수 확인:
+  ☐ Leaf들의 결론 방향 분포 확인
+    - 80%+ 동일 방향이면 → "Groupthink 경고" 플래그
+    - Lead가 "왜 반대 의견이 없는가?"를 명시적으로 기록
+    - 1건 이상의 반대 가능성을 Lead가 독자적으로 서술
+    - 기록 위치: synthesis > groupthink_check
+  ☐ Leaf null_hypothesis_check 결과를 검토
+    - 형식적 작성(검색 방법만 쓰고 실질 없음) 여부 판별
+    - 형식적이면 → 해당 Leaf에 재작업 지시
+```
+
+### Division 합성 합격 기준 (VL-2 체크리스트)
+
+Division 요약을 구성하기 **전에** 다음을 전수 확인한다. 미충족 시 해당 리프에 재작업 지시.
+
+```
+☐ 리프 간 모순 전수 식별 + 해소 기록
+  - contradictions_resolved에 모든 모순 + 해소 방법 기재
+  - 미해소 모순은 key_tensions로 에스컬레이션
+
+☐ 삼각 검증(triangulation) 최소 3건 수행
+  - 같은 수치를 2개+ 리프가 독립적으로 확인
+  - 불일치 시 범위 표기 + 사유 명시
+
+☐ 스팟체크: strategic_impact: high Claim 중 50%+ 독립 검증
+  - Lead가 직접 원본 소스를 확인하거나 다른 리프 데이터와 대조
+
+☐ Division headline "So What" 테스트
+  - headline이 단순 사실 요약이면 FAIL
+  - "그래서 뭘 해야 하는가?"에 답해야 PASS
+  - ✗ "시장은 연 8% 성장 중이다" (사실만)
+  - ✓ "시장은 연 8% 성장 중이나 상위 3사 집중으로 신규 진입은 니치 전략 필수" (시사점 포함)
+
+☐ headline만 읽었을 때 전략적 시사점이 명확한가
+  - PM이 headline만 읽고 의사결정 방향을 잡을 수 있어야 함
+```
+
 ### Division 요약 구성
 
 ```
 division_summary:
   headline: "Division 전체를 관통하는 핵심 메시지 1문장"
     → PM이 이 한 문장만 읽어도 Division의 결론을 알 수 있어야 함
-    → 예: "시장 기회는 카테고리B × 지역C에 집중되나,
-           기존 강점 카테고리(카테고리A)도 플랫폼 전환으로 기회 존재"
+    → 예: "시장 기회는 세그먼트B × 지역C에 집중되나,
+           기존 강점 세그먼트(세그먼트A)도 채널 전환으로 기회 존재"
 
   key_findings: [상위 3~5개 Claim — strategic_impact: high 우선]
 

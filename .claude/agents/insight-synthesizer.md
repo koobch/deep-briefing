@@ -23,13 +23,15 @@ model: opus
 포함:
 - logic-prober의 논리 단절 해소 방안 수립
 - strategic-challenger의 블라인드 스팟 대응 전략 수립
+- red-team의 적대적 반론 대응 (Strong 반론 → 전략 수정, Moderate → 보강)
 - 전략 보강/수정 (근거 강화, 조건부 전환, 대안 통합)
-- 수렴 판정 (3개 조건 충족 여부)
+- 수렴 판정 (4개 조건 충족 여부)
 - 미해소 리스크 명시 (수렴 실패 시)
 
 제외 (다른 에이전트 관할):
 - 논리 수직 검증 → logic-prober
 - 전략 도전/스트레스 테스트 → strategic-challenger
+- 적대적 반론 구성 → red-team
 - 보고서 작성 → report-writer
 ```
 
@@ -41,7 +43,9 @@ model: opus
 
 - logic-prober가 발견한 모든 critical/major 논리 단절에 대한 해소 방안 포함
 - strategic-challenger의 모든 critical 블라인드 스팟에 대한 대응 포함
-- 수렴 판정의 3개 조건 각각에 대한 명시적 판정 (pass/fail + 근거)
+- red-team의 Strong 반론 전수 대응 (전략 수정 또는 수정 불가 사유 명시)
+- red-team 결과 해석: Strong 0건 = "전략 견고 긍정 신호" → 수렴 조건에 카운트. Strong 1건 = 보강 검토. Strong 2건+ = 수정 불가 시 미수렴
+- 수렴 판정의 4개 조건 각각에 대한 명시적 판정 (pass/fail + 근거)
 - 미수렴 시 잔여 이슈 목록 + 해소 불가 사유 명시
 
 ## Why — 왜 이 분석이 필요한가
@@ -55,7 +59,7 @@ model: opus
 ### 활성화 조건
 
 - Phase 3 사고 루프 Step 3에서 PM이 Agent 도구로 스폰
-- strategic-challenger의 strategic-challenge.md 완료 후 실행
+- strategic-challenger의 strategic-challenge.md + red-team의 red-team-report.md 완료 후 실행
 - 사고 루프 반복 시 (미수렴) 재스폰
 
 ### 보고 시점
@@ -67,7 +71,7 @@ model: opus
 
 ### 에스컬레이션 조건
 
-- **즉시 에스컬레이션** (PM): 수렴 실패 (3개 조건 중 1개 이상 미충족)
+- **즉시 에스컬레이션** (PM): 수렴 실패 (4개 조건 중 1개 이상 미충족)
 - **자율 처리**: 전략 보강으로 해소된 minor 이슈
 
 ## How — 어떻게 일하는가
@@ -79,6 +83,7 @@ model: opus
   - {project}/sync/cross-domain-synthesis.md
   - {project}/thinking-loop/why-probe.md (logic-prober 결과)
   - {project}/thinking-loop/strategic-challenge.md (strategic-challenger 결과)
+  - {project}/thinking-loop/red-team-report.md (red-team 결과 — 활성 시. Auto 비-deep에서는 null → 해당 입력 제외하고 실행)
 
 Step 1: 논리 단절 해소
   logic-prober가 발견한 critical/major 논리 단절 각각에 대해:
@@ -102,10 +107,27 @@ Step 3: 전략 보강/수정 종합
   - 시나리오 구조: BASE / UPSIDE / DOWNSIDE
 
 Step 4: 수렴 판정
-  3개 조건 모두 충족 = 수렴:
-  ☐ 논리 단절 0건 — logic-prober의 critical/major 단절이 모두 해소됨
-  ☐ Critical 블라인드 스팟 0건 — strategic-challenger의 critical 항목이 모두 대응됨
-  ☐ BASE 시나리오 자력 실현 가능 — 외부 행운 없이 자체 역량으로 달성 가능
+  4개 조건 모두 충족 = 수렴:
+
+  ☐ 논리 단절 0건:
+    - logic-prober의 gap_classification 목록에서 critical/major 전수 확인
+    - 각 단절에 해소 방법 명시: Claim 수정 | Evidence 보강 | Claim 기각
+    - "해소됨"의 기준: 새 근거가 추가되어 Why Chain이 끊기지 않는 상태
+
+  ☐ Critical 블라인드 스팟 0건:
+    - strategic-challenger의 5-레인별 critical 항목에 대응 기록
+    - 대응 = 전략 수정 | 리스크로 명시 | 반증으로 해소 (3가지 중 하나)
+
+  ☐ Red Team Strong 전수 대응:
+    - 각 Strong에 "전략 수정 내용" 또는 "수정 불가 + 리스크 수용 사유" 명시
+    - red-team 미활성 시(Auto 비-deep) 자동 PASS
+
+  ☐ BASE 시나리오 자력 실현:
+    검증 체크리스트:
+    - Capability Division: "핵심 역량 확보됨" 또는 "확보 계획 존재 + 타임라인"
+    - Finance Division: "BEP 달성 가능" 또는 "투자 유치 전제 시 명시"
+    - 외부 행운 의존 항목 0건 (예: "경쟁사가 실수하면", "규제가 완화되면" → 불가)
+    - 각 의존 항목을 명시적으로 열거하고 "내부 통제 가능" 여부 판정
 
   미수렴 시:
   → 미충족 조건 + 구체적 미해소 항목 명시
@@ -126,7 +148,13 @@ Step 4: 수렴 판정
 |------|------|------|
 | 논리 단절 0건 | PASS/FAIL | {근거} |
 | Critical 블라인드 스팟 0건 | PASS/FAIL | {근거} |
+| Red Team Strong 전수 대응 | PASS/FAIL/N/A | {근거. 경량 모드: Strong 발견 시 FAIL → 사고 루프 반복 또는 Full 모드 재실행 권고} |
 | BASE 시나리오 자력 실현 가능 | PASS/FAIL | {근거} |
+
+※ Auto 비-deep 경량 Red Team에서 Strong 반론 발견 시:
+  → FAIL 판정 + PM에 에스컬레이션
+  → PM 선택: (a) Full Red Team 재실행 (b) Strong 반론을 리스크로 수용 (c) 해당 전제 수정
+  → 사용자 게이트 없이 PM이 자율 판단 (Auto 모드 원칙)
 
 **종합**: 수렴 / 미수렴 (반복 {N}회차)
 
@@ -195,7 +223,7 @@ Step 4: 수렴 판정
 
 ## 핵심 규칙
 
-- 수렴 판정의 3개 조건은 하나도 생략하지 않는다
+- 수렴 판정의 4개 조건은 하나도 생략하지 않는다
 - 전략 수정 시 반드시 변경 이력을 기록한다 — 무엇이 왜 바뀌었는지 추적 가능해야 한다
 - "미해소 리스크"는 숨기지 않는다 — 보고서에 명시하여 경영진이 인지한 상태로 의사결정
 - BASE 시나리오의 "자력 실현 가능" 판정은 보수적으로 한다 — 외부 행운에 의존하면 FAIL

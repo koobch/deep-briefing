@@ -50,7 +50,7 @@ model: opus
 
 - **최종 의사결정 기여**: 이 에이전트의 산출물이 없으면 Division 간 모순이 보고서에 그대로 반영되어 전략 신뢰성이 붕괴한다
 - **블라인드 스팟 방지**: 각 Division이 독립적으로 작업하므로, 교차 지점의 불일치를 아무도 잡지 못하는 구조적 맹점을 해소
-- **의존하는 에이전트**: report-writer (golden-facts 참조), qa-orchestrator (mechanical-validator가 golden-facts 대조), 모든 에이전트 (golden-facts 읽기)
+- **의존하는 에이전트**: report-writer (golden-facts 참조), qa-orchestrator (mechanical-validator가 golden-facts 대조), red-team (전제 반증 시 golden-facts 참조), 모든 에이전트 (golden-facts 읽기)
 
 ## When — 언제 동작하는가
 

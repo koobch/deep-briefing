@@ -97,14 +97,22 @@ project-name 생략 시 모든 프로젝트를 스캔.
 모드를 선택하세요:
 
 1. Auto — 주제만 주면 보고서까지 직행
-   (--deep: 매 Phase 자동 Why Probe)
+   예상 시간: 30~45분 | 사용자 개입: 1~2회 (시작 + 최종 확인)
+   과정: 인터뷰(5~7문) → 가설 자동 확정 → 병렬 리서치 → 보고서
+   (--deep: Red Team 전체 실행 + Why Probe 강화)
 
-2. Interactive — 매 단계 공동작업 + 사용자 게이트
+2. Interactive — 매 단계 함께 리서치 (추천)
+   예상 시간: 1~1.5시간 | 사용자 개입: 6~8회
+   과정: 인터뷰 → 가설 공동 수립 → 중간 리뷰 → 방향 수정 → 사고 루프 공유 → 보고서
+   ★ 사용자의 도메인 지식이 분석에 반영되어 결과물 퀄리티가 가장 높음
 
-3. Team — 팀 토론 + 되돌아가기 가능
-   (--interactive: 매 Phase 사용자 참여)
+3. Team — 깊은 토론 + 전방위 되돌아가기
+   예상 시간: 2~3시간 | 사용자 개입: 10회+
+   과정: 심층 인터뷰(12~15문) → 가설 공동 도출 → 토론 → 되돌아가기 가능 → 보고서
+   (--interactive: 매 Phase마다 추가 사용자 참여)
 
 잘 모르겠으면 몇 가지 질문 후 추천합니다.
+※ 시간은 주제 복잡도에 따라 변동됩니다.
 ```
 
 ## PM 실행 시퀀스
@@ -131,11 +139,32 @@ Phase별 상세 워크플로우는 보조 파일 참조:
 | Phase 1 | **"투입할까요?" → "응"** | spawn-leads.sh 자동 실행 + .done 폴링 |
 | Sync R1 | **"Sync 시작할까요?" → "응"** | Division 출력 수집 + 교차 라우팅 |
 | Phase 2 | **"Phase 2 전송할까요?" → "응"** | send-phase2.sh 자동 실행 + .done 폴링 |
-| Phase 2→3 | **"사고 루프 시작할까요?" → "응"** | Cross-domain + Thinking Loop 자동 |
-| Phase 4 | PPT 슬라이드 구성 확인 | PPT 생성 (Canva/python-pptx) |
-| Phase 5 | PM 최종 확인 | QA 자동 수정 루프 |
+| Phase 2→3 | **"사고 루프 시작할까요?" → "응"** | Cross-domain + Thinking Loop (logic-prober → strategic-challenger → red-team → insight-synthesizer) |
+| Phase 3 결과 | Red Team 결과 검토 (Interactive/Team) | Strong 반론 시 전략 수정 여부 판단 |
+| Phase 4 | PPT 슬라이드 구성 확인 | PPT 생성 (python-pptx/수동) |
+| Phase 5 | PM 최종 확인 | QA 자동 루프 (mechanical + source + confidence + executability-checker + audience-fit-checker + report-auditor → report-fixer) |
 | Phase 5.5 | 피드백 입력 → 확정 | 부분 재실행 + QA |
 | Phase 6 | — | Post-mortem 자동 생성 |
+
+## 사용자 도메인 지식 수집 프로토콜 (Interactive/Team)
+
+모든 사용자 게이트에서 PM은 다음을 수행한다:
+
+```
+매 게이트에서 PM이 물어봐야 하는 것:
+  1. "이 결과가 본인의 경험과 일치하나요?"
+  2. "추가로 알고 계신 정보가 있나요?"
+  3. "이 방향에 대한 직관적 판단은?"
+
+수집된 정보 처리:
+  - 정량 데이터 → data/user-provided/에 저장 + data-preprocessor 처리
+  - 정성 판단 → Division Brief 또는 Phase 2 지시서에 "[사용자 인사이트]" 태깅
+  - 방향 수정 → hypotheses.yaml 또는 Research Plan 업데이트
+
+핵심: 사용자의 도메인 지식이 분석에 주입되어야 결과물 퀄리티가 올라간다.
+에이전트만으로는 공개 데이터 기반의 피상적 분석이 될 수 있으며,
+사용자의 경험/직관이 "이건 현실과 다르다" 교정을 제공한다.
+```
 
 ## 되돌아가기 (어느 Phase에서든 가능)
 

@@ -47,7 +47,7 @@ model: opus
 
 - **최종 의사결정 기여**: 전략 결론이 "왜 그런가?"에 답하지 못하면 경영진이 채택하지 않는다
 - **블라인드 스팟 방지**: Division별 분석이 표면적 상관관계를 인과관계로 오인하는 위험을 차단
-- **의존하는 에이전트**: strategic-challenger (why-probe 결과를 입력으로 사용), insight-synthesizer (논리 단절 해소 판정)
+- **의존하는 에이전트**: strategic-challenger (why-probe 결과를 도전 입력으로 사용), red-team (why-probe 결과를 반증 기반으로 사용), insight-synthesizer (논리 단절 해소 판정)
 
 ## When — 언제 동작하는가
 

@@ -1,0 +1,33 @@
+# EP-032: 시나리오 민감도 분석 검증
+# 재무 전망에 민감도 분석이 포함되어야 한다 (투자/진출/M&A 의사결정 시)
+
+test_id: EP-032
+name: "시나리오 민감도 — 핵심 가정 변동 영향 분석 필수"
+target_agents: ["finance-lead", "revenue-analyst", "investment-analyst"]
+severity: major
+
+input:
+  scenario: |
+    Finance Division의 시나리오 P&L에 민감도 분석이 포함되어 있는지 검증하라.
+    핵심 가정(시장 성장률, 점유율, ARPU 등)의 ±변동 시 이익 변화가 명시되어야 한다.
+  context_files:
+    - "findings/finance/scenario-pnl.yaml"
+    - "findings/finance/sensitivity-analysis.yaml"
+    - "findings/finance/division-synthesis.yaml"
+
+assertions:
+  - type: "must_contain"
+    pattern: "(?:BASE|UPSIDE|DOWNSIDE|시나리오)"
+    description: "3-시나리오(BASE/UPSIDE/DOWNSIDE) P&L이 존재해야 함"
+
+  - type: "must_contain"
+    pattern: "(?:sensitivity|민감도|±|변동.*영향|impact_table)"
+    description: "핵심 가정의 민감도 분석이 존재해야 함"
+
+  - type: "must_contain"
+    pattern: "(?:break_even|BEP|손익분기)"
+    description: "BEP(손익분기점) 분석이 포함되어야 함"
+
+  - type: "must_contain"
+    pattern: "confidence.*:.*(?:high|medium|low|확정|유력|가정)"
+    description: "모든 가정에 confidence 라벨이 부여되어야 함"

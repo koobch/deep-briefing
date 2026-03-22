@@ -45,6 +45,7 @@ Layer 3: Raw Source (원본 URL, API 응답, 스크린샷)
 | LAYER 3: RAW SOURCES | ● | 모든 소스에 대해 source_index |
 | CROSS-DOMAIN | ○ | 타 도메인 영향/질문이 있는 경우만 |
 | DATA GAPS | ○ | 데이터 공백이 있는 경우만 (없으면 생략) |
+| NULL HYPOTHESIS CHECK | ● | Round 1.5 반대 가설 검증 결과 (Leaf 필수) |
 | ITERATION LOG | ○ | 자율 반복 2회 이상 시 필수, 1회 완료 시 생략 가능 |
 
 ```yaml
@@ -100,7 +101,7 @@ data_files:
   - file: findings/market/geography/east-asia-analyst-detail.yaml
     description: "지역별 시장 규모, 성장률, 카테고리 분포 상세"
   - file: findings/market/geography/east-asia-analyst-timeline.csv
-    description: "한중일 모바일 시장 연도별 추이 (2020-2025)"
+    description: "주요 시장(아시아/북미/유럽) 연도별 추이 (2020-2025)"
 
 # ============================================================
 # LAYER 3: RAW SOURCES
@@ -114,11 +115,11 @@ source_index:
     reliability: high                # high | medium | low
   - id: S05
     type: estimate
-    name: "Newzoo Global Games Market Report 2025"
+    name: "업계 리서치 기관 Annual Report 2025"
     url: null                        # 유료 보고서 — URL 없음
     accessed: 2026-03-01
     reliability: medium
-    note: "추정치 기반. Sensor Tower와 교차 검증 필요"
+    note: "추정치 기반. 다른 독립 소스와 교차 검증 필요"
 
 # ============================================================
 # CROSS-DOMAIN (타 도메인 연결)
@@ -145,6 +146,18 @@ data_gaps:
     required_for: {CLAIM-ID}
 
 # ============================================================
+# NULL HYPOTHESIS CHECK (반대 가설 검증 — Leaf 필수)
+# ============================================================
+null_hypothesis_check:
+  - claim_id: {CLAIM-ID}
+    hypothesis: "원래 가설"
+    null_hypothesis: "정반대 가설"
+    search_method: "검색 키워드/소스/방법"
+    evidence_found: "반대 증거 또는 미발견 상세"
+    strength: strong | moderate | weak    # 반대 증거의 강도
+    impact: "반대 증거가 원래 가설에 미치는 영향"
+
+# ============================================================
 # ITERATION LOG (자율 반복 기록)
 # ============================================================
 iteration_log:
@@ -168,11 +181,18 @@ synthesis:
   method: "합성 방법론 (매트릭스 교차, 패턴 추출, 가중 평균 등)"
   child_agents: [agent-id-1, agent-id-2, ...]
 
+  # Groupthink 탐지 (Lead 필수)
+  groupthink_check:
+    leaf_agreement_rate: 0          # Leaf 결론 동일 방향 비율 (0~100%)
+    flag: false                     # true = 80%+ 동일 방향 (경고)
+    counter_perspective: ""         # flag=true 시: Lead가 서술한 반대 가능성
+    rationale: ""                   # flag=true 시: 왜 Leaf들이 같은 방향인지 분석
+
   # 리프 간 교차 매트릭스 (해당 시)
   matrix:
-    dimensions: ["지역", "장르"]
+    dimensions: ["지역", "세그먼트"]
     highlights:
-      - cell: "지역A × 카테고리B"
+      - cell: "지역A × 세그먼트B"
         finding: "YoY +28%, 가장 빠른 성장 셀"
       - cell: "지역C × 카테고리C"
         finding: "사용자 급증, 수익화는 미성숙"
@@ -185,16 +205,16 @@ synthesis:
 
   # 리프 간 삼각 검증 결과
   triangulation:
-    - metric: "한국 모바일 시장 규모"
+    - metric: "국내 시장 규모"
       values:
         - agent: east-asia-analyst
           value: "$8.0B"
           source: S01
-        - agent: mobile-analyst
+        - agent: channel-analyst
           value: "$8.03B"
           source: S12
-        - agent: core-genre-analyst
-          value: "$8.0B (장르 합산)"
+        - agent: segment-analyst
+          value: "$8.0B (세그먼트 합산)"
           source: S05, S06, S07
       verdict: "일치 (범위 내)"
 
@@ -236,9 +256,9 @@ Division 약자:
 
 Sub-domain 약자 (예시):
   Market:     GE(Geography-EastAsia), GW(Geography-Western), GM(Geography-eMerging),
-              GN(Genre-core, N=장르 분석의 N), GL(Genre-casuaL),
-              PL(Platform), CD(Competitive-Domestic), CG(Competitive-Global)
-  Product:    GD(GameDesign), AU(ArtUX), IP(IP), US(User)
+              SG(SeGment-core), SC(Segment-Casual/niche),
+              CH(CHannel), CD(Competitive-Domestic), CG(Competitive-Global)
+  Product:    PS(ProductStrategy), CX(CustomerExperience), BR(BRand-IP), UR(UserResearch)
   Capability: DP(DevPortfolio), TC(Tech), OR(Org), PA(Partnership)
   Finance:    RV(Revenue), IV(Investment)
   People&Org: TS(TalentStrategy), OD(OrgDesign), CC(CultureChange), WA(WorkforceAnalytics)
@@ -248,7 +268,7 @@ Sub-domain 약자 (예시):
 예: MGE-01 = Market, Geography, East Asia, Claim #01
     MGM-03 = Market, Geography, Emerging, Claim #03
     MCD-01 = Market, Competitive, Domestic, Claim #01
-    PGD-03 = Product, Game Design, Claim #03
+    PPS-03 = Product, ProductStrategy, Claim #03
     HTS-01 = People&Org, Talent Strategy, Claim #01
     OPR-03 = Operations, Process, Claim #03
     RLC-01 = Regulatory, Legal Compliance, Claim #01
@@ -346,15 +366,23 @@ quality_report:
 
 ## 슬라이드 매핑 (PPT 생성용)
 
-### report-slides.md의 slide_target 메타데이터
+### report-slides.md의 slide_meta 메타데이터
 
 report-writer가 `report-slides.md` 작성 시, 각 슬라이드 섹션에 YAML 프론트매터 형태의 매핑 정보를 포함한다.
+
+### Action Title 규칙
+
+슬라이드 title은 반드시 **주장 문장(Action Title)**이어야 한다:
+- ✗ 금지: 주제형 타이틀 ("시장 규모 분석", "경쟁 현황", "재무 전망")
+- ✓ 필수: 주장형 타이틀 ("국내 시장은 연 12% 성장 중이나 수익성은 상위 3사에 집중")
+- 타이틀만 순서대로 읽으면 보고서의 전체 스토리라인이 완성되어야 한다
+- qa-orchestrator의 audience-fit-checker가 주제형 타이틀을 감지하면 반려한다
 
 ```yaml
 # report-slides.md 내 각 슬라이드 섹션 앞에 삽입
 <!-- slide_meta
   slide_id: 1
-  title: "타이틀"
+  title: "타이틀 — 반드시 Action Title(주장 문장형)"
   layout: title_slide | content | two_column | chart | table | summary
   content_blocks:
     - id: CB-01
@@ -392,6 +420,37 @@ Phase 4 Step 4-B에서 사용자가 슬라이드 구성을 변경할 수 있다:
 | 수동 | content_blocks를 참조하여 사용자가 직접 PPT 작성 |
 
 ---
+
+## 보고서 출처 섹션 포맷 (Source Index)
+
+보고서 말미(부록)에 Source Index 섹션을 포함한다:
+
+```
+## Source Index
+
+| ID | 소스명 | 유형 | 시점 | URL | 신뢰도 |
+|----|--------|------|------|-----|--------|
+| [S01] | DART {기업명} 사업보고서 | primary | 2025 | https://dart.fss.or.kr/... | high |
+| [S05] | 업계 리서치 기관 Annual Report | estimate | 2025 | 유료 보고서 | medium |
+```
+
+필수 필드: ID, 소스명, 유형(primary/secondary/estimate), 시점, URL(없으면 "유료 보고서"), 신뢰도(high/medium/low)
+
+## 데이터 기밀성 등급
+
+모든 데이터와 보고서에 기밀성 등급을 적용한다:
+
+| 등급 | 설명 | 보고서 처리 규칙 |
+|------|------|-----------------|
+| `public` | 공개 데이터 (공시, 뉴스, 산업 보고서) | 제한 없이 보고서에 포함 |
+| `internal` | 내부 데이터 (사용자 제공, 비공개 매출) | 수치만 표기, 원본 경로 미노출 |
+| `confidential` | 기밀 데이터 (M&A, 인사, 미공개 전략) | "[기밀]" 태깅 필수, Executive Summary/슬라이드 사용 시 사용자 확인 |
+
+보고서 상단에 기밀 등급 + 배포 범위 표기:
+```
+기밀 등급: PUBLIC | INTERNAL | CONFIDENTIAL
+배포 범위: 전사 | 경영진 | 프로젝트팀만
+```
 
 ## 반려(Reject) 조건
 

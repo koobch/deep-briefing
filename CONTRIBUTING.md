@@ -24,23 +24,32 @@ Deep-Briefing에 기여해 주셔서 감사합니다.
 ### 디렉토리 구조
 ```
 core/           → 도메인 독립 프레임워크 (수정 시 모든 도메인에 영향)
+  templates/    → 에이전트/리드/리프 템플릿, visual-style-guide
+  protocols/    → output-format, fact-check-protocol
+  orchestration/→ sync-protocol, escalation-protocol
+  tests/        → EP-001~033 프롬프트 테스트 케이스
 domains/        → 도메인별 지식 베이스 (도메인 추가/수정)
 scripts/        → 자동화 스크립트 (기능 추가/개선)
-.claude/agents/ → 에이전트 정의 (새 Division/Lead 추가)
-.claude/skills/ → 스킬 정의 (/research 등)
+.claude/agents/ → 에이전트 정의 (22개 — PM, Lead, Cross-cutting, QA, Utility)
+.claude/skills/ → 스킬 정의 (/setup, /research)
+docs/           → 아키텍처 문서
 ```
+
+전체 아키텍처: **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)** 참조.
 
 ### 새 도메인 추가
 1. `cp -r domains/example/ domains/{your-domain}/`
-2. `frameworks.md`, `data-sources.md` 작성
-3. 필요 시 `agents/` 디렉토리에 도메인 특화 에이전트 추가
+2. `frameworks.md`, `data-sources.md`, `benchmarks.md` 작성
+3. 필요 시 `agents/` 디렉토리에 도메인 특화 에이전트 추가 (`core/templates/leaf-agent-template.md` 참조)
 4. API 추가 시 `scripts/ADDING-API.md` 참조
 
 ### 새 Division 추가
-1. `.claude/agents/{division}-lead.md` 생성 (기존 Lead 패턴 참조)
+1. `.claude/agents/{division}-lead.md` 생성 — 기존 확장 Lead(`people-org-lead.md`, `operations-lead.md`, `regulatory-lead.md`) 패턴 참조
 2. `core/orchestration/sync-protocol.md` Research Plan 스키마에 추가
 3. `core/protocols/output-format.md` ID 체계에 약자 추가
 4. `scripts/init-project.sh` EXTENDED_DIVISIONS 배열에 추가
+5. `CLAUDE.md` Division Pool 테이블 + 에이전트 인벤토리 업데이트
+6. `README.md` 에이전트 구성 테이블 업데이트
 
 ## 라이선스
 

@@ -8,8 +8,9 @@
 ```
 domains/example/
 ├── README.md              ← 이 파일
-├── frameworks.md          ← 범용 전략 프레임워크 (8개)
+├── frameworks.md          ← 범용 전략 프레임워크 (12개)
 ├── data-sources.md        ← 범용 데이터 소스 정의
+├── benchmarks.md          ← 피어 비교/산업 벤치마크 (선택적 활성화)
 └── agents/
     └── README.md          ← 에이전트 커스텀 가이드
 ```
@@ -18,8 +19,8 @@ domains/example/
 
 - Market: Porter's Five Forces, TAM/SAM/SOM
 - Product: Value Proposition Canvas, Jobs-to-be-Done
-- Capability: VRIO, McKinsey 7S
-- Finance: DCF Framework, Unit Economics
+- Capability: VRIO, McKinsey 7S, **Peer Comparison Matrix**
+- Finance: DCF Framework, Unit Economics, **Scenario P&L**
 - Cross-cutting: 3C, SWOT
 
 ## 커스텀 도메인 생성
@@ -30,4 +31,5 @@ cp -r domains/example/ domains/{your-domain}/
 
 1. `frameworks.md` — 산업에 맞는 프레임워크로 교체/추가
 2. `data-sources.md` — 산업별 API, 데이터 소스 정의
-3. `agents/` — (선택) 산업 특화 에이전트 정의
+3. `benchmarks.md` — 산업별 KPI, 피어 선정 기준 커스텀
+4. `agents/` — (선택) 산업 특화 에이전트 정의

@@ -61,6 +61,9 @@ class ChartData:
     is_matrix: bool = False                           # 2차원 매트릭스 여부
     is_scenario: bool = False                         # 시나리오 비교 여부
     is_waterfall: bool = False                        # 분해 구조 여부
+    is_marimekko: bool = False                       # 마리메꼬 (세그먼트×비중)
+    is_harveyball: bool = False                      # 하비볼 (정성 평가 매트릭스)
+    harveyball_data: dict = field(default_factory=dict)  # {행: {열: 0~4 등급}}
 
 
 @dataclass
@@ -307,7 +310,99 @@ class ChartDataExtractor:
                 if chartData:
                     charts.append(chartData)
 
+        # 벤치마크 피어 비교 매트릭스 → 하비볼 차트
+        benchmarks = data.get('benchmarks', {})
+        if benchmarks:
+            hbChart = self._buildHarveyballFromBenchmarks(benchmarks, synthPath, divisionName)
+            if hbChart:
+                charts.append(hbChart)
+
+        # 시장 세그먼트 구성 → 마리메꼬 차트
+        if synth:
+            segmentData = synth.get('market_segments', {})
+            if segmentData:
+                mkChart = self._buildMarimekkoFromSegments(segmentData, synthPath, divisionName)
+                if mkChart:
+                    charts.append(mkChart)
+
         return charts
+
+    def _buildHarveyballFromBenchmarks(self, benchmarks: dict, sourcePath: str, division: str) -> Optional[ChartData]:
+        """벤치마크 피어 비교 데이터 → 하비볼 차트"""
+        metrics = benchmarks.get('metrics', [])
+        if not metrics:
+            return None
+
+        # {행(기업): {열(지표): 등급}} 구조 구성
+        hbData = {}
+        metricNames = []
+
+        for m in metrics:
+            metricName = m.get('metric', '')
+            if metricName and metricName not in metricNames:
+                metricNames.append(metricName)
+
+            for val in m.get('values', []):
+                entity = val.get('entity', '')
+                rank = val.get('rank', 0)
+                totalPeers = len(m.get('values', []))
+                # rank를 0~4 등급으로 변환 (1등=4, 최하위=0)
+                if totalPeers > 0 and rank > 0:
+                    grade = max(0, min(4, 4 - int((rank - 1) / max(1, totalPeers - 1) * 4)))
+                else:
+                    grade = 2  # 기본 중간
+
+                if entity not in hbData:
+                    hbData[entity] = {}
+                hbData[entity][metricName] = grade
+
+        if len(hbData) < 2 or len(metricNames) < 2:
+            return None
+
+        return ChartData(
+            title=f"[{division}] 피어 비교 매트릭스",
+            labels=list(hbData.keys()),
+            series={mn: [hbData.get(e, {}).get(mn, 2) for e in hbData] for mn in metricNames},
+            source_file=sourcePath,
+            is_harveyball=True,
+            harveyball_data=hbData,
+        )
+
+    def _buildMarimekkoFromSegments(self, segmentData: dict, sourcePath: str, division: str) -> Optional[ChartData]:
+        """시장 세그먼트 구성 → 마리메꼬 차트
+        segmentData 구조: {segments: [{name, size, composition: {cat: %}}, ...]}"""
+        segments = segmentData.get('segments', [])
+        if len(segments) < 2:
+            return None
+
+        labels = []
+        widthSeries = []  # 세그먼트 크기 (X축 폭)
+        categories = set()
+
+        for seg in segments:
+            labels.append(seg.get('name', ''))
+            widthSeries.append(self._parseNumericValue(seg.get('size', 0)) or 0)
+            for cat in seg.get('composition', {}).keys():
+                categories.add(cat)
+
+        if not categories or sum(widthSeries) == 0:
+            return None
+
+        # series: 첫 번째 = 세그먼트 크기, 나머지 = 카테고리별 비율 (수치 정규화)
+        series = {"세그먼트 크기": widthSeries}
+        for cat in sorted(categories):
+            series[cat] = [
+                self._parseNumericValue(seg.get('composition', {}).get(cat, 0)) or 0
+                for seg in segments
+            ]
+
+        return ChartData(
+            title=f"[{division}] 시장 세그먼트 구성",
+            labels=labels,
+            series=series,
+            source_file=sourcePath,
+            is_marimekko=True,
+        )
 
     def _buildTriangulationChart(self, tri: dict, sourcePath: str, division: str) -> Optional[ChartData]:
         """삼각 검증 데이터 → 비교 차트"""
@@ -636,10 +731,16 @@ class ChartTypeSelector:
         - 2차원 매트릭스 → heatmap (히트맵)
         - 시나리오 (BASE/UPSIDE/DOWNSIDE) → scenario_bar
         - 분해 구조 → waterfall
+        - 세그먼트 × 비중 → marimekko
+        - 정성 평가 매트릭스 → harveyball
         """
         numSeries = len(data.series)
 
         # 명시적 플래그 체크
+        if data.is_harveyball:
+            return 'harveyball'
+        if data.is_marimekko:
+            return 'marimekko'
         if data.is_waterfall:
             return 'waterfall'
         if data.is_scenario:
@@ -734,6 +835,8 @@ class ChartRenderer:
             'heatmap': self.renderHeatmap,
             'waterfall': self.renderWaterfall,
             'scenario_bar': self.renderScenarioBar,
+            'marimekko': self.renderMarimekko,
+            'harveyball': self.renderHarveyball,
         }
         renderer = renderers.get(data.chart_type, self.renderBar)
         renderer(data, outputPath)
@@ -1043,6 +1146,206 @@ class ChartRenderer:
                      fontweight='bold', pad=15)
         if data.unit:
             ax.set_ylabel(data.unit, fontsize=self.style['label_size'])
+        plt.tight_layout()
+        fig.savefig(outputPath, dpi=self.style['dpi'],
+                    facecolor=fig.get_facecolor(), bbox_inches='tight')
+        plt.close(fig)
+
+    def renderMarimekko(self, data: ChartData, outputPath: str):
+        """마리메꼬 차트 — 세그먼트 크기(X축 폭) × 구성 비율(Y축)
+        series 구조: {카테고리명: [비율값]} + labels = 세그먼트명
+        첫 번째 시리즈를 세그먼트 폭(크기)으로, 나머지를 스택 구성으로 사용"""
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        fig, ax = plt.subplots(figsize=self.style['figsize'])
+        self._applyBaseStyle(fig, ax)
+        colors = self.style['colors']
+
+        seriesNames = list(data.series.keys())
+        if len(seriesNames) < 2:
+            # 시리즈가 1개면 일반 막대로 폴백
+            self.renderBar(data, outputPath)
+            return
+
+        # 첫 번째 시리즈 = 세그먼트 폭 (시장 크기 등)
+        widthSeries = data.series[seriesNames[0]]
+        stackSeries = {k: data.series[k] for k in seriesNames[1:]}
+
+        # 폭을 비율로 정규화 (합계 = 1)
+        totalWidth = sum(widthSeries) if sum(widthSeries) > 0 else 1
+        normalizedWidths = [w / totalWidth for w in widthSeries]
+
+        # 각 막대의 X 시작점 계산
+        xStarts = [0]
+        for w in normalizedWidths[:-1]:
+            xStarts.append(xStarts[-1] + w)
+
+        # 스택 막대 그리기
+        for stackIdx, (stackName, stackValues) in enumerate(stackSeries.items()):
+            color = colors[(stackIdx + 1) % len(colors)]
+            bottoms = [0] * len(data.labels)
+
+            # 이전 스택의 누적 높이 계산
+            for prevIdx in range(stackIdx):
+                prevName = list(stackSeries.keys())[prevIdx]
+                prevVals = stackSeries[prevName]
+                for i in range(len(bottoms)):
+                    if i < len(prevVals):
+                        bottoms[i] += prevVals[i]
+
+            for i, (xStart, width) in enumerate(zip(xStarts, normalizedWidths)):
+                val = stackValues[i] if i < len(stackValues) else 0
+                bottom = bottoms[i]
+                rect = ax.bar(xStart + width / 2, val, width=width * 0.95,
+                             bottom=bottom, color=color,
+                             edgecolor='white', linewidth=1.5,
+                             label=stackName if i == 0 else "")
+                # 셀 레이블 (충분히 큰 셀만)
+                if val > 5 and width > 0.08:
+                    ax.text(xStart + width / 2, bottom + val / 2,
+                           f"{val:.0f}%",
+                           ha='center', va='center',
+                           fontsize=self.style['value_size'],
+                           color='white', fontweight='bold')
+
+        # X축 세그먼트 레이블
+        for i, (xStart, width, label) in enumerate(zip(xStarts, normalizedWidths, data.labels)):
+            ax.text(xStart + width / 2, -3,
+                   f"{label}\n({self._formatValue(widthSeries[i], data.unit)})",
+                   ha='center', va='top',
+                   fontsize=self.style['label_size'])
+
+        ax.set_xlim(0, 1)
+        ax.set_ylim(-8, 105)  # 여백 확보
+        ax.set_xticks([])
+        ax.set_ylabel('%', fontsize=self.style['label_size'])
+        ax.set_title(data.title, fontsize=self.style['title_size'],
+                     fontweight='bold', pad=15)
+        ax.legend(fontsize=self.style['label_size'], loc='upper right')
+        plt.tight_layout()
+        fig.savefig(outputPath, dpi=self.style['dpi'],
+                    facecolor=fig.get_facecolor(), bbox_inches='tight')
+        plt.close(fig)
+
+    def renderHarveyball(self, data: ChartData, outputPath: str):
+        """하비볼 매트릭스 — 정성 평가를 ●◕◑◔○로 시각화
+        harveyball_data: {행 이름: {열 이름: 0~4 등급}}
+        0=○(빈 원), 1=◔(1/4), 2=◑(반), 3=◕(3/4), 4=●(꽉 찬 원)"""
+        import matplotlib.pyplot as plt
+        import matplotlib.patches as patches
+        import numpy as np
+
+        hbData = data.harveyball_data
+        if not hbData:
+            # harveyball_data가 없으면 series를 0~4로 매핑 시도
+            # series의 각 값을 5단계로 변환
+            if data.series and data.labels:
+                seriesNames = list(data.series.keys())
+                hbData = {}
+                for i, label in enumerate(data.labels):
+                    hbData[label] = {}
+                    for sName in seriesNames:
+                        vals = data.series[sName]
+                        if i < len(vals):
+                            # 0~100 범위를 0~4로 매핑
+                            rawVal = vals[i]
+                            grade = min(4, max(0, round(rawVal / 25)))
+                            hbData[label][sName] = grade
+            else:
+                return
+
+        rowNames = list(hbData.keys())
+        colNames = list(hbData[rowNames[0]].keys()) if rowNames else []
+        nRows = len(rowNames)
+        nCols = len(colNames)
+
+        if nRows == 0 or nCols == 0:
+            return
+
+        cellSize = 0.8
+        figWidth = max(8, (nCols + 1) * 1.5)
+        figHeight = max(4, (nRows + 1) * 0.8)
+        fig, ax = plt.subplots(figsize=(figWidth, figHeight))
+        fig.set_facecolor(self.style['background'])
+        ax.set_facecolor(self.style['background'])
+
+        mainColor = self.style['colors'][0]
+        bgColor = '#E8E8E8' if self.style['background'] == '#FFFFFF' else '#444444'
+
+        for i, rowName in enumerate(rowNames):
+            y = nRows - 1 - i
+            for j, colName in enumerate(colNames):
+                grade = hbData[rowName].get(colName, 0)
+                cx = j + 1.5
+                cy = y + 0.5
+
+                # 배경 원 (항상 그림)
+                bgCircle = plt.Circle((cx, cy), cellSize * 0.35,
+                                      facecolor=bgColor, edgecolor='#CCCCCC',
+                                      linewidth=0.5)
+                ax.add_patch(bgCircle)
+
+                if grade > 0:
+                    if grade == 4:
+                        # 꽉 찬 원
+                        filled = plt.Circle((cx, cy), cellSize * 0.35,
+                                           facecolor=mainColor, edgecolor=mainColor,
+                                           linewidth=0.5)
+                        ax.add_patch(filled)
+                    else:
+                        # 부분 채움 (Wedge)
+                        # grade 1=90°, 2=180°, 3=270°
+                        angle = grade * 90
+                        wedge = patches.Wedge((cx, cy), cellSize * 0.35,
+                                             90, 90 - angle,  # 12시 방향부터 시계방향
+                                             facecolor=mainColor, edgecolor=mainColor,
+                                             linewidth=0.5)
+                        ax.add_patch(wedge)
+
+        # 행 레이블 (좌측)
+        for i, rowName in enumerate(rowNames):
+            y = nRows - 1 - i
+            ax.text(0.8, y + 0.5, rowName,
+                   ha='right', va='center',
+                   fontsize=self.style['label_size'])
+
+        # 열 레이블 (상단)
+        for j, colName in enumerate(colNames):
+            ax.text(j + 1.5, nRows + 0.2, colName,
+                   ha='center', va='bottom',
+                   fontsize=self.style['label_size'],
+                   fontweight='bold', rotation=30)
+
+        # 범례 (하단)
+        legendY = -0.8
+        legendLabels = ['○ 하위', '◔ 하위~중', '◑ 중간', '◕ 중~상위', '● 상위']
+        for idx, lbl in enumerate(legendLabels):
+            lx = 1.5 + idx * 1.8
+            # 범례 원
+            bgC = plt.Circle((lx - 0.3, legendY), 0.15,
+                             facecolor=bgColor, edgecolor='#CCCCCC', linewidth=0.5)
+            ax.add_patch(bgC)
+            if idx > 0:
+                if idx == 4:
+                    fC = plt.Circle((lx - 0.3, legendY), 0.15,
+                                   facecolor=mainColor, edgecolor=mainColor, linewidth=0.5)
+                    ax.add_patch(fC)
+                else:
+                    angle = idx * 90
+                    fW = patches.Wedge((lx - 0.3, legendY), 0.15,
+                                      90, 90 - angle,
+                                      facecolor=mainColor, edgecolor=mainColor, linewidth=0.5)
+                    ax.add_patch(fW)
+            ax.text(lx, legendY, lbl,
+                   ha='left', va='center', fontsize=8)
+
+        ax.set_xlim(-0.5, max(nCols + 2, 10))
+        ax.set_ylim(-1.5, nRows + 1)
+        ax.set_aspect('equal')
+        ax.axis('off')
+        ax.set_title(data.title, fontsize=self.style['title_size'],
+                     fontweight='bold', pad=20)
         plt.tight_layout()
         fig.savefig(outputPath, dpi=self.style['dpi'],
                     facecolor=fig.get_facecolor(), bbox_inches='tight')

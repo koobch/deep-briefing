@@ -46,6 +46,13 @@ for brief in "${BRIEFS_DIR}"/*.md; do
 done
 
 NUM_DIVISIONS=${#DIVISIONS[@]}
+
+if [ "$NUM_DIVISIONS" -eq 0 ]; then
+  echo "❌ division-briefs/*.md 파일이 없습니다."
+  echo "  init-project.sh를 먼저 실행하세요."
+  exit 1
+fi
+
 echo "감지된 Division: ${NUM_DIVISIONS}개 — ${DIVISIONS[*]}"
 
 # --- Phase 2 지시서 존재 확인 ---

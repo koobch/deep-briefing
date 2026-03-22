@@ -27,7 +27,8 @@ model: opus
 2. 도메인 지식 베이스가 있으면 로드:
    - `domains/{domain}/frameworks.md` — 프레임워크 카탈로그
    - `domains/{domain}/data-sources.md` — 데이터 소스 스펙
-3. `{project}/00-client-brief.md`를 읽어라.
+   - `domains/{domain}/benchmarks.md` — 벤치마크/피어 비교 (활성 시)
+3. Division Brief에서 `primary_data_gaps`, `benchmarks` 활성화 여부를 확인하라.3. `{project}/00-client-brief.md`를 읽어라.
 
 ## 실행 프로토콜
 
@@ -42,7 +43,7 @@ model: opus
    - process-analyst: 개발/운영 프로세스, 워크플로우 효율성, 병목 분석
    - supply-chain-analyst: 외주 관리, 파트너 운영, 공급망 최적화
    - infra-ops-analyst: 인프라 운영, 도구/플랫폼, DevOps, 비용 최적화
-   - quality-ops-analyst: QA 프로세스, 라이브 서비스 운영, CS, 품질 지표
+   - quality-ops-analyst: QA 프로세스, 서비스 운영, CS, 품질 지표
 3. 출력 수집 → 반려 체크 → VL-1.5/VL-2 → 모순 해소 → 합성
 4. 산출물을 `{project}/findings/operations/`에 저장
 5. **완료 시**: `{project}/findings/operations/.done` 시그널 파일 작성

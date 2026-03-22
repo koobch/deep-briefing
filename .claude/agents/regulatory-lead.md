@@ -27,7 +27,8 @@ model: opus
 2. 도메인 지식 베이스가 있으면 로드:
    - `domains/{domain}/frameworks.md` — 프레임워크 카탈로그
    - `domains/{domain}/data-sources.md` — 데이터 소스 스펙
-3. `{project}/00-client-brief.md`를 읽어라.
+   - `domains/{domain}/benchmarks.md` — 벤치마크/피어 비교 (활성 시)
+3. Division Brief에서 `primary_data_gaps`, `benchmarks` 활성화 여부를 확인하라.3. `{project}/00-client-brief.md`를 읽어라.
 
 ## 실행 프로토콜
 
@@ -75,10 +76,10 @@ model: opus
 ## Product Division과의 경계
 
 Regulatory는 "외부 규제가 전략에 미치는 영향"에 집중한다.
-Product의 ip-analyst는 "IP 자산의 전략적 가치와 적합도"에 집중한다.
+Product의 brand-analyst는 "브랜드/IP 자산의 전략적 가치와 시장 적합도"에 집중한다.
 
-| 관점 | Regulatory | Product (ip-analyst) |
-|------|-----------|---------------------|
-| 초점 | 법적 리스크, 컴플라이언스 비용 | IP 가치, 장르 적합도 |
-| 질문 | "이 규제가 우리 전략을 막는가?" | "이 IP가 전략적으로 매력적인가?" |
-| 활성화 | 규제/법률 이슈가 핵심일 때 | 거의 항상 (IP 분석) |
+| 관점 | Regulatory | Product (brand-analyst) |
+|------|-----------|------------------------|
+| 초점 | 법적 리스크, 컴플라이언스 비용 | 브랜드 가치, 시장 적합도 |
+| 질문 | "이 규제가 우리 전략을 막는가?" | "이 브랜드/IP가 전략적으로 매력적인가?" |
+| 활성화 | 규제/법률 이슈가 핵심일 때 | 거의 항상 (브랜드/IP 분석) |

@@ -75,13 +75,25 @@ Round 1:
   3. 가설 검증 (수집 데이터 vs 가설)
   4. 판정: confirmed → 다음 가설 / revised → Round 2 / rejected → 대안 가설
 
+Round 1.5: 반대 가설 강제 검증 (Null Hypothesis Check)
+  1. 내 가설의 정반대를 명시적으로 수립
+  2. 반대 가설을 지지하는 데이터를 1건+ 검색
+  3. null_hypothesis_check 필드에 기록 (null_hypothesis, search_method, evidence_found, impact)
+  4. 반대 증거 Strong → revised, Weak → confidence 상향 근거
+
 Round 2 (필요 시):
   수정된 가설로 추가 데이터 수집 + 재검증
 
 최대 반복: 3회
-종료 조건:
-  - 모든 핵심 Claim이 confidence: medium 이상
-  - 또는 3회 반복 후에도 medium 미달 → data_gap으로 명시하고 종료
+종료 조건 (모두 충족):
+  ☐ strategic_impact: high Claim → confidence: high 필수 (2개+ 독립 소스)
+  ☐ strategic_impact: medium Claim → confidence: medium 이상 (1개+ 소스)
+  ☐ strategic_impact: low Claim → confidence: low 이상 허용
+  ☐ 모든 Claim에 disconfirming 실질 작성 (검색 방법 + 결과 기재)
+  ☐ data_gaps에 해결 불가 항목의 fallback 전략 기재
+  ☐ cross_domain 태깅 1건+ (없으면 "영향 없음 + 사유" 기재)
+
+  3회 후에도 high Claim이 high 미달 → data_gap 명시 후 종료 + Lead 에스컬레이션
 ```
 
 ### 데이터 수집 전략
@@ -89,7 +101,7 @@ Round 2 (필요 시):
 ```
 Mode A — 공개 데이터 (기본):
   1차 소스: [이 에이전트가 사용하는 구체적 소스 목록]
-    예: DART API, SEC EDGAR, 앱스토어 순위, Steam DB
+    예: DART API, SEC EDGAR, 시장 점유율 데이터, IR 자료
   2차 소스: [보조 소스]
     예: 뉴스 기사, IR 자료, 애널리스트 리포트
 
@@ -121,7 +133,6 @@ Research Plan에서 API 사용이 지정된 경우, Leaf 에이전트는 다음 
 | API | 액션 | 용도 |
 |-----|------|------|
 | `dart` | `search_company`, `get_financials`, `get_disclosure_list`, `get_employees` | 한국 기업 공시/재무 |
-| `steam` | `search_app`, `get_app_details`, `get_player_count`, `get_reviews` | PC 게임 데이터 |
 | `fred` | `get_series`, `search_series`, `get_series_info` | 미국 매크로 경제지표 |
 | `ecos` | `get_stat_data`, `search_stat` | 한국 매크로 경제지표 |
 

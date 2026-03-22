@@ -6,7 +6,30 @@ user_invocable: true
 
 # /setup — Deep-Briefing 초기 설정
 
-새 사용자를 위한 3단계 인터랙티브 설정 가이드.
+새 사용자를 위한 인터랙티브 설정 가이드.
+
+## Express Mode (2분 완료)
+
+사용자가 "빨리 시작하고 싶어", "Express", "바로 시작" 등을 입력하면:
+1. Phase 1(환경 점검)만 실행 (필수 의존성만 확인)
+2. 도메인 = example (범용 전략) 자동 선택 (Phase 2 스킵)
+3. API = 전부 스킵 (웹 검색만으로 진행)
+4. 바로 "/research를 시작할까요?" 제안
+
+```
+━━ Express Setup ━━
+  환경 점검 → ✅ Claude Code, Python, tmux 확인
+  도메인 → example (범용 전략 분석) 자동 선택
+  API → 스킵 (웹 검색만으로 리서치 가능)
+
+  준비 완료! /research interactive {project} {주제} 로 시작하세요.
+  → 바로 시작할까요? [Y/n]
+```
+
+Express가 아닌 경우 기존 3단계 진행:
+
+## Standard Mode (3단계)
+
 환경 점검 → 도메인 생성 → API 설정 → 리서치 준비 완료.
 
 ## 실행 플로우
@@ -131,7 +154,7 @@ user_invocable: true
 - **기존 도메인이 없으면** (example만 존재):
   사용자에게 질문:
   "어떤 산업 또는 분야의 리서치를 주로 하실 건가요?
-   예: 게임, 핀테크, 헬스케어, 이커머스, SaaS, 제조업, 미디어..."
+   예: 핀테크, 헬스케어, 이커머스, SaaS, 게임, 제조업, 미디어..."
 
 사용자 답변을 기반으로:
 1. 도메인명 제안: "'{industry}' 도메인을 생성하겠습니다. 도메인명: {industry} (변경 가능)"
@@ -160,12 +183,12 @@ user_invocable: true
 | 산업 | 추천 프레임워크 |
 |------|----------------|
 | 게임 | 게임 라이프사이클 분석, 장르-플랫폼 매트릭스, IP 가치 평가, Live-Service 메트릭스 |
+| 미디어 | 콘텐츠 수명 주기, 플랫폼-크리에이터 역학, ARPU/구독 전환 모델 |
+| 이커머스 | 퍼널 분석, 카테고리 매트릭스, 풀필먼트 모델 비교, GMV-Take Rate 구조 |
+| 제조업 | 밸류체인 분석, 공급망 리스크 매핑, OEE(설비 종합 효율), 스마트팩토리 성숙도 |
 | 핀테크 | 규제 샌드박스 분석, CAC/LTV 핀테크 특화, 결제 밸류체인, 임베디드 파이낸스 매핑 |
 | 헬스케어 | 임상 파이프라인 분석, 보험 청구 프로세스, 규제 승인 경로(FDA/MFDS), 의료기기 분류 |
 | SaaS | SaaS 메트릭스(MRR, NRR, Churn), PLG vs SLG 분석, 코호트 리텐션 |
-| 이커머스 | 퍼널 분석, 카테고리 매트릭스, 풀필먼트 모델 비교, GMV-Take Rate 구조 |
-| 제조업 | 밸류체인 분석, 공급망 리스크 매핑, OEE(설비 종합 효율), 스마트팩토리 성숙도 |
-| 미디어 | 콘텐츠 수명 주기, 플랫폼-크리에이터 역학, ARPU/구독 전환 모델 |
 
 위 목록에 없는 산업이면 Claude가 산업 맥락에 맞는 프레임워크 3~5개를 자체 추천한다.
 
@@ -193,13 +216,13 @@ user_invocable: true
 
 | 산업 | 추천 API | 필수도 |
 |------|---------|-------|
-| 게임 | Steam API, IGDB, Sensor Tower, App Annie | 높음 (PC 게임 시) |
+| 게임 | Steam API, IGDB, Sensor Tower, App Annie | 중간 (PC/모바일 게임 시) |
+| 미디어 | YouTube Data API, Nielsen (유료), Chartmetric | 중간 |
+| 이커머스 | Google Trends, Amazon Product API, Naver DataLab | 중간 |
+| 제조업 | 관세청 수출입 API, KOSIS, UN Comtrade | 중간 |
 | 핀테크 | 금감원 API, PSD2/Open Banking API | 높음 (한국 시) |
 | 헬스케어 | ClinicalTrials.gov, FDA/MFDS API, PubMed | 높음 |
 | SaaS | Crunchbase API, G2 API, BuiltWith | 중간 |
-| 이커머스 | Google Trends, Amazon Product API, Naver DataLab | 중간 |
-| 제조업 | 관세청 수출입 API, KOSIS, UN Comtrade | 중간 |
-| 미디어 | YouTube Data API, Nielsen (유료), Chartmetric | 중간 |
 
 각 추천 API에 대해 **3단계 점검**을 순서대로 수행한다:
 
@@ -292,7 +315,7 @@ API별 상세 발급 가이드:
   API 상태:
   ✅ DART — 키 설정됨
   ✅ FRED — 키 설정됨
-  ⏭️ Steam — 키 미설정 (웹 검색으로 대체)
+  ⏭️ Exa — 키 미설정 (웹 검색으로 대체)
 
 수정하고 싶은 부분이 있으면 말씀하세요.
 없으면 리서치 준비 완료입니다.

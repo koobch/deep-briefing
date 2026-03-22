@@ -1,14 +1,51 @@
-# Deep-Briefing — 운용 매뉴얼
+# Deep-Briefing
 
-컨설팅급 리서치를 **N-Division Pool 병렬 실행**으로 수행하는 에이전트 오케스트레이션 시스템.
+**AI 멀티 에이전트가 수행하는 컨설팅급 전략 리서치.**
+22개 에이전트가 병렬로 분석하고, 교차 검증하고, 반증하고, 보고서를 작성합니다.
 
 ```
-핵심 Division (거의 항상 활성화):
-  Market | Product | Capability | Finance
-
-확장 Division (주제에 따라 선택 투입):
-  People & Org | Operations | Regulatory & Governance
+주제 하나를 던지면 → 22개 에이전트가 → 컨설팅 펌 수준의 전략 보고서를 생성합니다.
 ```
+
+### 왜 Deep-Briefing인가?
+
+| | 일반 AI 리서치 | Deep-Briefing |
+|---|---|---|
+| **분석 구조** | 단일 에이전트 반복 검색 | 7개 Division이 독립 CLI로 병렬 분석 (최대 1,400K 컨텍스트) |
+| **검증** | 없음 | 4단계 교차 검증 (VL-1→VL-3) + Red Team 반증 |
+| **스토리** | 정보 나열 | SCR 스토리라인 + Action Title (MBB 방법론) |
+| **실행력** | "~하세요" 수준 제안 | Implementation Playbook (담당/KPI/마일스톤/의존성) |
+| **수치 신뢰** | 출처 불명 | Golden Facts SSOT + 소스 추적 ([GF-###], [S##]) |
+| **반증** | 없음 | Red Team: 핵심 전제 반증 + 역 시나리오 + 숨겨진 가정 노출 |
+
+### 30초 Quick Start
+
+```bash
+git clone https://github.com/{owner}/deep-briefing.git
+cd deep-briefing
+claude            # Claude Code 실행
+> /setup          # 환경 자동 설정 (Express: 2분)
+> /research interactive my-project 한국 SaaS 시장 진출 전략
+```
+
+끝. PM 에이전트가 인터뷰 → 가설 수립 → 병렬 리서치 → 보고서 생성까지 자동으로 진행합니다.
+
+---
+
+## 핵심 기능
+
+| 기능 | 설명 |
+|------|------|
+| **22개 전문 에이전트** | PM, Division Lead 7, Cross-cutting 6(Red Team 포함), QA 6, Report, Utility |
+| **SCR 스토리라인** | Situation→Complication→Resolution + 모든 슬라이드 Action Title 필수 |
+| **Red Team (Devil's Advocate)** | 핵심 전제 반증, 역 시나리오, 숨겨진 가정 노출, 조기 경보 지표 |
+| **Implementation Playbook** | 담당/마일스톤/KPI/의존성 + Impact×Feasibility 우선순위 매트릭스 |
+| **Scenario P&L + 민감도 분석** | BASE/UPSIDE/DOWNSIDE 3-시나리오 + 핵심 가정 ±변동 영향 |
+| **4단계 검증** | VL-1(자가) → VL-1.5(삼각) → VL-2(정합) → VL-3(교차) + QA 자동 수정 루프 |
+| **벤치마크** | 피어 비교 매트릭스 + 하비볼 시각화 (선택적 활성화) |
+| **컨설팅급 차트** | 마리메꼬, 하비볼, 워터폴, 시나리오 등 자동 생성 |
+| **3가지 모드** | Auto(직행) / Interactive(공동작업) / Team(토론+되돌아가기) |
+| **도메인 플러그인** | 산업별 프레임워크/데이터소스를 플러그인으로 확장 |
 
 ## Quick Start
 
@@ -58,7 +95,7 @@ pip install -r requirements.txt
 
 # 환경 변수 설정 (선택 — API 키가 없어도 웹 검색으로 리서치 가능)
 cp .env.example .env
-# 필요한 API 키를 .env에 입력 (DART, Steam 등)
+# 필요한 API 키를 .env에 입력 (DART, FRED 등)
 ```
 
 #### 도메인 설정
@@ -139,11 +176,11 @@ CLI 간 통신은 **파일 시스템**을 통해 이루어짐 (직접 통신 없
 |------|---------|---|
 | PM | research-pm | 1 |
 | Division Lead | market-lead, product-lead, capability-lead, finance-lead | 4 |
-| Sub-lead | geography-lead, genre-lead, platform-lead, competitive-lead | 4 |
+| Sub-lead | geography-lead, segment-lead, channel-lead, competitive-lead | 4 |
 | Leaf | 20개 전문 분석가 | 20 |
-| Cross-cutting | fact-verifier, logic-prober, strategic-challenger, insight-synthesizer, cross-domain-synthesizer | 5 |
-| QA | report-writer, qa-orchestrator, report-auditor, report-fixer | 4 |
-| Utility | data-preprocessor | 1 |
+| Cross-cutting | fact-verifier, logic-prober, strategic-challenger, **red-team**, insight-synthesizer, cross-domain-synthesizer | 6 |
+| QA | report-writer, qa-orchestrator, **audience-fit-checker**, **executability-checker**, report-auditor, report-fixer | 6 |
+| Utility | data-preprocessor (동적 스폰) | 1 |
 
 상세 구성: 프로젝트 실행 시 `{project}/ARCHITECTURE.md`가 자동 생성됩니다.
 
@@ -213,6 +250,7 @@ CLI 간 통신은 **파일 시스템**을 통해 이루어짐 (직접 통신 없
 ├── thinking-loop/                  ← Cross-cutting (사고 루프)
 │   ├── why-probe.md
 │   ├── strategic-challenge.md
+│   ├── red-team-report.md
 │   └── loop-convergence.md
 │
 ├── reports/                        ← 최종 산출물
@@ -246,7 +284,7 @@ cp -r domains/example/ domains/{your-domain}/
 
 ## 커스텀 도메인으로 사용하기
 
-이 프레임워크는 도메인 독립적입니다. 게임 전략 외 다른 분야에도 적용 가능합니다.
+이 프레임워크는 도메인 독립적입니다. 어떤 산업/분야에도 적용 가능합니다.
 
 1. `domains/example/`을 복사하여 도메인 생성
 2. `frameworks.md`에 분석 프레임워크 정의
@@ -296,10 +334,15 @@ watch -n 5 'ls -la my-research/findings/*/.done 2>/dev/null'
 
 ### Phase 2 — Lead CLI 재활용
 
-PM이 Phase 2 지시서를 작성하면, 각 Lead CLI에서:
-
+PM이 Phase 2 지시서를 작성하면, 자동 전송:
+```bash
+./scripts/send-phase2.sh my-first-research   # 활성 Division 전체에 Phase 2 지시
 ```
-> sync/round-1-briefing.md와 sync/phase2-market.md를 읽고 Phase 2를 진행해.
+
+또는 임의 메시지 전송:
+```bash
+./scripts/send-to-leads.sh my-first-research "추가 분석 요청 메시지"
+./scripts/send-to-leads.sh my-first-research --div market "Market만 추가 분석"
 ```
 
 ### Sync Round 2 + 사고 루프 + 보고서 — PM CLI
@@ -410,7 +453,7 @@ tmux attach -t research-v2      # 재접속
 
 | 문서 | 위치 | 설명 |
 |------|------|------|
-| ARCHITECTURE.md | `{project}/` | 에이전트 구성, EP 매핑 (프로젝트별 생성) |
+| ARCHITECTURE.md | `docs/` | 에이전트 토폴로지, Phase 흐름, 데이터 플로우 |
 | sync-protocol.md | `core/orchestration/` | Sync Round 프로토콜 |
 | output-format.md | `core/protocols/` | 4-Layer 출력 포맷 |
 | fact-check-protocol.md | `core/protocols/` | VL 검증 체계 |
