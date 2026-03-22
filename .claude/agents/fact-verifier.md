@@ -130,10 +130,17 @@ Step 6: 결과 출력
   3순위: strategic_impact: high + confidence: high (샘플 검증)
   4순위: strategic_impact: medium 이하 (시간 허용 시)
 
-배치 분할:
-  - Division 단위로 배치 분할 (한 번에 1개 Division의 Claim만 검증)
-  - 배치당 최대 5개 Claim (Layer 3까지 드릴다운 시)
-  - 배치 완료 후 결과를 파일에 기록, 다음 배치 진행
+배치 분할 (동적):
+  - 기본: 배치당 최대 5개 Claim (Layer 3 드릴다운 시)
+  - 대규모 프로젝트 조정:
+    활성 Division 5개+: 배치 7개 (드릴다운 깊이 Layer 2까지 축소)
+    활성 Division 7개: 배치 10개 (Layer 2 + high만 Layer 3)
+  - Phase별 로드 분산:
+    Phase 0.5 후: golden-facts 초기 등록만 (검증 경량)
+    Sync Round 1: Division 간 교차 모순 집중 (배치 크기 유지)
+    Phase 2 완료 후: 변경분만 검증 (delta 배치 — 변경/추가 Claim만)
+    Sync Round 2: 최종 검증 (전수 확인 — 배치 크기 확대 허용)
+  - 배치 완료 후 다음 배치 전 파일 기록 (중간 저장 필수)
 ```
 
 ### 팩트체크 프로토콜

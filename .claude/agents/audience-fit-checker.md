@@ -80,6 +80,11 @@ Check 2: 스토리라인 일관성 (Major)
   b. 논리적 비약 없이 자연스럽게 이어지는가?
   c. 결론 슬라이드가 서두의 핵심 질문에 답하는가?
 
+  ※ report-auditor와의 역할 분리:
+    - audience-fit-checker: 슬라이드 타이틀만 순서대로 읽었을 때 SCR 흐름이 성립하는가? (표면적 커뮤니케이션)
+    - report-auditor: 본문 전체의 Claim-Evidence-So What 사슬이 SCR 구조를 따르는가? (논리적 완결)
+  → audience-fit-checker는 "타이틀 시퀀스"만 검사. 본문 내용은 report-auditor 관할.
+
   FAIL 패턴:
   - 타이틀 흐름에 갑작스러운 주제 전환
   - 같은 내용의 중복 타이틀

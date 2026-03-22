@@ -287,8 +287,44 @@ while [ "$COMPLETED" -lt "$TOTAL" ]; do
           # pane이 존재하는지 확인
           if ! tmux list-panes -t "$SESSION_NAME" -F '#{pane_id}' 2>/dev/null | grep -Fxq "$PANE_ID"; then
             echo "⚠️ [${div}] pane ${PANE_ID} 사망 감지 (경과: ${ELAPSED}초)"
-            echo "   해당 Division CLI가 비정상 종료되었습니다."
-            echo "   대응: PM CLI에서 해당 Division만 재투입하거나, 나머지로 진행하세요."
+
+            # .done 파일이 없으면 비정상 종료
+            if [ ! -f "${PROJECT_DIR}/findings/${div}/.done" ]; then
+              # 크래시 기록
+              echo "division: ${div}" > "${PROJECT_DIR}/findings/${div}/.crash"
+              echo "pane_id: ${PANE_ID}" >> "${PROJECT_DIR}/findings/${div}/.crash"
+              echo "detected_at: $(date -u +%Y-%m-%dT%H:%M:%S)" >> "${PROJECT_DIR}/findings/${div}/.crash"
+
+              # 자동 재스폰 시도 (1회)
+              CRASH_COUNT_FILE="/tmp/research-v2-crash-${div}"
+              CRASH_COUNT=0
+              if [ -f "$CRASH_COUNT_FILE" ]; then
+                CRASH_COUNT=$(cat "$CRASH_COUNT_FILE")
+              fi
+
+              if [ "$CRASH_COUNT" -lt 1 ]; then
+                echo "🔄 ${div} 자동 재스폰 시도 (1/1)..."
+                echo $((CRASH_COUNT + 1)) > "$CRASH_COUNT_FILE"
+                # 실제 재스폰: 새 tmux pane 생성 + Division Lead CLI 재실행
+                NEW_PANE=$(tmux split-window -t "$SESSION" -v -P -F '#{pane_id}' "claude --agent-file .claude/agents/${div}-lead.md --project-dir ${PROJECT_DIR}" 2>/dev/null)
+                if [ -n "$NEW_PANE" ]; then
+                  tmux select-layout -t "$SESSION" tiled 2>/dev/null
+                  # pane 매핑 갱신
+                  sed -i'' -e "s/^${div}=.*/${div}=${NEW_PANE}/" "$PANE_MAP"
+                  echo "✅ ${div} 재스폰 성공 (new pane: $NEW_PANE)"
+                else
+                  echo "⚠️  ${div} tmux pane 재생성 실패"
+                fi
+                if command -v osascript &>/dev/null; then
+                  osascript -e "display notification \"${div} 자동 재스폰 완료\" with title \"Deep-Briefing\" sound name \"Submarine\""
+                fi
+              else
+                echo "❌ ${div} 재스폰 실패 (최대 1회 초과). PM에 에스컬레이션 필요."
+                if command -v osascript &>/dev/null; then
+                  osascript -e "display notification \"${div} 재스폰 실패 — PM 확인 필요\" with title \"Deep-Briefing ⚠️\" sound name \"Basso\""
+                fi
+              fi
+            fi
           fi
         fi
       done

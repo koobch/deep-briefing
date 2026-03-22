@@ -73,8 +73,14 @@ model: opus
 ### 실행 프로토콜
 
 ```
-Step 1: 대상 선정
-  - cross-domain-synthesis에서 strategic_impact: high Claim 전부 추출
+Step 1: 대상 선정 (2-Tier)
+  Tier 1 (필수): strategic_impact: high Claim 전부 — Why Chain 3~5단
+  Tier 2 (시간 허용 시): strategic_impact: medium Claim 중 아래 조건 해당:
+    - confidence: low 또는 unverified
+    - 다른 Division의 high Claim에 종속되는 전제 역할
+    - 2개+ Division에서 참조하는 Claim
+  Tier 2는 Why Chain 2~3단 (축약 검증)
+  → Tier 2 미실행 시 "미검증 secondary claim: {N}건" 기록
   - 사고 루프 반복 시: 이전 라운드에서 미해소된 논리 단절만 대상
 
 Step 2: 재귀적 Why Chain (각 Claim에 대해)

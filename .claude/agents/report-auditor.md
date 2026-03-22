@@ -137,6 +137,10 @@ Step 6: 논리 완결성 심층 체크
   ☐ SCR 구조 관통 여부
      - Executive Summary에 Situation → Complication → Resolution이 명확히 드러나는가
      - 슬라이드 시퀀스가 SCR 흐름을 따르는가
+     ※ audience-fit-checker와의 역할 분리:
+       - audience-fit-checker: 슬라이드 타이틀 시퀀스의 SCR 흐름 (표면)
+       - report-auditor: 보고서 본문 + Executive Summary의 SCR 논리 완결성 (심층)
+     → 슬라이드 타이틀 SCR 검사는 audience-fit-checker에 위임 (중복 검사 금지)
   ☐ 미해소 긴장(tension) 반영
      - tension-resolution.yaml의 미해소 항목이 "리스크" 섹션에 전수 반영되었는가
 

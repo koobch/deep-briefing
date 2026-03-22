@@ -61,6 +61,77 @@ class APICallerBase:
             return True
         return bool(self.api_key) and self.api_key != f"your_{self.API_NAME}_api_key_here"
 
+    # === API 쿼터 관리 ===
+    QUOTA_FILE = None  # 프로젝트별 api-quota.yaml 경로 (호출 시 설정)
+
+    @classmethod
+    def _get_quota_path(cls):
+        """프로젝트 디렉토리에서 api-quota.yaml 경로를 반환"""
+        # 환경변수 또는 인자로 전달된 프로젝트 경로 사용
+        # 1순위: 환경변수 PROJECT_DIR
+        # 2순위: --output 경로에서 프로젝트 디렉토리 추론 (findings/ 상위)
+        # 3순위: 현재 디렉토리에서 */data/api-quota.yaml 탐색
+        project_dir = os.environ.get('PROJECT_DIR', '')
+        if not project_dir:
+            # 현재 디렉토리 하위에서 api-quota.yaml 탐색
+            for entry in os.listdir('.'):
+                candidate = os.path.join(entry, 'data', 'api-quota.yaml')
+                if os.path.isdir(entry) and os.path.exists(candidate):
+                    project_dir = entry
+                    break
+        if not project_dir:
+            project_dir = '.'
+        return os.path.join(project_dir, 'data', 'api-quota.yaml')
+
+    @classmethod
+    def check_quota(cls, api_name):
+        """호출 전 쿼터 확인. 한도 도달 시 False 반환"""
+        quota_path = cls._get_quota_path()
+        if not os.path.exists(quota_path):
+            return True  # 쿼터 파일 없으면 제한 없음
+
+        with open(quota_path, 'r') as f:
+            quotas = yaml.safe_load(f) or {}
+
+        api_quota = quotas.get(api_name, {})
+        daily_limit = api_quota.get('daily_limit', float('inf'))
+        used_today = api_quota.get('used_today', 0)
+        reset_at = api_quota.get('reset_at', '')
+
+        # 날짜 변경 시 리셋
+        if reset_at and datetime.now().strftime('%Y-%m-%d') > reset_at[:10]:
+            api_quota['used_today'] = 0
+            api_quota['reset_at'] = datetime.now().strftime('%Y-%m-%dT00:00:00')
+            cls._save_quota(quota_path, quotas)
+            return True
+
+        if used_today >= daily_limit:
+            print(f"⚠️  {api_name} 일일 쿼터 소진 ({used_today}/{daily_limit})")
+            return False
+        return True
+
+    @classmethod
+    def update_quota(cls, api_name, count=1):
+        """호출 후 사용량 업데이트"""
+        quota_path = cls._get_quota_path()
+        if not os.path.exists(quota_path):
+            return
+
+        with open(quota_path, 'r') as f:
+            quotas = yaml.safe_load(f) or {}
+
+        if api_name not in quotas:
+            return
+
+        quotas[api_name]['used_today'] = quotas[api_name].get('used_today', 0) + count
+        cls._save_quota(quota_path, quotas)
+
+    @classmethod
+    def _save_quota(cls, path, quotas):
+        """쿼터 파일 저장"""
+        with open(path, 'w') as f:
+            yaml.dump(quotas, f, default_flow_style=False, allow_unicode=True)
+
     def call_with_retry(self, url: str, params: dict = None, headers: dict = None,
                         maxRetries: int = 3, timeout: int = 10, method: str = "GET") -> requests.Response:
         """
@@ -68,6 +139,10 @@ class APICallerBase:
         지수 백오프: 1초 → 2초 → 4초.
         429 (Rate Limit) 시 10초 대기 후 재시도.
         """
+        # 쿼터 확인
+        if not self.check_quota(self.API_NAME):
+            raise Exception(f"{self.API_NAME} 일일 쿼터 소진. PM에 에스컬레이션 필요.")
+
         lastException = None
         for attempt in range(maxRetries):
             try:
@@ -94,6 +169,7 @@ class APICallerBase:
                     time.sleep(waitTime)
                     continue
 
+                self.update_quota(self.API_NAME)
                 return resp
 
             except requests.exceptions.Timeout:

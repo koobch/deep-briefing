@@ -134,7 +134,21 @@ for div in "${ACTIVE_DIVISIONS[@]}"; do
 
   # division-briefs 빈 파일 생성 (존재하지 않는 경우만)
   if [ ! -f "${PROJECT_DIR}/division-briefs/${div}.md" ]; then
-    touch "${PROJECT_DIR}/division-briefs/${div}.md"
+    cat > "${PROJECT_DIR}/division-briefs/${div}.md" << BRIEF_EOF
+# Division Brief — ${div}
+
+## 분석 지시
+
+
+## 검증 대상 가설
+<!-- Phase 0.5에서 hypotheses.yaml 기반으로 자동 주입됨 -->
+
+## 초점 영역
+
+
+## 데이터 소스 우선순위
+
+BRIEF_EOF
   fi
 done
 
@@ -309,6 +323,38 @@ fi
 if [ ! -f "${PROJECT_DIR}/data/data-registry.csv" ]; then
   echo "data_id,name,type,source,format,file_path,description,usage,collected_by,date,reliability,url,notes" > "${PROJECT_DIR}/data/data-registry.csv"
   echo "  ✅ data/data-registry.csv (초기화)"
+fi
+
+# API 쿼터 초기화
+if [ ! -f "${PROJECT_DIR}/data/api-quota.yaml" ]; then
+  cat > "${PROJECT_DIR}/data/api-quota.yaml" << 'QUOTA_EOF'
+# API 일일 쿼터 관리 (api-caller.py에서 자동 갱신)
+dart:
+  daily_limit: 10000
+  used_today: 0
+  reset_at: ""
+exa:
+  daily_limit: 1000
+  used_today: 0
+  reset_at: ""
+newsapi:
+  daily_limit: 100
+  used_today: 0
+  reset_at: ""
+fred:
+  daily_limit: 120
+  used_today: 0
+  reset_at: ""
+ecos:
+  daily_limit: 1000
+  used_today: 0
+  reset_at: ""
+steam:
+  daily_limit: 100000
+  used_today: 0
+  reset_at: ""
+QUOTA_EOF
+  echo "  ✅ API 쿼터 파일 생성"
 fi
 
 # ARCHITECTURE.md 템플릿

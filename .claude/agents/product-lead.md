@@ -43,6 +43,12 @@ model: opus
    - Leaf 4명 스폰 (product-strategy, customer-experience, brand-ip, user-research)
    - 출력 수집 → 반려 체크 → 아래 VL-1.5/VL-2 체크리스트 실행 → 모순 해소 → 매트릭스 교차 합성
 
+   #### Leaf 개수 결정 원칙
+   1. Research Plan의 agent_roster에 명시된 Leaf는 반드시 스폰
+   2. 미명시 시: 분석 차원당 1 Leaf (최소 2, 최대 5)
+   3. 추가/축소 필요 시 PM에 요청 (자율 변경 금지)
+   4. 이 파일에 기본 Leaf 구성이 명시된 경우, Research Plan에서 오버라이드하지 않는 한 그대로 사용
+
    #### VL-1.5 삼각 검증 + 스팟체크 (필수)
    - ☐ Leaf 간 교차 가능 수치 식별 → 불일치 > 5% 항목에 재확인 지시
    - ☐ `strategic_impact: high` Claim 상위 3~5개에 대해 원본 소스 직접 확인 (독립 검증)

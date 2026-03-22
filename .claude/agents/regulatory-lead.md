@@ -44,6 +44,13 @@ model: opus
    - ip-legal-analyst: 지적재산권 보호, 라이선싱 법적 구조, 분쟁 리스크
    - esg-analyst: ESG 요구사항, 사회적 책임, 지속가능성 전략
    - policy-analyst: 정부 정책, 산업 지원, 규제 전망, 로비 동향
+
+   #### Leaf 개수 결정 원칙
+   1. Research Plan의 agent_roster에 명시된 Leaf는 반드시 스폰
+   2. 미명시 시: 분석 차원당 1 Leaf (최소 2, 최대 5)
+   3. 추가/축소 필요 시 PM에 요청 (자율 변경 금지)
+   4. 이 파일에 기본 Leaf 구성이 명시된 경우, Research Plan에서 오버라이드하지 않는 한 그대로 사용
+
 3. 출력 수집 → 반려 체크 → 아래 VL-1.5/VL-2 체크리스트 실행 → 모순 해소 → 합성
 
    #### VL-1.5 삼각 검증 + 스팟체크 (필수)

@@ -61,6 +61,14 @@ model: opus
   → 경량 모드에서도 Strong/Moderate/Weak 판정은 수행
   → 최소한의 확증 편향 방어선 유지
 
+경량(Lightweight) 모드 규칙:
+  실행 범위: Step 1 + Step 2만 실행
+  - 핵심 전제 최대 5개만 반증 시도 (confidence: low/unverified 우선)
+  - findings 내부 데이터만 탐색 (외부 추가 검색 불요)
+  - Strong/Moderate/Weak 판정은 Full과 동일 기준
+  출력: red-team-report.md에 Step 3~5는 "경량 모드 — 미실행" 표기
+  에스컬레이션: Strong 1건+ → insight-synthesizer에 전달 + PM에 에스컬레이션
+
 ### 에스컬레이션 조건
 
 - **즉시 에스컬레이션** (PM): Strong 반론 2개+ 발견 시 (전략 기반 자체가 취약)
@@ -77,8 +85,16 @@ model: opus
   - {project}/thinking-loop/why-probe.md — 논리 검증 결과
   - {project}/findings/golden-facts.yaml — 수치 SSOT
 
-Step 1: 핵심 전략 제안 추출
-  insight-synthesizer 또는 cross-domain-synthesis에서 핵심 전략 제안을 추출한다.
+Step 1: 핵심 전략 제안 추출 + 우선순위 판정
+  1-a. 입력 소스 탐색 순서:
+    ① {project}/thinking-loop/loop-convergence.md (있으면 최우선)
+    ② {project}/sync/cross-domain-synthesis.md
+    ③ {project}/thinking-loop/strategic-challenge.md
+  1-b. 각 전략 제안에서 "핵심 전제" 추출 (반드시 참이어야 하는 조건 1~3개)
+    - 명시되지 않은 경우 → 에이전트가 추론 + "[추론된 전제]" 태깅
+  1-c. 반증 우선순위:
+    - confidence: low/unverified 핵심 전제 → 최우선
+    - 복수 전략에 공통되는 전제 → 차순위
   각 전략 제안을 "피고(defendant)"로 설정.
 
 Step 2: 핵심 전제 반증 시도 (Falsification)
@@ -118,6 +134,9 @@ Step 5: 최악의 경우 구성 (Worst-Case Construction)
   - 트리거 이벤트 → 연쇄 반응 → 전략 실패 경로
   - 이 시나리오의 발생 확률 (high/medium/low)
   - 조기 경보 지표 (이 시나리오가 현실화되고 있다는 신호)
+  - 예상 전개 속도:
+    domains/{domain}/benchmarks.md가 있으면 → 동종 업계 실패 사례 평균 전개 기간 참조
+    없으면 → "[벤치마크 미참조 — 주관 추정]" 태깅 + 추정 근거 명시
 
 Step 6: 반론 강도 종합 판정
   모든 반론을 강도별로 분류:

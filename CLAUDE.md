@@ -126,7 +126,10 @@ claude
 
 ## 에이전트 스폰 규칙
 
-- **Phase 1 Lead**: 반드시 tmux 독립 CLI (`spawn-leads.sh`). Agent tool 사용 금지
+- **Phase 1 Lead**:
+  - **모드 A (tmux 병렬, 기본)**: tmux 독립 CLI (`spawn-leads.sh`). 완전 병렬 실행
+  - **모드 B (Agent tool, tmux 불가 시)**: PM CLI 내에서 Agent tool로 Lead 스폰. 2개씩 순차-병렬 실행
+  - tmux 가용 여부는 `/setup` Phase 1에서 자동 감지. 수동 선택도 가능
 - **Phase 0.5/2~5**: PM CLI 내에서 Agent tool로 스폰
 - **최대 네스팅**: Level 2 (PM → Lead → Sub-lead/Leaf)
 
