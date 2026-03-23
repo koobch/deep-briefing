@@ -25,6 +25,10 @@ Client Brief 기반으로 리서치 설계.
 - Division 활성화, Leaf 배치, 프레임워크 선택, EP 경고
 - 산출물: `{project}/01-research-plan.md`
 
+> **Research Plan에 Decision Frame 필수 포함**:
+> `core/orchestration/sync-protocol.md`의 "Decision Frame" 섹션에 정의된 스키마를 따른다.
+> Decision Questions 3~5개 + Decision Tree + Kill Criteria 2~3개를 01-research-plan.md에 기록.
+
 ### Division Pool 활성화 판정
 
 Research Plan 작성 시, Client Brief 키워드/맥락 기반으로 확장 Division 활성화를 판정한다.

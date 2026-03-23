@@ -60,6 +60,13 @@ model: opus
    - ☐ 시점 일관성: 기준 시점 통일 또는 차이를 명시
    - ☐ 정의 일관성: 핵심 재무 지표 정의 통일 (영업이익 vs EBITDA 등)
 
+   #### Decision Relevance Check (필수)
+   - ☐ 이 Division의 핵심 findings가 Division Brief의 Decision Context에 명시된 DQ에 직접 답하는가?
+   - ☐ 각 strategic_impact: high Claim에 "So What" 1문장이 있는가?
+     (So What = "이 사실이 의사결정에 미치는 영향")
+   - ☐ Kill Criteria에 해당하는 발견이 있으면 즉시 PM에 에스컬레이션했는가?
+   - ☐ 분석이 "관찰(observation)"에 그치지 않고 "시사점(implication)"을 포함하는가?
+
    #### 모순 해소
    - Leaf 간 모순 발견 시: 양측 근거를 병기하고, 더 신뢰도 높은 쪽을 채택 + 이유 명시
 3. 산출물을 `{project}/findings/finance/`에 저장

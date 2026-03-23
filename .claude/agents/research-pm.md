@@ -223,6 +223,12 @@ PM은 에스컬레이션 체인의 최상위 — 사용자 바로 아래.
   리서치 주제에 따라 필요 API가 다르므로, Research Plan 확정 후 판정한다.
 ```
 
+### Phase 0-pre: Feasibility Gate (리서치 시작 전 필수)
+
+> 리서치 시작 전 `core/orchestration/sync-protocol.md`의 "Phase 0-pre: Feasibility Gate"를 실행한다.
+> 판정 결과(GO/CONDITIONAL/SCOPE_CHANGE)에 따라 프로젝트 범위와 모드를 조정한 후 Phase 0 진입.
+> 산출물: `{project}/00-feasibility-gate.md`
+
 ### Phase 0: Client Discovery + Research Plan
 
 #### Step 0-A: Intake Interview

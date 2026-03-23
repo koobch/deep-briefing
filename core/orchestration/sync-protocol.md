@@ -37,6 +37,52 @@ Phase 6: Post-mortem + 학습 전이 (자동)
   → PM이 영향 범위 분석 → 최소 범위 재실행 → 원래 Phase로 복귀
 ```
 
+## Phase 0-pre: Feasibility Gate
+
+리서치 시작 전 실행 가능성 + 전략적 당위성을 사전 판단한다. 불가능/비효율적인 프로젝트의 조기 식별이 목적.
+
+### 필수 판정 항목 (3분 이내)
+
+1. **데이터 접근성 판정**
+   - 핵심 질문에 답하기 위해 필요한 데이터 유형 식별
+   - 공개 데이터로 충분 → GO
+   - 기밀/유료 데이터 필요 → CONDITIONAL (범위 축소 또는 대체 접근법 명시)
+   - 접근 불가 데이터에 핵심 의존 → SCOPE_CHANGE
+
+2. **의사결정 타입 판별**
+   - Go/No-Go (이진 판단) → 핵심 1~2개 가설에 집중, lean 분석
+   - Strategic Choice (다지선다) → 선택지별 비교 프레임 필요
+   - Exploration (탐색적) → 열린 구조, 가설 도출 중심
+
+3. **실행 가능성**
+   - 리서치 결과를 실행할 주체 확인: 있음 → Implementation Playbook 필수 / 없음 → Playbook 축소
+
+4. **시간 제약**
+   - 1주 이내 → Auto + Quick Scan 중심
+   - 2~4주 → Interactive 권장
+   - 1개월+ → Team 가능
+
+### 산출물: 00-feasibility-gate.md
+
+```yaml
+feasibility:
+  verdict: GO | CONDITIONAL | SCOPE_CHANGE
+  decision_type: go_no_go | strategic_choice | exploration
+  data_constraints: []
+  timeline: "YYYY-MM-DD까지"
+  execution_owner: "있음 | 없음 | 확인 필요"
+  scope_adjustments: ""
+  recommended_mode: auto | interactive | team
+```
+
+### 모드별 차이
+| | Auto | Interactive | Team |
+|---|---|---|---|
+| Feasibility Gate | 1분 자동 판정 | 3분 사용자 확인 | 5분+ 토론 |
+| CONDITIONAL 처리 | scope 자동 축소 | 사용자 선택 | 팀 합의 |
+
+---
+
 ## Phase 0: Client Discovery + Research Plan
 
 ### Step 0-A: Intake Interview
@@ -197,6 +243,59 @@ research_plan:
    예: market/, product/, capability/, finance/, people-org/, operations/, regulatory/
 4. 데이터 품질 보고서 작성: {project}/00.5-data-quality-report.md
 ```
+
+### Decision Frame (의사결정 프레임) — Research Plan 필수 구성요소
+
+Research Plan 작성 시 아래 Decision Frame을 반드시 포함한다. 이것이 리서치 전체의 **나침반** 역할을 한다.
+
+#### Decision Questions (DQ) — 3~5개 제한
+리서치가 답해야 할 핵심 의사결정 질문. Yes/No 또는 A vs B 형태로 작성.
+
+```yaml
+decision_frame:
+  decision_questions:
+    - id: DQ-01
+      question: "{구체적 의사결정 질문}"
+      judgment_criteria: "{어떤 데이터/근거가 있으면 답할 수 있는가}"
+      related_divisions: [market, finance]
+      min_confidence: high
+    - id: DQ-02
+      question: "{...}"
+      ...
+
+  decision_tree:
+    - condition: "H-01 = true AND H-02 = true"
+      action: "선택지 A: {전략 방향}"
+    - condition: "H-01 = true AND H-02 = false"
+      action: "선택지 B: {대안 방향}"
+    - condition: "H-01 = false"
+      action: "No-Go 또는 Pivot"
+
+  kill_criteria:          # 2~3개 제한
+    - id: KC-01
+      condition: "{이 조건 발견 시 프로젝트 방향 전면 재검토}"
+      threshold: "{구체적 수치 기준}"
+      example: "TAM < $1B이면 진출 재고"
+```
+
+#### hypotheses.yaml 확장 스키마
+기존 가설 스키마에 전략적 중량감 필드를 추가:
+
+```yaml
+hypotheses:
+  - id: H-01
+    statement: "..."
+    type: opportunity | risk | assumption
+    decision_it_serves: "DQ-01"       # Decision Question 참조
+    strategic_weight: critical | supporting | contextual
+    # critical = 거짓이면 전체 전략 무너짐
+    # supporting = 세부 전략 변경
+    # contextual = 배경 이해용
+    kill_trigger: true | false        # 검증 실패 시 Kill Criteria 활성
+    verification_plan: [...]
+```
+
+---
 
 ## Phase 0.5: 가설 생성 + 사용자 정렬
 
@@ -685,6 +784,19 @@ PM 수렴 판정:
 - `loop-convergence.md`
 
 > **Multi-round 파일명 관례**: 미수렴 시 Round 2+ 산출물은 `{basename}-round{N}.md` (예: `why-probe-round2.md`, `strategic-challenge-round2.md`, `loop-convergence-round2.md`). Round 1은 접미사 없음.
+
+## Phase 3.5: Strategy Articulation
+
+사고 루프 수렴 후, 보고서 작성 전에 **전략을 의사결정 형태로 구조화**하는 단계.
+
+- **실행 주체**: insight-synthesizer (수렴 판정 Step 5로 통합)
+- **입력**: loop-convergence.md + 01-research-plan.md의 Decision Frame
+- **산출물**: strategy-articulations.md
+- **내용**:
+  - 각 Decision Question(DQ)에 대한 명시적 Answer + Confidence + Risk if Wrong
+  - Kill Criteria 점검 (TRIGGERED/NOT TRIGGERED)
+  - Unresolved Uncertainties (영향받는 DQ + 추가 검증 방법)
+- **전달**: report-writer가 strategy-articulations.md를 보고서의 뼈대로 사용
 
 ## Phase 4: 전략 도출 + 보고서 + PPT 매핑
 

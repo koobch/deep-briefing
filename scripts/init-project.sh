@@ -137,16 +137,24 @@ for div in "${ACTIVE_DIVISIONS[@]}"; do
     cat > "${PROJECT_DIR}/division-briefs/${div}.md" << BRIEF_EOF
 # Division Brief — ${div}
 
-## 분석 지시
-
+## Decision Context
+<!-- research-pm이 Decision Frame에서 자동 주입 -->
+<!-- 이 Division이 답해야 할 의사결정과 그에 필요한 핵심 근거를 기술 -->
 
 ## 검증 대상 가설
 <!-- Phase 0.5에서 hypotheses.yaml 기반으로 자동 주입됨 -->
+
+## 분석 지시
+
 
 ## 초점 영역
 
 
 ## 데이터 소스 우선순위
+
+
+## 산출물 기대치
+<!-- 이 Division의 findings가 어떤 형태로 활용되는지 (go/no-go 근거, 비교 근거, 리스크 근거) -->
 
 BRIEF_EOF
   fi
@@ -155,6 +163,35 @@ done
 echo "  ✅ 디렉토리 트리 + division-briefs 생성 완료"
 
 # --- 템플릿 파일 생성 (존재하지 않는 경우만) ---
+
+# Feasibility Gate 템플릿
+if [ ! -f "${PROJECT_DIR}/00-feasibility-gate.md" ]; then
+  cat > "${PROJECT_DIR}/00-feasibility-gate.md" << 'FGATE'
+# Feasibility Gate
+
+## 판정
+- verdict: GO | CONDITIONAL | SCOPE_CHANGE
+- decision_type: go_no_go | strategic_choice | exploration
+
+## 데이터 접근성
+-
+
+## 의사결정 타입
+-
+
+## 실행 가능성
+- execution_owner:
+- implementation_playbook_needed: true | false
+
+## 시간 제약
+- deadline:
+- recommended_mode: auto | interactive | team
+
+## Scope 조정 (해당 시)
+-
+FGATE
+  echo "  ✅ Feasibility Gate 템플릿 생성"
+fi
 
 # Client Brief 템플릿
 if [ ! -f "${PROJECT_DIR}/00-client-brief.md" ]; then

@@ -43,7 +43,7 @@ model: sonnet
 
 ### 품질 기준
 
-- 6개 검증 항목 전수 실행
+- 9개 검증 항목 전수 실행
 - 각 이슈에 severity(Critical/Major/Minor) + 수정 제안 포함
 
 ## How — 어떻게 일하는가
@@ -121,6 +121,31 @@ Check 6: Confidence 표기 + 데이터 출처 구분 (Major)
      FAIL 패턴: "시장 규모는 $10B이다" (추정치인데 단정)
      PASS 패턴: "시장 규모는 약 $10B으로 추정된다 [유력]"
 
+Check 7: Decision Question Coverage (Critical)
+  - {project}/01-research-plan.md의 decision_frame.decision_questions를 참조
+  - 보고서(report-docs.md)에서 각 DQ에 대한 명시적 답변 존재 여부 확인:
+    - Answer (Go/No-Go/Choice 등)
+    - Confidence level
+    - Risk if Wrong
+  - strategy-articulations.md의 DQ별 답변이 보고서에 반영되었는지 교차 확인
+  - 1건이라도 미답변 = Critical
+  severity: 미답변 DQ 1건 이상 → Critical
+
+Check 8: Assumption Transparency (Major)
+  - 보고서 내 핵심 전략 제안에 사용된 가정 식별
+  - 각 가정의 검증 상태(검증 완료/미검증) 표시 여부 확인
+  - 미검증 가정이 Executive Summary나 슬라이드 전면에 confidence 표기 없이 사용 = Major
+  severity: 미검증 가정 무표기 → Major
+
+Check 9: Actionability (Major)
+  - Implementation Playbook의 각 제안이 구체적 실행 수준인지:
+    ☐ 실행 주체(Owner)가 명시
+    ☐ 시점(Timeline)이 명시
+    ☐ 예상 리소스/비용이 명시 (또는 "[클라이언트 확인]")
+  - "~해야 한다" 수준의 일반론은 FAIL
+  - "Q3까지 {팀}이 {구체적 행동}, 예산 {금액}" 수준이 PASS
+  severity: 일반론 제안 → Major
+
 출력:
   각 Check의 PASS/FAIL + severity + 이슈 상세 + 수정 제안
 ```
@@ -131,9 +156,12 @@ Check 6: Confidence 표기 + 데이터 출처 구분 (Major)
 |------|----------|------|
 | 주제형 타이틀 1건+ | Critical | 경영진 커뮤니케이션의 핵심 원칙 위반 |
 | 핵심 질문 미답변 | Critical | 보고서 존재 의의 미충족 |
+| DQ 미답변 1건+ | Critical | 의사결정 프레임 미충족 |
 | 스토리라인 단절 | Major | 설득력 저하 |
 | 슬라이드 수 부적합 | Major | 발표 시간 초과/부족 |
 | Confidence 미표기 | Major | 의사결정 오류 유발 가능 |
+| 미검증 가정 무표기 | Major | 의사결정 근거 불투명 |
+| 일반론 제안 | Major | 실행 불가능한 권고 |
 | 전문용어 정의 누락 | Minor | 가독성 저하 (치명적이진 않음) |
 
 ## Knowledge — 도메인 지식
@@ -149,7 +177,7 @@ Check 6: Confidence 표기 + 데이터 출처 구분 (Major)
 ### 상위 (보고)
 
 - **대상**: qa-orchestrator
-- **형식**: Check 1~6 결과 (PASS/FAIL + severity + 이슈 목록)
+- **형식**: Check 1~9 결과 (PASS/FAIL + severity + 이슈 목록)
 - **요약**: Critical/Major/Minor 건수
 
 ## 핵심 규칙

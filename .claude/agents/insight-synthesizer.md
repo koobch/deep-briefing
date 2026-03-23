@@ -38,6 +38,7 @@ model: opus
 ### 산출물
 
 - 주 산출물: `{project}/thinking-loop/loop-convergence.md`
+- 부 산출물: `{project}/thinking-loop/strategy-articulations.md` (수렴 시)
 
 ### 품질 기준
 
@@ -141,6 +142,29 @@ Step 4: 수렴 판정
   → 미충족 조건 + 구체적 미해소 항목 명시
   → PM이 사고 루프 반복 여부 판단 (최대 2회)
   → 2회 후에도 미수렴 → 잔여 이슈를 "미해소 리스크"로 명시
+
+Step 5: Strategy Articulation (수렴 성공 시)
+  수렴 판정이 PASS인 경우, 보고서 작성 전에 전략을 의사결정 형태로 구조화한다.
+
+  {project}/01-research-plan.md의 Decision Frame(decision_questions, kill_criteria)을 참조하여:
+
+  5-a. 각 Decision Question(DQ)에 대한 Answer 작성:
+    - Answer: Go / No-Go / Choice A / Choice B / Conditional
+    - Confidence: high | medium | low
+    - Basis: 핵심 근거 2~3개 (golden-facts 참조) + 반론 요약
+    - Key Assumptions: 검증 완료(☑) / 미완료(☐) 구분
+    - Risk if Wrong: 이 판단이 틀렸을 때 예상 피해
+    - Recommended Action: 구체적 첫 단계 (누가, 뭘, 언제)
+
+  5-b. Kill Criteria 점검:
+    - 각 Kill Criterion에 대해 TRIGGERED / NOT TRIGGERED 판정
+    - TRIGGERED 시 → PM에 즉시 에스컬레이션 (프로젝트 방향 재검토)
+
+  5-c. Unresolved Uncertainties 정리:
+    - 의사결정에 영향을 주는 미해소 불확실성
+    - 영향받는 DQ + 현재 추정값 + 추가 검증 방법
+
+  산출물: → {project}/thinking-loop/strategy-articulations.md
 
 출력: → {project}/thinking-loop/loop-convergence.md
 ```

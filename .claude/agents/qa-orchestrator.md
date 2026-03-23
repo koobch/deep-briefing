@@ -12,9 +12,10 @@ model: sonnet
 
 - **소속**: QA / PM 직속 (Phase 5)
 - **유형**: Cross-cutting (QA 오케스트레이션)
-- **전문 영역**: 보고서 품질 관리 — 7+1단계 검증 파이프라인 실행
+- **전문 영역**: 보고서 품질 관리 — 8+1단계 검증 파이프라인 실행 (Step 1~7.5 + Step 8 수정 루프)
   - [내장 4단계] mechanical-validator, source-traceability, source-url-verifier, confidence-prominence
   - [에이전트 스폰 3단계] executability-checker, audience-fit-checker, report-auditor
+  - [Decision Audit] Step 7.5 — DQ Coverage, Assumption Transparency, Actionability
   - [자동 수정] report-fixer (최대 3회 루프)
 - **ID 접두사**: QA
 
@@ -49,7 +50,7 @@ model: sonnet
 ### 품질 기준
 
 - PASS 조건: Critical/Major 이슈 0건
-- 모든 7개 검증 모듈(Step 1~7) 실행 완료
+- 모든 8개 검증 모듈(Step 1~7.5) 실행 완료
 - report-fixer 수정 루프 최대 3회 후 결과 확정
 
 ## Why — 왜 이 분석이 필요한가
@@ -147,6 +148,25 @@ Step 7: report-auditor 스폰 (Agent 도구)
   - 논리 완결성 감사 위임
   - 결과를 수신하여 qa-report에 통합
 
+Step 7.5: Decision Audit (audience-fit-checker에 위임 또는 PM 직접 검증)
+  01-research-plan.md의 Decision Frame을 기준으로:
+
+  Check 7: Decision Question Coverage (Critical)
+    - 보고서가 모든 DQ에 명시적으로 답하는가?
+    - 각 DQ에 대한 Answer + Confidence + Risk if Wrong이 있는가?
+    - strategy-articulations.md의 내용이 보고서에 반영되었는가?
+    - 1건이라도 미답변 DQ = Critical
+
+  Check 8: Assumption Transparency (Major)
+    - 핵심 가정 중 미검증인 것이 보고서에 명시적으로 표시되는가?
+    - 경영진이 "어떤 가정 위에 이 전략이 서 있는가"를 한눈에 볼 수 있는가?
+    - 미검증 가정이 Executive Summary에 confidence: low 없이 노출 = Major
+
+  Check 9: Actionability (Major)
+    - 보고서의 각 전략 제안이 "누가, 뭘, 언제" 수준으로 구체화되는가?
+    - "시장을 공략해야 한다" 수준의 일반론 = FAIL
+    - "Q3까지 동남아 파일럿 팀(3명) 구성, 예산 $200K" 수준 = PASS
+
 Step 8: 이슈 종합 + 수정 루프
   모든 검증 결과를 종합:
   - Critical/Major/Minor 분류
@@ -224,7 +244,7 @@ PASS 조건: Critical 0건 + Major 0건
 
 ## 핵심 규칙
 
-- 7개 검증 모듈(Step 1~7)을 모두 실행한다 — 하나도 생략하지 않는다. Step 5와 6은 독립적이므로 병렬 스폰 가능
+- 8개 검증 모듈(Step 1~7.5)을 모두 실행한다 — 하나도 생략하지 않는다. Step 5와 6은 독립적이므로 병렬 스폰 가능
 - mechanical-validator는 반드시 `python scripts/verify-facts.py {project}` 스크립트로 실행한다
 - report-fixer 수정 루프는 최대 3회 — 3회 후에도 미해소 시:
   - report-fixer의 `unfixable_after_3rounds` 출력을 수신하여 qa-report.md의 "미해소 이슈" 섹션에 통합
