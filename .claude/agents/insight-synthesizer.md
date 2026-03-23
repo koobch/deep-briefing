@@ -180,12 +180,13 @@ Step 5: Strategy Articulation (수렴 성공 시)
 |------|------|------|
 | 논리 단절 0건 | PASS/FAIL | {근거} |
 | Critical 블라인드 스팟 0건 | PASS/FAIL | {근거} |
-| Red Team Strong 전수 대응 | PASS/FAIL/N/A | {근거. 경량 모드: Strong 발견 시 FAIL → 사고 루프 반복 또는 Full 모드 재실행 권고} |
+| Red Team Strong 전수 대응 | PASS/FAIL/N/A | {근거. 경량 모드: Strong 발견 시 red-team이 자동으로 Full 확장 실행함 → 그 결과로 판정} |
 | BASE 시나리오 자력 실현 가능 | PASS/FAIL | {근거} |
 
 ※ Auto 비-deep 경량 Red Team에서 Strong 반론 발견 시:
-  → FAIL 판정 + PM에 에스컬레이션
-  → PM 선택: (a) Full Red Team 재실행 (b) Strong 반론을 리스크로 수용 (c) 해당 전제 수정
+  → red-team이 동일 세션에서 Full 모드로 자동 확장 (Step 3~6 연속 실행)
+  → Full 실행 완료 후 결과를 기준으로 수렴 판정 수행
+  → Auto 모드에서는 PM이 자율 판단 (사용자 게이트 없음)
   → 사용자 게이트 없이 PM이 자율 판단 (Auto 모드 원칙)
 
 **종합**: 수렴 / 미수렴 (반복 {N}회차)

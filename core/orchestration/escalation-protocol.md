@@ -62,6 +62,7 @@ Leaf → Lead (또는 Sub-lead) → Division Lead → PM → 사용자
 | audience-fit-checker Critical: Action Title 전수 위반 | 중대 | PM | report-fixer 수정 루프로 해소 |
 | executability-checker Critical: 순환 의존 | 중대 | PM | 실행 계획 전면 재설계 — report-writer 재스폰 |
 | Phase 5 QA 3회 수정 후에도 Critical 잔존 | 치명 | PM → 사용자 | 잔여 이슈 목록 + 대안 제시 |
+| Phase 5 QA 3회 수정 후에도 Major만 잔존 | 중대 | PM → 사용자 | Major 이슈 목록 + (a) 수동 수정 (b) 리스크 수용 후 발행 중 선택 |
 
 ### Type 5: 시스템 이슈
 
@@ -76,12 +77,12 @@ Leaf → Lead (또는 Sub-lead) → Division Lead → PM → 사용자
 
 ### Type 6: QA 최종 실패 후 사용자 안내
 
-Phase 5 QA가 3회 수정 루프 후에도 Critical이 잔존하면:
+Phase 5 QA가 3회 수정 루프 후에도 Critical 또는 Major가 잔존하면:
 
 ```
 PM → 사용자 메시지:
 
-  ⚠️ QA 자동 수정 3회 실패 — Critical 이슈 {N}건 잔존
+  ⚠️ QA 자동 수정 3회 실패 — Critical {N}건 + Major {N}건 잔존
 
   잔존 이슈:
   1. [{모듈}] {이슈 요약}

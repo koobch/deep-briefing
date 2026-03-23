@@ -1024,7 +1024,7 @@ PM 수렴 판정:
     ☐ Critical 블라인드 스팟 0건 (strategic-challenger 확인)
     ☐ Red Team Strong 반론 전수 대응
       - Full 모드(Interactive/Team/Auto --deep): Strong 전수 대응 필수
-      - 경량 모드(Auto 비-deep): 경량 Red Team 결과 반영. Strong 0건=PASS, Strong 발견 시=FAIL → (a) Full 재실행 (b) 리스크 수용 (c) 전제 수정 중 PM 자율 판단
+      - 경량 모드(Auto 비-deep): red-team이 Strong 발견 시 자동으로 Full 모드 확장 실행. Full 결과를 기준으로 수렴 판정 수행. PM은 추가 개입 불필요
     ☐ BASE 시나리오 자력 실현 가능 (insight-synthesizer 확인)
 
   미수렴 → Step 1~3 반복 (최대 2회)

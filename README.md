@@ -153,7 +153,7 @@ my-first-research/
   │     ├── Sync Round 2: Cross-domain Synthesis
   │     ├── Phase 3: 사고 루프 (Why Chain + 5-레인 도전)
   │     ├── Phase 4: 보고서 생성 + PPT 매핑 (Canva MCP / python-pptx)
-  │     ├── Phase 5: QA 자동 수정 루프 (2회 연속 PASS까지)
+  │     ├── Phase 5: QA 자동 수정 루프 (Critical/Major 0건 = PASS, 최대 3회)
   │     └── Phase 5.5: 사용자 피드백 + 부분 재실행 (선택)
   │
   ├── Market Lead CLI         ← 독립 200K 컨텍스트

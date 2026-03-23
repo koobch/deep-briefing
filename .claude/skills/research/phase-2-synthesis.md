@@ -115,7 +115,7 @@ Lead CLI들은 Phase 2 완료 후 종료 가능. 이후는 PM CLI에서 진행:
 ### Step 5-B: 자동 수정 루프
 1. Critical/Major 이슈 존재 시 → report-fixer 자동 스폰
 2. 수정 → 재검증 → 판정 (최대 3회 반복)
-3. 2회 연속 PASS 또는 Critical/Major 0건 → 루프 탈출
+3. Critical/Major 0건 = PASS → 루프 탈출 (최대 3회)
 4. 3회 후 미해결 → PM 에스컬레이션
 5. 산출물: `qa/qa-report-round{N}.md` + `qa/fix-log.md`
 
