@@ -103,6 +103,9 @@ Step 1: 이슈 분류 및 우선순위
   - Why So 누락: 해당 섹션의 Evidence를 요약하여 "왜 이 결론인가" 논리 경로 보충
   - MECE 위반: 중복 섹션 병합 권고 또는 누락 차원을 Division 출력에서 찾아 보충
   - 프레임워크 미반영: Research Plan에서 선택된 프레임워크를 해당 Division 출력에서 찾아 보고서에 명시적으로 삽입 (예: "Porter 분석 결과: ~")
+  - DQ 미답변 (Decision Audit Check 7): strategy-articulations.md에서 해당 DQ 답변을 찾아 보고서에 삽입. 찾을 수 없으면 "[DQ 답변 미생성 — insight-synthesizer 재실행 필요]" 표기
+  - 미검증 가정 무표기 (Decision Audit Check 8): 해당 가정에 "[미검증]" 라벨 부착 + Executive Summary에서 confidence: low로 하향
+  - 일반론 제안 (Decision Audit Check 9): Division 출력에서 구체적 실행 계획(담당/시점/예산)을 추출하여 보강. 추출 불가 시 "[클라이언트 확인 필요]"
 
 Step 2: 최소 변경 수정
   각 이슈에 대해:

@@ -660,6 +660,10 @@ Research Plan 확정 후, 각 Division Lead를 위한 지시서를 파일로 작
     hypotheses.yaml의 primary_data_gaps 중 이 Division과 관련된 항목 목록
     → Lead가 Phase 1에서 이미 불가능한 데이터를 재조사하지 않도록
   - benchmarks 활성화 여부 (Research Plan의 benchmarks: active|inactive)
+  - Decision Context (Research Plan의 decision_frame에서 추출):
+    - 해당 Division과 관련된 Decision Questions (DQ) 목록
+    - Kill Criteria 중 해당 Division 관련 항목
+    - 이 Division의 분석이 뒷받침할 구체적 의사결정 명시
 
 ※ Client Brief 전문을 임베딩하지 않는다 — 파일 경로만 전달.
 ※ Lead는 부트스트랩 시 Client Brief + Research Plan을 직접 Read.
@@ -1026,6 +1030,19 @@ PM 수렴 판정:
   미수렴 → Step 1~3 반복 (최대 2회)
   2회 후에도 미수렴 → 잔여 이슈를 보고서에 "미해소 리스크"로 명시
 ```
+
+### Phase 3.5: Strategy Articulation (수렴 성공 시 자동 실행)
+
+> insight-synthesizer의 수렴 판정이 PASS이면, Step 5(Strategy Articulation)에서
+> `strategy-articulations.md`가 자동 생성된다.
+> PM은 이 파일의 존재를 확인한 후 Phase 4로 진입한다.
+>
+> strategy-articulations.md에는:
+> - 각 Decision Question에 대한 Answer + Confidence + Risk if Wrong
+> - Kill Criteria 점검 결과 (TRIGGERED/NOT TRIGGERED)
+> - Unresolved Uncertainties 목록
+>
+> **Phase 4 진입 조건**: loop-convergence.md(converged: true) + strategy-articulations.md 존재
 
 ### Phase 4: 전략 도출 + 보고서 생성
 

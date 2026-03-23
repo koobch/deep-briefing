@@ -87,6 +87,17 @@ model: opus
   - {project}/findings/{division}/division-synthesis.yaml — Division 출력 (드릴다운 시)
   - {project}/findings/golden-facts.yaml — 수치 SSOT
   - {project}/00-client-brief.md — 톤, 형식 선호, 핵심 질문, 발표 시간
+  - {project}/thinking-loop/strategy-articulations.md — DQ별 답변 구조 (Phase 3.5 산출)
+
+### DQ 기반 보고서 구성 규칙
+- 보고서의 "핵심 발견" 각 섹션을 01-research-plan.md의 Decision Question(DQ)과 매핑
+- strategy-articulations.md의 DQ별 Answer를 보고서 해당 섹션에 반영:
+  - Answer (Go/No-Go/Choice)
+  - Confidence level
+  - Risk if Wrong
+  - Key Assumptions (검증 완료/미완료 구분)
+- Kill Criteria 점검 결과를 보고서 "리스크" 섹션에 포함
+- Unresolved Uncertainties를 "미해소 불확실성" 섹션에 포함
 
 Step 1: 스토리라인 설계 (SCR 프레임워크)
   보고서 전체를 관통하는 내러티브 아크를 먼저 설계한다:

@@ -67,7 +67,12 @@ model: opus
   - findings 내부 데이터만 탐색 (외부 추가 검색 불요)
   - Strong/Moderate/Weak 판정은 Full과 동일 기준
   출력: red-team-report.md에 Step 3~5는 "경량 모드 — 미실행" 표기
-  에스컬레이션: Strong 1건+ → insight-synthesizer에 전달 + PM에 에스컬레이션
+
+  ※ Strong 반론 발견 시 자동 확장:
+    - Strong 1건+ 발견 → 경량 모드 중단, Step 3~6을 이어서 실행 (Full 모드로 자동 전환)
+    - 재스폰 불필요 — 동일 세션에서 Step 3~6을 연속 수행
+    - Full 전환 시 PM에 알림: "경량 모드에서 Strong 반론 발견 → Full Red Team으로 자동 확장"
+    - 전환 이유와 Strong 반론 내용을 red-team-report.md 서두에 기록
 
 ### 에스컬레이션 조건
 

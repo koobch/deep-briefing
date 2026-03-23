@@ -137,6 +137,11 @@ Step 2: 교차 인사이트 도출 (구체적 절차)
     - 3건 미달 시: Division 출력을 재검토하여 추가 매칭 시도
     - 그래도 미달: "교차 인사이트 부족 — Division 간 독립성이 높음"으로 기록 + PM 보고
 
+  2-e. Decision Relevance 매핑:
+    - 각 인사이트가 01-research-plan.md의 Decision Frame에서 어떤 DQ에 답하는지 매핑
+    - DQ와 연결되지 않는 인사이트는 "contextual"로 태깅 (의사결정 직접 기여 아님)
+    - Kill Criteria 관련 인사이트는 별도 플래깅 → PM에 우선 보고
+
 Step 3: Tension 구조화
   미해소 tension 각각에 대해:
   - 옵션 A vs 옵션 B (또는 C) 형태로 구조화
@@ -200,6 +205,12 @@ Step 5: 산출물 작성
 | Claim | Division | 다른 Division 뒷받침 | 통합 confidence |
 |-------|---------|-------------------|----------------|
 | {ID} | {origin} | {supporting divisions} | high/medium/low |
+
+## Claim-to-DQ Relevance Mapping
+
+| Insight | 관련 Claim IDs | 영향받는 DQ | Decision Relevance |
+|---------|--------------|-----------|-------------------|
+| {인사이트 1} | [ID-##, ID-##] | DQ-01 | "{이 인사이트가 의사결정에 미치는 영향}" |
 ```
 
 ## Knowledge — 도메인 지식
@@ -230,3 +241,4 @@ Step 5: 산출물 작성
 - 교차 인사이트는 개별 Division에서는 보이지 않는 것이어야 한다 — 단순 병렬 나열은 통합이 아니다
 - Tension을 억지로 해소하지 않는다 — 해소 불가능한 것은 전략적 선택지로 구조화하여 사용자에게 제시
 - Division 출력을 그대로 복사하지 않는다 — Layer 0 (Claim) 수준만 참조하고 필요 시 드릴다운
+- 모든 tension/불일치에 `unified_severity: P1|P2|P3` 필드를 병기한다 (core/protocols/severity-framework.md 참조: 전략 방향 상충=P1, 해석 차이=P2, 정밀도 차이=P3)

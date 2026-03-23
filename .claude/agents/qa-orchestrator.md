@@ -148,7 +148,11 @@ Step 7: report-auditor 스폰 (Agent 도구)
   - 논리 완결성 감사 위임
   - 결과를 수신하여 qa-report에 통합
 
-Step 7.5: Decision Audit (audience-fit-checker에 위임 또는 PM 직접 검증)
+Step 7.5: Decision Audit (audience-fit-checker의 Check 7~9으로 위임)
+  ※ Decision Audit은 audience-fit-checker가 Check 7~9로 실행한다.
+  qa-orchestrator는 결과를 수신하여 qa-report에 통합하는 역할만 수행.
+  중복 실행 금지 — audience-fit-checker의 Check 7~9 결과를 그대로 사용.
+
   01-research-plan.md의 Decision Frame을 기준으로:
 
   Check 7: Decision Question Coverage (Critical)
