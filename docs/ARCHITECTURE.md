@@ -136,7 +136,7 @@ VL-2   Division 정합성    엔터티/시점/정의 일관성 (Lead 수준)
   |
 VL-3   교차 검증          Division 간 모순 탐지 (fact-verifier)
   |
-QA     보고서 검증         6모듈 + report-auditor + 자동 수정 루프
+QA     보고서 검증         8+1단계 파이프라인 (내장4 + 에이전트3 + Decision Audit + 수정 루프)
 ```
 
 ## 에스컬레이션 체계
@@ -148,7 +148,7 @@ QA     보고서 검증         6모듈 + report-auditor + 자동 수정 루프
 | 3 | Division 간 이슈 | Claim 모순, 전략 전제 검증 실패 |
 | 4 | 사고 루프/QA 이슈 | Red Team Strong 2건+, Action Title 전수 위반 |
 | 5 | 시스템 이슈 | CLI 크래시, API 쿼터 소진 |
-| 6 | QA 최종 실패 | 3회 수정 후 Critical 잔존 |
+| 6 | QA 최종 실패 | 3회 수정 후 Critical/Major 잔존 |
 
 ## 확장 포인트
 
