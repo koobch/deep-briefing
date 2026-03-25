@@ -142,7 +142,7 @@ PM이 "Division Briefs 작성 완료"를 알리면, **새 터미널**에서:
 ./scripts/spawn-leads.sh my-first-research --attach
 ```
 
-### 4. 결과 확인
+### 3. 결과 확인
 
 리서치 완료 후 산출물:
 ```

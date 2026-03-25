@@ -73,6 +73,7 @@ learnings:
       context: "적용 상황"
       adaptation: "수정한 부분 (해당 시)"
       limitation: "한계 (해당 시)"
+      alternative: "더 나은 대안 (해당 시)"
 
   patterns:
     - id: "XX-001"  # 도메인 약자 + 번호

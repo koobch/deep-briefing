@@ -28,7 +28,10 @@
       "Bash(cat .env*)",
       "Bash(cp .env*)",
       "Bash(mkdir -p *)",
-      "Bash(bash scripts/*)"
+      "Bash(bash scripts/*)",
+      "Bash(curl:*)",
+      "Bash(sudo apt install:*)",
+      "Bash(sudo yum install:*)"
     ]
   }
 }

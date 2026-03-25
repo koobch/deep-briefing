@@ -29,7 +29,7 @@ elif [ -z "$PROJECTS" ]; then
   echo ""
 else
   echo "  진행 중인 프로젝트:"
-  for p in $PROJECTS; do
+  while IFS= read -r p; do
     projDir=$(dirname "$p")
     name=$(basename "$projDir")
     # checkpoint.yaml에서 현재 Phase 정보 읽기
@@ -43,7 +43,7 @@ else
     else
       echo "    - $name"
     fi
-  done
+  done <<< "$PROJECTS"
   echo ""
   echo "  Claude가 실행되면 이어서 진행하거나 새 리서치를 시작하실 수 있습니다."
   echo ""

@@ -9,8 +9,8 @@ REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 # 1. 도메인 설정 여부
 DOMAINS=$(find "$REPO_DIR/domains" -maxdepth 1 -type d ! -name "domains" ! -name "example" 2>/dev/null)
 if [ -z "$DOMAINS" ]; then
-  DOMAIN_STATUS="미설정 (example만 존재)"
-  SETUP_NEEDED=true
+  DOMAIN_STATUS="example (범용)"
+  SETUP_NEEDED=false
 else
   DOMAIN_STATUS="$(echo "$DOMAINS" | xargs -I{} basename {} | tr '\n' ', ')"
   SETUP_NEEDED=false
@@ -22,7 +22,7 @@ HAS_PROJECT=false
 PROJECTS=$(find "$REPO_DIR" -maxdepth 2 -name "00-client-brief.md" 2>/dev/null | head -5)
 if [ -n "$PROJECTS" ]; then
   HAS_PROJECT=true
-  for p in $PROJECTS; do
+  while IFS= read -r p; do
     dir=$(dirname "$p")
     name=$(basename "$dir")
     if [ -f "$dir/findings/checkpoint.yaml" ]; then
@@ -31,7 +31,7 @@ if [ -n "$PROJECTS" ]; then
     else
       PROJECT_LIST="${PROJECT_LIST}${name}(초기화), "
     fi
-  done
+  done <<< "$PROJECTS"
 fi
 
 # 3. 필수 도구
@@ -43,7 +43,7 @@ command -v tmux &>/dev/null && TMUX_VER="$(tmux -V 2>&1)"
 # 4. API 키
 API_STATUS=".env 없음"
 if [ -f "$REPO_DIR/.env" ]; then
-  KEY_COUNT=$(grep -v "^#" "$REPO_DIR/.env" 2>/dev/null | grep -c "=." 2>/dev/null || echo 0)
+  KEY_COUNT=$(grep -v "^#" "$REPO_DIR/.env" 2>/dev/null | grep "=." 2>/dev/null | grep -v "your_.*_here" | wc -l | tr -d ' ')
   API_STATUS="${KEY_COUNT}개 설정됨"
 fi
 
@@ -51,6 +51,11 @@ fi
 MATURITY="empty"
 META="$REPO_DIR/domains/example/knowledge/_meta.yaml"
 [ -f "$META" ] && MATURITY=$(grep "maturity:" "$META" 2>/dev/null | awk '{print $2}' | tr -d '"')
+
+# === SETUP_NEEDED 재판정: .env 없음 또는 Python 미설치 시에만 true ===
+if [ ! -f "$REPO_DIR/.env" ] || [ "$PYTHON_VER" = "미설치" ]; then
+  SETUP_NEEDED=true
+fi
 
 # === ACTION 결정 ===
 if [ "$SETUP_NEEDED" = true ] && [ "$HAS_PROJECT" = false ]; then

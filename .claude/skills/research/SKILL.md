@@ -1,10 +1,10 @@
 ---
 name: research
-description: V2 리서치 오케스트레이터 통합 진입점. N-Division Pool 기반 독립 CLI 병렬 실행을 오케스트레이션한다.
+description: 리서치 오케스트레이터 통합 진입점. N-Division Pool 기반 독립 CLI 병렬 실행을 오케스트레이션한다.
 argument-hint: "[auto|interactive|team] [주제] [대상]"
 ---
 
-# /research — V2 리서치 오케스트레이터
+# /research — 리서치 오케스트레이터
 
 ## Division Pool 구조
 
