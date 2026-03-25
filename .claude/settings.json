@@ -2,8 +2,14 @@
   "hooks": {
     "SessionStart": [
       {
-        "type": "command",
-        "command": "bash scripts/check-env.sh"
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/check-env.sh",
+            "timeout": 30
+          }
+        ]
       }
     ]
   }
