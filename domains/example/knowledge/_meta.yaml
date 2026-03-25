@@ -1,0 +1,29 @@
+# 도메인 메타데이터 — {domain}
+# 이 도메인의 지식 축적 현황을 추적하는 메타 파일.
+
+domain: example
+display_name: "General Strategy (기본 도메인)"
+description: "산업 독립적인 범용 전략 분석 도메인. 새 도메인 생성 시 이 구조를 복사."
+
+# 지식 축적 현황
+knowledge_status:
+  projects_seen: []          # 이 도메인에서 리서치를 수행한 프로젝트명 목록
+  last_project: null         # 가장 최근 프로젝트명
+  last_updated: null         # 최종 갱신일
+
+  # 파일별 항목 수
+  counts:
+    sources: 0
+    patterns: 0
+    terms: 0
+    frameworks: 0
+    pitfalls: 0
+
+# 도메인 성숙도
+# 학습 엔진이 자동 판정. 프로젝트 수와 지식 항목 수에 따라 결정.
+maturity: "empty"  # empty → nascent (1~2회) → developing (3~5회) → mature (6회+)
+
+# 도메인 성숙도별 에이전트 행동
+# nascent: 탐색적 분석. 광범위한 소스 스캔. 패턴 축적에 집중
+# developing: 축적된 지식 기반 분석. 검증된 소스 우선 사용
+# mature: 효율적 분석. 신뢰도 높은 소스/패턴에 집중. 새로운 발견에 주목

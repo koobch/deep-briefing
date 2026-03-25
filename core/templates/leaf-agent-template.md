@@ -1,8 +1,33 @@
 # Leaf Agent 템플릿
 
 > Leaf 에이전트(최하위 분석가) 전용 역할 정의 템플릿.
-> `agent-template.md`의 전체 구조를 따르되, Leaf 고유의 자율 반복 + 데이터 수집에 집중한다.
-> Lead가 동적 스폰할 때 이 템플릿을 참조하여 프롬프트를 구성한다.
+> v4.0부터 Leaf는 `.claude/agents/leaves/{division}/` 아래 .md 파일로 사전 정의됨.
+> 각 Leaf .md에는 내부 MECE 분석 구조가 포함되어 있음.
+> 이 템플릿은 (1) 새 Leaf를 추가하거나 (2) 동적 스폰 시 참조용으로 사용.
+
+## Leaf 정의 파일 탐색 우선순위
+
+```
+1. {project}/agents/{leaf-id}.md       — 프로젝트 오버라이드
+2. domains/{domain}/agents/{leaf-id}.md — 도메인 특화
+3. .claude/agents/leaves/{division}/{leaf-id}.md — 범용 Leaf 역할 정의 (v4 신규)
+4. 정의 파일 없음 → 이 템플릿 기반 동적 스폰
+```
+
+## 부트스트랩 (Leaf 세션 시작 시)
+
+```
+1. 자기 역할 .md 파일 읽기 (위 우선순위에서 발견된 파일)
+2. core/knowledge/common-sense.yaml 읽기 (Layer 0 분석 상식)
+3. domains/{domain}/knowledge/*.yaml 읽기 (Layer 2 도메인 지식)
+   - learned-sources.yaml → 데이터 수집 전략에 반영
+   - learned-patterns.yaml → 분석 방향에 반영
+   - learned-terms.yaml → 용어 정의 확인
+   - learned-frameworks.yaml → 프레임워크 선택에 반영
+   - learned-pitfalls.yaml → 함정 회피
+   - 파일이 없거나 비어 있으면 건너뜀 (첫 프로젝트)
+4. Division Brief 읽기 (Layer 3 프로젝트 맥락)
+```
 
 ---
 
@@ -160,11 +185,33 @@ Division Brief에 포함된 primary_data_gaps (Phase 0.5 식별분) 확인:
 
 ---
 
+## 학습 기여 (_learning_notes)
+
+Leaf는 직접 도메인 knowledge에 쓰지 않지만, Lead에게 학습 재료를 제공한다.
+출력의 마지막에 아래 필드를 선택적으로 추가:
+
+```yaml
+_learning_notes:
+  useful_sources: ["유용했던 소스와 이유"]
+  data_issues: ["데이터 품질/접근 문제"]
+  terminology_note: ["용어 혼동이 있었던 부분"]
+  analysis_insight: ["이 산업/주제 특유의 발견"]
+```
+
+Lead는 이를 수집하여 학습 추출(core/templates/learning-extraction-template.md)에 통합한다.
+
+---
+
 ## Lead가 동적 스폰할 때 최소 프롬프트 예시
 
 ```
 너는 {전문 영역} 분석가다.
 소속: {Division} Division.
+
+1. 역할 정의를 읽어라: .claude/agents/leaves/{division}/{leaf-id}.md
+2. 도메인 지식을 읽어라: domains/{domain}/knowledge/*.yaml
+3. 분석 상식을 읽어라: core/knowledge/common-sense.yaml
+
 분석 범위: {MECE 범위}.
 산출물: findings/{division}/{agent-id}.yaml
 가설: {Division Brief에서 해당 가설 목록}
@@ -175,4 +222,5 @@ Division Brief에 포함된 primary_data_gaps (Phase 0.5 식별분) 확인:
 - core/protocols/output-format.md 표준 스키마
 - core/protocols/fact-check-protocol.md VL-1 자가 검증
 - 자율 반복 최대 3회
+- 출력 마지막에 _learning_notes 필드 추가 (선택적)
 ```

@@ -142,6 +142,13 @@ Express가 아닌 경우 기존 3단계 진행:
 ━━ Phase 2/3: 도메인 설정 ━━
 ```
 
+**첫 사용자 빠른 경로**:
+- "도메인을 선택하지 않으면 example(범용 전략 분석) 도메인으로 시작합니다."
+- "산업 특화 도메인은 나중에 추가할 수 있습니다."
+- 사용자에게 물어보세요: "범용 도메인으로 바로 시작할까요, 아니면 산업을 지정하시겠어요?"
+  - 범용 선택 시 → Step 2-A~D 전체 스킵, Step 2-E 요약만 출력 후 Phase 3 진행
+  - 산업 지정 시 → 아래 Step 2-A부터 정상 진행
+
 #### Step 2-A: 산업/분야 파악
 
 먼저 기존 도메인을 확인한다. `domains/` 디렉토리를 읽어 `example` 외에 도메인이 있는지 체크.
@@ -336,31 +343,31 @@ API별 상세 발급 가이드:
 Deep-Briefing 설정이 완료되었습니다!
 ```
 
+참고: 각 Division 아래에는 3~5개의 전문 분석가(Leaf)가 MECE로 범위를 분담합니다.
+예: Market Division → market-sizing, customer-analysis, competitive-landscape, channel-landscape, market-dynamics
+이 구조는 자동으로 작동하므로 별도 설정이 필요 없습니다.
+
 사용자에게 질문한다:
 
 ```
-바로 첫 리서치를 시작할까요? (Y/n)
+설정이 완료되었습니다! 리서치를 바로 시작할 수 있습니다.
+주제를 말씀해 주세요 (예: '한국 SaaS 시장 진출 전략')
+
+프로젝트명도 함께 정해주세요 (예: my-first-research)
+또는 'n'을 입력하면 수동 안내로 넘어갑니다.
 ```
 
-#### Y (바로 리서치 시작)
+#### 사용자가 주제를 입력한 경우 (바로 리서치 시작)
 
-1. "프로젝트명을 정해주세요 (예: my-first-research)"
-2. 사용자가 프로젝트명 입력
-3. `./scripts/init-project.sh {project-name}` 자동 실행
+1. 사용자 입력에서 주제와 프로젝트명을 파악한다
+   - 프로젝트명을 별도로 말하지 않았으면: "프로젝트명을 정해주세요 (예: my-first-research)"
+2. `./scripts/init-project.sh {project-name}` 자동 실행
    - Phase 2에서 People & Org / Operations / Regulatory를 활성화했으면, 해당 Division이 포함되도록 init-project.sh 실행 결과를 확인하고 필요 시 디렉토리를 보완한다
-4. 실행 결과를 보여준다:
+3. 실행 결과를 보여준다:
    ```
    프로젝트 초기화 완료: {project-name}/
    ```
-5. "리서치 주제를 입력해주세요."
-   ```
-   예시 주제:
-     - '{industry} 시장 진출 전략'
-     - '{대상 기업} 경쟁력 분석'
-     - '{industry} 트렌드 분석 2026'
-   ```
-6. 사용자가 주제 입력
-7. 자동으로 `/research interactive {project-name} {주제}` 실행으로 전환
+4. 자동으로 `/research interactive {project-name} {주제}` 실행으로 전환
    → 이 시점에서 /research 스킬이 인계받아 Phase 0 Discovery 시작
 
 #### n (수동 안내)

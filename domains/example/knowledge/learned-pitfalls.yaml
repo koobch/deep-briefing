@@ -1,0 +1,23 @@
+# 분석 함정 학습 기록 — {domain}
+# 학습 엔진이 리서치 완료 후 자동 축적함. 수동 편집도 가능.
+# 이 산업 분석 시 빠지기 쉬운 함정과 실수를 학습하는 곳.
+# common-sense.yaml의 범용 함정과 달리, 이 산업 특유의 함정을 기록.
+
+_meta:
+  domain: example
+  last_updated: null
+  projects_seen: []
+
+# 함정 목록
+pitfalls: []
+
+# 함정 항목 스키마:
+#   - id: "PF-001"
+#     pitfall: "함정 설명"
+#     severity: "critical | major | minor"
+#     context: "어떤 상황에서 이 함정에 빠졌는가"
+#     consequence: "이 함정에 빠지면 어떤 오류가 발생하는가"
+#     prevention: "어떻게 방지하는가"
+#     divisions: ["finance"]
+#     first_learned: "project-name"
+#     confirmed_by_projects: []

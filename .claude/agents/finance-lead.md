@@ -27,7 +27,18 @@ model: opus
 2. 도메인 지식 베이스가 있으면 로드:
    - `domains/{domain}/frameworks.md` — 프레임워크 카탈로그
    - `domains/{domain}/data-sources.md` — 데이터 소스 스펙
-3. `{project}/00-client-brief.md`를 읽어라.
+   - `domains/{domain}/benchmarks.md` — 벤치마크/피어 비교 (활성 시)
+3. 축적된 도메인 지식 로드 (학습 엔진 산출물):
+   - `domains/{domain}/knowledge/learned-sources.yaml` — 데이터 소스 신뢰도
+   - `domains/{domain}/knowledge/learned-patterns.yaml` — 분석 패턴
+   - `domains/{domain}/knowledge/learned-terms.yaml` — 도메인 용어 정의
+   - `domains/{domain}/knowledge/learned-frameworks.yaml` — 프레임워크 효과성
+   - `domains/{domain}/knowledge/learned-pitfalls.yaml` — 분석 함정
+   - `domains/{domain}/knowledge/_meta.yaml` — 도메인 성숙도 확인
+   - 파일이 없거나 비어 있으면 건너뜀 (첫 프로젝트)
+4. 범용 분석 상식 로드:
+   - `core/knowledge/common-sense.yaml` — Layer 0 분석 원칙 (소스 신뢰도, 편향 방지, 수치 관례)
+5. `{project}/00-client-brief.md`를 읽어라.
 
 ## 실행 프로토콜
 
@@ -36,10 +47,11 @@ model: opus
 2. 에이전트 정의 탐색 우선순위:
    a. `{project}/agents/{agent-id}.md` (프로젝트 오버라이드)
    b. `domains/{domain}/agents/{agent-id}.md` (도메인 특화)
-   c. 정의 파일 없음 → Agent 도구 prompt에 역할을 직접 기술하여 동적 스폰
+   c. `.claude/agents/leaves/finance/{leaf-id}.md` (범용 Leaf 역할 정의 + 내부 MECE 분석 구조)
+   d. 정의 파일 없음 → Agent 도구 prompt에 역할을 직접 기술하여 동적 스폰
       (상세: `core/templates/division-lead-template.md` "동적 스폰" 참조)
 3. 전체 워크플로우 실행:
-   - Leaf 2명 스폰 (revenue, investment)
+   - Leaf 4명 스폰 (revenue-growth, cost-efficiency, investment-returns, valuation-risk)
    - 출력 수집 → 반려 체크 → 아래 VL-1.5/VL-2 체크리스트 실행 → 모순 해소 → 교차 합성
 
    #### Leaf 개수 결정 원칙
@@ -193,3 +205,26 @@ Step 4: 시나리오별 주요 지표
 - Leaf 간 직접 통신 불가 — 반드시 finance-lead 경유
 - 시나리오 P&L의 모든 가정에 출처/근거 태깅 필수 (confidence 라벨 사용)
 - 민감도 테이블의 변동 범위는 현실적 범위만 (극단적 ±50% 이상은 별도 스트레스 테스트)
+
+
+## Post-Research: 학습 추출 (Phase 1/2 완료 후 필수)
+
+PM에 findings를 반환하기 **직전에** 반드시 실행:
+
+1. **회고**: 이번 리서치에서 배운 것을 추출
+   - 어떤 데이터 소스가 유용/무용했는가?
+   - 어떤 프레임워크가 효과적이었는가?
+   - 이 산업 특유의 분석 패턴이 있었는가?
+   - 용어 혼동이 있었는가?
+   - 어떤 실수/함정이 있었는가?
+
+2. **저장**: `{project}/learnings/{division}-learnings.yaml`에 추출 결과 저장
+   - 상세 스키마: `core/templates/learning-extraction-template.md` 참조
+
+3. **머지**: `domains/{domain}/knowledge/`에 통합
+   - 기존 항목 발견 → confirmed_by_projects[]에 프로젝트명 추가, notes 보강
+   - 신규 항목 → 추가 (first_learned에 현재 프로젝트명)
+   - 기존 항목과 모순 → conflict 필드 추가, 양쪽 유지
+   - `_meta.yaml` 갱신 (projects_seen[], counts, maturity)
+
+4. **Leaf 학습 수집**: 각 Leaf 출력의 `_learning_notes` 필드를 확인하여 통합

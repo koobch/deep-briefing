@@ -1,0 +1,25 @@
+# 데이터 소스 학습 기록 — {domain}
+# 학습 엔진이 리서치 완료 후 자동 축적함. 수동 편집도 가능.
+# 에이전트 부트스트랩 시 자동 로드되어 데이터 수집 전략에 반영됨.
+
+_meta:
+  domain: example
+  last_updated: null  # 학습 엔진이 갱신
+  projects_seen: []
+
+# 소스 목록
+# 리서치를 거듭할수록 아래 목록이 축적됨
+sources: []
+
+# 소스 항목 스키마:
+#   - name: "소스 이름"
+#     type: "market_data | financial | app_analytics | survey | government | news | academic"
+#     url: "접근 URL (해당 시)"
+#     reliability: "high | medium | low"
+#     cost: "free | freemium | paid"
+#     divisions: ["market", "finance"]  # 이 소스가 유용한 Division
+#     access_method: "API | 웹 스크래핑 | 직접 다운로드 | 수동 확인"
+#     notes: "이 소스를 사용하면서 알게 된 것"
+#     pitfall: "이 소스 사용 시 주의할 함정 (해당 시)"
+#     first_learned: "project-name"  # 처음 사용한 프로젝트
+#     confirmed_by_projects: []  # 여러 프로젝트에서 확인된 횟수

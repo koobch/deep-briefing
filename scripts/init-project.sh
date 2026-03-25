@@ -117,7 +117,7 @@ echo "=== 프로젝트 '${PROJECT}' 스캐폴딩 시작 ==="
 echo "  활성 Division: ${ACTIVE_DIVISIONS[*]}"
 
 # --- 공통 디렉토리 생성 ---
-mkdir -p "${PROJECT_DIR}"/{division-briefs,sync,thinking-loop,reports,qa,data/{user-provided},agents}
+mkdir -p "${PROJECT_DIR}"/{division-briefs,sync,thinking-loop,reports,qa,learnings,data/{user-provided},agents}
 
 # --- Division별 디렉토리 생성 ---
 for div in "${ACTIVE_DIVISIONS[@]}"; do

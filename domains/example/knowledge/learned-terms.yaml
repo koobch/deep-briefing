@@ -1,0 +1,22 @@
+# 도메인 용어 학습 기록 — {domain}
+# 학습 엔진이 리서치 완료 후 자동 축적함. 수동 편집도 가능.
+# 이 산업에서 특정 용어가 어떻게 정의/사용되는지를 학습하는 곳.
+# 용어 혼동은 분석 오류의 가장 흔한 원인.
+
+_meta:
+  domain: example
+  last_updated: null
+  projects_seen: []
+
+# 용어 목록
+terms: []
+
+# 용어 항목 스키마:
+#   - term: "용어"
+#     definition: "이 산업에서의 정의"
+#     common_confusion: "흔히 혼동되는 다른 용어/정의 (해당 시)"
+#     measurement: "측정 방법/단위 (해당 시)"
+#     divisions: ["market", "product"]
+#     notes: "사용 시 주의사항"
+#     first_learned: "project-name"
+#     confirmed_by_projects: []

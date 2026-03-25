@@ -1,0 +1,22 @@
+# 프레임워크 효과성 학습 기록 — {domain}
+# 학습 엔진이 리서치 완료 후 자동 축적함. 수동 편집도 가능.
+# 어떤 프레임워크가 이 산업에서 효과적/비효과적이었는지를 학습하는 곳.
+
+_meta:
+  domain: example
+  last_updated: null
+  projects_seen: []
+
+# 프레임워크 효과성 목록
+frameworks: []
+
+# 프레임워크 항목 스키마:
+#   - name: "프레임워크 이름"
+#     division: "market"  # 주로 사용하는 Division
+#     effectiveness: "high | medium | low"
+#     context: "어떤 상황에서 효과적이었는가"
+#     adaptation: "이 산업에 맞게 수정한 부분 (해당 시)"
+#     limitation: "이 산업에서의 한계 (해당 시)"
+#     alternative: "더 나은 대안이 있었다면 (해당 시)"
+#     first_learned: "project-name"
+#     confirmed_by_projects: []

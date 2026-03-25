@@ -31,7 +31,8 @@
 3. 리프 에이전트 정의 탐색 (우선순위):
    a. `{project}/agents/{leaf-id}.md` (프로젝트 오버라이드)
    b. `domains/{domain}/agents/{leaf-id}.md` (도메인 특화)
-   c. 정의 파일 없음 → **동적 스폰** (아래 참조)
+   c. `.claude/agents/leaves/{division}/{leaf-id}.md` (범용 Leaf 역할 정의 + 내부 MECE 분석 구조)
+   d. 정의 파일 없음 → **동적 스폰** (아래 참조)
 4. Agent 도구로 리프 스폰 (병렬 실행)
 5. 각 리프에게 전달하는 정보:
    a. Client Brief 요약 (해당 도메인 관련 부분만)
@@ -70,8 +71,11 @@
    core/protocols/output-format.md 표준 스키마를 준수하라.
    core/protocols/fact-check-protocol.md VL-1 자가 검증을 수행하라."
 - 도메인 지식이 필요하면 domains/{domain}/frameworks.md, data-sources.md 경로를 전달
+- 축적된 도메인 지식이 있으면 domains/{domain}/knowledge/*.yaml 경로를 전달
+- 범용 분석 상식: core/knowledge/common-sense.yaml 경로를 전달
 - 벤치마크 활성 시 domains/{domain}/benchmarks.md 경로도 전달
 - Leaf 프롬프트 구성 시 `core/templates/leaf-agent-template.md`의 구조를 참조
+- Leaf 출력에서 `_learning_notes` 필드를 수집하여 학습 추출에 활용
 
 ### 도메인 특화 도구 활성화
 

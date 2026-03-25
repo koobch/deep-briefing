@@ -1,10 +1,10 @@
 # Deep-Briefing
 
 **AI 멀티 에이전트가 수행하는 컨설팅급 전략 리서치.**
-22개 에이전트가 병렬로 분석하고, 교차 검증하고, 반증하고, 보고서를 작성합니다.
+에이전트 팀(7 Division Lead + 26 Leaf + Cross-cutting/QA)이 병렬로 분석하고, 교차 검증하고, 반증하고, 보고서를 작성합니다.
 
 ```
-주제 하나를 던지면 → 22개 에이전트가 → 컨설팅 펌 수준의 전략 보고서를 생성합니다.
+주제 하나를 던지면 → 에이전트 팀이 → 컨설팅 펌 수준의 전략 보고서를 생성합니다.
 ```
 
 ### 왜 Deep-Briefing인가?
@@ -23,12 +23,18 @@
 ```bash
 git clone https://github.com/{owner}/deep-briefing.git
 cd deep-briefing
-claude            # Claude Code 실행
-> /setup          # 환경 자동 설정 (Express: 2분)
-> /research interactive my-project 한국 SaaS 시장 진출 전략
+claude
 ```
 
-끝. PM 에이전트가 인터뷰 → 가설 수립 → 병렬 리서치 → 보고서 생성까지 자동으로 진행합니다.
+**그 다음은 Claude가 안내합니다.** 처음이면 `/setup`을, 이미 설정했으면 `/research`를 제안합니다.
+
+```
+# 직접 시작하려면:
+> /setup                                        # 환경 설정 (최초 1회, Express 2분)
+> /research interactive my-project 한국 SaaS 시장 진출 전략  # 리서치 시작
+```
+
+PM 에이전트가 인터뷰 → 가설 수립 → 병렬 리서치 → 보고서 생성까지 자동으로 진행합니다.
 
 ---
 
@@ -36,16 +42,17 @@ claude            # Claude Code 실행
 
 | 기능 | 설명 |
 |------|------|
-| **22개 전문 에이전트** | PM, Division Lead 7, Cross-cutting 6(Red Team 포함), QA 6, Report, Utility |
+| **에이전트 팀** | PM 1, Division Lead 7, Leaf 26, Cross-cutting 4, Synthesis 2, QA 5, Report 1, Utility 1 |
+| **Leaf 전문 분석가** | 각 Division 아래 3~5개 Leaf 에이전트가 MECE로 분석 범위를 분담. 내부 분석 구조(트리)를 가진 전문가 |
+| **4-Layer 지식 시스템** | 범용 분석 상식(L0) → 역할 지식(L1) → 도메인 축적 지식(L2) → 프로젝트 맥락(L3). 프로젝트마다 더 똑똑해짐 |
+| **학습 엔진** | 리서치 완료 후 데이터 소스 신뢰도, 분석 패턴, 용어, 함정을 자동 축적 → 같은 도메인 재분석 시 품질 향상 |
 | **SCR 스토리라인** | Situation→Complication→Resolution + 모든 슬라이드 Action Title 필수 |
 | **Red Team (Devil's Advocate)** | 핵심 전제 반증, 역 시나리오, 숨겨진 가정 노출, 조기 경보 지표 |
 | **Implementation Playbook** | 담당/마일스톤/KPI/의존성 + Impact×Feasibility 우선순위 매트릭스 |
 | **Scenario P&L + 민감도 분석** | BASE/UPSIDE/DOWNSIDE 3-시나리오 + 핵심 가정 ±변동 영향 |
 | **4단계 검증** | VL-1(자가) → VL-1.5(삼각) → VL-2(정합) → VL-3(교차) + QA 자동 수정 루프 |
-| **벤치마크** | 피어 비교 매트릭스 + 하비볼 시각화 (선택적 활성화) |
-| **컨설팅급 차트** | 마리메꼬, 하비볼, 워터폴, 시나리오 등 자동 생성 |
 | **3가지 모드** | Auto(직행) / Interactive(공동작업) / Team(토론+되돌아가기) |
-| **도메인 플러그인** | 산업별 프레임워크/데이터소스를 플러그인으로 확장 |
+| **도메인 플러그인** | 산업별 프레임워크/데이터소스를 플러그인으로 확장 + 축적된 지식 자동 로드 |
 
 ## Quick Start
 
@@ -76,16 +83,20 @@ Claude Code에서:
 > /research interactive my-first-research {리서치 주제}
 ```
 
+### 요구사항
+
+| 구분 | 필요한 것 | 필수 여부 |
+|------|---------|----------|
+| **Claude Code** | [설치 가이드](https://docs.anthropic.com/en/docs/claude-code) | 필수 |
+| **Python 3.8+** | 차트 생성, 팩트 검증 스크립트용 | 필수 |
+| **tmux** | Division 병렬 실행 (모드 A) | 권장 (없으면 Agent tool 모드 B로 자동 전환) |
+
+> `/setup` 실행 시 위 요구사항을 자동 점검하고, 누락된 것이 있으면 설치를 안내합니다.
+
 ### 수동 설치 (CI/CD 또는 /setup 없이 설정할 경우)
 
 <details>
 <summary>수동 설치 단계 펼치기</summary>
-
-#### Prerequisites
-
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI 설치 필요
-- Python 3.8+ (스크립트 실행용)
-- tmux (Division 병렬 실행용)
 
 #### 환경 설정
 
@@ -175,11 +186,12 @@ CLI 간 통신은 **파일 시스템**을 통해 이루어짐 (직접 통신 없
 | 계층 | 에이전트 | 수 |
 |------|---------|---|
 | PM | research-pm | 1 |
-| Division Lead | market-lead, product-lead, capability-lead, finance-lead | 4 |
-| Sub-lead | geography-lead, segment-lead, channel-lead, competitive-lead | 4 |
-| Leaf | 20개 전문 분석가 | 20 |
-| Cross-cutting | fact-verifier, logic-prober, strategic-challenger, **red-team**, insight-synthesizer, cross-domain-synthesizer | 6 |
-| QA | report-writer, qa-orchestrator, **audience-fit-checker**, **executability-checker**, report-auditor, report-fixer | 6 |
+| Division Lead | market, product, capability, finance + people-org, operations, regulatory (확장) | 7 |
+| Leaf | Division별 MECE 전문 분석가 (.claude/agents/leaves/) | 26 |
+| Cross-cutting | fact-verifier, logic-prober, strategic-challenger, **red-team** | 4 |
+| Synthesis | cross-domain-synthesizer, insight-synthesizer | 2 |
+| QA | qa-orchestrator, **audience-fit-checker**, **executability-checker**, report-auditor, report-fixer | 5 |
+| Report | report-writer | 1 |
 | Utility | data-preprocessor (동적 스폰) | 1 |
 
 상세 구성: 프로젝트 실행 시 `{project}/ARCHITECTURE.md`가 자동 생성됩니다.

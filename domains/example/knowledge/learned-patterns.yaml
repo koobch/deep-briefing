@@ -1,0 +1,22 @@
+# 분석 패턴 학습 기록 — {domain}
+# 학습 엔진이 리서치 완료 후 자동 축적함. 수동 편집도 가능.
+# 에이전트가 "이 산업에서는 이렇게 분석해야 효과적이다"를 학습하는 곳.
+
+_meta:
+  domain: example
+  last_updated: null
+  projects_seen: []
+
+# 패턴 목록
+patterns: []
+
+# 패턴 항목 스키마:
+#   - id: "XX-001"  # 도메인 약자 + 번호
+#     pattern: "패턴 설명 (한 문장)"
+#     confidence: "high | medium | low"
+#     context: "이 패턴이 발견된 맥락"
+#     divisions: ["market"]  # 관련 Division
+#     implication: "이 패턴이 분석에 미치는 시사점 (에이전트가 어떻게 행동해야 하는가)"
+#     counter_example: "이 패턴이 적용되지 않는 경우 (해당 시)"
+#     first_learned: "project-name"
+#     confirmed_by_projects: []

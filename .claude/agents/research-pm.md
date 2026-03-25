@@ -349,17 +349,17 @@ research_plan:
     people-org:
       active: false
       activation_criteria: "조직 변화, 인력 전략, 문화 전환, HR이 핵심 질문에 포함"
-      leaves: [talent-strategy-analyst, org-design-analyst, culture-change-analyst, workforce-analytics-analyst]
+      leaves: [org-design, talent-strategy, culture-engagement]
       priority_focus: ""
     operations:
       active: false
       activation_criteria: "프로세스 효율화, 운영 최적화, 서비스 운영"
-      leaves: [process-analyst, supply-chain-analyst, infra-ops-analyst, quality-ops-analyst]
+      leaves: [process-excellence, supply-chain, infrastructure]
       priority_focus: ""
     regulatory:
       active: false
       activation_criteria: "규제, 법적 리스크, ESG, 정부 정책이 전략에 영향"
-      leaves: [legal-compliance-analyst, ip-legal-analyst, esg-analyst, policy-analyst]
+      leaves: [compliance-status, regulatory-outlook, esg-governance]
       priority_focus: ""
 
   data_intake:
