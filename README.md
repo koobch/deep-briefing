@@ -20,10 +20,18 @@
 
 ### 30초 Quick Start
 
-터미널에 이 한 줄을 복사-붙여넣기하세요:
+터미널에 복사-붙여넣기하세요:
 
 ```bash
 git clone https://github.com/koobch/deep-briefing.git && cd deep-briefing && claude
+```
+
+또는 한 줄씩:
+
+```bash
+git clone https://github.com/koobch/deep-briefing.git   # deep-briefing/ 폴더가 자동 생성됨
+cd deep-briefing                                          # 생성된 폴더로 이동
+claude                                                    # Claude Code 실행
 ```
 
 **그게 끝입니다.** Claude가 자동으로 환경을 감지하고 다음 단계를 안내합니다:
