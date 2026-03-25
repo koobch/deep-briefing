@@ -267,25 +267,52 @@ AskUserQuestion:
 
 **"지금 설정"을 선택한 경우:**
 
-"이 산업에서 자주 사용하는 데이터 소스와 API를 추천합니다:"
+먼저 기존 API 키가 있는지 확인한다:
 
-**공통 추천 (모든 산업)**:
+```yaml
+AskUserQuestion:
+  questions:
+    - question: "기존에 설정한 API 키가 있나요?"
+      header: "기존 키"
+      multiSelect: false
+      options:
+        - label: "없음, 처음입니다"
+          description: "새로 발급받겠습니다"
+        - label: "다른 프로젝트에 .env가 있음"
+          description: "기존 .env 파일 경로를 입력하면 키를 가져옵니다"
+        - label: "키를 직접 입력"
+          description: "이미 발급받은 키를 하나씩 입력합니다"
+```
+
+- "다른 프로젝트에 .env가 있음" 선택 시:
+  - 경로 입력받기 (예: ~/other-project/.env)
+  - 해당 파일에서 키 읽어서 현재 .env에 복사
+  - "✅ {N}개 키를 가져왔습니다: {키 목록}" 표시
+  - 가져온 뒤 누락된 키만 추가 설정 여부 확인
+
+그 다음 API 추천:
+
+**기본 API (모든 리서치에 권장)**:
+- Exa.ai — AI 검색 엔진. 고품질 웹 검색 결과 (유료, 무료 크레딧 제공)
+- Firecrawl — 웹페이지 크롤링/스크래핑. URL에서 정제된 데이터 추출 (유료, 무료 tier)
 - FRED — 미국 매크로 경제지표 (무료)
 - ECOS — 한국 매크로 경제지표 (무료)
 - DART — 한국 기업 공시/재무 (무료)
-- Exa.ai — 고품질 웹 검색 (유료)
 
-**산업별 추가 추천**:
+**산업별 추가 추천** — 사용자가 선택한 산업에 해당하는 API만 보여준다:
 
 | 산업 | 추천 API | 필수도 |
 |------|---------|-------|
-| 게임 | Steam API, IGDB, Sensor Tower, App Annie | 중간 (PC/모바일 게임 시) |
+| 게임 | Steam API, IGDB, Sensor Tower, App Annie | 중간 |
 | 미디어 | YouTube Data API, Nielsen (유료), Chartmetric | 중간 |
 | 이커머스 | Google Trends, Amazon Product API, Naver DataLab | 중간 |
 | 제조업 | 관세청 수출입 API, KOSIS, UN Comtrade | 중간 |
-| 핀테크 | 금감원 API, PSD2/Open Banking API | 높음 (한국 시) |
+| 핀테크 | 금감원 API, PSD2/Open Banking API | 높음 |
 | 헬스케어 | ClinicalTrials.gov, FDA/MFDS API, PubMed | 높음 |
 | SaaS | Crunchbase API, G2 API, BuiltWith | 중간 |
+| 투자/금융 | Bloomberg API (유료), Yahoo Finance, KRX API | 중간 |
+
+**중요: 사용자가 선택한 도메인에 해당하는 산업의 API만 추천한다.** 예를 들어 "투자" 도메인이면 "투자/금융" 행만 보여주고 게임/미디어 등은 보여주지 않는다. example(범용) 도메인이면 산업별 추천을 건너뛴다.
 
 각 추천 API에 대해 **3단계 점검**을 순서대로 수행한다:
 
@@ -321,14 +348,23 @@ AskUserQuestion:
 
 API별 상세 발급 가이드:
 
+**기본 API 발급 가이드:**
+
 | API | 발급 URL | 발급 절차 | 소요 시간 |
 |-----|---------|----------|----------|
+| Exa | https://exa.ai | 가입 → Dashboard → API Keys | 즉시 |
+| Firecrawl | https://firecrawl.dev | 가입 → Dashboard → API Keys | 즉시 |
 | DART | https://opendart.fss.or.kr | 회원가입 → 마이페이지 → 인증키 신청 → 이메일 수신 | 즉시~수분 |
 | FRED | https://fred.stlouisfed.org/docs/api/api_key.html | 가입 → Request API Key → 즉시 발급 | 즉시 |
 | ECOS | https://ecos.bok.or.kr/api/ | 회원가입 → 마이페이지 → 인증키 신청 | 즉시~수분 |
-| Steam | https://steamcommunity.com/dev/apikey | Steam 로그인 → 도메인 입력 → 즉시 발급 | 즉시 |
-| Exa | https://exa.ai | 가입 → Dashboard → API Keys | 즉시 |
-| NewsAPI | https://newsapi.org | 가입 → 즉시 발급 (무료 tier 100건/일) | 즉시 |
+
+**산업별 API 발급 가이드** (해당 산업 선택 시에만 표시):
+
+| API | 산업 | 발급 URL | 소요 시간 |
+|-----|------|---------|----------|
+| Steam | 게임 | https://steamcommunity.com/dev/apikey | 즉시 |
+| NewsAPI | 범용 | https://newsapi.org (무료 100건/일) | 즉시 |
+| Yahoo Finance | 투자/금융 | https://financeapi.net | 즉시 |
 
 **Step 3: 키 입력 + 저장 + 확인**
 
