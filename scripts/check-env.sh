@@ -4,6 +4,12 @@
 
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
+# Lead CLI 감지 — 환경 체크 불필요 (PM이 이미 실행)
+if [ -n "${CLAUDE_AGENT_NAME:-}" ]; then
+  echo '{"continue": true}'
+  exit 0
+fi
+
 # === 상태 수집 ===
 
 # 1. 도메인 설정 여부
