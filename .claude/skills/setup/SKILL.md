@@ -26,6 +26,8 @@ user_invocable: true
   → 바로 시작할까요? [Y/n]
 ```
 
+참고: Express 모드는 도메인=example(범용), API=스킵으로 자동 설정합니다. 나중에 /setup을 다시 실행하면 변경할 수 있습니다.
+
 Express가 아닌 경우 기존 3단계 진행:
 
 ## Standard Mode (3단계)
@@ -52,7 +54,7 @@ AskUserQuestion:
       multiSelect: false
       options:
         - label: "자동 점검 + 설치 (추천)"
-          description: "Python, tmux 등 필요한 도구를 확인하고 없으면 설치합니다"
+          description: "Homebrew(macOS), tmux, Python pip 의존성을 확인하고 없으면 설치를 안내합니다"
         - label: "점검만"
           description: "현재 환경 상태만 확인합니다. 설치는 하지 않습니다"
         - label: "전부 스킵"
@@ -255,7 +257,7 @@ AskUserQuestion:
       multiSelect: false
       options:
         - label: "나중에 설정 (추천)"
-          description: "API 없이도 웹 검색만으로 리서치 가능합니다. 필요할 때 /setup으로 추가"
+          description: "API 없이도 웹 검색만으로 리서치 가능합니다. /setup을 다시 실행하면 API 설정만 따로 할 수 있습니다"
         - label: "지금 설정"
           description: "DART, FRED 등 무료 API를 설정합니다. 데이터 품질이 향상됩니다"
         - label: "전부 스킵"
@@ -267,7 +269,25 @@ AskUserQuestion:
 
 **"지금 설정"을 선택한 경우:**
 
-먼저 기존 API 키가 있는지 확인한다:
+먼저 기본 API만 설정할지 전부 설정할지 확인한다:
+
+```yaml
+AskUserQuestion:
+  questions:
+    - question: "기본 API(Exa, Firecrawl)만 먼저 설정하고 나머지는 나중에 추가할 수도 있습니다. 전부 설정할까요, 기본만 할까요?"
+      header: "API 설정 범위"
+      multiSelect: false
+      options:
+        - label: "기본 API만 (추천)"
+          description: "Exa, Firecrawl만 설정합니다. 나머지는 나중에 /setup으로 추가 가능"
+        - label: "전부 설정"
+          description: "기본 + 산업별 추천 API를 모두 순회하며 설정합니다"
+```
+
+- "기본 API만" 선택 시 → Exa, Firecrawl만 아래 3단계 점검을 수행하고 나머지는 스킵
+- "전부 설정" 선택 시 → 기본 + 산업별 추천 API 전체를 아래 플로우대로 진행
+
+그 다음 기존 API 키가 있는지 확인한다:
 
 ```yaml
 AskUserQuestion:
@@ -459,7 +479,7 @@ Deep-Briefing 설정이 완료되었습니다!
    ```
    프로젝트 초기화 완료: {project-name}/
    ```
-4. 자동으로 `/research interactive {project-name} {주제}` 실행으로 전환
+4. Claude가 /research 스킬을 자동으로 호출하여 리서치를 시작합니다
    → 이 시점에서 /research 스킬이 인계받아 Phase 0 Discovery 시작
 
 #### n (수동 안내)
