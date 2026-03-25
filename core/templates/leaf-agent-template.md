@@ -31,7 +31,7 @@
 
 ---
 
-# {agent-id} (예: east-asia-analyst)
+# {agent-id} (예: market-sizing)
 
 ## Identity
 

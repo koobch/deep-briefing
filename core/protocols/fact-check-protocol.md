@@ -345,7 +345,7 @@ fact_verification_report:
       divisions: [market, finance]
       description: "시장 점유율 4% 가정이 경쟁 강도 대비 비현실적"
       severity: critical | major | minor
-      resolution: "investment-analyst에게 1%/2%/4% 시나리오 추가 요청"
+      resolution: "investment-returns에게 1%/2%/4% 시나리오 추가 요청"
 
   methodology_flags:
     - id: FM-01
