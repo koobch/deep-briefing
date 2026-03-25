@@ -3,7 +3,7 @@
 
 test_id: EP-032
 name: "시나리오 민감도 — 핵심 가정 변동 영향 분석 필수"
-target_agents: ["finance-lead", "revenue-analyst", "investment-analyst"]
+target_agents: ["finance-lead", "revenue-growth", "investment-returns"]
 severity: major
 
 input:

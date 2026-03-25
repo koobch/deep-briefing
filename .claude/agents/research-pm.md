@@ -329,7 +329,7 @@ research_plan:
   divisions:
     market:
       active: true | false
-      sub_leads: [활성화할 Sub-lead 목록]
+      leaves: [활성화할 Leaf 목록]
       leaves: [활성화할 Leaf 목록]
       priority_focus: "Client Brief에서 도출된 시장 분석 초점"
     product:
@@ -450,7 +450,7 @@ research_plan:
     # 비활성 (이번 리서치에서 제외)
     skipped:
       - agent-id: "제외 사유"
-      # 예: emerging-analyst: "신흥국 미포함"
+      # 예: market-dynamics: "신흥국 미포함"
       # 예: console-analyst: "콘솔 미관련"
 
     # 집계

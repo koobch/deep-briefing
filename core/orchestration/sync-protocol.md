@@ -139,7 +139,7 @@ research_plan:
 
     finance:
       active: true
-      leaves: [revenue-analyst, investment-analyst]
+      leaves: [revenue-growth, investment-returns]
       priority_focus: "..."
 
     # === 확장 Division (주제에 따라 선택 투입) ===
@@ -204,7 +204,7 @@ research_plan:
     required: [항상 투입되는 인프라 에이전트]
     active:
       # 핵심 Division (거의 항상 활성화)
-      market: { lead, sub_leads, leaves }
+      market: { lead, leaves }
       product: { lead, leaves }
       capability: { lead, leaves }
       finance: { lead, leaves }
@@ -212,7 +212,7 @@ research_plan:
       # people-org: { lead, leaves }
       # operations: { lead, leaves }
       # regulatory: { lead, leaves }
-    skipped: [{ agent-id: "제외 사유" }]  # 예: { emerging-analyst: "신흥국 미포함" }
+    skipped: [{ agent-id: "제외 사유" }]  # 예: { market-dynamics: "신흥국 미포함" }
     total_active: {N}
 
   constraints:
@@ -522,11 +522,11 @@ phase: 1
 updated_at: YYYY-MM-DDTHH:MM:SS
 
 leaves_completed:
-  - agent: ai-trend-analyst
-    file: findings/market/ai-trend-analyst.yaml
+  - agent: market-dynamics
+    file: findings/market/market-dynamics.yaml
     completed_at: YYYY-MM-DDTHH:MM:SS
-  - agent: benchmark-analyst
-    file: findings/market/benchmark-analyst.yaml
+  - agent: competitive-landscape
+    file: findings/market/competitive-landscape.yaml
     completed_at: YYYY-MM-DDTHH:MM:SS
 
 leaves_pending:
@@ -1709,8 +1709,8 @@ Sub-lead(Level 2)가 리프를 스폰할 때, 컨텍스트 깊이 문제를 완�
 │   │   └── division-synthesis.yaml              (capability-lead)
 │   ├── finance/
 │   │   ├── quick-scan.yaml            (Phase 0.5)
-│   │   ├── revenue-analyst.yaml
-│   │   ├── investment-analyst.yaml
+│   │   ├── revenue-growth.yaml
+│   │   ├── investment-returns.yaml
 │   │   ├── financial-viability-matrix.yaml      (finance-lead)
 │   │   └── division-synthesis.yaml              (finance-lead)
 │   │

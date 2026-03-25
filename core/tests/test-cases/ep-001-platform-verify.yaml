@@ -3,7 +3,7 @@
 
 test_id: EP-001
 name: "채널/시장 직접 확인 — 추측 금지"
-target_agents: ["east-asia-analyst", "western-analyst", "domestic-comp-analyst", "global-comp-analyst"]
+target_agents: ["market-sizing", "market-sizing", "competitive-landscape", "competitive-landscape"]
 severity: critical
 
 input:

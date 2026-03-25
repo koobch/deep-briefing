@@ -52,7 +52,7 @@ Layer 3: Raw Source (원본 URL, API 응답, 스크린샷)
 # ============================================================
 # META
 # ============================================================
-agent: {agent-id}                    # 예: east-asia-analyst
+agent: {agent-id}                    # 예: market-sizing
 domain: {division}/{sub-domain}      # 예: market/geography/east-asia
 parent: {parent-agent-id}            # 예: market-lead
 status: draft | researching | verified | revised
@@ -98,9 +98,9 @@ evidence:
 # LAYER 2: DATA (상세 데이터)
 # ============================================================
 data_files:
-  - file: findings/market/geography/east-asia-analyst-detail.yaml
+  - file: findings/market/geography/market-sizing-detail.yaml
     description: "지역별 시장 규모, 성장률, 카테고리 분포 상세"
-  - file: findings/market/geography/east-asia-analyst-timeline.csv
+  - file: findings/market/geography/market-sizing-timeline.csv
     description: "주요 시장(아시아/북미/유럽) 연도별 추이 (2020-2025)"
 
 # ============================================================
@@ -207,13 +207,13 @@ synthesis:
   triangulation:
     - metric: "국내 시장 규모"
       values:
-        - agent: east-asia-analyst
+        - agent: market-sizing
           value: "$8.0B"
           source: S01
-        - agent: channel-analyst
+        - agent: channel-landscape
           value: "$8.03B"
           source: S12
-        - agent: segment-analyst
+        - agent: customer-analysis
           value: "$8.0B (세그먼트 합산)"
           source: S05, S06, S07
       verdict: "일치 (범위 내)"
@@ -222,7 +222,7 @@ synthesis:
   spot_checks:
     - claim_id: MGN-03
       original_agent: {agent-id}
-      verifier: east-asia-analyst
+      verifier: market-sizing
       method: "독립 데이터로 역산"
       result: pass | fail | adjusted
       detail: "검증 상세 내용"

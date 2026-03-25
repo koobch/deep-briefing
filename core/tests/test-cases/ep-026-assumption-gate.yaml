@@ -4,7 +4,7 @@
 
 test_id: EP-026
 name: "전제 확신도 등급 + 가정 전파"
-target_agents: ["east-asia-analyst", "revenue-analyst", "report-writer", "insight-synthesizer"]
+target_agents: ["market-sizing", "revenue-growth", "report-writer", "insight-synthesizer"]
 severity: critical
 
 input:

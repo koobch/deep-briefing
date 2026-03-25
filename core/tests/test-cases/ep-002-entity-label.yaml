@@ -3,7 +3,7 @@
 
 test_id: EP-002
 name: "엔터티 라벨 혼동 방지"
-target_agents: ["revenue-analyst", "investment-analyst", "report-writer", "east-asia-analyst"]
+target_agents: ["revenue-growth", "investment-returns", "report-writer", "market-sizing"]
 severity: critical
 
 input:
