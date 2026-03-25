@@ -451,7 +451,7 @@ research_plan:
     skipped:
       - agent-id: "제외 사유"
       # 예: market-dynamics: "신흥국 미포함"
-      # 예: console-analyst: "콘솔 미관련"
+      # 예: channel-landscape: "채널 분석 미관련"
 
     # 집계
     total_active: {N}  # required + active 합계

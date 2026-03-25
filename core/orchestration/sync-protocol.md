@@ -530,7 +530,7 @@ leaves_completed:
     completed_at: YYYY-MM-DDTHH:MM:SS
 
 leaves_pending:
-  - agent: gamedev-ai-analyst
+  - agent: market-dynamics
     reason: "세션 중단으로 미완료"
 
 synthesis_status: pending  # pending | in-progress | completed
