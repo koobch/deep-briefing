@@ -130,12 +130,12 @@ research_plan:
 
     product:
       active: true
-      leaves: [product-strategy-analyst, cx-analyst, brand-analyst, user-research-analyst]
+      leaves: [product-offering, value-differentiation, go-to-market, pricing-monetization]
       priority_focus: "..."
 
     capability:
       active: true
-      leaves: [dev-portfolio-analyst, tech-analyst, org-analyst, partnership-analyst]
+      leaves: [technology-ip, technology-ip, execution-readiness, strategic-assets]
       priority_focus: "..."
 
     finance:
@@ -1697,18 +1697,18 @@ Sub-lead(Level 2)가 리프를 스폰할 때, 컨텍스트 깊이 문제를 완�
 │   │   └── division-synthesis.yaml   (market-lead)
 │   ├── product/
 │   │   ├── quick-scan.yaml            (Phase 0.5)
-│   │   ├── product-strategy-analyst.yaml
-│   │   ├── cx-analyst.yaml
-│   │   ├── brand-analyst.yaml
-│   │   ├── user-research-analyst.yaml
+│   │   ├── product-offering.yaml
+│   │   ├── value-differentiation.yaml
+│   │   ├── go-to-market.yaml
+│   │   ├── pricing-monetization.yaml
 │   │   ├── product-competitiveness-matrix.yaml  (product-lead)
 │   │   └── division-synthesis.yaml              (product-lead)
 │   ├── capability/
 │   │   ├── quick-scan.yaml            (Phase 0.5)
-│   │   ├── dev-portfolio-analyst.yaml
-│   │   ├── tech-analyst.yaml
-│   │   ├── org-analyst.yaml
-│   │   ├── partnership-analyst.yaml
+│   │   ├── technology-ip.yaml
+│   │   ├── technology-ip.yaml
+│   │   ├── execution-readiness.yaml
+│   │   ├── strategic-assets.yaml
 │   │   ├── capability-gap-matrix.yaml           (capability-lead)
 │   │   └── division-synthesis.yaml              (capability-lead)
 │   ├── finance/

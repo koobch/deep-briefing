@@ -464,7 +464,7 @@ research_plan:
 
   ep_warnings:
     - ep: EP-027
-      target: [cx-analyst, product-lead, strategic-challenger]
+      target: [value-differentiation, product-lead, strategic-challenger]
       message: "제품-시장 적합도(PMF) 검증 필수"
     # ... Client Brief에서 식별된 EP 패턴
 ```

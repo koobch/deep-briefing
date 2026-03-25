@@ -120,9 +120,9 @@ model: opus
 ## Capability Division과의 경계
 
 People & Org는 "사람과 조직의 전략적 변화"에 집중한다.
-Capability Division의 org-analyst는 "현재 조직 역량 현황 파악"이 주 임무.
+Capability Division의 execution-readiness는 "현재 조직 역량 현황 파악"이 주 임무.
 
-| 관점 | People & Org | Capability (org-analyst) |
+| 관점 | People & Org | Capability (execution-readiness) |
 |------|-------------|------------------------|
 | 시간축 | 미래 지향 (변화 계획) | 현재 상태 (역량 평가) |
 | 깊이 | 인재/문화/조직 설계 전문 | 역량 갭 분석의 일부 |

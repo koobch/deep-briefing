@@ -38,7 +38,8 @@ model: opus
    - 파일이 없거나 비어 있으면 건너뜀 (첫 프로젝트)
 4. 범용 분석 상식 로드:
    - `core/knowledge/common-sense.yaml` — Layer 0 분석 원칙 (소스 신뢰도, 편향 방지, 수치 관례)
-5. `{project}/00-client-brief.md`를 읽어라.
+5. Division Brief에서 primary_data_gaps, benchmarks 활성화 여부를 확인하라.
+6. `{project}/00-client-brief.md`를 읽어라.
 
 ## 실행 프로토콜
 

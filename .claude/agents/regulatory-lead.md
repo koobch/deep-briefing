@@ -121,9 +121,9 @@ model: opus
 ## Product Division과의 경계
 
 Regulatory는 "외부 규제가 전략에 미치는 영향"에 집중한다.
-Product의 brand-analyst는 "브랜드/IP 자산의 전략적 가치와 시장 적합도"에 집중한다.
+Product의 go-to-market은 "브랜드/IP 자산의 전략적 가치와 시장 적합도"에 집중한다.
 
-| 관점 | Regulatory | Product (brand-analyst) |
+| 관점 | Regulatory | Product (go-to-market) |
 |------|-----------|------------------------|
 | 초점 | 법적 리스크, 컴플라이언스 비용 | 브랜드 가치, 시장 적합도 |
 | 질문 | "이 규제가 우리 전략을 막는가?" | "이 브랜드/IP가 전략적으로 매력적인가?" |

@@ -3,7 +3,7 @@
 
 test_id: EP-027
 name: "제품-시장 적합도 (포지셔닝/톤 호환성)"
-target_agents: ["cx-analyst", "product-strategy-analyst", "insight-synthesizer", "strategic-challenger"]
+target_agents: ["value-differentiation", "product-offering", "insight-synthesizer", "strategic-challenger"]
 severity: critical
 
 input:

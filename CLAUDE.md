@@ -214,6 +214,8 @@ claude
 | `scripts/generate-disconfirming.py {name}` | 반증 시나리오 자동 생성 |
 | `scripts/check-api-keys.sh` | .env API 키 유효성 일괄 점검 |
 | `scripts/setup-api-keys.sh` | API 키 인터랙티브 설정 도우미 |
+| `scripts/check-env.sh` | 세션 시작 시 환경 상태 JSON 점검 (SessionStart 훅) |
+| `start.sh` | 환경 안내 + Claude 실행 래퍼 (Quick Start 진입점) |
 
 ## 권한 정책
 

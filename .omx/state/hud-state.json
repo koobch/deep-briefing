@@ -1,5 +1,5 @@
 {
-  "last_turn_at": "2026-03-22T13:51:34.776Z",
-  "turn_count": 34,
-  "last_agent_output": "**Findings**\n1. High: 프롬프트 하네스가 실제 에이전트 배치를 못 따라갑니다. 테스트 러너는 오직 `{project}/agents/{agent-id}.md`만 읽도"
+  "last_turn_at": "2026-03-25T13:43:35.178Z",
+  "turn_count": 73,
+  "last_agent_output": "**Documentation Audit**\n- README.md:88 vs .claude/skills/research/SKILL.md:25 & .claude/skills/resea"
 }
