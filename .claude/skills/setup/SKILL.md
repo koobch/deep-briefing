@@ -298,17 +298,31 @@ AskUserQuestion:
       options:
         - label: "없음, 처음입니다"
           description: "새로 발급받겠습니다"
-        - label: "다른 프로젝트에 .env가 있음"
+        - label: "자동 탐색"
+          description: "홈 디렉토리에서 .env 파일을 자동으로 찾아 키를 가져옵니다"
+        - label: "경로 직접 지정"
           description: "기존 .env 파일 경로를 입력하면 키를 가져옵니다"
         - label: "키를 직접 입력"
           description: "이미 발급받은 키를 하나씩 입력합니다"
 ```
 
-- "다른 프로젝트에 .env가 있음" 선택 시:
+- "자동 탐색" 선택 시:
+  - `find ~ -maxdepth 4 -name ".env" -type f 2>/dev/null` 실행하여 .env 파일 목록 수집
+  - 각 .env에서 API 키가 설정된 항목만 필터 (빈 값, `your_*_here` 제외)
+  - 결과를 보여주고 가져올 파일 선택:
+    "다음 .env 파일에서 API 키를 발견했습니다:
+     1. ~/other-project/.env — DART_API_KEY, FRED_API_KEY (2개)
+     2. ~/work/.env — EXA_API_KEY (1개)
+     어느 파일에서 가져올까요? (번호 또는 '전부')"
+  - 선택한 파일에서 키를 현재 .env에 복사
+  - "✅ {N}개 키를 가져왔습니다: {키 목록}" 표시
+
+- "경로 직접 지정" 선택 시:
   - 경로 입력받기 (예: ~/other-project/.env)
   - 해당 파일에서 키 읽어서 현재 .env에 복사
   - "✅ {N}개 키를 가져왔습니다: {키 목록}" 표시
-  - 가져온 뒤 누락된 키만 추가 설정 여부 확인
+
+- 두 경우 모두 가져온 뒤 누락된 키만 추가 설정 여부 확인
 
 그 다음 API 추천:
 
@@ -319,20 +333,14 @@ AskUserQuestion:
 - ECOS — 한국 매크로 경제지표 (무료)
 - DART — 한국 기업 공시/재무 (무료)
 
-**산업별 추가 추천** — 사용자가 선택한 산업에 해당하는 API만 보여준다:
+**산업별 추가 추천** — 사용자가 선택한 도메인에 맞는 API만 추천한다.
 
-| 산업 | 추천 API | 필수도 |
-|------|---------|-------|
-| 게임 | Steam API, IGDB, Sensor Tower, App Annie | 중간 |
-| 미디어 | YouTube Data API, Nielsen (유료), Chartmetric | 중간 |
-| 이커머스 | Google Trends, Amazon Product API, Naver DataLab | 중간 |
-| 제조업 | 관세청 수출입 API, KOSIS, UN Comtrade | 중간 |
-| 핀테크 | 금감원 API, PSD2/Open Banking API | 높음 |
-| 헬스케어 | ClinicalTrials.gov, FDA/MFDS API, PubMed | 높음 |
-| SaaS | Crunchbase API, G2 API, BuiltWith | 중간 |
-| 투자/금융 | Bloomberg API (유료), Yahoo Finance, KRX API | 중간 |
+위 기본 API 5개만 안내한 뒤, 사용자에게 물어보세요:
+"선택하신 도메인({domain})에 특화된 추가 API가 있을 수 있습니다. 산업 특화 API도 확인할까요?"
+- Y: Claude가 해당 산업에 적합한 API 2~3개를 자체 판단하여 추천 (domains/{domain}/data-sources.md 참조)
+- N: 기본 API만으로 진행
 
-**중요: 사용자가 선택한 도메인에 해당하는 산업의 API만 추천한다.** 예를 들어 "투자" 도메인이면 "투자/금융" 행만 보여주고 게임/미디어 등은 보여주지 않는다. example(범용) 도메인이면 산업별 추천을 건너뛴다.
+**절대 하지 말 것**: 다른 산업의 API를 추천하지 마라. 게임 도메인이 아니면 Steam API를 언급하지 마라. 투자 도메인이 아니면 Bloomberg를 언급하지 마라. 사용자가 선택한 도메인과 무관한 API는 존재 자체를 언급하지 않는다.
 
 각 추천 API에 대해 **3단계 점검**을 순서대로 수행한다:
 
@@ -378,13 +386,7 @@ API별 상세 발급 가이드:
 | FRED | https://fred.stlouisfed.org/docs/api/api_key.html | 가입 → Request API Key → 즉시 발급 | 즉시 |
 | ECOS | https://ecos.bok.or.kr/api/ | 회원가입 → 마이페이지 → 인증키 신청 | 즉시~수분 |
 
-**산업별 API 발급 가이드** (해당 산업 선택 시에만 표시):
-
-| API | 산업 | 발급 URL | 소요 시간 |
-|-----|------|---------|----------|
-| Steam | 게임 | https://steamcommunity.com/dev/apikey | 즉시 |
-| NewsAPI | 범용 | https://newsapi.org (무료 100건/일) | 즉시 |
-| Yahoo Finance | 투자/금융 | https://financeapi.net | 즉시 |
+산업 특화 API의 발급 가이드는 Claude가 해당 API를 추천할 때 함께 안내한다. 미리 전체 목록을 보여주지 않는다.
 
 **Step 3: 키 입력 + 저장 + 확인**
 
