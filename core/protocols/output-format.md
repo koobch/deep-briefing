@@ -54,7 +54,7 @@ Layer 3: Raw Source (원본 URL, API 응답, 스크린샷)
 # ============================================================
 agent: {agent-id}                    # 예: east-asia-analyst
 domain: {division}/{sub-domain}      # 예: market/geography/east-asia
-parent: {parent-agent-id}            # 예: geography-lead
+parent: {parent-agent-id}            # 예: market-lead
 status: draft | researching | verified | revised
 timestamp: YYYY-MM-DD
 iteration: {N}                       # 자율 반복 회차

@@ -124,8 +124,7 @@ research_plan:
   divisions:
     market:
       active: true
-      sub_leads: [geography-lead, segment-lead, platform-lead, competitive-lead]
-      leaves: [east-asia-analyst, western-analyst, emerging-analyst, ...]
+      leaves: [market-sizing, customer-analysis, competitive-landscape, channel-landscape, market-dynamics]
       priority_focus: "Client Brief에서 도출된 시장 분석 초점"
 
     product:
@@ -147,19 +146,19 @@ research_plan:
     people-org:
       active: false          # PM이 주제 기반으로 결정
       activation_criteria: "조직 변화, 인력 전략, 문화 전환, HR 이슈가 핵심 질문에 포함될 때"
-      leaves: [talent-strategy-analyst, org-design-analyst, culture-change-analyst, workforce-analytics-analyst]
+      leaves: [talent-strategy, org-design, culture-engagement]
       priority_focus: ""
 
     operations:
       active: false
       activation_criteria: "프로세스 효율화, 운영 최적화, 서비스 운영, 공급망이 핵심일 때"
-      leaves: [process-analyst, supply-chain-analyst, infra-ops-analyst, quality-ops-analyst]
+      leaves: [process-excellence, supply-chain, infrastructure]
       priority_focus: ""
 
     regulatory:
       active: false
       activation_criteria: "규제 환경, 법적 리스크, ESG, 정부 정책이 전략에 중대한 영향을 줄 때"
-      leaves: [legal-compliance-analyst, ip-legal-analyst, esg-analyst, policy-analyst]
+      leaves: [compliance-status, regulatory-outlook, esg-governance]
       priority_focus: ""
 
   frameworks:                          # domains/{domain}/frameworks.md 참조
@@ -1685,14 +1684,11 @@ Sub-lead(Level 2)가 리프를 스폰할 때, 컨텍스트 깊이 문제를 완�
 ├── findings/                          (에이전트 출력)
 │   ├── market/
 │   │   ├── quick-scan.yaml            (Phase 0.5: 기초 스캔)
-│   │   ├── geography/
-│   │   │   ├── east-asia-analyst.yaml
-│   │   │   ├── western-analyst.yaml
-│   │   │   ├── emerging-analyst.yaml
-│   │   │   └── synthesis.yaml        (geography-lead)
-│   │   ├── segment/
-│   │   ├── platform/
-│   │   ├── competitive/
+│   │   ├── market-sizing.yaml
+│   │   ├── customer-analysis.yaml
+│   │   ├── competitive-landscape.yaml
+│   │   ├── channel-landscape.yaml
+│   │   ├── market-dynamics.yaml
 │   │   ├── opportunity-matrix.yaml   (market-lead: 지역×세그먼트×채널 기회 매트릭스)
 │   │   └── division-synthesis.yaml   (market-lead)
 │   ├── product/
@@ -1721,24 +1717,21 @@ Sub-lead(Level 2)가 리프를 스폰할 때, 컨텍스트 깊이 문제를 완�
 │   │   # === 확장 Division (활성화 시 생성) ===
 │   ├── people-org/                    (People & Organization, 활성화 시)
 │   │   ├── quick-scan.yaml
-│   │   ├── talent-strategy-analyst.yaml
-│   │   ├── org-design-analyst.yaml
-│   │   ├── culture-change-analyst.yaml
-│   │   ├── workforce-analytics-analyst.yaml
+│   │   ├── talent-strategy.yaml
+│   │   ├── org-design.yaml
+│   │   ├── culture-engagement.yaml
 │   │   └── division-synthesis.yaml
 │   ├── operations/                    (Operations, 활성화 시)
 │   │   ├── quick-scan.yaml
-│   │   ├── process-analyst.yaml
-│   │   ├── supply-chain-analyst.yaml
-│   │   ├── infra-ops-analyst.yaml
-│   │   ├── quality-ops-analyst.yaml
+│   │   ├── process-excellence.yaml
+│   │   ├── supply-chain.yaml
+│   │   ├── infrastructure.yaml
 │   │   └── division-synthesis.yaml
 │   └── regulatory/                    (Regulatory & Governance, 활성화 시)
 │       ├── quick-scan.yaml
-│       ├── legal-compliance-analyst.yaml
-│       ├── ip-legal-analyst.yaml
-│       ├── esg-analyst.yaml
-│       ├── policy-analyst.yaml
+│       ├── compliance-status.yaml
+│       ├── regulatory-outlook.yaml
+│       ├── esg-governance.yaml
 │       └── division-synthesis.yaml
 │
 ├── sync/

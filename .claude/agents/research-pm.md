@@ -426,8 +426,7 @@ research_plan:
     active:
       market:
         lead: market-lead
-        sub_leads: [geography-lead, segment-lead, channel-lead, competitive-lead]
-        leaves: [활성화할 Leaf 에이전트 목록]
+        leaves: [market-sizing, customer-analysis, competitive-landscape, channel-landscape, market-dynamics]
       product:
         lead: product-lead
         leaves: [활성화할 Leaf 에이전트 목록]
