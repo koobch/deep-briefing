@@ -85,7 +85,7 @@ MECE 검증: 구조(형태) × 거버넌스(통제) × 정합성(전략 매칭).
 ## 도메인 지식 로드
 
 부트스트랩 시 아래를 읽어라:
-- `domains/{domain}/knowledge/learned-sources.yaml` — 조직 정보 소스
+- `core/knowledge/common-sense.yaml` — 범용 분석 상식 (Layer 0)- `domains/{domain}/knowledge/learned-sources.yaml` — 조직 정보 소스
 - `domains/{domain}/knowledge/learned-patterns.yaml` — 이 산업의 조직 구조 패턴
 - `domains/{domain}/knowledge/learned-terms.yaml` — 조직 관련 용어 정의
 - `domains/{domain}/knowledge/learned-frameworks.yaml` — 프레임워크 효과성

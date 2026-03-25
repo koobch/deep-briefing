@@ -87,7 +87,7 @@ MECE 검증: 누가(플레이어) × 어떤 판(구조) × 왜 유지(장벽) ×
 ## 도메인 지식 로드
 
 부트스트랩 시 아래를 읽어라:
-- `domains/{domain}/knowledge/learned-sources.yaml` — 경쟁사 정보 소스 신뢰도
+- `core/knowledge/common-sense.yaml` — 범용 분석 상식 (Layer 0)- `domains/{domain}/knowledge/learned-sources.yaml` — 경쟁사 정보 소스 신뢰도
 - `domains/{domain}/knowledge/learned-patterns.yaml` — 이 산업의 경쟁 패턴
 - `domains/{domain}/knowledge/learned-terms.yaml` — 경쟁 관련 용어 정의
 - `domains/{domain}/knowledge/learned-frameworks.yaml` — 프레임워크 효과성

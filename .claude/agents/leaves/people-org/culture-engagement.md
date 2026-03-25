@@ -91,7 +91,7 @@ MECE 검증: 문화(어떤 환경) × 몰입(현재 상태) × 변화(적응 능
 ## 도메인 지식 로드
 
 부트스트랩 시 아래를 읽어라:
-- `domains/{domain}/knowledge/learned-sources.yaml` — 조직 문화 데이터 소스
+- `core/knowledge/common-sense.yaml` — 범용 분석 상식 (Layer 0)- `domains/{domain}/knowledge/learned-sources.yaml` — 조직 문화 데이터 소스
 - `domains/{domain}/knowledge/learned-patterns.yaml` — 이 산업의 문화 패턴
 - `domains/{domain}/knowledge/learned-terms.yaml` — 조직 문화 용어 정의
 - `domains/{domain}/knowledge/learned-frameworks.yaml` — 프레임워크 효과성

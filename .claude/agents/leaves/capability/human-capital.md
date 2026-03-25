@@ -82,7 +82,7 @@ MECE 검증: 보유(있는 것) × 부족(없는 것) × 리더십(이끄는 능
 ## 도메인 지식 로드
 
 부트스트랩 시 아래를 읽어라:
-- `domains/{domain}/knowledge/learned-sources.yaml` — 인재 데이터 소스
+- `core/knowledge/common-sense.yaml` — 범용 분석 상식 (Layer 0)- `domains/{domain}/knowledge/learned-sources.yaml` — 인재 데이터 소스
 - `domains/{domain}/knowledge/learned-patterns.yaml` — 이 산업의 인재 패턴
 - `domains/{domain}/knowledge/learned-terms.yaml` — 인재/역량 관련 용어
 - `domains/{domain}/knowledge/learned-frameworks.yaml` — 프레임워크 효과성
