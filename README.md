@@ -20,19 +20,16 @@
 
 ### 30초 Quick Start
 
+터미널에 이 한 줄을 복사-붙여넣기하세요:
+
 ```bash
-git clone https://github.com/koobch/deep-briefing.git
-cd deep-briefing
-claude
+git clone https://github.com/koobch/deep-briefing.git && cd deep-briefing && claude
 ```
 
-**그 다음은 Claude가 안내합니다.** 처음이면 `/setup`을, 이미 설정했으면 `/research`를 제안합니다.
-
-```
-# 직접 시작하려면:
-> /setup                                        # 환경 설정 (최초 1회, Express 2분)
-> /research interactive my-project 한국 SaaS 시장 진출 전략  # 리서치 시작
-```
+**그게 끝입니다.** Claude가 자동으로 환경을 감지하고 다음 단계를 안내합니다:
+- 처음이면 → `/setup` 제안 (환경 설정, Express 2분)
+- 설정 완료면 → 리서치 주제를 물어봄
+- 진행 중 프로젝트가 있으면 → 이어서 진행 / 새 리서치 선택지 제시
 
 PM 에이전트가 인터뷰 → 가설 수립 → 병렬 리서치 → 보고서 생성까지 자동으로 진행합니다.
 
