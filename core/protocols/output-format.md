@@ -463,3 +463,95 @@ Phase 4 Step 4-B에서 사용자가 슬라이드 구성을 변경할 수 있다:
 5. Claim과 Evidence 사이 논리적 비약
 6. 엔터티 라벨 (`[그룹]`/`[별도]`) 누락
 7. 데이터 시점 미표기
+
+---
+
+## Division Synthesis 표준 스키마
+
+Lead가 Phase 1/2 완료 후 findings/{division}/division-synthesis.yaml에 저장하는 표준 포맷.
+PM이 Sync Round에서 이 파일을 읽고 교차 분석을 수행한다.
+
+```yaml
+division: "{division}"
+lead: "{division}-lead"
+phase: 1
+completed_at: "YYYY-MM-DDTHH:MM:SS"
+
+headline: "Division 전체를 관통하는 핵심 메시지 1문장"
+
+key_findings:
+  - id: "{ID}"
+    claim: "..."
+    confidence: "high | medium | low"
+    strategic_impact: "high | medium | low"
+    so_what: "이 사실이 의사결정에 미치는 영향"
+
+key_tensions:
+  - tension: "해소 안 된 긴장 설명"
+    between: ["leaf-a", "leaf-b"]
+    resolution_needed: true | false
+
+leaf_results:
+  "{leaf-id}":
+    status: "verified | draft | revised"
+    claims_count: {high: N, medium: N, low: N}
+    top_claim: "가장 중요한 Claim 1문장"
+
+cross_domain:
+  implications:
+    - target: "{other-division}"
+      finding: "전달할 발견"
+      urgency: "must | should | nice"
+  questions:
+    - target: "{other-division}"
+      question: "확인 필요한 질문"
+      urgency: "must | should | nice"
+
+source_summary:
+  total: N
+  by_type: {primary: N, secondary: N, estimate: N}
+  by_reliability: {high: N, medium: N, low: N}
+  api_used: ["API 이름 목록"]
+
+confidence_summary:
+  high: N
+  medium: N
+  low: N
+  unverified: N
+```
+
+---
+
+## 소스 추적 규칙
+
+### 신뢰도 정량화
+
+| 소스 조합 | confidence 상한 |
+|----------|---------------|
+| primary 2개+ 일치 | high |
+| primary 1개 + secondary 1개+ | high |
+| secondary 2개+ 독립 확인 | high |
+| secondary 1개만 | medium |
+| estimate/tertiary만 | low |
+| API 미사용 + 웹 검색만 | medium (high 불가) |
+
+### API 결과의 소스 분류
+
+- 정부/기관 API (DART, FRED, ECOS): type: primary
+- 상업 API (Exa, Firecrawl): type: secondary (원본 소스의 신뢰도를 따름)
+- 크롤링 데이터: type: secondary
+
+### 소스 변동 대응
+
+- URL 접근 실패: source-url-verifier가 탐지 → 해당 Claim confidence 한 단계 하향
+- 대체 소스 확보: 원본 URL + 아카이브 URL 병기 권장
+- API 데이터 시점: 반드시 as_of 필드에 데이터 기준 시점 명시
+
+### data-registry.csv 연동
+
+모든 데이터 수집 결과를 `{project}/data/data-registry.csv`에 등록:
+- data_id: {Leaf ID}-D## (예: MSZ-D01)
+- type: api | web | report | internal
+- reliability: high | medium | low
+- collected_by: 수집한 agent-id
+이 레지스트리가 최종 보고서의 소스 테이블 원천이 됨.

@@ -129,6 +129,12 @@ Mode C — 벤치마크 보강 (benchmarks: active 시):
   - 예: "정확한 시장 규모 미확보 → 상장사 매출 합산 + 비상장 추정으로 범위 제시"
 ```
 
+### API 사용 규칙
+- core/protocols/api-usage-guide.md의 우선순위를 따른다
+- API 우선: 설정된 API가 있으면 웹 검색보다 먼저 사용
+- WebFetch 실패(403/차단) 시 Firecrawl API로 재시도
+- 모든 수집 결과를 {project}/data/data-registry.csv에 등록
+
 ### 가설 태깅 (Phase 0.5 가설과 연결)
 
 ```

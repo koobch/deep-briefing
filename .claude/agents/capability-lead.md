@@ -24,6 +24,7 @@ model: opus
 
 ### Step 1: 프로토콜 + 도메인 지식 로드
 1. `core/protocols/output-format.md`, `core/protocols/fact-check-protocol.md`를 참조하라.
+   - `core/protocols/api-usage-guide.md` — API 사용 우선순위 + 의사결정 매트릭스
 2. 도메인 지식 베이스가 있으면 로드:
    - `domains/{domain}/frameworks.md` — 프레임워크 카탈로그
    - `domains/{domain}/data-sources.md` — 데이터 소스 스펙

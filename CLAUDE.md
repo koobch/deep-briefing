@@ -132,6 +132,7 @@ Layer 3: 프로젝트 맥락   → {project}/ (일회성)
 - **SCR 스토리라인**: 보고서/슬라이드는 Situation→Complication→Resolution 구조
 - **Action Title**: 모든 슬라이드 타이틀은 주장 문장형 (주제형 금지)
 - **Implementation Playbook**: 전략 제안에 담당/마일스톤/KPI/의존성 포함
+- **API 사용 가이드**: `core/protocols/api-usage-guide.md` — API 우선 원칙, 의사결정 매트릭스, Firecrawl 규칙
 
 ### 검증 체계
 - VL-1: Leaf 자가 검증 (2소스+, 반증 검토)

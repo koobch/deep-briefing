@@ -99,6 +99,17 @@ COMMON_SECTION=$(cat << 'COMMON_EOF'
 - **반대 의견 포함**: 핵심 Claim에 반대 의견/반증 1건 이상
 
 상세: core/knowledge/common-sense.yaml 참조 (필요 시 Read)
+
+## API 사용 규칙 (core/protocols/api-usage-guide.md 핵심)
+
+- **API 우선**: 설정된 API가 있으면 웹 검색보다 먼저 사용
+- 수집 우선순위: API → Exa 검색 → WebSearch → WebFetch/Firecrawl
+- 정부 API(DART/FRED/ECOS) = primary 소스, Exa/Firecrawl = secondary
+- WebFetch 실패(403/차단) → Firecrawl API로 재시도
+- API 결과: findings/{division}/api/ 에 저장, data-registry.csv에 등록
+- API 미사용 시 confidence 상한 = medium (high 불가)
+
+상세: core/protocols/api-usage-guide.md 참조 (필요 시 Read)
 COMMON_EOF
 )
 
