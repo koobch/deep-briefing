@@ -6,7 +6,6 @@
   <title>Deep-Briefing Dashboard</title>
   <meta name="description" content="멀티 에이전트 전략 리서치 시스템 대시보드" />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" defer></script>
   <script src="js/dashboard.js" defer></script>
 </head>
 <body>
@@ -83,58 +82,183 @@
         <a href="whitepaper.html#architecture" class="section-more-link">자세히 보기 →</a>
       </div>
 
-      <div class="diagram-container" role="img" aria-label="에이전트 계층 다이어그램">
-        <div class="mermaid" data-diagram="arch">
-graph TD
-    PM["<b>research-pm</b><br/>PM 오케스트레이터"]
+      <!-- CSS 계층도 다이어그램 -->
+      <div class="arch-diagram" role="img" aria-label="에이전트 계층 다이어그램">
 
-    PM --> ML["market-lead"]
-    PM --> PL["product-lead"]
-    PM --> CL["capability-lead"]
-    PM --> FL["finance-lead"]
-    PM -.-> POL["people-org-lead"]
-    PM -.-> OL["operations-lead"]
-    PM -.-> RL["regulatory-lead"]
-
-    ML --> MS["market-sizing"]
-    ML --> CA["customer-analysis"]
-    ML --> CLa["competitive-landscape"]
-    ML --> CH["channel-landscape"]
-    ML --> MD["market-dynamics"]
-
-    PL --> PO["product-offering"]
-    PL --> VD["value-differentiation"]
-    PL --> GM["go-to-market"]
-    PL --> PMo["pricing-monetization"]
-
-    CL --> TI["technology-ip"]
-    CL --> HC["human-capital"]
-    CL --> SA["strategic-assets"]
-    CL --> ER["execution-readiness"]
-
-    FL --> RG["revenue-growth"]
-    FL --> CE["cost-efficiency"]
-    FL --> IR["investment-returns"]
-    FL --> VR["valuation-risk"]
-
-    PM --> FV["fact-verifier"]
-    PM --> LP["logic-prober"]
-    PM --> SC["strategic-challenger"]
-    PM --> RT["red-team"]
-    PM --> CDS["cross-domain-synthesizer"]
-    PM --> IS["insight-synthesizer"]
-    PM --> RW["report-writer"]
-    PM --> QA["qa-orchestrator"]
-
-    style PM fill:#1c2128,stroke:#58a6ff,color:#c9d1d9
-    style ML fill:#1c2128,stroke:#58a6ff,color:#c9d1d9
-    style PL fill:#1c2128,stroke:#3fb950,color:#c9d1d9
-    style CL fill:#1c2128,stroke:#d2a8ff,color:#c9d1d9
-    style FL fill:#1c2128,stroke:#f0883e,color:#c9d1d9
-    style POL fill:#1c2128,stroke:#f778ba,color:#c9d1d9,stroke-dasharray:4
-    style OL fill:#1c2128,stroke:#79c0ff,color:#c9d1d9,stroke-dasharray:4
-    style RL fill:#1c2128,stroke:#ffd33d,color:#c9d1d9,stroke-dasharray:4
+        <!-- Level 0: PM -->
+        <div class="arch-level arch-level--pm">
+          <div class="arch-connector arch-connector--root" aria-hidden="true"></div>
+          <div class="arch-pm-card">
+            <div class="arch-pm-label">Level 0 — Orchestrator</div>
+            <div class="arch-pm-name">research-pm</div>
+            <div class="arch-pm-desc">PM 오케스트레이터 · 전체 Phase 조율</div>
+          </div>
         </div>
+
+        <!-- Level 1: Core Divisions -->
+        <div class="arch-level arch-level--core">
+          <div class="arch-level-label">
+            <span class="arch-level-badge arch-level-badge--core">Level 1 — Core Divisions</span>
+          </div>
+          <div class="arch-divisions arch-divisions--core">
+
+            <div class="arch-div-col">
+              <div class="arch-div-card arch-div-card--market">
+                <div class="arch-div-header">
+                  <span class="arch-div-dot" aria-hidden="true"></span>
+                  <span class="arch-div-name">Market</span>
+                  <span class="arch-div-badge">M</span>
+                </div>
+                <div class="arch-div-leaves">
+                  <span class="arch-leaf">market-sizing</span>
+                  <span class="arch-leaf">customer-analysis</span>
+                  <span class="arch-leaf">competitive-landscape</span>
+                  <span class="arch-leaf">channel-landscape</span>
+                  <span class="arch-leaf">market-dynamics</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arch-div-col">
+              <div class="arch-div-card arch-div-card--product">
+                <div class="arch-div-header">
+                  <span class="arch-div-dot" aria-hidden="true"></span>
+                  <span class="arch-div-name">Product</span>
+                  <span class="arch-div-badge">P</span>
+                </div>
+                <div class="arch-div-leaves">
+                  <span class="arch-leaf">product-offering</span>
+                  <span class="arch-leaf">value-differentiation</span>
+                  <span class="arch-leaf">go-to-market</span>
+                  <span class="arch-leaf">pricing-monetization</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arch-div-col">
+              <div class="arch-div-card arch-div-card--capability">
+                <div class="arch-div-header">
+                  <span class="arch-div-dot" aria-hidden="true"></span>
+                  <span class="arch-div-name">Capability</span>
+                  <span class="arch-div-badge">C</span>
+                </div>
+                <div class="arch-div-leaves">
+                  <span class="arch-leaf">technology-ip</span>
+                  <span class="arch-leaf">human-capital</span>
+                  <span class="arch-leaf">strategic-assets</span>
+                  <span class="arch-leaf">execution-readiness</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arch-div-col">
+              <div class="arch-div-card arch-div-card--finance">
+                <div class="arch-div-header">
+                  <span class="arch-div-dot" aria-hidden="true"></span>
+                  <span class="arch-div-name">Finance</span>
+                  <span class="arch-div-badge">F</span>
+                </div>
+                <div class="arch-div-leaves">
+                  <span class="arch-leaf">revenue-growth</span>
+                  <span class="arch-leaf">cost-efficiency</span>
+                  <span class="arch-leaf">investment-returns</span>
+                  <span class="arch-leaf">valuation-risk</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Level 1: Extended Divisions -->
+        <div class="arch-level arch-level--extended">
+          <div class="arch-level-label">
+            <span class="arch-level-badge arch-level-badge--extended">Level 1 — Extended Divisions <span class="arch-badge-note">(조건부 활성)</span></span>
+          </div>
+          <div class="arch-divisions arch-divisions--extended">
+
+            <div class="arch-div-col">
+              <div class="arch-div-card arch-div-card--people arch-div-card--dashed">
+                <div class="arch-div-header">
+                  <span class="arch-div-dot" aria-hidden="true"></span>
+                  <span class="arch-div-name">People &amp; Org</span>
+                  <span class="arch-div-badge">H</span>
+                </div>
+                <div class="arch-div-sub">조직 / 인력 / 문화 이슈</div>
+              </div>
+            </div>
+
+            <div class="arch-div-col">
+              <div class="arch-div-card arch-div-card--operations arch-div-card--dashed">
+                <div class="arch-div-header">
+                  <span class="arch-div-dot" aria-hidden="true"></span>
+                  <span class="arch-div-name">Operations</span>
+                  <span class="arch-div-badge">O</span>
+                </div>
+                <div class="arch-div-sub">프로세스 / 운영 / 인프라</div>
+              </div>
+            </div>
+
+            <div class="arch-div-col">
+              <div class="arch-div-card arch-div-card--regulatory arch-div-card--dashed">
+                <div class="arch-div-header">
+                  <span class="arch-div-dot" aria-hidden="true"></span>
+                  <span class="arch-div-name">Regulatory</span>
+                  <span class="arch-div-badge">R</span>
+                </div>
+                <div class="arch-div-sub">규제 / 법률 / ESG</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Level 2: Cross-cutting + QA -->
+        <div class="arch-level arch-level--cross">
+          <div class="arch-level-label">
+            <span class="arch-level-badge arch-level-badge--cross">Level 2 — Cross-cutting &amp; Synthesis &amp; QA</span>
+          </div>
+          <div class="arch-cross-grid">
+
+            <div class="arch-cross-group">
+              <div class="arch-cross-group-label">검증</div>
+              <div class="arch-cross-chips">
+                <span class="arch-chip arch-chip--cross">fact-verifier</span>
+                <span class="arch-chip arch-chip--cross">logic-prober</span>
+                <span class="arch-chip arch-chip--cross">strategic-challenger</span>
+                <span class="arch-chip arch-chip--cross">red-team</span>
+              </div>
+            </div>
+
+            <div class="arch-cross-group">
+              <div class="arch-cross-group-label">합성</div>
+              <div class="arch-cross-chips">
+                <span class="arch-chip arch-chip--synthesis">cross-domain-synthesizer</span>
+                <span class="arch-chip arch-chip--synthesis">insight-synthesizer</span>
+              </div>
+            </div>
+
+            <div class="arch-cross-group">
+              <div class="arch-cross-group-label">보고서</div>
+              <div class="arch-cross-chips">
+                <span class="arch-chip arch-chip--report">report-writer</span>
+              </div>
+            </div>
+
+            <div class="arch-cross-group">
+              <div class="arch-cross-group-label">QA</div>
+              <div class="arch-cross-chips">
+                <span class="arch-chip arch-chip--qa">qa-orchestrator</span>
+                <span class="arch-chip arch-chip--qa">audience-fit-checker</span>
+                <span class="arch-chip arch-chip--qa">executability-checker</span>
+                <span class="arch-chip arch-chip--qa">report-auditor</span>
+                <span class="arch-chip arch-chip--qa">report-fixer</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

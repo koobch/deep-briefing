@@ -1,12 +1,11 @@
 /* ===================================================================
-   Deep-Briefing 대시보드 — Mermaid 초기화 + 인터랙션
+   Deep-Briefing 대시보드 — 인터랙션
    =================================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
   initTheme();
   initTabs();
   initCountUp();
-  initMermaid();
   initTimeline();
   initDivisionCards();
   initCopyButtons();
@@ -52,10 +51,6 @@ function initTabs() {
     tabBtns.forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
     sections.forEach(s => s.classList.toggle('active', s.dataset.tab === tabId));
 
-    // 해당 탭이 mermaid 포함 시 재렌더
-    if (tabId === 'architecture' && window.mermaid) {
-      renderMermaid();
-    }
   }
 }
 
@@ -92,76 +87,6 @@ function initCountUp() {
   }
 }
 
-/* ─── Mermaid 초기화 ─────────────────────────────────────────── */
-function initMermaid() {
-  if (!window.mermaid) return;
-
-  mermaid.initialize({
-    startOnLoad: false,
-    theme: 'dark',
-    themeVariables: {
-      background:       '#161b22',
-      primaryColor:     '#1c2128',
-      primaryBorderColor: '#30363d',
-      primaryTextColor: '#c9d1d9',
-      lineColor:        '#30363d',
-      secondaryColor:   '#21262d',
-      tertiaryColor:    '#0d1117',
-      edgeLabelBackground: '#0d1117',
-      fontSize:         '13px',
-    },
-    flowchart: {
-      curve: 'basis',
-      useMaxWidth: true,
-      htmlLabels: true,
-    },
-    securityLevel: 'loose',
-  });
-
-  renderMermaid();
-
-  // 테마 변경 시 Mermaid 재렌더
-  document.getElementById('theme-toggle')?.addEventListener('click', () => {
-    setTimeout(renderMermaid, 100);
-  });
-}
-
-function renderMermaid() {
-  const elements = document.querySelectorAll('.mermaid[data-diagram]');
-  elements.forEach(el => {
-    // 이미 렌더된 경우 원본 복원
-    if (el.dataset.rendered) {
-      el.innerHTML = el.dataset.source;
-      delete el.dataset.rendered;
-    }
-    // 원본 보존
-    if (!el.dataset.source) {
-      el.dataset.source = el.textContent;
-    }
-  });
-
-  if (window.mermaid) {
-    mermaid.run({ nodes: elements }).then(() => {
-      elements.forEach(el => {
-        el.dataset.rendered = '1';
-        // 다크/라이트 테마 반영
-        const isDark = (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark';
-        const svgs   = el.querySelectorAll('svg');
-        svgs.forEach(svg => {
-          svg.style.background = 'transparent';
-          // 노드 텍스트 색상
-          if (!isDark) {
-            svg.querySelectorAll('text').forEach(t => {
-              if (!t.style.fill || t.style.fill === '#c9d1d9') t.style.fill = '#24292f';
-            });
-          }
-        });
-      });
-    }).catch(err => {
-      console.warn('Mermaid 렌더 오류:', err);
-    });
-  }
-}
 
 /* ─── Phase 타임라인 ─────────────────────────────────────────── */
 const PHASES = [

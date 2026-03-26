@@ -349,17 +349,428 @@ body {
   text-decoration: underline;
 }
 
-/* ─── Mermaid 다이어그램 ─────────────────────────────────────── */
-.diagram-container {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 36px 28px;
-  overflow-x: auto;
-  margin-top: 24px;
+/* ─── 아키텍처 다이어그램 (CSS 계층도) ──────────────────────── */
+.arch-diagram {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-.mermaid { display: flex; justify-content: center; }
+/* 레벨 공통 */
+.arch-level {
+  position: relative;
+  padding: 0 0 0 0;
+}
+
+/* PM → 하위 연결선 (세로) */
+.arch-connector--root {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-market), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── PM 카드 ── */
+.arch-level--pm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.arch-pm-card {
+  background: var(--bg-card);
+  border: 2px solid var(--color-market);
+  border-radius: var(--radius-lg);
+  padding: 20px 40px;
+  text-align: center;
+  box-shadow: 0 0 24px rgba(88,166,255,0.15);
+  position: relative;
+  z-index: 1;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.arch-pm-card:hover {
+  box-shadow: 0 0 36px rgba(88,166,255,0.28);
+  transform: translateY(-2px);
+}
+
+.arch-pm-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-market);
+  margin-bottom: 6px;
+}
+
+.arch-pm-name {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.arch-pm-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* PM → Core 연결 수직선 */
+.arch-level--pm::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 32px;
+  background: var(--color-market);
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+/* ── 레벨 라벨 ── */
+.arch-level-label {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.arch-level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.arch-level-badge--core {
+  background: rgba(88,166,255,0.08);
+  border: 1px solid rgba(88,166,255,0.25);
+  color: var(--color-market);
+}
+
+.arch-level-badge--extended {
+  background: rgba(247,120,186,0.08);
+  border: 1px dashed rgba(247,120,186,0.35);
+  color: var(--color-people);
+}
+
+.arch-badge-note {
+  font-weight: 400;
+  opacity: 0.7;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 9px;
+}
+
+.arch-level-badge--cross {
+  background: rgba(255,123,114,0.08);
+  border: 1px solid rgba(255,123,114,0.2);
+  color: var(--color-cross);
+}
+
+/* ── Core 구분선 ── */
+.arch-level--core {
+  padding: 0 0 0 0;
+}
+
+.arch-level--core::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-market), transparent);
+  margin-bottom: 16px;
+  opacity: 0.25;
+}
+
+/* Core와 Extended 사이 */
+.arch-level--extended {
+  padding-top: 24px;
+}
+
+.arch-level--extended::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-people), transparent);
+  margin-bottom: 16px;
+  opacity: 0.2;
+}
+
+/* Cross 위 구분선 */
+.arch-level--cross {
+  padding-top: 24px;
+}
+
+.arch-level--cross::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-cross), transparent);
+  margin-bottom: 16px;
+  opacity: 0.2;
+}
+
+/* ── Division 행 ── */
+.arch-divisions {
+  display: grid;
+  gap: 14px;
+}
+
+.arch-divisions--core {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.arch-divisions--extended {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 780px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.arch-div-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Division 카드 ── */
+.arch-div-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 14px 12px;
+  height: 100%;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.arch-div-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.arch-div-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* 점선 보더 (Extended) */
+.arch-div-card--dashed {
+  border-style: dashed;
+  border-color: var(--border);
+  opacity: 0.85;
+}
+
+/* 색상 테마별 */
+.arch-div-card--market { border-color: rgba(88,166,255,0.3); }
+.arch-div-card--market::before { background: var(--color-market); }
+.arch-div-card--market:hover { border-color: var(--color-market); box-shadow: 0 4px 20px rgba(88,166,255,0.15); }
+.arch-div-card--market .arch-div-dot { background: var(--color-market); }
+.arch-div-card--market .arch-div-badge { color: var(--color-market); border-color: rgba(88,166,255,0.3); }
+
+.arch-div-card--product { border-color: rgba(63,185,80,0.3); }
+.arch-div-card--product::before { background: var(--color-product); }
+.arch-div-card--product:hover { border-color: var(--color-product); box-shadow: 0 4px 20px rgba(63,185,80,0.15); }
+.arch-div-card--product .arch-div-dot { background: var(--color-product); }
+.arch-div-card--product .arch-div-badge { color: var(--color-product); border-color: rgba(63,185,80,0.3); }
+
+.arch-div-card--capability { border-color: rgba(210,168,255,0.3); }
+.arch-div-card--capability::before { background: var(--color-capability); }
+.arch-div-card--capability:hover { border-color: var(--color-capability); box-shadow: 0 4px 20px rgba(210,168,255,0.15); }
+.arch-div-card--capability .arch-div-dot { background: var(--color-capability); }
+.arch-div-card--capability .arch-div-badge { color: var(--color-capability); border-color: rgba(210,168,255,0.3); }
+
+.arch-div-card--finance { border-color: rgba(240,136,62,0.3); }
+.arch-div-card--finance::before { background: var(--color-finance); }
+.arch-div-card--finance:hover { border-color: var(--color-finance); box-shadow: 0 4px 20px rgba(240,136,62,0.15); }
+.arch-div-card--finance .arch-div-dot { background: var(--color-finance); }
+.arch-div-card--finance .arch-div-badge { color: var(--color-finance); border-color: rgba(240,136,62,0.3); }
+
+.arch-div-card--people { border-color: rgba(247,120,186,0.25); }
+.arch-div-card--people::before { background: var(--color-people); }
+.arch-div-card--people:hover { border-color: var(--color-people); box-shadow: 0 4px 20px rgba(247,120,186,0.12); }
+.arch-div-card--people .arch-div-dot { background: var(--color-people); }
+.arch-div-card--people .arch-div-badge { color: var(--color-people); border-color: rgba(247,120,186,0.25); }
+
+.arch-div-card--operations { border-color: rgba(121,192,255,0.25); }
+.arch-div-card--operations::before { background: var(--color-operations); }
+.arch-div-card--operations:hover { border-color: var(--color-operations); box-shadow: 0 4px 20px rgba(121,192,255,0.12); }
+.arch-div-card--operations .arch-div-dot { background: var(--color-operations); }
+.arch-div-card--operations .arch-div-badge { color: var(--color-operations); border-color: rgba(121,192,255,0.25); }
+
+.arch-div-card--regulatory { border-color: rgba(255,211,61,0.25); }
+.arch-div-card--regulatory::before { background: var(--color-regulatory); }
+.arch-div-card--regulatory:hover { border-color: var(--color-regulatory); box-shadow: 0 4px 20px rgba(255,211,61,0.12); }
+.arch-div-card--regulatory .arch-div-dot { background: var(--color-regulatory); }
+.arch-div-card--regulatory .arch-div-badge { color: var(--color-regulatory); border-color: rgba(255,211,61,0.25); }
+
+/* ── Division 헤더 ── */
+.arch-div-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.arch-div-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.arch-div-name {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-heading);
+  flex: 1;
+}
+
+.arch-div-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+
+.arch-div-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding-left: 15px;
+}
+
+/* ── Leaf 칩 ── */
+.arch-div-leaves {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 15px;
+}
+
+.arch-leaf {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-secondary);
+  padding: 2px 7px;
+  background: var(--bg-input);
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  transition: color var(--transition), background var(--transition);
+}
+
+.arch-div-card:hover .arch-leaf {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+/* ── Cross-cutting 그리드 ── */
+.arch-cross-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.arch-cross-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 14px 12px;
+}
+
+.arch-cross-group-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.arch-cross-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.arch-chip {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: transform var(--transition);
+}
+
+.arch-chip:hover {
+  transform: translateX(3px);
+}
+
+.arch-chip--cross {
+  background: rgba(255,123,114,0.08);
+  border-color: rgba(255,123,114,0.2);
+  color: var(--color-cross);
+}
+
+.arch-chip--synthesis {
+  background: rgba(165,214,255,0.08);
+  border-color: rgba(165,214,255,0.2);
+  color: var(--color-synthesis);
+}
+
+.arch-chip--report {
+  background: rgba(227,179,65,0.08);
+  border-color: rgba(227,179,65,0.2);
+  color: var(--color-report);
+}
+
+.arch-chip--qa {
+  background: rgba(126,231,135,0.08);
+  border-color: rgba(126,231,135,0.2);
+  color: var(--color-qa);
+}
+
+/* ── 반응형 ── */
+@media (max-width: 900px) {
+  .arch-divisions--core {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .arch-cross-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .arch-divisions--core,
+  .arch-divisions--extended,
+  .arch-cross-grid {
+    grid-template-columns: 1fr;
+  }
+  .arch-pm-card {
+    padding: 16px 24px;
+  }
+}
 
 /* ─── Phase 타임라인 ─────────────────────────────────────────── */
 .timeline-wrapper {
