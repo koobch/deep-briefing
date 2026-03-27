@@ -21,3 +21,9 @@ neo-new-title-strategy/
 neo-ai-transformation/
 economy-shorts-channel/
 mobile-invitation/
+
+# 대시보드/백서 — gh-pages 브랜치에서 관리
+docs/index.html
+docs/whitepaper.html
+docs/css/
+docs/js/
