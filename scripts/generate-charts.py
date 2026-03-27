@@ -1470,7 +1470,7 @@ class ChartManager:
         return chartMetas
 
     def saveChartIndex(self, charts: list, outputPath: str):
-        """차트 인덱스 파일 생성 (PPT 연동용)"""
+        """차트 인덱스 파일 생성"""
         import yaml
 
         indexData = {

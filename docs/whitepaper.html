@@ -467,7 +467,7 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
             <table class="wp-table">
               <thead><tr><th>에이전트</th><th>역할</th><th>단계</th></tr></thead>
               <tbody>
-                <tr><td><code>report-writer</code></td><td>SCR 스토리라인 → 보고서/슬라이드 생성, Implementation Playbook</td><td>Phase 4</td></tr>
+                <tr><td><code>report-writer</code></td><td>SCR 스토리라인 → 보고서 생성, Implementation Playbook</td><td>Phase 4</td></tr>
                 <tr><td><code>qa-orchestrator</code></td><td>QA 전체 조율, 4개 내장 검증 + 3개 에이전트 스폰</td><td>Phase 5</td></tr>
                 <tr><td><code>audience-fit-checker</code></td><td>Action Title + SCR + 경영진 적합성 (6 Check)</td><td>Phase 5</td></tr>
                 <tr><td><code>executability-checker</code></td><td>Implementation Playbook 완전성 + 리소스 현실성 (5 Check)</td><td>Phase 5</td></tr>
@@ -535,7 +535,7 @@ Layer 3: Source
 
           <h3 class="wp-h3">Action Title</h3>
           <ul class="wp-list">
-            <li>모든 슬라이드 타이틀은 주장 문장형 (주제형 금지)</li>
+            <li>모든 보고서 섹션 제목은 주장 문장형 (주제형 금지)</li>
             <li>나쁜 예: "가격 전략" → 좋은 예: "프리미엄 가격 전략으로 3년간 40% 마진 달성 가능"</li>
           </ul>
 
@@ -704,7 +704,7 @@ Layer 3: Source
               <div class="wp-phase-body">
                 <h4 class="wp-phase-title">보고서 생성</h4>
                 <ul class="wp-list wp-list--compact">
-                  <li>report-writer: SCR 스토리라인 → report-docs.md + report-slides.md</li>
+                  <li>report-writer: SCR 스토리라인 → report-docs.md</li>
                   <li>Trust Badge (검증 배지) 삽입</li>
                   <li>Implementation Playbook 작성</li>
                 </ul>
@@ -800,7 +800,6 @@ Layer 3: Source
             <table class="wp-table">
               <thead><tr><th>스크립트</th><th>용도</th><th>사용법</th></tr></thead>
               <tbody>
-                <tr><td><code>generate-ppt.py</code></td><td>report-slides.md → PPTX 변환</td><td><code>python scripts/generate-ppt.py {name}</code></td></tr>
                 <tr><td><code>generate-charts.py</code></td><td>findings 데이터 → 차트 자동 생성</td><td><code>python scripts/generate-charts.py {name}</code></td></tr>
                 <tr><td><code>api-caller.py</code></td><td>외부 API 호출 래퍼 (DART, FRED, ECOS 등)</td><td><code>python scripts/api-caller.py --api {api} --action {action}</code></td></tr>
                 <tr><td><code>verify-facts.py</code></td><td>golden-facts.yaml 수치 교차 검증</td><td><code>python scripts/verify-facts.py {name}</code></td></tr>

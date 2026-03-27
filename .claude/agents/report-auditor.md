@@ -79,7 +79,6 @@ model: sonnet
 ```
 입력:
   - {project}/reports/report-docs.md — 상세 보고서
-  - {project}/reports/report-slides.md — 경영진 슬라이드
   - {project}/sync/tension-resolution.yaml — 미해소 긴장 목록 (리스크 섹션 반영 검증용)
   - {project}/00-client-brief.md — 핵심 질문 (답변 커버리지 교차 확인)
 
@@ -136,11 +135,11 @@ Step 6: 논리 완결성 심층 체크
      - 퍼센트 계산 오류 탐지 (base 혼동 등)
   ☐ SCR 구조 관통 여부
      - Executive Summary에 Situation → Complication → Resolution이 명확히 드러나는가
-     - 슬라이드 시퀀스가 SCR 흐름을 따르는가
+     - 보고서 섹션 시퀀스가 SCR 흐름을 따르는가
      ※ audience-fit-checker와의 역할 분리:
-       - audience-fit-checker: 슬라이드 타이틀 시퀀스의 SCR 흐름 (표면)
+       - audience-fit-checker: 섹션 제목 시퀀스의 SCR 흐름 (표면)
        - report-auditor: 보고서 본문 + Executive Summary의 SCR 논리 완결성 (심층)
-     → 슬라이드 타이틀 SCR 검사는 audience-fit-checker에 위임 (중복 검사 금지)
+     → 섹션 제목 SCR 검사는 audience-fit-checker에 위임 (중복 검사 금지)
   ☐ 미해소 긴장(tension) 반영
      - tension-resolution.yaml의 미해소 항목이 "리스크" 섹션에 전수 반영되었는가
 
@@ -170,7 +169,7 @@ audit_result:
     - id: RA-##
       severity: critical | major | minor
       type: logical_leap | evidence_missing | inconsistency | circular | self_contradiction
-      location: "report-docs.md Section {N.N} / report-slides.md Slide {N}"
+      location: "report-docs.md Section {N.N}"
       description: "이슈 내용"
       recommendation: "수정 권고"
   summary:

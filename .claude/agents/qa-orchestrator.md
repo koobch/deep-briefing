@@ -64,7 +64,7 @@ model: sonnet
 ### 활성화 조건
 
 - Phase 5에서 PM이 Agent 도구로 스폰
-- 전제: report-writer의 보고서 초안 완료 (report-docs.md + report-slides.md 존재)
+- 전제: report-writer의 보고서 초안 완료 (report-docs.md 존재)
 
 ### 보고 시점
 
@@ -86,7 +86,6 @@ model: sonnet
 ```
 입력:
   - {project}/reports/report-docs.md — 상세 보고서
-  - {project}/reports/report-slides.md — 경영진 슬라이드
   - {project}/findings/golden-facts.yaml — 수치 SSOT
   - {project}/findings/{division}/ — Division 출력 (source 추적 시)
 
@@ -121,9 +120,9 @@ Step 3: source-url-verifier (URL 검증)
   배치 처리: Division별로 실행 (Context 관리)
 
 Step 4: confidence-prominence-checker
-  - confidence: low/medium 수치가 Executive Summary, 슬라이드 전면에 사용되면 FAIL
+  - confidence: low/medium 수치가 Executive Summary 전면에 사용되면 FAIL
   - "보수에서도 X" 같은 낙관적 프레이밍이 실제 데이터 하단과 일치하는지 검증
-  - confidence 라벨이 슬라이드에서 누락되면 FAIL
+  - confidence 라벨이 보고서에서 누락되면 FAIL
 
 Step 5: executability-checker 스폰 (Agent 도구)
   executability-checker.md 에이전트를 스폰하여 위임:
@@ -136,37 +135,36 @@ Step 5: executability-checker 스폰 (Agent 도구)
 
 Step 6: audience-fit-checker 스폰 (Agent 도구)
   audience-fit-checker.md 에이전트를 스폰하여 위임:
-  - Check 1: Action Title 검증 (모든 슬라이드 타이틀이 주장 문장형인지)
+  - Check 1: 보고서 섹션 제목 검증 (모든 섹션 제목이 주장 문장형인지)
   - Check 2: 스토리라인 일관성 (SCR 흐름, 논리적 연결)
-  - Check 3: 슬라이드 분량 적합성 (슬라이드 수 vs 발표 시간)
-  - Check 4: 전문용어 + 두문자어 정의 여부
-  - Check 5: 경영진 필수 질문 커버리지
-  - Check 6: Confidence 표기 + 데이터 출처 구분
+  - Check 3: 전문용어 + 두문자어 정의 여부
+  - Check 4: 경영진 필수 질문 커버리지
+  - Check 5: Confidence 표기 + 데이터 출처 구분
   결과를 수신하여 qa-report에 통합
 
 Step 7: report-auditor 스폰 (Agent 도구)
   - 논리 완결성 감사 위임
   - 결과를 수신하여 qa-report에 통합
 
-Step 7.5: Decision Audit (audience-fit-checker의 Check 7~9으로 위임)
-  ※ Decision Audit은 audience-fit-checker가 Check 7~9로 실행한다.
+Step 7.5: Decision Audit (audience-fit-checker의 Check 6~8으로 위임)
+  ※ Decision Audit은 audience-fit-checker가 Check 6~8로 실행한다.
   qa-orchestrator는 결과를 수신하여 qa-report에 통합하는 역할만 수행.
-  중복 실행 금지 — audience-fit-checker의 Check 7~9 결과를 그대로 사용.
+  중복 실행 금지 — audience-fit-checker의 Check 6~8 결과를 그대로 사용.
 
   01-research-plan.md의 Decision Frame을 기준으로:
 
-  Check 7: Decision Question Coverage (Critical)
+  Check 6: Decision Question Coverage (Critical)
     - 보고서가 모든 DQ에 명시적으로 답하는가?
     - 각 DQ에 대한 Answer + Confidence + Risk if Wrong이 있는가?
     - strategy-articulations.md의 내용이 보고서에 반영되었는가?
     - 1건이라도 미답변 DQ = Critical
 
-  Check 8: Assumption Transparency (Major)
+  Check 7: Assumption Transparency (Major)
     - 핵심 가정 중 미검증인 것이 보고서에 명시적으로 표시되는가?
     - 경영진이 "어떤 가정 위에 이 전략이 서 있는가"를 한눈에 볼 수 있는가?
-    - 미검증 가정이 Executive Summary에 confidence: low 없이 노출 = Major
+    - 미검증 가정이 Executive Summary에 confidence 표기 없이 노출 = Major
 
-  Check 9: Actionability (Major)
+  Check 8: Actionability (Major)
     - 보고서의 각 전략 제안이 "누가, 뭘, 언제" 수준으로 구체화되는가?
     - "시장을 공략해야 한다" 수준의 일반론 = FAIL
     - "Q3까지 동남아 파일럿 팀(3명) 구성, 예산 $200K" 수준 = PASS

@@ -406,9 +406,9 @@ fact_verification_report:
 - **실행 시점**: Phase 5 QA에서 source-traceability-checker 직후
 
 ### confidence-prominence-checker (신규)
-- confidence: low/medium 수치가 Executive Summary, 슬라이드 전면에 사용되면 FAIL
+- confidence: low/medium 수치가 Executive Summary, 보고서 핵심 섹션에 사용되면 FAIL
 - "보수에서도 X" 같은 낙관적 프레이밍이 실제 데이터의 하단과 일치하는지 검증
-- confidence 라벨이 슬라이드에서 누락되면 FAIL
+- confidence 라벨이 보고서 핵심 섹션에서 누락되면 FAIL
 
 ### executability-checker (신규)
 - 실행 카드의 담당 인원 × 기간 vs 가용 리소스 비교
@@ -416,7 +416,7 @@ fact_verification_report:
 - 동시 태스크 수가 조직 규모 대비 현실적인지
 
 ### audience-fit-checker (신규)
-- 슬라이드 수 vs 발표 시간 적합성 (1슬라이드 = 1.5~2분)
+- 보고서 분량이 청중 유형 대비 적절한지
 - 전문용어 첫 등장 시 정의 동반 여부
 - 내부 데이터 vs 외부 추정치 비율 명시 여부
 - 경영진 필수 질문 3개에 대한 답 존재 여부

@@ -50,7 +50,6 @@ model: sonnet
 ```
 입력:
   - {project}/reports/report-docs.md — Implementation Playbook 섹션
-  - {project}/reports/report-slides.md — 실행 관련 슬라이드
   - {project}/00-client-brief.md — 조직 규모, 제약조건 참조
 
 Check 1: 실행 카드 필수 필드 완전성 (Critical)

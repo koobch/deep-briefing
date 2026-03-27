@@ -364,60 +364,13 @@ quality_report:
   actions_taken: [{처리 내역}]
 ```
 
-## 슬라이드 매핑 (PPT 생성용)
+## Action Title 규칙
 
-### report-slides.md의 slide_meta 메타데이터
-
-report-writer가 `report-slides.md` 작성 시, 각 슬라이드 섹션에 YAML 프론트매터 형태의 매핑 정보를 포함한다.
-
-### Action Title 규칙
-
-슬라이드 title은 반드시 **주장 문장(Action Title)**이어야 한다:
+보고서 섹션 제목은 반드시 **주장 문장(Action Title)**이어야 한다:
 - ✗ 금지: 주제형 타이틀 ("시장 규모 분석", "경쟁 현황", "재무 전망")
 - ✓ 필수: 주장형 타이틀 ("국내 시장은 연 12% 성장 중이나 수익성은 상위 3사에 집중")
-- 타이틀만 순서대로 읽으면 보고서의 전체 스토리라인이 완성되어야 한다
+- 섹션 제목만 순서대로 읽으면 보고서의 전체 스토리라인이 완성되어야 한다
 - qa-orchestrator의 audience-fit-checker가 주제형 타이틀을 감지하면 반려한다
-
-```yaml
-# report-slides.md 내 각 슬라이드 섹션 앞에 삽입
-<!-- slide_meta
-  slide_id: 1
-  title: "타이틀 — 반드시 Action Title(주장 문장형)"
-  layout: title_slide | content | two_column | chart | table | summary
-  content_blocks:
-    - id: CB-01
-      type: text | table | chart | bullet_list | quote
-      source_section: "report-docs.md Section 1.2"    # 상세 보고서 원본 위치
-      source_claims: [MGN-02, FRV-01]                  # 관련 Claim ID
-      data: |
-        블록 콘텐츠 (마크다운)
-    - id: CB-02
-      type: table
-      source_section: "report-docs.md Section 3.1"
-      source_claims: [PGD-01, PGD-03]
-      data: |
-        | 열1 | 열2 |
-        |-----|-----|
-        | ... | ... |
-  design_notes: "디자인 힌트 (색상 강조, 아이콘 등)"
--->
-```
-
-### 사용자 슬라이드 커스텀
-
-Phase 4 Step 4-B에서 사용자가 슬라이드 구성을 변경할 수 있다:
-- **순서 변경**: 슬라이드 번호 재배치
-- **블록 이동**: content_block을 다른 슬라이드로 드래그
-- **블록 추가/삭제**: report-docs.md에서 추가 콘텐츠 선택 또는 불필요 블록 제거
-- **레이아웃 변경**: layout 타입 변경 (예: content → two_column)
-
-### PPT 생성 경로별 매핑 활용
-
-| 경로 | slide_meta 활용 방법 |
-|------|---------------------|
-| Canva MCP | content_blocks → Canva editing operations로 변환. layout → 템플릿 매칭 |
-| python-pptx | content_blocks → python-pptx 슬라이드 객체 생성. layout → 마스터 레이아웃 선택 |
-| 수동 | content_blocks를 참조하여 사용자가 직접 PPT 작성 |
 
 ---
 
@@ -444,7 +397,7 @@ Phase 4 Step 4-B에서 사용자가 슬라이드 구성을 변경할 수 있다:
 |------|------|-----------------|
 | `public` | 공개 데이터 (공시, 뉴스, 산업 보고서) | 제한 없이 보고서에 포함 |
 | `internal` | 내부 데이터 (사용자 제공, 비공개 매출) | 수치만 표기, 원본 경로 미노출 |
-| `confidential` | 기밀 데이터 (M&A, 인사, 미공개 전략) | "[기밀]" 태깅 필수, Executive Summary/슬라이드 사용 시 사용자 확인 |
+| `confidential` | 기밀 데이터 (M&A, 인사, 미공개 전략) | "[기밀]" 태깅 필수, Executive Summary 사용 시 사용자 확인 |
 
 보고서 상단에 기밀 등급 + 배포 범위 표기:
 ```

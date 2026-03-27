@@ -24,7 +24,7 @@ Deep-Briefing에 기여해 주셔서 감사합니다.
 ### 디렉토리 구조
 ```
 core/           → 도메인 독립 프레임워크 (수정 시 모든 도메인에 영향)
-  templates/    → 에이전트/리드/리프 템플릿, visual-style-guide
+  templates/    → 에이전트/리드/리프 템플릿, learning-extraction
   protocols/    → output-format, fact-check-protocol
   orchestration/→ sync-protocol, escalation-protocol
   tests/        → EP-001~033 프롬프트 테스트 케이스

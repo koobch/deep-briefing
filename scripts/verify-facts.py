@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Golden Facts vs 보고서 수치 자동 검증.
-golden-facts.yaml의 모든 수치를 보고서(report-docs.md, report-slides.md)에서 찾아
+golden-facts.yaml의 모든 수치를 보고서(report-docs.md)에서 찾아
 일치/불일치를 판정하고 리포트를 생성한다.
 
 사용법:
@@ -646,7 +646,7 @@ class ConfidenceProminenceChecker:
 
     # Executive Summary 범위 감지 패턴
     EXEC_SUMMARY_PATTERN = re.compile(r'^##\s*Executive\s+Summary', re.IGNORECASE)
-    # 슬라이드 타이틀 패턴
+    # 보고서 섹션 제목 패턴
     SLIDE_TITLE_PATTERN = re.compile(r'^#+\s+')
     # 가정 라벨 패턴
     ASSUMPTION_LABEL = re.compile(r'\[가정\]|\[미확인\]|\[추정\]')
@@ -655,7 +655,7 @@ class ConfidenceProminenceChecker:
         """
         규칙:
         - confidence: [가정]/low인 수치가 Executive Summary에 사용 → critical
-        - confidence: [유력]/medium인 수치가 슬라이드 타이틀에 사용 → warning
+        - confidence: [유력]/medium인 수치가 보고서 섹션 제목에 사용 → warning
         - confidence: [가정]/low인 수치에 [가정] 라벨 미표기 → critical
         """
         if not os.path.exists(report_path):
@@ -712,7 +712,7 @@ class ConfidenceProminenceChecker:
                         severity="critical",
                     ))
 
-                # Medium confidence가 슬라이드 타이틀(헤딩)에 사용
+                # Medium confidence가 보고서 섹션 제목(헤딩)에 사용
                 if gf_id in medium_facts and self.SLIDE_TITLE_PATTERN.match(line):
                     issues.append(ConfidenceIssue(
                         fact_id=gf_id,
@@ -917,7 +917,6 @@ def main():
         sys.exit(1)
 
     report_docs_path = os.path.join(project_dir, "reports", "report-docs.md")
-    report_slides_path = os.path.join(project_dir, "reports", "report-slides.md")
 
     tolerance = 0.0 if args.strict else args.tolerance
 
@@ -940,12 +939,8 @@ def main():
     else:
         print(f"경고: report-docs.md 없음: {report_docs_path}")
 
-    if not args.report_only and os.path.exists(report_slides_path):
-        nums = extractor.extract_from_markdown(report_slides_path)
         all_report_numbers.extend(nums)
-        print(f"report-slides.md 수치 추출: {len(nums)}건")
     elif not args.report_only:
-        print(f"경고: report-slides.md 없음: {report_slides_path}")
 
     if not all_report_numbers:
         print("경고: 보고서에서 수치를 추출할 수 없습니다.")
@@ -957,7 +952,6 @@ def main():
 
     # 4. Confidence-prominence 체크
     cp_checker = ConfidenceProminenceChecker()
-    for report_path in [report_docs_path, report_slides_path]:
         if os.path.exists(report_path):
             issues = cp_checker.check(facts, report_path)
             verification.confidence_issues.extend(issues)

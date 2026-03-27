@@ -29,7 +29,7 @@
 
 - **실행 모델**: PM CLI 1개 + 활성 Division Lead CLI N개 (핵심 4 + 확장 최대 3)
 - **CLI 간 통신**: 파일 시스템 기반 (직접 통신 없음). `findings/`, `sync/` 디렉토리 경유
-- **오케스트레이션 흐름**: Phase 0 → 0.5(가설+데이터갭) → 1(병렬 리서치) → Sync 1 → 2(심화) → Sync 2(긴장해소) → 3(사고 루프+Red Team) → 4(보고서+PPT) → 5(QA 자동 루프) → 5.5(피드백)
+- **오케스트레이션 흐름**: Phase 0 → 0.5(가설+데이터갭) → 1(병렬 리서치) → Sync 1 → 2(심화) → Sync 2(긴장해소) → 3(사고 루프+Red Team) → 4(보고서) → 5(QA 자동 루프) → 5.5(피드백)
 
 ## 디렉토리 구조
 
@@ -129,8 +129,8 @@ Layer 3: 프로젝트 맥락   → {project}/ (일회성)
 - **4-Layer 피라미드**: Layer 0(Claim) → 1(Evidence) → 2(Data) → 3(Source)
 - **ID 체계**: `{Division}{SubDomain}-##` (예: MGE-01 = Market-Geography-EastAsia)
 - **Golden Facts**: `findings/golden-facts.yaml` = 수치 SSOT. fact-verifier만 수정 가능
-- **SCR 스토리라인**: 보고서/슬라이드는 Situation→Complication→Resolution 구조
-- **Action Title**: 모든 슬라이드 타이틀은 주장 문장형 (주제형 금지)
+- **SCR 스토리라인**: 보고서는 Situation→Complication→Resolution 구조
+- **Action Title**: 모든 보고서 섹션 제목은 주장 문장형 (주제형 금지)
 - **Implementation Playbook**: 전략 제안에 담당/마일스톤/KPI/의존성 포함
 - **API 사용 가이드**: `core/protocols/api-usage-guide.md` — API 우선 원칙, 의사결정 매트릭스, Firecrawl 규칙
 
@@ -208,7 +208,6 @@ claude
 | `scripts/spawn-phase.sh {name} {phase}` | 특정 Phase만 범용 스폰 |
 | `scripts/send-phase2.sh {name}` | 활성 Lead CLI에 Phase 2 지시 자동 전송 |
 | `scripts/send-to-leads.sh {name} {message}` | 활성 Lead CLI에 임의 메시지 전송 |
-| `scripts/generate-ppt.py {name}` | report-slides.md → PPTX 변환 (python-pptx) |
 | `scripts/generate-charts.py {name}` | findings 데이터 → 차트 자동 생성 (matplotlib). 마리메꼬/하비볼 포함 |
 | `scripts/api-caller.py --api {api} --action {action}` | 외부 API 호출 래퍼 (DART, FRED, ECOS 등) |
 | `scripts/verify-facts.py {name}` | golden-facts.yaml 수치 교차 검증 |

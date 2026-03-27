@@ -83,22 +83,12 @@ Lead CLI들은 Phase 2 완료 후 종료 가능. 이후는 PM CLI에서 진행:
 5. insight-synthesizer 스폰 (Agent) → 도전 결과 + Red Team 결과 반영
 6. PM 수렴 판정 (최대 2회 반복)
 
-## Phase 4: 보고서 생성 + PPT 매핑
+## Phase 4: 보고서 생성
 
-### Step 4-A: 보고서 생성
 1. report-writer 스폰 (Agent)
-2. 산출물: `{project}/reports/report-docs.md` + `report-slides.md`
-3. report-slides.md에 slide_meta 메타데이터 포함 (output-format.md 참조)
+2. 산출물: `{project}/reports/report-docs.md`
 
-### Step 4-B: PPT 매핑 + 생성
-1. 슬라이드 구성을 사용자에게 확인 (Interactive/Team)
-2. PPT 생성 경로 선택:
-   - **경로 A**: Canva MCP → generate-design-structured → export PPTX
-   - **경로 B**: python-pptx → scripts/generate-ppt.py 실행
-   - **경로 C**: 수동 (report-slides.md를 참조용으로 전달)
-3. 산출물: `{project}/reports/report-slides.pptx` (경로 A/B)
-
-상세: `sync-protocol.md` Phase 4 Step 4-B 참조.
+상세: `sync-protocol.md` Phase 4 참조.
 
 ## Phase 5: QA + 자동 수정 루프
 

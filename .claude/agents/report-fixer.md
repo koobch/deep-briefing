@@ -27,8 +27,7 @@ model: sonnet
 - 논리 비약 보완 (Evidence 추가/수정)
 - Executive Summary-본문 불일치 수정
 - confidence 라벨 누락 보완
-- 슬라이드-본문 수치 불일치 수정
-- Action Title 위반 수정 (주제형 → 주장 문장형)
+- 보고서 섹션 제목 위반 수정 (주제형 → 주장 문장형)
 - SCR 스토리라인 단절 보완
 - Implementation Playbook 필수 필드 보충
 
@@ -43,7 +42,6 @@ model: sonnet
 
 - 주 산출물: 수정된 보고서 파일 (동일 경로 덮어쓰기)
   - `{project}/reports/report-docs.md`
-  - `{project}/reports/report-slides.md`
 
 ### 품질 기준
 
@@ -85,7 +83,6 @@ model: sonnet
 입력:
   - qa-orchestrator가 전달한 이슈 목록 (qa-report.md에서 추출)
   - {project}/reports/report-docs.md — 수정 대상
-  - {project}/reports/report-slides.md — 수정 대상
   - {project}/findings/golden-facts.yaml — 수치 참조
 
 Step 1: 이슈 분류 및 우선순위
@@ -96,9 +93,8 @@ Step 1: 이슈 분류 및 우선순위
   - 논리 비약: 누락된 Evidence를 Division 출력에서 찾아 보충
   - Executive Summary 불일치: 본문에 맞춰 Executive Summary 수정
   - confidence 라벨 누락: 해당 Claim의 confidence 태그 추가
-  - 슬라이드-본문 불일치: 본문 기준으로 슬라이드 수정
-  - Action Title 위반: 해당 슬라이드 본문의 핵심 Claim(Layer 0)을 추출하여 주장 문장형 타이틀로 변환
-  - SCR 단절: 슬라이드 시퀀스에서 Situation→Complication→Resolution 흐름이 끊긴 지점을 보완
+  - 섹션 제목 위반: 해당 섹션 본문의 핵심 Claim(Layer 0)을 추출하여 주장 문장형 제목으로 변환
+  - SCR 단절: 보고서 섹션 시퀀스에서 Situation→Complication→Resolution 흐름이 끊긴 지점을 보완
   - Playbook 불완전: Division 출력에서 담당/마일스톤/KPI/의존성 추론. 추론 불가 시 "[클라이언트 확인 필요]"
   - Why So 누락: 해당 섹션의 Evidence를 요약하여 "왜 이 결론인가" 논리 경로 보충
   - MECE 위반: 중복 섹션 병합 권고 또는 누락 차원을 Division 출력에서 찾아 보충
@@ -129,7 +125,6 @@ Step 4: 수정 결과 반환
 
 출력: 수정된 보고서 파일 (동일 경로 덮어쓰기)
   → {project}/reports/report-docs.md
-  → {project}/reports/report-slides.md
 ```
 
 ### 수정 결과 형식 (qa-orchestrator에 반환)
@@ -141,7 +136,7 @@ fix_result:
       severity: {원본 모듈 라벨}    # 예: Critical, Major, Minor
       unified_severity: P1 | P2 | P3
       change: "수정 내용 요약"
-      files_modified: [report-docs.md, report-slides.md]
+      files_modified: [report-docs.md]
   unfixable:
     - issue_id: {QA-##}
       severity: {원본 모듈 라벨}

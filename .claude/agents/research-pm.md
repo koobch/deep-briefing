@@ -1058,7 +1058,6 @@ report-writer 스폰 (Agent 도구)
     - Client Brief (톤, 형식 선호, 발표 시간)
   산출물:
     - {project}/reports/report-docs.md (상세 보고서)
-    - {project}/reports/report-slides.md (경영진 요약)
 ```
 
 ### Phase 5: QA + 최종 검토
@@ -1071,7 +1070,7 @@ Step 1: qa-orchestrator 스폰 (Agent 도구)
       a. mechanical-validator — python scripts/verify-facts.py 실행 → qa/fact-verification.yaml
       b. source-traceability-checker — [S##] 태그 전수 검증
       c. source-url-verifier — URL L1(접근성) + L2(관련성) (source-url-verifier-template.md 참조)
-      d. confidence-prominence-checker — low/medium 수치의 Executive Summary/슬라이드 노출 적정성
+      d. confidence-prominence-checker — low/medium 수치의 Executive Summary 노출 적정성
 
     ■ 외부 에이전트 스폰 (Agent 도구로 독립 스폰, 에이전트 파일 있음):
       e. executability-checker — .claude/agents/executability-checker.md
@@ -1192,10 +1191,10 @@ PM에게 동료는 없음 — 최상위 에이전트.
 | insight-synthesizer | Phase 3 | 전체 사고 루프 + red-team-report | `thinking-loop/loop-convergence.md` |
 | report-writer | Phase 4 | synthesis + thinking-loop + Client Brief | `reports/` |
 | qa-orchestrator | Phase 5 | 보고서 파일 경로 | `qa/` |
-| audience-fit-checker | Phase 5 | report-slides + report-docs + Client Brief | qa-orchestrator에 반환 |
+| audience-fit-checker | Phase 5 | report-docs + Client Brief | qa-orchestrator에 반환 |
 | executability-checker | Phase 5 | report-docs (Playbook) + Client Brief | qa-orchestrator에 반환 |
-| report-auditor | Phase 5 | report-docs + report-slides + tension-resolution | qa-orchestrator에 반환 |
-| report-fixer | Phase 5 | qa-report 이슈 목록 + report-docs/slides | 수정된 report-docs/slides |
+| report-auditor | Phase 5 | report-docs + tension-resolution | qa-orchestrator에 반환 |
+| report-fixer | Phase 5 | qa-report 이슈 목록 + report-docs | 수정된 report-docs |
 
 ---
 
