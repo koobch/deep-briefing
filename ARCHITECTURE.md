@@ -12,12 +12,12 @@
               ┌─────────────────┼─────────────────┐
               |                 |                  |
      ┌────────┴────────┐  ┌────┴────┐   ┌────────┴────────┐
-     │   Division Pool  │  │  사고   │   │     QA Layer     │
-     │    (Phase 1~2)   │  │  루프   │   │    (Phase 5)     │
-     └────────┬────────┘  │(Phase 3)│   └────────┬────────┘
-              |           └────┬────┘            |
-    ┌────┬────┼────┬────┐     |        ┌────┬───┼───┬────┐
-    M    P    C    F  +확장    |        AFC  EXC  RA  RF  RW
+     │   Division Pool  │  │  사고   │  ┌──────────┐  │     QA Layer     │
+     │    (Phase 1~2)   │  │  루프   │  │ External │  │    (Phase 5)     │
+     └────────┬────────┘  │(Phase 3)│  │  Review  │  └────────┬────────┘
+              |           └────┬────┘  │(Phase3.7)│           |
+    ┌────┬────┼────┬────┐     |       └────┬─────┘  ┌────┬───┼───┬────┐
+    M    P    C    F  +확장    |            ER       AFC  EXC  RA  RF  RW
     |    |    |    |           |
    Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
                           LP  SC  RT  IS
@@ -34,11 +34,12 @@
 | **SC** | strategic-challenger | 5-레인 수평 도전 |
 | **RT** | red-team | 적대적 반론 (Devil's Advocate) |
 | **IS** | insight-synthesizer | 도전 결과 통합 + 수렴 판정 |
+| **ER** | external-reviewer | 약점 체크리스트 + 자기 비판 (Phase 3.7) |
 | **AFC** | audience-fit-checker | Action Title + SCR + 경영진 적합성 |
 | **EXC** | executability-checker | Implementation Playbook 검증 |
 | **RA** | report-auditor | 논리 완결성 + SCR 구조 감사 |
 | **RF** | report-fixer | 이슈 자동 수정 (최대 3회) |
-| **RW** | report-writer | 보고서 + 슬라이드 생성 |
+| **RW** | report-writer | 보고서 생성 |
 
 추가: **fact-verifier** (VL-3 교차 검증), **cross-domain-synthesizer** (Division 간 합성), **data-preprocessor** (데이터 전처리)
 
@@ -46,7 +47,7 @@
 
 ```
 Phase 0    Client Discovery + Research Plan
-    |      PM이 사용자 인터뷰 → Client Brief → Research Plan → Division Briefs
+    |      적응형 2-Pass 사용자 인터뷰 → user-profile.yaml + Client Brief → Research Plan → Division Briefs
     v
 Phase 0.5  가설 수립 + 1차 데이터 갭 식별
     |      Quick Scan → 가설 3~5개 → 사용자 정렬 → primary_data_gaps
@@ -71,8 +72,14 @@ Phase 3    사고 루프 (Thinking Loop)
     |      → insight-synthesizer (통합 + 수렴 판정)
     |      수렴 조건: 논리 단절 P1/P2 0 + Critical/Major 블라인드 스팟 0 + Strong 반론 대응 + BASE 자력 실현
     v
+Phase 3.7  External Review (자기 비판 + 외부 모델 리뷰)
+    |      external-reviewer: 약점 체크리스트(5항목 PASS/FLAG)
+    |      → FLAG 2건+ 시 자기 비판 (프레이밍/접근법/빠진 관점/강건성)
+    |      → 외부 모델 리뷰 (선택: /ask codex, /ask gemini)
+    |      모드별: Auto=체크리스트만 / Interactive=+선택 / Team=+권장
+    v
 Phase 4    보고서 생성
-    |      report-writer: SCR 스토리라인 → report-docs.md + report-slides.md
+    |      report-writer: SCR 스토리라인 → report-docs.md
     |      Trust Badge (검증 배지) 삽입 + Implementation Playbook
     v
 Phase 5    QA 자동 수정 루프
@@ -83,7 +90,8 @@ Phase 5    QA 자동 수정 루프
     |      이슈 발견 → report-fixer → 재검증 (최대 3회)
     v
 Phase 5.5  사용자 피드백 + 부분 재실행 (선택)
-    |      피드백 분류 → 영향 범위 판정 → minimal/division/cross_division 재실행
+    |      L0~L3 피드백 분류 → Cascade 영향 분석 → 옵션+추천 제시 → 사용자 선택
+    |      minimal(표현) / division(사실/가설) / cross_division(전제 변경) 재실행
     v
 Phase 6    Post-mortem + 학습 전이 (자동)
 ```
@@ -105,6 +113,7 @@ PM CLI                    Division Lead CLI              QA Layer
   |                              |-- findings/ 업데이트 --->|
   |                                                         |
   |-- thinking-loop/*.md --------|------------------------->|
+  |-- thinking-loop/self-critique.md (Phase 3.7) --------->|
   |-- reports/*.md --------------|------------------------->|
   |                              |                          |
   |                              |         qa/qa-report.md  |
