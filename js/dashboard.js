@@ -147,11 +147,19 @@ const PHASES = [
     agents: ['logic-prober', 'strategic-challenger', 'red-team', 'insight-synthesizer'],
   },
   {
+    id:    'phase-3-7',
+    num:   'P3.7',
+    label: '외부 리뷰',
+    title: 'Phase 3.7 — External Review',
+    desc:  '약점 체크리스트(5항목) + 자기비판 + 외부모델 리뷰. external-reviewer 에이전트 스폰. 사고 루프 결과의 맹점을 독립적으로 검증.',
+    agents: ['external-reviewer', 'insight-synthesizer'],
+  },
+  {
     id:    'phase-4',
     num:   'P4',
     label: '보고서',
-    title: 'Phase 4 — 보고서 + PPT',
-    desc:  'SCR 스토리라인 기반 보고서 작성. Action Title 슬라이드. `generate-ppt.py`로 PPTX 변환. `generate-charts.py`로 차트 자동 생성.',
+    title: 'Phase 4 — 보고서',
+    desc:  'SCR 스토리라인 기반 보고서 작성. Action Title 섹션 구성. `generate-charts.py`로 차트 자동 생성.',
     agents: ['report-writer', 'insight-synthesizer'],
   },
   {
@@ -167,7 +175,7 @@ const PHASES = [
     num:   'P5.5',
     label: '피드백',
     title: 'Phase 5.5 — 피드백 루프',
-    desc:  '사용자 피드백 분류 → 영향 범위 판정(minimal / division / cross_division) → 부분 재실행. 세부 수정은 최소 범위만 재실행.',
+    desc:  '사용자 피드백 L0~L3 분류(오타 → 구조 변경) + Cascade 영향 분석 → 영향 범위 판정(minimal / division / cross_division) → 부분 재실행. 세부 수정은 최소 범위만 재실행.',
     agents: ['research-pm', 'report-fixer'],
   },
 ];
