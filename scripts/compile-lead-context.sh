@@ -201,6 +201,15 @@ HEADER_EOF
     grep -A1 'tolerance:' "$USER_PROFILE" | head -2 >> "$CONTEXT_FILE"
     grep 'focus_areas:' "$USER_PROFILE" >> "$CONTEXT_FILE"
     grep 'evidence_threshold:' "$USER_PROFILE" >> "$CONTEXT_FILE"
+    grep 'experience_summary:' "$USER_PROFILE" >> "$CONTEXT_FILE"
+    grep 'preferred_direction:' "$USER_PROFILE" >> "$CONTEXT_FILE"
+    echo "" >> "$CONTEXT_FILE"
+    # Division별 expertise_relevance + user_hypotheses (PM이 Division Brief에 기록)
+    DIVISION_BRIEF="${PROJECT_DIR}/division-briefs/${div}.md"
+    if [ -f "$DIVISION_BRIEF" ]; then
+      # User Context 섹션이 있으면 추출
+      sed -n '/## User Context/,/^## /p' "$DIVISION_BRIEF" | head -20 >> "$CONTEXT_FILE"
+    fi
     echo "" >> "$CONTEXT_FILE"
   fi
 

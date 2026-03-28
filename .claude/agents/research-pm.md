@@ -1396,7 +1396,7 @@ PM에게 동료는 없음 — 최상위 에이전트.
 
 | 단계 | Auto | Interactive | Team |
 |------|------|------------|------|
-| Client Discovery | Quick (5~7) | Quick/Deep 선택 | Deep 권장 |
+| Client Discovery | Quick (~14, 기존 맥락 스킵 시 감소) | Quick/Deep 선택 | Deep 권장 |
 | Phase 1 종료 후 | 바로 Sync 1 | 사용자 게이트 | 사용자 게이트 |
 | Sync Round 1 후 | 바로 Phase 2 | 사용자 피드백 | 사용자 피드백 + 토론 |
 | Sync Round 2 후 | 바로 사고 루프 | 사용자 확인 | 사용자 확인 |
