@@ -17,6 +17,16 @@
 3. 품질 보증           — VL-1.5 + VL-2 검증을 수행한다
 ```
 
+### User Context (Phase 0에서 수집, compile-lead-context.sh가 자동 주입)
+
+- **사용자 전문성**: {level} — {focus_areas}
+- **의사결정 역할**: {role}
+- **리스크 허용도**: {tolerance}
+- **이 Division과의 관련성**: {expertise_relevance}
+  → 전문가: 깊이 있는 분석. 기본 개념 설명 불필요
+  → 비전문가: 핵심 개념 포함. 용어 설명 추가
+- **사용자 제안 가설**: {이 Division 관련 사용자 가설 + 근거}
+
 ---
 
 ## 1. 리프 오케스트레이션

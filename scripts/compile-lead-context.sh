@@ -187,6 +187,23 @@ HEADER_EOF
     cat "$CLIENT_BRIEF" >> "$CONTEXT_FILE"
   fi
 
+  # --- User Context 스니펫 생성 ---
+  USER_PROFILE="${PROJECT_DIR}/user-profile.yaml"
+  if [ -f "$USER_PROFILE" ]; then
+    echo "" >> "$CONTEXT_FILE"
+    echo "---" >> "$CONTEXT_FILE"
+    echo "" >> "$CONTEXT_FILE"
+    echo "## User Context" >> "$CONTEXT_FILE"
+    echo "" >> "$CONTEXT_FILE"
+    # user-profile.yaml에서 핵심 필드 추출
+    grep -A1 'level:' "$USER_PROFILE" | head -2 >> "$CONTEXT_FILE"
+    grep -A1 'role:' "$USER_PROFILE" | head -2 >> "$CONTEXT_FILE"
+    grep -A1 'tolerance:' "$USER_PROFILE" | head -2 >> "$CONTEXT_FILE"
+    grep 'focus_areas:' "$USER_PROFILE" >> "$CONTEXT_FILE"
+    grep 'evidence_threshold:' "$USER_PROFILE" >> "$CONTEXT_FILE"
+    echo "" >> "$CONTEXT_FILE"
+  fi
+
   LINES=$(wc -l < "$CONTEXT_FILE" | tr -d ' ')
   echo "  ✅ ${div}: lead-context-${div}.md (${LINES}줄)"
 done

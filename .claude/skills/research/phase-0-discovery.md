@@ -2,10 +2,83 @@
 
 ## Step 0-A: Intake Interview (필수)
 `research-pm.md`의 Client Discovery 프로토콜에 따라 사용자 인터뷰 실행.
-- Quick (5~7개 질문): Auto 모드
-- Deep (12~15개 질문): Interactive/Team 모드
+- Quick (7~10개 질문): Auto 모드
+- Deep (15~20개 질문): Interactive/Team 모드
 - **Data Intake 질문 필수**: 질문 5번 답변 후 후속 질문(5-a/b/c) 반드시 수행
 - 산출물: `{project}/00-client-brief.md`
+
+### 적응형 2-Pass 인터뷰 구조
+
+질문은 **그룹 0(사용자 인터뷰)** → **그룹 1~4(기존)** 순서로 진행하되,
+2-Pass 구조로 효율과 깊이를 모두 확보한다.
+
+```
+Pass 1 — Quick Profile + 리서치 범위:
+  그룹 0 Quick 질문(Q0-1~Q0-3) + Codex 추가 질문 3개
+  + 그룹 1(목적과 방향)
+  → 사용자 프로파일 초안 생성 + gap 식별
+
+Pass 2 — gap 기반 보완 (Interactive/Team만):
+  2-A: Pass 1에서 식별된 gap 보완 질문 (자동 생성)
+  2-B: 파악된 산업/도메인 기반 심층 질문 (Q0-4~Q0-7 + 그룹 2~4)
+
+합산 최대 10개 (CLAUDE.md/메모리에 이미 있는 정보는 스킵).
+Auto 모드: Pass 1만 실행 후 자동 진행.
+```
+
+### 그룹 0: 사용자 인터뷰 (그룹 1 앞에 실행)
+
+기존 그룹 1~4 질문은 "무엇을 조사할 것인가"에 집중하지만,
+그룹 0은 **"누가 왜 이 리서치를 필요로 하는가"**를 먼저 파악한다.
+이 정보는 보고서 톤, 근거 수준, 프레임워크 선택에 직접 영향을 준다.
+
+```
+━━ 그룹 0/5: 사용자 인터뷰 ━━
+
+Quick (모든 모드):
+  Q0-1. 이 분야에서 본인의 역할과 경험은?
+  Q0-2. 이 리서치 결과를 본인이 직접 실행하는가, 누군가에게 전달하는가?
+  Q0-3. 이미 시도했거나 검토한 것이 있는가? 결과는?
+
+Codex 교차검토 추가 질문 (Pass 1 Quick에 통합):
+  Q0-C1. 이 리서치 결과로 누가 무엇을 결정/실행하나?
+  Q0-C2. 어떤 수준의 근거면 현재 생각을 바꿀 수 있나?
+  Q0-C3. 이미 마음이 기운 방향이 있다면?
+
+Deep (Interactive/Team) 추가:
+  Q0-4. 이 주제에서 특별히 잘 아는 세부 영역과 잘 모르는 영역은?
+  Q0-5. 의사결정에서 가장 중요한 기준은?
+  Q0-6. 리스크에 대한 태도는? 실패 시 감내 가능한 범위?
+  Q0-7. 가용 리소스는? (시간, 예산, 인력, 인프라)
+```
+
+### Client Brief 산출물에 User Profile 포함
+
+Step 0-A 완료 시, `{project}/00-client-brief.md`에 아래 구조를 **첫 번째 섹션으로** 포함한다.
+그룹 0 답변을 구조화하여 이후 Phase 전체에서 참조한다.
+
+```yaml
+## 사용자 프로파일
+domain_expertise:
+  level: "expert | intermediate | novice"
+  focus_areas: ["영역1"]
+  experience_summary: "경험 요약"
+  previous_attempts: "이미 시도한 것 + 결과"
+decision_context:
+  role: "직접 실행자 | 의사결정자 | 보고 대상자"
+  stakeholders: ["이해관계자"]
+  implementation_capacity: "high | medium | low"
+risk_profile:
+  tolerance: "aggressive | balanced | conservative"
+  key_constraints: ["제약조건"]
+  available_resources: "시간/예산/인력"
+evidence_threshold: "어떤 수준의 근거면 결정을 바꾸는가"
+preferred_direction: "이미 기운 방향 (편향 보정용)"
+```
+
+- `preferred_direction`은 Phase 3 Red Team에서 편향 보정 입력으로 활용
+- `evidence_threshold`는 보고서 근거 수준(VL) 결정에 반영
+- `domain_expertise.level`에 따라 보고서 설명 깊이 조정
 
 ## Step 0-A.5: 도메인 탐지 (Domain Discovery)
 
@@ -136,6 +209,9 @@ Interactive/Team 가설 공동 도출:
 3. 사용자 가설 수렴 (0개~N개):
    - 사용자가 가설을 제시하면 → hypotheses.yaml에 [사용자 제안] 태깅
    - 사용자가 "없어" 또는 "잘 모르겠어" → PM이 주도
+   - ★ 근거 수집 필수: 사용자 가설마다 "왜 그렇게 생각하시는지" 반드시 확인
+     → hypotheses.yaml의 user_rationale 필드에 기록
+     → 근거가 경험적이면 검증 우선순위 상승, 직관적이면 반증 검토 강화
 
 4. PM이 보충 가설 제시:
    "저는 이런 가설들이 떠오릅니다:
@@ -147,6 +223,13 @@ Interactive/Team 가설 공동 도출:
 
 5. 겹치는 가설 병합 + 우선순위 공동 결정
 
+6. 사용자 전문 영역 기반 추가 가설 유도:
+   Client Brief의 domain_expertise.focus_areas를 참조하여,
+   사용자가 잘 아는 영역에서 PM이 추가 가설을 유도한다:
+   "이 영역에서 {focus_area} 경험이 있으시다고 하셨는데,
+    혹시 {관련 패턴/트렌드}에 대해 가설이 있으신가요?"
+   → 전문 영역에서 나오는 가설은 검증 가치가 높으므로 우선순위 boost
+
 핵심: 에이전트가 "정답을 제시"하는 것이 아니라 "함께 생각"하는 대화.
 사용자의 도메인 지식이 가설 단계에서부터 반영되어야 리서치 방향이 정확해진다.
 ```
@@ -154,6 +237,27 @@ Interactive/Team 가설 공동 도출:
 - 가설 유형: opportunity / risk / assumption
 - 각 가설에 verification_plan (Division별 검증 과제) 포함
 - 산출물: `{project}/hypotheses.yaml`
+
+#### hypotheses.yaml 사용자 가설 구조
+
+사용자가 제시한 가설에는 반드시 `user_rationale` 필드를 포함한다:
+
+```yaml
+hypotheses:
+  - id: H-01
+    type: opportunity
+    statement: "가설 내용"
+    source: user          # user | pm | joint
+    user_rationale: "사용자가 설명한 근거 — 경험, 데이터, 직관 등"
+    rationale_type: experiential | data_based | intuitive
+    verification_plan:
+      - division: market
+        task: "검증 과제"
+```
+
+- `rationale_type: experiential` → 검증 우선순위 상승 (현장 경험 기반)
+- `rationale_type: intuitive` → 반증 검토 강화 (Phase 3 Red Team 우선 타겟)
+- `rationale_type: data_based` → 데이터 재확인 후 fast-track
 
 ### Step 0.5-C: 사용자 가설 정렬
 - Auto: PM이 자동 확정
@@ -191,9 +295,30 @@ Phase 3 Red Team 결과 검토 시에도 동일 패턴:
 - 사용자가 "이대로 진행" 또는 "1" → Phase 1 진입
 - 사용자가 수정 → hypotheses.yaml 갱신
 
-### Step 0.5-D: Division Briefs에 가설 반영
+### Step 0.5-D: Division Briefs에 가설 + User Context 반영
 - 확정된 가설의 verification_plan을 Division Briefs에 삽입
 - Leaf 출력의 iteration_log에 가설 ID(H-##) 태깅 지시
+
+#### Division Brief User Context 섹션 (~100 tokens)
+
+각 Division Brief에 **User Context** 섹션을 추가한다.
+Client Brief의 사용자 프로파일에서 해당 Division과 관련된 정보를 압축 전달:
+
+```yaml
+## User Context
+background: "사용자의 역할/경험 중 이 Division과 관련된 부분 1줄"
+decision_role: "직접 실행자 | 의사결정자 | 보고 대상자"
+risk_tolerance: "aggressive | balanced | conservative"
+expertise_relevance: "이 Division 주제에 대한 사용자 전문성 수준 + 영역"
+user_hypotheses:
+  - "H-## 중 이 Division이 검증 담당인 사용자 가설 (user_rationale 포함)"
+key_constraints: ["이 Division 분석에 영향을 주는 제약조건"]
+```
+
+- Lead가 분석 깊이/톤을 사용자 프로파일에 맞춰 조정하는 데 사용
+- `expertise_relevance`가 높으면: 기초 설명 생략, 전문 용어 사용 가능
+- `expertise_relevance`가 낮으면: 충분한 배경 설명 + 용어 해설 포함
+- `user_hypotheses`의 `user_rationale`을 통해 Lead가 사용자 관점을 이해
 
 ### Phase 0.5 완료 게이트
 - [ ] Quick Scan 활성 Division 전체 완료

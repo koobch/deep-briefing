@@ -326,6 +326,40 @@ TEMPLATE
   echo "  ✅ findings/checkpoint.yaml (초기화)"
 fi
 
+# user-profile.yaml 초기화 (사용자 프로파일 SSOT)
+if [ ! -f "${PROJECT_DIR}/user-profile.yaml" ]; then
+  cat > "${PROJECT_DIR}/user-profile.yaml" << TEMPLATE
+# 사용자 프로파일 — Phase 0에서 수집, Phase별 갱신
+# PM이 관리하는 SSOT. Division Brief, compile-lead-context에서 참조.
+
+domain_expertise:
+  level: null          # expert | intermediate | novice
+  focus_areas: []
+  experience_summary: null
+  previous_attempts: null
+
+decision_context:
+  role: null           # executor | decision_maker | reporter
+  stakeholders: []
+  implementation_capacity: null  # high | medium | low
+
+risk_profile:
+  tolerance: null      # aggressive | balanced | conservative
+  key_constraints: []
+  available_resources: null
+
+evidence_threshold: null   # 어떤 근거면 결정을 바꾸는가
+preferred_direction: null  # 이미 기운 방향 (편향 보정용)
+
+# 갱신 이력
+updates:
+  - phase: "not-yet"
+    updated_at: null
+    changed_fields: []
+TEMPLATE
+  echo "  ✅ user-profile.yaml (초기화)"
+fi
+
 # execution-trace.yaml 초기화
 if [ ! -f "${PROJECT_DIR}/findings/execution-trace.yaml" ]; then
   cat > "${PROJECT_DIR}/findings/execution-trace.yaml" << TEMPLATE
