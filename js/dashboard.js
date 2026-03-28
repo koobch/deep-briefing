@@ -95,7 +95,7 @@ const PHASES = [
     num:   'P0',
     label: 'Discovery',
     title: 'Phase 0 — Discovery',
-    desc:  '클라이언트 브리프 분석 및 프로젝트 초기화. 주제 파악, 범위 설정, 초기 컨텍스트 구축. `init-project.sh`로 디렉토리 스캐폴딩.',
+    desc:  '클라이언트 브리프 분석 및 프로젝트 초기화. 적응형 2-Pass 사용자 인터뷰 (Pass 1 기본 질문 → Pass 2 도메인 심층). 주제 파악, 범위 설정, 초기 컨텍스트 구축. `init-project.sh`로 디렉토리 스캐폴딩.',
     agents: ['research-pm', 'data-preprocessor'],
   },
   {
@@ -119,7 +119,7 @@ const PHASES = [
     num:   'S1',
     label: 'Sync 1',
     title: 'Sync 1 — 1차 동기화',
-    desc:  'Division 간 findings 교차 확인. 초기 tension 식별. Golden Facts 업데이트. `sync/sync-1.md` 생성.',
+    desc:  'Division 간 findings 교차 확인. 초기 tension 식별. Golden Facts 업데이트. 맥락 체크인: 사용자 경험 기반 피드백 수집. `sync/sync-1.md` 생성.',
     agents: ['research-pm', 'fact-verifier', 'cross-domain-synthesizer'],
   },
   {
@@ -135,7 +135,7 @@ const PHASES = [
     num:   'S2',
     label: 'Sync 2',
     title: 'Sync 2 — 교차 정합 + 통합',
-    desc:  'Division 간 교차 정합 + 통합. 교차 검증 VL-3 실행. insight-synthesizer가 통합 관점 초안 작성.',
+    desc:  'Division 간 교차 정합 + 통합. 교차 검증 VL-3 실행. 맥락 체크인: 사용자 경험 기반 피드백 수집. insight-synthesizer가 통합 관점 초안 작성.',
     agents: ['fact-verifier', 'cross-domain-synthesizer', 'insight-synthesizer'],
   },
   {
