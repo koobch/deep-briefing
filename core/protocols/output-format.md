@@ -475,6 +475,90 @@ confidence_summary:
 
 ---
 
+## Phase 3.7 산출물 포맷
+
+Phase 3(사고 루프) 이후, Phase 4(보고서) 이전에 실행되는 자기 비판 + 외부 리뷰 단계의 산출물.
+
+### weakness-checklist (self-critique.md의 첫 섹션)
+
+```yaml
+weakness_checklist:
+  - id: WC-01
+    item: "확증 편향 (Confirmation Bias)"
+    verdict: PASS | FLAG
+    evidence: "판정 근거"
+    remediation: "FLAG인 경우 보완 방안"
+  - id: WC-02
+    item: "반증 부족 (Insufficient Disconfirmation)"
+    verdict: PASS | FLAG
+    evidence: "판정 근거"
+    remediation: "..."
+  - id: WC-03
+    item: "집단 사고 (Groupthink)"
+    verdict: PASS | FLAG
+    evidence: "판정 근거"
+    remediation: "..."
+  - id: WC-04
+    item: "관점 고정 (Anchoring)"
+    verdict: PASS | FLAG
+    evidence: "판정 근거"
+    remediation: "..."
+  - id: WC-05
+    item: "대안 부족 (Alternative Deficit)"
+    verdict: PASS | FLAG
+    evidence: "판정 근거"
+    remediation: "..."
+summary:
+  total_flags: N
+  proceed_to_self_critique: true | false  # FLAG 2건+ → true
+```
+
+### self-critique.md (전체 구조)
+
+```
+# Self-Critique — External Review (Phase 3.7)
+
+## 약점 체크리스트
+(weakness-checklist 포맷 참조)
+
+## 프레이밍 비판
+- 현재 프레이밍: {요약}
+- 대안 프레이밍 1~2개 + trade-off
+
+## 접근법 비판
+- Division 구성 적절성
+- 데이터 소스 편향 여부
+- 프레임워크 선택 영향
+
+## 빠진 관점
+| 누락 관점 | 영향 | 보완 방안 |
+
+## 결론 강건성 테스트
+- 시나리오별: 가정 변경 → 결론 변화 여부 → 강건/취약
+
+## report-writer 전달 사항
+```
+
+### external-review.md (선택적)
+
+```
+# External Review — 외부 모델 피드백
+
+## 피드백 소스
+- provider: codex | gemini | user_provided
+- timestamp: YYYY-MM-DDTHH:MM:SS
+
+## 피드백 분류
+| 항목 | 유형 | 내용 | PM 판정 |
+| --- | 동의/보완/반박 | 피드백 상세 | 반영/보류/기각 |
+
+## 반영 사항
+- 보완 항목: [...]
+- 반박 항목: [양쪽 근거 대비]
+```
+
+---
+
 ## 소스 추적 규칙
 
 ### 신뢰도 정량화

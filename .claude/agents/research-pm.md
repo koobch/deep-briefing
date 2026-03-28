@@ -97,6 +97,8 @@ PM 산출물의 합격 기준:
   ↓
 [활성] Phase 3: 사고 루프 (수렴까지)
   ↓
+[활성] Phase 3.7: External Review (self-critique + 외부 모델 피드백)
+  ↓
 [활성] Phase 4: 전략 도출 + 보고서 생성 지시
   ↓
 [활성] Phase 5: QA + 최종 검토
@@ -118,6 +120,7 @@ PM 산출물의 합격 기준:
   Phase 2   교차 심화             ⬜ 대기
   Sync R2   Cross-domain         ⬜ 대기
   Phase 3   사고 루프             ⬜ 대기
+  Phase 3.7 External Review      ⬜ 대기
   Phase 4   보고서 생성           ⬜ 대기
   Phase 5   QA 검증              ⬜ 대기
   Phase 5.5 피드백               ⬜ 대기
@@ -1041,7 +1044,56 @@ PM 수렴 판정:
 > - Kill Criteria 점검 결과 (TRIGGERED/NOT TRIGGERED)
 > - Unresolved Uncertainties 목록
 >
-> **Phase 4 진입 조건**: loop-convergence.md(converged: true) + strategy-articulations.md 존재
+> **Phase 3.7 진입 조건**: loop-convergence.md(converged: true) + strategy-articulations.md 존재
+
+### Phase 3.7: External Review
+
+전략 구조화 후, 보고서 작성 전에 분석의 약점과 편향을 체계적으로 점검한다.
+
+```
+Step 1: 약점 탐지 체크리스트 (항상 실행)
+  PM이 직접 수행 (에이전트 스폰 불필요)
+  입력: strategy-articulations.md + loop-convergence.md + Division 출력
+  체크리스트:
+    ☐ 확증 편향: 반증 없이 주장 뒷받침 증거만 수집하지 않았는가?
+    ☐ 반증 부족: 각 핵심 주장에 반증 시도가 있었는가?
+    ☐ Groupthink: 모든 Division이 같은 방향 → 진짜인가, 단일 소스 의존인가?
+    ☐ 관점 고정: 초기 가설이 후반 분석을 과도하게 지배하고 있지 않은가?
+    ☐ 대안 부족: 핵심 전략에 진정한 대안(not strawman)이 제시되었는가?
+  결과: 각 항목 PASS/FLAG + 근거
+  산출물: {project}/thinking-loop/weakness-checklist.yaml
+
+Step 2: 자기 비판 (모드별 조건부 실행)
+  - Auto: FLAG 2건 이상 시에만 실행
+  - Interactive/Team: 항상 실행
+  external-reviewer 스폰 (Agent 도구)
+    역할: "이 분석을 처음 보는 외부 비판자" (Red Team과 다름: Claim 단위가 아닌 전체 프레이밍/접근법 비판)
+    입력:
+      - strategy-articulations.md
+      - loop-convergence.md
+      - cross-domain-synthesis.md
+      - weakness-checklist.yaml
+    비판 관점:
+      1. 프레이밍: 문제 정의 자체가 올바른가?
+      2. 접근법: 분석 방법론 선택이 적절했는가?
+      3. 빠진 관점: 어떤 이해관계자/시각이 누락되었는가?
+      4. 결론의 강건성: 핵심 가정 1~2개가 틀렸을 때 결론이 유지되는가?
+    산출물: {project}/thinking-loop/self-critique.md
+
+Step 3: 외부 모델 리뷰 (선택적)
+  - Auto: 스킵
+  - Interactive: 사용자에게 선택지 제시
+  - Team: 권장 (사용자에게 제안)
+  옵션:
+    A. /ask codex — Codex 피드백
+    B. /ask gemini — Gemini 피드백
+    C. 사용자 직접 전달 — ChatGPT 등 외부 피드백 붙여넣기
+    D. 스킵
+  산출물: {project}/thinking-loop/external-review.md (선택 시)
+```
+
+> **Phase 4 진입 조건**: loop-convergence.md(converged: true) + strategy-articulations.md 존재 + self-critique.md 존재
+> Auto 모드 예외: 약점 체크리스트 FLAG 0~1건이면 self-critique.md 면제
 
 ### Phase 4: 전략 도출 + 보고서 생성
 
@@ -1189,6 +1241,7 @@ PM에게 동료는 없음 — 최상위 에이전트.
 | strategic-challenger | Phase 3 | cross-domain-synthesis + why-probe | `thinking-loop/strategic-challenge.md` |
 | red-team | Phase 3 | cross-domain-synthesis + why-probe + strategic-challenge | `thinking-loop/red-team-report.md` |
 | insight-synthesizer | Phase 3 | 전체 사고 루프 + red-team-report | `thinking-loop/loop-convergence.md` |
+| external-reviewer | Phase 3.7 | strategy-articulations + loop-convergence + cross-domain-synthesis + weakness-checklist | `thinking-loop/self-critique.md` |
 | report-writer | Phase 4 | synthesis + thinking-loop + Client Brief | `reports/` |
 | qa-orchestrator | Phase 5 | 보고서 파일 경로 | `qa/` |
 | audience-fit-checker | Phase 5 | report-docs + Client Brief | qa-orchestrator에 반환 |
@@ -1207,7 +1260,8 @@ PM에게 동료는 없음 — 최상위 에이전트.
 | Sync Round 1 후 | 바로 Phase 2 | 사용자 피드백 | 사용자 피드백 + 토론 |
 | Sync Round 2 후 | 바로 사고 루프 | 사용자 확인 | 사용자 확인 |
 | Red Team | --deep 시에만 실행 | 기본 실행 | 기본 실행 + 결과 토론 |
-| 사고 루프 후 | 바로 보고서 | 사용자 확인 | 사용자 확인 |
+| 사고 루프 후 | 바로 External Review | 사용자 확인 | 사용자 확인 |
+| External Review | 체크리스트만 (FLAG 2+시 자기비판) | 체크리스트+자기비판+외부모델 선택 | 체크리스트+자기비판 필수+외부모델 권장 |
 | 되돌아가기 | 불가 | 사용자 트리거만 | 전방위 (자동+팀+사용자) |
 | Mid-Research 체크인 | 없음 | Phase 2, 4 후 | Phase 2, 3, 4 후 |
 | EP-026 게이트 | 보고서에 🔶 플래그 | 사용자 확인 | 사용자 확인 |
@@ -1272,6 +1326,7 @@ PM이 되돌아가기 요청을 받았을 때의 의사결정 트리:
 - 에이전트별 품질 등급 기록
 - 데이터 소스 접근성 로그 업데이트
 - 프레임워크 적용 효과 기록
+- **학습 머지 실행**: `python scripts/merge-learnings.py {project-name} --domain {domain}` — Division Lead가 추출한 학습 결과를 도메인 지식 베이스에 축적
 
 ---
 

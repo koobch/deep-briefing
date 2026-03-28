@@ -11,9 +11,18 @@ domains/example/
 ├── frameworks.md          ← 범용 전략 프레임워크 (12개)
 ├── data-sources.md        ← 범용 데이터 소스 정의
 ├── benchmarks.md          ← 피어 비교/산업 벤치마크 (선택적 활성화)
+├── knowledge/             ← 학습 엔진 축적 지식 (리서치 완료 후 자동 머지)
+│   ├── _meta.yaml         ← 도메인 메타데이터 (프로젝트 이력, 성숙도)
+│   ├── learned-sources.yaml    ← 데이터 소스 신뢰도/접근성
+│   ├── learned-patterns.yaml   ← 산업별 분석 패턴
+│   ├── learned-terms.yaml      ← 용어 정의/혼동 방지
+│   ├── learned-frameworks.yaml ← 프레임워크 효과성
+│   └── learned-pitfalls.yaml   ← 분석 함정/실수 방지
 └── agents/
     └── README.md          ← 에이전트 커스텀 가이드
 ```
+
+> **학습 엔진**: 리서치 완료 후 `python scripts/merge-learnings.py {project} --domain example`을 실행하면 프로젝트에서 배운 것이 `knowledge/`에 축적됩니다. 프로젝트를 거듭할수록 시스템이 해당 도메인에서 더 똑똑해집니다.
 
 ## 포함된 프레임워크
 

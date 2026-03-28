@@ -7,6 +7,7 @@
 # phase 값:
 #   1        → division-briefs/{div}.md 기반 Phase 1 실행
 #   2        → sync/phase2-{div}.md 기반 Phase 2 실행
+#   3.7      → sync/phase3.7-{div}.md 기반 External Review 실행
 #   feedback → sync/feedback-{div}.md 기반 피드백 재실행
 #   custom   → --instruction "지시 내용" 으로 커스텀 지시
 #

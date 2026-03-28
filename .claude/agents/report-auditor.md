@@ -152,7 +152,23 @@ Step 8: 프레임워크 적용 반영 확인
   - 프레임워크 분석 결과가 명시적으로 표기되었는가? (예: "Porter 분석 결과: ~")
   - 프레임워크 없이 도출된 결론은 없는가?
 
-Step 9: 결과 반환
+Step 9: Phase 3.7 External Review 반영 검증
+  - self-critique.md 존재 시:
+    a. FLAG 항목별 보고서 반영 여부 대조:
+       - 각 FLAG 항목이 보고서의 리스크/주의사항/한계 섹션에서 다뤄졌는가?
+       - 강건성 테스트 "취약" 결론에 caveat가 붙어있는가?
+       - 빠진 관점이 "분석 한계"에서 언급되었는가?
+    b. 미반영 FLAG 항목: issue로 기록 (severity: major)
+    c. 판정: 모든 FLAG 반영 → PASS / 1건+ 미반영 → CONDITIONAL
+
+  - external-review.md 존재 시:
+    d. 외부 피드백 "보완" 항목이 보고서에 통합되었는가?
+    e. "반박" 항목이 양쪽 근거 병기로 반영되었는가?
+    f. 미반영 항목: issue로 기록 (severity: minor)
+
+  - self-critique.md 미존재 시: 이 스텝 스킵
+
+Step 10: 결과 반환
   qa-orchestrator에 반환:
   - 이슈 목록 (각각 severity: critical/major/minor)
   - 이슈 위치 (보고서 내 섹션/줄)

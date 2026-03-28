@@ -89,6 +89,13 @@ model: sonnet
   - {project}/findings/golden-facts.yaml — 수치 SSOT
   - {project}/findings/{division}/ — Division 출력 (source 추적 시)
 
+Step 0: Phase 3.7 산출물 점검
+  - self-critique.md 존재 여부 확인:
+    - 존재: 약점 체크리스트 FLAG 건수 기록 → report-auditor에 전달
+    - 미존재 + Auto 모드: 정상 (체크리스트 FLAG 0~1건으로 면제)
+    - 미존재 + Interactive/Team 모드: ⚠️ 경고 — "Phase 3.7 External Review가 실행되지 않았습니다"
+  - self-critique.md FLAG 항목이 보고서에 반영되었는지 report-auditor가 검증하도록 지시
+
 Step 1: mechanical-validator (수치 정합성)
   python scripts/verify-facts.py {project} 실행
   → {project}/qa/fact-verification.yaml 생성

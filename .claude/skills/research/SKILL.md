@@ -72,6 +72,7 @@ project-name 생략 시 모든 프로젝트를 스캔.
   Phase 2   교차 반영 심화        ✅ 완료 (2026-03-15)
   Sync R2   Cross-domain         ✅ 완료 (2026-03-15)
   Phase 3   사고 루프             ✅ 완료 (2026-03-15)
+  Phase 3.7 External Review      ✅ 완료 (2026-03-15)
   Phase 4   보고서 생성           ✅ 완료 (2026-03-15)
   Phase 5   QA 자동 루프          ⚠️ CONDITIONAL PASS (Major 2건)
   Phase 5.5 사용자 피드백         ⏳ 대기 중
@@ -132,9 +133,10 @@ Phase별 상세 워크플로우는 보조 파일 참조:
 2. **Phase 0.5**: 가설 생성 + 사용자 정렬 → [phase-0-discovery.md](phase-0-discovery.md)
 3. **Phase 1**: Division 병렬 리서치 (가설 검증 중심) → [phase-1-parallel.md](phase-1-parallel.md)
 4. **Phase 2~3**: 교차 심화 + 사고 루프 → [phase-2-synthesis.md](phase-2-synthesis.md)
-5. **Phase 4**: 보고서 생성 → [phase-2-synthesis.md](phase-2-synthesis.md)
-6. **Phase 5**: QA 자동 수정 루프 → [phase-2-synthesis.md](phase-2-synthesis.md)
-7. **Phase 5.5**: 사용자 피드백 + 부분 재실행 → [phase-2-synthesis.md](phase-2-synthesis.md)
+5. **Phase 3.7**: External Review (약점 체크 + 자기 비판) → [phase-2-synthesis.md](phase-2-synthesis.md)
+6. **Phase 4**: 보고서 생성 → [phase-2-synthesis.md](phase-2-synthesis.md)
+7. **Phase 5**: QA 자동 수정 루프 → [phase-2-synthesis.md](phase-2-synthesis.md)
+8. **Phase 5.5**: 사용자 피드백 + 부분 재실행 → [phase-2-synthesis.md](phase-2-synthesis.md)
 
 ## 사용자 개입 포인트 요약
 
@@ -150,6 +152,7 @@ Phase별 상세 워크플로우는 보조 파일 참조:
 | Phase 2 | **"Phase 2 전송할까요?" → "응"** | send-phase2.sh 자동 실행 + .done 폴링 |
 | Phase 2→3 | **"사고 루프 시작할까요?" → "응"** | Cross-domain + Thinking Loop (logic-prober → strategic-challenger → red-team → insight-synthesizer) |
 | Phase 3 결과 | Red Team 결과 검토 (Interactive/Team) | Strong 반론 시 전략 수정 여부 판단 |
+| Phase 3.7 | External Review 결과 검토 (Interactive/Team) | 약점 체크리스트 + 자기 비판 + 외부 모델 선택 |
 | Phase 4 | 보고서 구성 확인 | 보고서 생성 |
 | Phase 5 | PM 최종 확인 | QA 자동 루프 (mechanical + source + confidence + executability-checker + audience-fit-checker + report-auditor → report-fixer) |
 | Phase 5.5 | 피드백 입력 → 확정 | 부분 재실행 + QA |

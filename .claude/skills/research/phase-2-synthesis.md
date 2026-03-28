@@ -83,6 +83,33 @@ Lead CLI들은 Phase 2 완료 후 종료 가능. 이후는 PM CLI에서 진행:
 5. insight-synthesizer 스폰 (Agent) → 도전 결과 + Red Team 결과 반영
 6. PM 수렴 판정 (최대 2회 반복)
 
+## Phase 3.7: External Review
+
+Phase 3(사고 루프) 수렴 완료 후 자동 진입.
+
+PM이 external-reviewer 에이전트를 스폰한다:
+
+```
+external-reviewer 스폰 (Agent 도구)
+  입력: strategy-articulations.md + loop-convergence.md + cross-domain-synthesis.md
+  출력: thinking-loop/self-critique.md (+ external-review.md 선택)
+```
+
+**실행 흐름:**
+
+1. **약점 체크리스트** (항상): 확증 편향, 반증 부족, 집단 사고, 관점 고정, 대안 부족 — 5항목 PASS/FLAG
+2. **자기 비판** (FLAG 2건+ 또는 Interactive/Team): 프레이밍/접근법/빠진 관점/강건성 비판
+3. **외부 모델 리뷰** (선택): /ask codex, /ask gemini, 또는 사용자 직접 전달
+
+**모드별:**
+- Auto: 체크리스트만 (FLAG 2+시 자기비판 자동)
+- Interactive: 체크리스트 + 자기비판 → 사용자에게 외부 모델 선택지 제시
+- Team: 체크리스트 + 자기비판 필수 + 외부 모델 권장
+
+**Phase 4 진입 조건:**
+loop-convergence.md(converged: true) + strategy-articulations.md 존재 + self-critique.md 존재
+(Auto 모드: FLAG 0~1건이면 self-critique.md 면제)
+
 ## Phase 4: 보고서 생성
 
 1. report-writer 스폰 (Agent)

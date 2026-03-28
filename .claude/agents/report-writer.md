@@ -84,6 +84,8 @@ model: opus
   - {project}/findings/golden-facts.yaml — 수치 SSOT
   - {project}/00-client-brief.md — 톤, 형식 선호, 핵심 질문, 발표 시간
   - {project}/thinking-loop/strategy-articulations.md — DQ별 답변 구조 (Phase 3.5 산출)
+  - {project}/thinking-loop/self-critique.md — Phase 3.7 약점 비판 + 강건성 테스트 (FLAG 항목 → 리스크 섹션 반영)
+  - {project}/thinking-loop/external-review.md — 외부 모델 피드백 (선택: 미존재 시 생략)
 
 ### DQ 기반 보고서 구성 규칙
 - 보고서의 "핵심 발견" 각 섹션을 01-research-plan.md의 Decision Question(DQ)과 매핑
@@ -147,6 +149,16 @@ Step 1: 스토리라인 설계 (SCR 프레임워크)
 
     ※ 총 분량 가이드: 15~30페이지 (주제 복잡도에 따라 변동)
     ※ 핵심 발견 섹션이 전체의 60%를 차지해야 함 — 나머지는 압축
+
+  1-d. Phase 3.7 External Review 반영:
+    - self-critique.md의 FLAG 항목 확인:
+      - FLAG된 약점을 보고서 "리스크" 또는 "주의사항" 섹션에 반영
+      - 강건성 테스트에서 "취약" 판정된 결론에 caveat 추가
+      - 프레이밍 비판의 대안 프레이밍을 "분석 한계" 섹션에서 언급
+    - external-review.md 존재 시:
+      - 외부 피드백 중 "보완" 항목을 해당 섹션에 통합
+      - "반박" 항목은 양쪽 근거를 병기하여 독자가 판단할 수 있도록
+    - self-critique.md 미존재 시: 이 스텝 스킵 (Auto 모드 FLAG 0~1건)
 
 Step 2: report-docs.md 작성
   각 섹션에서:
