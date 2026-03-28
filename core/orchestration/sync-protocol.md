@@ -1111,6 +1111,40 @@ QA PASS 후 PM이 확인하는 체크리스트:
 
 ---
 
+## 범용 피드백 수신 (모든 Phase에서 활성)
+
+PM은 **Phase 5.5(보고서 완료 후)뿐 아니라 모든 Phase에서** 사용자의 변경 요청을 수신할 수 있다.
+
+### 수신 규칙
+
+```
+1. 사용자 입력이 "변경 요청"으로 판단되면:
+   - 현재 진행 중인 작업 일시 중단
+   - L0~L3 피드백 분류 수행 (research-pm.md § 인터랙티브 피드백 분류 참조)
+   - L0: 즉시 반영, 작업 재개
+   - L1+: cascade 영향 분석 → 옵션+추천 제시 → 사용자 확인 후 실행
+
+2. Division 병렬 실행 중(Phase 1/2) 피드백 수신 시:
+   - 실행 중인 Division의 완료를 대기하지 않음
+   - 영향받지 않는 Division은 계속 실행
+   - 영향받는 Division만 중단/재실행 대상
+
+3. Interactive/Team 모드: PM이 각 Phase 전환 시점에 능동적으로:
+   "현재까지 결과를 보셨는데, 방향이나 전제를 수정하고 싶은 부분이 있으신가요?
+    지금 바꾸면 영향 최소화가 가능합니다."
+```
+
+### 기존 피드백 체계와의 관계
+
+| 기존 체계 | 역할 | 변경 사항 |
+|----------|------|----------|
+| Mid-Research 체크인 | 지정된 Phase 전환 시 사용자 게이트 | 그대로 유지 |
+| 되돌아가기 프로토콜 (Type 1/2/3) | Phase 수준 되돌아가기 실행 | L0~L3 분류가 Type을 트리거 |
+| Phase 5.5 피드백 루프 | 보고서 완료 후 피드백 | L0~L3 level 필드 추가 |
+| **범용 피드백 수신 (신규)** | 모든 Phase에서 변경 요청 수신 + 분류 | **신규 추가** |
+
+---
+
 ## Phase 5.5: 사용자 피드백 + 부분 재실행
 
 ### 목적
@@ -1162,6 +1196,7 @@ PM이 피드백을 분류하고 재실행 범위를 결정:
 feedback_analysis:
   - id: FB-01
     type: factual_error | depth_needed | direction_change | format_change
+    level: L0 | L1 | L2 | L3    # 피드백 계층 분류 (아래 매핑 참조)
     description: "사용자 피드백 원문"
     affected_divisions: [market, finance]   # 영향받는 Division
     affected_claims: [MGN-02, FRV-01]       # 영향받는 Claim ID
@@ -1172,6 +1207,12 @@ feedback_analysis:
   minimal:        report-fixer만 재실행 (형식/톤 변경)
   division:       해당 Division Lead만 부분 재실행 → 합성 업데이트 → 보고서 수정
   cross_division: 해당 Division + 교차 영향 Division 재실행 → Sync Round 재실행 → 보고서 재작성
+
+L계층 ↔ 기존 type 매핑:
+  L0 (표현) → format_change → scope: minimal
+  L1 (사실) → factual_error → scope: division
+  L2 (가설) → direction_change → scope: division 또는 cross_division
+  L3 (전제) → direction_change → scope: cross_division (Phase 0 되돌아가기 후보)
 
 산출물: {project}/sync/feedback-analysis.yaml
 ```
@@ -1310,6 +1351,64 @@ recommendations:
      → 매출 기준선을 Phase 0에서 사전 합의 권장
    - 추천: 신규 카테고리는 벤치마크 데이터가 제한적
      → 사용자 내부 데이터 제공 시 품질 크게 향상
+```
+
+---
+
+## Cascade 영향 분석 (L1+ 피드백 시 필수)
+
+사용자 피드백이 L1 이상으로 분류되면, PM은 변경 사항의 cascade 영향을 추적한다.
+
+### 산출물 의존 체인
+
+```
+Client Brief (00-client-brief.md)
+    ↓
+Research Plan (01-research-plan.md) + hypotheses.yaml
+    ↓
+Division Briefs (division-briefs/{div}.md)
+    ↓
+Division Findings (findings/{div}/division-synthesis.yaml)
+    ↓
+Cross-domain Synthesis (sync/cross-domain-synthesis.md)
+    ↓
+Thinking Loop (thinking-loop/*.md)
+    ↓
+Strategy Articulations (thinking-loop/strategy-articulations.md)
+    ↓
+External Review (thinking-loop/self-critique.md)
+    ↓
+Report (reports/report-docs.md)
+```
+
+### 분석 절차
+
+```
+Step 1: 변경 시작점 식별
+  - 사용자 피드백이 위 체인의 어느 노드에 해당하는가?
+  - L1(사실): findings 노드
+  - L2(가설): hypotheses.yaml 노드
+  - L3(전제): Client Brief 노드
+
+Step 2: 하류 영향 추적
+  - 변경 시작점부터 하류의 각 노드를 순회
+  - 각 노드에서: "이 변경이 해당 산출물을 무효화하는가?" (Yes/No)
+  - Yes이면: 해당 노드 + 이후 모든 노드가 재검증/재생성 대상
+  - No이면: 해당 노드에서 cascade 중단
+
+Step 3: Division 영향 범위
+  - 무효화된 노드에 관련된 Division 목록 생성
+  - 해당 Division의 Claim 중 영향받는 Claim ID 식별
+
+Step 4: 영향 보고서 생성
+  PM → 사용자:
+    "이 변경의 cascade 영향:
+     - 변경 시작점: {노드명}
+     - 무효화되는 산출물: {목록}
+     - 영향받는 Division: {목록}
+     - 영향받는 Claim: {ID 목록}
+     - 유지 가능한 산출물: {목록}
+     - 재실행 필요 범위: {시작 Phase} → {현재 Phase}"
 ```
 
 ---
