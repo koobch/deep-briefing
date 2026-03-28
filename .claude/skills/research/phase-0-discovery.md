@@ -54,8 +54,17 @@ Deep (Interactive/Team) 추가:
 
 ### Client Brief 산출물에 User Profile 포함
 
-Step 0-A 완료 시, `{project}/00-client-brief.md`에 아래 구조를 **첫 번째 섹션으로** 포함한다.
-그룹 0 답변을 구조화하여 이후 Phase 전체에서 참조한다.
+Step 0-A 완료 시, 두 곳에 동시 기록한다:
+1. `{project}/00-client-brief.md`에 아래 구조를 **첫 번째 섹션으로** 포함 (사람용 서술)
+2. `{project}/user-profile.yaml`에 동일 내용을 YAML로 기록 (기계용 SSOT — init-project.sh가 스캐폴딩 생성)
+
+`user-profile.yaml`은 이후 Phase에서 갱신된다:
+- Phase 0.5: user_rationale, 선호/기피 가설, kill criteria 갱신
+- Sync R1: 사용자 경험 보정 (맥락 체크인 결과)
+- Sync R2: risk_profile 갱신 (real_tension 발생 시)
+- Phase 3.7: evidence_threshold 재확인
+
+Division Brief 작성 시 `compile-lead-context.sh`가 `user-profile.yaml`에서 User Context 스니펫을 자동 추출하여 각 Lead에 전달한다.
 
 ```yaml
 ## 사용자 프로파일
