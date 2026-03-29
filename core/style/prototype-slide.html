@@ -88,7 +88,7 @@
       position: absolute; left: 366px; top: 244px;
       right: 80px;
       max-height: 272px; overflow: hidden;
-      font-size: 23px; line-height: 1.35; color: #3e3e3e;
+      font-size: 21px; line-height: 1.30; color: #3e3e3e;
     }
     .s1 .r1-body strong { font-weight: 700; color: #000000; }
     .s1 .r1-body .bul { color: #28ba74; margin-right: 6px; }
@@ -117,7 +117,7 @@
       position: absolute; left: 366px; top: 542px;
       right: 80px;
       max-height: 225px; overflow: hidden;
-      font-size: 23px; line-height: 1.35; color: #3e3e3e;
+      font-size: 21px; line-height: 1.28; color: #3e3e3e;
     }
     .s1 .r2-body strong { font-weight: 700; color: #000000; }
     .s1 .r2-body .bul { color: #28ba74; margin-right: 6px; }
@@ -541,8 +541,8 @@
     font-size: 32px; color: #000;
   }
   .s2 .s2-callout {
-    position: absolute; left: 217px; top: 913px;
-    width: 926px; height: 70px; background: #ffffff;
+    position: absolute; left: 217px; top: 905px;
+    width: 926px; height: 96px; background: #ffffff;
     display: flex; align-items: center;
     z-index: 2;
   }
@@ -554,7 +554,7 @@
   .s2 .s2-text {
     position: absolute; left: 1280px; top: 315px;
     width: 572px;
-    font-size: 30px; line-height: 1.35; color: #000000;
+    font-size: 26px; line-height: 1.35; color: #000000;
     max-height: 675px; overflow: hidden;
     z-index: 2;
   }
@@ -813,18 +813,18 @@
   <!-- 좌측 배경: x:0 y:192 w:480 h:888 -->
   <div style="position:absolute;left:0;top:192px;width:480px;height:888px;background:#f1f2f1"></div>
   <!-- Big Number 67% (도넛) -->
-  <div style="position:absolute;left:55px;top:402px;width:376px;height:250px;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;left:55px;top:402px;width:376px;height:250px;display:flex;align-items:center;justify-content:center;overflow:hidden">
     <div style="width:220px;height:220px;border-radius:50%;background:conic-gradient(#a8b338 0% 67%,#d0f5e2 67% 100%);display:flex;align-items:center;justify-content:center">
       <div style="width:140px;height:140px;border-radius:50%;background:#f1f2f1;display:flex;flex-direction:column;align-items:center;justify-content:center">
         <span style="font-size:36px;font-weight:700;color:#000;line-height:1">67<span style="font-size:24px">%</span></span>
       </div>
     </div>
-    <!-- "DESIRED CULTURE" 텍스트 (도넛 근처) -->
-    <div style="position:absolute;left:150px;top:560px;font-size:28px;font-weight:700;color:#000;text-align:center;line-height:1.2;z-index:1">
-      바람직한<br>문화
-    </div>
   </div>
-  <div style="position:absolute;left:55px;top:670px;width:400px;font-size:24px;color:#000;line-height:1.45;text-align:center;word-break:keep-all">
+  <!-- "바람직한 문화" — 도넛 컨테이너 밖으로 이동 -->
+  <div style="position:absolute;left:150px;top:620px;font-size:28px;font-weight:700;color:#000;text-align:center;line-height:1.2;z-index:1">
+    바람직한<br>문화
+  </div>
+  <div style="position:absolute;left:55px;top:690px;width:400px;font-size:24px;color:#000;line-height:1.45;text-align:center;word-break:keep-all">
     비용 절감분을 성장에<br>재투자할 계획인 임원 비율
   </div>
   <!-- 우측 상단 제목 -->
