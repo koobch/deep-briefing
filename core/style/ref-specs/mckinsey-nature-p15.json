@@ -1,0 +1,160 @@
+{
+  "page": 15,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 1577.8,
+      "y": 1019.5,
+      "w": 287.0,
+      "h": 25.9,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 85.4,
+      "y": 67.2,
+      "w": 309.8,
+      "h": 140.6,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 104.2,
+      "y": 532.8,
+      "w": 254.9,
+      "h": 254.9,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1130.2,
+      "y": 1041.1,
+      "w": 375.1,
+      "h": 2.4,
+      "fill": "#2151ff",
+      "border": null
+    }
+  ],
+  "texts": [
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1812.9,
+      "y": 1025.1,
+      "w": 20.1,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "15"
+    },
+    {
+      "x": 1812.9,
+      "y": 1025.1,
+      "w": 20.1,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "15"
+    },
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 85.3,
+      "y": 220.4,
+      "w": 625.0,
+      "h": 122.5,
+      "size_pt": 54.0,
+      "size_px": 108.0,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Thank you!"
+    },
+    {
+      "x": 97.8,
+      "y": 485.6,
+      "w": 254.1,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Scan to download"
+    },
+    {
+      "x": 553.3,
+      "y": 1009.1,
+      "w": 567.9,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Contact us or view our latest Insights at:"
+    },
+    {
+      "x": 1121.2,
+      "y": 1009.1,
+      "w": 384.1,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#2251ff",
+      "bold": false,
+      "text": " www.mckinsey.com/nature"
+    }
+  ],
+  "images": [
+    {
+      "x": 719.6,
+      "y": 185.9,
+      "w": 1200.4,
+      "h": 872.7
+    }
+  ]
+}

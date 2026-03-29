@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920">
+  <title>Deep-Briefing Slide Prototype v5 (PDF 추출 좌표 기반)</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet">
+  <style>
+    /* 모든 수치는 bcg-cost-p03.json / p08.json에서 추출한 실측값 (1920×1080) */
+    :root {
+      --font: 'Pretendard Variable', 'Pretendard', 'Trebuchet MS', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: #C0C4C8;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 24px; padding: 24px;
+    }
+    .slide {
+      width: 1920px; height: 1080px;
+      background: #ffffff;
+      position: relative; overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      transform-origin: top center;
+    }
+
+    /* ══════════════════════════════════════════
+       SLIDE 1: BCG p3 Exec Summary
+       PDF 추출 좌표 그대로 적용
+       ══════════════════════════════════════════ */
+
+    /* 헤더바: y:0→188, fill:#000000 */
+    .s1 .hdr {
+      position: absolute; top: 0; left: 0;
+      width: 1920px; height: 188px;
+      background: #000000;
+      /* 실제 BCG는 사진 오버레이 — 여기선 어두운 초록 그라데이션으로 근사 */
+      background: linear-gradient(135deg, #004d33 0%, #002e1f 40%, #1a1a2e 100%);
+    }
+
+    /* 헤더 텍스트: y:38, 48px Bold */
+    .s1 .hdr-label {
+      position: absolute; left: 63px; top: 38px;
+      font-size: 48px; font-weight: 700; color: #74e0ac;
+      line-height: 1.15;
+      z-index: 1;
+    }
+    .s1 .hdr-title {
+      position: absolute; left: 63px; top: 38px;
+      font-size: 48px; font-weight: 700; color: #ffffff;
+      line-height: 1.15;
+      z-index: 1;
+      /* label 뒤에 inline으로 이어지도록 padding-left로 offset */
+    }
+    /* 실제로는 label과 title이 한 줄에 이어짐 — 하나의 요소로 처리 */
+    .s1 .hdr-text {
+      position: absolute; left: 63px; top: 38px; right: 100px;
+      font-size: 48px; font-weight: 700; color: #ffffff;
+      line-height: 1.15;
+      z-index: 1;
+      word-break: keep-all;
+    }
+    .s1 .hdr-text .lbl { color: #74e0ac; }
+
+    /* 구분선: y:188, #29b974 */
+    .s1 .sep {
+      position: absolute; top: 188px; left: 0; width: 1920px;
+      border-top: 2px solid #29b974; z-index: 2;
+    }
+
+    /* Row 1 라벨: x:54 y:236 w:284 h:264, fill:#b8edbc */
+    .s1 .r1-lbl {
+      position: absolute; left: 54px; top: 236px;
+      width: 284px; height: 264px;
+      background: #b8edbc;
+    }
+    .s1 .r1-lbl-text {
+      position: absolute; left: 69px; top: 319px;
+      width: 254px;
+      font-size: 28px; font-weight: 700; color: #000000;
+      line-height: 1.15;
+    }
+
+    /* Row 1 본문: x:366 y:244, 23px */
+    .s1 .r1-body {
+      position: absolute; left: 366px; top: 244px;
+      right: 80px;
+      max-height: 272px; overflow: hidden;
+      font-size: 23px; line-height: 1.35; color: #3e3e3e;
+    }
+    .s1 .r1-body strong { font-weight: 700; color: #000000; }
+    .s1 .r1-body .bul { color: #28ba74; margin-right: 6px; }
+    .s1 .r1-body .tag { font-size: 15px; color: #3e3e3e; vertical-align: super; }
+    .s1 .r1-body p { margin: 0 0 4px; }
+
+    /* Row 구분선: y:516 */
+    .s1 .rd1 {
+      position: absolute; top: 516px; left: 51px;
+      width: 1782px; border-top: 1px solid #b1b2b1;
+    }
+
+    /* Row 2 라벨: x:54 y:533 w:284 h:218, fill:#b8edbc */
+    .s1 .r2-lbl {
+      position: absolute; left: 54px; top: 533px;
+      width: 284px; height: 218px;
+      background: #b8edbc;
+    }
+    .s1 .r2-lbl-text {
+      position: absolute; left: 69px; top: 610px;
+      width: 254px;
+      font-size: 28px; font-weight: 700; color: #000000;
+      line-height: 1.15;
+    }
+    .s1 .r2-body {
+      position: absolute; left: 366px; top: 542px;
+      right: 80px;
+      max-height: 225px; overflow: hidden;
+      font-size: 23px; line-height: 1.35; color: #3e3e3e;
+    }
+    .s1 .r2-body strong { font-weight: 700; color: #000000; }
+    .s1 .r2-body .bul { color: #28ba74; margin-right: 6px; }
+    .s1 .r2-body p { margin: 0 0 4px; }
+
+    /* Row 구분선: y:767 */
+    .s1 .rd2 {
+      position: absolute; top: 767px; left: 51px;
+      width: 1782px; border-top: 1px solid #b1b2b1;
+    }
+
+    /* Row 3 라벨: x:54 y:784 w:284 h:209, fill:#b8edbc */
+    .s1 .r3-lbl {
+      position: absolute; left: 54px; top: 784px;
+      width: 284px; height: 209px;
+      background: #b8edbc;
+    }
+    .s1 .r3-lbl-text {
+      position: absolute; left: 69px; top: 856px;
+      width: 254px;
+      font-size: 28px; font-weight: 700; color: #000000;
+      line-height: 1.15;
+    }
+    .s1 .r3-body {
+      position: absolute; left: 366px; top: 792px;
+      right: 80px;
+      max-height: 208px; overflow: hidden;
+      font-size: 23px; line-height: 1.35; color: #3e3e3e;
+    }
+    .s1 .r3-body strong { font-weight: 700; color: #000000; }
+    .s1 .r3-body .bul { color: #28ba74; margin-right: 6px; }
+    .s1 .r3-body p { margin: 0 0 4px; }
+
+    /* Source: y:1002, 20px */
+    .s1 .src {
+      position: absolute; left: 54px; top: 1002px;
+      right: 100px;
+      font-size: 20px; color: #7f7f7f; line-height: 1.3;
+    }
+    .s1 .pg {
+      position: absolute; left: 1837px; top: 1017px;
+      font-size: 24px; color: #898989;
+    }
+
+    /* Copyright (우측 세로) */
+    .s1 .copy {
+      position: absolute; right: 10px; top: 634px;
+      font-size: 14px; color: #575757;
+      writing-mode: vertical-rl; transform: rotate(180deg);
+    }
+
+    /* 프로토 라벨 */
+    .ptag {
+      position: absolute; top: 4px; right: 4px;
+      padding: 2px 6px; background: rgba(255,255,255,0.85);
+      color: #333; font-size: 10px; font-weight: 600;
+      border-radius: 2px; z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ SLIDE 1: BCG p3 Exec Summary (PDF 좌표 기반) ══ -->
+<section class="slide s1">
+  <span class="ptag">BCG p3 — PDF 추출 좌표 v5</span>
+
+  <!-- 헤더바: 0,0 → 1920×188 -->
+  <div class="hdr"></div>
+  <div class="hdr-text">
+    <span class="lbl">Executive summary | </span>In a complex and uncertain economic environment, cost management remains the top priority for executives across industries
+  </div>
+  <div class="sep"></div>
+
+  <!-- Row 1: y:236→500 -->
+  <div class="r1-lbl"></div>
+  <div class="r1-lbl-text">Navigating the economic landscape of 2025</div>
+  <div class="r1-body">
+    <p>The global market outlook for 2025 remains relatively steady, with declining optimism in 2025 relative to 2024 following the US election outcome</p>
+    <p><span class="bul">•</span> <strong>40% of executives feel unprepared for market shocks in 2025</strong>, despite years of navigating disruptions (e.g., COVID, supply chain, ChatGPT)</p>
+    <p><span class="bul">•</span> <strong>North American and European executives are increasingly concerned about margins and profitability</strong> as rising interest rates, inflation, and potential tariff and regulatory changes intensify pressure</p>
+    <p><span class="bul">•</span> <strong>Asia-Pacific</strong><span class="tag">1</span> <strong>executives are concerned about impacts on exports that could slow economic growth</strong> as geopolitical tensions in the region could further erode investor confidence and disrupt global supply chains</p>
+    <p>In the wake of the recent US election, <strong>85% of executives are already addressing tariffs and regulatory changes to mitigate potential disruptions</strong></p>
+  </div>
+  <div class="rd1"></div>
+
+  <!-- Row 2: y:533→751 -->
+  <div class="r2-lbl"></div>
+  <div class="r2-lbl-text">Managing cost structures in 2025</div>
+  <div class="r2-body">
+    <p>Amid a complex economic landscape, <strong>cost management remains executives' top priority</strong></p>
+    <p><span class="bul">•</span> Heading into 2025, executives are prioritizing cost efficiency in their <strong>core operations including supply chain optimization and product portfolio simplification</strong> to remain competitive</p>
+    <p><span class="bul">•</span> Executives in the sample report that <strong>only 48% of cost-saving targets are achieved</strong> and that their companies struggle to maintain efficiencies. Companies that announce but fail to achieve targets seeing <strong>9pp TSR underperformance compared with successful peers</strong></p>
+    <p><span class="bul">•</span> The greatest barrier to lasting structural cost change is "cultural resistance" to cost-saving measures, but firms with <strong>active focus to align culture on cost and efficiencies and agile management achieve up 11% greater lasting cost reduction</strong></p>
+  </div>
+  <div class="rd2"></div>
+
+  <!-- Row 3: y:784→993 -->
+  <div class="r3-lbl"></div>
+  <div class="r3-lbl-text">Unlocking sustainable growth</div>
+  <div class="r3-body">
+    <p>Laying the foundations for sustainable <strong>cost management is vital, as 67% of executives plan reinvest savings into growth and innovation</strong></p>
+    <p><span class="bul">•</span> Executives view GenAI as a pillar for efficiency, with <strong>86% planning to invest in AI and advanced analytics in 2025</strong></p>
+    <p><span class="bul">•</span> Executives see GenAI and advanced analytics as an <strong>opportunity to cut costs in areas like customer service</strong></p>
+    <p>BCG's holistic approach combines deep expertise and proprietary capabilities to <strong>deliver cost management programs that drive lasting savings, fuel growth, and tackle structural cost challenges</strong></p>
+  </div>
+
+  <!-- Source: y:1002 -->
+  <div class="src">
+    Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis<br>
+    1. Asia-Pacific includes India, Australia, Japan, and South Korea
+  </div>
+  <span class="pg">3</span>
+  <span class="copy">Copyright © 2025 by Boston Consulting Group. All rights reserved.</span>
+</section>
+
+<!-- ══ SLIDE 2: BCG p8 Insight+Chart (PDF 좌표 기반) ══ -->
+<section class="slide s2">
+  <span class="ptag">BCG p8 — PDF 추출 좌표 v5</span>
+
+  <!-- 헤더바: 0,0 → 1920×188 (p3과 동일) -->
+  <div class="s2-hdr"></div>
+  <div class="s2-hdr-text">Asia-Pacific executives are concerned about impacts on exports that could slow economic growth</div>
+  <div class="s2-sep"></div>
+
+  <!-- 초록 악센트바: x:1226 y:188 w:397 h:74 -->
+  <div class="s2-accent"></div>
+
+  <!-- Sub-question: y:232, 32px -->
+  <div class="s2-subq">What top macroeconomic factors do executives expect to affect their company performance in 2025?</div>
+
+  <!-- 텍스트 패널 배경: x:1223 y:190 w:701 h:890, #f1f2f1 -->
+  <div class="s2-textbg"></div>
+
+  <!-- 차트 영역 (좌측): 3컬럼 스택바 — 수평바로 근사 -->
+  <!-- 차트 라벨 (좌측) -->
+  <div class="s2-clbl" style="top:499px">Inflation and<br>rising<br>interest rates</div>
+  <div class="s2-clbl" style="top:641px">Uncertain<br>economic<br>outlook</div>
+  <div class="s2-clbl" style="top:783px">Changes in<br>regulations<br>and tariffs</div>
+
+  <!-- 컬럼 헤더 -->
+  <div class="s2-colhdr" style="left:299px; color:#285f7e">North America</div>
+  <div class="s2-colhdr" style="left:672px; color:#05512c">Europe</div>
+  <div class="s2-colhdr" style="left:946px; color:#670f31">Asia-Pacific<sup style="font-size:19px">1</sup></div>
+
+  <!-- 범례 (Pre/Post election) -->
+  <div class="s2-legend" style="left:313px"><span class="s2-lbox" style="background:#c5d3dc"></span>Pre-US election</div>
+  <div class="s2-legend" style="left:313px; top:436px"><span class="s2-lbox" style="background:#285f7d"></span>Post-US election</div>
+  <div class="s2-legend" style="left:635px"><span class="s2-lbox" style="background:#bad0c6"></span>Pre-US election</div>
+  <div class="s2-legend" style="left:635px; top:436px"><span class="s2-lbox" style="background:#04512c"></span>Post-US election</div>
+  <div class="s2-legend" style="left:936px"><span class="s2-lbox" style="background:#ebc5d0"></span>Pre-US election</div>
+  <div class="s2-legend" style="left:936px; top:436px"><span class="s2-lbox" style="background:#6d352c"></span>Post-US election</div>
+
+  <!-- 스택바 (3컬럼 × 3행) — CSS 사각형으로 근사 -->
+  <!-- Row 1: Inflation -->
+  <div class="s2-bar" style="left:266px; top:484px; width:190px; height:40px; background:#c5d3dc"></div>
+  <div class="s2-bar" style="left:266px; top:539px; width:197px; height:40px; background:#285f7d"></div>
+  <div class="s2-barval" style="left:471px; top:547px">29%</div>
+  <div class="s2-bar" style="left:588px; top:484px; width:156px; height:40px; background:#bad0c6"></div>
+  <div class="s2-bar" style="left:588px; top:539px; width:193px; height:40px; background:#04512c"></div>
+  <div class="s2-barval" style="left:790px; top:547px">26%</div>
+  <div class="s2-bar" style="left:895px; top:484px; width:186px; height:40px; background:#ebc5d0"></div>
+  <div class="s2-bar" style="left:895px; top:539px; width:193px; height:40px; background:#6d352c"></div>
+  <div class="s2-barval" style="left:1096px; top:547px">27%</div>
+
+  <!-- Row 2: Uncertain (바 너비 = 값x - 바x - 8) -->
+  <div class="s2-bar" style="left:266px; top:626px; width:95px; height:40px; background:#c5d3dc"></div>
+  <div class="s2-bar" style="left:266px; top:681px; width:116px; height:40px; background:#285f7d"></div>
+  <div class="s2-barval" style="left:390px; top:691px">17%</div>
+  <div class="s2-bar" style="left:588px; top:626px; width:90px; height:40px; background:#bad0c6"></div>
+  <div class="s2-bar" style="left:588px; top:681px; width:112px; height:40px; background:#04512c"></div>
+  <div class="s2-barval" style="left:708px; top:691px">15%</div>
+  <div class="s2-bar" style="left:895px; top:626px; width:140px; height:40px; background:#ebc5d0"></div>
+  <div class="s2-bar" style="left:895px; top:681px; width:164px; height:40px; background:#6d352c"></div>
+  <div class="s2-barval" style="left:1067px; top:691px">23%</div>
+
+  <!-- Row 3: Regulations (바 너비 = 값x - 바x - 8) -->
+  <div class="s2-bar" style="left:266px; top:770px; width:80px; height:40px; background:#c5d3dc"></div>
+  <div class="s2-bar" style="left:266px; top:825px; width:102px; height:40px; background:#285f7d"></div>
+  <div class="s2-barval" style="left:376px; top:834px">15%</div>
+  <div class="s2-bar" style="left:588px; top:770px; width:95px; height:40px; background:#bad0c6"></div>
+  <div class="s2-bar" style="left:588px; top:825px; width:119px; height:40px; background:#04512c"></div>
+  <div class="s2-barval" style="left:715px; top:834px">16%</div>
+  <div class="s2-bar" style="left:895px; top:770px; width:105px; height:40px; background:#ebc5d0"></div>
+  <div class="s2-bar" style="left:895px; top:825px; width:129px; height:40px; background:#6d352c"></div>
+  <div class="s2-barval" style="left:1032px; top:835px">18%</div>
+
+  <!-- Callout box: y:913 -->
+  <div class="s2-callout">
+    <div class="s2-callout-inner">Over 60% of Asia-Pacific (excl. China) executives expressed <strong>increased concerns about economic uncertainty and tariffs</strong>, following the US election outcome</div>
+  </div>
+
+  <!-- 텍스트 패널 (우측): x:1280, y:315, 30px -->
+  <div class="s2-text">
+    <p>Asia-Pacific executives are navigating a complex economic environment marked by persistent inflation, varied monetary policy responses, and global trade uncertainties—all of which contribute to <strong>heightened concerns over inflation and interest rates</strong></p>
+    <p>They are <strong>increasingly concerned about economic uncertainty</strong> stemming from the recent US election outcome, with <strong>recession risks and US-China trade tensions</strong> emerging as top underlying concerns</p>
+    <p>Potential geopolitical tensions could further <strong>erode investor confidence and disrupt global supply chains</strong>, reducing revenues in export-dependent Asia-Pacific economies</p>
+  </div>
+
+  <!-- Source: y:996 -->
+  <div class="s2-src">
+    Note: Asia-Pacific countries excluding China<br>
+    Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis<br>
+    1. Asia-Pacific includes India, Australia, Japan, and South Korea
+  </div>
+  <span class="s2-pg">8</span>
+  <span class="s2-copy">Copyright © 2025 by Boston Consulting Group. All rights reserved.</span>
+</section>
+
+<!-- ══ SLIDE 3: 한글 Exec Summary (PDF 좌표 기반 + 한글 보정) ══ -->
+<section class="slide s1 s1-ko">
+  <span class="ptag">한글 — Exec Summary (PDF 좌표 + 10% 감축)</span>
+
+  <div class="hdr"></div>
+  <div class="hdr-text">
+    <span class="lbl">경영 요약 | </span>비용 재설계와 성장 투자 병행으로 12개월 내 수익성·매출 질 동시 개선 가능
+  </div>
+  <div class="sep"></div>
+
+  <div class="r1-lbl"></div>
+  <div class="r1-lbl-text">2025<br>거시경제 환경<br>진단</div>
+  <div class="r1-body">
+    <p>2025년 글로벌 시장은 미국 대선 이후 낙관론이 후퇴하며 비용 관리가 경영진의 최우선 과제로 부상하고 있다</p>
+    <p><span class="bul">•</span> 임원의 <strong>40%가 2025년 시장 충격에 대비하지 못하고 있다</strong>고 응답했으며, 코로나·공급망·ChatGPT 등 연이은 위기에도 불구하고 대비 수준이 여전히 낮다</p>
+    <p><span class="bul">•</span> 북미·유럽 임원들은 <strong>금리 상승과 관세·규제 변화</strong>에 따른 마진 압박을 핵심 우려로 꼽고 있으며, 관세 및 규제 변화의 압력이 전보다 강화되고 있다</p>
+    <p><span class="bul">•</span> 아시아태평양<sup>1</sup> 임원들은 지정학적 긴장이 <strong>수출 둔화에 따른 성장 제약</strong>으로 이어질 것을 가장 크게 우려하고 있다</p>
+    <p>미국 대선 이후 <strong>임원의 85%가 이미 관세·규제 변화에 대한 대응을 시작</strong>하고 있어 선제적 리스크 관리가 확산되고 있다</p>
+  </div>
+  <div class="rd1"></div>
+
+  <div class="r2-lbl"></div>
+  <div class="r2-lbl-text">비용 구조<br>관리 전략</div>
+  <div class="r2-body">
+    <p>복잡한 경제 환경 속에서 <strong>비용 관리가 임원들의 최우선 과제</strong>로 유지되고 있다</p>
+    <p><span class="bul">•</span> 임원들은 <strong>공급망 최적화와 제품 포트폴리오 단순화</strong> 등 핵심 운영 효율화에 집중하며 경쟁력 유지를 최우선으로 추진하고 있다</p>
+    <p><span class="bul">•</span> 비용 절감 목표의 <strong>48%만 달성</strong>되고 있으며, 목표 미달 기업은 성공 기업 대비 <strong>TSR 9pp 저조</strong>한 성과를 보이고 있다</p>
+    <p><span class="bul">•</span> 지속적 비용 절감의 최대 장벽은 "문화적 저항"이며, <strong>비용 문화와 애자일 경영을 정착</strong>시킨 기업은 <strong>11% 추가 절감</strong>을 달성했다</p>
+  </div>
+  <div class="rd2"></div>
+
+  <div class="r3-lbl"></div>
+  <div class="r3-lbl-text">지속 가능한<br>성장 전략</div>
+  <div class="r3-body">
+    <p>지속 가능한 <strong>비용 관리가 핵심이며, 임원의 67%가 절감분을 성장과 혁신에 재투자</strong>할 계획이다</p>
+    <p><span class="bul">•</span> 임원의 <strong>86%가 2025년 AI 및 고급 분석에 투자</strong>할 계획이며, GenAI를 효율성의 핵심 수단으로 보고 있다</p>
+    <p><span class="bul">•</span> GenAI와 고급 분석을 <strong>고객 서비스 등 비용 절감 기회</strong>로 활용할 수 있다고 평가하고 있다</p>
+    <p>BCG의 통합적 접근법은 전문성과 독자적 역량을 결합하여 <strong>지속 가능한 비용 절감, 성장 촉진, 구조적 비용 과제 해결</strong>을 동시에 추진한다</p>
+  </div>
+
+  <div class="src">
+    Source: BCG 글로벌 임원 전략 우선순위 설문 (N=570) 2024년 4분기; BCG 분석<br>
+    1. 아시아태평양: 인도, 호주, 일본, 한국 포함
+  </div>
+  <span class="pg">3</span>
+</section>
+
+<!-- ══ SLIDE 4: 한글 Insight+Chart (PDF 좌표 + 한글 보정) ══ -->
+<section class="slide s2 s2-ko">
+  <span class="ptag">한글 — Insight+Chart (PDF 좌표)</span>
+
+  <div class="s2-hdr"></div>
+  <div class="s2-hdr-text">아시아태평양 임원들은 수출 둔화가 경제 성장을 저해할 수 있다고 우려하고 있다</div>
+  <div class="s2-sep"></div>
+  <div class="s2-accent"></div>
+
+  <div class="s2-subq">2025년 기업 실적에 영향을 미칠 주요 거시경제 요인은 무엇인가?</div>
+  <div class="s2-textbg"></div>
+
+  <!-- 차트 라벨 -->
+  <div class="s2-clbl" style="top:499px">인플레이션<br>및 금리 상승</div>
+  <div class="s2-clbl" style="top:641px">경기 침체<br>불확실성</div>
+  <div class="s2-clbl" style="top:783px">규제 및<br>관세 변화</div>
+
+  <!-- 컬럼 헤더 -->
+  <div class="s2-colhdr" style="left:299px; color:#285f7e">북미</div>
+  <div class="s2-colhdr" style="left:672px; color:#05512c">유럽</div>
+  <div class="s2-colhdr" style="left:946px; color:#670f31">아시아태평양<sup style="font-size:19px">1</sup></div>
+
+  <!-- 범례 -->
+  <div class="s2-legend" style="left:313px"><span class="s2-lbox" style="background:#c5d3dc"></span>대선 전</div>
+  <div class="s2-legend" style="left:313px; top:436px"><span class="s2-lbox" style="background:#285f7d"></span>대선 후</div>
+  <div class="s2-legend" style="left:635px"><span class="s2-lbox" style="background:#bad0c6"></span>대선 전</div>
+  <div class="s2-legend" style="left:635px; top:436px"><span class="s2-lbox" style="background:#04512c"></span>대선 후</div>
+  <div class="s2-legend" style="left:936px"><span class="s2-lbox" style="background:#ebc5d0"></span>대선 전</div>
+  <div class="s2-legend" style="left:936px; top:436px"><span class="s2-lbox" style="background:#6d352c"></span>대선 후</div>
+
+  <!-- Row 1: 인플레이션 -->
+  <div class="s2-bar" style="left:266px; top:484px; width:190px; height:40px; background:#c5d3dc"></div>
+  <div class="s2-bar" style="left:266px; top:539px; width:197px; height:40px; background:#285f7d"></div>
+  <div class="s2-barval" style="left:471px; top:547px">29%</div>
+  <div class="s2-bar" style="left:588px; top:484px; width:156px; height:40px; background:#bad0c6"></div>
+  <div class="s2-bar" style="left:588px; top:539px; width:193px; height:40px; background:#04512c"></div>
+  <div class="s2-barval" style="left:790px; top:547px">26%</div>
+  <div class="s2-bar" style="left:895px; top:484px; width:186px; height:40px; background:#ebc5d0"></div>
+  <div class="s2-bar" style="left:895px; top:539px; width:193px; height:40px; background:#6d352c"></div>
+  <div class="s2-barval" style="left:1096px; top:547px">27%</div>
+
+  <!-- Row 2: 경기 침체 -->
+  <div class="s2-bar" style="left:266px; top:626px; width:95px; height:40px; background:#c5d3dc"></div>
+  <div class="s2-bar" style="left:266px; top:681px; width:116px; height:40px; background:#285f7d"></div>
+  <div class="s2-barval" style="left:390px; top:691px">17%</div>
+  <div class="s2-bar" style="left:588px; top:626px; width:90px; height:40px; background:#bad0c6"></div>
+  <div class="s2-bar" style="left:588px; top:681px; width:112px; height:40px; background:#04512c"></div>
+  <div class="s2-barval" style="left:708px; top:691px">15%</div>
+  <div class="s2-bar" style="left:895px; top:626px; width:140px; height:40px; background:#ebc5d0"></div>
+  <div class="s2-bar" style="left:895px; top:681px; width:164px; height:40px; background:#6d352c"></div>
+  <div class="s2-barval" style="left:1067px; top:691px">23%</div>
+
+  <!-- Row 3: 규제 -->
+  <div class="s2-bar" style="left:266px; top:770px; width:80px; height:40px; background:#c5d3dc"></div>
+  <div class="s2-bar" style="left:266px; top:825px; width:102px; height:40px; background:#285f7d"></div>
+  <div class="s2-barval" style="left:376px; top:834px">15%</div>
+  <div class="s2-bar" style="left:588px; top:770px; width:95px; height:40px; background:#bad0c6"></div>
+  <div class="s2-bar" style="left:588px; top:825px; width:119px; height:40px; background:#04512c"></div>
+  <div class="s2-barval" style="left:715px; top:834px">16%</div>
+  <div class="s2-bar" style="left:895px; top:770px; width:105px; height:40px; background:#ebc5d0"></div>
+  <div class="s2-bar" style="left:895px; top:825px; width:129px; height:40px; background:#6d352c"></div>
+  <div class="s2-barval" style="left:1032px; top:835px">18%</div>
+
+  <!-- Callout -->
+  <div class="s2-callout">
+    <div class="s2-callout-inner">아시아태평양(중국 제외) 임원의 60% 이상이 미국 대선 이후 <strong>경제 불확실성과 관세에 대한 우려가 증가</strong>했다고 응답했다</div>
+  </div>
+
+  <!-- 텍스트 패널 -->
+  <div class="s2-text s2-text-ko">
+    <p>아시아태평양 임원들은 지속적인 인플레이션, 통화 정책 차이, 글로벌 무역 불확실성이 복합적으로 작용하는 환경에서 <strong>인플레이션과 금리에 대한 우려가 심화</strong>되고 있다</p>
+    <p>미국 대선 결과에 따른 <strong>경기 침체 리스크와 미·중 무역 긴장</strong>이 핵심 우려 요인으로 부상하며, <strong>경제 불확실성에 대한 우려가 점점 증가</strong>하고 있다</p>
+    <p>지정학적 긴장은 <strong>투자자 신뢰를 약화시키고 글로벌 공급망을 교란</strong>할 수 있으며, 수출 의존도가 높은 아시아태평양 경제의 성장을 둔화시킬 수 있다</p>
+  </div>
+
+  <!-- Source -->
+  <div class="s2-src">
+    주: 아시아태평양은 중국 제외<br>
+    Source: BCG 글로벌 임원 전략 우선순위 설문 (N=570) 2024년 4분기; BCG 분석<br>
+    1. 아시아태평양: 인도, 호주, 일본, 한국 포함
+  </div>
+  <span class="s2-pg">8</span>
+</section>
+
+<style>
+  /* 한글 Insight+Chart 보정 */
+  .s2-ko .s2-text-ko {
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+</style>
+
+<style>
+  /* 한글 보정: line-height +0.1, 라벨 center 정렬 */
+  .s1-ko .r1-lbl-text,
+  .s1-ko .r2-lbl-text,
+  .s1-ko .r3-lbl-text {
+    text-align: center;
+    display: flex; align-items: center; justify-content: center;
+    width: 254px; height: 100%;
+    position: absolute;
+    left: 69px;
+    top: auto;
+  }
+  /* 라벨 텍스트 위치를 라벨 박스 내 중앙으로 */
+  .s1-ko .r1-lbl-text { top: 236px; height: 264px; left: 54px; width: 284px; padding: 0 15px; }
+  .s1-ko .r2-lbl-text { top: 533px; height: 218px; left: 54px; width: 284px; padding: 0 15px; }
+  .s1-ko .r3-lbl-text { top: 784px; height: 209px; left: 54px; width: 284px; padding: 0 15px; }
+  .s1-ko .r1-body,
+  .s1-ko .r2-body,
+  .s1-ko .r3-body {
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+</style>
+
+<style>
+  /* ══ SLIDE 2: BCG p8 Insight+Chart ══ */
+  .s2 .s2-hdr {
+    position: absolute; top: 0; left: 0; width: 1920px; height: 188px;
+    background: linear-gradient(135deg, #004d33 0%, #002e1f 40%, #1a1a2e 100%);
+  }
+  .s2 .s2-hdr-text {
+    position: absolute; left: 77px; top: 40px; right: 100px;
+    font-size: 48px; font-weight: 700; color: #ffffff;
+    line-height: 1.15; z-index: 1; word-break: keep-all;
+  }
+  .s2 .s2-sep {
+    position: absolute; top: 188px; left: 0; width: 1920px;
+    border-top: 2px solid #29b974; z-index: 2;
+  }
+  .s2 .s2-accent {
+    position: absolute; left: 1226px; top: 188px;
+    width: 397px; height: 74px; background: #29b974; z-index: 1;
+  }
+  .s2 .s2-subq {
+    position: absolute; left: 77px; top: 232px; right: 750px;
+    font-size: 32px; font-weight: 700; color: #03522d;
+    line-height: 1.2; z-index: 2;
+  }
+  .s2 .s2-textbg {
+    position: absolute; left: 1223px; top: 190px;
+    width: 701px; height: 890px; background: #f1f2f1;
+  }
+  .s2 .s2-clbl {
+    position: absolute; left: 77px;
+    font-size: 24px; color: #000000; line-height: 1.2;
+    width: 170px;
+  }
+  .s2 .s2-colhdr {
+    position: absolute; top: 346px;
+    font-size: 28px; font-weight: 700; line-height: 1.15;
+  }
+  .s2 .s2-legend {
+    position: absolute; top: 404px;
+    font-size: 21px; color: #000; display: flex; align-items: center; gap: 6px;
+  }
+  .s2 .s2-lbox {
+    display: inline-block; width: 30px; height: 22px;
+  }
+  .s2 .s2-bar {
+    position: absolute;
+  }
+  .s2 .s2-barval {
+    position: absolute;
+    font-size: 32px; color: #000;
+  }
+  .s2 .s2-callout {
+    position: absolute; left: 217px; top: 913px;
+    width: 926px; height: 70px; background: #ffffff;
+    display: flex; align-items: center;
+    z-index: 2;
+  }
+  .s2 .s2-callout-inner {
+    font-size: 26px; color: #000; line-height: 1.25;
+    padding: 0 12px;
+  }
+  .s2 .s2-callout-inner strong { font-weight: 700; }
+  .s2 .s2-text {
+    position: absolute; left: 1280px; top: 315px;
+    width: 572px;
+    font-size: 30px; line-height: 1.35; color: #000000;
+    max-height: 675px; overflow: hidden;
+    z-index: 2;
+  }
+  .s2 .s2-text p { margin: 0 0 18px; }
+  .s2 .s2-text strong { font-weight: 700; }
+  .s2 .s2-src {
+    position: absolute; left: 56px; top: 996px;
+    font-size: 20px; color: #7f7f7f; line-height: 1.3;
+    z-index: 2;
+  }
+  .s2 .s2-pg {
+    position: absolute; left: 1837px; top: 1017px;
+    font-size: 24px; color: #898989; z-index: 2;
+  }
+  .s2 .s2-copy {
+    position: absolute; right: 10px; top: 634px;
+    font-size: 14px; color: #575757;
+    writing-mode: vertical-rl; transform: rotate(180deg);
+  }
+</style>
+
+<!-- ══ SLIDE 5: 한글 Agenda/Section Divider (BCG p4 PDF 좌표) ══ -->
+<section class="slide">
+  <span class="ptag">한글 — Agenda (p4 PDF좌표)</span>
+  <!-- 좌측 검정+사진 패널: x:0 w:739 h:1080 (이미지 0,0 739×1080) -->
+  <div style="position:absolute;top:0;left:0;width:739px;height:1080px;background:linear-gradient(135deg,#1a3a4a 0%,#0a2a3a 30%,#2a1a1a 70%,#3a2a1a 100%);overflow:hidden">
+    <!-- 블러 사진 시뮬레이션 (CSS 그라데이션 + 패턴) -->
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(120deg,rgba(200,100,80,0.15) 0 40px,transparent 40px 120px),repeating-linear-gradient(60deg,rgba(100,150,200,0.1) 0 30px,transparent 30px 90px);filter:blur(2px)"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4))"></div>
+  </div>
+  <!-- 연초록 박스: x:36 y:81 w:703 h:398 -->
+  <div style="position:absolute;top:81px;left:36px;width:703px;height:398px;background:#a8efb8;z-index:1"></div>
+  <!-- 진초록 라벨: x:33 y:445 w:436 h:71 -->
+  <div style="position:absolute;top:445px;left:33px;width:436px;height:71px;background:#187955;z-index:1"></div>
+  <!-- 좌측 제목: x:111 y:166 64px #0e3e1b -->
+  <div style="position:absolute;left:111px;top:166px;font-size:64px;font-weight:700;color:#0e3e1b;line-height:1.1;z-index:2;word-break:keep-all">
+    BCG 경영진<br>인사이트
+  </div>
+  <!-- AGENDA: x:111 y:357 40px #05512c -->
+  <div style="position:absolute;left:111px;top:357px;font-size:40px;color:#05512c;z-index:2;font-style:italic">
+    AGENDA
+  </div>
+  <!-- 체크마크 #1 (현재, 초록): x:797 y:365 60×56 fill:#187955 -->
+  <div style="position:absolute;left:797px;top:365px;width:60px;height:56px;border-radius:50%;background:#187955;display:flex;align-items:center;justify-content:center">
+    <span style="color:#fff;font-size:28px;font-weight:700">✓</span>
+  </div>
+  <!-- 항목 #1 (현재): x:881 y:374 36px #197a56 Bold -->
+  <div style="position:absolute;left:881px;top:374px;font-size:36px;font-weight:700;color:#197a56;word-break:keep-all">
+    2025 거시경제 환경 진단
+  </div>
+  <!-- 체크마크 #2 (비활성, 회색): x:797 y:536 -->
+  <div style="position:absolute;left:797px;top:536px;width:60px;height:56px;border-radius:50%;background:#c7c7c7;display:flex;align-items:center;justify-content:center">
+    <span style="color:#fff;font-size:28px;font-weight:700">✓</span>
+  </div>
+  <!-- 항목 #2: x:881 y:545 36px #000000 -->
+  <div style="position:absolute;left:881px;top:545px;font-size:36px;color:#000;word-break:keep-all">
+    비용 구조 관리 전략
+  </div>
+  <!-- 체크마크 #3 (비활성, 회색): x:797 y:706 -->
+  <div style="position:absolute;left:797px;top:706px;width:60px;height:56px;border-radius:50%;background:#c7c7c7;display:flex;align-items:center;justify-content:center">
+    <span style="color:#fff;font-size:28px;font-weight:700">✓</span>
+  </div>
+  <!-- 항목 #3: x:881 y:715 36px #000000 -->
+  <div style="position:absolute;left:881px;top:715px;font-size:36px;color:#000;word-break:keep-all">
+    지속 가능한 성장 전략
+  </div>
+  <!-- 페이지 번호 -->
+  <div style="position:absolute;left:1837px;top:1017px;font-size:24px;color:#898989">4</div>
+</section>
+
+<!-- ══ SLIDE 6: 한글 Big Number + Detail (BCG p6 좌표) ══ -->
+<section class="slide">
+  <span class="ptag">한글 — Big Number (p6)</span>
+  <!-- 헤더바 -->
+  <div style="position:absolute;top:0;left:0;width:1920px;height:188px;background:linear-gradient(135deg,#004d33,#002e1f 40%,#1a1a2e)"></div>
+  <div style="position:absolute;left:77px;top:64px;right:100px;font-size:48px;font-weight:700;color:#fff;line-height:1.15;z-index:1;word-break:keep-all">
+    임원의 40%가 2025년 시장 충격에 대비하지 못하고 있다
+  </div>
+  <div style="position:absolute;top:188px;left:0;width:1920px;border-top:2px solid #29b974;z-index:2"></div>
+  <!-- Sub-question -->
+  <div style="position:absolute;left:77px;top:233px;right:600px;font-size:32px;font-weight:700;color:#03522d;line-height:1.2;word-break:keep-all">
+    2025년 시장 충격에 대한 경영진의 대비 수준은?
+  </div>
+  <!-- 파이 차트 영역 (CSS 도넛으로 근사) -->
+  <div style="position:absolute;left:78px;top:328px;width:268px;height:268px;border-radius:50%;background:conic-gradient(#d7d2d3 0% 60%,#cd4d4d 60% 100%);display:flex;align-items:center;justify-content:center">
+    <div style="width:160px;height:160px;border-radius:50%;background:#fff"></div>
+  </div>
+  <!-- Big Number: 40% -->
+  <div style="position:absolute;left:644px;top:391px;font-size:48px;font-weight:700;color:#000">40%</div>
+  <div style="position:absolute;left:731px;top:400px;right:200px;font-size:30px;line-height:1.4;color:#000;word-break:keep-all">
+    <strong>의 임원이 잠재적 시장 충격에 대비하지 못하고 있다</strong>고 응답했으며, 코로나·공급망 위기·ChatGPT 등 수년간의 혼란에도 불구하고 대비 수준이 낮은 것으로 나타났다
+  </div>
+  <!-- 하단 초록 영역: y:645 h:435 -->
+  <div style="position:absolute;left:0;top:645px;width:1920px;height:435px;background:#d0f5e2"></div>
+  <div style="position:absolute;left:77px;top:680px;font-size:32px;font-weight:700;color:#000;word-break:keep-all">
+    현재 주요 리스크 요인:
+  </div>
+  <!-- 좌측 카드 -->
+  <div style="position:absolute;left:77px;top:740px;width:800px">
+    <div style="font-size:28px;font-weight:700;color:#000;margin-bottom:8px">지정학적 긴장과 공급망 리스크</div>
+    <div style="font-size:24px;color:#000;line-height:1.45;word-break:keep-all">분쟁은 무역과 시장 안정성에 영향을 미치며, 기업은 회복력 강화를 위해 시나리오 계획과 공급망 다변화를 추진해야 한다</div>
+  </div>
+  <!-- 우측 카드 -->
+  <div style="position:absolute;left:1020px;top:740px;width:800px">
+    <div style="font-size:28px;font-weight:700;color:#000;margin-bottom:8px">급격한 기술 변화</div>
+    <div style="font-size:24px;color:#000;line-height:1.45;word-break:keep-all">기업은 혁신을 따라잡기 위해 고군분투하고 있으며, 새로운 기술과 인재 역량 강화를 신속히 도입해야 한다</div>
+  </div>
+  <!-- Source -->
+  <div style="position:absolute;left:63px;top:1011px;font-size:20px;color:#7f7f7f">Source: BCG 글로벌 임원 설문 (N=570) 2024년 4분기; BCG 분석</div>
+  <div style="position:absolute;left:1834px;top:1017px;font-size:24px;color:#898989">6</div>
+  <div style="position:absolute;right:10px;top:634px;font-size:14px;color:#575757;writing-mode:vertical-rl;transform:rotate(180deg)">Copyright © 2025 by Boston Consulting Group.</div>
+</section>
+
+<!-- ══ SLIDE 7: 한글 Ranked #1~#5 (BCG p12 좌표) ══ -->
+<section class="slide">
+  <span class="ptag">한글 — Ranked (p12)</span>
+  <!-- 헤더바 -->
+  <div style="position:absolute;top:0;left:0;width:1920px;height:188px;background:linear-gradient(135deg,#004d33,#002e1f 40%,#1a1a2e)"></div>
+  <div style="position:absolute;left:77px;top:38px;right:100px;font-size:48px;font-weight:700;color:#fff;line-height:1.15;z-index:1;word-break:keep-all">
+    비용 효율화에서 임원들은 공급망 최적화와 제품 포트폴리오 단순화를 최우선으로 추진한다
+  </div>
+  <div style="position:absolute;top:188px;left:0;width:1920px;border-top:2px solid #29b974;z-index:2"></div>
+  <!-- 우측 텍스트 패널 배경: x:1332 y:186 w:588 h:895 -->
+  <div style="position:absolute;left:1332px;top:186px;width:588px;height:895px;background:#f1f2f1"></div>
+  <!-- 초록 악센트바 -->
+  <div style="position:absolute;left:1333px;top:189px;width:303px;height:56px;background:#29b974"></div>
+  <!-- 상단 초록 라벨 바: y:370 -->
+  <div style="position:absolute;left:254px;top:370px;width:1078px;height:80px;background:#d0f5e2;display:flex;align-items:center;padding:0 20px">
+    <span style="font-size:28px;font-weight:700;color:#000">업종 전반 최우선 순위</span>
+  </div>
+  <!-- 순위 아이콘 #1~#5 -->
+  <div style="position:absolute;left:336px;top:380px;font-size:56px;font-weight:700;color:#000">#1</div>
+  <div style="position:absolute;left:544px;top:380px;font-size:56px;font-weight:700;color:#000">#2</div>
+  <div style="position:absolute;left:730px;top:380px;font-size:56px;font-weight:700;color:#000">#3</div>
+  <div style="position:absolute;left:930px;top:380px;font-size:56px;font-weight:700;color:#000">#4</div>
+  <div style="position:absolute;left:1120px;top:380px;font-size:56px;font-weight:700;color:#000">#5</div>
+  <!-- 카테고리 라벨 -->
+  <div style="position:absolute;left:294px;top:607px;font-size:26px;color:#000;text-align:center;width:140px;line-height:1.3;word-break:keep-all">공급망<br>최적화</div>
+  <div style="position:absolute;left:500px;top:607px;font-size:26px;color:#000;text-align:center;width:140px;line-height:1.3;word-break:keep-all">제품<br>포트폴리오<br>단순화</div>
+  <div style="position:absolute;left:700px;top:607px;font-size:26px;color:#000;text-align:center;width:140px;line-height:1.3;word-break:keep-all">운영 모델<br>및 인력<br>생산성</div>
+  <div style="position:absolute;left:900px;top:607px;font-size:26px;color:#000;text-align:center;width:140px;line-height:1.3;word-break:keep-all">고객 서비스<br>운영</div>
+  <div style="position:absolute;left:1100px;top:607px;font-size:26px;color:#000;text-align:center;width:140px;line-height:1.3;word-break:keep-all">영업 및<br>마케팅</div>
+  <!-- 하단 초록 라벨: y:778 -->
+  <div style="position:absolute;left:254px;top:778px;width:1078px;height:167px;background:#d0f5e2;padding:15px 20px">
+    <div style="font-size:28px;font-weight:700;color:#000;margin-bottom:8px">비용 절감 행동이 최우선인 산업군</div>
+    <div style="font-size:24px;color:#000;line-height:1.4;word-break:keep-all">소비재·산업재 | 보험·기술·금융 | 산업재·헬스케어 | 보험·금융 | 기술·소비재</div>
+  </div>
+  <!-- 우측 텍스트 -->
+  <div style="position:absolute;left:1378px;top:302px;width:500px;font-size:28px;line-height:1.45;color:#000;word-break:keep-all">
+    <p style="margin:0 0 14px">모든 기업이 비용 관리를 우선시하지만, <strong>모든 상황에 맞는 단일 접근법은 없다</strong> — 산업의 경쟁 우위를 강화하는 영역에 집중해야 한다</p>
+    <p style="margin:0">경쟁력 유지를 위해 임원들은 핵심 운영을 우선시하고, <strong>공급망을 최적화하며 제품 포트폴리오를 효율화</strong>하고 있다</p>
+  </div>
+  <!-- Source -->
+  <div style="position:absolute;left:63px;top:1011px;font-size:20px;color:#7f7f7f">Source: BCG 글로벌 임원 설문 (N=570) 2024년 4분기; BCG 분석</div>
+  <div style="position:absolute;left:1825px;top:1017px;font-size:24px;color:#898989">12</div>
+</section>
+
+<!-- ══ SLIDE 8: 한글 Process/Timeline (BCG p14 좌표) ══ -->
+<section class="slide">
+  <span class="ptag">한글 — Process (p14)</span>
+  <!-- 헤더바 -->
+  <div style="position:absolute;top:0;left:0;width:1920px;height:188px;background:linear-gradient(135deg,#004d33,#002e1f 40%,#1a1a2e)"></div>
+  <div style="position:absolute;left:77px;top:38px;right:100px;font-size:48px;font-weight:700;color:#fff;line-height:1.15;z-index:1;word-break:keep-all">
+    설계-가치 최적화 접근법으로 효율적이고 경쟁력 있는 제품 포트폴리오를 확보한다
+  </div>
+  <div style="position:absolute;top:188px;left:0;width:1920px;border-top:2px solid #29b974;z-index:2"></div>
+  <!-- 우측 배경: x:587 y:188 w:1337 h:892 -->
+  <div style="position:absolute;left:587px;top:188px;width:1337px;height:892px;background:#f1f2f1"></div>
+  <div style="position:absolute;left:589px;top:190px;width:303px;height:56px;background:#29b974"></div>
+  <!-- 좌측 텍스트 -->
+  <div style="position:absolute;left:77px;top:280px;width:470px">
+    <div style="font-size:36px;font-weight:700;color:#000;margin-bottom:12px;line-height:1.2;word-break:keep-all">제품 포트폴리오 최적화</div>
+    <div style="font-size:24px;color:#000;line-height:1.45;margin-bottom:16px;word-break:keep-all">빠르게 변화하는 시장에서 제품 복잡성 증가와 우선순위 변화가 구조적 비용 상승과 수익성 압박을 초래하고 있다</div>
+    <div style="font-size:24px;color:#000;line-height:1.45;word-break:keep-all">
+      <span style="color:#28ba74;margin-right:6px">•</span> 제품 복잡성 (과다 SKU)<br>
+      <span style="color:#28ba74;margin-right:6px">•</span> 원자재 및 부품 비용 상승<br>
+      <span style="color:#28ba74;margin-right:6px">•</span> 제조 간접비와 공급망 복잡성<br>
+      <span style="color:#28ba74;margin-right:6px">•</span> 재고 보유 비용<br>
+      <span style="color:#28ba74;margin-right:6px">•</span> R&D 및 수명주기 관리 비용
+    </div>
+  </div>
+  <!-- 우측 상단 -->
+  <div style="position:absolute;left:627px;top:274px;width:1250px;font-size:30px;font-weight:700;color:#000;line-height:1.3;word-break:keep-all">
+    고부가가치 제품에 자원을 집중하여 운영 효율을 개선하고 공급망 복잡성을 줄인다
+  </div>
+  <div style="position:absolute;left:627px;top:360px;font-size:26px;color:#000;font-weight:600">최적화 레버</div>
+  <!-- #1, #2 -->
+  <div style="position:absolute;left:630px;top:410px;font-size:40px;font-weight:700;color:#000">#1</div>
+  <div style="position:absolute;left:690px;top:415px;font-size:26px;color:#000;line-height:1.4;width:1100px;word-break:keep-all">저볼륨 구성을 통합하여 "롱테일"을 제거하고 볼륨과 매출을 유지한다</div>
+  <div style="position:absolute;left:630px;top:490px;font-size:40px;font-weight:700;color:#000">#2</div>
+  <div style="position:absolute;left:690px;top:495px;font-size:26px;color:#000;line-height:1.4;width:1100px;word-break:keep-all">고객 중심 관점으로 설계-가치 접근법을 적용하여 제품 포트폴리오의 가치와 비용을 재조정한다</div>
+  <!-- Process 화살표 (3단계) -->
+  <div style="position:absolute;left:723px;top:713px;width:314px;height:44px;background:#04512c;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;font-weight:700">기준 설정</div>
+  <div style="position:absolute;left:1053px;top:713px;width:314px;height:44px;background:#04512c;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;font-weight:700">아이디어 도출</div>
+  <div style="position:absolute;left:1384px;top:713px;width:314px;height:44px;background:#04512c;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;font-weight:700">실행</div>
+  <!-- 프로세스 상세 -->
+  <div style="position:absolute;left:723px;top:770px;width:314px;font-size:20px;color:#000;line-height:1.4;padding:8px;word-break:keep-all">
+    <span style="color:#28ba74">•</span> 고객 니즈 이해<br>
+    <span style="color:#28ba74">•</span> 상세 비용 분석<br>
+    <span style="color:#28ba74">•</span> 갭 분석
+  </div>
+  <div style="position:absolute;left:1053px;top:770px;width:314px;font-size:20px;color:#000;line-height:1.4;padding:8px;word-break:keep-all">
+    <span style="color:#28ba74">•</span> 크로스 기능 워크숍<br>
+    <span style="color:#28ba74">•</span> 가치·비용 재균형<br>
+    <span style="color:#28ba74">•</span> 벤치마킹
+  </div>
+  <div style="position:absolute;left:1384px;top:770px;width:314px;font-size:20px;color:#000;line-height:1.4;padding:8px;word-break:keep-all">
+    <span style="color:#28ba74">•</span> 고객·공급사 합의<br>
+    <span style="color:#28ba74">•</span> 설계 변경 실행<br>
+    <span style="color:#28ba74">•</span> 진행 모니터링
+  </div>
+  <!-- Source -->
+  <div style="position:absolute;left:54px;top:1011px;font-size:20px;color:#7f7f7f">Source: BCG 분석</div>
+  <div style="position:absolute;left:1825px;top:1017px;font-size:24px;color:#898989">14</div>
+</section>
+
+<!-- ══ SLIDE 9: 한글 Big Number + Pie (BCG p18 좌표) ══ -->
+<section class="slide">
+  <span class="ptag">한글 — Big Number+Pie (p18)</span>
+  <!-- 헤더바 -->
+  <div style="position:absolute;top:0;left:0;width:1920px;height:188px;background:linear-gradient(135deg,#004d33,#002e1f 40%,#1a1a2e)"></div>
+  <div style="position:absolute;left:77px;top:38px;right:100px;font-size:48px;font-weight:700;color:#fff;line-height:1.15;z-index:1;word-break:keep-all">
+    임원의 67%가 비용 절감분을 성장과 혁신에 재투자할 계획이며 견고한 기반 구축이 핵심이다
+  </div>
+  <div style="position:absolute;top:188px;left:0;width:1920px;border-top:2px solid #29b974;z-index:2"></div>
+  <!-- 좌측 배경: x:0 y:192 w:480 h:888 -->
+  <div style="position:absolute;left:0;top:192px;width:480px;height:888px;background:#f1f2f1"></div>
+  <!-- Big Number 67% (도넛) -->
+  <div style="position:absolute;left:55px;top:402px;width:376px;height:250px;display:flex;align-items:center;justify-content:center">
+    <div style="width:220px;height:220px;border-radius:50%;background:conic-gradient(#a8b338 0% 67%,#d0f5e2 67% 100%);display:flex;align-items:center;justify-content:center">
+      <div style="width:140px;height:140px;border-radius:50%;background:#f1f2f1;display:flex;align-items:center;justify-content:center">
+        <span style="font-size:65px;font-weight:700;color:#000">67</span><span style="font-size:43px;font-weight:700;color:#000">%</span>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;left:55px;top:670px;width:400px;font-size:24px;color:#000;line-height:1.45;text-align:center;word-break:keep-all">
+    비용 절감분을 성장에<br>재투자할 계획인 임원 비율
+  </div>
+  <!-- 우측 상단 제목 -->
+  <div style="position:absolute;left:507px;top:232px;right:100px;font-size:32px;font-weight:700;color:#000;line-height:1.3;word-break:keep-all">
+    지속적인 비용 관리는 업무 방식(HOW)의 지속적 개선을 촉진한다...
+  </div>
+  <!-- 4개 항목 -->
+  <div style="position:absolute;left:988px;top:400px;right:100px;font-size:26px;color:#000;line-height:1.6;word-break:keep-all">
+    <div style="margin-bottom:24px">
+      <strong style="font-size:28px">리더 역량 강화</strong><br>
+      <span style="font-size:24px;color:#3e3e3e">HOW: 비용 절감 이니셔티브를 식별하고 추진할 수 있도록 리더에게 도구, 가시성, 권한을 부여한다</span>
+    </div>
+    <div style="margin-bottom:24px">
+      <strong style="font-size:28px">바람직한 문화 조성</strong><br>
+      <span style="font-size:24px;color:#3e3e3e">HOW: 비용 인식 문화를 조성하고 성공과 실패를 통한 학습을 장려하여 지속적 개선을 촉진한다</span>
+    </div>
+    <div style="margin-bottom:24px">
+      <strong style="font-size:28px">구성원 참여</strong><br>
+      <span style="font-size:24px;color:#3e3e3e">HOW: 비용 절감 목표와 성장 비전을 공유하고, 직원들이 솔루션 도출에 참여하도록 유도한다</span>
+    </div>
+    <div>
+      <strong style="font-size:28px">실행 확실성</strong><br>
+      <span style="font-size:24px;color:#3e3e3e">HOW: 효과적인 거버넌스와 비용 절감 추적을 구현하고, 책임자가 진행 상황에 책임을 지도록 한다</span>
+    </div>
+  </div>
+  <!-- Source -->
+  <div style="position:absolute;left:63px;top:1011px;font-size:20px;color:#7f7f7f">Source: BCG 글로벌 임원 설문 (N=570) 2024년 4분기; BCG 분석</div>
+  <div style="position:absolute;left:1825px;top:1017px;font-size:24px;color:#898989">18</div>
+</section>
+
+<script>
+  function fit() {
+    const s = document.querySelectorAll('.slide');
+    const sc = Math.min(1, (window.innerWidth - 48) / 1920);
+    s.forEach(el => {
+      el.style.transform = 'scale(' + sc + ')';
+      el.style.marginBottom = (1080 * (sc - 1)) + 'px';
+    });
+  }
+  fit();
+  window.addEventListener('resize', fit);
+</script>
+</body>
+</html>

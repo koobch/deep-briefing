@@ -1,0 +1,220 @@
+{
+  "page": 2,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 1007.5,
+      "y": 319.2,
+      "w": 789.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#ffffff"
+    }
+  ],
+  "texts": [
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1823.0,
+      "y": 1025.1,
+      "w": 10.0,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "2"
+    },
+    {
+      "x": 1007.6,
+      "y": 243.9,
+      "w": 784.8,
+      "h": 67.0,
+      "size_pt": 30.0,
+      "size_px": 60.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Agenda for today’s webinar"
+    },
+    {
+      "x": 1823.0,
+      "y": 1025.1,
+      "w": 10.0,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "2"
+    },
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1059.0,
+      "y": 361.4,
+      "w": 214.0,
+      "h": 44.7,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "12:00-12:05"
+    },
+    {
+      "x": 1352.6,
+      "y": 361.4,
+      "w": 388.5,
+      "h": 44.7,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Welcome and framing"
+    },
+    {
+      "x": 1059.0,
+      "y": 455.9,
+      "w": 214.0,
+      "h": 44.7,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "12:05-12:15"
+    },
+    {
+      "x": 1352.6,
+      "y": 455.9,
+      "w": 413.6,
+      "h": 44.7,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Taking action on nature"
+    },
+    {
+      "x": 1059.0,
+      "y": 550.3,
+      "w": 214.2,
+      "h": 44.7,
+      "size_pt": 20.1,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "12:15-12:35"
+    },
+    {
+      "x": 1352.6,
+      "y": 550.3,
+      "w": 301.2,
+      "h": 44.7,
+      "size_pt": 20.1,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Panel discussion"
+    },
+    {
+      "x": 1059.0,
+      "y": 644.8,
+      "w": 214.2,
+      "h": 44.7,
+      "size_pt": 20.1,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "12:35-12:45"
+    },
+    {
+      "x": 1352.6,
+      "y": 644.8,
+      "w": 262.7,
+      "h": 44.7,
+      "size_pt": 20.1,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Audience Q&A"
+    },
+    {
+      "x": 1059.0,
+      "y": 739.3,
+      "w": 214.0,
+      "h": 44.7,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "12:45-12:50"
+    },
+    {
+      "x": 1352.6,
+      "y": 739.3,
+      "w": 440.1,
+      "h": 44.7,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Path forward and closing"
+    }
+  ],
+  "images": [
+    {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 960.5,
+      "h": 1080.0
+    }
+  ]
+}

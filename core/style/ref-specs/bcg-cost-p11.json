@@ -1,0 +1,544 @@
+{
+  "page": 11,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": -0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 188.3,
+      "fill": "#000000",
+      "border": null
+    },
+    {
+      "x": 1380.6,
+      "y": 189.9,
+      "w": 544.2,
+      "h": 890.8,
+      "fill": "#f1f2f1",
+      "border": null
+    },
+    {
+      "x": 0.0,
+      "y": 189.6,
+      "w": 1920.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#29b974"
+    },
+    {
+      "x": 1381.7,
+      "y": 187.6,
+      "w": 397.4,
+      "h": 73.6,
+      "fill": "#29b974",
+      "border": null
+    },
+    {
+      "x": 382.5,
+      "y": 399.4,
+      "w": 913.5,
+      "h": 0.0,
+      "fill": null,
+      "border": "#b1b2b1"
+    },
+    {
+      "x": 382.5,
+      "y": 621.3,
+      "w": 913.5,
+      "h": 0.0,
+      "fill": null,
+      "border": "#b1b2b1"
+    },
+    {
+      "x": 382.5,
+      "y": 843.2,
+      "w": 913.5,
+      "h": 0.0,
+      "fill": null,
+      "border": "#b1b2b1"
+    },
+    {
+      "x": 207.6,
+      "y": 394.4,
+      "w": 74.4,
+      "h": 76.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 212.6,
+      "y": 398.8,
+      "w": 65.0,
+      "h": 66.8,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 218.9,
+      "y": 835.1,
+      "w": 51.9,
+      "h": 82.5,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 224.0,
+      "y": 840.3,
+      "w": 41.6,
+      "h": 68.6,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 230.4,
+      "y": 617.5,
+      "w": 47.9,
+      "h": 38.8,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 207.1,
+      "y": 656.9,
+      "w": 76.5,
+      "h": 36.5,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 176.2,
+      "y": 336.0,
+      "w": 6.2,
+      "h": 193.1,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 176.2,
+      "y": 557.9,
+      "w": 6.2,
+      "h": 193.1,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 176.2,
+      "y": 779.8,
+      "w": 6.2,
+      "h": 193.1,
+      "fill": "#04512c",
+      "border": null
+    }
+  ],
+  "texts": [
+    {
+      "x": 77.0,
+      "y": 38.4,
+      "w": 1317.6,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Cost management remains the top priority for executives "
+    },
+    {
+      "x": 77.0,
+      "y": 90.2,
+      "w": 668.7,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "across regions and industries"
+    },
+    {
+      "x": 1890.5,
+      "y": 632.5,
+      "w": 15.6,
+      "h": 395.8,
+      "size_pt": 7.0,
+      "size_px": 13.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved."
+    },
+    {
+      "x": 1458.6,
+      "y": 460.6,
+      "w": 366.6,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "In a challenging economic "
+    },
+    {
+      "x": 1458.6,
+      "y": 499.1,
+      "w": 373.0,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "landscape, companies that "
+    },
+    {
+      "x": 1458.6,
+      "y": 537.5,
+      "w": 129.8,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "prioritize "
+    },
+    {
+      "x": 1588.9,
+      "y": 537.5,
+      "w": 189.2,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "productivity "
+    },
+    {
+      "x": 1458.6,
+      "y": 575.9,
+      "w": 241.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "growth through "
+    },
+    {
+      "x": 1458.6,
+      "y": 614.3,
+      "w": 244.7,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "disciplined cost "
+    },
+    {
+      "x": 1458.6,
+      "y": 652.7,
+      "w": 212.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "management "
+    },
+    {
+      "x": 1670.8,
+      "y": 652.7,
+      "w": 54.6,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "will "
+    },
+    {
+      "x": 1458.6,
+      "y": 691.1,
+      "w": 309.8,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "outperform those that "
+    },
+    {
+      "x": 1458.6,
+      "y": 729.4,
+      "w": 346.6,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "choose to absorb margin "
+    },
+    {
+      "x": 1458.6,
+      "y": 767.9,
+      "w": 365.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "pressures or pass costs on "
+    },
+    {
+      "x": 1458.6,
+      "y": 806.3,
+      "w": 185.4,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "to consumers"
+    },
+    {
+      "x": 382.7,
+      "y": 352.9,
+      "w": 314.0,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#05512c",
+      "bold": true,
+      "text": "Cost management"
+    },
+    {
+      "x": 382.7,
+      "y": 574.9,
+      "w": 317.8,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#05512c",
+      "bold": true,
+      "text": "Growth/Expansion"
+    },
+    {
+      "x": 382.7,
+      "y": 796.8,
+      "w": 389.6,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#05512c",
+      "bold": true,
+      "text": "Revenue management"
+    },
+    {
+      "x": 82.8,
+      "y": 398.3,
+      "w": 66.7,
+      "h": 71.8,
+      "size_pt": 32.1,
+      "size_px": 64.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#1"
+    },
+    {
+      "x": 82.8,
+      "y": 620.2,
+      "w": 66.7,
+      "h": 71.8,
+      "size_pt": 32.1,
+      "size_px": 64.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#2"
+    },
+    {
+      "x": 82.8,
+      "y": 842.3,
+      "w": 66.7,
+      "h": 71.8,
+      "size_pt": 32.0,
+      "size_px": 64.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#3"
+    },
+    {
+      "x": 382.6,
+      "y": 408.1,
+      "w": 739.7,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "33% of corporate leaders are prioritizing cost reduction as"
+    },
+    {
+      "x": 382.6,
+      "y": 444.1,
+      "w": 548.9,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "most critical, +8pp compared with 2024"
+    },
+    {
+      "x": 382.6,
+      "y": 630.1,
+      "w": 380.3,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Growth remains a focus, with "
+    },
+    {
+      "x": 763.0,
+      "y": 630.1,
+      "w": 533.0,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "70% of executives reporting that they "
+    },
+    {
+      "x": 382.6,
+      "y": 666.1,
+      "w": 919.5,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "have sufficient mid-term visibility to make informed investment "
+    },
+    {
+      "x": 382.6,
+      "y": 702.1,
+      "w": 133.7,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "decisions"
+    },
+    {
+      "x": 382.6,
+      "y": 852.0,
+      "w": 844.3,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Executives are looking into pricing strategies to manage potential "
+    },
+    {
+      "x": 382.6,
+      "y": 888.0,
+      "w": 856.9,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "rising supply chain costs while addressing end-consumer pressures"
+    },
+    {
+      "x": 1824.8,
+      "y": 1017.0,
+      "w": 25.0,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#898989",
+      "bold": false,
+      "text": "11"
+    },
+    {
+      "x": 77.0,
+      "y": 232.2,
+      "w": 1141.0,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "What are the top three strategic priorities for executives heading into 2025?"
+    },
+    {
+      "x": 62.6,
+      "y": 1010.6,
+      "w": 772.1,
+      "h": 22.3,
+      "size_pt": 10.0,
+      "size_px": 19.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#7f7f7f",
+      "bold": false,
+      "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis"
+    }
+  ],
+  "images": [
+    {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1920.0,
+      "h": 188.3
+    }
+  ]
+}

@@ -1,0 +1,1874 @@
+{
+  "page": 8,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 1346.6,
+      "y": 270.5,
+      "w": 0.0,
+      "h": 675.5,
+      "fill": null,
+      "border": "#757575"
+    },
+    {
+      "x": 1371.1,
+      "y": 298.3,
+      "w": 461.2,
+      "h": 0.0,
+      "fill": null,
+      "border": "#757575"
+    },
+    {
+      "x": 302.9,
+      "y": 354.2,
+      "w": 992.4,
+      "h": 240.7,
+      "fill": "#033b60",
+      "border": "#ffffff"
+    },
+    {
+      "x": 117.1,
+      "y": 354.2,
+      "w": 408.2,
+      "h": 607.9,
+      "fill": "#004d66",
+      "border": "#ffffff"
+    },
+    {
+      "x": 104.2,
+      "y": 341.2,
+      "w": 1204.0,
+      "h": 636.0,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 118.1,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 604.1,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 131.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 588.7,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 183.6,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 551.5,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 203.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 546.0,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 209.8,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 539.5,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 223.0,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 531.1,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 229.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 526.1,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 275.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 498.5,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 281.8,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 496.1,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 295.0,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 480.2,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 307.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 470.6,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 334.1,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 436.1,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 347.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 433.0,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 373.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 416.2,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 379.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 392.4,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 393.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 384.2,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 406.1,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 382.8,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 412.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 381.8,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 419.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 379.0,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 432.2,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 351.8,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 445.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 327.6,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 458.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 289.2,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 471.6,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 285.1,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 478.1,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 281.0,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 491.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 275.3,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 497.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 274.6,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 504.2,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 261.8,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 511.0,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 259.9,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 517.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 248.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 523.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 246.7,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 530.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 237.6,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 537.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 237.6,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 543.6,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 230.4,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 563.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 226.1,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 569.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 225.6,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 576.2,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 223.7,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 583.0,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 221.5,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 589.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 219.8,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 595.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 215.3,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 602.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 214.8,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 609.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 209.5,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 615.6,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 207.8,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 628.6,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 197.8,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 654.7,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 176.4,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 667.9,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 174.5,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 681.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 173.0,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 694.1,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 164.6,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 700.6,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 163.4,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 707.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 163.2,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 713.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 163.0,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 720.2,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 156.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 726.7,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 155.5,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 733.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 153.1,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 746.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 145.9,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 752.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 144.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 759.6,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 141.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 766.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 139.2,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 779.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 139.0,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 785.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 135.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 792.2,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 134.6,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 798.7,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 133.7,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 805.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 133.0,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 811.9,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 132.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 818.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 130.8,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 824.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 130.6,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 831.6,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 127.2,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 838.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 126.7,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 844.6,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 124.1,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 851.3,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 123.8,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 857.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 121.2,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 864.2,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 121.2,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 870.7,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 120.7,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 883.9,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 116.9,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 890.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 116.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 896.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 115.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 903.6,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 113.0,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 910.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 111.6,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 916.6,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 111.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 923.0,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 110.6,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 929.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 110.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 936.2,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 109.9,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 942.7,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 106.8,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 949.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 106.8,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 955.9,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 106.8,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 962.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 105.6,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 968.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 105.1,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 975.6,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 101.8,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 982.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 101.5,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 988.6,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 99.6,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1001.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 96.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1008.2,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 94.8,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1014.7,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 92.9,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1021.2,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 92.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1027.9,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 91.9,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1034.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 91.2,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1040.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 90.5,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1047.6,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 90.5,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1054.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 89.8,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1060.6,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 89.8,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1067.0,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 89.3,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1073.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 88.8,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1080.2,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 88.3,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1086.7,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 86.6,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1093.2,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 86.6,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1099.9,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 86.4,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1106.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 84.7,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1112.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 84.5,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1119.6,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 82.1,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1126.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 80.9,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1132.6,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 79.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1139.0,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 79.0,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1145.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 79.0,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1152.2,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 79.0,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1158.7,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 78.5,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1171.9,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 77.8,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1178.4,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 76.8,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1184.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 75.8,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1191.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 73.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1198.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 73.0,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1211.0,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 69.1,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1217.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 68.4,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1224.2,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 67.2,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1230.7,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 66.7,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1243.9,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 65.5,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1256.9,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 65.3,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1263.4,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 65.0,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1270.1,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 64.3,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1283.0,
+      "y": 354.2,
+      "w": 4.8,
+      "h": 63.4,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1289.8,
+      "y": 354.2,
+      "w": 4.6,
+      "h": 62.4,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 124.8,
+      "y": 354.2,
+      "w": 1156.3,
+      "h": 589.4,
+      "fill": "#00a9f4",
+      "border": "#041c2c"
+    },
+    {
+      "x": 117.4,
+      "y": 354.2,
+      "w": 0.0,
+      "h": 610.1,
+      "fill": null,
+      "border": "#ffffff"
+    },
+    {
+      "x": 117.4,
+      "y": 354.2,
+      "w": 1177.9,
+      "h": 0.0,
+      "fill": null,
+      "border": "#ffffff"
+    },
+    {
+      "x": 87.4,
+      "y": 298.3,
+      "w": 1207.8,
+      "h": 0.0,
+      "fill": null,
+      "border": "#757575"
+    },
+    {
+      "x": 1044.5,
+      "y": 703.7,
+      "w": 25.9,
+      "h": 26.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1044.5,
+      "y": 740.4,
+      "w": 25.9,
+      "h": 26.2,
+      "fill": "#0579c3",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1044.5,
+      "y": 777.4,
+      "w": 25.9,
+      "h": 25.9,
+      "fill": "#b2b3b2",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1044.5,
+      "y": 814.1,
+      "w": 25.9,
+      "h": 25.9,
+      "fill": "#00a9f4",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1044.5,
+      "y": 850.8,
+      "w": 25.9,
+      "h": 25.9,
+      "fill": "#13b8ab",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1044.5,
+      "y": 887.5,
+      "w": 25.9,
+      "h": 25.9,
+      "fill": "#75efe7",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1044.5,
+      "y": 924.2,
+      "w": 25.9,
+      "h": 25.9,
+      "fill": "#2151ff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 447.6,
+      "y": 714.2,
+      "w": 232.3,
+      "h": 227.8,
+      "fill": "#004d66",
+      "border": "#ffffff"
+    },
+    {
+      "x": 675.4,
+      "y": 547.4,
+      "w": 433.2,
+      "h": 111.6,
+      "fill": "#033b60",
+      "border": "#ffffff"
+    }
+  ],
+  "texts": [
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1823.0,
+      "y": 1025.1,
+      "w": 10.0,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "8"
+    },
+    {
+      "x": 87.4,
+      "y": 30.7,
+      "w": 1737.4,
+      "h": 56.6,
+      "size_pt": 25.0,
+      "size_px": 49.9,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "180 large, publicly traded companies could see profit losses beyond "
+    },
+    {
+      "x": 87.4,
+      "y": 86.7,
+      "w": 1348.8,
+      "h": 56.6,
+      "size_pt": 25.0,
+      "size_px": 49.9,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "10% by 2030 if they do not manage their nature risks"
+    },
+    {
+      "x": 1436.8,
+      "y": 86.7,
+      "w": 16.3,
+      "h": 37.8,
+      "size_pt": 16.7,
+      "size_px": 33.4,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "1"
+    },
+    {
+      "x": 1372.1,
+      "y": 748.3,
+      "w": 430.1,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Food company experienced a "
+    },
+    {
+      "x": 1372.1,
+      "y": 786.7,
+      "w": 457.0,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "5.5% share price decline due to "
+    },
+    {
+      "x": 1372.1,
+      "y": 825.0,
+      "w": 378.3,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "deforestation allegations"
+    },
+    {
+      "x": 1372.1,
+      "y": 579.3,
+      "w": 403.7,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Mining company stock price "
+    },
+    {
+      "x": 1372.1,
+      "y": 617.8,
+      "w": 359.3,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "decline of 18% after new "
+    },
+    {
+      "x": 1372.1,
+      "y": 656.2,
+      "w": 285.8,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "mining regulations"
+    },
+    {
+      "x": 1657.9,
+      "y": 656.2,
+      "w": 9.7,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 1667.6,
+      "y": 656.2,
+      "w": 158.1,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "announced"
+    },
+    {
+      "x": 1372.1,
+      "y": 410.4,
+      "w": 271.9,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Wildfire liabilities "
+    },
+    {
+      "x": 1645.0,
+      "y": 410.4,
+      "w": 162.3,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "for a major "
+    },
+    {
+      "x": 1372.1,
+      "y": 448.8,
+      "w": 396.6,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "utility led to bankruptcy and "
+    },
+    {
+      "x": 1372.1,
+      "y": 487.2,
+      "w": 257.6,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "$5.36B settlement"
+    },
+    {
+      "x": 1371.3,
+      "y": 253.1,
+      "w": 319.9,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Historic case studies"
+    },
+    {
+      "x": 17.5,
+      "y": 949.4,
+      "w": 81.1,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "-100%"
+    },
+    {
+      "x": 58.3,
+      "y": 339.2,
+      "w": 40.6,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "0%"
+    },
+    {
+      "x": 87.4,
+      "y": 253.1,
+      "w": 171.8,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Companies"
+    },
+    {
+      "x": 259.2,
+      "y": 253.1,
+      "w": 11.9,
+      "h": 23.8,
+      "size_pt": 10.7,
+      "size_px": 21.4,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "1"
+    },
+    {
+      "x": 271.1,
+      "y": 243.5,
+      "w": 9.2,
+      "h": 45.2,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": " "
+    },
+    {
+      "x": 280.4,
+      "y": 253.1,
+      "w": 877.5,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "at risk of losing more than 10% profits due to nature risks"
+    },
+    {
+      "x": 87.3,
+      "y": 1007.8,
+      "w": 13.4,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "1."
+    },
+    {
+      "x": 123.3,
+      "y": 1007.8,
+      "w": 942.1,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "MSCI World Index, MSCI Global Agriculture Producers ETF, and MSCI Global Metals & Mining Producers ETF, total number of firms"
+    },
+    {
+      "x": 1065.3,
+      "y": 1007.8,
+      "w": 4.8,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 1070.2,
+      "y": 1007.8,
+      "w": 139.2,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "considered is 1,541"
+    },
+    {
+      "x": 87.3,
+      "y": 1027.0,
+      "w": 13.4,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "2."
+    },
+    {
+      "x": 123.3,
+      "y": 1027.0,
+      "w": 432.2,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Measured relative to a baseline scenario with no nature risks"
+    },
+    {
+      "x": 87.4,
+      "y": 306.4,
+      "w": 203.9,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "% change in profits"
+    },
+    {
+      "x": 291.4,
+      "y": 306.3,
+      "w": 8.9,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "2"
+    },
+    {
+      "x": 300.3,
+      "y": 306.4,
+      "w": 573.6,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": ", all sectors, Unmitigated GBF-aligned scenario, 2030 "
+    },
+    {
+      "x": 1078.6,
+      "y": 705.2,
+      "w": 77.2,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Utilities"
+    },
+    {
+      "x": 1078.6,
+      "y": 742.0,
+      "w": 114.6,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Agriculture"
+    },
+    {
+      "x": 1078.6,
+      "y": 778.7,
+      "w": 60.2,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Other"
+    },
+    {
+      "x": 1078.6,
+      "y": 815.4,
+      "w": 207.5,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Food and beverage"
+    },
+    {
+      "x": 1078.6,
+      "y": 852.2,
+      "w": 112.3,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Chemicals"
+    },
+    {
+      "x": 1078.6,
+      "y": 889.0,
+      "w": 117.0,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Extractives"
+    },
+    {
+      "x": 1078.6,
+      "y": 925.8,
+      "w": 83.0,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Apparel"
+    },
+    {
+      "x": 484.8,
+      "y": 727.9,
+      "w": 164.5,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Firms at risk of "
+    },
+    {
+      "x": 475.0,
+      "y": 756.7,
+      "w": 183.9,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "losing more than "
+    },
+    {
+      "x": 469.7,
+      "y": 785.5,
+      "w": 194.6,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "40% of profits are "
+    },
+    {
+      "x": 481.9,
+      "y": 814.3,
+      "w": 170.3,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "concentrated in "
+    },
+    {
+      "x": 468.7,
+      "y": 843.2,
+      "w": 196.7,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "extractives, food "
+    },
+    {
+      "x": 459.6,
+      "y": 872.0,
+      "w": 168.0,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "and beverage, "
+    },
+    {
+      "x": 627.6,
+      "y": 872.0,
+      "w": 47.0,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "and "
+    },
+    {
+      "x": 520.8,
+      "y": 900.8,
+      "w": 85.6,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "apparel"
+    },
+    {
+      "x": 706.7,
+      "y": 561.2,
+      "w": 377.3,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Firms at risk of losing 10% -40% of "
+    },
+    {
+      "x": 704.8,
+      "y": 590.0,
+      "w": 283.4,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "profits are concentrated in "
+    },
+    {
+      "x": 988.2,
+      "y": 590.0,
+      "w": 84.1,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "utilities"
+    },
+    {
+      "x": 1072.5,
+      "y": 590.0,
+      "w": 13.4,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": ", "
+    },
+    {
+      "x": 741.7,
+      "y": 618.8,
+      "w": 124.2,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "agriculture"
+    },
+    {
+      "x": 866.1,
+      "y": 618.8,
+      "w": 60.1,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": ", and "
+    },
+    {
+      "x": 925.8,
+      "y": 618.8,
+      "w": 116.4,
+      "h": 26.8,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "chemicals"
+    }
+  ],
+  "images": [
+    {
+      "x": 1371.8,
+      "y": 304.8,
+      "w": 219.8,
+      "h": 42.0
+    },
+    {
+      "x": 1617.8,
+      "y": 278.2,
+      "w": 215.3,
+      "h": 92.9
+    }
+  ]
+}

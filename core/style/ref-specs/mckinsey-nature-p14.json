@@ -1,0 +1,502 @@
+{
+  "page": 14,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 1596.4,
+      "y": 560.0,
+      "w": 43.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#ffffff"
+    },
+    {
+      "x": 270.0,
+      "y": 187.9,
+      "w": 196.8,
+      "h": 297.1,
+      "fill": "#ededed",
+      "border": null
+    },
+    {
+      "x": 701.0,
+      "y": 187.9,
+      "w": 196.8,
+      "h": 297.1,
+      "fill": "#ededed",
+      "border": null
+    },
+    {
+      "x": 915.8,
+      "y": 187.9,
+      "w": 213.1,
+      "h": 297.1,
+      "fill": "#ededed",
+      "border": null
+    },
+    {
+      "x": 1635.4,
+      "y": 412.3,
+      "w": 196.8,
+      "h": 296.9,
+      "fill": "#ededed",
+      "border": null
+    },
+    {
+      "x": 1147.0,
+      "y": 187.9,
+      "w": 196.8,
+      "h": 297.1,
+      "fill": "#ededed",
+      "border": null
+    },
+    {
+      "x": 1361.8,
+      "y": 187.9,
+      "w": 196.8,
+      "h": 297.1,
+      "fill": "#ededed",
+      "border": null
+    },
+    {
+      "x": 87.4,
+      "y": 559.9,
+      "w": 1471.2,
+      "h": 0.0,
+      "fill": null,
+      "border": "#b2b3b2"
+    },
+    {
+      "x": 484.8,
+      "y": 187.9,
+      "w": 196.8,
+      "h": 297.1,
+      "fill": "#ededed",
+      "border": null
+    },
+    {
+      "x": 1596.4,
+      "y": 188.0,
+      "w": 0.0,
+      "h": 786.1,
+      "fill": null,
+      "border": "#ffffff"
+    }
+  ],
+  "texts": [
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1812.9,
+      "y": 1025.1,
+      "w": 20.1,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "14"
+    },
+    {
+      "x": 87.4,
+      "y": 79.6,
+      "w": 1719.8,
+      "h": 63.4,
+      "size_pt": 28.0,
+      "size_px": 55.9,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Guidelines and manuals are available from TNFD and SBTN"
+    },
+    {
+      "x": 87.4,
+      "y": 1025.2,
+      "w": 102.9,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#000000",
+      "bold": false,
+      "text": "Source: SBTN"
+    },
+    {
+      "x": 277.3,
+      "y": 195.2,
+      "w": 42.5,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "TNFD"
+    },
+    {
+      "x": 277.3,
+      "y": 214.4,
+      "w": 166.9,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "RECOMMENDATIONS"
+    },
+    {
+      "x": 708.4,
+      "y": 195.2,
+      "w": 174.0,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "THE LEAP APPROACH"
+    },
+    {
+      "x": 922.7,
+      "y": 195.2,
+      "w": 128.0,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "GUIDANCE FOR "
+    },
+    {
+      "x": 922.7,
+      "y": 214.4,
+      "w": 89.4,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "FINANCIAL "
+    },
+    {
+      "x": 922.7,
+      "y": 233.6,
+      "w": 111.0,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "INSTITUTIONS"
+    },
+    {
+      "x": 1642.2,
+      "y": 422.0,
+      "w": 128.0,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "GUIDANCE FOR "
+    },
+    {
+      "x": 1642.2,
+      "y": 441.2,
+      "w": 136.7,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "SCIENCE-BASED "
+    },
+    {
+      "x": 1642.2,
+      "y": 460.3,
+      "w": 75.6,
+      "h": 18.0,
+      "size_pt": 8.1,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "TARGETS"
+    },
+    {
+      "x": 1154.3,
+      "y": 195.2,
+      "w": 84.0,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "SCENARIO"
+    },
+    {
+      "x": 1154.3,
+      "y": 214.4,
+      "w": 79.8,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "ANALYSIS"
+    },
+    {
+      "x": 1369.2,
+      "y": 195.2,
+      "w": 137.4,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "ENGAGING WITH "
+    },
+    {
+      "x": 1369.2,
+      "y": 214.4,
+      "w": 173.9,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "LOCAL COMMUNITIES"
+    },
+    {
+      "x": 87.4,
+      "y": 602.8,
+      "w": 86.9,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "SBTN"
+    },
+    {
+      "x": 87.4,
+      "y": 641.2,
+      "w": 163.1,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Resources"
+    },
+    {
+      "x": 87.4,
+      "y": 190.4,
+      "w": 85.0,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "TNFD"
+    },
+    {
+      "x": 87.4,
+      "y": 228.8,
+      "w": 163.1,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Resources"
+    },
+    {
+      "x": 500.9,
+      "y": 195.2,
+      "w": 154.9,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "GETTING STARTED "
+    },
+    {
+      "x": 500.9,
+      "y": 214.4,
+      "w": 87.9,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "Arial-BoldMT",
+      "color": "#00557a",
+      "bold": true,
+      "text": "WITH TNFD"
+    }
+  ],
+  "images": [
+    {
+      "x": 276.0,
+      "y": 254.2,
+      "w": 198.5,
+      "h": 279.1
+    },
+    {
+      "x": 284.4,
+      "y": 256.6,
+      "w": 182.4,
+      "h": 263.0
+    },
+    {
+      "x": 274.3,
+      "y": 600.5,
+      "w": 242.6,
+      "h": 373.7
+    },
+    {
+      "x": 699.8,
+      "y": 254.2,
+      "w": 198.5,
+      "h": 279.1
+    },
+    {
+      "x": 708.2,
+      "y": 256.6,
+      "w": 182.4,
+      "h": 263.0
+    },
+    {
+      "x": 931.7,
+      "y": 254.2,
+      "w": 198.2,
+      "h": 279.1
+    },
+    {
+      "x": 940.1,
+      "y": 256.6,
+      "w": 182.2,
+      "h": 263.0
+    },
+    {
+      "x": 1641.6,
+      "y": 484.3,
+      "w": 198.2,
+      "h": 279.1
+    },
+    {
+      "x": 1650.0,
+      "y": 486.7,
+      "w": 182.2,
+      "h": 263.0
+    },
+    {
+      "x": 1153.0,
+      "y": 254.2,
+      "w": 198.5,
+      "h": 279.1
+    },
+    {
+      "x": 1161.4,
+      "y": 256.6,
+      "w": 182.4,
+      "h": 263.0
+    },
+    {
+      "x": 1367.8,
+      "y": 254.2,
+      "w": 198.5,
+      "h": 279.1
+    },
+    {
+      "x": 1376.2,
+      "y": 256.6,
+      "w": 182.4,
+      "h": 263.0
+    },
+    {
+      "x": 533.5,
+      "y": 600.5,
+      "w": 180.2,
+      "h": 326.9
+    },
+    {
+      "x": 730.3,
+      "y": 600.5,
+      "w": 191.0,
+      "h": 315.1
+    },
+    {
+      "x": 938.2,
+      "y": 600.5,
+      "w": 195.1,
+      "h": 315.1
+    },
+    {
+      "x": 1149.8,
+      "y": 600.5,
+      "w": 195.4,
+      "h": 315.1
+    },
+    {
+      "x": 1361.8,
+      "y": 600.5,
+      "w": 183.8,
+      "h": 315.1
+    },
+    {
+      "x": 490.8,
+      "y": 254.2,
+      "w": 198.5,
+      "h": 279.1
+    },
+    {
+      "x": 499.2,
+      "y": 256.6,
+      "w": 182.4,
+      "h": 263.0
+    }
+  ]
+}

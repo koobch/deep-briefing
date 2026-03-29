@@ -1,0 +1,906 @@
+{
+  "page": 18,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": -0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 188.3,
+      "fill": "#000000",
+      "border": null
+    },
+    {
+      "x": 0.5,
+      "y": 191.8,
+      "w": 479.9,
+      "h": 888.2,
+      "fill": "#f1f2f1",
+      "border": null
+    },
+    {
+      "x": 0.0,
+      "y": 189.6,
+      "w": 1920.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#29b974"
+    },
+    {
+      "x": 624.7,
+      "y": 601.0,
+      "w": 192.7,
+      "h": 227.5,
+      "fill": "#03522c",
+      "border": null
+    },
+    {
+      "x": 624.2,
+      "y": 374.1,
+      "w": 186.7,
+      "h": 226.9,
+      "fill": "#3dac92",
+      "border": null
+    },
+    {
+      "x": 624.2,
+      "y": 476.4,
+      "w": 239.4,
+      "h": 241.9,
+      "fill": "#187955",
+      "border": null
+    },
+    {
+      "x": 507.8,
+      "y": 466.4,
+      "w": 269.3,
+      "h": 269.3,
+      "fill": "#a8b338",
+      "border": "#ffffff"
+    },
+    {
+      "x": 727.4,
+      "y": 368.6,
+      "w": 203.6,
+      "h": 74.2,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 720.8,
+      "y": 760.1,
+      "w": 210.1,
+      "h": 82.3,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 814.0,
+      "y": 636.9,
+      "w": 117.0,
+      "h": 52.8,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 741.5,
+      "y": 525.3,
+      "w": 189.5,
+      "h": 47.4,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 878.1,
+      "y": 479.6,
+      "w": 91.4,
+      "h": 91.4,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 878.1,
+      "y": 795.9,
+      "w": 91.4,
+      "h": 91.4,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 933.8,
+      "y": 819.8,
+      "w": 9.4,
+      "h": 9.5,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 899.5,
+      "y": 842.8,
+      "w": 17.1,
+      "h": 20.2,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 896.8,
+      "y": 831.0,
+      "w": 16.1,
+      "h": 9.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 900.5,
+      "y": 830.8,
+      "w": 4.4,
+      "h": 3.8,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 897.4,
+      "y": 834.8,
+      "w": 9.6,
+      "h": 8.7,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 900.0,
+      "y": 824.5,
+      "w": 4.0,
+      "h": 4.7,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 895.1,
+      "y": 822.5,
+      "w": 2.6,
+      "h": 5.7,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 938.4,
+      "y": 842.8,
+      "w": 17.1,
+      "h": 20.2,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 935.7,
+      "y": 831.0,
+      "w": 16.1,
+      "h": 9.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 939.3,
+      "y": 830.8,
+      "w": 4.5,
+      "h": 3.8,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 936.2,
+      "y": 834.8,
+      "w": 9.6,
+      "h": 8.7,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 938.9,
+      "y": 824.1,
+      "w": 4.0,
+      "h": 5.1,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 919.0,
+      "y": 842.8,
+      "w": 17.1,
+      "h": 20.2,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 916.2,
+      "y": 831.0,
+      "w": 16.2,
+      "h": 9.2,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 919.9,
+      "y": 830.8,
+      "w": 4.5,
+      "h": 3.8,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 916.8,
+      "y": 834.8,
+      "w": 9.6,
+      "h": 8.7,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 919.5,
+      "y": 824.1,
+      "w": 3.9,
+      "h": 5.1,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 914.5,
+      "y": 820.9,
+      "w": 9.1,
+      "h": 7.4,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 892.1,
+      "y": 838.4,
+      "w": 4.9,
+      "h": 15.1,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 913.5,
+      "y": 838.3,
+      "w": 2.8,
+      "h": 1.4,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 932.9,
+      "y": 838.3,
+      "w": 2.8,
+      "h": 1.4,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 952.4,
+      "y": 838.3,
+      "w": 3.2,
+      "h": 1.4,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 955.6,
+      "y": 838.3,
+      "w": 1.1,
+      "h": 1.4,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 902.2,
+      "y": 824.1,
+      "w": 1.0,
+      "h": 1.6,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 896.5,
+      "y": 820.9,
+      "w": 6.8,
+      "h": 5.2,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 878.1,
+      "y": 642.1,
+      "w": 91.4,
+      "h": 91.4,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 922.8,
+      "y": 666.5,
+      "w": 29.4,
+      "h": 22.0,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 901.0,
+      "y": 665.2,
+      "w": 45.2,
+      "h": 45.2,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 908.7,
+      "y": 500.3,
+      "w": 31.7,
+      "h": 32.8,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 904.6,
+      "y": 497.7,
+      "w": 39.1,
+      "h": 55.1,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 878.1,
+      "y": 324.2,
+      "w": 91.4,
+      "h": 91.4,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 913.3,
+      "y": 338.1,
+      "w": 20.8,
+      "h": 43.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 907.9,
+      "y": 382.7,
+      "w": 31.7,
+      "h": 14.8,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 54.9,
+      "y": 426.8,
+      "w": 389.7,
+      "h": 173.8,
+      "fill": "#d7d2d3",
+      "border": null
+    },
+    {
+      "x": 76.0,
+      "y": 513.6,
+      "w": 347.5,
+      "h": 135.7,
+      "fill": "#bbb3b5",
+      "border": null
+    },
+    {
+      "x": 418.4,
+      "y": 488.7,
+      "w": 5.1,
+      "h": 94.2,
+      "fill": "#2b7764",
+      "border": null
+    },
+    {
+      "x": 249.8,
+      "y": 488.8,
+      "w": 168.6,
+      "h": 45.3,
+      "fill": "#42bb9f",
+      "border": null
+    },
+    {
+      "x": 54.9,
+      "y": 401.9,
+      "w": 376.4,
+      "h": 142.7,
+      "fill": "#d0f5e2",
+      "border": null
+    },
+    {
+      "x": 116.6,
+      "y": 488.8,
+      "w": 133.1,
+      "h": 80.2,
+      "fill": "#2b7764",
+      "border": null
+    },
+    {
+      "x": 76.0,
+      "y": 488.8,
+      "w": 40.7,
+      "h": 128.9,
+      "fill": "#42bb9f",
+      "border": null
+    },
+    {
+      "x": 116.6,
+      "y": 513.7,
+      "w": 133.1,
+      "h": 68.8,
+      "fill": "#bbb3b5",
+      "border": null
+    },
+    {
+      "x": 1281.6,
+      "y": 931.7,
+      "w": 568.8,
+      "h": 47.0,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1312.8,
+      "y": 967.0,
+      "w": 506.4,
+      "h": 1.2,
+      "fill": "#5f5f5f",
+      "border": null
+    }
+  ],
+  "texts": [
+    {
+      "x": 77.0,
+      "y": 38.4,
+      "w": 1446.3,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Laying solid foundations is crucial, as 67% of executives plan to "
+    },
+    {
+      "x": 77.0,
+      "y": 90.2,
+      "w": 745.8,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "reinvest cost savings into growth"
+    },
+    {
+      "x": 988.4,
+      "y": 513.6,
+      "w": 69.6,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-LightIt",
+      "color": "#03522d",
+      "bold": false,
+      "text": "HOW: "
+    },
+    {
+      "x": 1057.7,
+      "y": 513.6,
+      "w": 724.9,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Foster a cost-aware and accountable culture by celebrating wins; "
+    },
+    {
+      "x": 988.4,
+      "y": 544.8,
+      "w": 882.8,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "encourage learning from successes and setbacks to drive ongoing improvement"
+    },
+    {
+      "x": 988.4,
+      "y": 473.0,
+      "w": 246.7,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "DESIRED CULTURE "
+    },
+    {
+      "x": 988.4,
+      "y": 830.4,
+      "w": 69.6,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-LightIt",
+      "color": "#03522d",
+      "bold": false,
+      "text": "HOW: "
+    },
+    {
+      "x": 1057.7,
+      "y": 830.4,
+      "w": 701.9,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Implement effective governance and tracking of cost reduction "
+    },
+    {
+      "x": 988.4,
+      "y": 861.6,
+      "w": 575.3,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "initiatives; hold employees accountable for progress"
+    },
+    {
+      "x": 988.4,
+      "y": 789.7,
+      "w": 332.8,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "EXECUTIONAL CERTAINTY"
+    },
+    {
+      "x": 988.4,
+      "y": 676.5,
+      "w": 69.6,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-LightIt",
+      "color": "#03522d",
+      "bold": false,
+      "text": "HOW: "
+    },
+    {
+      "x": 1057.7,
+      "y": 676.5,
+      "w": 680.9,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Align employees with cost reduction goals and growth vision; "
+    },
+    {
+      "x": 988.4,
+      "y": 707.8,
+      "w": 834.9,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "empower employees to join solutioning process; provide real-time feedback"
+    },
+    {
+      "x": 988.4,
+      "y": 635.9,
+      "w": 298.5,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "PEOPLE ENGAGEMENT "
+    },
+    {
+      "x": 988.4,
+      "y": 357.4,
+      "w": 69.6,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-LightIt",
+      "color": "#03522d",
+      "bold": false,
+      "text": "HOW: "
+    },
+    {
+      "x": 1057.7,
+      "y": 357.4,
+      "w": 767.5,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Equip leaders with tools, visibility, and empowerment to identify and "
+    },
+    {
+      "x": 988.4,
+      "y": 388.6,
+      "w": 297.0,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "drive cost-saving initiatives"
+    },
+    {
+      "x": 988.4,
+      "y": 316.8,
+      "w": 290.4,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "LEADER ENABLEMENT"
+    },
+    {
+      "x": 563.0,
+      "y": 560.3,
+      "w": 168.4,
+      "h": 40.4,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "DESIRED "
+    },
+    {
+      "x": 560.1,
+      "y": 601.4,
+      "w": 164.5,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "CULTURE"
+    },
+    {
+      "x": 1824.8,
+      "y": 1017.0,
+      "w": 25.0,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#898989",
+      "bold": false,
+      "text": "18"
+    },
+    {
+      "x": 1890.5,
+      "y": 632.5,
+      "w": 15.6,
+      "h": 395.8,
+      "size_pt": 7.0,
+      "size_px": 13.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved."
+    },
+    {
+      "x": 62.6,
+      "y": 1010.6,
+      "w": 772.1,
+      "h": 22.3,
+      "size_pt": 10.0,
+      "size_px": 19.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#7f7f7f",
+      "bold": false,
+      "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis"
+    },
+    {
+      "x": 507.0,
+      "y": 232.2,
+      "w": 1286.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "Enduring cost management fosters continuous improvement of HOW work is done…"
+    },
+    {
+      "x": 77.0,
+      "y": 724.6,
+      "w": 331.6,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Of executives plan to "
+    },
+    {
+      "x": 77.0,
+      "y": 767.8,
+      "w": 304.0,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "invest savings from "
+    },
+    {
+      "x": 77.0,
+      "y": 811.0,
+      "w": 335.2,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "cost reduction efforts "
+    },
+    {
+      "x": 77.0,
+      "y": 854.2,
+      "w": 173.6,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "into growth"
+    },
+    {
+      "x": 207.6,
+      "y": 410.3,
+      "w": 67.5,
+      "h": 72.6,
+      "size_pt": 32.4,
+      "size_px": 64.8,
+      "font": "HendersonBCGSans-Light",
+      "color": "#05512c",
+      "bold": false,
+      "text": "67"
+    },
+    {
+      "x": 275.3,
+      "y": 429.9,
+      "w": 32.7,
+      "h": 48.4,
+      "size_pt": 21.6,
+      "size_px": 43.2,
+      "font": "HendersonBCGSans-Light",
+      "color": "#05512c",
+      "bold": false,
+      "text": "%"
+    },
+    {
+      "x": 1312.9,
+      "y": 941.8,
+      "w": 506.5,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#5f5f5f",
+      "bold": false,
+      "text": "Learn more about cost management foundations"
+    }
+  ],
+  "images": [
+    {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1920.0,
+      "h": 188.3
+    },
+    {
+      "x": 620.6,
+      "y": 596.9,
+      "w": 208.8,
+      "h": 242.9
+    },
+    {
+      "x": 619.9,
+      "y": 370.1,
+      "w": 202.8,
+      "h": 242.9
+    },
+    {
+      "x": 619.9,
+      "y": 472.3,
+      "w": 243.1,
+      "h": 258.0
+    },
+    {
+      "x": 503.5,
+      "y": 456.2,
+      "w": 289.0,
+      "h": 289.0
+    },
+    {
+      "x": 876.6,
+      "y": 478.1,
+      "w": 94.4,
+      "h": 94.4
+    },
+    {
+      "x": 876.6,
+      "y": 794.4,
+      "w": 94.4,
+      "h": 94.4
+    },
+    {
+      "x": 876.6,
+      "y": 640.6,
+      "w": 94.4,
+      "h": 94.4
+    },
+    {
+      "x": 876.6,
+      "y": 322.7,
+      "w": 94.4,
+      "h": 94.4
+    },
+    {
+      "x": 1279.3,
+      "y": 929.5,
+      "w": 573.3,
+      "h": 51.5
+    }
+  ]
+}

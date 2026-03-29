@@ -1,0 +1,980 @@
+{
+  "page": 20,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": -0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 188.3,
+      "fill": "#000000",
+      "border": null
+    },
+    {
+      "x": 480.4,
+      "y": 856.0,
+      "w": 1439.6,
+      "h": 224.0,
+      "fill": "#d0f5e2",
+      "border": null
+    },
+    {
+      "x": 0.5,
+      "y": 191.8,
+      "w": 479.9,
+      "h": 888.2,
+      "fill": "#f1f2f1",
+      "border": null
+    },
+    {
+      "x": 0.0,
+      "y": 189.6,
+      "w": 1920.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#29b974"
+    },
+    {
+      "x": 910.0,
+      "y": 638.1,
+      "w": 28.8,
+      "h": 63.5,
+      "fill": "#d5f0ea",
+      "border": "#d5f0ea"
+    },
+    {
+      "x": 1245.7,
+      "y": 638.1,
+      "w": 33.8,
+      "h": 63.5,
+      "fill": "#f1f2f1",
+      "border": "#f1f2f1"
+    },
+    {
+      "x": 889.4,
+      "y": 731.0,
+      "w": 28.8,
+      "h": 63.5,
+      "fill": "#d5f0ea",
+      "border": "#d5f0ea"
+    },
+    {
+      "x": 1245.7,
+      "y": 731.0,
+      "w": 33.8,
+      "h": 63.5,
+      "fill": "#f1f2f1",
+      "border": "#f1f2f1"
+    },
+    {
+      "x": 1027.4,
+      "y": 359.2,
+      "w": 28.8,
+      "h": 63.5,
+      "fill": "#d5f0ea",
+      "border": "#d5f0ea"
+    },
+    {
+      "x": 1245.7,
+      "y": 359.2,
+      "w": 33.8,
+      "h": 63.5,
+      "fill": "#f1f2f1",
+      "border": "#f1f2f1"
+    },
+    {
+      "x": 1010.6,
+      "y": 452.2,
+      "w": 28.8,
+      "h": 63.5,
+      "fill": "#d5f0ea",
+      "border": "#d5f0ea"
+    },
+    {
+      "x": 1245.7,
+      "y": 452.2,
+      "w": 33.8,
+      "h": 63.5,
+      "fill": "#f1f2f1",
+      "border": "#f1f2f1"
+    },
+    {
+      "x": 984.6,
+      "y": 545.1,
+      "w": 28.8,
+      "h": 63.5,
+      "fill": "#d5f0ea",
+      "border": "#d5f0ea"
+    },
+    {
+      "x": 1245.7,
+      "y": 545.1,
+      "w": 33.8,
+      "h": 63.5,
+      "fill": "#f1f2f1",
+      "border": "#f1f2f1"
+    },
+    {
+      "x": 1129.5,
+      "y": 831.6,
+      "w": 48.3,
+      "h": 48.2,
+      "fill": "#ffffff",
+      "border": "#ffffff"
+    },
+    {
+      "x": 1135.8,
+      "y": 849.9,
+      "w": 35.4,
+      "h": 18.9,
+      "fill": "#404040",
+      "border": "#404040"
+    },
+    {
+      "x": 51.6,
+      "y": 423.6,
+      "w": 396.3,
+      "h": 176.8,
+      "fill": "#d7d2d3",
+      "border": null
+    },
+    {
+      "x": 73.0,
+      "y": 512.0,
+      "w": 353.5,
+      "h": 137.9,
+      "fill": "#bbb3b5",
+      "border": null
+    },
+    {
+      "x": 114.4,
+      "y": 487.3,
+      "w": 135.4,
+      "h": 81.5,
+      "fill": "#2b7764",
+      "border": null
+    },
+    {
+      "x": 73.0,
+      "y": 487.3,
+      "w": 41.4,
+      "h": 131.1,
+      "fill": "#42bb9f",
+      "border": null
+    },
+    {
+      "x": 51.6,
+      "y": 398.9,
+      "w": 396.3,
+      "h": 176.5,
+      "fill": "#d0f5e2",
+      "border": null
+    },
+    {
+      "x": 262.1,
+      "y": 487.3,
+      "w": 164.4,
+      "h": 162.5,
+      "fill": "#42bb9f",
+      "border": null
+    },
+    {
+      "x": 249.8,
+      "y": 487.3,
+      "w": 12.3,
+      "h": 112.9,
+      "fill": "#bbb3b5",
+      "border": null
+    },
+    {
+      "x": 114.4,
+      "y": 512.0,
+      "w": 135.4,
+      "h": 69.9,
+      "fill": "#bbb3b5",
+      "border": null
+    },
+    {
+      "x": 1284.1,
+      "y": 373.4,
+      "w": 35.2,
+      "h": 35.2,
+      "fill": "#ffffff",
+      "border": "#ffffff"
+    },
+    {
+      "x": 1287.9,
+      "y": 377.2,
+      "w": 27.6,
+      "h": 27.6,
+      "fill": "#04512c",
+      "border": "#04512c"
+    },
+    {
+      "x": 1293.5,
+      "y": 382.8,
+      "w": 16.3,
+      "h": 16.4,
+      "fill": "#ffffff",
+      "border": "#ffffff"
+    },
+    {
+      "x": 1297.2,
+      "y": 386.5,
+      "w": 9.0,
+      "h": 9.0,
+      "fill": "#28b974",
+      "border": "#28b974"
+    },
+    {
+      "x": 1284.1,
+      "y": 466.3,
+      "w": 35.2,
+      "h": 35.2,
+      "fill": "#ffffff",
+      "border": "#ffffff"
+    },
+    {
+      "x": 1287.9,
+      "y": 470.1,
+      "w": 27.6,
+      "h": 27.6,
+      "fill": "#04512c",
+      "border": "#04512c"
+    },
+    {
+      "x": 1293.5,
+      "y": 475.8,
+      "w": 16.3,
+      "h": 16.3,
+      "fill": "#ffffff",
+      "border": "#ffffff"
+    },
+    {
+      "x": 1297.2,
+      "y": 479.4,
+      "w": 9.0,
+      "h": 9.0,
+      "fill": "#28b974",
+      "border": "#28b974"
+    },
+    {
+      "x": 1309.9,
+      "y": 391.0,
+      "w": 54.7,
+      "h": 0.0,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 1309.9,
+      "y": 483.9,
+      "w": 54.7,
+      "h": 0.0,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 1309.9,
+      "y": 576.9,
+      "w": 54.7,
+      "h": 0.0,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 1284.1,
+      "y": 559.3,
+      "w": 35.2,
+      "h": 35.2,
+      "fill": "#ffffff",
+      "border": "#ffffff"
+    },
+    {
+      "x": 1287.9,
+      "y": 563.1,
+      "w": 27.6,
+      "h": 27.6,
+      "fill": "#04512c",
+      "border": "#04512c"
+    },
+    {
+      "x": 1293.5,
+      "y": 568.7,
+      "w": 16.3,
+      "h": 16.4,
+      "fill": "#ffffff",
+      "border": "#ffffff"
+    },
+    {
+      "x": 1297.2,
+      "y": 572.4,
+      "w": 9.0,
+      "h": 9.0,
+      "fill": "#28b974",
+      "border": "#28b974"
+    }
+  ],
+  "texts": [
+    {
+      "x": 542.1,
+      "y": 905.1,
+      "w": 289.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "Investing in GenAI "
+    },
+    {
+      "x": 831.6,
+      "y": 905.1,
+      "w": 688.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "not only helps with cost reduction efforts, but also "
+    },
+    {
+      "x": 1519.7,
+      "y": 905.1,
+      "w": 302.0,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "boosts productivity, "
+    },
+    {
+      "x": 687.6,
+      "y": 943.5,
+      "w": 552.8,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "scales capacity, and supports growth"
+    },
+    {
+      "x": 1240.8,
+      "y": 943.5,
+      "w": 427.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " through continuous innovation"
+    },
+    {
+      "x": 77.0,
+      "y": 64.3,
+      "w": 1281.2,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Executives see GenAI as a key pillar for future efficiency"
+    },
+    {
+      "x": 825.0,
+      "y": 650.8,
+      "w": 37.7,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "35"
+    },
+    {
+      "x": 863.0,
+      "y": 664.3,
+      "w": 16.0,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "%"
+    },
+    {
+      "x": 512.4,
+      "y": 657.1,
+      "w": 261.5,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "R&D in engineering"
+    },
+    {
+      "x": 825.0,
+      "y": 743.7,
+      "w": 37.8,
+      "h": 40.4,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "31"
+    },
+    {
+      "x": 863.0,
+      "y": 757.2,
+      "w": 16.0,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.2,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "%"
+    },
+    {
+      "x": 512.4,
+      "y": 750.1,
+      "w": 171.3,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "Supply chain"
+    },
+    {
+      "x": 1378.6,
+      "y": 363.8,
+      "w": 454.8,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "E.g., customer inquiries, call center insights, "
+    },
+    {
+      "x": 1378.6,
+      "y": 392.6,
+      "w": 224.0,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "back-office processing"
+    },
+    {
+      "x": 512.4,
+      "y": 374.9,
+      "w": 231.5,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "Customer service"
+    },
+    {
+      "x": 825.0,
+      "y": 371.9,
+      "w": 37.7,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "50"
+    },
+    {
+      "x": 863.0,
+      "y": 385.4,
+      "w": 16.0,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "%"
+    },
+    {
+      "x": 1378.6,
+      "y": 456.8,
+      "w": 399.2,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "E.g., content creation and distribution, "
+    },
+    {
+      "x": 1378.6,
+      "y": 485.6,
+      "w": 362.3,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "marketing insights, lead generation"
+    },
+    {
+      "x": 825.0,
+      "y": 464.9,
+      "w": 37.7,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "49"
+    },
+    {
+      "x": 863.0,
+      "y": 478.3,
+      "w": 16.0,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "%"
+    },
+    {
+      "x": 512.4,
+      "y": 471.2,
+      "w": 274.7,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "Sales and marketing"
+    },
+    {
+      "x": 1378.6,
+      "y": 549.7,
+      "w": 391.5,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "E.g., financial planning and reporting, "
+    },
+    {
+      "x": 1378.6,
+      "y": 578.5,
+      "w": 210.6,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "training, legal review"
+    },
+    {
+      "x": 825.0,
+      "y": 557.8,
+      "w": 37.7,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "47"
+    },
+    {
+      "x": 863.0,
+      "y": 571.3,
+      "w": 16.0,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "%"
+    },
+    {
+      "x": 512.4,
+      "y": 564.1,
+      "w": 239.2,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "Support functions"
+    },
+    {
+      "x": 512.4,
+      "y": 258.9,
+      "w": 952.0,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "Which applications of GenAI and advanced analytics can drive "
+    },
+    {
+      "x": 512.4,
+      "y": 297.3,
+      "w": 572.9,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "significant near-term cost reductions?"
+    },
+    {
+      "x": 62.6,
+      "y": 1010.6,
+      "w": 772.1,
+      "h": 22.3,
+      "size_pt": 10.0,
+      "size_px": 19.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#7f7f7f",
+      "bold": false,
+      "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis"
+    },
+    {
+      "x": 1824.8,
+      "y": 1017.0,
+      "w": 25.0,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#898989",
+      "bold": false,
+      "text": "20"
+    },
+    {
+      "x": 1890.5,
+      "y": 632.5,
+      "w": 15.6,
+      "h": 395.8,
+      "size_pt": 7.0,
+      "size_px": 13.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved."
+    },
+    {
+      "x": 77.0,
+      "y": 724.6,
+      "w": 331.6,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Of executives plan to "
+    },
+    {
+      "x": 77.0,
+      "y": 767.8,
+      "w": 290.9,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "invest in AI and/or "
+    },
+    {
+      "x": 77.0,
+      "y": 811.0,
+      "w": 340.6,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "advanced analytics in "
+    },
+    {
+      "x": 77.0,
+      "y": 854.2,
+      "w": 74.9,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "2025"
+    },
+    {
+      "x": 211.6,
+      "y": 406.4,
+      "w": 75.1,
+      "h": 80.7,
+      "size_pt": 36.0,
+      "size_px": 72.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#05512c",
+      "bold": false,
+      "text": "86"
+    },
+    {
+      "x": 287.0,
+      "y": 428.1,
+      "w": 36.4,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#05512c",
+      "bold": false,
+      "text": "%"
+    }
+  ],
+  "images": [
+    {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1920.0,
+      "h": 188.3
+    },
+    {
+      "x": 816.2,
+      "y": 638.1,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 816.2,
+      "y": 638.1,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 638.1,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 638.1,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 796.4,
+      "y": 638.1,
+      "w": 127.3,
+      "h": 63.5
+    },
+    {
+      "x": 908.1,
+      "y": 638.1,
+      "w": 31.3,
+      "h": 63.5
+    },
+    {
+      "x": 816.2,
+      "y": 731.0,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 816.2,
+      "y": 731.0,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 731.0,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 731.0,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 796.4,
+      "y": 731.0,
+      "w": 107.3,
+      "h": 63.5
+    },
+    {
+      "x": 888.1,
+      "y": 731.0,
+      "w": 31.3,
+      "h": 63.5
+    },
+    {
+      "x": 816.2,
+      "y": 359.2,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 816.2,
+      "y": 359.2,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 359.2,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 359.2,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 796.4,
+      "y": 359.2,
+      "w": 245.0,
+      "h": 63.5
+    },
+    {
+      "x": 1025.8,
+      "y": 359.2,
+      "w": 31.3,
+      "h": 63.5
+    },
+    {
+      "x": 816.2,
+      "y": 452.2,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 816.2,
+      "y": 452.2,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 452.2,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 452.2,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 796.4,
+      "y": 452.2,
+      "w": 228.3,
+      "h": 63.5
+    },
+    {
+      "x": 1009.0,
+      "y": 452.2,
+      "w": 31.3,
+      "h": 63.5
+    },
+    {
+      "x": 816.2,
+      "y": 545.1,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 816.2,
+      "y": 545.1,
+      "w": 448.7,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 545.1,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 1257.0,
+      "y": 545.1,
+      "w": 15.9,
+      "h": 63.5
+    },
+    {
+      "x": 796.4,
+      "y": 545.1,
+      "w": 201.6,
+      "h": 63.5
+    },
+    {
+      "x": 982.3,
+      "y": 545.1,
+      "w": 31.3,
+      "h": 63.5
+    }
+  ]
+}

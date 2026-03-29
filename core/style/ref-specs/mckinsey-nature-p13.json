@@ -1,0 +1,681 @@
+{
+  "page": 13,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 87.4,
+      "y": 274.3,
+      "w": 1144.1,
+      "h": 0.5,
+      "fill": null,
+      "border": "#7e7f7e"
+    },
+    {
+      "x": 87.4,
+      "y": 627.1,
+      "w": 1144.1,
+      "h": 0.5,
+      "fill": null,
+      "border": "#7e7f7e"
+    },
+    {
+      "x": 87.4,
+      "y": 643.9,
+      "w": 83.5,
+      "h": 83.5,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 117.8,
+      "y": 662.0,
+      "w": 23.0,
+      "h": 6.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 110.6,
+      "y": 665.2,
+      "w": 37.3,
+      "h": 44.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 117.1,
+      "y": 674.5,
+      "w": 6.3,
+      "h": 6.3,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 675.4,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 679.8,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 117.1,
+      "y": 686.0,
+      "w": 6.3,
+      "h": 6.3,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 686.9,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 691.3,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 117.1,
+      "y": 697.5,
+      "w": 6.3,
+      "h": 6.3,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 698.4,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 702.7,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 87.4,
+      "y": 778.1,
+      "w": 83.5,
+      "h": 83.5,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 142.9,
+      "y": 805.8,
+      "w": 10.1,
+      "h": 10.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 105.5,
+      "y": 824.0,
+      "w": 10.1,
+      "h": 10.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 130.4,
+      "y": 824.0,
+      "w": 10.1,
+      "h": 10.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 118.0,
+      "y": 805.8,
+      "w": 10.1,
+      "h": 10.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 120.4,
+      "y": 808.8,
+      "w": 5.1,
+      "h": 4.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 112.3,
+      "y": 815.5,
+      "w": 8.9,
+      "h": 8.9,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 137.3,
+      "y": 815.5,
+      "w": 8.9,
+      "h": 8.9,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 124.8,
+      "y": 815.5,
+      "w": 8.9,
+      "h": 8.9,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 1284.0,
+      "y": 272.2,
+      "w": 0.0,
+      "h": 706.6,
+      "fill": null,
+      "border": "#757575"
+    },
+    {
+      "x": 1542.7,
+      "y": 211.8,
+      "w": 36.8,
+      "h": 36.6,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1541.6,
+      "y": 210.7,
+      "w": 37.8,
+      "h": 38.7,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1540.3,
+      "y": 209.4,
+      "w": 35.4,
+      "h": 41.3,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1539.0,
+      "y": 208.4,
+      "w": 44.2,
+      "h": 42.8,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1537.8,
+      "y": 206.9,
+      "w": 46.8,
+      "h": 45.4,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1536.4,
+      "y": 205.6,
+      "w": 49.4,
+      "h": 44.5,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1535.2,
+      "y": 204.3,
+      "w": 52.0,
+      "h": 50.6,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1533.8,
+      "y": 203.0,
+      "w": 54.3,
+      "h": 54.2,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1532.5,
+      "y": 201.7,
+      "w": 57.3,
+      "h": 56.9,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1595.9,
+      "y": 216.4,
+      "w": 236.3,
+      "h": 28.7,
+      "fill": "#ffffff",
+      "border": null
+    }
+  ],
+  "texts": [
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1812.9,
+      "y": 1025.1,
+      "w": 20.1,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "13"
+    },
+    {
+      "x": 87.4,
+      "y": 30.7,
+      "w": 1747.1,
+      "h": 56.6,
+      "size_pt": 25.0,
+      "size_px": 49.9,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "The SBTN guidelines are the key global reference for nature-related "
+    },
+    {
+      "x": 87.4,
+      "y": 86.7,
+      "w": 340.3,
+      "h": 56.6,
+      "size_pt": 25.0,
+      "size_px": 49.9,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "target setting"
+    },
+    {
+      "x": 87.4,
+      "y": 289.6,
+      "w": 847.8,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "SBTN provides science-based target-setting guidelines "
+    },
+    {
+      "x": 935.6,
+      "y": 289.6,
+      "w": 272.0,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "for companies and "
+    },
+    {
+      "x": 87.4,
+      "y": 328.0,
+      "w": 1076.0,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "cities to reduce and improve their impact on nature, building on the Science "
+    },
+    {
+      "x": 87.4,
+      "y": 366.4,
+      "w": 426.3,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Based Targets initiative (SBTi)"
+    },
+    {
+      "x": 87.4,
+      "y": 432.7,
+      "w": 679.6,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "SBTN complements TNFD recommendations"
+    },
+    {
+      "x": 767.1,
+      "y": 432.7,
+      "w": 347.0,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": ", enabling companies to "
+    },
+    {
+      "x": 87.4,
+      "y": 471.0,
+      "w": 771.6,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "translate nature-related impacts into actionable targets"
+    },
+    {
+      "x": 87.4,
+      "y": 219.4,
+      "w": 286.4,
+      "h": 44.7,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "What is SBTN?"
+    },
+    {
+      "x": 1313.3,
+      "y": 319.8,
+      "w": 286.9,
+      "h": 81.6,
+      "size_pt": 36.0,
+      "size_px": 72.0,
+      "font": "Georgia-Bold",
+      "color": "#00a9f4",
+      "bold": true,
+      "text": "4,400+ "
+    },
+    {
+      "x": 1600.6,
+      "y": 353.2,
+      "w": 183.5,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "companies "
+    },
+    {
+      "x": 1313.3,
+      "y": 404.8,
+      "w": 554.6,
+      "h": 40.2,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "have set SBTi targets, indicating a "
+    },
+    {
+      "x": 1313.3,
+      "y": 448.0,
+      "w": 538.2,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "similar number might adopt SBTs "
+    },
+    {
+      "x": 1313.3,
+      "y": 491.2,
+      "w": 153.9,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "for nature"
+    },
+    {
+      "x": 1313.3,
+      "y": 573.6,
+      "w": 214.9,
+      "h": 81.6,
+      "size_pt": 36.0,
+      "size_px": 72.0,
+      "font": "Georgia-Bold",
+      "color": "#00a9f4",
+      "bold": true,
+      "text": "200+ "
+    },
+    {
+      "x": 1528.4,
+      "y": 607.1,
+      "w": 311.8,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "organizations have "
+    },
+    {
+      "x": 1313.3,
+      "y": 658.7,
+      "w": 535.7,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "helped shape the initial methods, "
+    },
+    {
+      "x": 1313.3,
+      "y": 701.9,
+      "w": 311.6,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "tools, and guidance"
+    },
+    {
+      "x": 87.4,
+      "y": 570.0,
+      "w": 321.9,
+      "h": 44.7,
+      "size_pt": 20.1,
+      "size_px": 40.1,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "What does it do?"
+    },
+    {
+      "x": 189.8,
+      "y": 646.3,
+      "w": 21.3,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "P"
+    },
+    {
+      "x": 211.2,
+      "y": 646.3,
+      "w": 983.0,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "rovides prescriptive methodologies for companies to set measurable, "
+    },
+    {
+      "x": 189.8,
+      "y": 684.6,
+      "w": 855.8,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "time-bound, and place-based targets on their nature impacts"
+    },
+    {
+      "x": 189.8,
+      "y": 780.5,
+      "w": 19.5,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "T"
+    },
+    {
+      "x": 209.3,
+      "y": 780.5,
+      "w": 955.3,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "ranslates ecological thresholds and societal goals with science and "
+    },
+    {
+      "x": 189.8,
+      "y": 818.9,
+      "w": 632.2,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "sustainability experts from 80+ organizations"
+    },
+    {
+      "x": 1313.3,
+      "y": 794.1,
+      "w": 201.2,
+      "h": 81.7,
+      "size_pt": 36.0,
+      "size_px": 72.0,
+      "font": "Georgia-Bold",
+      "color": "#00a9f4",
+      "bold": true,
+      "text": "160+ "
+    },
+    {
+      "x": 1514.9,
+      "y": 827.5,
+      "w": 245.7,
+      "h": 40.2,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "companies are "
+    },
+    {
+      "x": 1313.3,
+      "y": 879.2,
+      "w": 501.4,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "preparing to set science-based "
+    },
+    {
+      "x": 1313.3,
+      "y": 922.4,
+      "w": 273.9,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "targets for nature"
+    }
+  ],
+  "images": []
+}

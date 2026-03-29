@@ -1,0 +1,702 @@
+{
+  "page": 21,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": -0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 188.3,
+      "fill": "#000000",
+      "border": null
+    },
+    {
+      "x": 0.0,
+      "y": 189.6,
+      "w": 1920.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#29b974"
+    },
+    {
+      "x": 382.7,
+      "y": 487.7,
+      "w": 1372.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#04512c"
+    },
+    {
+      "x": 382.7,
+      "y": 740.0,
+      "w": 1372.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#04512c"
+    },
+    {
+      "x": 1643.2,
+      "y": 221.4,
+      "w": 229.1,
+      "h": 119.8,
+      "fill": "#f1f2f1",
+      "border": null
+    },
+    {
+      "x": 1696.2,
+      "y": 264.4,
+      "w": 123.1,
+      "h": 1.2,
+      "fill": "#5f5f5f",
+      "border": null
+    },
+    {
+      "x": 1668.4,
+      "y": 293.9,
+      "w": 178.6,
+      "h": 1.2,
+      "fill": "#5f5f5f",
+      "border": null
+    },
+    {
+      "x": 1677.0,
+      "y": 323.7,
+      "w": 161.3,
+      "h": 1.2,
+      "fill": "#5f5f5f",
+      "border": null
+    },
+    {
+      "x": 207.6,
+      "y": 325.8,
+      "w": 74.4,
+      "h": 76.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 212.6,
+      "y": 330.3,
+      "w": 65.0,
+      "h": 66.8,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 218.9,
+      "y": 827.3,
+      "w": 51.9,
+      "h": 82.5,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 224.0,
+      "y": 832.5,
+      "w": 41.6,
+      "h": 68.6,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 230.4,
+      "y": 579.3,
+      "w": 47.9,
+      "h": 38.8,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 207.1,
+      "y": 618.8,
+      "w": 76.5,
+      "h": 36.5,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 176.2,
+      "y": 267.4,
+      "w": 6.2,
+      "h": 193.1,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 176.2,
+      "y": 519.8,
+      "w": 6.2,
+      "h": 193.1,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 176.2,
+      "y": 772.1,
+      "w": 6.2,
+      "h": 193.1,
+      "fill": "#04512c",
+      "border": null
+    }
+  ],
+  "texts": [
+    {
+      "x": 77.0,
+      "y": 38.4,
+      "w": 1256.1,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Executives can also use GenAI to tackle their top three "
+    },
+    {
+      "x": 77.0,
+      "y": 90.2,
+      "w": 609.3,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "strategic priorities for 2025"
+    },
+    {
+      "x": 382.8,
+      "y": 267.7,
+      "w": 313.4,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "Cost management"
+    },
+    {
+      "x": 382.8,
+      "y": 310.2,
+      "w": 1029.2,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Automating processes, optimizing supply chains, and improving operational efficiency:"
+    },
+    {
+      "x": 399.8,
+      "y": 348.9,
+      "w": 14.7,
+      "h": 32.1,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "TrebuchetMS",
+      "color": "#28ba74",
+      "bold": false,
+      "text": "•"
+    },
+    {
+      "x": 414.6,
+      "y": 349.8,
+      "w": 19.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 433.9,
+      "y": 349.8,
+      "w": 1102.2,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Decrease labor cost by automating tasks in areas like customer service and content creation"
+    },
+    {
+      "x": 399.8,
+      "y": 388.4,
+      "w": 14.7,
+      "h": 32.2,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "TrebuchetMS",
+      "color": "#28ba74",
+      "bold": false,
+      "text": "•"
+    },
+    {
+      "x": 414.6,
+      "y": 389.3,
+      "w": 19.3,
+      "h": 31.5,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 433.9,
+      "y": 389.3,
+      "w": 1210.2,
+      "h": 31.5,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Use predictive models to enhance supply chain efficiency by forecasting demand and inventory levels"
+    },
+    {
+      "x": 399.8,
+      "y": 428.1,
+      "w": 14.7,
+      "h": 32.1,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "TrebuchetMS",
+      "color": "#28ba74",
+      "bold": false,
+      "text": "•"
+    },
+    {
+      "x": 414.6,
+      "y": 429.0,
+      "w": 19.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 433.9,
+      "y": 429.0,
+      "w": 1093.8,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Monitor and reduce energy consumption across facilities, directly impacting operating costs"
+    },
+    {
+      "x": 382.8,
+      "y": 521.3,
+      "w": 317.3,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "Growth/Expansion"
+    },
+    {
+      "x": 382.8,
+      "y": 563.8,
+      "w": 912.7,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Enabling employees to perform more complex tasks, speeding up workflows:"
+    },
+    {
+      "x": 399.8,
+      "y": 602.4,
+      "w": 14.7,
+      "h": 32.1,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "TrebuchetMS",
+      "color": "#28ba74",
+      "bold": false,
+      "text": "•"
+    },
+    {
+      "x": 414.6,
+      "y": 603.4,
+      "w": 19.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 433.9,
+      "y": 603.4,
+      "w": 1049.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Accelerate product development and innovation through AI, enhancing speed-to-market"
+    },
+    {
+      "x": 399.8,
+      "y": 642.0,
+      "w": 14.7,
+      "h": 32.1,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "TrebuchetMS",
+      "color": "#28ba74",
+      "bold": false,
+      "text": "•"
+    },
+    {
+      "x": 414.6,
+      "y": 643.0,
+      "w": 19.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 433.9,
+      "y": 643.0,
+      "w": 1221.5,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Drive growth with AI-powered upselling, personalized marketing, and quick adaptation to new markets"
+    },
+    {
+      "x": 399.8,
+      "y": 681.7,
+      "w": 13.6,
+      "h": 29.7,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "TrebuchetMS",
+      "color": "#28ba74",
+      "bold": false,
+      "text": "•"
+    },
+    {
+      "x": 413.4,
+      "y": 682.6,
+      "w": 20.5,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 433.9,
+      "y": 682.6,
+      "w": 1235.5,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Prioritize high-impact AI initiatives around large, homogenous resource pools, not just incremental automation "
+    },
+    {
+      "x": 382.8,
+      "y": 772.4,
+      "w": 389.0,
+      "h": 40.3,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "Revenue management"
+    },
+    {
+      "x": 382.8,
+      "y": 814.9,
+      "w": 1099.4,
+      "h": 31.5,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Driving revenue by enhancing personalization and opening new revenue streams, including:"
+    },
+    {
+      "x": 399.8,
+      "y": 853.6,
+      "w": 14.7,
+      "h": 32.1,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "TrebuchetMS",
+      "color": "#28ba74",
+      "bold": false,
+      "text": "•"
+    },
+    {
+      "x": 414.6,
+      "y": 854.5,
+      "w": 19.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 433.9,
+      "y": 854.5,
+      "w": 1133.3,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Improve customer retention and upselling (e.g., churn prediction, targeted retention strategies)"
+    },
+    {
+      "x": 399.8,
+      "y": 893.2,
+      "w": 14.7,
+      "h": 32.1,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "TrebuchetMS",
+      "color": "#28ba74",
+      "bold": false,
+      "text": "•"
+    },
+    {
+      "x": 414.6,
+      "y": 894.1,
+      "w": 19.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 433.9,
+      "y": 894.1,
+      "w": 1027.3,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Enable personalized marketing (e.g., product recommendations, targeted campaigns) "
+    },
+    {
+      "x": 399.8,
+      "y": 932.8,
+      "w": 14.7,
+      "h": 32.1,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "TrebuchetMS",
+      "color": "#28ba74",
+      "bold": false,
+      "text": "•"
+    },
+    {
+      "x": 414.6,
+      "y": 933.7,
+      "w": 19.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 433.9,
+      "y": 933.7,
+      "w": 802.6,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Assist in product innovation and accelerate development processes"
+    },
+    {
+      "x": 1696.4,
+      "y": 237.2,
+      "w": 129.9,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#5f5f5f",
+      "bold": false,
+      "text": "Read more "
+    },
+    {
+      "x": 1668.6,
+      "y": 266.7,
+      "w": 185.3,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#5f5f5f",
+      "bold": false,
+      "text": "about unlocking "
+    },
+    {
+      "x": 1677.2,
+      "y": 296.4,
+      "w": 161.2,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#5f5f5f",
+      "bold": false,
+      "text": "impact with AI"
+    },
+    {
+      "x": 1824.8,
+      "y": 1017.0,
+      "w": 25.0,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#898989",
+      "bold": false,
+      "text": "21"
+    },
+    {
+      "x": 62.6,
+      "y": 1010.6,
+      "w": 370.2,
+      "h": 22.3,
+      "size_pt": 10.0,
+      "size_px": 19.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#7f7f7f",
+      "bold": false,
+      "text": "Source: BCG analysis and client experience"
+    },
+    {
+      "x": 1890.5,
+      "y": 632.5,
+      "w": 15.6,
+      "h": 395.8,
+      "size_pt": 7.0,
+      "size_px": 13.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved."
+    },
+    {
+      "x": 82.8,
+      "y": 329.8,
+      "w": 66.7,
+      "h": 71.8,
+      "size_pt": 32.0,
+      "size_px": 64.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#1"
+    },
+    {
+      "x": 82.8,
+      "y": 582.1,
+      "w": 66.7,
+      "h": 71.8,
+      "size_pt": 32.1,
+      "size_px": 64.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#2"
+    },
+    {
+      "x": 82.8,
+      "y": 834.5,
+      "w": 66.7,
+      "h": 71.8,
+      "size_pt": 32.0,
+      "size_px": 64.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#3"
+    }
+  ],
+  "images": [
+    {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1920.0,
+      "h": 188.3
+    },
+    {
+      "x": 1640.9,
+      "y": 219.1,
+      "w": 233.6,
+      "h": 124.3
+    }
+  ]
+}

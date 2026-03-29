@@ -1,0 +1,400 @@
+{
+  "page": 23,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#f1f2f1",
+      "border": null
+    },
+    {
+      "x": 687.9,
+      "y": 256.7,
+      "w": 0.0,
+      "h": 534.2,
+      "fill": null,
+      "border": "#29b974"
+    }
+  ],
+  "texts": [
+    {
+      "x": 1798.3,
+      "y": 1010.5,
+      "w": 20.7,
+      "h": 22.3,
+      "size_pt": 10.0,
+      "size_px": 19.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#7f7f7f",
+      "bold": false,
+      "text": "23"
+    },
+    {
+      "x": 790.9,
+      "y": 265.9,
+      "w": 846.5,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "The services and materials provided by Boston Consulting Group (BCG) are subject to BCG's Standard Terms "
+    },
+    {
+      "x": 790.9,
+      "y": 287.5,
+      "w": 929.0,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "(a copy of which is available upon request) or such other agreement as may have been previously executed by BCG. BCG"
+    },
+    {
+      "x": 1719.9,
+      "y": 287.5,
+      "w": 5.7,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 1725.6,
+      "y": 287.5,
+      "w": 40.2,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "does "
+    },
+    {
+      "x": 790.9,
+      "y": 309.1,
+      "w": 929.0,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "not provide legal, accounting, or tax advice. The Client is responsible for obtaining independent advice concerning these "
+    },
+    {
+      "x": 790.9,
+      "y": 330.7,
+      "w": 771.4,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "matters. This advice may affect the guidance given by BCG. Further, BCG has made no undertaking "
+    },
+    {
+      "x": 790.9,
+      "y": 352.3,
+      "w": 849.8,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "to update these materials after the date hereof, notwithstanding that such information may become outdated "
+    },
+    {
+      "x": 790.9,
+      "y": 373.9,
+      "w": 106.6,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "or inaccurate."
+    },
+    {
+      "x": 790.9,
+      "y": 417.1,
+      "w": 967.1,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "The materials contained in this presentation are designed for the sole use by the board of directors or senior management of "
+    },
+    {
+      "x": 790.9,
+      "y": 438.7,
+      "w": 930.7,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "the Client and solely for the limited purposes described in the presentation. The materials shall not be copied or given to"
+    },
+    {
+      "x": 1721.6,
+      "y": 438.7,
+      "w": 5.9,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 1727.5,
+      "y": 438.7,
+      "w": 32.3,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "any "
+    },
+    {
+      "x": 790.9,
+      "y": 460.3,
+      "w": 967.2,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "person or entity other than the Client (“Third Party”) without the prior written consent of BCG. These materials serve only as "
+    },
+    {
+      "x": 790.9,
+      "y": 481.9,
+      "w": 930.0,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "the focus for discussion; they are incomplete without the accompanying oral commentary and may not be relied on as a "
+    },
+    {
+      "x": 790.9,
+      "y": 503.5,
+      "w": 958.6,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "stand-alone document. Further, Third Parties may not, and it is unreasonable for any Third Party to, rely on these materials "
+    },
+    {
+      "x": 790.9,
+      "y": 525.1,
+      "w": 877.7,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "for any purpose whatsoever. To the fullest extent permitted by law (and except to the extent otherwise agreed in a"
+    },
+    {
+      "x": 1668.7,
+      "y": 525.1,
+      "w": 5.6,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 1674.2,
+      "y": 525.1,
+      "w": 54.3,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "signed "
+    },
+    {
+      "x": 790.9,
+      "y": 546.7,
+      "w": 961.4,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "writing by BCG), BCG shall have no liability whatsoever to any Third Party, and any Third Party hereby waives any rights and "
+    },
+    {
+      "x": 790.9,
+      "y": 568.3,
+      "w": 947.1,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "claims it may have at any time against BCG with regard to the services, this presentation, or other materials, including the "
+    },
+    {
+      "x": 790.9,
+      "y": 589.9,
+      "w": 956.6,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "accuracy or completeness thereof. Receipt and review of this document shall be deemed agreement with and consideration "
+    },
+    {
+      "x": 790.9,
+      "y": 611.5,
+      "w": 131.8,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "for the foregoing."
+    },
+    {
+      "x": 790.9,
+      "y": 654.8,
+      "w": 958.8,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "BCG does not provide fairness opinions or valuations of market transactions, and these materials should not be relied on or "
+    },
+    {
+      "x": 790.9,
+      "y": 676.4,
+      "w": 967.1,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "construed as such. Further, the financial evaluations, projected market and financial information, and conclusions contained "
+    },
+    {
+      "x": 790.9,
+      "y": 698.0,
+      "w": 962.3,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "in these materials are based upon standard valuation methodologies, are not definitive forecasts, and are not guaranteed by "
+    },
+    {
+      "x": 790.9,
+      "y": 719.6,
+      "w": 880.0,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "BCG. BCG has used public and/or confidential data and assumptions provided to BCG by the Client. BCG has not "
+    },
+    {
+      "x": 790.9,
+      "y": 741.2,
+      "w": 908.5,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "independently verified the data and assumptions used in these analyses. Changes in the underlying data or operating "
+    },
+    {
+      "x": 790.9,
+      "y": 762.8,
+      "w": 476.8,
+      "h": 20.2,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "assumptions will clearly impact the analyses and conclusions."
+    },
+    {
+      "x": 100.7,
+      "y": 463.3,
+      "w": 471.1,
+      "h": 114.2,
+      "size_pt": 51.0,
+      "size_px": 102.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Disclaimer"
+    }
+  ],
+  "images": [
+    {
+      "x": 112.3,
+      "y": 480.5,
+      "w": 458.3,
+      "h": 76.5
+    }
+  ]
+}

@@ -1,0 +1,1178 @@
+{
+  "page": 12,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": -0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 188.3,
+      "fill": "#000000",
+      "border": null
+    },
+    {
+      "x": 1331.5,
+      "y": 186.2,
+      "w": 588.5,
+      "h": 895.4,
+      "fill": "#f1f2f1",
+      "border": null
+    },
+    {
+      "x": 0.0,
+      "y": 189.6,
+      "w": 1920.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#29b974"
+    },
+    {
+      "x": 253.8,
+      "y": 778.5,
+      "w": 1077.7,
+      "h": 166.8,
+      "fill": "#d0f5e2",
+      "border": null
+    },
+    {
+      "x": 253.8,
+      "y": 369.8,
+      "w": 1077.7,
+      "h": 80.4,
+      "fill": "#d0f5e2",
+      "border": null
+    },
+    {
+      "x": 1333.2,
+      "y": 188.9,
+      "w": 302.8,
+      "h": 56.0,
+      "fill": "#29b974",
+      "border": null
+    },
+    {
+      "x": 469.4,
+      "y": 789.9,
+      "w": 0.0,
+      "h": 135.7,
+      "fill": null,
+      "border": "#28b974"
+    },
+    {
+      "x": 677.3,
+      "y": 789.9,
+      "w": 0.0,
+      "h": 135.7,
+      "fill": null,
+      "border": "#28b974"
+    },
+    {
+      "x": 885.2,
+      "y": 789.9,
+      "w": 0.0,
+      "h": 135.7,
+      "fill": null,
+      "border": "#28b974"
+    },
+    {
+      "x": 1093.1,
+      "y": 789.9,
+      "w": 0.0,
+      "h": 135.7,
+      "fill": null,
+      "border": "#28b974"
+    },
+    {
+      "x": 954.8,
+      "y": 482.3,
+      "w": 66.9,
+      "h": 72.5,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 948.3,
+      "y": 475.1,
+      "w": 80.6,
+      "h": 47.5,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 795.5,
+      "y": 483.0,
+      "w": 13.4,
+      "h": 14.0,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 745.4,
+      "y": 516.8,
+      "w": 25.1,
+      "h": 29.1,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 741.9,
+      "y": 499.3,
+      "w": 23.3,
+      "h": 13.4,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 747.1,
+      "y": 499.3,
+      "w": 6.4,
+      "h": 5.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 742.5,
+      "y": 505.1,
+      "w": 14.0,
+      "h": 12.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 746.0,
+      "y": 490.0,
+      "w": 5.8,
+      "h": 7.0,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 739.0,
+      "y": 487.1,
+      "w": 4.1,
+      "h": 8.7,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 802.0,
+      "y": 516.8,
+      "w": 25.1,
+      "h": 29.1,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 797.9,
+      "y": 499.3,
+      "w": 23.3,
+      "h": 13.4,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 803.1,
+      "y": 499.3,
+      "w": 7.0,
+      "h": 5.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 799.0,
+      "y": 505.1,
+      "w": 14.0,
+      "h": 12.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 802.5,
+      "y": 489.4,
+      "w": 5.8,
+      "h": 7.6,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 774.0,
+      "y": 516.8,
+      "w": 24.5,
+      "h": 29.1,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 769.9,
+      "y": 499.3,
+      "w": 23.3,
+      "h": 13.4,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 775.1,
+      "y": 499.3,
+      "w": 6.4,
+      "h": 5.2,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 770.5,
+      "y": 505.1,
+      "w": 14.0,
+      "h": 12.2,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 774.5,
+      "y": 489.4,
+      "w": 5.8,
+      "h": 7.6,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 767.6,
+      "y": 484.7,
+      "w": 12.8,
+      "h": 11.1,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 734.9,
+      "y": 510.4,
+      "w": 7.0,
+      "h": 21.6,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 765.8,
+      "y": 510.4,
+      "w": 4.1,
+      "h": 1.7,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 794.4,
+      "y": 510.4,
+      "w": 4.1,
+      "h": 1.7,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 822.4,
+      "y": 510.4,
+      "w": 4.7,
+      "h": 1.7,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 827.0,
+      "y": 510.4,
+      "w": 1.7,
+      "h": 1.7,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 749.5,
+      "y": 489.4,
+      "w": 1.7,
+      "h": 2.3,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 741.3,
+      "y": 484.7,
+      "w": 9.9,
+      "h": 7.6,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 532.7,
+      "y": 515.5,
+      "w": 41.3,
+      "h": 39.1,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 531.7,
+      "y": 473.5,
+      "w": 82.8,
+      "h": 82.8,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 345.8,
+      "y": 495.2,
+      "w": 40.2,
+      "h": 40.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 330.6,
+      "y": 480.1,
+      "w": 70.0,
+      "h": 69.9,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 1174.4,
+      "y": 471.1,
+      "w": 61.4,
+      "h": 63.6,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 1168.2,
+      "y": 513.1,
+      "w": 73.7,
+      "h": 46.8,
+      "fill": "#28b974",
+      "border": null
+    },
+    {
+      "x": 247.1,
+      "y": 393.4,
+      "w": 21.8,
+      "h": 38.9,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 248.6,
+      "y": 842.4,
+      "w": 21.8,
+      "h": 38.9,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1387.6,
+      "y": 909.9,
+      "w": 454.9,
+      "h": 75.3,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1473.4,
+      "y": 945.7,
+      "w": 283.2,
+      "h": 1.2,
+      "fill": "#5f5f5f",
+      "border": null
+    },
+    {
+      "x": 1476.0,
+      "y": 973.0,
+      "w": 278.2,
+      "h": 1.2,
+      "fill": "#5f5f5f",
+      "border": null
+    }
+  ],
+  "texts": [
+    {
+      "x": 77.0,
+      "y": 38.4,
+      "w": 1530.2,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "When it comes to cost efficiency, executives prioritize supply chain "
+    },
+    {
+      "x": 77.0,
+      "y": 90.2,
+      "w": 1117.5,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "optimization and product portfolio simplification"
+    },
+    {
+      "x": 1378.0,
+      "y": 302.3,
+      "w": 414.5,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "While all companies prioritize "
+    },
+    {
+      "x": 1378.0,
+      "y": 340.7,
+      "w": 373.4,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "cost management, there is "
+    },
+    {
+      "x": 1751.5,
+      "y": 340.7,
+      "w": 46.8,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "no "
+    },
+    {
+      "x": 1378.0,
+      "y": 379.1,
+      "w": 379.8,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "one-size-fits-all approach"
+    },
+    {
+      "x": 1758.0,
+      "y": 379.1,
+      "w": 33.2,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "—"
+    },
+    {
+      "x": 1378.0,
+      "y": 417.6,
+      "w": 417.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "it must be tailored to focus on "
+    },
+    {
+      "x": 1378.0,
+      "y": 456.0,
+      "w": 146.4,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "areas that "
+    },
+    {
+      "x": 1524.0,
+      "y": 456.0,
+      "w": 232.8,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "strengthen the "
+    },
+    {
+      "x": 1378.0,
+      "y": 494.4,
+      "w": 346.7,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "industry’s competitive "
+    },
+    {
+      "x": 1378.0,
+      "y": 532.8,
+      "w": 157.7,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "advantage"
+    },
+    {
+      "x": 1378.0,
+      "y": 609.6,
+      "w": 320.0,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "To remain competitive, "
+    },
+    {
+      "x": 1378.0,
+      "y": 648.0,
+      "w": 424.7,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "executives are prioritizing core "
+    },
+    {
+      "x": 1378.0,
+      "y": 686.4,
+      "w": 158.8,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "operations, "
+    },
+    {
+      "x": 1537.2,
+      "y": 686.4,
+      "w": 278.6,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "optimizing supply "
+    },
+    {
+      "x": 1378.0,
+      "y": 724.8,
+      "w": 383.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "chains, and streamlining "
+    },
+    {
+      "x": 1378.0,
+      "y": 763.2,
+      "w": 401.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "product portfolios for cost "
+    },
+    {
+      "x": 1378.0,
+      "y": 801.6,
+      "w": 147.0,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "efficiency"
+    },
+    {
+      "x": 294.0,
+      "y": 607.0,
+      "w": 149.5,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Supply chain "
+    },
+    {
+      "x": 295.2,
+      "y": 638.2,
+      "w": 140.5,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "optimization"
+    },
+    {
+      "x": 530.0,
+      "y": 607.0,
+      "w": 92.9,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Product "
+    },
+    {
+      "x": 526.8,
+      "y": 638.2,
+      "w": 99.2,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "portfolio "
+    },
+    {
+      "x": 498.3,
+      "y": 669.4,
+      "w": 149.9,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "simplification"
+    },
+    {
+      "x": 725.9,
+      "y": 607.0,
+      "w": 116.6,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Operating "
+    },
+    {
+      "x": 721.3,
+      "y": 638.2,
+      "w": 125.5,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "model and "
+    },
+    {
+      "x": 727.1,
+      "y": 669.4,
+      "w": 114.4,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "workforce "
+    },
+    {
+      "x": 716.1,
+      "y": 700.6,
+      "w": 129.3,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "productivity"
+    },
+    {
+      "x": 934.1,
+      "y": 607.0,
+      "w": 115.5,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Customer "
+    },
+    {
+      "x": 950.4,
+      "y": 638.2,
+      "w": 83.0,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "service "
+    },
+    {
+      "x": 930.0,
+      "y": 669.4,
+      "w": 116.8,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "operations"
+    },
+    {
+      "x": 1174.8,
+      "y": 607.0,
+      "w": 65.5,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Sales "
+    },
+    {
+      "x": 1183.2,
+      "y": 638.2,
+      "w": 48.7,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "and "
+    },
+    {
+      "x": 1147.4,
+      "y": 669.4,
+      "w": 113.5,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "marketing"
+    },
+    {
+      "x": 62.6,
+      "y": 791.8,
+      "w": 142.9,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "Industries "
+    },
+    {
+      "x": 62.6,
+      "y": 825.4,
+      "w": 160.8,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "where each "
+    },
+    {
+      "x": 62.6,
+      "y": 859.0,
+      "w": 180.8,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "cost action is "
+    },
+    {
+      "x": 62.6,
+      "y": 892.6,
+      "w": 153.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "top-of-mind"
+    },
+    {
+      "x": 303.2,
+      "y": 791.8,
+      "w": 131.6,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Consumer "
+    },
+    {
+      "x": 301.5,
+      "y": 837.4,
+      "w": 127.8,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Industrials"
+    },
+    {
+      "x": 513.6,
+      "y": 791.8,
+      "w": 126.2,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Insurance "
+    },
+    {
+      "x": 504.4,
+      "y": 837.4,
+      "w": 137.1,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Technology"
+    },
+    {
+      "x": 525.6,
+      "y": 882.9,
+      "w": 95.3,
+      "h": 31.5,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Finance"
+    },
+    {
+      "x": 716.9,
+      "y": 791.8,
+      "w": 127.8,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Industrials"
+    },
+    {
+      "x": 710.9,
+      "y": 837.4,
+      "w": 139.8,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Health care"
+    },
+    {
+      "x": 928.9,
+      "y": 791.8,
+      "w": 126.2,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Insurance "
+    },
+    {
+      "x": 940.9,
+      "y": 837.4,
+      "w": 95.3,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Finance"
+    },
+    {
+      "x": 1135.6,
+      "y": 791.8,
+      "w": 137.5,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Technology"
+    },
+    {
+      "x": 1142.1,
+      "y": 837.4,
+      "w": 124.7,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Consumer"
+    },
+    {
+      "x": 336.4,
+      "y": 380.0,
+      "w": 58.1,
+      "h": 62.6,
+      "size_pt": 28.0,
+      "size_px": 55.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#1"
+    },
+    {
+      "x": 544.1,
+      "y": 380.0,
+      "w": 58.1,
+      "h": 62.6,
+      "size_pt": 28.0,
+      "size_px": 55.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#2"
+    },
+    {
+      "x": 751.9,
+      "y": 380.0,
+      "w": 58.1,
+      "h": 62.6,
+      "size_pt": 28.0,
+      "size_px": 55.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#3"
+    },
+    {
+      "x": 959.6,
+      "y": 380.0,
+      "w": 58.1,
+      "h": 62.6,
+      "size_pt": 28.0,
+      "size_px": 55.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#4"
+    },
+    {
+      "x": 1175.3,
+      "y": 380.0,
+      "w": 58.1,
+      "h": 62.6,
+      "size_pt": 28.0,
+      "size_px": 55.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#28ba74",
+      "bold": true,
+      "text": "#5"
+    },
+    {
+      "x": 62.6,
+      "y": 1010.6,
+      "w": 772.1,
+      "h": 22.3,
+      "size_pt": 10.0,
+      "size_px": 19.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#7f7f7f",
+      "bold": false,
+      "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis"
+    },
+    {
+      "x": 1890.5,
+      "y": 632.5,
+      "w": 15.6,
+      "h": 395.8,
+      "size_pt": 7.0,
+      "size_px": 13.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved."
+    },
+    {
+      "x": 1824.8,
+      "y": 1017.0,
+      "w": 25.0,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#898989",
+      "bold": false,
+      "text": "12"
+    },
+    {
+      "x": 77.0,
+      "y": 232.2,
+      "w": 1110.7,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "What key cost drivers are executives prioritizing for optimization in 2025?"
+    },
+    {
+      "x": 62.6,
+      "y": 363.7,
+      "w": 165.0,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "Top ranking "
+    },
+    {
+      "x": 62.6,
+      "y": 397.3,
+      "w": 92.3,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "across "
+    },
+    {
+      "x": 62.6,
+      "y": 430.9,
+      "w": 134.5,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "industries"
+    },
+    {
+      "x": 1473.6,
+      "y": 920.5,
+      "w": 290.0,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#5f5f5f",
+      "bold": false,
+      "text": "Read more about our latest "
+    },
+    {
+      "x": 1476.2,
+      "y": 947.9,
+      "w": 278.6,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#5f5f5f",
+      "bold": false,
+      "text": "thinking on cost excellence"
+    }
+  ],
+  "images": [
+    {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1920.0,
+      "h": 188.3
+    },
+    {
+      "x": 1385.4,
+      "y": 907.7,
+      "w": 459.4,
+      "h": 79.8
+    }
+  ]
+}

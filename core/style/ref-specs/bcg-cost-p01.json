@@ -1,0 +1,166 @@
+{
+  "page": 1,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": -0.8,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#000000",
+      "border": null
+    },
+    {
+      "x": 614.2,
+      "y": 367.0,
+      "w": 1187.0,
+      "h": 477.8,
+      "fill": "#a8efb8",
+      "border": null
+    },
+    {
+      "x": 126.7,
+      "y": 0.0,
+      "w": 487.5,
+      "h": 361.5,
+      "fill": "#a8efb8",
+      "border": null
+    },
+    {
+      "x": 126.7,
+      "y": 367.0,
+      "w": 1674.5,
+      "h": 0.0,
+      "fill": null,
+      "border": "#0d3d1b"
+    },
+    {
+      "x": 220.5,
+      "y": 80.9,
+      "w": 133.6,
+      "h": 54.1,
+      "fill": "#0d3d1b",
+      "border": null
+    },
+    {
+      "x": 617.4,
+      "y": 809.4,
+      "w": 562.3,
+      "h": 91.6,
+      "fill": "#187955",
+      "border": null
+    },
+    {
+      "x": 614.2,
+      "y": 0.1,
+      "w": 0.0,
+      "h": 901.3,
+      "fill": null,
+      "border": "#0d3d1b"
+    }
+  ],
+  "texts": [
+    {
+      "x": 635.5,
+      "y": 438.2,
+      "w": 882.5,
+      "h": 65.0,
+      "size_pt": 29.0,
+      "size_px": 58.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#0e3e1b",
+      "bold": true,
+      "text": "BCG's Guide to Cost and Growth"
+    },
+    {
+      "x": 215.8,
+      "y": 198.3,
+      "w": 198.9,
+      "h": 49.2,
+      "size_pt": 22.0,
+      "size_px": 43.9,
+      "font": "HendersonBCGSerif-Regula",
+      "color": "#0e3e1b",
+      "bold": false,
+      "text": "Executive "
+    },
+    {
+      "x": 215.8,
+      "y": 251.1,
+      "w": 239.4,
+      "h": 49.2,
+      "size_pt": 22.0,
+      "size_px": 43.9,
+      "font": "HendersonBCGSerif-Regula",
+      "color": "#0e3e1b",
+      "bold": false,
+      "text": "Perspectives"
+    },
+    {
+      "x": 640.4,
+      "y": 556.5,
+      "w": 746.9,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Strategic Insights for Navigating "
+    },
+    {
+      "x": 640.4,
+      "y": 608.3,
+      "w": 504.2,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Economic Uncertainty"
+    },
+    {
+      "x": 662.1,
+      "y": 716.7,
+      "w": 226.1,
+      "h": 44.9,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "HendersonBCGSerif-Italic",
+      "color": "#0e3e1b",
+      "bold": false,
+      "text": "January 2025"
+    }
+  ],
+  "images": [
+    {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1920.0,
+      "h": 1079.9
+    },
+    {
+      "x": 607.4,
+      "y": 534.7,
+      "w": 820.3,
+      "h": 168.7
+    }
+  ]
+}

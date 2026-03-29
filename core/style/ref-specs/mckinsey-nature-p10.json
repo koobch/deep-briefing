@@ -1,0 +1,412 @@
+{
+  "page": 10,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 63.4,
+      "y": 868.8,
+      "w": 1793.3,
+      "h": 147.4,
+      "fill": "#d0d0d0",
+      "border": null
+    },
+    {
+      "x": 831.6,
+      "y": 401.0,
+      "w": 267.6,
+      "h": 267.6,
+      "fill": "#005479",
+      "border": null
+    },
+    {
+      "x": 727.2,
+      "y": 229.9,
+      "w": 267.6,
+      "h": 267.6,
+      "fill": "#00a9f4",
+      "border": null
+    },
+    {
+      "x": 935.8,
+      "y": 229.9,
+      "w": 267.8,
+      "h": 267.6,
+      "fill": "#c9eeff",
+      "border": null
+    },
+    {
+      "x": 837.6,
+      "y": 401.0,
+      "w": 151.2,
+      "h": 100.6,
+      "fill": "#007eb7",
+      "border": null
+    },
+    {
+      "x": 941.8,
+      "y": 401.0,
+      "w": 151.2,
+      "h": 100.6,
+      "fill": "#5fceff",
+      "border": null
+    },
+    {
+      "x": 935.8,
+      "y": 275.5,
+      "w": 59.0,
+      "h": 174.0,
+      "fill": "#94deff",
+      "border": null
+    },
+    {
+      "x": 943.2,
+      "y": 403.2,
+      "w": 47.3,
+      "h": 46.6,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 78.2,
+      "y": 880.1,
+      "w": 69.1,
+      "h": 69.1,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 93.2,
+      "y": 915.1,
+      "w": 4.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 99.1,
+      "y": 901.2,
+      "w": 2.7,
+      "h": 2.8,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 112.9,
+      "y": 895.6,
+      "w": 0.0,
+      "h": 3.9,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 124.0,
+      "y": 901.2,
+      "w": 2.7,
+      "h": 2.8,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 128.6,
+      "y": 915.1,
+      "w": 4.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 101.8,
+      "y": 904.0,
+      "w": 22.2,
+      "h": 26.8,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 108.0,
+      "y": 933.9,
+      "w": 9.8,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    }
+  ],
+  "texts": [
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1812.9,
+      "y": 1025.1,
+      "w": 20.1,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "10"
+    },
+    {
+      "x": 87.4,
+      "y": 30.7,
+      "w": 1624.3,
+      "h": 56.6,
+      "size_pt": 25.0,
+      "size_px": 49.9,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "TNFD and SBTN are tools that fit into a nature strategy helping "
+    },
+    {
+      "x": 87.4,
+      "y": 86.7,
+      "w": 1515.3,
+      "h": 56.6,
+      "size_pt": 25.0,
+      "size_px": 49.9,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "businesses to create value, manage impact, and reduce risk"
+    },
+    {
+      "x": 148.6,
+      "y": 338.5,
+      "w": 462.7,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Identify most important levers to "
+    },
+    {
+      "x": 120.2,
+      "y": 376.8,
+      "w": 491.2,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "achieve better nature impacts and "
+    },
+    {
+      "x": 308.0,
+      "y": 415.3,
+      "w": 294.6,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "drive winning returns"
+    },
+    {
+      "x": 321.4,
+      "y": 276.2,
+      "w": 281.0,
+      "h": 49.8,
+      "size_pt": 22.0,
+      "size_px": 43.9,
+      "font": "Georgia-Bold",
+      "color": "#00a9f4",
+      "bold": true,
+      "text": "Create value"
+    },
+    {
+      "x": 1317.5,
+      "y": 345.8,
+      "w": 485.8,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Identify areas of nature where the "
+    },
+    {
+      "x": 1317.5,
+      "y": 384.2,
+      "w": 494.4,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "company has impact and potential "
+    },
+    {
+      "x": 1317.5,
+      "y": 422.6,
+      "w": 266.8,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "to mitigate impacts"
+    },
+    {
+      "x": 1317.5,
+      "y": 276.2,
+      "w": 345.5,
+      "h": 49.8,
+      "size_pt": 22.0,
+      "size_px": 43.9,
+      "font": "Georgia-Bold",
+      "color": "#caefff",
+      "bold": true,
+      "text": "Manage impact"
+    },
+    {
+      "x": 159.8,
+      "y": 882.5,
+      "w": 66.7,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Key "
+    },
+    {
+      "x": 159.8,
+      "y": 920.9,
+      "w": 226.8,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "considerations"
+    },
+    {
+      "x": 479.5,
+      "y": 876.9,
+      "w": 1371.1,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Nature is deeply related to a company’s core business and needs to be considered across the whole enterprise"
+    },
+    {
+      "x": 479.5,
+      "y": 922.5,
+      "w": 1289.8,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Global best practice metrics and frameworks (i.e., TNFD, SBTN) provide clear next steps to unlock value"
+    },
+    {
+      "x": 479.5,
+      "y": 968.1,
+      "w": 1074.1,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Companies can act after disclosure to transform their business and create further value"
+    },
+    {
+      "x": 615.7,
+      "y": 735.2,
+      "w": 708.2,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Screen exposure to nature-related transition risks "
+    },
+    {
+      "x": 625.1,
+      "y": 773.7,
+      "w": 689.2,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "(regulation, reputational) or physical risks (water "
+    },
+    {
+      "x": 642.6,
+      "y": 812.1,
+      "w": 645.2,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "stress, pollination), thereby building resilience"
+    },
+    {
+      "x": 831.5,
+      "y": 682.6,
+      "w": 267.9,
+      "h": 49.8,
+      "size_pt": 22.0,
+      "size_px": 43.9,
+      "font": "Georgia-Bold",
+      "color": "#0074a8",
+      "bold": true,
+      "text": "Reduce risk"
+    }
+  ],
+  "images": [
+    {
+      "x": 77.7,
+      "y": 879.6,
+      "w": 6.3,
+      "h": -889.1
+    }
+  ]
+}

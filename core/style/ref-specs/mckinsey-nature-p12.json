@@ -1,0 +1,768 @@
+{
+  "page": 12,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 87.4,
+      "y": 274.3,
+      "w": 1144.1,
+      "h": 0.5,
+      "fill": null,
+      "border": "#7e7f7e"
+    },
+    {
+      "x": 87.4,
+      "y": 627.1,
+      "w": 1144.1,
+      "h": 0.5,
+      "fill": null,
+      "border": "#7e7f7e"
+    },
+    {
+      "x": 87.4,
+      "y": 643.9,
+      "w": 83.5,
+      "h": 83.5,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 117.8,
+      "y": 662.0,
+      "w": 23.0,
+      "h": 6.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 110.6,
+      "y": 665.2,
+      "w": 37.3,
+      "h": 44.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 117.1,
+      "y": 674.5,
+      "w": 6.3,
+      "h": 6.3,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 675.4,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 679.8,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 117.1,
+      "y": 686.0,
+      "w": 6.3,
+      "h": 6.3,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 686.9,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 691.3,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 117.1,
+      "y": 697.5,
+      "w": 6.3,
+      "h": 6.3,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 698.4,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 127.1,
+      "y": 702.7,
+      "w": 14.4,
+      "h": 0.0,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 87.4,
+      "y": 778.1,
+      "w": 83.5,
+      "h": 83.5,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 142.9,
+      "y": 805.8,
+      "w": 10.1,
+      "h": 10.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 105.5,
+      "y": 824.0,
+      "w": 10.1,
+      "h": 10.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 130.4,
+      "y": 824.0,
+      "w": 10.1,
+      "h": 10.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 118.0,
+      "y": 805.8,
+      "w": 10.1,
+      "h": 10.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 120.4,
+      "y": 808.8,
+      "w": 5.1,
+      "h": 4.4,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 112.3,
+      "y": 815.5,
+      "w": 8.9,
+      "h": 8.9,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 137.3,
+      "y": 815.5,
+      "w": 8.9,
+      "h": 8.9,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 124.8,
+      "y": 815.5,
+      "w": 8.9,
+      "h": 8.9,
+      "fill": null,
+      "border": "#041c2c"
+    },
+    {
+      "x": 87.4,
+      "y": 912.2,
+      "w": 83.5,
+      "h": 83.5,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 106.2,
+      "y": 933.0,
+      "w": 9.8,
+      "h": 9.5,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 142.6,
+      "y": 933.0,
+      "w": 9.8,
+      "h": 9.5,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 111.2,
+      "y": 951.1,
+      "w": 35.9,
+      "h": 4.0,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 105.5,
+      "y": 944.8,
+      "w": 21.0,
+      "h": 33.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 132.0,
+      "y": 944.8,
+      "w": 21.1,
+      "h": 33.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 120.8,
+      "y": 941.9,
+      "w": 16.9,
+      "h": 6.1,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 124.7,
+      "y": 930.4,
+      "w": 9.2,
+      "h": 9.2,
+      "fill": "#ffffff",
+      "border": "#041c2c"
+    },
+    {
+      "x": 1284.0,
+      "y": 272.2,
+      "w": 0.0,
+      "h": 706.6,
+      "fill": null,
+      "border": "#757575"
+    }
+  ],
+  "texts": [
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1812.9,
+      "y": 1025.1,
+      "w": 20.1,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "12"
+    },
+    {
+      "x": 87.4,
+      "y": 30.7,
+      "w": 1567.8,
+      "h": 56.6,
+      "size_pt": 25.0,
+      "size_px": 49.9,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "The TNFD recommendations are the key global reference for "
+    },
+    {
+      "x": 87.4,
+      "y": 86.7,
+      "w": 653.2,
+      "h": 56.6,
+      "size_pt": 25.0,
+      "size_px": 49.9,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "nature-related disclosure"
+    },
+    {
+      "x": 87.4,
+      "y": 289.6,
+      "w": 303.2,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "The TNFD is a set of "
+    },
+    {
+      "x": 391.0,
+      "y": 289.6,
+      "w": 781.6,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "risk management and disclosure recommendations"
+    },
+    {
+      "x": 1172.6,
+      "y": 289.6,
+      "w": 10.1,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": " "
+    },
+    {
+      "x": 1182.6,
+      "y": 289.6,
+      "w": 46.1,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "for "
+    },
+    {
+      "x": 87.4,
+      "y": 328.0,
+      "w": 612.2,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "organizations to report and act on evolving "
+    },
+    {
+      "x": 699.5,
+      "y": 328.0,
+      "w": 452.8,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "nature-related dependencies, "
+    },
+    {
+      "x": 87.4,
+      "y": 366.4,
+      "w": 501.0,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "impacts, risks, and opportunities"
+    },
+    {
+      "x": 87.4,
+      "y": 428.6,
+      "w": 311.9,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "TNFD is mobilized by "
+    },
+    {
+      "x": 399.9,
+      "y": 428.6,
+      "w": 337.6,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "40 taskforce members"
+    },
+    {
+      "x": 737.6,
+      "y": 428.6,
+      "w": 276.1,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": ", representing over "
+    },
+    {
+      "x": 1013.9,
+      "y": 428.2,
+      "w": 118.1,
+      "h": 36.2,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Georgia-Bold",
+      "color": "#00a9f4",
+      "bold": true,
+      "text": "US$20 "
+    },
+    {
+      "x": 87.4,
+      "y": 466.6,
+      "w": 124.5,
+      "h": 36.3,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "Georgia-Bold",
+      "color": "#00a9f4",
+      "bold": true,
+      "text": "trillion "
+    },
+    {
+      "x": 212.0,
+      "y": 466.9,
+      "w": 412.3,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "in assets under management"
+    },
+    {
+      "x": 87.4,
+      "y": 219.4,
+      "w": 284.3,
+      "h": 44.7,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "What is TNFD?"
+    },
+    {
+      "x": 1313.3,
+      "y": 319.8,
+      "w": 158.8,
+      "h": 81.6,
+      "size_pt": 36.0,
+      "size_px": 72.0,
+      "font": "Georgia-Bold",
+      "color": "#00a9f4",
+      "bold": true,
+      "text": "320 "
+    },
+    {
+      "x": 1471.9,
+      "y": 353.2,
+      "w": 244.3,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Early Adopter "
+    },
+    {
+      "x": 1313.3,
+      "y": 404.8,
+      "w": 254.3,
+      "h": 40.2,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "organizations, "
+    },
+    {
+      "x": 1567.2,
+      "y": 404.8,
+      "w": 224.1,
+      "h": 40.2,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "who intend to "
+    },
+    {
+      "x": 1313.3,
+      "y": 448.0,
+      "w": 523.8,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "start making disclosures by 2024"
+    },
+    {
+      "x": 1313.3,
+      "y": 594.6,
+      "w": 189.6,
+      "h": 81.7,
+      "size_pt": 36.0,
+      "size_px": 72.0,
+      "font": "Georgia-Bold",
+      "color": "#00a9f4",
+      "bold": true,
+      "text": "$4tn "
+    },
+    {
+      "x": 1502.9,
+      "y": 628.0,
+      "w": 225.8,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "in market cap "
+    },
+    {
+      "x": 1313.3,
+      "y": 679.6,
+      "w": 487.7,
+      "h": 40.2,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "represented by early adopters "
+    },
+    {
+      "x": 1313.3,
+      "y": 722.9,
+      "w": 59.9,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "and"
+    },
+    {
+      "x": 1373.1,
+      "y": 722.9,
+      "w": 245.6,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": " $14tn in AUM "
+    },
+    {
+      "x": 1620.0,
+      "y": 722.9,
+      "w": 147.7,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "for asset "
+    },
+    {
+      "x": 1313.3,
+      "y": 766.1,
+      "w": 305.5,
+      "h": 40.1,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "owners / managers"
+    },
+    {
+      "x": 87.4,
+      "y": 570.0,
+      "w": 321.9,
+      "h": 44.7,
+      "size_pt": 20.1,
+      "size_px": 40.1,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "What does it do?"
+    },
+    {
+      "x": 189.8,
+      "y": 646.3,
+      "w": 578.5,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Provide disclosure recommendations "
+    },
+    {
+      "x": 769.7,
+      "y": 646.3,
+      "w": 395.0,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "for corporates and financial "
+    },
+    {
+      "x": 189.8,
+      "y": 684.6,
+      "w": 151.2,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "institutions"
+    },
+    {
+      "x": 189.8,
+      "y": 780.5,
+      "w": 273.3,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Publish guidance "
+    },
+    {
+      "x": 463.7,
+      "y": 780.5,
+      "w": 731.9,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "on implementation and technical supplements, with "
+    },
+    {
+      "x": 189.8,
+      "y": 818.9,
+      "w": 935.5,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "insights on nature dependencies, impacts, risks, and opportunities"
+    },
+    {
+      "x": 189.8,
+      "y": 914.7,
+      "w": 535.6,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Ensure alignment and consistency "
+    },
+    {
+      "x": 727.0,
+      "y": 914.7,
+      "w": 509.7,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "with international bodies to become "
+    },
+    {
+      "x": 189.8,
+      "y": 953.1,
+      "w": 688.8,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "the common standard of nature-related reporting"
+    }
+  ],
+  "images": [
+    {
+      "x": 1531.9,
+      "y": 201.4,
+      "w": 300.7,
+      "h": 57.8
+    }
+  ]
+}

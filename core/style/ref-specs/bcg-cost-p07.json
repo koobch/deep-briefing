@@ -1,0 +1,1094 @@
+{
+  "page": 7,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": -0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 188.3,
+      "fill": "#000000",
+      "border": null
+    },
+    {
+      "x": 1223.2,
+      "y": 189.8,
+      "w": 700.7,
+      "h": 890.2,
+      "fill": "#f1f2f1",
+      "border": null
+    },
+    {
+      "x": 0.0,
+      "y": 189.6,
+      "w": 1920.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#29b974"
+    },
+    {
+      "x": 248.5,
+      "y": 334.5,
+      "w": 297.0,
+      "h": 585.0,
+      "fill": "#cae1ed",
+      "border": null
+    },
+    {
+      "x": 570.8,
+      "y": 334.5,
+      "w": 297.1,
+      "h": 585.0,
+      "fill": "#d5f0ea",
+      "border": null
+    },
+    {
+      "x": 266.5,
+      "y": 389.0,
+      "w": 261.0,
+      "h": 0.0,
+      "fill": null,
+      "border": "#295e7d"
+    },
+    {
+      "x": 1225.5,
+      "y": 187.6,
+      "w": 397.4,
+      "h": 73.6,
+      "fill": "#29b974",
+      "border": null
+    },
+    {
+      "x": 252.3,
+      "y": 454.0,
+      "w": 224.0,
+      "h": 456.3,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 266.5,
+      "y": 483.6,
+      "w": 190.0,
+      "h": 342.0,
+      "fill": "#c5d3dc",
+      "border": null
+    },
+    {
+      "x": 266.5,
+      "y": 538.8,
+      "w": 196.7,
+      "h": 342.0,
+      "fill": "#285f7d",
+      "border": null
+    },
+    {
+      "x": 266.5,
+      "y": 467.0,
+      "w": 0.0,
+      "h": 430.2,
+      "fill": null,
+      "border": "#daebf3"
+    },
+    {
+      "x": 275.0,
+      "y": 403.8,
+      "w": 29.5,
+      "h": 22.0,
+      "fill": "#c5d3dc",
+      "border": null
+    },
+    {
+      "x": 275.0,
+      "y": 435.8,
+      "w": 29.5,
+      "h": 22.0,
+      "fill": "#285f7d",
+      "border": null
+    },
+    {
+      "x": 574.3,
+      "y": 454.0,
+      "w": 220.2,
+      "h": 456.3,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 588.5,
+      "y": 483.6,
+      "w": 156.0,
+      "h": 342.0,
+      "fill": "#bad0c6",
+      "border": null
+    },
+    {
+      "x": 588.5,
+      "y": 538.8,
+      "w": 192.9,
+      "h": 342.0,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 588.5,
+      "y": 467.0,
+      "w": 0.0,
+      "h": 430.2,
+      "fill": null,
+      "border": "#e1f5ef"
+    },
+    {
+      "x": 597.3,
+      "y": 403.8,
+      "w": 29.5,
+      "h": 22.0,
+      "fill": "#bad0c6",
+      "border": null
+    },
+    {
+      "x": 597.3,
+      "y": 435.8,
+      "w": 29.5,
+      "h": 22.0,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 880.8,
+      "y": 454.0,
+      "w": 220.0,
+      "h": 457.3,
+      "fill": null,
+      "border": "#000000"
+    },
+    {
+      "x": 895.0,
+      "y": 483.6,
+      "w": 185.7,
+      "h": 342.7,
+      "fill": "#ebc5d0",
+      "border": null
+    },
+    {
+      "x": 895.0,
+      "y": 538.8,
+      "w": 192.7,
+      "h": 343.0,
+      "fill": "#6d352c",
+      "border": null
+    },
+    {
+      "x": 895.0,
+      "y": 467.0,
+      "w": 0.0,
+      "h": 431.2,
+      "fill": null,
+      "border": "#f8e6e6"
+    },
+    {
+      "x": 898.8,
+      "y": 403.8,
+      "w": 29.5,
+      "h": 22.0,
+      "fill": "#ebc5d0",
+      "border": null
+    },
+    {
+      "x": 898.8,
+      "y": 435.8,
+      "w": 29.5,
+      "h": 22.0,
+      "fill": "#6d352c",
+      "border": null
+    },
+    {
+      "x": 588.8,
+      "y": 389.0,
+      "w": 261.1,
+      "h": 0.0,
+      "fill": null,
+      "border": "#04512c"
+    },
+    {
+      "x": 895.0,
+      "y": 389.0,
+      "w": 261.1,
+      "h": 0.0,
+      "fill": null,
+      "border": "#670e30"
+    },
+    {
+      "x": 306.0,
+      "y": 901.0,
+      "w": 0.0,
+      "h": 32.8,
+      "fill": null,
+      "border": "#285f7d"
+    },
+    {
+      "x": 299.3,
+      "y": 887.8,
+      "w": 13.2,
+      "h": 13.2,
+      "fill": null,
+      "border": "#285f7d"
+    },
+    {
+      "x": 608.7,
+      "y": 901.0,
+      "w": 0.0,
+      "h": 32.8,
+      "fill": null,
+      "border": "#04512c"
+    },
+    {
+      "x": 602.1,
+      "y": 887.8,
+      "w": 13.2,
+      "h": 13.2,
+      "fill": null,
+      "border": "#04512c"
+    },
+    {
+      "x": 302.3,
+      "y": 890.8,
+      "w": 7.2,
+      "h": 7.2,
+      "fill": "#285f7d",
+      "border": null
+    },
+    {
+      "x": 605.1,
+      "y": 890.8,
+      "w": 7.2,
+      "h": 7.2,
+      "fill": "#04512c",
+      "border": null
+    },
+    {
+      "x": 891.7,
+      "y": 340.1,
+      "w": 313.4,
+      "h": 588.8,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 247.0,
+      "y": 928.0,
+      "w": 651.3,
+      "h": 71.2,
+      "fill": "#ffffff",
+      "border": null
+    },
+    {
+      "x": 1279.6,
+      "y": 312.7,
+      "w": 563.7,
+      "h": 676.8,
+      "fill": "#f1f2f1",
+      "border": null
+    }
+  ],
+  "texts": [
+    {
+      "x": 77.0,
+      "y": 39.6,
+      "w": 1591.5,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "North American and European executives are increasingly concerned "
+    },
+    {
+      "x": 77.0,
+      "y": 91.5,
+      "w": 521.1,
+      "h": 53.8,
+      "size_pt": 24.0,
+      "size_px": 48.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "about margin pressure"
+    },
+    {
+      "x": 298.9,
+      "y": 346.2,
+      "w": 196.4,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#285f7e",
+      "bold": true,
+      "text": "North America"
+    },
+    {
+      "x": 1837.3,
+      "y": 1017.0,
+      "w": 12.5,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#898989",
+      "bold": false,
+      "text": "7"
+    },
+    {
+      "x": 1890.2,
+      "y": 634.0,
+      "w": 15.6,
+      "h": 395.8,
+      "size_pt": 7.0,
+      "size_px": 13.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#575757",
+      "bold": false,
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved."
+    },
+    {
+      "x": 1837.3,
+      "y": 1017.0,
+      "w": 12.5,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#898989",
+      "bold": false,
+      "text": "7"
+    },
+    {
+      "x": 77.0,
+      "y": 232.2,
+      "w": 969.7,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "What top macroeconomic factors do executives expect to affect "
+    },
+    {
+      "x": 77.0,
+      "y": 270.6,
+      "w": 550.1,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#03522d",
+      "bold": true,
+      "text": "their company performance in 2025?"
+    },
+    {
+      "x": 62.6,
+      "y": 1012.4,
+      "w": 772.8,
+      "h": 22.3,
+      "size_pt": 10.0,
+      "size_px": 19.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#7f7f7f",
+      "bold": false,
+      "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis"
+    },
+    {
+      "x": 62.6,
+      "y": 1034.0,
+      "w": 544.7,
+      "h": 22.4,
+      "size_pt": 10.0,
+      "size_px": 20.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#7f7f7f",
+      "bold": false,
+      "text": "1. Asia-Pacific includes India, Australia, Japan, and South Korea"
+    },
+    {
+      "x": 471.3,
+      "y": 547.3,
+      "w": 57.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "29%"
+    },
+    {
+      "x": 389.8,
+      "y": 690.8,
+      "w": 57.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "17%"
+    },
+    {
+      "x": 376.3,
+      "y": 834.0,
+      "w": 57.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "15%"
+    },
+    {
+      "x": 312.5,
+      "y": 403.7,
+      "w": 139.9,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Pre-US election"
+    },
+    {
+      "x": 312.5,
+      "y": 435.8,
+      "w": 149.1,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Post-US election"
+    },
+    {
+      "x": 789.6,
+      "y": 547.3,
+      "w": 57.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "26%"
+    },
+    {
+      "x": 707.9,
+      "y": 690.8,
+      "w": 57.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "15%"
+    },
+    {
+      "x": 715.3,
+      "y": 834.0,
+      "w": 57.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "16%"
+    },
+    {
+      "x": 634.8,
+      "y": 403.7,
+      "w": 139.9,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Pre-US election"
+    },
+    {
+      "x": 634.8,
+      "y": 435.8,
+      "w": 149.1,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Post-US election"
+    },
+    {
+      "x": 1095.9,
+      "y": 547.5,
+      "w": 57.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 32.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "27%"
+    },
+    {
+      "x": 1067.4,
+      "y": 691.3,
+      "w": 57.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "23%"
+    },
+    {
+      "x": 1031.6,
+      "y": 835.1,
+      "w": 57.3,
+      "h": 35.8,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "18%"
+    },
+    {
+      "x": 936.4,
+      "y": 403.7,
+      "w": 139.9,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Pre-US election"
+    },
+    {
+      "x": 936.4,
+      "y": 435.8,
+      "w": 149.1,
+      "h": 23.7,
+      "size_pt": 10.6,
+      "size_px": 21.1,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Post-US election"
+    },
+    {
+      "x": 672.0,
+      "y": 346.2,
+      "w": 95.0,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#05512c",
+      "bold": true,
+      "text": "Europe"
+    },
+    {
+      "x": 977.2,
+      "y": 346.2,
+      "w": 153.9,
+      "h": 31.4,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#670f31",
+      "bold": true,
+      "text": "Asia-Pacific"
+    },
+    {
+      "x": 1131.3,
+      "y": 346.3,
+      "w": 9.7,
+      "h": 21.0,
+      "size_pt": 9.4,
+      "size_px": 18.7,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#670f31",
+      "bold": true,
+      "text": "1"
+    },
+    {
+      "x": 258.4,
+      "y": 934.3,
+      "w": 378.7,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Over 60% of executives expressed "
+    },
+    {
+      "x": 637.4,
+      "y": 934.3,
+      "w": 245.4,
+      "h": 29.1,
+      "size_pt": 13.0,
+      "size_px": 26.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "increased concerns "
+    },
+    {
+      "x": 258.4,
+      "y": 965.6,
+      "w": 152.8,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "about tariffs"
+    },
+    {
+      "x": 411.3,
+      "y": 965.6,
+      "w": 470.7,
+      "h": 29.0,
+      "size_pt": 13.0,
+      "size_px": 25.9,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": ", following the recent US election outcome"
+    },
+    {
+      "x": 1279.7,
+      "y": 314.5,
+      "w": 542.1,
+      "h": 33.7,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "North American and European executives "
+    },
+    {
+      "x": 1279.7,
+      "y": 350.6,
+      "w": 49.1,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "are "
+    },
+    {
+      "x": 1328.7,
+      "y": 350.6,
+      "w": 427.5,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "increasingly concerned about "
+    },
+    {
+      "x": 1279.7,
+      "y": 386.6,
+      "w": 362.8,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "margins and profitability "
+    },
+    {
+      "x": 1642.4,
+      "y": 386.6,
+      "w": 205.5,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "as high interest "
+    },
+    {
+      "x": 1279.7,
+      "y": 422.6,
+      "w": 466.2,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "rates, inflation, potential changes in "
+    },
+    {
+      "x": 1279.7,
+      "y": 458.6,
+      "w": 534.9,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "regulations, and tariffs intensify pressures"
+    },
+    {
+      "x": 1279.7,
+      "y": 518.6,
+      "w": 339.4,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "Protectionist measures "
+    },
+    {
+      "x": 1619.1,
+      "y": 518.6,
+      "w": 183.4,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "introduced by "
+    },
+    {
+      "x": 1279.7,
+      "y": 554.6,
+      "w": 545.4,
+      "h": 33.7,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "the recently elected US government could "
+    },
+    {
+      "x": 1279.7,
+      "y": 590.7,
+      "w": 452.1,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "reshape global trade dynamics, "
+    },
+    {
+      "x": 1279.7,
+      "y": 626.7,
+      "w": 515.6,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "reducing trade flows and disrupting "
+    },
+    {
+      "x": 1279.7,
+      "y": 662.7,
+      "w": 302.9,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "supply chain stability"
+    },
+    {
+      "x": 1582.7,
+      "y": 662.7,
+      "w": 188.0,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "—even before "
+    },
+    {
+      "x": 1279.7,
+      "y": 698.7,
+      "w": 509.1,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "considering potential retaliatory actions"
+    },
+    {
+      "x": 1279.7,
+      "y": 758.7,
+      "w": 462.7,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "These measures, aimed at boosting "
+    },
+    {
+      "x": 1279.7,
+      "y": 794.6,
+      "w": 375.2,
+      "h": 33.7,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "domestic US manufacturing, "
+    },
+    {
+      "x": 1654.2,
+      "y": 794.6,
+      "w": 68.1,
+      "h": 33.7,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "may "
+    },
+    {
+      "x": 1279.7,
+      "y": 830.7,
+      "w": 500.1,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "accelerate local investments while "
+    },
+    {
+      "x": 1279.7,
+      "y": 866.7,
+      "w": 337.0,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Bold",
+      "color": "#000000",
+      "bold": true,
+      "text": "discouraging offshoring"
+    },
+    {
+      "x": 1617.0,
+      "y": 866.7,
+      "w": 221.4,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": ". For Europe, this "
+    },
+    {
+      "x": 1279.7,
+      "y": 902.7,
+      "w": 547.1,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "could exacerbate existing competitiveness "
+    },
+    {
+      "x": 1279.7,
+      "y": 938.7,
+      "w": 136.5,
+      "h": 33.6,
+      "size_pt": 15.0,
+      "size_px": 30.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "challenges"
+    },
+    {
+      "x": 77.0,
+      "y": 499.3,
+      "w": 138.9,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Inflation and "
+    },
+    {
+      "x": 77.0,
+      "y": 528.1,
+      "w": 62.6,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "rising "
+    },
+    {
+      "x": 77.0,
+      "y": 556.9,
+      "w": 135.9,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "interest rates"
+    },
+    {
+      "x": 77.0,
+      "y": 641.4,
+      "w": 108.1,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Uncertain "
+    },
+    {
+      "x": 77.0,
+      "y": 670.2,
+      "w": 105.8,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "economic "
+    },
+    {
+      "x": 77.0,
+      "y": 699.0,
+      "w": 77.4,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "outlook"
+    },
+    {
+      "x": 77.0,
+      "y": 783.4,
+      "w": 121.1,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "Changes in "
+    },
+    {
+      "x": 77.0,
+      "y": 812.2,
+      "w": 121.2,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "regulations "
+    },
+    {
+      "x": 77.0,
+      "y": 841.0,
+      "w": 111.1,
+      "h": 26.9,
+      "size_pt": 12.0,
+      "size_px": 24.0,
+      "font": "HendersonBCGSans-Light",
+      "color": "#000000",
+      "bold": false,
+      "text": "and tariffs "
+    }
+  ],
+  "images": [
+    {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1920.0,
+      "h": 188.3
+    },
+    {
+      "x": 246.2,
+      "y": 927.2,
+      "w": 652.8,
+      "h": 72.8
+    }
+  ]
+}

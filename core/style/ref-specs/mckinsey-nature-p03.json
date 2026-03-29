@@ -1,0 +1,378 @@
+{
+  "page": 3,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 0.0,
+      "y": -0.0,
+      "w": 1920.0,
+      "h": 1080.0,
+      "fill": "#041c2c",
+      "border": null
+    },
+    {
+      "x": 87.4,
+      "y": 288.7,
+      "w": 1029.2,
+      "h": 0.0,
+      "fill": null,
+      "border": "#757575"
+    },
+    {
+      "x": 1178.2,
+      "y": 288.7,
+      "w": 654.5,
+      "h": 0.0,
+      "fill": null,
+      "border": "#757575"
+    }
+  ],
+  "texts": [
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1823.0,
+      "y": 1025.1,
+      "w": 10.0,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "3"
+    },
+    {
+      "x": 87.4,
+      "y": 86.5,
+      "w": 820.5,
+      "h": 56.7,
+      "size_pt": 25.0,
+      "size_px": 50.0,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Our virtual presenters for today"
+    },
+    {
+      "x": 1823.0,
+      "y": 1025.1,
+      "w": 10.0,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "3"
+    },
+    {
+      "x": 1598.0,
+      "y": 1025.1,
+      "w": 177.3,
+      "h": 20.1,
+      "size_pt": 9.0,
+      "size_px": 18.0,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 87.4,
+      "y": 244.3,
+      "w": 274.2,
+      "h": 40.2,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "McKinsey hosts"
+    },
+    {
+      "x": 158.5,
+      "y": 632.1,
+      "w": 149.2,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Jason Eis"
+    },
+    {
+      "x": 454.9,
+      "y": 632.1,
+      "w": 283.6,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Anne Kronschnabl"
+    },
+    {
+      "x": 1585.2,
+      "y": 632.1,
+      "w": 204.9,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Tony Goldner"
+    },
+    {
+      "x": 1230.7,
+      "y": 632.1,
+      "w": 186.5,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Erin Billman"
+    },
+    {
+      "x": 1178.3,
+      "y": 244.3,
+      "w": 158.1,
+      "h": 40.2,
+      "size_pt": 18.0,
+      "size_px": 36.0,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Panelists"
+    },
+    {
+      "x": 884.8,
+      "y": 632.1,
+      "w": 150.9,
+      "h": 35.6,
+      "size_pt": 16.0,
+      "size_px": 31.9,
+      "font": "Arial-BoldMT",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Josh Katz"
+    },
+    {
+      "x": 187.1,
+      "y": 688.6,
+      "w": 92.2,
+      "h": 31.4,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Partner"
+    },
+    {
+      "x": 95.6,
+      "y": 734.3,
+      "w": 275.4,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 550.7,
+      "y": 688.6,
+      "w": 92.2,
+      "h": 31.4,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Partner"
+    },
+    {
+      "x": 459.3,
+      "y": 734.3,
+      "w": 275.4,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 914.4,
+      "y": 688.6,
+      "w": 92.2,
+      "h": 31.4,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Partner"
+    },
+    {
+      "x": 822.9,
+      "y": 734.3,
+      "w": 276.0,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "McKinsey & Company"
+    },
+    {
+      "x": 1210.3,
+      "y": 688.6,
+      "w": 227.7,
+      "h": 31.4,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Executive Director"
+    },
+    {
+      "x": 1181.0,
+      "y": 734.3,
+      "w": 293.5,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Science Based Targets "
+    },
+    {
+      "x": 1222.3,
+      "y": 767.9,
+      "w": 203.5,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Network (SBTN)"
+    },
+    {
+      "x": 1573.9,
+      "y": 688.6,
+      "w": 227.3,
+      "h": 31.4,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Executive Director"
+    },
+    {
+      "x": 1557.8,
+      "y": 734.3,
+      "w": 259.5,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Taskforce on Nature-"
+    },
+    {
+      "x": 1585.0,
+      "y": 767.9,
+      "w": 213.0,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "related Financial "
+    },
+    {
+      "x": 1565.0,
+      "y": 801.5,
+      "w": 245.2,
+      "h": 31.3,
+      "size_pt": 14.0,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Disclosures (TNFD)"
+    }
+  ],
+  "images": [
+    {
+      "x": 103.2,
+      "y": 325.4,
+      "w": 259.2,
+      "h": 259.2
+    },
+    {
+      "x": 466.8,
+      "y": 325.4,
+      "w": 259.2,
+      "h": 259.2
+    },
+    {
+      "x": 1557.6,
+      "y": 325.4,
+      "w": 259.2,
+      "h": 259.2
+    },
+    {
+      "x": 1194.0,
+      "y": 325.4,
+      "w": 259.2,
+      "h": 259.2
+    },
+    {
+      "x": 830.4,
+      "y": 325.4,
+      "w": 259.2,
+      "h": 259.2
+    },
+    {
+      "x": 656.1,
+      "y": 821.8,
+      "w": 1235.8,
+      "h": 258.2
+    }
+  ]
+}

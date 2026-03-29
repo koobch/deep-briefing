@@ -1,0 +1,128 @@
+{
+  "page": 1,
+  "pdf_size_pt": [
+    960.0,
+    540.0
+  ],
+  "target_size_px": [
+    1920.0,
+    1080.0
+  ],
+  "scale": 2.0,
+  "drawings": [
+    {
+      "x": 86.9,
+      "y": 75.8,
+      "w": 298.1,
+      "h": 92.2,
+      "fill": "#ffffff",
+      "border": null
+    }
+  ],
+  "texts": [
+    {
+      "x": 86.9,
+      "y": 974.7,
+      "w": 275.5,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "CONFIDENTIAL AND PROPRIETARY"
+    },
+    {
+      "x": 86.9,
+      "y": 993.8,
+      "w": 547.3,
+      "h": 18.0,
+      "size_pt": 8.1,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "Any use of this material without specific permission of McKinsey & Company "
+    },
+    {
+      "x": 86.9,
+      "y": 1013.1,
+      "w": 136.0,
+      "h": 17.9,
+      "size_pt": 8.0,
+      "size_px": 16.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "is strictly prohibited"
+    },
+    {
+      "x": 86.9,
+      "y": 712.1,
+      "w": 216.0,
+      "h": 31.4,
+      "size_pt": 14.1,
+      "size_px": 28.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "January 25, 2024"
+    },
+    {
+      "x": 86.9,
+      "y": 647.2,
+      "w": 324.7,
+      "h": 44.7,
+      "size_pt": 20.0,
+      "size_px": 40.1,
+      "font": "ArialMT",
+      "color": "#ffffff",
+      "bold": false,
+      "text": "How to get started"
+    },
+    {
+      "x": 86.9,
+      "y": 426.1,
+      "w": 615.3,
+      "h": 99.9,
+      "size_pt": 44.0,
+      "size_px": 88.1,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "Taking action"
+    },
+    {
+      "x": 86.9,
+      "y": 524.6,
+      "w": 443.2,
+      "h": 99.9,
+      "size_pt": 44.0,
+      "size_px": 88.1,
+      "font": "Georgia-Bold",
+      "color": "#ffffff",
+      "bold": true,
+      "text": "on nature"
+    }
+  ],
+  "images": [
+    {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1920.0,
+      "h": 1080.0
+    },
+    {
+      "x": 0.0,
+      "y": 0.2,
+      "w": 1920.0,
+      "h": 1079.5
+    },
+    {
+      "x": 1213.0,
+      "y": 358.6,
+      "w": 707.0,
+      "h": 721.4
+    }
+  ]
+}
