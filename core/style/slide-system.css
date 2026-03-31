@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
    Deep-Briefing Slide System — 규칙 기반 컴포넌트 CSS
-   PDF 24페이지 분석에서 추출한 레이아웃 규칙 적용
-   absolute positioning 금지 — CSS Grid/Flexbox만 사용
+   BCG Executive Perspectives 9개 PDF(216p) 전수 분석 기반
+   design-guide.md 참조 — absolute positioning 금지
    ═══════════════════════════════════════════════════════════ */
 
 /* ─── 디자인 토큰 ─────────────────────────────────────── */
@@ -9,19 +9,25 @@
   /* 폰트 (Pretendard 보정 적용) */
   --font: 'Pretendard Variable', 'Pretendard', 'Noto Sans KR', sans-serif;
 
-  /* 타이포 스케일 (Henderson→Pretendard 85~90% 보정) */
-  --fs-title: 44px;      /* Action Title (원본 48px) */
-  --fs-title-label: 20px;/* 섹션 라벨 */
-  --fs-subq: 28px;       /* Sub-question (원본 32px) */
-  --fs-body: 20px;       /* 본문/Evidence (원본 23px) */
-  --fs-body-lg: 24px;    /* 일반 본문 (원본 28~30px) */
-  --fs-label: 22px;      /* 차트 라벨 (원본 24px) */
-  --fs-chart-val: 28px;  /* 차트 값 (원본 32px) */
-  --fs-callout: 22px;    /* Callout (원본 26px) */
-  --fs-source: 18px;     /* Source (원본 20px) */
-  --fs-page: 22px;       /* 페이지 번호 (원본 24px) */
-  --fs-big: 56px;        /* Big Number (원본 64px) */
-  --fs-rank: 48px;       /* 순위 #1~#5 (원본 56px) */
+  /* 타이포 스케일 — design-guide.md L.2 Canonical Spec 기준 (영문 원본값) */
+  --fs-title: 48px;        /* Action Title (24pt×2, Codex 실측 48px) */
+  --fs-title-label: 20px;  /* 섹션 라벨 */
+  --fs-subq: 32px;         /* Sub-question (16pt×2, 실측 31.9px) */
+  --fs-col-title: 28px;    /* 컬럼/섹션 제목 (14pt×2) */
+  --fs-panel: 32px;        /* 패널 본문 (15~16pt×2, 실측 30~32px) */
+  --fs-body: 24px;         /* 본문 일반 (12pt×2, 실측 23~24px) */
+  --fs-body-lg: 24px;      /* 본문 강조 (12pt×2) */
+  --fs-label: 24px;        /* 차트 라벨 (12pt×2) */
+  --fs-chart-val: 28px;    /* 차트 값 (14pt×2) */
+  --fs-callout: 24px;      /* Callout (12pt×2) */
+  --fs-source: 20px;       /* Source (10pt×2, 실측 19.9px) */
+  --fs-page: 24px;         /* 페이지 번호 (12pt×2, 실측 24px) */
+  --fs-big: 72px;          /* Big Number (36pt×2, 실측 72~80px) */
+  --fs-rank: 56px;         /* 순위 #1~#5 (28pt×2, 실측 55.9~64px) */
+  --fs-kpi-inline: 36px;   /* 본문 내 인라인 KPI (18pt×2) */
+  --fs-agenda-title: 52px; /* Agenda 페이지 제목 */
+  --fs-agenda-label: 36px; /* Agenda 라벨 */
+  --fs-kicker: 14px;       /* Exec Summary kicker, 소형 라벨 */
   --fs-copyright: 12px;
 
   /* 색상 */
@@ -39,14 +45,26 @@
   --c-panel-bg: #f1f2f1;
   --c-callout-bg: #d0f5e2;
   --c-border: #b1b2b1;
+  --c-danger: #c0392b;       /* 실패/부정 표시용 (Divergent Bar 등) */
   --c-header-bg: linear-gradient(135deg, #004d33 0%, #002e1f 40%, #1a1a2e 100%);
+
+  /* 간격 토큰 (4px 기반 스케일) */
+  --sp-2xs: 2px;
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 12px;
+  --sp-lg: 16px;
+  --sp-xl: 20px;
+  --sp-2xl: 24px;
+  --sp-3xl: 32px;
+  --sp-4xl: 44px;
 
   /* 여백 (24페이지 통계) */
   --pad-x: 77px;         /* 좌우 여백 (median 78px) */
   --pad-x-right: 80px;   /* 우측 여백 */
-  --gap-header-body: 44px;/* 헤더→본문 간격 */
-  --gap-text: 4px;       /* 같은 블록 내 텍스트 간격 */
-  --gap-section: 36px;   /* 섹션 간 간격 */
+  --gap-header-body: var(--sp-4xl);/* 헤더→본문 간격 */
+  --gap-text: var(--sp-xs);       /* 같은 블록 내 텍스트 간격 */
+  --gap-section: var(--sp-3xl);   /* 섹션 간 간격 */
   --gap-col: 0px;        /* 컬럼 간 간격 (패널이 배경으로 구분) */
 
   /* 구조 */
@@ -56,14 +74,20 @@
   --exec-label-w: 284px;
 }
 
-/* 한글 보정 */
+/* 한글 보정 (Pretendard 85~90% 축소) */
 :lang(ko) {
-  --fs-title: 40px;
-  --fs-body: 20px;
-  --fs-body-lg: 22px;
-  --fs-subq: 26px;
-  --fs-label: 20px;
-  line-height: 1.4;
+  --fs-title: 42px;      /* 48 × 88% */
+  --fs-subq: 28px;        /* 32 × 88% */
+  --fs-col-title: 24px;   /* 28 × 86% */
+  --fs-panel: 28px;        /* 32 × 88% */
+  --fs-body: 22px;         /* 24 × 92% */
+  --fs-body-lg: 22px;      /* 24 × 92% */
+  --fs-label: 22px;        /* 24 × 92% */
+  --fs-callout: 22px;      /* 24 × 92% */
+  --fs-source: 18px;       /* 20 × 90% */
+  --fs-kicker: 13px;       /* 14 × 93% */
+  --fs-page: 22px;         /* 24 × 92% */
+  line-height: 1.3;
   word-break: keep-all;
 }
 
@@ -116,19 +140,23 @@
 }
 
 /* ─── 본문 Slot (공통) ───────────────────────────────── */
+/* 주의: display:flex는 layout-* 클래스가 이 아래에 위치하여 display:grid로 override됨.
+   새 layout 추가 시 반드시 이 선언보다 아래에 배치할 것. */
 .slot-body {
   padding: var(--gap-header-body) var(--pad-x) 0 var(--pad-x);
   min-height: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ─── 푸터 Slot ──────────────────────────────────────── */
 .slot-footer {
-  padding: 12px var(--pad-x) 28px;
+  padding: var(--sp-md) var(--pad-x) var(--sp-2xl);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 40px;
+  gap: var(--sp-3xl);
 }
 
 .slot-footer .source {
@@ -159,6 +187,7 @@
   flex-direction: column;
   padding: 0;
   gap: 0;
+  flex: 1;               /* slot-body 전체 높이 채움 */
 }
 
 .exec-row {
@@ -166,6 +195,7 @@
   grid-template-columns: var(--exec-label-w) 1fr;
   border-bottom: 1px solid var(--c-border);
   min-height: 0;
+  flex: 1;               /* 각 행이 균등 분할 */
 }
 .exec-row:last-child { border-bottom: none; }
 
@@ -179,27 +209,31 @@
   text-align: center;
 }
 .exec-label .kicker {
-  font-size: 14px;
+  font-size: var(--fs-kicker);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--c-accent-dark);
-  margin-bottom: 6px;
+  margin-bottom: var(--sp-xs);
 }
 .exec-label .topic {
-  font-size: 24px;
+  font-size: var(--fs-body);
   font-weight: 800;
   line-height: 1.2;
   color: var(--c-text);
 }
 
 .exec-content {
-  padding: 16px 22px;
+  padding: var(--sp-md) var(--sp-xl);
   font-size: var(--fs-body);
-  line-height: 1.35;
+  line-height: 1.3;
   color: var(--c-text-body);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* 콘텐츠를 수직 중앙 배치 */
+  gap: var(--sp-sm);
 }
-.exec-content p { margin: 0 0 var(--gap-text); }
+.exec-content p { margin: 0; }
 .exec-content p:last-child { margin: 0; }
 .exec-content strong { font-weight: 700; color: var(--c-text); }
 .exec-content .bullet::before {
@@ -221,10 +255,10 @@
 }
 
 .col-primary {
-  padding: var(--gap-header-body) var(--pad-x) 0 var(--pad-x);
+  padding: var(--sp-2xl) var(--pad-x) 0 var(--pad-x);
   display: flex;
   flex-direction: column;
-  gap: var(--gap-section);
+  gap: var(--sp-xl);
 }
 
 .col-primary .sub-question {
@@ -236,11 +270,11 @@
 
 .secondary-panel {
   background: var(--c-panel-bg);
-  padding: calc(var(--gap-header-body) + var(--accent-bar-h) + 20px) 40px 40px;
+  padding: calc(var(--sp-4xl) + var(--accent-bar-h) + var(--sp-md)) var(--sp-3xl) var(--sp-2xl);
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--sp-lg);
 }
 /* 초록 악센트바 */
 .secondary-panel::before {
@@ -253,12 +287,31 @@
 }
 
 .secondary-panel .panel-text {
-  font-size: var(--fs-body-lg);
-  line-height: 1.4;
+  font-size: var(--fs-body-lg);  /* 문단 4개 이상 패널 기본 */
+  line-height: 1.3;
   color: var(--c-text);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-lg);
 }
 .secondary-panel .panel-text strong { font-weight: 700; }
-.secondary-panel .panel-text p { margin: 0 0 14px; }
+.secondary-panel .panel-text p { margin: 0; }
+
+/* 문단 3개 이하 패널: 큰 폰트 사용 */
+.secondary-panel .panel-text-short {
+  font-size: var(--fs-panel);
+  line-height: 1.3;
+  color: var(--c-text);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-xl);
+}
+.secondary-panel .panel-text-short strong { font-weight: 700; }
+.secondary-panel .panel-text-short p { margin: 0; }
 
 /* ═══ LAYOUT: Two-Column Reverse (좌 30% + 우 70%) ═══ */
 .layout-two-col-reverse {
@@ -269,7 +322,7 @@
 }
 
 .col-left-narrow {
-  padding: var(--gap-header-body) var(--pad-x) 0 var(--pad-x);
+  padding: var(--gap-header-body) var(--pad-x) 20px var(--pad-x);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -290,7 +343,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: var(--sp-xl);
 }
 
 .kpi-number {
@@ -308,15 +361,18 @@
 }
 
 .ranked-content {
-  padding: var(--gap-header-body) var(--pad-x) 0 var(--pad-x);
+  padding: var(--gap-header-body) var(--pad-x) 20px var(--pad-x);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  justify-content: space-between;
 }
 
 .ranked-bar {
   background: var(--c-callout-bg);
-  padding: 16px 20px;
+  padding: var(--sp-lg) var(--pad-x);
+  margin-left: calc(-1 * var(--pad-x));
+  margin-right: calc(-1 * var(--pad-x));
 }
 
 .ranked-icons {
@@ -329,7 +385,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: var(--sp-sm);
 }
 .ranked-icons .rank-num {
   font-size: var(--fs-rank);
@@ -341,11 +397,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: var(--fs-chart-val);
 }
 .ranked-icons .rank-label {
   font-size: var(--fs-label);
   line-height: 1.3;
+  min-height: 66px;
+}
+
+.ranked-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--sp-sm);
+  font-size: var(--fs-body);
 }
 
 /* ═══ LAYOUT: Agenda ═══ */
@@ -362,16 +426,16 @@
 }
 
 .agenda-items {
-  padding: 80px;
+  padding: var(--pad-x);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-evenly;
+  gap: var(--sp-lg);
 }
 .agenda-item {
   display: flex;
-  align-items: center;
-  gap: 24px;
+  align-items: flex-start;
+  gap: var(--sp-2xl);
 }
 .agenda-check {
   width: 60px; height: 56px;
@@ -379,7 +443,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: var(--fs-chart-val);
   font-weight: 700;
   color: var(--c-white);
   flex-shrink: 0;
@@ -387,12 +451,12 @@
 .agenda-check--active { background: var(--c-accent-dark); }
 .agenda-check--inactive { background: #c7c7c7; }
 .agenda-item--active .agenda-text {
-  font-size: 32px;
+  font-size: var(--fs-subq);
   font-weight: 700;
   color: var(--c-accent-dark);
 }
 .agenda-item--inactive .agenda-text {
-  font-size: 32px;
+  font-size: var(--fs-subq);
   color: var(--c-text);
 }
 
@@ -410,7 +474,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--sp-xl);
 }
 .process-panel::before {
   content: "";
@@ -424,14 +488,18 @@
 .process-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
+  gap: var(--sp-xs);
   margin-top: auto;
+  margin-left: calc(-1 * 40px);
+  margin-right: calc(-1 * 40px);
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .process-step {
   background: #04512c;
   color: var(--c-white);
   padding: 14px 20px;
-  font-size: 20px;
+  font-size: var(--fs-body);
   font-weight: 700;
   text-align: center;
   clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
@@ -440,15 +508,358 @@
   clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%, 15% 50%);
 }
 .process-detail {
-  font-size: 18px;
-  line-height: 1.45;
+  font-size: var(--fs-body);
+  line-height: 1.3;
   color: var(--c-text);
-  padding: 12px 8px;
+  padding: var(--sp-md) var(--sp-lg);
 }
 .process-detail .bullet::before {
   content: "•";
   color: var(--c-bullet);
   margin-right: 6px;
+}
+
+/* ═══ LAYOUT: Before/After (subgrid 3컬럼×4행) ═══ */
+.layout-before-after {
+  display: grid;
+  grid-template-columns: 30fr 40fr 30fr;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0;
+  padding: 0;
+}
+
+.ba-column {
+  display: grid;
+  grid-row: 1 / -1;
+  grid-template-rows: subgrid;
+  padding: var(--sp-md) var(--sp-2xl);
+  gap: var(--sp-sm);
+}
+.ba-column:first-child { padding-left: var(--pad-x); }
+.ba-column:last-child { padding-right: var(--pad-x); }
+.ba-column:nth-child(2) { background: var(--c-panel-bg); }
+
+.ba-title {
+  font-size: var(--fs-col-title);
+  font-weight: 700;
+  align-self: end;
+  padding-top: 8px;
+}
+.ba-subtitle {
+  font-size: var(--fs-body);
+  line-height: 1.3;
+}
+.ba-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  justify-content: flex-start;  /* center → flex-start: 상단부터 채움 */
+}
+/* Impact 컬럼(마지막): Big Number 3개 수직 균등 배분 */
+.ba-column:last-child .ba-body {
+  justify-content: space-evenly;
+}
+.ba-column:last-child .ba-body > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ba-footer {
+  align-self: end;
+  font-size: var(--fs-body);
+  color: var(--c-text-body);
+  border-top: 1px solid var(--c-border);
+  padding-top: 12px;
+  line-height: 1.3;
+}
+
+/* ═══ LAYOUT: Dual (50:50 대등 비교) ═══ */
+.layout-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-col);
+  padding: 0;
+}
+
+/* ═══ LAYOUT: Table/List (전폭, 행 나열) ═══ */
+.layout-table-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border-bottom: 1px solid var(--c-border);
+  flex: 1;
+  align-items: center;
+  overflow: hidden;
+}
+.table-row:last-child { border-bottom: none; }
+
+.table-row-label {
+  background: var(--c-accent);
+  color: var(--c-white);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  font-size: var(--fs-body);
+}
+
+.table-row-content {
+  padding: var(--sp-md) var(--sp-xl);
+  font-size: var(--fs-body);
+  line-height: 1.3;
+}
+
+/* ═══ LAYOUT: Framework/Diagram (전폭 또는 65:35) ═══ */
+.layout-framework {
+  display: grid;
+  grid-template-columns: 65fr 35fr;
+  gap: var(--gap-col);
+  padding: 0;
+}
+.layout-framework.full-width {
+  grid-template-columns: 1fr;
+}
+
+/* ═══ LAYOUT: Multi-Column (전폭, N개 컬럼 균등) ═══ */
+.layout-multi-col {
+  display: grid;
+  grid-template-columns: repeat(var(--col-count, 3), 1fr);
+  gap: 24px;
+  padding: var(--gap-header-body) var(--pad-x) 0;
+}
+
+/* ═══ LAYOUT: Ranked Row-Based (68:32, 행 반복) ═══ */
+.layout-ranked-rows {
+  display: grid;
+  grid-template-columns: 68fr 32fr;
+  gap: var(--gap-col);
+  padding: 0;
+}
+
+/* ═══ LAYOUT: Introduction (65:35, 텍스트+이미지) ═══ */
+.layout-intro {
+  display: grid;
+  grid-template-columns: 65fr 35fr;
+  gap: var(--gap-col);
+  padding: 0;
+}
+
+/* ═══ LAYOUT: Divergent Bar (전폭, 좌우 대칭) ═══ */
+.layout-divergent {
+  display: flex;
+  flex-direction: column;
+  padding: var(--gap-header-body) var(--pad-x) 0;
+  gap: var(--gap-section);
+}
+
+/* ═══ LAYOUT: Split (2톤, 좌 다크 + 우 라이트) ═══ */
+.layout-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+}
+.layout-split > :first-child {
+  background: var(--c-header-bg);
+  color: var(--c-white);
+  padding: var(--gap-header-body) var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.layout-split > :last-child {
+  padding: var(--gap-header-body) var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ═══ LAYOUT: Heatmap/Grid (전폭, N×M 격자) ═══ */
+.layout-heatmap {
+  display: flex;
+  flex-direction: column;
+  padding: var(--gap-header-body) var(--pad-x) 0;
+  gap: 8px;
+}
+
+/* ═══ LAYOUT: Scatter Plot (전폭, 2D 축) ═══ */
+.layout-scatter {
+  display: flex;
+  flex-direction: column;
+  padding: var(--gap-header-body) var(--pad-x) 0;
+  gap: var(--gap-section);
+}
+
+/* ═══ LAYOUT: Comparison/Dual (50:50 대칭) ═══ */
+.layout-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+}
+.layout-comparison > :first-child {
+  padding: var(--gap-header-body) var(--pad-x) 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.layout-comparison > :last-child {
+  background: var(--c-panel-bg);
+  padding: var(--gap-header-body) var(--pad-x) 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ═══ LAYOUT: Matrix/2×2 (전폭, 격자) ═══ */
+.layout-matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  padding: var(--gap-header-body) var(--pad-x) 0;
+  flex: 1;
+}
+.layout-matrix > div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ═══ LAYOUT: Cover (전폭 배경) ═══ */
+.layout-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px var(--pad-x);
+  position: relative;
+}
+
+/* ═══ LAYOUT: Back Cover (전폭 다크) ═══ */
+.layout-back-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px var(--pad-x);
+  background: var(--c-header-bg);
+  color: var(--c-white);
+}
+
+/* ═══ LAYOUT: Case Study (행 반복 + 균등 배분) ═══ */
+.layout-case-study {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+  padding: var(--sp-md) var(--pad-x) 0;
+  justify-content: space-evenly;  /* 행 사이 균등 배분 */
+}
+
+.case-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  border-bottom: 1px solid var(--c-border);
+  /* flex: 1 삭제 — 콘텐츠 크기만큼만 차지 */
+  min-height: 0;
+}
+.case-row:last-child { border-bottom: none; }
+
+.case-row-label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: var(--sp-md) var(--sp-lg);
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+.case-row-label span:first-child { font-size: var(--fs-subq); }
+
+.case-row-body {
+  padding: var(--sp-md) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-sm);
+  font-size: var(--fs-body);
+  line-height: 1.3;
+}
+/* Impact 배경: case-row-body 내부 요소에 개별 적용 (도형 엣지 일치) */
+.case-row--impact .case-row-body {
+  background: var(--c-callout-bg);
+}
+
+/* P7: 행 간 Grid 기준선 공유 — 좌우 padding 0, 엣지 완전 정렬 */
+.case-metrics { padding: 0; }
+.case-row-body > p { padding: 0; }
+
+/* P2: Impact Big Number 균등 배분 */
+.case-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+  text-align: center;
+}
+.case-metrics .metric-value {
+  font-size: var(--fs-big);
+  font-weight: 800;
+  color: var(--c-accent-dark);
+}
+.case-metrics .metric-label {
+  font-size: var(--fs-body);
+  color: var(--c-text-body);
+  margin-top: var(--sp-xs);
+}
+
+/* P3: 플로우 박스 + 설명 수직 정렬 */
+.case-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+  padding: 0;
+}
+.case-flow-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-sm);
+  position: relative;
+}
+.case-flow-box {
+  background: var(--c-accent);
+  color: white;
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: var(--fs-body);
+  text-align: center;
+  border-radius: 4px;
+  width: 100%;
+}
+.case-flow-desc {
+  font-size: var(--fs-body);
+  color: var(--c-text-body);
+  text-align: center;
+  line-height: 1.3;
+}
+/* P7: arrow를 ::after pseudo-element로 이동 */
+.case-flow-item:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: calc(-1 * var(--sp-lg) / 2 - 8px);
+  top: 30%;
+  color: var(--c-accent);
+  font-size: var(--fs-body);
+  font-weight: 700;
 }
 
 /* ═══ 공통 컴포넌트 ══════════════════════════════════════ */
@@ -460,6 +871,7 @@
   font-size: var(--fs-callout);
   line-height: 1.3;
   color: var(--c-text);
+  margin-top: var(--sp-xl);
 }
 .callout strong { font-weight: 700; }
 
@@ -478,6 +890,23 @@
   line-height: 1.25;
   margin-bottom: 20px;
 }
+
+/* ─── 유틸리티: 텍스트 크기 클래스 ────────────────── */
+.text-subhead { font-size: var(--fs-subq); font-weight: 700; color: var(--c-text-sub); }
+.text-col-title { font-size: var(--fs-col-title); font-weight: 700; }
+.text-body { font-size: var(--fs-body); line-height: 1.3; color: var(--c-text-body); }
+.text-body-bold { font-size: var(--fs-body); font-weight: 700; line-height: 1.3; }
+.text-source { font-size: var(--fs-source); color: var(--c-text-muted); }
+.text-big { font-size: var(--fs-big); font-weight: 800; }
+.text-chart-val { font-size: var(--fs-chart-val); font-weight: 700; }
+.text-kpi-label { font-size: var(--fs-source); color: var(--c-text-muted); }
+.text-kpi-desc { font-size: var(--fs-body); color: var(--c-text-body); margin-top: 4px; }
+
+/* P2 범용: N개 자식 전폭 균등 배분 */
+.spread-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.spread-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.spread-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.align-top > * { align-self: start; }
 
 /* 프로토타입 라벨 */
 .proto-tag {

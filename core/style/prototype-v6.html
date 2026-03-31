@@ -55,7 +55,8 @@
       <div class="exec-content">
         <p>지속 가능한 <strong>비용 관리가 핵심이며, 임원의 67%가 절감분을 성장과 혁신에 재투자</strong>할 계획이다</p>
         <p class="bullet">임원의 <strong>86%가 2025년 AI 및 고급 분석에 투자</strong>할 계획이며, GenAI를 효율성의 핵심 수단으로 보고 있다</p>
-        <p class="bullet">GenAI와 고급 분석을 <strong>고객 서비스 등 비용 절감 기회</strong>로 활용할 수 있다고 평가하고 있다</p>
+        <p class="bullet">GenAI와 고급 분석을 <strong>고객 서비스, 공급망 자동화 등 비용 절감 기회</strong>로 활용할 수 있으며, 선도 기업은 이미 <strong>연 15~20% 운영비 절감</strong>을 달성하고 있다</p>
+        <p class="bullet"><strong>디지털 전환과 프로세스 자동화</strong>를 결합한 기업은 단순 비용 절감을 넘어 <strong>운영 민첩성과 고객 대응력</strong>을 동시에 확보하고 있다</p>
         <p>BCG의 통합적 접근법은 전문성과 독자적 역량을 결합하여 <strong>지속 가능한 비용 절감, 성장 촉진, 구조적 비용 과제 해결</strong>을 동시에 추진한다</p>
       </div>
     </div>
@@ -65,6 +66,45 @@
     <span class="source">Source: BCG 글로벌 임원 전략 우선순위 설문 (N=570) 2024년 4분기; BCG 분석<br>1. 아시아태평양: 인도, 호주, 일본, 한국 포함</span>
     <span class="page-num">3</span>
   </footer>
+</section>
+
+<!-- ══ SLIDE 3: 한글 Agenda ══ -->
+<section class="slide" lang="ko">
+  <span class="proto-tag">v6 한글 — Agenda (Grid)</span>
+
+  <div class="layout-agenda" style="grid-row:1/-1">
+    <div class="agenda-photo-panel" style="background:linear-gradient(135deg,#1a3a4a,#0a2a3a 30%,#2a1a1a 70%,#3a2a1a);overflow:hidden">
+      <div style="position:absolute;inset:0;background:repeating-linear-gradient(120deg,rgba(200,100,80,0.15) 0 40px,transparent 40px 120px);filter:blur(2px)"></div>
+      <div style="position:absolute;top:81px;left:36px;width:703px;height:398px;background:#a8efb8;z-index:1"></div>
+      <div style="position:absolute;top:445px;left:33px;width:436px;height:71px;background:#187955;z-index:1"></div>
+      <div style="position:absolute;left:111px;top:160px;font-size:var(--fs-agenda-title);font-weight:700;color:#0e3e1b;line-height:1.15;z-index:2">BCG 경영진<br>인사이트</div>
+      <div style="position:absolute;left:111px;top:357px;font-size:var(--fs-agenda-label);color:#05512c;z-index:2;font-style:italic">AGENDA</div>
+    </div>
+
+    <div class="agenda-items">
+      <div class="agenda-item agenda-item--active">
+        <span class="agenda-check agenda-check--active">✓</span>
+        <div>
+          <span class="agenda-text">2025 거시경제 환경 진단</span>
+          <span style="display:block;font-size:var(--fs-body);color:var(--c-text-muted);margin-top:var(--sp-xs)">글로벌 인플레이션, 금리 상승, 지정학적 긴장이 기업 실적에 미치는 복합적 영향을 진단하고 대응 전략을 제시한다</span>
+        </div>
+      </div>
+      <div class="agenda-item agenda-item--inactive">
+        <span class="agenda-check agenda-check--inactive">✓</span>
+        <div>
+          <span class="agenda-text">비용 구조 관리 전략</span>
+          <span style="display:block;font-size:var(--fs-body);color:var(--c-text-muted);margin-top:var(--sp-xs)">공급망 최적화, 포트폴리오 단순화, 운영 모델 혁신을 통해 마진 압박에 대응하는 실행 전략을 검토한다</span>
+        </div>
+      </div>
+      <div class="agenda-item agenda-item--inactive">
+        <span class="agenda-check agenda-check--inactive">✓</span>
+        <div>
+          <span class="agenda-text">지속 가능한 성장 전략</span>
+          <span style="display:block;font-size:var(--fs-body);color:var(--c-text-muted);margin-top:var(--sp-xs)">AI 투자, 디지털 전환, 비용 문화 정착을 통해 지속 가능한 성장 기반을 구축하는 방안을 제안한다</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══ SLIDE 2: 한글 Insight+Chart (좌 차트 + 우 패널) ══ -->
@@ -79,22 +119,62 @@
     <div class="col-primary">
       <h2 class="sub-question">2025년 기업 실적에 영향을 미칠 주요 거시경제 요인은 무엇인가?</h2>
 
-      <div style="display:flex;flex-direction:column;gap:12px;flex:1;justify-content:center">
-        <!-- 차트 영역은 실제 구현 시 generate-charts.py로 삽입 -->
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:8px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:var(--sp-sm);flex:1;justify-content:center">
+        <!-- 지역별 범례 -->
+        <div style="display:flex;gap:var(--sp-2xl);font-size:var(--fs-source);margin-bottom:var(--sp-sm)">
+          <span style="font-weight:700;color:#03522d">아시아태평양¹</span>
+          <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:#285f7d;display:inline-block"></span> 미국 대선 전</span>
+          <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:#3a7a9e;display:inline-block"></span> 미국 대선 후</span>
+        </div>
+
+        <!-- 차트 항목 6개 -->
+        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
           <span style="text-align:right;font-size:var(--fs-label)">인플레이션<br>및 금리 상승</span>
-          <div style="height:36px;background:linear-gradient(90deg,#285f7d,#3a7a9e);border-radius:0 3px 3px 0;width:75%"></div>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
+            <div style="height:18px;background:#285f7d;border-radius:0 3px 3px 0;width:68%"></div>
+            <div style="height:18px;background:#3a7a9e;border-radius:0 3px 3px 0;width:75%"></div>
+          </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">27%</span>
         </div>
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:8px;align-items:center">
+        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
           <span style="text-align:right;font-size:var(--fs-label)">경기 침체<br>불확실성</span>
-          <div style="height:36px;background:linear-gradient(90deg,#6d352c,#8a4a3f);border-radius:0 3px 3px 0;width:60%"></div>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
+            <div style="height:18px;background:#6d352c;border-radius:0 3px 3px 0;width:50%"></div>
+            <div style="height:18px;background:#8a4a3f;border-radius:0 3px 3px 0;width:60%"></div>
+          </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">23%</span>
         </div>
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:8px;align-items:center">
+        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
           <span style="text-align:right;font-size:var(--fs-label)">규제 및<br>관세 변화</span>
-          <div style="height:36px;background:linear-gradient(90deg,#6d352c,#8a4a3f);border-radius:0 3px 3px 0;width:50%"></div>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
+            <div style="height:18px;background:#6d352c;border-radius:0 3px 3px 0;width:42%"></div>
+            <div style="height:18px;background:#8a4a3f;border-radius:0 3px 3px 0;width:50%"></div>
+          </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">18%</span>
+        </div>
+        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
+          <span style="text-align:right;font-size:var(--fs-label)">지정학적<br>긴장 심화</span>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
+            <div style="height:18px;background:#04512c;border-radius:0 3px 3px 0;width:35%"></div>
+            <div style="height:18px;background:#28b974;border-radius:0 3px 3px 0;width:45%"></div>
+          </div>
+          <span style="font-size:var(--fs-chart-val);font-weight:700">15%</span>
+        </div>
+        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
+          <span style="text-align:right;font-size:var(--fs-label)">기술 변화<br>및 AI 충격</span>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
+            <div style="height:18px;background:#04512c;border-radius:0 3px 3px 0;width:28%"></div>
+            <div style="height:18px;background:#28b974;border-radius:0 3px 3px 0;width:38%"></div>
+          </div>
+          <span style="font-size:var(--fs-chart-val);font-weight:700">12%</span>
+        </div>
+        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
+          <span style="text-align:right;font-size:var(--fs-label)">노동 시장<br>구조 변화</span>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
+            <div style="height:18px;background:#c7c7c7;border-radius:0 3px 3px 0;width:18%"></div>
+            <div style="height:18px;background:#a0a0a0;border-radius:0 3px 3px 0;width:25%"></div>
+          </div>
+          <span style="font-size:var(--fs-chart-val);font-weight:700">8%</span>
         </div>
       </div>
 
@@ -106,6 +186,8 @@
         <p>아시아태평양 임원들은 지속적인 인플레이션, 통화 정책 차이, 글로벌 무역 불확실성이 복합적으로 작용하는 환경에서 <strong>인플레이션과 금리에 대한 우려가 심화</strong>되고 있다</p>
         <p>미국 대선 결과에 따른 <strong>경기 침체 리스크와 미·중 무역 긴장</strong>이 핵심 우려 요인으로 부상하며, <strong>경제 불확실성에 대한 우려가 점점 증가</strong>하고 있다</p>
         <p>지정학적 긴장은 <strong>투자자 신뢰를 약화시키고 글로벌 공급망을 교란</strong>할 수 있으며, 수출 의존도가 높은 아시아태평양 경제의 성장을 둔화시킬 수 있다</p>
+        <p><strong>AI와 기술 변화</strong>가 새로운 거시경제 리스크로 부상하고 있으며, 특히 자동화에 따른 <strong>노동 시장 구조 재편</strong>과 기술 투자 부담이 기업 전략에 영향을 미치고 있다</p>
+        <p>이러한 복합적 불확실성에 대응하기 위해 선도 기업들은 <strong>시나리오 기반 전략 수립과 공급망 다변화</strong>를 핵심 우선순위로 채택하고 있으며, 리스크 관리 역량이 <strong>경쟁 우위의 핵심 요소</strong>로 자리매김하고 있다</p>
       </div>
     </div>
   </div>
@@ -116,34 +198,82 @@
   </footer>
 </section>
 
-<!-- ══ SLIDE 3: 한글 Agenda ══ -->
+<!-- ══ SLIDE 6: Big Number ══ -->
 <section class="slide" lang="ko">
-  <span class="proto-tag">v6 한글 — Agenda (Grid)</span>
+  <span class="proto-tag">v6 한글 — Big Number (Grid)</span>
 
-  <div class="layout-agenda" style="grid-row:1/-1">
-    <div class="agenda-photo-panel" style="background:linear-gradient(135deg,#1a3a4a,#0a2a3a 30%,#2a1a1a 70%,#3a2a1a);overflow:hidden">
-      <div style="position:absolute;inset:0;background:repeating-linear-gradient(120deg,rgba(200,100,80,0.15) 0 40px,transparent 40px 120px);filter:blur(2px)"></div>
-      <div style="position:absolute;top:81px;left:36px;width:703px;height:398px;background:#a8efb8;z-index:1"></div>
-      <div style="position:absolute;top:445px;left:33px;width:436px;height:71px;background:#187955;z-index:1"></div>
-      <div style="position:absolute;left:111px;top:166px;font-size:56px;font-weight:700;color:#0e3e1b;line-height:1.1;z-index:2">BCG 경영진<br>인사이트</div>
-      <div style="position:absolute;left:111px;top:357px;font-size:36px;color:#05512c;z-index:2;font-style:italic">AGENDA</div>
+  <header class="slot-header">
+    <h1 class="action-title">비용 절감 목표의 48%만 달성되고 있으며, 미달 기업은 TSR에서 9pp 저조한 성과를 보인다</h1>
+  </header>
+
+  <div class="slot-body layout-big-number">
+    <div class="kpi-panel">
+      <div style="text-align:center">
+        <div style="font-size:var(--fs-body);font-weight:600;color:var(--c-accent-dark);margin-bottom:var(--sp-sm)">비용 절감 목표 달성률</div>
+        <div class="kpi-number" style="font-size:var(--fs-big);color:var(--c-accent-dark)">48%</div>
+        <div style="font-size:var(--fs-body);color:var(--c-text-muted);margin-top:var(--sp-sm)">글로벌 임원 설문 기준</div>
+      </div>
+      <div style="width:100%;height:1px;background:var(--c-border)"></div>
+      <div style="text-align:center">
+        <div style="font-size:var(--fs-body);font-weight:600;color:#c0392b;margin-bottom:var(--sp-sm)">TSR 격차</div>
+        <div class="kpi-number" style="font-size:var(--fs-big);color:#c0392b">−9pp</div>
+        <div style="font-size:var(--fs-body);color:var(--c-text-muted);margin-top:var(--sp-sm)">목표 미달 기업 vs 초과 기업</div>
+      </div>
     </div>
 
-    <div class="agenda-items">
-      <div class="agenda-item agenda-item--active">
-        <span class="agenda-check agenda-check--active">✓</span>
-        <span class="agenda-text">2025 거시경제 환경 진단</span>
+    <div style="padding:var(--sp-3xl) var(--pad-x) var(--sp-md) var(--pad-x);display:flex;flex-direction:column;gap:var(--sp-md)">
+      <h2 class="sub-question">비용 절감 프로그램의 성과 격차는 왜 발생하는가?</h2>
+
+      <div style="display:flex;flex-direction:column;gap:var(--sp-xs)">
+        <div style="font-size:var(--fs-body);font-weight:700;margin-bottom:var(--sp-xs)">비용 절감 장벽 요인 분석</div>
+        <div style="display:grid;grid-template-columns:100px 1fr 40px;gap:var(--sp-sm);align-items:center">
+          <span style="text-align:right;font-size:var(--fs-body)">조직 문화</span>
+          <div style="height:28px;background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:69%"></div>
+          <span style="font-size:var(--fs-chart-val);font-weight:700">69%</span>
+        </div>
+        <div style="display:grid;grid-template-columns:100px 1fr 40px;gap:var(--sp-sm);align-items:center">
+          <span style="text-align:right;font-size:var(--fs-body)">경영 구조</span>
+          <div style="height:28px;background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:58%"></div>
+          <span style="font-size:var(--fs-chart-val);font-weight:700">58%</span>
+        </div>
+        <div style="display:grid;grid-template-columns:100px 1fr 40px;gap:var(--sp-sm);align-items:center">
+          <span style="text-align:right;font-size:var(--fs-body)">전문성/역량</span>
+          <div style="height:28px;background:var(--c-accent);border-radius:0 3px 3px 0;width:37%"></div>
+          <span style="font-size:var(--fs-chart-val);font-weight:700">37%</span>
+        </div>
+        <div style="display:grid;grid-template-columns:100px 1fr 40px;gap:var(--sp-sm);align-items:center">
+          <span style="text-align:right;font-size:var(--fs-body)">기술 인프라</span>
+          <div style="height:28px;background:var(--c-accent);border-radius:0 3px 3px 0;width:37%"></div>
+          <span style="font-size:var(--fs-chart-val);font-weight:700">37%</span>
+        </div>
       </div>
-      <div class="agenda-item agenda-item--inactive">
-        <span class="agenda-check agenda-check--inactive">✓</span>
-        <span class="agenda-text">비용 구조 관리 전략</span>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-lg);flex:1">
+        <div>
+          <h3 style="font-size:var(--fs-body-lg);font-weight:700;color:var(--c-accent-dark);margin-bottom:var(--sp-md)">성공 기업의 특징</h3>
+          <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text"><strong>경영진 스폰서십</strong>이 프로그램 전반에 걸쳐 지속적으로 유지됨</p>
+          <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text"><strong>크로스 기능 팀</strong>이 절감 기회를 식별하고 실행까지 책임짐</p>
+          <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text"><strong>비용 문화</strong>가 조직 전반에 내재화되어 일회성이 아닌 지속적 절감 달성</p>
+          <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text"><strong>디지털 도구</strong>를 활용한 실시간 비용 추적 및 벤치마킹 체계 구축</p>
+        </div>
+        <div>
+          <h3 style="font-size:var(--fs-body-lg);font-weight:700;color:#c0392b;margin-bottom:var(--sp-md)">실패 기업의 공통 패턴</h3>
+          <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text">단기 비용 삭감에 치중하여 <strong>구조적 원인을 미해결</strong></p>
+          <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text">현장 실행력 부족으로 <strong>계획 대비 50% 미만의 실현율</strong></p>
+          <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text"><strong>조직 저항</strong>과 변화 관리 부재로 절감 효과가 1년 내 소멸</p>
+          <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text">핵심 역량 투자까지 삭감하여 <strong>중장기 경쟁력 훼손</strong></p>
+          <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text"><strong>데이터 기반 의사결정 부재</strong>로 비용 절감 기회를 체계적으로 식별하지 못함</p>
+        </div>
       </div>
-      <div class="agenda-item agenda-item--inactive">
-        <span class="agenda-check agenda-check--inactive">✓</span>
-        <span class="agenda-text">지속 가능한 성장 전략</span>
-      </div>
+
+      <div class="callout">비용 문화와 애자일 경영을 정착시킨 기업은 <strong>추가 11% 절감</strong>을 달성했으며, 이는 3년 누적 기준 <strong>EBITDA 마진 2~4pp 개선</strong>에 해당한다</div>
     </div>
   </div>
+
+  <footer class="slot-footer">
+    <span class="source">Source: BCG 글로벌 임원 설문 (N=570) 2024년 4분기; BCG 비용 관리 벤치마크 데이터베이스</span>
+    <span class="page-num">6</span>
+  </footer>
 </section>
 
 <!-- ══ SLIDE 4: 한글 Ranked #1~#5 ══ -->
@@ -159,7 +289,7 @@
       <h2 class="sub-question">2025년 최적화를 위해 임원들이 우선시하는 비용 동인은 무엇인가?</h2>
 
       <div class="ranked-bar">
-        <span style="font-size:22px;font-weight:700">업종 전반 최우선 순위</span>
+        <span style="font-size:var(--fs-callout);font-weight:700">업종 전반 최우선 순위</span>
       </div>
 
       <div class="ranked-icons">
@@ -167,37 +297,42 @@
           <span class="rank-num">#1</span>
           <span class="rank-icon" style="background:#04512c;color:#fff">⚙</span>
           <span class="rank-label">공급망<br>최적화</span>
+          <span style="font-size:var(--fs-source);color:var(--c-text-muted);margin-top:var(--sp-xs)">원가 절감 및<br>리드타임 단축</span>
         </div>
         <div class="rank-item">
           <span class="rank-num">#2</span>
           <span class="rank-icon" style="background:#04512c;color:#fff">📦</span>
           <span class="rank-label">제품<br>포트폴리오<br>단순화</span>
+          <span style="font-size:var(--fs-source);color:var(--c-text-muted);margin-top:var(--sp-xs)">SKU 통합 및<br>롱테일 제거</span>
         </div>
         <div class="rank-item">
           <span class="rank-num">#3</span>
           <span class="rank-icon" style="background:#28b974;color:#fff">👥</span>
           <span class="rank-label">운영 모델<br>및 인력<br>생산성</span>
+          <span style="font-size:var(--fs-source);color:var(--c-text-muted);margin-top:var(--sp-xs)">자동화 및<br>조직 재설계</span>
         </div>
         <div class="rank-item">
           <span class="rank-num">#4</span>
           <span class="rank-icon" style="background:#c7c7c7;color:#fff">🎧</span>
           <span class="rank-label">고객 서비스<br>운영</span>
+          <span style="font-size:var(--fs-source);color:var(--c-text-muted);margin-top:var(--sp-xs)">GenAI 기반<br>서비스 혁신</span>
         </div>
         <div class="rank-item">
           <span class="rank-num">#5</span>
           <span class="rank-icon" style="background:#c7c7c7;color:#fff">📢</span>
           <span class="rank-label">영업 및<br>마케팅</span>
+          <span style="font-size:var(--fs-source);color:var(--c-text-muted);margin-top:var(--sp-xs)">디지털 채널<br>효율화</span>
         </div>
       </div>
 
       <div class="ranked-bar" style="margin-top:auto">
-        <div style="font-size:22px;font-weight:700;margin-bottom:10px">비용 절감 행동이 최우선인 산업군</div>
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;font-size:20px">
-          <span>소비재<br>산업재</span>
-          <span>보험·기술<br>금융</span>
-          <span>산업재<br>헬스케어</span>
-          <span>보험<br>금융</span>
-          <span>기술<br>소비재</span>
+        <div style="font-size:var(--fs-callout);font-weight:700;margin-bottom:var(--sp-md)">비용 절감 행동이 최우선인 산업군</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--sp-sm);font-size:var(--fs-body)">
+          <div><span style="font-weight:700">소비재·산업재</span><br><span style="font-size:var(--fs-source);color:var(--c-text-muted)">원가 절감 압력 최대</span></div>
+          <div><span style="font-weight:700">보험·기술·금융</span><br><span style="font-size:var(--fs-source);color:var(--c-text-muted)">SKU 복잡성 해소</span></div>
+          <div><span style="font-weight:700">산업재·헬스케어</span><br><span style="font-size:var(--fs-source);color:var(--c-text-muted)">자동화 투자 확대</span></div>
+          <div><span style="font-weight:700">보험·금융</span><br><span style="font-size:var(--fs-source);color:var(--c-text-muted)">디지털 서비스 전환</span></div>
+          <div><span style="font-weight:700">기술·소비재</span><br><span style="font-size:var(--fs-source);color:var(--c-text-muted)">퍼포먼스 마케팅</span></div>
         </div>
       </div>
     </div>
@@ -206,13 +341,54 @@
       <div class="panel-text">
         <p>모든 기업이 비용 관리를 우선시하지만, <strong>모든 상황에 맞는 단일 접근법은 없다</strong> — 산업의 경쟁 우위를 강화하는 영역에 집중해야 한다</p>
         <p>경쟁력 유지를 위해 임원들은 핵심 운영을 우선시하고, <strong>공급망을 최적화하며 제품 포트폴리오를 효율화</strong>하고 있다</p>
+        <p>비용 절감 목표의 <strong>48%만 달성</strong>되고 있으며, 목표를 초과 달성한 기업은 <strong>TSR에서 9pp 높은 성과</strong>를 보이고 있다</p>
+        <p>지속적 비용 관리의 최대 장벽은 <strong>조직 문화적 저항</strong>이며, 비용 문화를 정착시킨 기업은 <strong>추가 11% 절감</strong>을 달성했다</p>
       </div>
+      <div class="callout" style="margin-top:auto">비용 우수 기업에 대한 BCG의 최신 인사이트를 확인하세요</div>
     </div>
   </div>
 
   <footer class="slot-footer">
     <span class="source">Source: BCG 글로벌 임원 설문 (N=570) 2024년 4분기; BCG 분석</span>
     <span class="page-num">12</span>
+  </footer>
+</section>
+
+<!-- ══ SLIDE 8: Table/List ══ -->
+<section class="slide" lang="ko">
+  <span class="proto-tag">v6 한글 — Table/List (Grid)</span>
+
+  <header class="slot-header">
+    <span class="title-label">과제 |</span>
+    <h1 class="action-title">AI 가치 실현을 가로막는 5가지 핵심 과제를 극복해야 한다</h1>
+  </header>
+
+  <div class="slot-body layout-table-list" style="padding:var(--sp-xl) var(--pad-x) 0">
+    <div class="table-row">
+      <div class="table-row-label"><span style="font-size:var(--fs-body-lg);font-weight:800">a</span><span>🔧</span><span style="font-weight:700">"삽질의 역설"</span></div>
+      <div class="table-row-content">GenAI는 <strong>"재미있는" 코딩을 자동화</strong>하지만 테스트, 보안, 요구사항은 병목으로 남아 — 생산성 효과의 완전 실현에는 마인드셋 전환이 필요하다. 실제로 코드 생성 시간이 40% 단축되어도 리뷰·테스트·배포 단계에서 전체 리드타임의 70%가 소요되며, 이 구간의 자동화 없이는 엔드투엔드 생산성 향상이 제한적이다</div>
+    </div>
+    <div class="table-row">
+      <div class="table-row-label"><span style="font-size:var(--fs-body-lg);font-weight:800">b</span><span>⏳</span><span style="font-weight:700">도입 지연</span></div>
+      <div class="table-row-content"><strong>기업의 20%만이 75% 이상 도입률</strong>을 달성. 다수는 GenAI를 도구 교체로만 인식하며 — 지속적 확산에는 다각적 변화 관리 접근이 필요하다. 도입 선도 기업은 전사적 교육 프로그램과 실무 워크숍을 병행하여 사용자 저항을 줄이고, 분기별 활용도 측정으로 확산 속도를 관리하고 있다</div>
+    </div>
+    <div class="table-row">
+      <div class="table-row-label"><span style="font-size:var(--fs-body-lg);font-weight:800">c</span><span>📊</span><span style="font-weight:700">가치 측정 난제</span></div>
+      <div class="table-row-content"><strong>CIO의 50%가 GenAI 임팩트 정량화에 어려움</strong>을 겪고 있으며, 엔드투엔드 가치 추적 체계 구축이 시급하다. 기존 KPI 프레임워크가 AI 도입 효과를 포착하지 못하는 경우가 많아, 생산성·품질·속도를 통합 측정하는 복합 지표 설계가 선행되어야 한다</div>
+    </div>
+    <div class="table-row">
+      <div class="table-row-label"><span style="font-size:var(--fs-body-lg);font-weight:800">d</span><span>💻</span><span style="font-weight:700">기술 부채</span></div>
+      <div class="table-row-content"><strong>레거시 시스템과 미흡한 DevOps가 GenAI 효과를 감쇠</strong>시키며, 현대적 실천 방법과 GenAI를 결합한 현대화가 필수적이다. 모놀리식 아키텍처에서는 AI 모델 통합이 구조적으로 제한되며, 마이크로서비스 전환과 CI/CD 파이프라인 정비를 병행해야 GenAI의 잠재력을 온전히 활용할 수 있다</div>
+    </div>
+    <div class="table-row">
+      <div class="table-row-label"><span style="font-size:var(--fs-body-lg);font-weight:800">e</span><span>🏢</span><span style="font-weight:700">조직 재편</span></div>
+      <div class="table-row-content"><strong>기존 역할과 팀 구성이 AI 시대에 적합하지 않다</strong>. 리더들은 재편 방향이 불확실하며 — 지금부터 준비를 시작해야 한다. AI 엔지니어와 도메인 전문가를 혼합 편성한 교차 기능 팀이 가장 높은 성과를 보이며, 전통적 직군 경계를 재정의하는 조직 실험이 필요하다</div>
+    </div>
+  </div>
+
+  <footer class="slot-footer">
+    <span class="source">Source: GenAI 도입 엔지니어링 설문 (N=100 CIO/CTO, 300 엔지니어) 2025년 1월</span>
+    <span class="page-num">5</span>
   </footer>
 </section>
 
@@ -225,49 +401,58 @@
   </header>
 
   <div class="slot-body layout-process">
-    <div class="col-left-narrow">
-      <h3 style="font-size:var(--fs-subq);font-weight:700;margin-bottom:12px">제품 포트폴리오 최적화</h3>
-      <p style="font-size:var(--fs-body);line-height:1.4;margin-bottom:16px">빠르게 변화하는 시장에서 제품 복잡성 증가와 우선순위 변화가 구조적 비용 상승과 수익성 압박을 초래하고 있다</p>
-      <div style="font-size:var(--fs-body);line-height:1.5">
+    <div class="col-left-narrow" style="gap:var(--sp-md);padding-bottom:var(--sp-md)">
+      <h3 style="font-size:var(--fs-subq);font-weight:700;margin-bottom:var(--sp-xs)">제품 포트폴리오 최적화</h3>
+      <p style="font-size:var(--fs-body);line-height:1.25;margin-bottom:var(--sp-sm)">빠르게 변화하는 시장에서 제품 복잡성 증가와 우선순위 변화가 구조적 비용 상승과 수익성 압박을 초래하고 있다</p>
+      <div style="font-size:var(--fs-body);line-height:1.25">
         <p class="bullet-text">제품 복잡성 (과다 SKU)</p>
         <p class="bullet-text">원자재 및 부품 비용 상승</p>
-        <p class="bullet-text">제조 간접비와 공급망 복잡성</p>
-        <p class="bullet-text">재고 보유 비용</p>
-        <p class="bullet-text">R&D 및 수명주기 관리 비용</p>
+        <p class="bullet-text">제조·공급망 복잡성 비용</p>
+        <p class="bullet-text">재고 관리 비용 증가</p>
+        <p class="bullet-text">제품 수명 주기 단축</p>
+      </div>
+      <div style="margin-top:auto;padding:var(--sp-sm);background:var(--c-callout-bg)">
+        <p style="font-size:var(--fs-body);font-weight:700">비용 절감 효과 15~25%</p>
       </div>
     </div>
 
-    <div class="process-panel">
-      <h3 style="font-size:var(--fs-body-lg);font-weight:700;line-height:1.3">고부가가치 제품에 자원을 집중하여 운영 효율을 개선하고 공급망 복잡성을 줄인다</h3>
-      <div style="font-size:var(--fs-body);font-weight:600;margin-bottom:8px">최적화 레버</div>
-      <div style="font-size:var(--fs-body-lg)">
-        <p><strong style="font-size:36px;margin-right:8px">#1</strong> 저볼륨 구성을 통합하여 "롱테일"을 제거하고 볼륨과 매출을 유지한다</p>
-        <p style="margin-top:12px"><strong style="font-size:36px;margin-right:8px">#2</strong> 고객 중심 관점으로 설계-가치 접근법을 적용하여 제품 포트폴리오의 가치와 비용을 재조정한다</p>
+    <div class="process-panel" style="padding-top:calc(var(--accent-bar-h) + var(--sp-xl));padding-bottom:var(--sp-2xl)">
+      <h3 style="font-size:var(--fs-body-lg);font-weight:700;line-height:1.2">고부가가치 제품에 자원을 집중하여 운영 효율을 개선하고 공급망 복잡성을 줄인다</h3>
+      <div style="font-size:var(--fs-body);font-weight:600;margin-bottom:var(--sp-2xs)">최적화 레버</div>
+      <div style="font-size:var(--fs-body);flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--sp-sm)">
+        <div>
+          <p><strong style="font-size:var(--fs-subq);margin-right:var(--sp-sm)">#1</strong> 저볼륨 구성을 통합하여 "롱테일"을 제거하고 볼륨과 매출을 유지한다</p>
+          <p style="font-size:var(--fs-body);color:var(--c-text-body);margin-top:var(--sp-2xs);padding-left:var(--sp-3xl);line-height:1.25">매출 하위 20% SKU가 전체 복잡성 비용의 <strong>60% 이상</strong>을 차지하며, 통합 시 운영 효율이 크게 개선된다</p>
+        </div>
+        <div>
+          <p><strong style="font-size:var(--fs-subq);margin-right:var(--sp-sm)">#2</strong> 고객 중심 설계-가치 접근법으로 제품 포트폴리오의 가치와 비용을 재조정한다</p>
+          <p style="font-size:var(--fs-body);color:var(--c-text-body);margin-top:var(--sp-2xs);padding-left:var(--sp-3xl);line-height:1.25">고객이 실제로 가치를 인식하는 기능에 집중하고, <strong>과잉 사양을 제거</strong>하여 원가를 10~30% 절감할 수 있다</p>
+        </div>
       </div>
 
       <div class="process-steps" style="margin-top:auto">
         <div>
           <div class="process-step">기준 설정</div>
           <div class="process-detail">
-            <p class="bullet">고객 니즈 이해</p>
-            <p class="bullet">상세 비용 분석</p>
-            <p class="bullet">갭 분석</p>
+            <p class="bullet">고객 세그먼트별 가치 인식 조사</p>
+            <p class="bullet">부품·공정별 원가 구조 분해</p>
+            <p class="bullet">고객 기대 대비 현재 수준 갭 분석</p>
           </div>
         </div>
         <div>
           <div class="process-step">아이디어 도출</div>
           <div class="process-detail">
-            <p class="bullet">크로스 기능 워크숍</p>
-            <p class="bullet">가치·비용 재균형</p>
-            <p class="bullet">벤치마킹</p>
+            <p class="bullet">설계·구매·생산 합동 워크숍</p>
+            <p class="bullet">기능별 가치·비용 비율 재조정</p>
+            <p class="bullet">업계 선도 사례 벤치마킹</p>
           </div>
         </div>
         <div>
           <div class="process-step">실행</div>
           <div class="process-detail">
-            <p class="bullet">고객·공급사 합의</p>
-            <p class="bullet">설계 변경 실행</p>
-            <p class="bullet">진행 모니터링</p>
+            <p class="bullet">고객·공급사 합의 후 범위 확정</p>
+            <p class="bullet">설계 변경 단계적 적용·검증</p>
+            <p class="bullet">절감 실현율 주기적 추적·관리</p>
           </div>
         </div>
       </div>
@@ -277,6 +462,179 @@
   <footer class="slot-footer">
     <span class="source">Source: BCG 분석</span>
     <span class="page-num">14</span>
+  </footer>
+</section>
+
+<!-- ══ SLIDE 7: Before/After ══ -->
+<section class="slide" lang="ko">
+  <span class="proto-tag">v6 한글 — Before/After (Grid)</span>
+
+  <header class="slot-header">
+    <h1 class="action-title">AI-first 전환으로 비용 구조를 재설계하고 운영 효율성을 근본적으로 개선한다</h1>
+  </header>
+
+  <div class="slot-body layout-before-after">
+    <!-- 컬럼 1: Current -->
+    <div class="ba-column">
+      <h3 class="ba-title">Current</h3>
+      <p class="ba-subtitle" style="font-weight:600;color:var(--c-danger)">구조적 비효율이 비용 상승을 초래</p>
+      <div class="ba-body">
+        <div style="display:flex;align-items:center;gap:var(--sp-md)">
+          <span style="font-size:var(--fs-chart-val)">⚠️</span>
+          <div style="font-size:var(--fs-body);line-height:1.3"><strong>프로젝트 3건 중 2건</strong>이 평균 8개월 지연</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-md)">
+          <span style="font-size:var(--fs-chart-val)">📋</span>
+          <div style="font-size:var(--fs-body);line-height:1.3"><strong>승인 병목</strong>으로 의사결정 주기 12주 이상 소요</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-md)">
+          <span style="font-size:var(--fs-chart-val)">💰</span>
+          <div style="font-size:var(--fs-body);line-height:1.3">레거시 대비 <strong>6배 높은</strong> 유지보수 비용</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-md)">
+          <span style="font-size:var(--fs-chart-val)">🔄</span>
+          <div style="font-size:var(--fs-body);line-height:1.3"><strong>수동 시나리오</strong> 기반 정적 포트폴리오 관리</div>
+        </div>
+      </div>
+      <div></div><!-- 푸터 placeholder (4행 맞춤) -->
+    </div>
+
+    <!-- 컬럼 2: AI-first 전환 -->
+    <div class="ba-column">
+      <h3 class="ba-title" style="color:var(--c-accent-dark)">AI-first 전환</h3>
+      <p class="ba-subtitle">스마트하고 동적인 의사결정으로 자본 배분과 운영을 혁신</p>
+      <div class="ba-body">
+        <div style="border-left:3px solid var(--c-accent);padding-left:var(--sp-lg)">
+          <p style="font-size:var(--fs-body);font-weight:700;color:var(--c-accent-dark)">가치 기반 포트폴리오 재우선순위화</p>
+          <p style="font-size:var(--fs-body);color:var(--c-text-body);line-height:1.3">성장 신호, 규제, 공급망 제약 기반 프로젝트 시퀀싱 최적화</p>
+        </div>
+        <div style="border-left:3px solid var(--c-accent);padding-left:var(--sp-lg)">
+          <p style="font-size:var(--fs-body);font-weight:700;color:var(--c-accent-dark)">디지털 트윈 기반 부하·그리드 모델링</p>
+          <p style="font-size:var(--fs-body);color:var(--c-text-body);line-height:1.3">디지털 트윈으로 부하 예측 및 다양한 시나리오 스트레스 테스트</p>
+        </div>
+        <div style="border-left:3px solid var(--c-accent);padding-left:var(--sp-lg)">
+          <p style="font-size:var(--fs-body);font-weight:700;color:var(--c-accent-dark)">리스크 관리 및 동적 자본 재배분</p>
+          <p style="font-size:var(--fs-body);color:var(--c-text-body);line-height:1.3">비용·일정 이탈 조기 감지, 예측 모델링 기반 포트폴리오 자동 재조정</p>
+        </div>
+        <div style="border-left:3px solid var(--c-accent);padding-left:var(--sp-lg)">
+          <p style="font-size:var(--fs-body);font-weight:700;color:var(--c-accent-dark)">통합 업무 협업 체계</p>
+          <p style="font-size:var(--fs-body);color:var(--c-text-body);line-height:1.3">프로젝트별 역량·성과·가용성 매칭, 지역·시간대 최적화</p>
+        </div>
+      </div>
+      <div></div><!-- 푸터 placeholder -->
+    </div>
+
+    <!-- 컬럼 3: Impact -->
+    <div class="ba-column">
+      <h3 class="ba-title">Impact</h3>
+      <div></div><!-- 부제 placeholder -->
+      <div class="ba-body">
+        <div>
+          <div style="font-size:var(--fs-big);font-weight:800;color:var(--c-accent-dark)">8~15%</div>
+          <div style="font-size:var(--fs-body);font-weight:700">Capex 최적화</div>
+          <div style="font-size:var(--fs-body);color:var(--c-text-body)">연간 투자 예산 대비 절감 효과</div>
+        </div>
+        <div>
+          <div style="font-size:var(--fs-big);font-weight:800;color:var(--c-accent-dark)">15~25%</div>
+          <div style="font-size:var(--fs-body);font-weight:700">프로젝트 실행 시간 압축</div>
+          <div style="font-size:var(--fs-body);color:var(--c-text-body)">기획~완료 리드타임 단축</div>
+        </div>
+        <div>
+          <div style="font-size:var(--fs-big);font-weight:800;color:var(--c-accent-dark)">+40%</div>
+          <div style="font-size:var(--fs-body);font-weight:700">서비스 중단 회피율</div>
+          <div style="font-size:var(--fs-body);color:var(--c-text-body)">예측 유지보수로 장애 사전 방지</div>
+        </div>
+      </div>
+      <div class="ba-footer">
+        명확한 시나리오와 완화 경로를 통해 실행 복잡성을 감소시키고 운영 안정성을 확보
+      </div>
+    </div>
+  </div>
+
+  <footer class="slot-footer">
+    <span class="source">Source: BCG 분석</span>
+    <span class="page-num">7</span>
+  </footer>
+</section>
+
+<!-- ══ SLIDE 9: Case Study ══ -->
+<section class="slide" lang="ko">
+  <span class="proto-tag">v6 한글 — Case Study (Grid)</span>
+
+  <header class="slot-header">
+    <span class="title-label">사례 |</span>
+    <h1 class="action-title">AI와 역량 구축을 결합하여 대규모 미디어 실행 효율화를 달성한 뷰티 기업 사례</h1>
+  </header>
+
+  <div class="slot-body layout-case-study">
+    <div style="font-size:var(--fs-source);color:var(--c-text-muted);font-style:italic;margin-bottom:var(--sp-xs)">예시: BCG 컨설팅 프로젝트 사례</div>
+
+    <!-- Impact 행 -->
+    <div class="case-row case-row--impact">
+      <div class="case-row-label">
+        <span>🎯</span>
+        <span>Impact<br>성과</span>
+      </div>
+      <div class="case-row-body">
+        <div class="case-metrics">
+          <div>
+            <div class="metric-value">80%</div>
+            <div class="metric-label">디지털 마케팅 ROI 개선<br><span style="font-size:var(--fs-source)">유료+자발적 채널 통합 기준, 전년 대비 측정</span></div>
+          </div>
+          <div>
+            <div class="metric-value">30%+</div>
+            <div class="metric-label">디지털 미디어 효율성 향상<br><span style="font-size:var(--fs-source)">6개 플랫폼 크로스채널 최적화 적용</span></div>
+          </div>
+          <div>
+            <div class="metric-value">3.2x</div>
+            <div class="metric-label">캠페인 최적화 속도<br><span style="font-size:var(--fs-source)">기존 수동 분석 대비 의사결정 주기 단축</span></div>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--c-border);padding-top:var(--sp-sm);font-size:var(--fs-body);color:var(--c-text-body)">글로벌 6개 시장 대상 12개월 파일럿 후 전사 롤아웃, 연간 <strong>$12M 미디어 비용 절감</strong> 달성.<br>AI 기반 자동 최적화로 마케팅팀 업무 시간의 <strong>35%를 전략 기획에 재배분</strong>하여 캠페인 품질 동시 향상</div>
+      </div>
+    </div>
+
+    <!-- Platform 행 -->
+    <div class="case-row">
+      <div class="case-row-label">
+        <span>⚙️</span>
+        <span>AI<br>플랫폼</span>
+      </div>
+      <div class="case-row-body">
+        <div class="case-flow-grid">
+          <div class="case-flow-item">
+            <div class="case-flow-box">오디언스<br>엔진</div>
+            <div class="case-flow-desc">1st/3rd Party 데이터 통합으로 고객 세그먼트를 정밀 분석하고, 구매 확률 기반 최적 타겟팅 실행</div>
+          </div>
+          <div class="case-flow-item">
+            <div class="case-flow-box">실행 제어<br>엔진</div>
+            <div class="case-flow-desc">채널별 입찰가·예산을 실시간 자동 조정하고, A/B 테스트 결과를 즉시 반영하여 캠페인 효율 극대화</div>
+          </div>
+          <div class="case-flow-item">
+            <div class="case-flow-box">옴니채널<br>측정 엔진</div>
+            <div class="case-flow-desc">MMM+MTA 하이브리드 모델로 터치포인트별 기여도를 정량화하고, ROI 기반 리소스 재배분 자동화</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 운영 모델 행 -->
+    <div class="case-row">
+      <div class="case-row-label">
+        <span>🏢</span>
+        <span>운영<br>모델</span>
+      </div>
+      <div class="case-row-body">
+        <p><strong>마케터 역량 강화</strong> — 활성화 및 오디언스 전문성을 내재화하고, RTB¹ 바잉을 복잡 지역에서 인소싱하여 에이전시 의존도를 40% 이상 감소시킴</p>
+        <p><strong>새로운 에이전시 계약 규칙</strong> — 내부 기술 및 KPI 프레임워크를 적용하고, 통제된 테스트 &amp; 학습 아젠다로 분기별 성과 기반 계약 갱신 체계를 수립</p>
+        <p><strong>전문 역량 센터(CoE)</strong> — 글로벌·로컬 수준에서 데이터 사이언스, 크리에이티브 최적화, 미디어 바잉 역량을 공유하는 허브 앤 스포크 운영 모델 구축</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="slot-footer">
+    <span class="source">1. RTB: 실시간 입찰(Real-Time Bidding)<br>Source: BCG 클라이언트 프로젝트 사례</span>
+    <span class="page-num">23</span>
   </footer>
 </section>
 

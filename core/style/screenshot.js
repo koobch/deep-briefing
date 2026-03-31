@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require('fs');
 
 (async () => {
-  const htmlPath = path.resolve(__dirname, 'prototype-slide.html');
+  const htmlPath = path.resolve(__dirname, 'prototype-v6.html');
   const outDir = path.resolve(__dirname, '../../.claude/plans/ppt-ref-images/proto');
   fs.mkdirSync(outDir, { recursive: true });
 

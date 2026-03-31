@@ -9,7 +9,7 @@ const path = require('path');
 const fs = require('fs');
 
 (async () => {
-  const htmlPath = path.resolve(__dirname, '../core/style/prototype-slide.html');
+  const htmlPath = path.resolve(__dirname, '../core/style/prototype-v6.html');
   const outPath = path.resolve(__dirname, '../core/style/proto-rendered-spec.json');
 
   const browser = await puppeteer.launch({ headless: 'new' });
@@ -65,30 +65,38 @@ const fs = require('fs');
         };
       });
 
-      // 겹침 감지
+      // 겹침 감지 — DOM containment 체크를 활용하여 false-positive 제거
+      const slideArea = slideRect.width * slideRect.height;
       const overlaps = [];
-      for (let i = 0; i < elements.length; i++) {
-        for (let j = i + 1; j < elements.length; j++) {
+      for (let i = 0; i < allElements.length; i++) {
+        for (let j = i + 1; j < allElements.length; j++) {
+          const elA = allElements[i], elB = allElements[j];
           const a = elements[i], b = elements[j];
-          // 부모-자식 관계 제외 (같은 영역 공유는 정상)
-          if (a.text === b.text) continue;
+
+          // 1) 부모-자식 DOM 중첩 제외 (정상적인 CSS 레이아웃)
+          if (elA.contains(elB) || elB.contains(elA)) continue;
+
+          // 2) 같은 부모의 형제 요소 제외 (grid/flex 컨테이너 내 의도적 배치)
+          if (elA.parentElement === elB.parentElement) continue;
+
+          // 3) 너무 작은 요소 무시
           if (a.w < 30 || a.h < 30 || b.w < 30 || b.h < 30) continue;
 
           const overlapX = Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x));
           const overlapY = Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y));
           const area = overlapX * overlapY;
 
-          // 자식 요소가 부모 안에 있는 건 정상 — 비슷한 크기일 때만 겹침으로 판단
-          const sizeRatio = Math.min(a.w * a.h, b.w * b.h) / Math.max(a.w * a.h, b.w * b.h);
-          if (area > 200 && sizeRatio > 0.1 && sizeRatio < 0.9) {
-            overlaps.push({
-              element_a: a.id,
-              element_b: b.id,
-              text_a: a.text.substring(0, 30),
-              text_b: b.text.substring(0, 30),
-              overlap_area: area,
-            });
-          }
+          // 4) 슬라이드 면적의 5% 미만이면 무시 (미세 겹침)
+          if (area < slideArea * 0.05) continue;
+
+          overlaps.push({
+            element_a: a.id,
+            element_b: b.id,
+            text_a: a.text.substring(0, 30),
+            text_b: b.text.substring(0, 30),
+            overlap_area: area,
+            overlap_pct: Math.round(area / slideArea * 100) + '%',
+          });
         }
       }
 
