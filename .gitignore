@@ -10,6 +10,7 @@ data/user-provided/
 domains/game-strategy/
 
 # === 빌드/캐시 산출물 ===
+node_modules/
 __pycache__/
 *.pyc
 */reports/charts/

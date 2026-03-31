@@ -1,0 +1,161 @@
+{
+  "page": 1,
+  "width": 960.0,
+  "height": 540.0,
+  "texts": [
+    {
+      "text": "Executive ",
+      "x": 107.9,
+      "y": 99.1,
+      "w": 99.5,
+      "h": 24.6,
+      "font": "HendersonBCGSerif-Regula",
+      "size": 22.0,
+      "color": "#000000",
+      "flags": 4
+    },
+    {
+      "text": "Perspectives",
+      "x": 107.9,
+      "y": 125.5,
+      "w": 119.7,
+      "h": 24.6,
+      "font": "HendersonBCGSerif-Regula",
+      "size": 22.0,
+      "color": "#000000",
+      "flags": 4
+    },
+    {
+      "text": "June 2025",
+      "x": 333.5,
+      "y": 357.6,
+      "w": 83.5,
+      "h": 22.5,
+      "font": "HendersonBCGSerif-Italic",
+      "size": 20.1,
+      "color": "#000000",
+      "flags": 6
+    },
+    {
+      "text": "Move Fast, Scale Smart",
+      "x": 333.5,
+      "y": 306.4,
+      "w": 265.1,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "AI-First Companies Win the Future",
+      "x": 333.5,
+      "y": 212.9,
+      "w": 525.6,
+      "h": 35.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 32.0,
+      "color": "#000000",
+      "flags": 16
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 960.0,
+      "h": 540.0,
+      "fill": "(0.19598688185214996, 0.19600214064121246, 0.19594110548496246)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 778.0,
+      "y": -0.0,
+      "w": 182.0,
+      "h": 540.0,
+      "fill": "(0.0, 0.0, 0.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 307.1,
+      "y": 183.5,
+      "w": 593.5,
+      "h": 238.9,
+      "fill": "(0.9729152321815491, 0.9730373024940491, 0.9728847146034241)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 0.8784300088882446
+    },
+    {
+      "type": "f",
+      "x": 63.4,
+      "y": 0.0,
+      "w": 243.8,
+      "h": 183.5,
+      "fill": "(0.9729152321815491, 0.9730373024940491, 0.9728847146034241)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 0.8784300088882446
+    },
+    {
+      "type": "s",
+      "x": 63.4,
+      "y": 183.5,
+      "w": 837.2,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.5690000057220459, 0.24699999392032623)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 110.2,
+      "y": 40.5,
+      "w": 66.8,
+      "h": 27.0,
+      "fill": "(0.05490000173449516, 0.24300000071525574, 0.10599999874830246)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 307.1,
+      "y": 0.0,
+      "w": 0.0,
+      "h": 450.6,
+      "fill": null,
+      "color": "(0.0, 0.5690000057220459, 0.24699999392032623)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 308.7,
+      "y": 404.7,
+      "w": 281.2,
+      "h": 45.8,
+      "fill": "(0.0, 0.5690000057220459, 0.24699999392032623)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 7,
+      "x": -0.7,
+      "y": -0.0,
+      "w": 778.7,
+      "h": 540.1
+    }
+  ]
+}

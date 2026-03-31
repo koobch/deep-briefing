@@ -1,0 +1,117 @@
+{
+  "page": 1,
+  "width": 1200.0,
+  "height": 628.0,
+  "texts": [
+    {
+      "text": "SEPTEMBER 2024",
+      "x": 52.9,
+      "y": 555.3,
+      "w": 138.4,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#323232",
+      "flags": 0
+    },
+    {
+      "text": "Even Within Lines of ",
+      "x": 52.9,
+      "y": 197.9,
+      "w": 392.0,
+      "h": 51.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 40.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "Business, Performance ",
+      "x": 52.9,
+      "y": 244.5,
+      "w": 440.8,
+      "h": 51.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 40.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "Varies Widely",
+      "x": 52.9,
+      "y": 291.1,
+      "w": 254.6,
+      "h": 51.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 40.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "The 2024 Insurance Value ",
+      "x": 52.9,
+      "y": 351.1,
+      "w": 327.4,
+      "h": 37.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 29.0,
+      "color": "#535353",
+      "flags": 0
+    },
+    {
+      "text": "Creators Report",
+      "x": 52.9,
+      "y": 385.7,
+      "w": 198.6,
+      "h": 37.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 29.0,
+      "color": "#535353",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1200.0,
+      "h": 628.0,
+      "fill": "(0.9429922699928284, 0.9389944076538086, 0.9369955062866211)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.2,
+      "y": 0.0,
+      "w": 1199.6,
+      "h": 628.0,
+      "fill": "(0.9429922699928284, 0.9389944076538086, 0.9369955062866211)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 53.2,
+      "y": 49.9,
+      "w": 89.7,
+      "h": 36.3,
+      "fill": "(0.27499809861183167, 0.2709849774837494, 0.27798885107040405)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 144,
+      "x": 142.9,
+      "y": -13.6,
+      "w": 1156.9,
+      "h": 772.3
+    }
+  ]
+}

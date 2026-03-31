@@ -1,0 +1,998 @@
+{
+  "page": 6,
+  "width": 960.0,
+  "height": 540.0,
+  "texts": [
+    {
+      "text": "5",
+      "x": 904.3,
+      "y": 505.2,
+      "w": 5.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+      "x": 945.1,
+      "y": 317.0,
+      "w": 7.8,
+      "h": 197.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 7.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Backup ",
+      "x": 49.6,
+      "y": 31.9,
+      "w": 91.7,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#41ff94",
+      "flags": 16
+    },
+    {
+      "text": "for grounding definition",
+      "x": 141.3,
+      "y": 31.9,
+      "w": 272.8,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "1. Large Language Model (LLM), Small Language Model (SLM)",
+      "x": 339.7,
+      "y": 507.4,
+      "w": 276.4,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Regular",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "What ",
+      "x": 351.5,
+      "y": 170.8,
+      "w": 52.2,
+      "h": 22.5,
+      "font": "HendersonBCGSans-Regular",
+      "size": 20.1,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "an agent ",
+      "x": 351.5,
+      "y": 194.8,
+      "w": 82.5,
+      "h": 22.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 20.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "IS",
+      "x": 351.5,
+      "y": 218.8,
+      "w": 18.9,
+      "h": 22.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 20.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "What ",
+      "x": 351.5,
+      "y": 347.8,
+      "w": 52.2,
+      "h": 22.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 20.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "an agent ",
+      "x": 351.5,
+      "y": 371.8,
+      "w": 82.5,
+      "h": 22.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 20.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "DOES",
+      "x": 351.5,
+      "y": 395.8,
+      "w": 54.7,
+      "h": 22.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 20.1,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "AI Models",
+      "x": 632.8,
+      "y": 201.2,
+      "w": 86.4,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00c857",
+      "flags": 16
+    },
+    {
+      "text": "Systems",
+      "x": 775.4,
+      "y": 201.2,
+      "w": 71.3,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00c857",
+      "flags": 16
+    },
+    {
+      "text": "Memory",
+      "x": 497.0,
+      "y": 201.2,
+      "w": 71.6,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00c857",
+      "flags": 16
+    },
+    {
+      "text": "Uses one or more AI ",
+      "x": 632.8,
+      "y": 227.5,
+      "w": 125.6,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "models, usually an ",
+      "x": 632.8,
+      "y": 244.3,
+      "w": 114.9,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "LLM",
+      "x": 632.8,
+      "y": 261.1,
+      "w": 26.9,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "1",
+      "x": 659.7,
+      "y": 261.1,
+      "w": 4.9,
+      "h": 10.5,
+      "font": "HendersonBCGSans-Light",
+      "size": 9.4,
+      "color": "#000000",
+      "flags": 1
+    },
+    {
+      "text": " or SLM",
+      "x": 664.6,
+      "y": 261.1,
+      "w": 46.7,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "1",
+      "x": 711.4,
+      "y": 261.1,
+      "w": 4.9,
+      "h": 10.5,
+      "font": "HendersonBCGSans-Light",
+      "size": 9.4,
+      "color": "#000000",
+      "flags": 1
+    },
+    {
+      "text": "Accesses external ",
+      "x": 775.4,
+      "y": 227.5,
+      "w": 109.8,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "systems on your ",
+      "x": 775.4,
+      "y": 244.3,
+      "w": 100.2,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "behalf",
+      "x": 775.4,
+      "y": 261.1,
+      "w": 37.7,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Ability to remember ",
+      "x": 497.0,
+      "y": 227.5,
+      "w": 123.7,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "across tasks and ",
+      "x": 497.0,
+      "y": 244.3,
+      "w": 102.1,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "changing states",
+      "x": 497.0,
+      "y": 261.1,
+      "w": 93.9,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Acts",
+      "x": 775.4,
+      "y": 388.6,
+      "w": 36.9,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#deb900",
+      "flags": 16
+    },
+    {
+      "text": "Execute by ",
+      "x": 775.4,
+      "y": 412.7,
+      "w": 68.2,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "leveraging internal or ",
+      "x": 775.4,
+      "y": 429.6,
+      "w": 131.5,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "external ",
+      "x": 775.4,
+      "y": 446.3,
+      "w": 52.8,
+      "h": 15.8,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.1,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "tools/systems",
+      "x": 775.4,
+      "y": 463.2,
+      "w": 82.2,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Plans",
+      "x": 632.8,
+      "y": 388.6,
+      "w": 47.7,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00ee66",
+      "flags": 16
+    },
+    {
+      "text": "Evaluate ",
+      "x": 632.8,
+      "y": 412.7,
+      "w": 55.0,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "possible actions ",
+      "x": 632.8,
+      "y": 429.6,
+      "w": 99.1,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "and prioritizes ",
+      "x": 632.8,
+      "y": 446.3,
+      "w": 89.9,
+      "h": 15.8,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.1,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "towards a goal",
+      "x": 632.8,
+      "y": 463.2,
+      "w": 86.1,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Observe",
+      "x": 497.0,
+      "y": 388.6,
+      "w": 70.3,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00c857",
+      "flags": 16
+    },
+    {
+      "text": "s",
+      "x": 567.4,
+      "y": 388.6,
+      "w": 8.8,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#24ae79",
+      "flags": 16
+    },
+    {
+      "text": "Collect and process ",
+      "x": 497.0,
+      "y": 412.7,
+      "w": 120.1,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "data from ",
+      "x": 497.0,
+      "y": 429.6,
+      "w": 62.4,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "environment",
+      "x": 497.0,
+      "y": 446.3,
+      "w": 77.0,
+      "h": 15.8,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.1,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "5",
+      "x": 904.3,
+      "y": 505.2,
+      "w": 5.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Regular",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "What is an agent?",
+      "x": 58.2,
+      "y": 274.3,
+      "w": 203.2,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "AI that uses tools ",
+      "x": 58.2,
+      "y": 300.2,
+      "w": 189.0,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Regular",
+      "size": 24.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "to accomplish goals",
+      "x": 58.2,
+      "y": 326.2,
+      "w": 207.3,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Regular",
+      "size": 24.0,
+      "color": "#000000",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 960.0,
+      "h": 540.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 960.0,
+      "h": 92.3,
+      "fill": "(0.015699999406933784, 0.019600000232458115, 0.019600000232458115)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 320.0,
+      "h": 540.0,
+      "fill": "(0.8429999947547913, 0.9919999837875366, 0.9179999828338623)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 960.0,
+      "h": 92.3,
+      "fill": "(0.015699999406933784, 0.019600000232458115, 0.019600000232458115)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 338.1,
+      "y": 279.7,
+      "w": 572.4,
+      "h": 205.4,
+      "fill": null,
+      "color": "(1.0, 1.0, 1.0)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 441.9,
+      "y": 182.9,
+      "w": 40.8,
+      "h": 40.8,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 457.0,
+      "y": 190.1,
+      "w": 14.6,
+      "h": 26.4,
+      "fill": "(0.0, 0.5690000057220459, 0.24699999392032623)",
+      "color": "(0.0, 0.5690000057220459, 0.24699999392032623)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 494.6,
+      "y": 117.5,
+      "w": 70.8,
+      "h": 70.8,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 632.5,
+      "y": 117.5,
+      "w": 70.8,
+      "h": 70.8,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 770.3,
+      "y": 117.5,
+      "w": 70.8,
+      "h": 70.8,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 508.2,
+      "y": 131.0,
+      "w": 43.6,
+      "h": 43.7,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 517.2,
+      "y": 140.0,
+      "w": 25.5,
+      "h": 25.5,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 643.2,
+      "y": 130.4,
+      "w": 49.8,
+      "h": 44.9,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 646.7,
+      "y": 132.7,
+      "w": 42.8,
+      "h": 40.4,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 785.3,
+      "y": 133.3,
+      "w": 40.6,
+      "h": 39.9,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 785.3,
+      "y": 133.2,
+      "w": 40.7,
+      "h": 40.0,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 494.6,
+      "y": 307.0,
+      "w": 70.8,
+      "h": 70.8,
+      "fill": "(0.0, 0.4779999852180481, 0.2160000056028366)",
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 632.7,
+      "y": 307.0,
+      "w": 70.8,
+      "h": 70.8,
+      "fill": "(0.0, 0.9490000009536743, 0.40799999237060547)",
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 0.8196099996566772
+    },
+    {
+      "type": "fs",
+      "x": 770.3,
+      "y": 307.0,
+      "w": 70.8,
+      "h": 70.8,
+      "fill": "(0.9330000281333923, 0.7760000228881836, 0.0)",
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 521.0,
+      "y": 333.3,
+      "w": 18.1,
+      "h": 18.1,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 505.5,
+      "y": 329.8,
+      "w": 49.0,
+      "h": 25.2,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 648.0,
+      "y": 329.8,
+      "w": 33.3,
+      "h": 30.9,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 648.0,
+      "y": 324.0,
+      "w": 45.5,
+      "h": 25.7,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 784.1,
+      "y": 323.4,
+      "w": 40.6,
+      "h": 39.4,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 787.3,
+      "y": 322.4,
+      "w": 40.5,
+      "h": 40.1,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 441.9,
+      "y": 366.4,
+      "w": 40.8,
+      "h": 40.8,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 457.0,
+      "y": 373.5,
+      "w": 14.6,
+      "h": 26.4,
+      "fill": "(0.0, 0.5690000057220459, 0.24699999392032623)",
+      "color": "(0.0, 0.5690000057220459, 0.24699999392032623)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 60.1,
+      "y": 229.7,
+      "w": 34.1,
+      "h": 33.2,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 47.7,
+      "y": 212.7,
+      "w": 41.4,
+      "h": 33.8,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 278,
+      "x": 558.7,
+      "y": 0.0,
+      "w": 401.3,
+      "h": 89.2
+    },
+    {
+      "xref": 278,
+      "x": 558.7,
+      "y": 0.0,
+      "w": 401.3,
+      "h": 89.2
+    },
+    {
+      "xref": 16,
+      "x": 491.8,
+      "y": 114.6,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 16,
+      "x": 629.6,
+      "y": 114.6,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 16,
+      "x": 767.5,
+      "y": 114.6,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 16,
+      "x": 491.8,
+      "y": 304.1,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 16,
+      "x": 629.9,
+      "y": 304.1,
+      "w": 80.4,
+      "h": 80.4
+    },
+    {
+      "xref": 16,
+      "x": 767.5,
+      "y": 304.1,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 18,
+      "x": 491.8,
+      "y": 114.6,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 18,
+      "x": 629.6,
+      "y": 114.6,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 18,
+      "x": 767.5,
+      "y": 114.6,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 18,
+      "x": 491.8,
+      "y": 304.1,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 18,
+      "x": 629.9,
+      "y": 304.1,
+      "w": 80.4,
+      "h": 80.4
+    },
+    {
+      "xref": 18,
+      "x": 767.5,
+      "y": 304.1,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 20,
+      "x": 491.8,
+      "y": 114.6,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 20,
+      "x": 629.6,
+      "y": 114.6,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 20,
+      "x": 767.5,
+      "y": 114.6,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 20,
+      "x": 491.8,
+      "y": 304.1,
+      "w": 80.3,
+      "h": 80.4
+    },
+    {
+      "xref": 20,
+      "x": 629.9,
+      "y": 304.1,
+      "w": 80.4,
+      "h": 80.4
+    },
+    {
+      "xref": 20,
+      "x": 767.5,
+      "y": 304.1,
+      "w": 80.3,
+      "h": 80.4
+    }
+  ]
+}

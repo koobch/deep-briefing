@@ -1,0 +1,274 @@
+{
+  "page": 4,
+  "width": 1760.0,
+  "height": 990.0,
+  "texts": [
+    {
+      "text": "We found that overall decarbonization has been positive on ",
+      "x": 80.0,
+      "y": 75.7,
+      "w": 748.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "average, but has been slower than expected because ",
+      "x": 80.0,
+      "y": 111.7,
+      "w": 666.0,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "companies’ efforts vary widely:",
+      "x": 80.0,
+      "y": 147.7,
+      "w": 383.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "•\t Between 2020 and 2023, benchmark companies with ",
+      "x": 80.0,
+      "y": 219.7,
+      "w": 700.3,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "assets in the top quartile of decarbonizers reduced CO2e ",
+      "x": 110.0,
+      "y": 255.7,
+      "w": 710.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "intensity by at least 1 kilogram of CO2e for every barrel of ",
+      "x": 110.0,
+      "y": 291.7,
+      "w": 722.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "oil equivalent (boe) a year—twice as fast as the average. ",
+      "x": 110.0,
+      "y": 327.7,
+      "w": 710.7,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "Top quartile assets’ decarbonization programs address ",
+      "x": 110.0,
+      "y": 363.7,
+      "w": 686.9,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "85% of their total emissions, compared to 70% for ",
+      "x": 110.0,
+      "y": 399.7,
+      "w": 628.8,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "all assets. ",
+      "x": 110.0,
+      "y": 435.7,
+      "w": 131.2,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "•\t During the same three-year period, however, 40% of all the ",
+      "x": 80.0,
+      "y": 507.7,
+      "w": 763.3,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "assets in our benchmark saw CO2e intensity increase. The ",
+      "x": 110.0,
+      "y": 543.7,
+      "w": 719.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "median asset increased emissions intensity by 0.1 kg of ",
+      "x": 110.0,
+      "y": 579.7,
+      "w": 687.8,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "CO2e per boe a year. Assets in the bottom quartile ",
+      "x": 110.0,
+      "y": 615.7,
+      "w": 626.8,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "increased emissions intensity by more than 0.6 kg of CO2e ",
+      "x": 110.0,
+      "y": 651.7,
+      "w": 722.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "per boe a year. The increases came from late-life assets—",
+      "x": 110.0,
+      "y": 687.7,
+      "w": 716.8,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "oil and gas facilities and wells that are nearing the end of ",
+      "x": 110.0,
+      "y": 723.7,
+      "w": 710.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "their economic lifespan—along with assets that added ",
+      "x": 110.0,
+      "y": 759.7,
+      "w": 678.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "production with relatively high emissions intensity.",
+      "x": 110.0,
+      "y": 795.7,
+      "w": 617.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "For the industry to meet 2030 greenhouse gas emissions ",
+      "x": 920.0,
+      "y": 75.7,
+      "w": 712.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "reduction goals, companies must double the current pace of ",
+      "x": 920.0,
+      "y": 111.7,
+      "w": 756.7,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "asset decarbonization, accelerating emissions reduction ",
+      "x": 920.0,
+      "y": 147.7,
+      "w": 702.8,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "from 10,000 tons to 20,000 tons of CO2e a year.",
+      "x": 920.0,
+      "y": 183.7,
+      "w": 590.2,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.5,
+      "y": 0.5,
+      "w": 1759.0,
+      "h": 989.0,
+      "fill": "(0.9449912309646606, 0.9329976439476013, 0.9179980158805847)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": []
+}

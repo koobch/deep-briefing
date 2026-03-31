@@ -1,0 +1,139 @@
+{
+  "page": 1,
+  "width": 960.0,
+  "height": 540.0,
+  "texts": [
+    {
+      "text": "0",
+      "x": 904.2,
+      "y": 504.9,
+      "w": 5.2,
+      "h": 11.4,
+      "font": "TrebuchetMS",
+      "size": 10.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "Diversity Driver Downloads ",
+      "x": 51.7,
+      "y": 188.3,
+      "w": 620.2,
+      "h": 54.9,
+      "font": "TrebuchetMS-Bold",
+      "size": 48.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "Feb 2021",
+      "x": 50.2,
+      "y": 482.5,
+      "w": 104.1,
+      "h": 27.5,
+      "font": "TrebuchetMS-Bold",
+      "size": 24.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "Sergio Panday",
+      "x": 50.2,
+      "y": 314.7,
+      "w": 233.7,
+      "h": 41.2,
+      "font": "TrebuchetMS-Bold",
+      "size": 36.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "How to build a virtual mentoring scheme",
+      "x": 50.2,
+      "y": 354.6,
+      "w": 458.8,
+      "h": 27.5,
+      "font": "TrebuchetMS-Bold",
+      "size": 24.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "Prepared by Arushi Bhalla and Florence Hunt",
+      "x": 50.2,
+      "y": 414.6,
+      "w": 505.2,
+      "h": 27.5,
+      "font": "TrebuchetMS-Bold",
+      "size": 24.0,
+      "color": "#ffffff",
+      "flags": 16
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 50.3,
+      "y": 192.5,
+      "w": 608.8,
+      "h": 52.4,
+      "fill": "(0.07450000196695328, 0.3610000014305115, 0.25099998712539673)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 0.6117600202560425
+    },
+    {
+      "type": "f",
+      "x": 50.3,
+      "y": 47.4,
+      "w": 265.0,
+      "h": 109.2,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 50.3,
+      "y": 484.6,
+      "w": 120.4,
+      "h": 26.2,
+      "fill": "(0.07450000196695328, 0.3610000014305115, 0.25099998712539673)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 0.6117600202560425
+    },
+    {
+      "type": "f",
+      "x": 50.3,
+      "y": 317.8,
+      "w": 469.0,
+      "h": 65.4,
+      "fill": "(0.07450000196695328, 0.3610000014305115, 0.25099998712539673)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 0.6117600202560425
+    },
+    {
+      "type": "f",
+      "x": 50.3,
+      "y": 416.6,
+      "w": 859.4,
+      "h": 26.2,
+      "fill": "(0.07450000196695328, 0.3610000014305115, 0.25099998712539673)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 0.6117600202560425
+    }
+  ],
+  "images": [
+    {
+      "xref": 5,
+      "x": 0.0,
+      "y": -91.8,
+      "w": 960.0,
+      "h": 723.6
+    }
+  ]
+}

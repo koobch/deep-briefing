@@ -1,0 +1,95 @@
+{
+  "page": 1,
+  "width": 1760.0,
+  "height": 990.0,
+  "texts": [
+    {
+      "text": "What Decarbonization",
+      "x": 80.0,
+      "y": 349.8,
+      "w": 709.0,
+      "h": 101.6,
+      "font": "HendersonBCGSans-Light",
+      "size": 78.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Leaders in Oil and",
+      "x": 80.0,
+      "y": 439.8,
+      "w": 581.7,
+      "h": 101.6,
+      "font": "HendersonBCGSans-Light",
+      "size": 78.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Gas Do Differently",
+      "x": 80.0,
+      "y": 529.8,
+      "w": 586.8,
+      "h": 101.6,
+      "font": "HendersonBCGSans-Light",
+      "size": 78.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "APRIL 2025",
+      "x": 80.2,
+      "y": 880.1,
+      "w": 148.6,
+      "h": 36.0,
+      "font": "HendersonBCGSans-Bold",
+      "size": 28.0,
+      "color": "#197a56",
+      "flags": 16
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.5,
+      "y": 0.5,
+      "w": 1759.0,
+      "h": 989.0,
+      "fill": "(0.9449912309646606, 0.9329976439476013, 0.9179980158805847)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 80.0,
+      "y": 80.0,
+      "w": 139.9,
+      "h": 56.7,
+      "fill": "(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 880.0,
+      "y": 0.0,
+      "w": 880.0,
+      "h": 990.0,
+      "fill": "(0.8309910893440247, 0.8309910893440247, 0.8309910893440247)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 238,
+      "x": 878.7,
+      "y": -1.3,
+      "w": 882.7,
+      "h": 992.5
+    }
+  ]
+}

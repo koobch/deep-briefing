@@ -1,0 +1,296 @@
+{
+  "page": 11,
+  "width": 1760.0,
+  "height": 990.0,
+  "texts": [
+    {
+      "text": "Benchmark findings bear out the difference that such programs ",
+      "x": 80.0,
+      "y": 75.7,
+      "w": 766.8,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "can make in cutting emissions and making abatement efforts ",
+      "x": 80.0,
+      "y": 111.7,
+      "w": 754.3,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "more profitable. From 2020 to 2023, oil and gas industry assets ",
+      "x": 80.0,
+      "y": 147.7,
+      "w": 761.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "in regions with carbon pricing cut average emissions intensity ",
+      "x": 80.0,
+      "y": 183.7,
+      "w": 762.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "twice as much as assets in areas without it—2% compared to ",
+      "x": 80.0,
+      "y": 219.7,
+      "w": 756.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "1%. Our research also found that if benchmark companies ",
+      "x": 80.0,
+      "y": 255.7,
+      "w": 722.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "operated in regions with a carbon pricing fee of $70 per ton of ",
+      "x": 80.0,
+      "y": 291.7,
+      "w": 758.8,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "CO2e, twice as many of their abatement initiatives would show ",
+      "x": 80.0,
+      "y": 327.7,
+      "w": 756.7,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "a profit—60% compared to 30%. That’s because more of them ",
+      "x": 80.0,
+      "y": 363.7,
+      "w": 764.3,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "would opt to spend on initiatives to lower emissions over paying ",
+      "x": 80.0,
+      "y": 399.7,
+      "w": 766.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "penalties that ultimately would end up costing more. ",
+      "x": 80.0,
+      "y": 435.7,
+      "w": 647.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "Enterprise-wide transformation. ",
+      "x": 920.0,
+      "y": 75.9,
+      "w": 458.3,
+      "h": 38.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 16
+    },
+    {
+      "text": "Decarbonization ",
+      "x": 1378.3,
+      "y": 75.7,
+      "w": 213.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "leaders maximize their efforts by involving the entire ",
+      "x": 920.0,
+      "y": 111.7,
+      "w": 662.3,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "organization in abatement efforts from day one. They start ",
+      "x": 920.0,
+      "y": 147.7,
+      "w": 739.0,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "with a solid program that incentivizes low-emissions choices. ",
+      "x": 920.0,
+      "y": 183.7,
+      "w": 764.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "They give asset teams ownership for making changes but ",
+      "x": 920.0,
+      "y": 219.7,
+      "w": 720.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "use key performance indicators and other metrics to ",
+      "x": 920.0,
+      "y": 255.7,
+      "w": 662.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "measure progress toward goals. They use ",
+      "x": 920.0,
+      "y": 291.7,
+      "w": 522.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "initiatives to ",
+      "x": 1442.1,
+      "y": 291.9,
+      "w": 182.3,
+      "h": 38.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 30.0,
+      "color": "#207e5d",
+      "flags": 16
+    },
+    {
+      "text": "reduce costs and improve productivity per barrel",
+      "x": 920.0,
+      "y": 327.9,
+      "w": 682.6,
+      "h": 38.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 30.0,
+      "color": "#207e5d",
+      "flags": 16
+    },
+    {
+      "text": ". And ",
+      "x": 1602.4,
+      "y": 327.7,
+      "w": 73.9,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "they use upskilling, reskilling, and outside experts to ensure ",
+      "x": 920.0,
+      "y": 363.7,
+      "w": 746.9,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "that the workforce has the capabilities necessary to put ",
+      "x": 920.0,
+      "y": 399.7,
+      "w": 697.3,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "decarbonization programs into practice. ",
+      "x": 920.0,
+      "y": 435.7,
+      "w": 503.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.5,
+      "y": 0.5,
+      "w": 1759.0,
+      "h": 989.0,
+      "fill": "(0.9449912309646606, 0.9329976439476013, 0.9179980158805847)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": []
+}

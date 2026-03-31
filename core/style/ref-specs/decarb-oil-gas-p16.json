@@ -1,0 +1,120 @@
+{
+  "page": 16,
+  "width": 1760.0,
+  "height": 990.0,
+  "texts": [
+    {
+      "text": "By getting decarbonization efforts back on track, the oil and gas ",
+      "x": 80.0,
+      "y": 293.0,
+      "w": 1090.1,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "industry can show its commitment to reducing greenhouse gas ",
+      "x": 80.0,
+      "y": 341.0,
+      "w": 1072.9,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "emissions fast. For companies that have been slow to decarbonize, this ",
+      "x": 80.0,
+      "y": 389.0,
+      "w": 1209.7,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "may mean making radical choices about how they operate assets, ",
+      "x": 80.0,
+      "y": 437.0,
+      "w": 1122.3,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "starting with implementing easy changes that don’t require major ",
+      "x": 80.0,
+      "y": 485.0,
+      "w": 1120.2,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "capital investments. They also need to tap into all available funding ",
+      "x": 80.0,
+      "y": 533.0,
+      "w": 1150.8,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "sources, deploy best practices and new technologies, and get the entire ",
+      "x": 80.0,
+      "y": 581.0,
+      "w": 1216.0,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "organization on board with abatement efforts. ",
+      "x": 80.0,
+      "y": 629.0,
+      "w": 790.1,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#ffffff",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.5,
+      "y": 0.5,
+      "w": 1759.0,
+      "h": 989.0,
+      "fill": "(0.9449912309646606, 0.9329976439476013, 0.9179980158805847)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.5,
+      "w": 1760.0,
+      "h": 989.0,
+      "fill": "(0.054993513971567154, 0.24299992620944977, 0.10598916560411453)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": []
+}

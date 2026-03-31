@@ -1,0 +1,153 @@
+{
+  "page": 8,
+  "width": 1760.0,
+  "height": 990.0,
+  "texts": [
+    {
+      "text": "What Decarbonization ",
+      "x": 80.0,
+      "y": 58.2,
+      "w": 601.1,
+      "h": 83.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 64.0,
+      "color": "#323232",
+      "flags": 0
+    },
+    {
+      "text": "Leaders Do Differently",
+      "x": 80.0,
+      "y": 135.0,
+      "w": 586.8,
+      "h": 83.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 64.0,
+      "color": "#323232",
+      "flags": 0
+    },
+    {
+      "text": "BCG has previously identified actions that ",
+      "x": 920.0,
+      "y": 77.0,
+      "w": 728.3,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "oil and gas industry decarbonization",
+      "x": 920.0,
+      "y": 125.2,
+      "w": 681.0,
+      "h": 51.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 40.0,
+      "color": "#207e5d",
+      "flags": 16
+    },
+    {
+      "text": "leaders are taking to reduce CO2e ",
+      "x": 920.0,
+      "y": 173.0,
+      "w": 586.3,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "abatement costs, including implementing ",
+      "x": 920.0,
+      "y": 221.0,
+      "w": 719.6,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "changes at individual assets and integrating ",
+      "x": 920.0,
+      "y": 269.0,
+      "w": 761.1,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "work across assets and regions to optimize ",
+      "x": 920.0,
+      "y": 317.0,
+      "w": 744.5,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "results. The benchmark enables us to ",
+      "x": 920.0,
+      "y": 365.0,
+      "w": 652.7,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "translate insights into actions that set ",
+      "x": 920.0,
+      "y": 413.0,
+      "w": 655.3,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "decarbonization leaders apart. These can ",
+      "x": 920.0,
+      "y": 461.0,
+      "w": 720.1,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "be divided into four categories. ",
+      "x": 920.0,
+      "y": 509.0,
+      "w": 541.6,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.5,
+      "y": 0.5,
+      "w": 1759.0,
+      "h": 989.0,
+      "fill": "(0.9449912309646606, 0.9329976439476013, 0.9179980158805847)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": []
+}

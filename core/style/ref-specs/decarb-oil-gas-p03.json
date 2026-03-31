@@ -1,0 +1,329 @@
+{
+  "page": 3,
+  "width": 1760.0,
+  "height": 990.0,
+  "texts": [
+    {
+      "text": "Benchmarking Progress ",
+      "x": 80.0,
+      "y": 58.2,
+      "w": 634.8,
+      "h": 83.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 64.0,
+      "color": "#323232",
+      "flags": 0
+    },
+    {
+      "text": "Toward Decarbonization ",
+      "x": 80.0,
+      "y": 135.0,
+      "w": 650.3,
+      "h": 83.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 64.0,
+      "color": "#323232",
+      "flags": 0
+    },
+    {
+      "text": "Oil and gas company assets include offshore ",
+      "x": 80.0,
+      "y": 245.0,
+      "w": 770.4,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "and land-based facilities and wells, liquified ",
+      "x": 80.0,
+      "y": 293.0,
+      "w": 755.3,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "natural gas plants, pipelines, and refineries. ",
+      "x": 80.0,
+      "y": 341.0,
+      "w": 757.5,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "All of them produce greenhouse gases ",
+      "x": 80.0,
+      "y": 389.0,
+      "w": 663.4,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "during operations—including CO2 and ",
+      "x": 80.0,
+      "y": 437.0,
+      "w": 659.6,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "methane—from direct fuel combustion, ",
+      "x": 80.0,
+      "y": 485.0,
+      "w": 692.3,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "flaring, venting, and fugitive emissions that ",
+      "x": 80.0,
+      "y": 533.0,
+      "w": 746.2,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "are released unintentionally.",
+      "x": 80.0,
+      "y": 581.0,
+      "w": 484.0,
+      "h": 52.1,
+      "font": "HendersonBCGSans-Regular",
+      "size": 40.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "Of the 5.1 gigatons (Gt) of CO2e that these assets produce ",
+      "x": 920.0,
+      "y": 75.7,
+      "w": 728.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "annually, methane accounts for 45%. The amount is worth ",
+      "x": 920.0,
+      "y": 111.7,
+      "w": 735.8,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "noting because reducing methane emissions is the fastest ",
+      "x": 920.0,
+      "y": 147.7,
+      "w": 730.0,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "way to slow the rate of global warming.",
+      "x": 920.0,
+      "y": 183.7,
+      "w": 484.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "If oil and gas companies successfully reached existing ",
+      "x": 920.0,
+      "y": 255.7,
+      "w": 674.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "reduction targets, they would cut 1.2 Gt of CO2e from 2022 ",
+      "x": 920.0,
+      "y": 291.7,
+      "w": 739.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "levels and align with Intergovernmental Panel on Climate ",
+      "x": 920.0,
+      "y": 327.7,
+      "w": 722.0,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "Change Category 3 pathways that limit global warming to ",
+      "x": 920.0,
+      "y": 363.7,
+      "w": 719.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "2°C. The targets also include cutting methane emissions ",
+      "x": 920.0,
+      "y": 399.7,
+      "w": 711.3,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "from operations and routine flaring to nearly zero by 2030. ",
+      "x": 920.0,
+      "y": 435.7,
+      "w": 736.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "BCG’s benchmark gauges the efficacy of the industry’s ",
+      "x": 920.0,
+      "y": 507.7,
+      "w": 683.2,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "efforts to date. To create it, we collected data from multiple ",
+      "x": 920.0,
+      "y": 543.7,
+      "w": 746.9,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "companies in all major oil and gas producing regions, ",
+      "x": 920.0,
+      "y": 579.7,
+      "w": 672.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "ranging from small independents to enterprises with global ",
+      "x": 920.0,
+      "y": 615.7,
+      "w": 744.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "portfolios. We analyzed companies’ strategies and costs for ",
+      "x": 920.0,
+      "y": 651.7,
+      "w": 745.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "decarbonizing individual assets, including cutting overall ",
+      "x": 920.0,
+      "y": 687.7,
+      "w": 706.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "CO2e and the amount of CO2e emitted per barrel of ",
+      "x": 920.0,
+      "y": 723.7,
+      "w": 650.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "production—a measurement of emissions intensity.",
+      "x": 920.0,
+      "y": 759.7,
+      "w": 645.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.5,
+      "y": 0.5,
+      "w": 1759.0,
+      "h": 989.0,
+      "fill": "(0.9449912309646606, 0.9329976439476013, 0.9179980158805847)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": []
+}

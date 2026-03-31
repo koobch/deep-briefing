@@ -1,0 +1,329 @@
+{
+  "page": 6,
+  "width": 1760.0,
+  "height": 990.0,
+  "texts": [
+    {
+      "text": "Source: ",
+      "x": 60.0,
+      "y": 910.2,
+      "w": 67.1,
+      "h": 23.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#323232",
+      "flags": 16
+    },
+    {
+      "text": "BCG.",
+      "x": 127.1,
+      "y": 910.0,
+      "w": 39.7,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#323232",
+      "flags": 0
+    },
+    {
+      "text": "Multiple variables influence consumers’ decisions ",
+      "x": 60.0,
+      "y": 40.4,
+      "w": 1145.0,
+      "h": 72.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 56.0,
+      "color": "#323232",
+      "flags": 0
+    },
+    {
+      "text": "Generative AI",
+      "x": 60.0,
+      "y": 533.4,
+      "w": 215.5,
+      "h": 43.8,
+      "font": "HendersonBCGSans-Bold",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": " is transforming ",
+      "x": 275.4,
+      "y": 533.2,
+      "w": 226.8,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "how consumers search, discover, ",
+      "x": 60.0,
+      "y": 581.1,
+      "w": 463.9,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "and make purchase decisions ",
+      "x": 60.0,
+      "y": 629.0,
+      "w": 422.1,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "For example, ",
+      "x": 638.8,
+      "y": 533.2,
+      "w": 189.4,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "sustainability",
+      "x": 828.0,
+      "y": 533.5,
+      "w": 211.5,
+      "h": 43.8,
+      "font": "HendersonBCGSans-Bold",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": " is ",
+      "x": 1039.4,
+      "y": 533.2,
+      "w": 39.5,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "still a key global concern, yet a ",
+      "x": 638.8,
+      "y": 581.1,
+      "w": 437.5,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "gap persists between consumers’ ",
+      "x": 638.8,
+      "y": 629.0,
+      "w": 472.1,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "stated intent and actual behavior",
+      "x": 638.8,
+      "y": 676.9,
+      "w": 462.0,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "Consumers",
+      "x": 1227.6,
+      "y": 533.5,
+      "w": 177.0,
+      "h": 43.8,
+      "font": "HendersonBCGSans-Bold",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": " are open to new ",
+      "x": 1404.4,
+      "y": 533.2,
+      "w": 244.6,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "brands and are exposed to many ",
+      "x": 1227.6,
+      "y": 581.2,
+      "w": 468.0,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "touch points, yet they often ",
+      "x": 1227.6,
+      "y": 629.1,
+      "w": 390.7,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "default to their “tried and true”",
+      "x": 1227.6,
+      "y": 677.0,
+      "w": 435.1,
+      "h": 44.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 34.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "Technology",
+      "x": 60.0,
+      "y": 418.2,
+      "w": 275.3,
+      "h": 78.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 60.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "Tradeoffs",
+      "x": 639.2,
+      "y": 418.2,
+      "w": 225.6,
+      "h": 78.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 60.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "Human factors",
+      "x": 1223.7,
+      "y": 418.2,
+      "w": 366.9,
+      "h": 78.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 60.0,
+      "color": "#ffffff",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1760.0,
+      "h": 990.0,
+      "fill": "(0.9729915261268616, 0.9669947624206543, 0.9589990377426147)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 179.8,
+      "w": 586.7,
+      "h": 669.3,
+      "fill": "(0.07798886299133301, 0.24299992620944977, 0.12199588119983673)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 586.7,
+      "y": 179.8,
+      "w": 586.7,
+      "h": 669.3,
+      "fill": "(0.09799344092607498, 0.4779888689517975, 0.33699551224708557)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 1173.3,
+      "y": 179.8,
+      "w": 586.7,
+      "h": 669.3,
+      "fill": "(0.1289997696876526, 0.7489891052246094, 0.3799954354763031)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 73.8,
+      "y": 249.8,
+      "w": 112.0,
+      "h": 112.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 644.1,
+      "y": 257.5,
+      "w": 127.0,
+      "h": 92.3,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 1231.9,
+      "y": 257.5,
+      "w": 112.0,
+      "h": 90.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 1269.7,
+      "y": 275.5,
+      "w": 36.4,
+      "h": 44.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": []
+}

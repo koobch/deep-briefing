@@ -1,0 +1,210 @@
+{
+  "total_pages": 216,
+  "fonts": {
+    "total_text_spans": 12016,
+    "size_distribution": {
+      "12.0": 2781,
+      "14.0": 2735,
+      "16.0": 1546,
+      "11.0": 1253,
+      "10.0": 1034,
+      "24.0": 475,
+      "18.0": 418,
+      "13.0": 320,
+      "8.0": 284,
+      "9.0": 262,
+      "7.0": 230,
+      "15.0": 208,
+      "20.0": 150,
+      "32.0": 78,
+      "28.0": 64,
+      "22.0": 34,
+      "25.0": 31,
+      "36.0": 20,
+      "40.0": 15,
+      "17.0": 13
+    },
+    "size_stats": {
+      "min": 1.2,
+      "max": 72.0,
+      "median": 13.0,
+      "mean": 13.7
+    },
+    "top_fonts": {
+      "HendersonBCGSans-Light": 7093,
+      "HendersonBCGSans-Bold": 2818,
+      "HendersonBCGSans-Regular": 652,
+      "ArialMT": 571,
+      "TrebuchetMS": 436,
+      "Arial-BoldMT": 160,
+      "HendersonBCGSans-LightIt": 119,
+      "Georgia-Bold": 67,
+      "Wingdings-Regular": 34,
+      "TrebuchetMS-Bold": 18
+    },
+    "weight_ratio": {
+      "regular": 8953,
+      "bold": 3063
+    }
+  },
+  "colors": {
+    "text_colors_top20": {
+      "#000000": 4713,
+      "#ffffff": 1692,
+      "#575757": 1541,
+      "#00c255": 1233,
+      "#00612a": 732,
+      "#7f7f7f": 536,
+      "#29ba74": 260,
+      "#41ff94": 193,
+      "#00913f": 145,
+      "#37373a": 109,
+      "#03522d": 94,
+      "#28ba74": 91,
+      "#323232": 55,
+      "#181818": 51,
+      "#008a3c": 45,
+      "#3e3e3e": 31,
+      "#197a56": 30,
+      "#00a9f4": 30,
+      "#414141": 21,
+      "#898989": 20
+    },
+    "fill_colors_top20": {
+      "(1.0, 1.0, 1.0)": 1090,
+      "(0.0, 0.7609999775886536, 0.3330000042915344)": 774,
+      "(0.0, 0.3799999952316284, 0.16500000655651093)": 754,
+      "(0.9489127993583679, 0.9490348696708679, 0.9488822817802429)": 358,
+      "#00a9f4": 276,
+      "#ffffff": 267,
+      "(0.0, 0.5690000057220459, 0.24699999392032623)": 253,
+      "(0.0, 0.0, 0.0)": 221,
+      "(0.015699999406933784, 0.019600000232458115, 0.019600000232458115)": 193,
+      "(0.9409170746803284, 0.9410391449928284, 0.9408865571022034)": 159,
+      "(0.6669999957084656, 0.7179999947547913, 0.7179999947547913)": 146,
+      "(0.7409999966621399, 0.7649999856948853, 0.7799999713897705)": 120,
+      "(0.09799999743700027, 0.4779999852180481, 0.3370000123977661)": 117,
+      "(0.8588998317718506, 0.8590371608734131, 0.8588845729827881)": 114,
+      "(0.9799343943595886, 0.9800412058830261, 0.9799191355705261)": 112,
+      "(0.16099999845027924, 0.7289999723434448, 0.45500001311302185)": 106,
+      "(0.14900000393390656, 0.19599999487400055, 0.2199999988079071)": 104,
+      "(0.3370000123977661, 0.3919999897480011, 0.44699999690055847)": 84,
+      "#28b974": 77,
+      "(0.2549999952316284, 1.0, 0.5799999833106995)": 76
+    }
+  },
+  "margins": {
+    "left_margin": {
+      "median": 49.6,
+      "min": 15.0,
+      "max": 1007.6
+    },
+    "right_margin": {
+      "median": 7.1,
+      "min": -946.1,
+      "max": 257.8
+    },
+    "top_margin": {
+      "median": 18.9,
+      "min": 5.4,
+      "max": 426.1
+    }
+  },
+  "density": {
+    "texts_per_page": {
+      "median": 55,
+      "mean": 55.6,
+      "min": 0,
+      "max": 180
+    },
+    "drawings_per_page": {
+      "median": 25,
+      "mean": 48.5
+    },
+    "images_per_page": {
+      "median": 1,
+      "mean": 3.9
+    },
+    "chars_per_page": {
+      "median": 1193,
+      "mean": 1182.5,
+      "min": 0,
+      "max": 2890
+    },
+    "total_pages": 216
+  },
+  "layouts": {
+    "process": {
+      "count": 123,
+      "pages": [
+        "ai-cost-advantage-p06.json",
+        "ai-cost-advantage-p07.json",
+        "ai-cost-advantage-p08.json",
+        "ai-cost-advantage-p10.json",
+        "ai-cost-advantage-p11.json"
+      ]
+    },
+    "two-column": {
+      "count": 44,
+      "pages": [
+        "ai-cost-advantage-p02.json",
+        "ai-cost-advantage-p09.json",
+        "ai-engineering-p03.json",
+        "ai-engineering-p18.json",
+        "ai-engineering-p23.json"
+      ]
+    },
+    "standard": {
+      "count": 21,
+      "pages": [
+        "ai-cost-advantage-p01.json",
+        "ai-cost-advantage-p05.json",
+        "ai-cost-advantage-p15.json",
+        "ai-cost-advantage-p18.json",
+        "ai-engineering-p01.json"
+      ]
+    },
+    "data-dense": {
+      "count": 11,
+      "pages": [
+        "ai-cost-advantage-p03.json",
+        "ai-cost-advantage-p12.json",
+        "ai-first-pu-p04.json",
+        "ai-first-telco-p03.json",
+        "ai-first-telco-p16.json"
+      ]
+    },
+    "empty": {
+      "count": 8,
+      "pages": [
+        "ai-cost-advantage-p20.json",
+        "ai-engineering-p25.json",
+        "ai-first-pu-p30.json",
+        "ai-first-telco-p22.json",
+        "ai-first-win-p18.json"
+      ]
+    },
+    "framework": {
+      "count": 7,
+      "pages": [
+        "ai-cost-advantage-p04.json",
+        "ai-cost-advantage-p14.json",
+        "ai-first-pu-p23.json",
+        "ai-first-pu-p28.json",
+        "ai-first-telco-p20.json"
+      ]
+    },
+    "big-number": {
+      "count": 1,
+      "pages": [
+        "ai-first-win-p09.json"
+      ]
+    },
+    "cover": {
+      "count": 1,
+      "pages": [
+        "genai-marketing-p01.json"
+      ]
+    }
+  }
+}

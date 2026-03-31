@@ -1,0 +1,62 @@
+{
+  "page": 7,
+  "width": 960.0,
+  "height": 540.0,
+  "texts": [
+    {
+      "text": "6",
+      "x": 904.2,
+      "y": 504.9,
+      "w": 5.2,
+      "h": 11.4,
+      "font": "TrebuchetMS",
+      "size": 10.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "bcg.com",
+      "x": 75.4,
+      "y": 448.7,
+      "w": 53.2,
+      "h": 16.1,
+      "font": "TrebuchetMS",
+      "size": 14.0,
+      "color": "#ffffff",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 48.8,
+      "y": 48.8,
+      "w": 641.9,
+      "h": 436.6,
+      "fill": "(0.07450000196695328, 0.3610000014305115, 0.25099998712539673)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 0.8196099996566772
+    },
+    {
+      "type": "f",
+      "x": 207.6,
+      "y": 236.2,
+      "w": 324.4,
+      "h": 67.7,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 5,
+      "x": 0.0,
+      "y": -91.8,
+      "w": 960.0,
+      "h": 723.6
+    }
+  ]
+}

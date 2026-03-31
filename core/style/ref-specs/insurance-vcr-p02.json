@@ -1,0 +1,425 @@
+{
+  "page": 2,
+  "width": 1200.0,
+  "height": 628.0,
+  "texts": [
+    {
+      "text": "Source:",
+      "x": 53.4,
+      "y": 574.7,
+      "w": 35.3,
+      "h": 12.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 10.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": " BCG analysis.",
+      "x": 88.7,
+      "y": 574.6,
+      "w": 61.1,
+      "h": 13.0,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "Good performance in the capital markets boosted global ",
+      "x": 692.1,
+      "y": 52.2,
+      "w": 438.1,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "insurance industry total shareholder return (TSR) in 2023 ",
+      "x": 692.1,
+      "y": 74.2,
+      "w": 442.8,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "to 11%. However, five-year (2019–2023) TSR lags most ",
+      "x": 692.1,
+      "y": 96.2,
+      "w": 418.0,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "other industries, and over ten years the industry has mostly ",
+      "x": 692.1,
+      "y": 118.2,
+      "w": 460.8,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "delivered shareholder returns below the cost of equity",
+      "x": 692.1,
+      "y": 140.2,
+      "w": 411.5,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "As a result, the industry has attracted less capital than ",
+      "x": 692.1,
+      "y": 187.2,
+      "w": 428.9,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "most industries over the past five years, losing share in ",
+      "x": 692.1,
+      "y": 209.2,
+      "w": 431.2,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "capital markets",
+      "x": 692.1,
+      "y": 231.2,
+      "w": 120.4,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "Averages do not capture the diversity of performance ",
+      "x": 692.1,
+      "y": 278.2,
+      "w": 417.4,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "across the industry. About two-thirds of insurers have ",
+      "x": 692.1,
+      "y": 300.2,
+      "w": 417.3,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "generated TSR that exceeded their cost of equity, a ",
+      "x": 692.1,
+      "y": 322.2,
+      "w": 401.4,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "significant improvement over last year",
+      "x": 692.1,
+      "y": 344.2,
+      "w": 297.1,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "Top-quartile insurers generated very substantial returns ",
+      "x": 692.1,
+      "y": 391.2,
+      "w": 437.0,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "for shareholders from 2019 through 2023, ranging from ",
+      "x": 692.1,
+      "y": 413.1,
+      "w": 431.5,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "16% to 44%, well above the all-industry TSR average of 9% ",
+      "x": 692.1,
+      "y": 435.1,
+      "w": 457.8,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "Cash flow contribution and growth of tangible equity drove ",
+      "x": 692.1,
+      "y": 482.1,
+      "w": 460.7,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "insurance TSR over the past five years. Growth has proven ",
+      "x": 692.1,
+      "y": 504.1,
+      "w": 457.5,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "to be more important to US insurers’ TSR, while cash flow ",
+      "x": 692.1,
+      "y": 526.1,
+      "w": 455.7,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "is a stronger contributor in Europe",
+      "x": 692.1,
+      "y": 548.1,
+      "w": 267.1,
+      "h": 23.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#464547",
+      "flags": 0
+    },
+    {
+      "text": "1",
+      "x": 651.3,
+      "y": 59.0,
+      "w": 13.2,
+      "h": 32.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 25.3,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "2",
+      "x": 651.3,
+      "y": 193.4,
+      "w": 13.2,
+      "h": 32.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 25.3,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "3",
+      "x": 651.3,
+      "y": 284.4,
+      "w": 13.2,
+      "h": 32.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 25.3,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "4",
+      "x": 651.3,
+      "y": 398.1,
+      "w": 13.2,
+      "h": 32.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 25.3,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "5",
+      "x": 651.3,
+      "y": 489.7,
+      "w": 13.2,
+      "h": 32.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 25.3,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "Insurance industry ",
+      "x": 53.4,
+      "y": 223.2,
+      "w": 393.4,
+      "h": 56.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 44.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "TSR performance:",
+      "x": 53.4,
+      "y": 271.2,
+      "w": 369.9,
+      "h": 56.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 44.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "Key takeaways",
+      "x": 53.4,
+      "y": 319.2,
+      "w": 303.0,
+      "h": 56.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 44.0,
+      "color": "#ffffff",
+      "flags": 16
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1200.0,
+      "h": 628.0,
+      "fill": "(0.9429922699928284, 0.9389944076538086, 0.9369955062866211)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.2,
+      "y": 0.0,
+      "w": 1199.6,
+      "h": 628.0,
+      "fill": "(0.9429922699928284, 0.9389944076538086, 0.9369955062866211)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 585.6,
+      "h": 628.0,
+      "fill": "(0.1289997696876526, 0.7489891052246094, 0.3799954354763031)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 637.6,
+      "y": 58.6,
+      "w": 40.4,
+      "h": 40.4,
+      "fill": "(0.09799344092607498, 0.4779888689517975, 0.33699551224708557)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 637.6,
+      "y": 193.0,
+      "w": 40.4,
+      "h": 40.4,
+      "fill": "(0.09799344092607498, 0.4779888689517975, 0.33699551224708557)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 637.6,
+      "y": 284.1,
+      "w": 40.4,
+      "h": 40.4,
+      "fill": "(0.09799344092607498, 0.4779888689517975, 0.33699551224708557)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 637.6,
+      "y": 397.7,
+      "w": 40.4,
+      "h": 40.4,
+      "fill": "(0.09799344092607498, 0.4779888689517975, 0.33699551224708557)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 637.6,
+      "y": 489.3,
+      "w": 40.4,
+      "h": 40.4,
+      "fill": "(0.09799344092607498, 0.4779888689517975, 0.33699551224708557)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 144,
+      "x": -1137.1,
+      "y": -13.6,
+      "w": 1156.9,
+      "h": 772.3
+    }
+  ]
+}

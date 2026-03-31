@@ -1,0 +1,1120 @@
+{
+  "page": 21,
+  "width": 960.0,
+  "height": 540.0,
+  "texts": [
+    {
+      "text": "20",
+      "x": 899.2,
+      "y": 505.2,
+      "w": 10.3,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+      "x": 945.1,
+      "y": 317.0,
+      "w": 7.8,
+      "h": 197.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 7.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+      "x": 945.1,
+      "y": 317.0,
+      "w": 7.8,
+      "h": 197.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 7.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "BCG Experts |",
+      "x": 36.0,
+      "y": 68.3,
+      "w": 168.0,
+      "h": 29.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 26.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "Key contacts ",
+      "x": 36.0,
+      "y": 96.4,
+      "w": 163.6,
+      "h": 29.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 26.1,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "for AI in ",
+      "x": 36.0,
+      "y": 124.5,
+      "w": 106.1,
+      "h": 29.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 26.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "telecommunications",
+      "x": 36.0,
+      "y": 152.6,
+      "w": 254.1,
+      "h": 29.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 26.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Americas",
+      "x": 351.8,
+      "y": 39.1,
+      "w": 67.8,
+      "h": 17.1,
+      "font": "HendersonBCGSans-Bold",
+      "size": 15.2,
+      "color": "#03522d",
+      "flags": 16
+    },
+    {
+      "text": "Val",
+      "x": 453.7,
+      "y": 70.3,
+      "w": 18.1,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Elbert",
+      "x": 453.7,
+      "y": 84.7,
+      "w": 34.7,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 453.7,
+      "y": 99.0,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Senior Partner",
+      "x": 453.7,
+      "y": 111.0,
+      "w": 71.4,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Scott ",
+      "x": 633.6,
+      "y": 70.3,
+      "w": 32.0,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Stemberger",
+      "x": 633.6,
+      "y": 84.7,
+      "w": 67.1,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director",
+      "x": 633.6,
+      "y": 99.0,
+      "w": 80.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Senior Partner",
+      "x": 633.6,
+      "y": 111.0,
+      "w": 71.4,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Djon ",
+      "x": 812.5,
+      "y": 70.3,
+      "w": 30.1,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Kleine",
+      "x": 812.5,
+      "y": 84.7,
+      "w": 37.2,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 812.5,
+      "y": 99.0,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Partner",
+      "x": 812.5,
+      "y": 111.0,
+      "w": 41.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Don",
+      "x": 453.7,
+      "y": 141.2,
+      "w": 23.5,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Massoni",
+      "x": 453.7,
+      "y": 155.6,
+      "w": 48.4,
+      "h": 13.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 453.7,
+      "y": 169.9,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Partner",
+      "x": 453.7,
+      "y": 182.0,
+      "w": 41.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Japjit",
+      "x": 633.6,
+      "y": 141.2,
+      "w": 29.7,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Ghai",
+      "x": 633.6,
+      "y": 155.6,
+      "w": 26.6,
+      "h": 13.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 633.6,
+      "y": 169.9,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Partner",
+      "x": 633.6,
+      "y": 182.0,
+      "w": 41.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Peter",
+      "x": 812.5,
+      "y": 135.2,
+      "w": 31.1,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Pessoa",
+      "x": 812.5,
+      "y": 149.6,
+      "w": 40.5,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 812.5,
+      "y": 163.9,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Partner",
+      "x": 812.5,
+      "y": 176.0,
+      "w": 41.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Europe, Middle East, and Africa",
+      "x": 351.8,
+      "y": 213.5,
+      "w": 226.7,
+      "h": 17.1,
+      "font": "HendersonBCGSans-Bold",
+      "size": 15.2,
+      "color": "#03522d",
+      "flags": 16
+    },
+    {
+      "text": "Franck ",
+      "x": 453.7,
+      "y": 245.7,
+      "w": 42.0,
+      "h": 13.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Luisada",
+      "x": 453.7,
+      "y": 260.2,
+      "w": 44.6,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 453.7,
+      "y": 274.5,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Senior Partner",
+      "x": 453.7,
+      "y": 286.5,
+      "w": 71.4,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Alfonso ",
+      "x": 633.6,
+      "y": 245.7,
+      "w": 46.7,
+      "h": 13.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Abella",
+      "x": 633.6,
+      "y": 260.2,
+      "w": 36.8,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 633.6,
+      "y": 274.5,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Senior Partner",
+      "x": 633.6,
+      "y": 286.5,
+      "w": 71.4,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Max ",
+      "x": 812.5,
+      "y": 245.7,
+      "w": 28.1,
+      "h": 13.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Reimpell",
+      "x": 812.5,
+      "y": 260.2,
+      "w": 52.0,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 812.5,
+      "y": 274.5,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Senior Partner",
+      "x": 812.5,
+      "y": 286.5,
+      "w": 71.4,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Stephanie ",
+      "x": 453.7,
+      "y": 315.6,
+      "w": 61.2,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Wegener",
+      "x": 453.7,
+      "y": 330.0,
+      "w": 51.3,
+      "h": 13.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 453.7,
+      "y": 344.3,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Partner",
+      "x": 453.7,
+      "y": 356.3,
+      "w": 41.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Marcus",
+      "x": 633.6,
+      "y": 315.6,
+      "w": 42.5,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Wittig",
+      "x": 633.6,
+      "y": 330.0,
+      "w": 34.8,
+      "h": 13.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 633.6,
+      "y": 344.3,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Partner",
+      "x": 633.6,
+      "y": 356.3,
+      "w": 41.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Nacho",
+      "x": 812.5,
+      "y": 309.6,
+      "w": 36.6,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Hafner",
+      "x": 812.5,
+      "y": 324.0,
+      "w": 40.1,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 812.5,
+      "y": 338.3,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Partner",
+      "x": 812.5,
+      "y": 350.3,
+      "w": 41.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Asia-Pacific",
+      "x": 351.8,
+      "y": 383.6,
+      "w": 83.6,
+      "h": 17.1,
+      "font": "HendersonBCGSans-Bold",
+      "size": 15.2,
+      "color": "#03522d",
+      "flags": 16
+    },
+    {
+      "text": "Vaishali",
+      "x": 453.7,
+      "y": 415.5,
+      "w": 45.7,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Rastogi",
+      "x": 453.7,
+      "y": 429.9,
+      "w": 43.0,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Global Leader – ",
+      "x": 453.7,
+      "y": 444.3,
+      "w": 70.0,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Technology, Media & ",
+      "x": 453.7,
+      "y": 456.3,
+      "w": 92.4,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Telecommunications ",
+      "x": 453.7,
+      "y": 468.3,
+      "w": 92.5,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Practice",
+      "x": 453.7,
+      "y": 480.3,
+      "w": 34.6,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Olivier",
+      "x": 633.6,
+      "y": 427.5,
+      "w": 38.1,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Rival",
+      "x": 633.6,
+      "y": 441.9,
+      "w": 28.9,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 633.6,
+      "y": 456.3,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Partner",
+      "x": 633.6,
+      "y": 468.3,
+      "w": 41.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Tarandeep",
+      "x": 812.5,
+      "y": 421.5,
+      "w": 60.8,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Singh",
+      "x": 812.5,
+      "y": 435.9,
+      "w": 32.3,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Bold",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director ",
+      "x": 812.5,
+      "y": 450.3,
+      "w": 82.7,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "& Partner",
+      "x": 812.5,
+      "y": 462.3,
+      "w": 41.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "20",
+      "x": 899.2,
+      "y": 505.2,
+      "w": 10.3,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 960.0,
+      "h": 540.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 960.0,
+      "h": 92.3,
+      "fill": "(0.015699999406933784, 0.019600000232458115, 0.019600000232458115)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": -0.7,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 37.0,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.0, 0.5690000057220459, 0.24699999392032623)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 74.7,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.2549999952316284, 1.0, 0.5799999833106995)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 112.4,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 150.2,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.0, 0.0, 0.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 187.9,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.2199999988079071, 0.2240000069141388, 0.2199999988079071)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 960.0,
+      "h": 540.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": -0.0,
+      "y": -0.8,
+      "w": 320.0,
+      "h": 540.8,
+      "fill": "(0.0, 0.0, 0.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 18.0,
+      "y": 40.6,
+      "w": 302.0,
+      "h": 199.0,
+      "fill": "(0.9489127993583679, 0.9490348696708679, 0.9488822817802429)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 17.6,
+      "y": 222.5,
+      "w": 216.6,
+      "h": 35.5,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 320.0,
+      "y": -0.8,
+      "w": 0.0,
+      "h": 540.7,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "fs",
+      "x": 351.8,
+      "y": 59.1,
+      "w": 554.0,
+      "h": 2.7,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 351.8,
+      "y": 233.5,
+      "w": 554.0,
+      "h": 2.7,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 351.8,
+      "y": 403.5,
+      "w": 554.0,
+      "h": 2.7,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 134,
+      "x": 391.8,
+      "y": 68.7,
+      "w": 54.0,
+      "h": 54.0
+    },
+    {
+      "xref": 136,
+      "x": 570.1,
+      "y": 68.7,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 170,
+      "x": 558.8,
+      "y": 0.0,
+      "w": 401.2,
+      "h": 89.2
+    },
+    {
+      "xref": 138,
+      "x": 748.4,
+      "y": 68.7,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 140,
+      "x": 391.8,
+      "y": 139.7,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 142,
+      "x": 570.1,
+      "y": 139.7,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 144,
+      "x": 748.4,
+      "y": 139.7,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 146,
+      "x": 570.1,
+      "y": 314.0,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 148,
+      "x": 391.8,
+      "y": 244.2,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 150,
+      "x": 570.1,
+      "y": 244.2,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 152,
+      "x": 748.4,
+      "y": 244.2,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 154,
+      "x": 391.8,
+      "y": 314.0,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 156,
+      "x": 748.4,
+      "y": 314.0,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 158,
+      "x": 391.8,
+      "y": 425.9,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 160,
+      "x": 570.1,
+      "y": 425.9,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 162,
+      "x": 748.4,
+      "y": 425.9,
+      "w": 54.3,
+      "h": 54.3
+    },
+    {
+      "xref": 169,
+      "x": -0.0,
+      "y": 239.7,
+      "w": 320.0,
+      "h": 300.3
+    }
+  ]
+}

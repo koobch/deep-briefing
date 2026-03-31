@@ -1,0 +1,362 @@
+{
+  "page": 12,
+  "width": 1200.0,
+  "height": 628.0,
+  "texts": [
+    {
+      "text": "Source: 2021 BCG Global Digital Transformation Survey, n = 37.",
+      "x": 53.4,
+      "y": 576.5,
+      "w": 269.5,
+      "h": 13.0,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#717172",
+      "flags": 0
+    },
+    {
+      "text": "Media companies’ digital priorities: Smart content management",
+      "x": 51.7,
+      "y": 37.4,
+      "w": 927.5,
+      "h": 39.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 31.0,
+      "color": "#03522d",
+      "flags": 16
+    },
+    {
+      "text": "TOP PRIORITIES FOR THE FUTURE ",
+      "x": 53.7,
+      "y": 26.3,
+      "w": 193.2,
+      "h": 15.6,
+      "font": "HendersonBCGSans-Regular",
+      "size": 12.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "Digital initiatives (bars illustrate relative prioritization of initiatives)",
+      "x": 51.7,
+      "y": 131.0,
+      "w": 637.5,
+      "h": 25.7,
+      "font": "HendersonBCGSans-Bold",
+      "size": 20.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "Monitoring and optimization of distribution of physical assets",
+      "x": 55.0,
+      "y": 379.3,
+      "w": 425.7,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "Real-time tracking and prediction of social reputation",
+      "x": 55.0,
+      "y": 316.0,
+      "w": 370.1,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "Automated metadata generation for content",
+      "x": 55.0,
+      "y": 189.5,
+      "w": 305.6,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "AI-driven copyright infringement detection and mitigation (auto-block)",
+      "x": 55.0,
+      "y": 442.7,
+      "w": 485.6,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "Predicting the reach of content (through characters, ",
+      "x": 55.0,
+      "y": 243.2,
+      "w": 361.1,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "actors, broadcasting time, etc.)",
+      "x": 55.0,
+      "y": 262.4,
+      "w": 213.7,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "0.59",
+      "x": 863.0,
+      "y": 442.8,
+      "w": 30.0,
+      "h": 20.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#29ba74",
+      "flags": 16
+    },
+    {
+      "text": "0.64",
+      "x": 884.0,
+      "y": 379.5,
+      "w": 29.9,
+      "h": 20.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "0.86",
+      "x": 978.0,
+      "y": 252.9,
+      "w": 30.1,
+      "h": 20.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "0.69",
+      "x": 905.0,
+      "y": 316.2,
+      "w": 30.0,
+      "h": 20.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#29ba74",
+      "flags": 16
+    },
+    {
+      "text": "1.0",
+      "x": 1040.5,
+      "y": 189.6,
+      "w": 21.5,
+      "h": 20.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#29ba74",
+      "flags": 16
+    },
+    {
+      "text": "Relative prioritization for all media companies",
+      "x": 335.1,
+      "y": 519.7,
+      "w": 272.0,
+      "h": 18.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "Top priorities for win-zone companies",
+      "x": 661.9,
+      "y": 519.7,
+      "w": 220.2,
+      "h": 18.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#111111",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1200.0,
+      "h": 628.0,
+      "fill": "(0.9649999737739563, 0.9570000171661377, 0.953000009059906)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.2,
+      "y": 0.0,
+      "w": 1199.6,
+      "h": 628.0,
+      "fill": "(0.9649999737739563, 0.9570000171661377, 0.953000009059906)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 600.3,
+      "y": 185.9,
+      "w": 433.0,
+      "h": 31.7,
+      "fill": "(0.16099999845027924, 0.7289999723434448, 0.45500001311302185)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 600.3,
+      "y": 312.5,
+      "w": 297.5,
+      "h": 31.7,
+      "fill": "(0.16099999845027924, 0.7289999723434448, 0.45500001311302185)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 600.3,
+      "y": 439.1,
+      "w": 255.5,
+      "h": 31.7,
+      "fill": "(0.16099999845027924, 0.7289999723434448, 0.45500001311302185)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 600.3,
+      "y": 375.8,
+      "w": 276.5,
+      "h": 31.7,
+      "fill": "(0.09799999743700027, 0.4779999852180481, 0.3370000123977661)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 600.3,
+      "y": 249.2,
+      "w": 370.5,
+      "h": 31.7,
+      "fill": "(0.09799999743700027, 0.4779999852180481, 0.3370000123977661)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 53.7,
+      "y": 170.1,
+      "w": 1095.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3409999907016754, 0.3409999907016754, 0.3409999907016754)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 53.7,
+      "y": 233.4,
+      "w": 1095.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3409999907016754, 0.3409999907016754, 0.3409999907016754)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 53.7,
+      "y": 296.7,
+      "w": 1095.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3409999907016754, 0.3409999907016754, 0.3409999907016754)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 53.7,
+      "y": 360.0,
+      "w": 1095.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3409999907016754, 0.3409999907016754, 0.3409999907016754)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 53.7,
+      "y": 423.3,
+      "w": 1095.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3409999907016754, 0.3409999907016754, 0.3409999907016754)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 53.7,
+      "y": 486.6,
+      "w": 1095.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3409999907016754, 0.3409999907016754, 0.3409999907016754)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 317.9,
+      "y": 525.8,
+      "w": 11.0,
+      "h": 11.0,
+      "fill": "(0.16099999845027924, 0.7289999723434448, 0.45500001311302185)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 644.6,
+      "y": 525.8,
+      "w": 11.0,
+      "h": 11.0,
+      "fill": "(0.09799999743700027, 0.4779999852180481, 0.3370000123977661)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": []
+}

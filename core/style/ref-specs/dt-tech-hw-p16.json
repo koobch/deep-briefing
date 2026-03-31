@@ -1,0 +1,303 @@
+{
+  "page": 16,
+  "width": 1200.0,
+  "height": 628.0,
+  "texts": [
+    {
+      "text": "If you would like to discuss this topic, please contact one of the authors:",
+      "x": 51.7,
+      "y": 37.4,
+      "w": 1035.4,
+      "h": 39.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 31.0,
+      "color": "#03522d",
+      "flags": 16
+    },
+    {
+      "text": "JOSE MARIA MORENO LOPEZ",
+      "x": 197.9,
+      "y": 191.6,
+      "w": 253.5,
+      "h": 23.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director & Partner, Madrid",
+      "x": 197.9,
+      "y": 215.6,
+      "w": 259.1,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "moreno.josemaria@bcg.com",
+      "x": 197.9,
+      "y": 237.7,
+      "w": 213.5,
+      "h": 20.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 16
+    },
+    {
+      "text": "+34 91 5206 173",
+      "x": 197.9,
+      "y": 259.6,
+      "w": 110.1,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "JT HSU",
+      "x": 197.9,
+      "y": 391.8,
+      "w": 59.7,
+      "h": 23.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director & Partner, Taipei",
+      "x": 197.9,
+      "y": 416.8,
+      "w": 250.1,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "hsu.jt@bcg.com",
+      "x": 197.9,
+      "y": 439.9,
+      "w": 117.8,
+      "h": 20.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 16
+    },
+    {
+      "text": "+886 2 8722 2038",
+      "x": 197.9,
+      "y": 462.8,
+      "w": 119.6,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "DEREK KENNEDY",
+      "x": 781.8,
+      "y": 192.4,
+      "w": 150.0,
+      "h": 23.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director & Senior Partner, San Francisco",
+      "x": 781.8,
+      "y": 216.4,
+      "w": 353.9,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "kennedy.derek@bcg.com",
+      "x": 781.8,
+      "y": 238.5,
+      "w": 186.6,
+      "h": 20.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 16
+    },
+    {
+      "text": "+1 415 732 8124",
+      "x": 781.8,
+      "y": 260.4,
+      "w": 110.2,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "SCOTT STEMBERGER",
+      "x": 781.8,
+      "y": 391.8,
+      "w": 184.1,
+      "h": 23.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#197a56",
+      "flags": 16
+    },
+    {
+      "text": "Managing Director & Senior Partner, Denver ",
+      "x": 781.8,
+      "y": 415.8,
+      "w": 311.7,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    },
+    {
+      "text": "stemberger.scott@bcg.com",
+      "x": 781.8,
+      "y": 437.9,
+      "w": 203.1,
+      "h": 20.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 16
+    },
+    {
+      "text": "+1 720 800 9803",
+      "x": 781.8,
+      "y": 459.8,
+      "w": 111.3,
+      "h": 20.8,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#111111",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.2,
+      "y": 0.0,
+      "w": 1199.6,
+      "h": 628.0,
+      "fill": "(0.9649999737739563, 0.9570000171661377, 0.953000009059906)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 52.6,
+      "y": 107.5,
+      "w": 1098.7,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.4309999942779541, 0.4350000023841858, 0.45100000500679016)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 52.6,
+      "y": 577.3,
+      "w": 1098.7,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.4309999942779541, 0.4350000023841858, 0.45100000500679016)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 197.9,
+      "y": 256.7,
+      "w": 213.5,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.06700000166893005, 0.06700000166893005, 0.06700000166893005)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 197.9,
+      "y": 458.9,
+      "w": 117.8,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.06700000166893005, 0.06700000166893005, 0.06700000166893005)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 781.8,
+      "y": 257.5,
+      "w": 186.6,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.06700000166893005, 0.06700000166893005, 0.06700000166893005)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 781.8,
+      "y": 456.9,
+      "w": 203.1,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.06700000166893005, 0.06700000166893005, 0.06700000166893005)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    }
+  ],
+  "images": [
+    {
+      "xref": 49,
+      "x": 635.7,
+      "y": 169.8,
+      "w": 124.5,
+      "h": 124.5
+    },
+    {
+      "xref": 50,
+      "x": 635.7,
+      "y": 369.2,
+      "w": 124.0,
+      "h": 124.5
+    },
+    {
+      "xref": 51,
+      "x": 51.8,
+      "y": 169.0,
+      "w": 124.5,
+      "h": 124.5
+    },
+    {
+      "xref": 52,
+      "x": 51.8,
+      "y": 369.2,
+      "w": 124.5,
+      "h": 124.5
+    }
+  ]
+}

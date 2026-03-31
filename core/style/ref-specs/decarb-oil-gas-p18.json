@@ -1,0 +1,230 @@
+{
+  "page": 18,
+  "width": 1760.0,
+  "height": 990.0,
+  "texts": [
+    {
+      "text": "Boston Consulting Group ",
+      "x": 80.0,
+      "y": 303.9,
+      "w": 357.4,
+      "h": 38.6,
+      "font": "HendersonBCGSans-Bold",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 16
+    },
+    {
+      "text": "Boston Consulting Group partners with leaders in business ",
+      "x": 80.0,
+      "y": 339.7,
+      "w": 739.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "and society to tackle their most important challenges and ",
+      "x": 80.0,
+      "y": 375.7,
+      "w": 727.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "capture their greatest opportunities. BCG was the pioneer in ",
+      "x": 80.0,
+      "y": 411.7,
+      "w": 757.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "business strategy when it was founded in 1963. Today, we ",
+      "x": 80.0,
+      "y": 447.7,
+      "w": 726.3,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "work closely with clients to embrace a transformational ",
+      "x": 80.0,
+      "y": 483.7,
+      "w": 695.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "approach aimed at benefiting all stakeholders—empowering ",
+      "x": 80.0,
+      "y": 519.7,
+      "w": 731.1,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "organizations to grow, build sustainable competitive ",
+      "x": 80.0,
+      "y": 555.7,
+      "w": 651.7,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "advantage, and drive positive societal impact.",
+      "x": 80.0,
+      "y": 591.7,
+      "w": 569.0,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "Our diverse, global teams bring deep industry and functional ",
+      "x": 920.0,
+      "y": 339.7,
+      "w": 745.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "expertise and a range of perspectives that question the ",
+      "x": 920.0,
+      "y": 375.7,
+      "w": 694.3,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "status quo and spark change. BCG delivers solutions through ",
+      "x": 920.0,
+      "y": 411.7,
+      "w": 764.4,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "leading-edge management consulting, technology and ",
+      "x": 920.0,
+      "y": 447.7,
+      "w": 680.2,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "design, and corporate and digital ventures. We work in a ",
+      "x": 920.0,
+      "y": 483.7,
+      "w": 709.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "uniquely collaborative model across the firm and throughout ",
+      "x": 920.0,
+      "y": 519.7,
+      "w": 760.5,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "all levels of the client organization, fueled by the goal of ",
+      "x": 920.0,
+      "y": 555.7,
+      "w": 700.6,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "helping our clients thrive and enabling them to make the ",
+      "x": 920.0,
+      "y": 591.7,
+      "w": 716.9,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    },
+    {
+      "text": "world a better place.",
+      "x": 920.0,
+      "y": 627.7,
+      "w": 256.0,
+      "h": 39.1,
+      "font": "HendersonBCGSans-Light",
+      "size": 30.0,
+      "color": "#4a4e4f",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.5,
+      "y": 0.5,
+      "w": 1759.0,
+      "h": 989.0,
+      "fill": "(0.9449912309646606, 0.9329976439476013, 0.9179980158805847)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 80.0,
+      "y": 80.0,
+      "w": 139.9,
+      "h": 56.7,
+      "fill": "(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": []
+}

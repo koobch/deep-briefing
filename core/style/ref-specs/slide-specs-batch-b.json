@@ -1,0 +1,33 @@
+{
+  "_note": "배치 B 이미지 기반 분류 결과 (57p) — classify-new-B 에이전트 출력",
+  "_source": "dt-tech-hw (16p), dt-software (16p), decarb-oil-gas (18p), virtual-mentoring (7p)",
+  "_patterns": {
+    "dt-series-template": "dt-tech-hw와 dt-software는 동일 16p 템플릿 공유",
+    "decarb-style": "크림색 배경 + text-heavy 논문형 구조",
+    "virtual-style": "7p 발표 자료형, 다크 그린/흰색 좌우 분할"
+  },
+  "catalog": {
+    "dt-tech-hw-p01": "cover", "dt-tech-hw-p02": "exec-summary", "dt-tech-hw-p03": "agenda",
+    "dt-tech-hw-p04": "data-visualization", "dt-tech-hw-p05": "insight-chart", "dt-tech-hw-p06": "insight-chart",
+    "dt-tech-hw-p07": "insight-chart", "dt-tech-hw-p08": "insight-chart", "dt-tech-hw-p09": "ranked",
+    "dt-tech-hw-p10": "ranked", "dt-tech-hw-p11": "ranked", "dt-tech-hw-p12": "ranked",
+    "dt-tech-hw-p13": "ranked", "dt-tech-hw-p14": "insight-chart", "dt-tech-hw-p15": "insight-chart",
+    "dt-tech-hw-p16": "back-cover",
+    "dt-software-p01": "cover", "dt-software-p02": "exec-summary", "dt-software-p03": "agenda",
+    "dt-software-p04": "data-visualization", "dt-software-p05": "insight-chart", "dt-software-p06": "insight-chart",
+    "dt-software-p07": "insight-chart", "dt-software-p08": "insight-chart", "dt-software-p09": "ranked",
+    "dt-software-p10": "ranked", "dt-software-p11": "ranked", "dt-software-p12": "ranked",
+    "dt-software-p13": "ranked", "dt-software-p14": "insight-chart", "dt-software-p15": "insight-chart",
+    "dt-software-p16": "back-cover",
+    "decarb-oil-gas-p01": "cover", "decarb-oil-gas-p02": "text-heavy", "decarb-oil-gas-p03": "text-heavy",
+    "decarb-oil-gas-p04": "text-heavy", "decarb-oil-gas-p05": "big-number", "decarb-oil-gas-p06": "big-number",
+    "decarb-oil-gas-p07": "data-visualization", "decarb-oil-gas-p08": "text-heavy",
+    "decarb-oil-gas-p09": "framework", "decarb-oil-gas-p10": "text-heavy", "decarb-oil-gas-p11": "text-heavy",
+    "decarb-oil-gas-p12": "insight-chart", "decarb-oil-gas-p13": "data-visualization",
+    "decarb-oil-gas-p14": "data-visualization", "decarb-oil-gas-p15": "framework",
+    "decarb-oil-gas-p16": "text-heavy", "decarb-oil-gas-p17": "back-cover", "decarb-oil-gas-p18": "back-cover",
+    "virtual-mentoring-p01": "cover", "virtual-mentoring-p02": "case-study", "virtual-mentoring-p03": "framework",
+    "virtual-mentoring-p04": "process", "virtual-mentoring-p05": "framework", "virtual-mentoring-p06": "comparison",
+    "virtual-mentoring-p07": "back-cover"
+  }
+}

@@ -1,0 +1,694 @@
+{
+  "page": 28,
+  "width": 960.0,
+  "height": 540.0,
+  "texts": [
+    {
+      "text": "27",
+      "x": 899.2,
+      "y": 505.2,
+      "w": 10.3,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+      "x": 945.1,
+      "y": 317.0,
+      "w": 7.8,
+      "h": 197.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 7.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "For further reading | ",
+      "x": 49.6,
+      "y": 31.9,
+      "w": 236.0,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#41ff94",
+      "flags": 16
+    },
+    {
+      "text": "Recent BCG publications on P&U topics",
+      "x": 285.7,
+      "y": 31.9,
+      "w": 450.6,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "A New AI Playbook for Renewable Energy Companies",
+      "x": 479.1,
+      "y": 129.1,
+      "w": 409.7,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#6e4da5",
+      "flags": 0
+    },
+    {
+      "text": "Delivering the Energy Transition Will Come Down to ",
+      "x": 479.1,
+      "y": 178.3,
+      "w": 406.5,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#6e4da5",
+      "flags": 0
+    },
+    {
+      "text": "the Wires",
+      "x": 479.1,
+      "y": 199.9,
+      "w": 73.2,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#6e4da5",
+      "flags": 0
+    },
+    {
+      "text": "Powering More with Less: How Energy Networks Can ",
+      "x": 479.1,
+      "y": 238.4,
+      "w": 410.4,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#6e4da5",
+      "flags": 0
+    },
+    {
+      "text": "Transform Their Productivity",
+      "x": 479.1,
+      "y": 260.0,
+      "w": 220.4,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#6e4da5",
+      "flags": 0
+    },
+    {
+      "text": "How Electric and Gas Firms Can Energize Digital ",
+      "x": 476.6,
+      "y": 298.4,
+      "w": 379.7,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#6e4da5",
+      "flags": 0
+    },
+    {
+      "text": "Transformation",
+      "x": 476.6,
+      "y": 320.0,
+      "w": 119.5,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#6e4da5",
+      "flags": 0
+    },
+    {
+      "text": "Powering Prosperity Through Energy Access",
+      "x": 479.1,
+      "y": 369.3,
+      "w": 335.6,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#6e4da5",
+      "flags": 0
+    },
+    {
+      "text": "Breaking Barriers to Data Center Growth",
+      "x": 479.1,
+      "y": 429.3,
+      "w": 313.9,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#6e4da5",
+      "flags": 0
+    },
+    {
+      "text": "For additional information and updates, please visit our BCG on Energy LinkedIn page",
+      "x": 341.1,
+      "y": 488.7,
+      "w": 514.2,
+      "h": 15.7,
+      "font": "HendersonBCGSans-Light",
+      "size": 14.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "1",
+      "x": 335.8,
+      "y": 117.5,
+      "w": 6.2,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Light",
+      "size": 12.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "2",
+      "x": 335.8,
+      "y": 178.4,
+      "w": 6.2,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Light",
+      "size": 12.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "4",
+      "x": 335.8,
+      "y": 300.2,
+      "w": 6.2,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Light",
+      "size": 12.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "5",
+      "x": 335.8,
+      "y": 361.1,
+      "w": 6.3,
+      "h": 13.5,
+      "font": "HendersonBCGSans-Light",
+      "size": 12.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "6",
+      "x": 338.2,
+      "y": 422.0,
+      "w": 6.2,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Light",
+      "size": 12.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "3",
+      "x": 335.8,
+      "y": 239.3,
+      "w": 6.2,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Light",
+      "size": 12.0,
+      "color": "#ffffff",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 960.0,
+      "h": 540.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 960.0,
+      "h": 92.3,
+      "fill": "(0.015699999406933784, 0.019600000232458115, 0.019600000232458115)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": -0.7,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 37.0,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.0, 0.5690000057220459, 0.24699999392032623)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 74.7,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.2549999952316284, 1.0, 0.5799999833106995)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 112.4,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 150.2,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.0, 0.0, 0.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 187.9,
+      "y": -43.5,
+      "w": 28.4,
+      "h": 28.4,
+      "fill": "(0.2199999988079071, 0.2240000069141388, 0.2199999988079071)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": -0.9,
+      "y": 92.3,
+      "w": 962.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.2549999952316284, 1.0, 0.5799999833106995)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 340.6,
+      "y": 113.8,
+      "w": 126.8,
+      "h": 56.3,
+      "fill": null,
+      "color": "(0.7489280700683594, 0.7490196228027344, 0.7488975524902344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 479.1,
+      "y": 168.6,
+      "w": 431.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3999694883823395, 0.4000305235385895, 0.3999694883823395)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 479.1,
+      "y": 228.7,
+      "w": 431.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3999694883823395, 0.4000305235385895, 0.3999694883823395)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 479.1,
+      "y": 288.7,
+      "w": 431.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3999694883823395, 0.4000305235385895, 0.3999694883823395)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 479.1,
+      "y": 348.8,
+      "w": 431.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3999694883823395, 0.4000305235385895, 0.3999694883823395)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 479.1,
+      "y": 408.8,
+      "w": 431.4,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.3999694883823395, 0.4000305235385895, 0.3999694883823395)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 479.1,
+      "y": 148.1,
+      "w": 409.8,
+      "h": 0.8,
+      "fill": "(0.4309999942779541, 0.3019999861717224, 0.6470000147819519)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 479.1,
+      "y": 197.4,
+      "w": 401.9,
+      "h": 0.8,
+      "fill": "(0.4309999942779541, 0.3019999861717224, 0.6470000147819519)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 479.1,
+      "y": 219.0,
+      "w": 73.2,
+      "h": 0.8,
+      "fill": "(0.4309999942779541, 0.3019999861717224, 0.6470000147819519)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 479.1,
+      "y": 257.4,
+      "w": 405.7,
+      "h": 0.8,
+      "fill": "(0.4309999942779541, 0.3019999861717224, 0.6470000147819519)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 479.1,
+      "y": 279.0,
+      "w": 220.4,
+      "h": 0.8,
+      "fill": "(0.4309999942779541, 0.3019999861717224, 0.6470000147819519)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 476.5,
+      "y": 317.4,
+      "w": 375.1,
+      "h": 0.8,
+      "fill": "(0.4309999942779541, 0.3019999861717224, 0.6470000147819519)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 476.5,
+      "y": 339.0,
+      "w": 119.4,
+      "h": 0.8,
+      "fill": "(0.4309999942779541, 0.3019999861717224, 0.6470000147819519)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 479.1,
+      "y": 388.3,
+      "w": 335.8,
+      "h": 0.8,
+      "fill": "(0.4309999942779541, 0.3019999861717224, 0.6470000147819519)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 479.1,
+      "y": 448.3,
+      "w": 313.9,
+      "h": 0.8,
+      "fill": "(0.4309999942779541, 0.3019999861717224, 0.6470000147819519)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 675.8,
+      "y": 503.5,
+      "w": 179.5,
+      "h": 0.7,
+      "fill": "(0.0, 0.0, 0.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 328.9,
+      "y": 114.0,
+      "w": 20.0,
+      "h": 20.0,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": "(1.0, 1.0, 1.0)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 340.6,
+      "y": 173.1,
+      "w": 126.8,
+      "h": 56.3,
+      "fill": null,
+      "color": "(0.7489280700683594, 0.7490196228027344, 0.7488975524902344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 340.6,
+      "y": 291.8,
+      "w": 126.2,
+      "h": 56.3,
+      "fill": null,
+      "color": "(0.7489280700683594, 0.7490196228027344, 0.7488975524902344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 340.6,
+      "y": 351.2,
+      "w": 126.2,
+      "h": 60.0,
+      "fill": null,
+      "color": "(0.7489280700683594, 0.7490196228027344, 0.7488975524902344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 340.6,
+      "y": 414.2,
+      "w": 126.4,
+      "h": 60.0,
+      "fill": null,
+      "color": "(0.7489280700683594, 0.7490196228027344, 0.7488975524902344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "fs",
+      "x": 328.9,
+      "y": 174.9,
+      "w": 20.0,
+      "h": 20.0,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": "(1.0, 1.0, 1.0)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 328.9,
+      "y": 296.6,
+      "w": 20.0,
+      "h": 20.0,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": "(1.0, 1.0, 1.0)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 328.9,
+      "y": 357.5,
+      "w": 20.0,
+      "h": 20.0,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": "(1.0, 1.0, 1.0)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "fs",
+      "x": 331.4,
+      "y": 418.3,
+      "w": 20.0,
+      "h": 20.0,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": "(1.0, 1.0, 1.0)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 340.6,
+      "y": 232.5,
+      "w": 126.8,
+      "h": 56.3,
+      "fill": null,
+      "color": "(0.7489280700683594, 0.7490196228027344, 0.7488975524902344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "fs",
+      "x": 328.9,
+      "y": 235.7,
+      "w": 20.0,
+      "h": 20.0,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": "(1.0, 1.0, 1.0)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 20,
+      "x": 558.8,
+      "y": 0.0,
+      "w": 401.2,
+      "h": 89.2
+    },
+    {
+      "xref": 420,
+      "x": 341.0,
+      "y": 114.2,
+      "w": 126.1,
+      "h": 55.5
+    },
+    {
+      "xref": 431,
+      "x": 341.0,
+      "y": 173.5,
+      "w": 126.1,
+      "h": 55.5
+    },
+    {
+      "xref": 432,
+      "x": 341.0,
+      "y": 292.2,
+      "w": 125.5,
+      "h": 55.5
+    },
+    {
+      "xref": 433,
+      "x": 341.0,
+      "y": 351.6,
+      "w": 125.5,
+      "h": 59.2
+    },
+    {
+      "xref": 434,
+      "x": 341.0,
+      "y": 414.6,
+      "w": 125.6,
+      "h": 59.2
+    },
+    {
+      "xref": 435,
+      "x": 341.0,
+      "y": 232.9,
+      "w": 126.1,
+      "h": 55.5
+    },
+    {
+      "xref": 436,
+      "x": -0.0,
+      "y": 94.8,
+      "w": 275.1,
+      "h": 445.2
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "page": 18,
+  "width": 960.0,
+  "height": 540.0,
+  "texts": [
+    {
+      "text": "17",
+      "x": 899.2,
+      "y": 505.2,
+      "w": 10.3,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+      "x": 945.1,
+      "y": 317.0,
+      "w": 7.8,
+      "h": 197.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 7.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Singular roll-out of code-generating ",
+      "x": 66.4,
+      "y": 176.5,
+      "w": 307.1,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00612a",
+      "flags": 16
+    },
+    {
+      "text": "AI tools",
+      "x": 66.4,
+      "y": 198.1,
+      "w": 65.7,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00612a",
+      "flags": 16
+    },
+    {
+      "text": "Off-the-shelf tools ",
+      "x": 65.6,
+      "y": 247.8,
+      "w": 139.7,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "provide ",
+      "x": 205.4,
+      "y": 247.8,
+      "w": 54.0,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "easy access to AI ",
+      "x": 259.6,
+      "y": 247.8,
+      "w": 132.2,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "capabilities",
+      "x": 65.6,
+      "y": 267.0,
+      "w": 87.9,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "but ",
+      "x": 157.9,
+      "y": 267.0,
+      "w": 27.0,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "long-term transformation ",
+      "x": 184.8,
+      "y": 267.0,
+      "w": 197.1,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "potential limited to 30% ",
+      "x": 65.6,
+      "y": 286.1,
+      "w": 184.4,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "as outdated practices can ",
+      "x": 250.2,
+      "y": 286.1,
+      "w": 178.3,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "largely eliminate impact from deploying GenAI ",
+      "x": 65.6,
+      "y": 305.4,
+      "w": 322.6,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "GenAI-enabled engineering ",
+      "x": 542.7,
+      "y": 176.5,
+      "w": 239.2,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00612a",
+      "flags": 16
+    },
+    {
+      "text": "excellence transformation",
+      "x": 542.7,
+      "y": 198.1,
+      "w": 225.5,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00612a",
+      "flags": 16
+    },
+    {
+      "text": "How to get it right | ",
+      "x": 49.6,
+      "y": 32.7,
+      "w": 222.5,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#41ff94",
+      "flags": 16
+    },
+    {
+      "text": "Full AI value requires holistic engineering ",
+      "x": 272.1,
+      "y": 32.7,
+      "w": 482.0,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "transformation ",
+      "x": 49.6,
+      "y": 58.6,
+      "w": 179.6,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "Source: State of GenAI Across Engineering Survey (N=100 CIOs/CTOs and 300 engineers), January 2025 ",
+      "x": 49.5,
+      "y": 491.7,
+      "w": 445.8,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "1. 30% from maximizing use AI code generation tools, 20% impact from extending tools to other non-coding stages (including via agents) and 2x from impact if working on a modern ",
+      "x": 49.5,
+      "y": 502.5,
+      "w": 777.1,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "tech stack with modern ways of working",
+      "x": 49.5,
+      "y": 513.4,
+      "w": 170.3,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Value from ",
+      "x": 238.9,
+      "y": 357.4,
+      "w": 88.0,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#575757",
+      "flags": 16
+    },
+    {
+      "text": "GenAI ",
+      "x": 238.9,
+      "y": 376.6,
+      "w": 51.1,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#575757",
+      "flags": 16
+    },
+    {
+      "text": "2",
+      "x": 930.5,
+      "y": 16.4,
+      "w": 8.9,
+      "h": 17.8,
+      "font": "ArialMT",
+      "size": 16.0,
+      "color": "#ffffff",
+      "flags": 0
+    },
+    {
+      "text": "A holistic approach that ",
+      "x": 540.7,
+      "y": 247.8,
+      "w": 185.3,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "fundamentally rethinks ",
+      "x": 726.0,
+      "y": 247.8,
+      "w": 163.5,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#575757",
+      "flags": 0
+    },
+    {
+      "text": "how teams build, ship, and maintain software ",
+      "x": 540.7,
+      "y": 267.0,
+      "w": 313.5,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#575757",
+      "flags": 0
+    },
+    {
+      "text": "(including GenAI, agents, traditional DevOps, ",
+      "x": 540.7,
+      "y": 286.1,
+      "w": 343.8,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "and underlying technology modernization)",
+      "x": 540.7,
+      "y": 305.4,
+      "w": 323.6,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "Most commonly followed approach today …",
+      "x": 77.9,
+      "y": 437.6,
+      "w": 340.9,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#00c255",
+      "flags": 0
+    },
+    {
+      "text": "… recommended way forward",
+      "x": 608.5,
+      "y": 437.7,
+      "w": 232.6,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.0,
+      "color": "#00c255",
+      "flags": 0
+    },
+    {
+      "text": "Value from ",
+      "x": 708.1,
+      "y": 357.4,
+      "w": 88.0,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#575757",
+      "flags": 16
+    },
+    {
+      "text": "GenAI ",
+      "x": 708.1,
+      "y": 376.6,
+      "w": 51.1,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#575757",
+      "flags": 16
+    },
+    {
+      "text": ">30%",
+      "x": 137.9,
+      "y": 351.8,
+      "w": 93.1,
+      "h": 44.8,
+      "font": "HendersonBCGSans-Bold",
+      "size": 40.0,
+      "color": "#00612a",
+      "flags": 16
+    },
+    {
+      "text": ">2X",
+      "x": 619.5,
+      "y": 351.8,
+      "w": 66.1,
+      "h": 44.8,
+      "font": "HendersonBCGSans-Bold",
+      "size": 40.0,
+      "color": "#00913f",
+      "flags": 16
+    },
+    {
+      "text": "1",
+      "x": 685.6,
+      "y": 351.9,
+      "w": 13.9,
+      "h": 29.8,
+      "font": "HendersonBCGSans-Bold",
+      "size": 26.6,
+      "color": "#00913f",
+      "flags": 17
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 960.0,
+      "h": 540.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 960.0,
+      "h": 92.3,
+      "fill": "(0.015699999406933784, 0.019600000232458115, 0.019600000232458115)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 1.0,
+      "y": 94.6,
+      "w": 211.8,
+      "h": 39.2,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 873.6,
+      "y": 0.0,
+      "w": 86.4,
+      "h": 83.0,
+      "fill": "(0.2160000056028366, 0.2160000056028366, 0.22699999809265137)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 920.5,
+      "y": 10.5,
+      "w": 28.8,
+      "h": 28.8,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 62.8,
+      "y": 230.3,
+      "w": 371.4,
+      "h": 4.8,
+      "fill": "(0.09799999743700027, 0.4779999852180481, 0.3370000123977661)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 539.1,
+      "y": 230.3,
+      "w": 371.4,
+      "h": 4.8,
+      "fill": "(0.09799999743700027, 0.4779999852180481, 0.3370000123977661)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 20,
+      "x": 558.7,
+      "y": 0.0,
+      "w": 401.3,
+      "h": 89.2
+    }
+  ]
+}

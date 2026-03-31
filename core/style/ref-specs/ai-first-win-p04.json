@@ -1,0 +1,447 @@
+{
+  "page": 4,
+  "width": 960.0,
+  "height": 540.0,
+  "texts": [
+    {
+      "text": "3",
+      "x": 904.3,
+      "y": 505.2,
+      "w": 5.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+      "x": 945.1,
+      "y": 317.0,
+      "w": 7.8,
+      "h": 197.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 7.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Source: Indie Hackers, BCG analysis",
+      "x": 49.6,
+      "y": 505.3,
+      "w": 155.3,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Major trends ",
+      "x": 33.2,
+      "y": 152.2,
+      "w": 162.4,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "are reshaping ",
+      "x": 33.2,
+      "y": 185.8,
+      "w": 171.5,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "how companies ",
+      "x": 33.2,
+      "y": 219.4,
+      "w": 194.5,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "operate—and ",
+      "x": 33.2,
+      "y": 253.0,
+      "w": 173.7,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "those that don't ",
+      "x": 33.2,
+      "y": 286.6,
+      "w": 198.3,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "adapt risk ",
+      "x": 33.2,
+      "y": 320.3,
+      "w": 126.3,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "falling behind",
+      "x": 33.2,
+      "y": 353.9,
+      "w": 164.0,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Access to AI is becoming democratized ",
+      "x": 459.0,
+      "y": 75.5,
+      "w": 337.3,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "Foundational models and AI agents are now widely accessible, ",
+      "x": 459.0,
+      "y": 97.1,
+      "w": 428.9,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "reducing barriers to entry and allowing smaller players to ",
+      "x": 459.0,
+      "y": 114.4,
+      "w": 393.6,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "compete on speed and automation",
+      "x": 459.0,
+      "y": 131.6,
+      "w": 239.3,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "1",
+      "x": 411.8,
+      "y": 71.7,
+      "w": 16.7,
+      "h": 35.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 32.0,
+      "color": "#00612a",
+      "flags": 0
+    },
+    {
+      "text": "AI is rapidly changing business economics",
+      "x": 459.0,
+      "y": 185.2,
+      "w": 361.1,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "The costs of knowledge, labor, and task delivery are falling due ",
+      "x": 459.0,
+      "y": 206.8,
+      "w": 428.8,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "to automation, while revenue potential is increasing for ",
+      "x": 459.0,
+      "y": 224.0,
+      "w": 381.0,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "companies that set up for success now",
+      "x": 459.0,
+      "y": 241.3,
+      "w": 263.8,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "2",
+      "x": 411.9,
+      "y": 181.3,
+      "w": 16.7,
+      "h": 35.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 32.0,
+      "color": "#00612a",
+      "flags": 0
+    },
+    {
+      "text": "Headcount is no longer a prerequisite to scale ",
+      "x": 459.0,
+      "y": 294.9,
+      "w": 397.9,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "AI-first companies are redefining productivity, unlocking rapid ",
+      "x": 459.0,
+      "y": 316.4,
+      "w": 422.8,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "growth with smaller, highly skilled teams (e.g., Cursor reaching ",
+      "x": 459.0,
+      "y": 333.7,
+      "w": 429.7,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "$100M ARR in under two years)",
+      "x": 459.0,
+      "y": 351.0,
+      "w": 218.8,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "3",
+      "x": 411.9,
+      "y": 291.0,
+      "w": 16.7,
+      "h": 35.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 32.0,
+      "color": "#00612a",
+      "flags": 0
+    },
+    {
+      "text": "Technology spending is growing rapidly",
+      "x": 459.0,
+      "y": 404.5,
+      "w": 337.2,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Bold",
+      "size": 18.0,
+      "color": "#00c255",
+      "flags": 16
+    },
+    {
+      "text": "As AI-driven tech budgets surge, companies that fail to ",
+      "x": 459.0,
+      "y": 426.1,
+      "w": 375.1,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "match the pace risk being left behind by faster-moving ",
+      "x": 459.0,
+      "y": 443.4,
+      "w": 375.0,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "competitors",
+      "x": 459.0,
+      "y": 460.6,
+      "w": 81.6,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 16.0,
+      "color": "#3c3c3c",
+      "flags": 0
+    },
+    {
+      "text": "4",
+      "x": 411.9,
+      "y": 400.7,
+      "w": 16.7,
+      "h": 35.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 32.1,
+      "color": "#00612a",
+      "flags": 0
+    },
+    {
+      "text": "3",
+      "x": 904.3,
+      "y": 505.2,
+      "w": 5.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 960.0,
+      "h": 540.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 960.0,
+      "h": 92.3,
+      "fill": "(0.015699999406933784, 0.019600000232458115, 0.019600000232458115)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 960.0,
+      "h": 540.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 320.0,
+      "h": 540.0,
+      "fill": "(0.9489127993583679, 0.9490348696708679, 0.9488822817802429)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 392.0,
+      "y": 164.3,
+      "w": 518.5,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.2549999952316284, 1.0, 0.5799999833106995)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 392.0,
+      "y": 274.0,
+      "w": 518.5,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.2549999952316284, 1.0, 0.5799999833106995)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "s",
+      "x": 392.0,
+      "y": 386.6,
+      "w": 518.5,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.2549999952316284, 1.0, 0.5799999833106995)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    }
+  ],
+  "images": [
+    {
+      "xref": 20,
+      "x": 558.7,
+      "y": 0.0,
+      "w": 401.3,
+      "h": 89.2
+    }
+  ]
+}

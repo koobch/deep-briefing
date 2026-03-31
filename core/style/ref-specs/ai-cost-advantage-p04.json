@@ -1,0 +1,553 @@
+{
+  "page": 4,
+  "width": 960.0,
+  "height": 540.0,
+  "texts": [
+    {
+      "text": "4",
+      "x": 904.3,
+      "y": 505.2,
+      "w": 5.2,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+      "x": 945.1,
+      "y": 317.0,
+      "w": 7.8,
+      "h": 197.9,
+      "font": "HendersonBCGSans-Light",
+      "size": 7.0,
+      "color": "#7f7f7f",
+      "flags": 0
+    },
+    {
+      "text": "Sources: 1. BCG global C-suite survey on strategic priorities (N=569) across industries, fielded ",
+      "x": 49.6,
+      "y": 483.7,
+      "w": 402.4,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Sept–Dec 2024; BCG analysis. ",
+      "x": 49.6,
+      "y": 494.5,
+      "w": 131.9,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "2. FT Longitude x BCG research (N=770), August 2024.",
+      "x": 49.6,
+      "y": 505.3,
+      "w": 233.4,
+      "h": 11.2,
+      "font": "HendersonBCGSans-Light",
+      "size": 10.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Top three 2025 strategic priorities for C-suite ",
+      "x": 49.6,
+      "y": 139.9,
+      "w": 356.3,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "executives globally",
+      "x": 49.6,
+      "y": 161.5,
+      "w": 148.9,
+      "h": 20.2,
+      "font": "HendersonBCGSans-Regular",
+      "size": 18.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "1",
+      "x": 198.4,
+      "y": 161.5,
+      "w": 6.2,
+      "h": 13.4,
+      "font": "HendersonBCGSans-Regular",
+      "size": 12.0,
+      "color": "#000000",
+      "flags": 1
+    },
+    {
+      "text": "Revenue ",
+      "x": 336.9,
+      "y": 425.0,
+      "w": 66.0,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "management",
+      "x": 336.9,
+      "y": 441.3,
+      "w": 94.3,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Growth/ ",
+      "x": 82.5,
+      "y": 425.0,
+      "w": 60.7,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Expansion",
+      "x": 82.5,
+      "y": 441.3,
+      "w": 73.3,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "Cost ",
+      "x": 209.0,
+      "y": 425.0,
+      "w": 35.0,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "reduction",
+      "x": 209.0,
+      "y": 441.3,
+      "w": 67.1,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Regular",
+      "size": 16.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "93%",
+      "x": 545.8,
+      "y": 199.8,
+      "w": 97.9,
+      "h": 60.5,
+      "font": "HendersonBCGSans-Bold",
+      "size": 54.0,
+      "color": "#00612a",
+      "flags": 16
+    },
+    {
+      "text": "of executives view ",
+      "x": 542.7,
+      "y": 267.5,
+      "w": 220.9,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "AI as an instrument of cost ",
+      "x": 542.7,
+      "y": 301.1,
+      "w": 331.4,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#00c255",
+      "flags": 0
+    },
+    {
+      "text": "reduction ",
+      "x": 542.7,
+      "y": 334.7,
+      "w": 122.0,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#00c255",
+      "flags": 0
+    },
+    {
+      "text": "in next 18 months",
+      "x": 664.7,
+      "y": 334.7,
+      "w": 217.1,
+      "h": 31.3,
+      "font": "HendersonBCGSans-Light",
+      "size": 28.0,
+      "color": "#000000",
+      "flags": 0
+    },
+    {
+      "text": "2",
+      "x": 881.9,
+      "y": 334.7,
+      "w": 9.7,
+      "h": 21.0,
+      "font": "HendersonBCGSans-Light",
+      "size": 18.7,
+      "color": "#000000",
+      "flags": 1
+    },
+    {
+      "text": "In an ecosystem of high uncertainty, cost management remains the top ",
+      "x": 49.6,
+      "y": 18.9,
+      "w": 815.4,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "priority for executives…",
+      "x": 49.6,
+      "y": 44.8,
+      "w": 274.6,
+      "h": 26.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 24.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "1",
+      "x": 239.7,
+      "y": 251.8,
+      "w": 8.3,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "3",
+      "x": 365.1,
+      "y": 331.5,
+      "w": 8.3,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#ffffff",
+      "flags": 16
+    },
+    {
+      "text": "2",
+      "x": 113.4,
+      "y": 296.1,
+      "w": 8.3,
+      "h": 17.9,
+      "font": "HendersonBCGSans-Bold",
+      "size": 16.0,
+      "color": "#ffffff",
+      "flags": 16
+    }
+  ],
+  "drawings": [
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 960.0,
+      "h": 540.0,
+      "fill": "(1.0, 1.0, 1.0)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 960.0,
+      "h": 92.3,
+      "fill": "(0.015699999406933784, 0.019600000232458115, 0.019600000232458115)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": -0.0,
+      "w": 480.0,
+      "h": 540.0,
+      "fill": "(0.8429999947547913, 0.9919999837875366, 0.9179999828338623)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 960.0,
+      "h": 92.3,
+      "fill": "(0.015699999406933784, 0.019600000232458115, 0.019600000232458115)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 0.0,
+      "y": 92.3,
+      "w": 960.0,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 336.9,
+      "y": 309.1,
+      "w": 68.6,
+      "h": 66.4,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 86.4,
+      "y": 277.4,
+      "w": 68.6,
+      "h": 98.0,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 210.1,
+      "y": 233.2,
+      "w": 68.6,
+      "h": 142.2,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "s",
+      "x": 49.6,
+      "y": 375.4,
+      "w": 383.2,
+      "h": 0.0,
+      "fill": null,
+      "color": "(0.6039368510246277, 0.6040284037590027, 0.6039215922355652)",
+      "stroke_opacity": 1.0,
+      "fill_opacity": null
+    },
+    {
+      "type": "f",
+      "x": 225.2,
+      "y": 201.3,
+      "w": 37.0,
+      "h": 21.8,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 222.2,
+      "y": 196.8,
+      "w": 43.1,
+      "h": 28.6,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 98.9,
+      "y": 384.1,
+      "w": 22.3,
+      "h": 18.0,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 88.0,
+      "y": 402.4,
+      "w": 35.6,
+      "h": 17.0,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 228.3,
+      "y": 386.2,
+      "w": 13.7,
+      "h": 31.4,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 209.1,
+      "y": 384.0,
+      "w": 34.9,
+      "h": 35.8,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 346.5,
+      "y": 386.0,
+      "w": 25.8,
+      "h": 10.6,
+      "fill": "(0.0, 0.7609999775886536, 0.3330000042915344)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 338.3,
+      "y": 384.1,
+      "w": 36.0,
+      "h": 35.4,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 225.7,
+      "y": 242.4,
+      "w": 36.1,
+      "h": 36.1,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 351.2,
+      "y": 322.0,
+      "w": 36.1,
+      "h": 36.1,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    },
+    {
+      "type": "f",
+      "x": 99.4,
+      "y": 286.5,
+      "w": 36.1,
+      "h": 36.1,
+      "fill": "(0.0, 0.3799999952316284, 0.16500000655651093)",
+      "color": null,
+      "stroke_opacity": null,
+      "fill_opacity": 1.0
+    }
+  ],
+  "images": [
+    {
+      "xref": 84,
+      "x": 558.7,
+      "y": 0.0,
+      "w": 401.3,
+      "h": 89.2
+    },
+    {
+      "xref": 84,
+      "x": 558.7,
+      "y": 0.0,
+      "w": 401.3,
+      "h": 89.2
+    }
+  ]
+}
