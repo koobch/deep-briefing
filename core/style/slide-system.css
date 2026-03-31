@@ -52,6 +52,20 @@
   --c-overlay-70: rgba(255,255,255,0.7);  /* Back Cover 텍스트 */
   --c-overlay-40: rgba(255,255,255,0.4);  /* Back Cover 저작권 */
   --c-overlay-60: rgba(255,255,255,0.6);  /* Cover 시리즈 텍스트 */
+  /* 차트 데이터 색상 (슬라이드별 바/버블 구분용) */
+  --c-chart-blue-dk: #285f7d;
+  --c-chart-blue-lt: #3a7a9e;
+  --c-chart-red-dk: #6d352c;
+  --c-chart-red-lt: #8a4a3f;
+  --c-chart-gray: #a0a0a0;
+  /* Agenda 장식 색상 */
+  --c-agenda-bg-1: #1a3a4a;
+  --c-agenda-bg-2: #0a2a3a;
+  --c-agenda-bg-3: #2a1a1a;
+  --c-agenda-bg-4: #3a2a1a;
+  --c-agenda-green-light: #a8efb8;
+  --c-agenda-green-dark: #0e3e1b;
+  --c-agenda-label: #05512c;
   --c-header-bg: linear-gradient(135deg, #004d33 0%, #002e1f 40%, #1a1a2e 100%);
 
   /* 간격 토큰 (4px 기반 스케일) */
@@ -434,7 +448,7 @@
 /* ═══ LAYOUT: Agenda ═══ */
 .layout-agenda {
   display: grid;
-  grid-template-columns: 739px 1fr;
+  grid-template-columns: 39fr 61fr;
   gap: 0;
   padding: 0;
 }
@@ -1011,12 +1025,12 @@
   flex: 1; position: relative;
   border-left: 2px solid var(--c-border); border-bottom: 2px solid var(--c-border);
   min-height: 500px;
-  margin-left: 40px; /* Y축 라벨 공간 확보 */
+  margin-left: var(--sp-4xl); /* Y축 라벨 공간 확보 */
 }
 .scatter-point {
   position: absolute; width: 48px; height: 48px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; color: white;
+  font-size: var(--fs-copyright); font-weight: 700; color: white;
 }
 .scatter-axis-x { text-align: center; font-size: var(--fs-source); color: var(--c-text); padding-top: var(--sp-sm); }
 .scatter-axis-y {

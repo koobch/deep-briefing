@@ -73,12 +73,12 @@
   <span class="proto-tag">v6 한글 — Agenda (Grid)</span>
 
   <div class="layout-agenda" style="grid-row:1/-1">
-    <div class="agenda-photo-panel" style="background:linear-gradient(135deg,#1a3a4a,#0a2a3a 30%,#2a1a1a 70%,#3a2a1a);overflow:hidden">
+    <div class="agenda-photo-panel" style="background:linear-gradient(135deg,var(--c-agenda-bg-1),var(--c-agenda-bg-2) 30%,var(--c-agenda-bg-3) 70%,var(--c-agenda-bg-4));overflow:hidden">
       <div style="position:absolute;inset:0;background:repeating-linear-gradient(120deg,rgba(200,100,80,0.15) 0 40px,transparent 40px 120px);filter:blur(2px)"></div>
-      <div style="position:absolute;top:81px;left:36px;width:703px;height:398px;background:#a8efb8;z-index:1"></div>
-      <div style="position:absolute;top:445px;left:33px;width:436px;height:71px;background:#187955;z-index:1"></div>
-      <div style="position:absolute;left:111px;top:160px;font-size:var(--fs-agenda-title);font-weight:700;color:#0e3e1b;line-height:1.15;z-index:2">BCG 경영진<br>인사이트</div>
-      <div style="position:absolute;left:111px;top:357px;font-size:var(--fs-agenda-label);color:#05512c;z-index:2;font-style:italic">AGENDA</div>
+      <div style="position:absolute;top:81px;left:36px;width:703px;height:398px;background:var(--c-agenda-green-light);z-index:1"></div>
+      <div style="position:absolute;top:445px;left:33px;width:436px;height:71px;background:var(--c-accent-dark);z-index:1"></div>
+      <div style="position:absolute;left:111px;top:160px;font-size:var(--fs-agenda-title);font-weight:700;color:var(--c-agenda-green-dark);line-height:1.15;z-index:2">BCG 경영진<br>인사이트</div>
+      <div style="position:absolute;left:111px;top:357px;font-size:var(--fs-agenda-label);color:var(--c-agenda-label);z-index:2;font-style:italic">AGENDA</div>
     </div>
 
     <div class="agenda-items">
@@ -123,32 +123,32 @@
         <!-- 지역별 범례 -->
         <div style="display:flex;gap:var(--sp-2xl);font-size:var(--fs-source);margin-bottom:var(--sp-sm)">
           <span style="font-weight:700;color:var(--c-text-sub)">아시아태평양¹</span>
-          <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:#285f7d;display:inline-block"></span> 미국 대선 전</span>
-          <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:#3a7a9e;display:inline-block"></span> 미국 대선 후</span>
+          <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:var(--c-chart-blue-dk);display:inline-block"></span> 미국 대선 전</span>
+          <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:var(--c-chart-blue-lt);display:inline-block"></span> 미국 대선 후</span>
         </div>
 
         <!-- 차트 항목 6개 -->
         <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
           <span style="text-align:right;font-size:var(--fs-label)">인플레이션<br>및 금리 상승</span>
           <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
-            <div style="height:18px;background:#285f7d;border-radius:0 3px 3px 0;width:68%"></div>
-            <div style="height:18px;background:#3a7a9e;border-radius:0 3px 3px 0;width:75%"></div>
+            <div style="height:18px;background:var(--c-chart-blue-dk);border-radius:0 3px 3px 0;width:68%"></div>
+            <div style="height:18px;background:var(--c-chart-blue-lt);border-radius:0 3px 3px 0;width:75%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">27%</span>
         </div>
         <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
           <span style="text-align:right;font-size:var(--fs-label)">경기 침체<br>불확실성</span>
           <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
-            <div style="height:18px;background:#6d352c;border-radius:0 3px 3px 0;width:50%"></div>
-            <div style="height:18px;background:#8a4a3f;border-radius:0 3px 3px 0;width:60%"></div>
+            <div style="height:18px;background:var(--c-chart-red-dk);border-radius:0 3px 3px 0;width:50%"></div>
+            <div style="height:18px;background:var(--c-chart-red-lt);border-radius:0 3px 3px 0;width:60%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">23%</span>
         </div>
         <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
           <span style="text-align:right;font-size:var(--fs-label)">규제 및<br>관세 변화</span>
           <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
-            <div style="height:18px;background:#6d352c;border-radius:0 3px 3px 0;width:42%"></div>
-            <div style="height:18px;background:#8a4a3f;border-radius:0 3px 3px 0;width:50%"></div>
+            <div style="height:18px;background:var(--c-chart-red-dk);border-radius:0 3px 3px 0;width:42%"></div>
+            <div style="height:18px;background:var(--c-chart-red-lt);border-radius:0 3px 3px 0;width:50%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">18%</span>
         </div>
@@ -172,7 +172,7 @@
           <span style="text-align:right;font-size:var(--fs-label)">노동 시장<br>구조 변화</span>
           <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
             <div style="height:18px;background:var(--c-neutral);border-radius:0 3px 3px 0;width:18%"></div>
-            <div style="height:18px;background:#a0a0a0;border-radius:0 3px 3px 0;width:25%"></div>
+            <div style="height:18px;background:var(--c-chart-gray);border-radius:0 3px 3px 0;width:25%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">8%</span>
         </div>
