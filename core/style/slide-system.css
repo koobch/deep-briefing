@@ -109,6 +109,7 @@
   --agenda-check-h: 56px;   /* Agenda 체크 높이 */
   --agenda-check-offset: 8px; /* Agenda 체크 우측 오프셋 */
   --heatmap-label-w: 160px; /* 히트맵 행 라벨 폭 */
+  --framework-ring-size: 480px; /* Framework 원형 다이어그램 크기 */
 
   /* 차트 컴포넌트 토큰 */
   --bar-h: 24px;           /* 수평 바 기본 높이 */
@@ -1132,7 +1133,7 @@
   flex: 1; display: flex; align-items: center; justify-content: center;
 }
 .framework-ring {
-  width: 480px; height: 480px; border-radius: 50%;
+  width: var(--framework-ring-size); height: var(--framework-ring-size); border-radius: 50%;
   border: 3px solid var(--c-accent); position: relative;
   display: flex; align-items: center; justify-content: center;
 }

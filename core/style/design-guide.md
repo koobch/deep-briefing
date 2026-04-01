@@ -38,6 +38,7 @@
 | 25:75 | KPI+상세 | 핵심 수치 1~2개 + 상세 분석 |
 | 50:50 | 대등 비교 | Dual Chart, Before/After 대칭, Comparison |
 | 40:60 | 핵심 메시지+근거 데이터 | Split Layout — 좌측 다크 패널(So-What) + 우측 라이트(차트/데이터) |
+| 30:40:30 | 현황→전환→효과 | Before/After — 3컬럼 스토리 흐름 (As-Is → To-Be → Impact) |
 
 ### 간격 토큰 시스템 (Spacing Scale)
 

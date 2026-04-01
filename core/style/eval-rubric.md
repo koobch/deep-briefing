@@ -13,7 +13,7 @@
 
 | 슬라이드 | 유형 | 면제 축 | 이유 |
 |---------|------|---------|------|
-| Slide 2 | Agenda | A1~A7, C3, C5 | grid-row:1/-1 전폭 레이아웃, 목차 용도 |
+| Slide 2 | Agenda | A1~A7, C2, C3, C5 | grid-row:1/-1 전폭 레이아웃, 목차 용도, photo-panel 장식 색상 면제 |
 | Slide 10 | Cover EP | A1~A7, C3, C5 | grid-row:1/-1 전폭 레이아웃, 표지 |
 | Slide 11 | Cover Global | A1~A7, C3, C5 | grid-row:1/-1 전폭 레이아웃, 표지 |
 | Slide 22 | Back Cover | A1~A7, C3, C5 | grid-row:1/-1 전폭 레이아웃, 뒷표지 |
@@ -25,7 +25,7 @@
 | 축 | 이름 | PASS 조건 | FAIL 조건 |
 |---|------|----------|----------|
 | A1 | 3행 그리드 | CSS `.slide`가 `grid-template-rows: var(--header-h) 1fr auto` 사용 | 비면제 슬라이드에 header/slot-body/footer 3행 구조 없음 |
-| A2 | 컬럼 비율 | 허용 비율 사용: 전폭(1fr), 65:35, 30:70, 25:75, 50:50, 40:60(Split Layout 전용). CSS custom property 오버라이드(--col-primary 등)로 미세 조정 허용 | 허용 비율 외 고정 px 사용 |
+| A2 | 컬럼 비율 | 허용 비율 사용: 전폭(1fr), 65:35, 30:70, 25:75, 50:50, 40:60(Split Layout 전용). **3컬럼**: 30:40:30(Before/After 전용). CSS custom property 오버라이드(--col-primary 등)로 미세 조정 허용 | 허용 비율 외 고정 px 사용 |
 | A3 | 수평 기준선 | 동일 역할 요소(예: 3개 exec-row의 라벨, 5개 rank-item)가 CSS class로 정렬됨 | 같은 역할 요소의 y 시작점이 CSS로 보장되지 않음 |
 | A4 | 반복 간격 | 반복 요소 컨테이너에 단일 gap 토큰(var(--sp-*)) 사용 | 동일 반복 그룹 내 2개 이상 다른 gap 값 혼용 |
 | A5 | 좌우 여백 | 슬라이드 외곽 좌/우에 var(--pad-x) 또는 var(--pad-x-right) 적용 | 외곽 여백이 pad-x와 불일치 |
@@ -37,7 +37,7 @@
 | 축 | 이름 | PASS 조건 | FAIL 조건 |
 |---|------|----------|----------|
 | B1 | 토큰 일관성 | CSS 클래스 body 내 모든 간격/크기가 var() 토큰 사용. **면제**: :root 토큰 정의, .proto-tag, border-width(1~3px), border-radius, clip-path, border shorthand(`1px solid var(...)`) | CSS 클래스 body에 var()로 감싸지 않은 raw px 값 존재 |
-| B2 | 콘텐츠 밀도 | 본문 2줄+, 패널 3문단+, 차트 4항목+(단, 강조형 레이아웃인 Split Layout/Big Number는 3항목 허용), Table 행에 bold+설명 | section-map 최소 요구량 미달 |
+| B2 | 콘텐츠 밀도 | 본문 2줄+, 패널 3문단+, 차트 4항목+(단, 강조형 레이아웃인 Split Layout/Big Number는 3항목 허용, Before/After는 3컬럼×4행 구조 자체로 밀도 충족), Table 행에 bold+설명 | section-map 최소 요구량 미달 |
 | B3 | 레이아웃 정확도 | section-map.md에 정의된 핵심 섹션 구조와 일치. **유연성**: callout이 annotation 역할을 대체할 수 있으며, 선택적(optional) 섹션의 생략은 허용 | 필수 섹션 누락 또는 구조 순서 오류 |
 
 ### C 그룹: 세부 품질
