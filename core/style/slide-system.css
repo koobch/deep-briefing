@@ -800,7 +800,7 @@
   font-weight: 700;
   font-size: var(--fs-body);
   text-align: center;
-  border-radius: 4px;
+  border-radius: var(--sp-xs);
   width: 100%;
 }
 .case-flow-desc {
@@ -858,10 +858,11 @@
 .text-big { font-size: var(--fs-big); font-weight: 800; }
 .text-chart-val { font-size: var(--fs-chart-val); font-weight: 700; }
 .text-kpi-label { font-size: var(--fs-source); color: var(--c-text-muted); }
-.text-kpi-desc { font-size: var(--fs-body); color: var(--c-text-body); margin-top: 4px; }
+.text-kpi-desc { font-size: var(--fs-body); color: var(--c-text-body); margin-top: var(--sp-xs); }
 
 /* P2 범용: N개 자식 전폭 균등 배분 */
 .spread-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-2xl); }
+.spread-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-lg); flex: 1; }
 .spread-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-xl); }
 .spread-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-lg); }
 .align-top > * { align-self: start; }
@@ -945,6 +946,7 @@
 }
 .multi-col-grid {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-3xl);
   flex: 1;
 }
@@ -1033,7 +1035,7 @@
   padding: var(--sp-xl) var(--pad-x) 0;
   gap: var(--sp-lg);
 }
-.heatmap-grid { display: grid; gap: var(--sp-2xs); flex: 1; align-content: center; }
+.heatmap-grid { display: grid; grid-template-columns: var(--heatmap-label-w) repeat(6, 1fr); gap: var(--sp-2xs); flex: 1; align-content: center; }
 .heatmap-cell {
   display: flex; align-items: center; justify-content: center;
   font-size: var(--fs-source); font-weight: 700; color: var(--c-white);
@@ -1063,7 +1065,7 @@
   margin-left: var(--sp-4xl); /* Y축 라벨 공간 확보 */
 }
 .scatter-point {
-  position: absolute; width: 48px; height: 48px; border-radius: 50%;
+  position: absolute; width: var(--fs-title); height: var(--fs-title); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: var(--fs-copyright); font-weight: 700; color: var(--c-white);
 }
@@ -1134,7 +1136,7 @@
 }
 .framework-ring-label {
   position: absolute; font-size: var(--fs-body); font-weight: 700;
-  background: var(--c-accent); color: var(--c-white); padding: var(--sp-sm) var(--sp-lg); border-radius: 4px;
+  background: var(--c-accent); color: var(--c-white); padding: var(--sp-sm) var(--sp-lg); border-radius: var(--sp-xs);
 }
 .framework-center {
   font-size: var(--fs-col-title); font-weight: 700; color: var(--c-accent-dark); text-align: center;
