@@ -92,6 +92,14 @@
   --accent-bar-w: 303px;
   --accent-bar-h: 56px;
   --exec-label-w: 284px;
+  --content-max-w: 1600px;  /* 본문 최대 폭 */
+  --cover-box-max-w: 800px; /* Cover 박스 최대 폭 */
+  --accent-line-h: 2px;     /* 헤더 하단 구분선 */
+  --rank-icon-size: 72px;   /* 순위 아이콘 크기 */
+  --agenda-check-w: 60px;   /* Agenda 체크 폭 */
+  --agenda-check-h: 56px;   /* Agenda 체크 높이 */
+  --agenda-check-offset: 8px; /* Agenda 체크 우측 오프셋 */
+  --heatmap-label-w: 160px; /* 히트맵 행 라벨 폭 */
 
   /* 차트 컴포넌트 토큰 */
   --bar-h: 24px;           /* 수평 바 기본 높이 */
@@ -172,7 +180,7 @@
   font-weight: 700;
   color: var(--c-white);
   line-height: 1.15;
-  max-width: 1600px;
+  max-width: var(--content-max-w);
 }
 
 /* 구분선 */
@@ -180,7 +188,7 @@
   content: "";
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 2px;
+  height: var(--accent-line-h);
   background: var(--c-accent);
 }
 
@@ -219,7 +227,7 @@
 /* ─── Copyright (우측 세로) ───────────────────────────── */
 .copyright {
   position: absolute;
-  right: 8px; top: 50%;
+  right: var(--agenda-check-offset); top: 50%;
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-rl;
   font-size: var(--fs-copyright);
@@ -437,7 +445,7 @@
   font-weight: 800;
 }
 .ranked-icons .rank-icon {
-  width: 72px; height: 72px;
+  width: var(--rank-icon-size); height: var(--rank-icon-size);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -483,7 +491,7 @@
   gap: var(--sp-2xl);
 }
 .agenda-check {
-  width: 60px; height: 56px;
+  width: var(--agenda-check-w); height: var(--agenda-check-h);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -857,7 +865,7 @@
 .cover-box {
   background: rgba(255,255,255,0.92);
   padding: var(--sp-4xl) var(--pad-x);
-  max-width: 800px;
+  max-width: var(--cover-box-max-w);
   text-align: center;
 }
 .cover-title { font-size: var(--fs-cover-title); font-weight: 700; line-height: 1.15; margin-bottom: var(--sp-lg); }
@@ -1079,7 +1087,7 @@
   grid-template-columns: var(--matrix-axis-w) 1fr 1fr;
   grid-template-rows: var(--matrix-header-h) 1fr 1fr;
   gap: var(--sp-xs);
-  flex: 1; width: 100%; max-width: 1600px;
+  flex: 1; width: 100%; max-width: var(--content-max-w);
   min-height: 0;
 }
 .matrix-cell {
