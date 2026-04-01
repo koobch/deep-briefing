@@ -494,7 +494,7 @@
   flex-shrink: 0;
 }
 .agenda-check--active { background: var(--c-accent-dark); }
-.agenda-check--inactive { background: #c7c7c7; }
+.agenda-check--inactive { background: var(--c-neutral); }
 .agenda-item--active .agenda-text {
   font-size: var(--fs-subq);
   font-weight: 700;
@@ -633,6 +633,7 @@
   flex-direction: column;
   gap: 0;
   flex: 1;
+  padding: var(--sp-xl) var(--pad-x) 0;
 }
 
 .table-row {
@@ -772,7 +773,7 @@
 }
 .case-flow-box {
   background: var(--c-accent);
-  color: white;
+  color: var(--c-white);
   padding: var(--sp-md) var(--sp-lg);
   font-weight: 700;
   font-size: var(--fs-body);
@@ -975,12 +976,12 @@
 .divergent-bar-pos > div {
   background: var(--c-accent); height: 28px; border-radius: 3px 0 0 3px;
   display: flex; align-items: center; justify-content: center;
-  color: white; font-size: var(--fs-source); font-weight: 700; min-width: 40px;
+  color: var(--c-white); font-size: var(--fs-source); font-weight: 700; min-width: 40px;
 }
 .divergent-bar-neg > div {
   background: var(--c-danger); height: 28px; border-radius: 0 3px 3px 0;
   display: flex; align-items: center; justify-content: center;
-  color: white; font-size: var(--fs-source); font-weight: 700; min-width: 40px;
+  color: var(--c-white); font-size: var(--fs-source); font-weight: 700; min-width: 40px;
 }
 .divergent-delta { font-size: var(--fs-source); font-weight: 700; text-align: center; }
 
@@ -1017,8 +1018,8 @@
   padding: var(--sp-sm) var(--sp-xs); min-height: var(--sp-4xl);
 }
 .heatmap-cell--high { background: var(--c-accent); }
-.heatmap-cell--mid { background: #7fc9a0; }
-.heatmap-cell--low { background: #c7c7c7; color: var(--c-text); }
+.heatmap-cell--mid { background: var(--c-accent-light); }
+.heatmap-cell--low { background: var(--c-neutral); color: var(--c-text); }
 .heatmap-cell--neg { background: var(--c-danger); }
 .heatmap-header { font-size: var(--fs-source); font-weight: 700; text-align: center; padding: var(--sp-sm); }
 .heatmap-row-label {
@@ -1042,7 +1043,7 @@
 .scatter-point {
   position: absolute; width: 48px; height: 48px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: var(--fs-copyright); font-weight: 700; color: white;
+  font-size: var(--fs-copyright); font-weight: 700; color: var(--c-white);
 }
 .scatter-axis-x { text-align: center; font-size: var(--fs-source); color: var(--c-text); padding-top: var(--sp-sm); }
 .scatter-axis-y {
@@ -1111,7 +1112,7 @@
 }
 .framework-ring-label {
   position: absolute; font-size: var(--fs-body); font-weight: 700;
-  background: var(--c-accent); color: white; padding: var(--sp-sm) var(--sp-lg); border-radius: 4px;
+  background: var(--c-accent); color: var(--c-white); padding: var(--sp-sm) var(--sp-lg); border-radius: 4px;
 }
 .framework-center {
   font-size: var(--fs-col-title); font-weight: 700; color: var(--c-accent-dark); text-align: center;
