@@ -72,6 +72,8 @@
   --c-cover-box-bg: rgba(255,255,255,0.92);
   --c-split-dark-bg: linear-gradient(180deg, #004d33 0%, #002e1f 100%);
   --c-copyright-text: #575757;
+  --c-overlay-50: rgba(255,255,255,0.5);
+  --c-overlay-90: rgba(255,255,255,0.9);
 
   /* 간격 토큰 (4px 기반 스케일) */
   --sp-2xs: 2px;
