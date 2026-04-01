@@ -67,6 +67,11 @@
   --c-agenda-green-dark: #0e3e1b;
   --c-agenda-label: #05512c;
   --c-header-bg: linear-gradient(135deg, #004d33 0%, #002e1f 40%, #1a1a2e 100%);
+  --c-cover-bg: linear-gradient(135deg, #1a3a2a 0%, #0a2a1a 50%, #1a1a2e 100%);
+  --c-cover-photo-bg: linear-gradient(135deg, #2a3a4a 0%, #1a2a3a 100%);
+  --c-cover-box-bg: rgba(255,255,255,0.92);
+  --c-split-dark-bg: linear-gradient(180deg, #004d33 0%, #002e1f 100%);
+  --c-copyright-text: #575757;
 
   /* 간격 토큰 (4px 기반 스케일) */
   --sp-2xs: 2px;
@@ -88,6 +93,8 @@
   --gap-col: 0px;        /* 컬럼 간 간격 (패널이 배경으로 구분) */
 
   /* 구조 */
+  --slide-w: 1920px;     /* 슬라이드 폭 */
+  --slide-h: 1080px;     /* 슬라이드 높이 */
   --header-h: 188px;     /* 헤더 높이 (22/24페이지 동일) */
   --accent-bar-w: 303px;
   --accent-bar-h: 56px;
@@ -146,8 +153,8 @@
 
 /* ─── 슬라이드 Shell ─────────────────────────────────── */
 .slide {
-  width: 1920px;
-  height: 1080px;
+  width: var(--slide-w);
+  height: var(--slide-h);
   background: var(--c-white);
   display: grid;
   grid-template-rows: var(--header-h) 1fr auto;
@@ -231,7 +238,7 @@
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-rl;
   font-size: var(--fs-copyright);
-  color: #575757;
+  color: var(--c-copyright-text);
 }
 
 /* ═══ LAYOUT: Exec Summary (전폭, 행 분할) ═══ */
@@ -865,12 +872,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a3a2a 0%, #0a2a1a 50%, #1a1a2e 100%);
+  background: var(--c-cover-bg);
   position: relative;
   overflow: hidden;
 }
 .cover-box {
-  background: rgba(255,255,255,0.92);
+  background: var(--c-cover-box-bg);
   padding: var(--sp-4xl) var(--pad-x);
   max-width: var(--cover-box-max-w);
   text-align: center;
@@ -896,7 +903,7 @@
   background: var(--c-white);
 }
 .cover-photo-panel {
-  background: linear-gradient(135deg, #2a3a4a 0%, #1a2a3a 100%);
+  background: var(--c-cover-photo-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1008,7 +1015,7 @@
   padding: 0;
 }
 .split-dark {
-  background: linear-gradient(180deg, #004d33 0%, #002e1f 100%);
+  background: var(--c-split-dark-bg);
   color: var(--c-white);
   padding: var(--sp-3xl) var(--sp-3xl) var(--sp-2xl) var(--pad-x);
   display: flex; flex-direction: column; justify-content: center; gap: var(--sp-xl);
@@ -1143,10 +1150,10 @@
 .layout-back-cover {
   grid-row: 1 / -1;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, #004d33 0%, #002e1f 40%, #1a1a2e 100%);
+  background: var(--c-header-bg);
   color: var(--c-white); gap: var(--sp-3xl);
 }
-.back-cover-logo { font-size: 48px; font-weight: 700; color: var(--c-accent); }
+.back-cover-logo { font-size: var(--fs-title); font-weight: 700; color: var(--c-accent); }
 .back-cover-info { text-align: center; font-size: var(--fs-body); line-height: 1.45; color: var(--c-overlay-70); }
 .back-cover-copyright { font-size: var(--fs-copyright); color: var(--c-overlay-40); }
 
@@ -1269,7 +1276,7 @@
 /* ─── 뷰포트 스케일링 ────────────────────────────────── */
 body {
   font-family: var(--font);
-  background: #C0C4C8;
+  background: var(--c-neutral);
   display: flex;
   flex-direction: column;
   align-items: center;
