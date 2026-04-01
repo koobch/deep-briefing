@@ -1196,6 +1196,31 @@
   height: var(--legend-dot-lg);
 }
 
+/* 바 내부 라벨 (1위 항목 등 — 바 안에 텍스트 표시) */
+.chart-bar--labeled {
+  display: flex;
+  align-items: center;
+  padding-left: var(--sp-sm);
+}
+.chart-bar--labeled span {
+  font-size: var(--fs-source);
+  color: var(--c-white);
+  font-weight: 700;
+}
+
+/* Big Number 우측 패널 */
+.bignumber-detail {
+  padding: var(--sp-3xl) var(--pad-x) var(--sp-md) var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+.bignumber-kpi-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+}
+
 /* 이중 바 (Pre/Post) */
 .chart-dual-bar {
   display: flex;
