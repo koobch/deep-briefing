@@ -730,7 +730,7 @@
 │ S-DIVERGENT-ROW ×8~10                            │
 │  국가명 | ◄ 긍정 바 | 부정 바 ► | 변화량          │
 │                                                  │
-│ S-ANNOTATION (우측 해석 텍스트 ×2 블록)            │
+│ S-ANNOTATION (선택: 우측 해석 텍스트. Callout 대체 가능) │
 ├─────────────────────────────────────────────────┤
 │ S-SOURCE                                         │
 └─────────────────────────────────────────────────┘
@@ -743,7 +743,7 @@
 | S-DIVERGENT-BAR | — | — | `var(--c-accent)`(긍정)/`var(--c-danger)`(부정) | 비율에 비례 |
 | S-DIVERGENT-VALUE | `--fs-source` (20px), bold | 중앙(바 내부) | `var(--c-white)` | % 수치 |
 | S-DIVERGENT-DELTA | `--fs-source` (20px) | 우 | `var(--c-danger)`/`var(--c-accent)` | 변화량 (+/−) |
-| S-ANNOTATION | `--fs-source` (20px) | 좌 | `var(--c-text)` (#000000) | 우측 해석 텍스트 2블록 |
+| S-ANNOTATION | `--fs-source` (20px) | 좌 | `var(--c-text)` (#000000) | (선택) 우측 해석 텍스트 2블록. S-CALLOUT이 있으면 생략 가능 |
 
 ### 내용 패턴
 - **용도**: 설문 결과 양극화, 시장별 온도차, Before/After 수치 비교

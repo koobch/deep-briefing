@@ -27,6 +27,7 @@
 | 좌 30% + 우 70% | 30:70 | Process | ~25% |
 | 좌 25% + 우 75% | 25:75 | Big Number | ~5% |
 | 좌 50% + 우 50% | 50:50 | Dual Chart, Comparison | ~5% |
+| 좌 40% + 우 60% | 40:60 | Split Layout (2톤 배경) | ~3% |
 
 ### 컬럼 비율 선택 가이드
 | 비율 | 용도 | 선택 기준 |
@@ -36,6 +37,7 @@
 | 30:70 | 문제 정의+해결 방법론 | 해석/방법론 양 > 문제 요약 |
 | 25:75 | KPI+상세 | 핵심 수치 1~2개 + 상세 분석 |
 | 50:50 | 대등 비교 | Dual Chart, Before/After 대칭, Comparison |
+| 40:60 | 핵심 메시지+근거 데이터 | Split Layout — 좌측 다크 패널(So-What) + 우측 라이트(차트/데이터) |
 
 ### 간격 토큰 시스템 (Spacing Scale)
 
@@ -76,7 +78,7 @@
 | 원칙 | 규칙 | 구현 방법 | 주요 적용 유형 |
 |------|------|---------|-------------|
 | **P1** | 3행 그리드(헤더/본문/푸터)의 수직 구조를 모든 슬라이드에 강제 | `grid-template-rows: 188px 1fr auto` | 전체 (Cover·Back Cover 예외) |
-| **P2** | 컬럼 분할 비율은 5종(전폭/65:35/30:70/25:75/50:50)만 허용 | `grid-template-columns` 고정 비율 | Insight+Chart, Process, Big Number 등 |
+| **P2** | 컬럼 분할 비율은 6종(전폭/65:35/30:70/25:75/50:50/40:60)만 허용 | `grid-template-columns` 고정 비율 | Insight+Chart, Process, Big Number 등 |
 | **P3** | 같은 슬라이드 내 동일 역할 요소는 수평 기준선(baseline)을 공유 | `align-items: baseline` 또는 동일 `padding-top` | Exec Summary 3행, Ranked 항목 |
 | **P4** | 반복 요소(행·카드·아이콘)의 간격은 단일 `gap` 토큰으로 통일 | `gap: var(--sp-*)` 한 번만 선언 | Table/List, Ranked, Before/After |
 | **P5** | 좌측 여백 `--pad-x`와 우측 여백은 슬라이드 전체에서 대칭 | 좌·우 `padding-inline: var(--pad-x)` 동일 적용 | 전체 |

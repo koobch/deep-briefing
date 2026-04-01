@@ -25,7 +25,7 @@
 | 축 | 이름 | PASS 조건 | FAIL 조건 |
 |---|------|----------|----------|
 | A1 | 3행 그리드 | CSS `.slide`가 `grid-template-rows: var(--header-h) 1fr auto` 사용 | 비면제 슬라이드에 header/slot-body/footer 3행 구조 없음 |
-| A2 | 컬럼 비율 | 허용 비율 사용: 전폭(1fr), 65:35, 30:70, 25:75, 50:50. CSS custom property 오버라이드(--col-primary 등)로 미세 조정 허용 | 허용 비율 외 고정 px 사용 |
+| A2 | 컬럼 비율 | 허용 비율 사용: 전폭(1fr), 65:35, 30:70, 25:75, 50:50, 40:60(Split Layout 전용). CSS custom property 오버라이드(--col-primary 등)로 미세 조정 허용 | 허용 비율 외 고정 px 사용 |
 | A3 | 수평 기준선 | 동일 역할 요소(예: 3개 exec-row의 라벨, 5개 rank-item)가 CSS class로 정렬됨 | 같은 역할 요소의 y 시작점이 CSS로 보장되지 않음 |
 | A4 | 반복 간격 | 반복 요소 컨테이너에 단일 gap 토큰(var(--sp-*)) 사용 | 동일 반복 그룹 내 2개 이상 다른 gap 값 혼용 |
 | A5 | 좌우 여백 | 슬라이드 외곽 좌/우에 var(--pad-x) 또는 var(--pad-x-right) 적용 | 외곽 여백이 pad-x와 불일치 |
@@ -37,8 +37,8 @@
 | 축 | 이름 | PASS 조건 | FAIL 조건 |
 |---|------|----------|----------|
 | B1 | 토큰 일관성 | CSS 클래스 body 내 모든 간격/크기가 var() 토큰 사용. **면제**: :root 토큰 정의, .proto-tag, border-width(1~3px), border-radius, clip-path, border shorthand(`1px solid var(...)`) | CSS 클래스 body에 var()로 감싸지 않은 raw px 값 존재 |
-| B2 | 콘텐츠 밀도 | 본문 2줄+, 패널 3문단+, 차트 4항목+, Table 행에 bold+설명 | section-map 최소 요구량 미달 |
-| B3 | 레이아웃 정확도 | section-map.md에 정의된 섹션 구조(S-HEADER, S-SUBQ, S-CHART 등)와 일치 | section-map 구조와 괴리 (누락 섹션, 순서 오류) |
+| B2 | 콘텐츠 밀도 | 본문 2줄+, 패널 3문단+, 차트 4항목+(단, 강조형 레이아웃인 Split Layout/Big Number는 3항목 허용), Table 행에 bold+설명 | section-map 최소 요구량 미달 |
+| B3 | 레이아웃 정확도 | section-map.md에 정의된 핵심 섹션 구조와 일치. **유연성**: callout이 annotation 역할을 대체할 수 있으며, 선택적(optional) 섹션의 생략은 허용 | 필수 섹션 누락 또는 구조 순서 오류 |
 
 ### C 그룹: 세부 품질
 
@@ -46,7 +46,7 @@
 |---|------|----------|----------|
 | C1 | 타이포 위계 | HTML 인라인 및 CSS 클래스의 모든 font-size가 var(--fs-*) 토큰 사용. **면제**: .proto-tag | raw px font-size (예: `font-size: 14px`) |
 | C2 | 색상 토큰 | HTML 인라인의 모든 color/background가 var(--c-*) 토큰 사용. **면제**: 차트 데이터 바/버블의 background (데이터 시각화 구분색) — 단, 이들도 var(--c-chart-*) 토큰으로 관리되면 PASS | #hex 인라인 (예: `color:#333`) |
-| C3 | Action Title | h1.action-title 텍스트가 주장형 문장 (동사 포함, 결론을 진술) | 주제형 명사 종결 (예: "시장 분석", "비용 현황") |
+| C3 | Action Title | h1.action-title 텍스트가 주장형 문장 (동사 포함, 결론을 진술). **예외**: "사례 \|" 접두사 슬라이드(Case Study)는 성과 서술형 허용 (예: "...달성한 기업 사례") | 주제형 명사 종결 (예: "시장 분석", "비용 현황"). 단, Case Study의 성과 서술은 FAIL 아님 |
 | C4 | 인라인 스타일 | HTML inline style에 **구조적 레이아웃 속성 없음**: `display`, `grid-template-columns`, `grid-template-rows`, `flex-direction`. **허용**: 데이터값(width%, left%, bottom%), 토큰 오버라이드(font-size:var(), color:var(), gap:var()), 프레젠테이셔널 속성(font-weight, text-align, margin, padding with var(), line-height, letter-spacing, text-transform, font-style), 배경/색상(background:var(), color:var()) | display:/grid-template-columns:/grid-template-rows:/flex-direction: 가 HTML inline style에 존재 |
 | C5 | Source/Footer | "Source: [출처] ([날짜]); [분석주체]" 형식 + 페이지 번호 | 형식 미준수 또는 Source/Footer 누락 |
 
