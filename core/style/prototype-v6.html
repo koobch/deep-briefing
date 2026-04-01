@@ -119,60 +119,60 @@
     <div class="col-primary">
       <h2 class="sub-question">2025년 기업 실적에 영향을 미칠 주요 거시경제 요인은 무엇인가?</h2>
 
-      <div style="display:flex;flex-direction:column;gap:var(--sp-sm);flex:1;justify-content:center">
+      <div class="chart-stack">
         <!-- 지역별 범례 -->
-        <div style="display:flex;gap:var(--sp-2xl);font-size:var(--fs-source);margin-bottom:var(--sp-sm)">
+        <div class="chart-legend" style="margin-bottom:var(--sp-sm)">
           <span style="font-weight:700;color:var(--c-text-sub)">아시아태평양¹</span>
-          <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:var(--c-chart-blue-dk);display:inline-block"></span> 미국 대선 전</span>
-          <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:var(--c-chart-blue-lt);display:inline-block"></span> 미국 대선 후</span>
+          <span class="chart-legend-item"><span style="width:var(--legend-dot);height:var(--legend-dot);background:var(--c-chart-blue-dk);display:inline-block"></span> 미국 대선 전</span>
+          <span class="chart-legend-item"><span style="width:var(--legend-dot);height:var(--legend-dot);background:var(--c-chart-blue-lt);display:inline-block"></span> 미국 대선 후</span>
         </div>
 
         <!-- 차트 항목 6개 -->
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row">
           <span style="text-align:right;font-size:var(--fs-label)">인플레이션<br>및 금리 상승</span>
-          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
-            <div style="height:18px;background:var(--c-chart-blue-dk);border-radius:0 3px 3px 0;width:68%"></div>
-            <div style="height:18px;background:var(--c-chart-blue-lt);border-radius:0 3px 3px 0;width:75%"></div>
+          <div class="chart-dual-bar">
+            <div style="height:var(--bar-h);background:var(--c-chart-blue-dk);border-radius:0 3px 3px 0;width:68%"></div>
+            <div style="height:var(--bar-h);background:var(--c-chart-blue-lt);border-radius:0 3px 3px 0;width:75%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">27%</span>
         </div>
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row">
           <span style="text-align:right;font-size:var(--fs-label)">경기 침체<br>불확실성</span>
-          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
-            <div style="height:18px;background:var(--c-chart-red-dk);border-radius:0 3px 3px 0;width:50%"></div>
-            <div style="height:18px;background:var(--c-chart-red-lt);border-radius:0 3px 3px 0;width:60%"></div>
+          <div class="chart-dual-bar">
+            <div style="height:var(--bar-h);background:var(--c-chart-red-dk);border-radius:0 3px 3px 0;width:50%"></div>
+            <div style="height:var(--bar-h);background:var(--c-chart-red-lt);border-radius:0 3px 3px 0;width:60%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">23%</span>
         </div>
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row">
           <span style="text-align:right;font-size:var(--fs-label)">규제 및<br>관세 변화</span>
-          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
-            <div style="height:18px;background:var(--c-chart-red-dk);border-radius:0 3px 3px 0;width:42%"></div>
-            <div style="height:18px;background:var(--c-chart-red-lt);border-radius:0 3px 3px 0;width:50%"></div>
+          <div class="chart-dual-bar">
+            <div style="height:var(--bar-h);background:var(--c-chart-red-dk);border-radius:0 3px 3px 0;width:42%"></div>
+            <div style="height:var(--bar-h);background:var(--c-chart-red-lt);border-radius:0 3px 3px 0;width:50%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">18%</span>
         </div>
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row">
           <span style="text-align:right;font-size:var(--fs-label)">지정학적<br>긴장 심화</span>
-          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
-            <div style="height:18px;background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:35%"></div>
-            <div style="height:18px;background:var(--c-accent);border-radius:0 3px 3px 0;width:45%"></div>
+          <div class="chart-dual-bar">
+            <div style="height:var(--bar-h);background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:35%"></div>
+            <div style="height:var(--bar-h);background:var(--c-accent);border-radius:0 3px 3px 0;width:45%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">15%</span>
         </div>
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row">
           <span style="text-align:right;font-size:var(--fs-label)">기술 변화<br>및 AI 충격</span>
-          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
-            <div style="height:18px;background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:28%"></div>
-            <div style="height:18px;background:var(--c-accent);border-radius:0 3px 3px 0;width:38%"></div>
+          <div class="chart-dual-bar">
+            <div style="height:var(--bar-h);background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:28%"></div>
+            <div style="height:var(--bar-h);background:var(--c-accent);border-radius:0 3px 3px 0;width:38%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">12%</span>
         </div>
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row">
           <span style="text-align:right;font-size:var(--fs-label)">노동 시장<br>구조 변화</span>
-          <div style="display:flex;flex-direction:column;gap:var(--sp-2xs)">
-            <div style="height:18px;background:var(--c-neutral);border-radius:0 3px 3px 0;width:18%"></div>
-            <div style="height:18px;background:var(--c-chart-gray);border-radius:0 3px 3px 0;width:25%"></div>
+          <div class="chart-dual-bar">
+            <div style="height:var(--bar-h);background:var(--c-neutral);border-radius:0 3px 3px 0;width:18%"></div>
+            <div style="height:var(--bar-h);background:var(--c-chart-gray);border-radius:0 3px 3px 0;width:25%"></div>
           </div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">8%</span>
         </div>
@@ -226,29 +226,29 @@
 
       <div style="display:flex;flex-direction:column;gap:var(--sp-xs)">
         <div style="font-size:var(--fs-body);font-weight:700;margin-bottom:var(--sp-xs)">비용 절감 장벽 요인 분석</div>
-        <div style="display:grid;grid-template-columns:100px 1fr 40px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row chart-bar-row--narrow">
           <span style="text-align:right;font-size:var(--fs-body)">조직 문화</span>
-          <div style="height:28px;background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:69%"></div>
+          <div style="height:var(--bar-h-lg);background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:69%"></div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">69%</span>
         </div>
-        <div style="display:grid;grid-template-columns:100px 1fr 40px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row chart-bar-row--narrow">
           <span style="text-align:right;font-size:var(--fs-body)">경영 구조</span>
-          <div style="height:28px;background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:58%"></div>
+          <div style="height:var(--bar-h-lg);background:var(--c-accent-dark);border-radius:0 3px 3px 0;width:58%"></div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">58%</span>
         </div>
-        <div style="display:grid;grid-template-columns:100px 1fr 40px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row chart-bar-row--narrow">
           <span style="text-align:right;font-size:var(--fs-body)">전문성/역량</span>
-          <div style="height:28px;background:var(--c-accent);border-radius:0 3px 3px 0;width:37%"></div>
+          <div style="height:var(--bar-h-lg);background:var(--c-accent);border-radius:0 3px 3px 0;width:37%"></div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">37%</span>
         </div>
-        <div style="display:grid;grid-template-columns:100px 1fr 40px;gap:var(--sp-sm);align-items:center">
+        <div class="chart-bar-row chart-bar-row--narrow">
           <span style="text-align:right;font-size:var(--fs-body)">기술 인프라</span>
-          <div style="height:28px;background:var(--c-accent);border-radius:0 3px 3px 0;width:37%"></div>
+          <div style="height:var(--bar-h-lg);background:var(--c-accent);border-radius:0 3px 3px 0;width:37%"></div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">37%</span>
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-lg);flex:1">
+      <div class="spread-3" style="grid-template-columns:1fr 1fr;gap:var(--sp-lg);flex:1">
         <div>
           <h3 style="font-size:var(--fs-body-lg);font-weight:700;color:var(--c-accent-dark);margin-bottom:var(--sp-md)">성공 기업의 특징</h3>
           <p style="font-size:var(--fs-body);line-height:1.3" class="bullet-text"><strong>경영진 스폰서십</strong>이 프로그램 전반에 걸쳐 지속적으로 유지됨</p>
@@ -327,7 +327,7 @@
 
       <div class="ranked-bar" style="margin-top:auto">
         <div style="font-size:var(--fs-callout);font-weight:700;margin-bottom:var(--sp-md)">비용 절감 행동이 최우선인 산업군</div>
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--sp-sm);font-size:var(--fs-body)">
+        <div class="spread-5" style="font-size:var(--fs-body)">
           <div><span style="font-weight:700">소비재·산업재</span><br><span style="font-size:var(--fs-source);color:var(--c-text-muted)">원가 절감 압력 최대</span></div>
           <div><span style="font-weight:700">보험·기술·금융</span><br><span style="font-size:var(--fs-source);color:var(--c-text-muted)">SKU 복잡성 해소</span></div>
           <div><span style="font-weight:700">산업재·헬스케어</span><br><span style="font-size:var(--fs-source);color:var(--c-text-muted)">자동화 투자 확대</span></div>
@@ -419,7 +419,7 @@
     <div class="process-panel" style="padding-top:calc(var(--accent-bar-h) + var(--sp-xl));padding-bottom:var(--sp-2xl)">
       <h3 style="font-size:var(--fs-body-lg);font-weight:700;line-height:1.2">고부가가치 제품에 자원을 집중하여 운영 효율을 개선하고 공급망 복잡성을 줄인다</h3>
       <div style="font-size:var(--fs-body);font-weight:600;margin-bottom:var(--sp-2xs)">최적화 레버</div>
-      <div style="font-size:var(--fs-body);flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--sp-sm)">
+      <div class="chart-stack" style="font-size:var(--fs-body)">
         <div>
           <p><strong style="font-size:var(--fs-subq);margin-right:var(--sp-sm)">#1</strong> 저볼륨 구성을 통합하여 "롱테일"을 제거하고 볼륨과 매출을 유지한다</p>
           <p style="font-size:var(--fs-body);color:var(--c-text-body);margin-top:var(--sp-2xs);padding-left:var(--sp-3xl);line-height:1.25">매출 하위 20% SKU가 전체 복잡성 비용의 <strong>60% 이상</strong>을 차지하며, 통합 시 운영 효율이 크게 개선된다</p>
@@ -479,19 +479,19 @@
       <h3 class="ba-title">Current</h3>
       <p class="ba-subtitle" style="font-weight:600;color:var(--c-danger)">구조적 비효율이 비용 상승을 초래</p>
       <div class="ba-body">
-        <div style="display:flex;align-items:center;gap:var(--sp-md)">
+        <div class="chart-legend-item" style="gap:var(--sp-md)">
           <span style="font-size:var(--fs-chart-val)">⚠️</span>
           <div style="font-size:var(--fs-body);line-height:1.3"><strong>프로젝트 3건 중 2건</strong>이 평균 8개월 지연</div>
         </div>
-        <div style="display:flex;align-items:center;gap:var(--sp-md)">
+        <div class="chart-legend-item" style="gap:var(--sp-md)">
           <span style="font-size:var(--fs-chart-val)">📋</span>
           <div style="font-size:var(--fs-body);line-height:1.3"><strong>승인 병목</strong>으로 의사결정 주기 12주 이상 소요</div>
         </div>
-        <div style="display:flex;align-items:center;gap:var(--sp-md)">
+        <div class="chart-legend-item" style="gap:var(--sp-md)">
           <span style="font-size:var(--fs-chart-val)">💰</span>
           <div style="font-size:var(--fs-body);line-height:1.3">레거시 대비 <strong>6배 높은</strong> 유지보수 비용</div>
         </div>
-        <div style="display:flex;align-items:center;gap:var(--sp-md)">
+        <div class="chart-legend-item" style="gap:var(--sp-md)">
           <span style="font-size:var(--fs-chart-val)">🔄</span>
           <div style="font-size:var(--fs-body);line-height:1.3"><strong>수동 시나리오</strong> 기반 정적 포트폴리오 관리</div>
         </div>
@@ -714,15 +714,15 @@
     <div class="multi-col-grid" style="grid-template-columns:repeat(3,1fr)">
       <div class="multi-col-region">
         <h4>북미</h4>
-        <div style="display:flex;flex-direction:column;gap:var(--sp-sm)">
-          <div style="display:flex;align-items:center;gap:var(--sp-sm)">
-            <div style="height:24px;background:var(--c-accent);border-radius:0 3px 3px 0;width:85%;display:flex;align-items:center;padding-left:var(--sp-sm)"><span style="font-size:var(--fs-source);color:white;font-weight:700">공급망 최적화 42%</span></div>
+        <div class="chart-stack">
+          <div class="chart-legend-item">
+            <div class="chart-bar" style="background:var(--c-accent);width:85%;display:flex;align-items:center;padding-left:var(--sp-sm)"><span style="font-size:var(--fs-source);color:white;font-weight:700">공급망 최적화 42%</span></div>
           </div>
-          <div style="display:flex;align-items:center;gap:var(--sp-sm)">
-            <div style="height:24px;background:var(--c-accent-light);border-radius:0 3px 3px 0;width:72%"></div><span style="font-size:var(--fs-source);font-weight:700">인력 생산성 36%</span>
+          <div class="chart-legend-item">
+            <div style="height:var(--bar-h);background:var(--c-accent-light);border-radius:0 3px 3px 0;width:72%"></div><span style="font-size:var(--fs-source);font-weight:700">인력 생산성 36%</span>
           </div>
-          <div style="display:flex;align-items:center;gap:var(--sp-sm)">
-            <div style="height:24px;background:var(--c-neutral);border-radius:0 3px 3px 0;width:58%"></div><span style="font-size:var(--fs-source);font-weight:700">IT 통합 29%</span>
+          <div class="chart-legend-item">
+            <div style="height:var(--bar-h);background:var(--c-neutral);border-radius:0 3px 3px 0;width:58%"></div><span style="font-size:var(--fs-source);font-weight:700">IT 통합 29%</span>
           </div>
         </div>
         <div style="margin-top:var(--sp-md);font-size:var(--fs-source);line-height:1.3">
@@ -733,15 +733,15 @@
       </div>
       <div class="multi-col-region">
         <h4>유럽</h4>
-        <div style="display:flex;flex-direction:column;gap:var(--sp-sm)">
-          <div style="display:flex;align-items:center;gap:var(--sp-sm)">
-            <div style="height:24px;background:var(--c-accent);border-radius:0 3px 3px 0;width:78%;display:flex;align-items:center;padding-left:var(--sp-sm)"><span style="font-size:var(--fs-source);color:white;font-weight:700">에너지 비용 39%</span></div>
+        <div class="chart-stack">
+          <div class="chart-legend-item">
+            <div class="chart-bar" style="background:var(--c-accent);width:78%;display:flex;align-items:center;padding-left:var(--sp-sm)"><span style="font-size:var(--fs-source);color:white;font-weight:700">에너지 비용 39%</span></div>
           </div>
-          <div style="display:flex;align-items:center;gap:var(--sp-sm)">
-            <div style="height:24px;background:var(--c-accent-light);border-radius:0 3px 3px 0;width:70%"></div><span style="font-size:var(--fs-source);font-weight:700">규제 대응 35%</span>
+          <div class="chart-legend-item">
+            <div style="height:var(--bar-h);background:var(--c-accent-light);border-radius:0 3px 3px 0;width:70%"></div><span style="font-size:var(--fs-source);font-weight:700">규제 대응 35%</span>
           </div>
-          <div style="display:flex;align-items:center;gap:var(--sp-sm)">
-            <div style="height:24px;background:var(--c-neutral);border-radius:0 3px 3px 0;width:54%"></div><span style="font-size:var(--fs-source);font-weight:700">포트폴리오 27%</span>
+          <div class="chart-legend-item">
+            <div style="height:var(--bar-h);background:var(--c-neutral);border-radius:0 3px 3px 0;width:54%"></div><span style="font-size:var(--fs-source);font-weight:700">포트폴리오 27%</span>
           </div>
         </div>
         <div style="margin-top:var(--sp-md);font-size:var(--fs-source);line-height:1.3">
@@ -752,15 +752,15 @@
       </div>
       <div class="multi-col-region">
         <h4>아시아태평양</h4>
-        <div style="display:flex;flex-direction:column;gap:var(--sp-sm)">
-          <div style="display:flex;align-items:center;gap:var(--sp-sm)">
-            <div style="height:24px;background:var(--c-accent);border-radius:0 3px 3px 0;width:82%;display:flex;align-items:center;padding-left:var(--sp-sm)"><span style="font-size:var(--fs-source);color:white;font-weight:700">수출 다변화 41%</span></div>
+        <div class="chart-stack">
+          <div class="chart-legend-item">
+            <div class="chart-bar" style="background:var(--c-accent);width:82%;display:flex;align-items:center;padding-left:var(--sp-sm)"><span style="font-size:var(--fs-source);color:white;font-weight:700">수출 다변화 41%</span></div>
           </div>
-          <div style="display:flex;align-items:center;gap:var(--sp-sm)">
-            <div style="height:24px;background:var(--c-accent-light);border-radius:0 3px 3px 0;width:66%"></div><span style="font-size:var(--fs-source);font-weight:700">디지털 전환 33%</span>
+          <div class="chart-legend-item">
+            <div style="height:var(--bar-h);background:var(--c-accent-light);border-radius:0 3px 3px 0;width:66%"></div><span style="font-size:var(--fs-source);font-weight:700">디지털 전환 33%</span>
           </div>
-          <div style="display:flex;align-items:center;gap:var(--sp-sm)">
-            <div style="height:24px;background:var(--c-neutral);border-radius:0 3px 3px 0;width:50%"></div><span style="font-size:var(--fs-source);font-weight:700">인재 확보 25%</span>
+          <div class="chart-legend-item">
+            <div style="height:var(--bar-h);background:var(--c-neutral);border-radius:0 3px 3px 0;width:50%"></div><span style="font-size:var(--fs-source);font-weight:700">인재 확보 25%</span>
           </div>
         </div>
         <div style="margin-top:var(--sp-md);font-size:var(--fs-source);line-height:1.3">
@@ -786,61 +786,61 @@
   <div class="slot-body layout-dual-chart">
     <h2 class="sub-question">GenAI 채택률과 생산성 효과의 관계는 어떠한가?</h2>
     <div class="dual-chart-row">
-      <div style="display:flex;flex-direction:column;gap:var(--sp-md)">
+      <div class="chart-stack" style="gap:var(--sp-md)">
         <div style="font-size:var(--fs-body);font-weight:700">GenAI 채택률 (기능별)</div>
-        <div style="display:flex;flex-direction:column;gap:var(--sp-sm);flex:1;justify-content:center">
-          <div style="display:grid;grid-template-columns:100px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+        <div class="chart-stack">
+          <div class="chart-bar-row chart-bar-row--narrow">
             <span style="text-align:right;font-size:var(--fs-source)">코드 생성</span>
-            <div style="height:24px;background:var(--c-accent);border-radius:0 3px 3px 0;width:78%"></div>
+            <div style="height:var(--bar-h);background:var(--c-accent);border-radius:0 3px 3px 0;width:78%"></div>
             <span style="font-size:var(--fs-chart-val);font-weight:700">78%</span>
           </div>
-          <div style="display:grid;grid-template-columns:100px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+          <div class="chart-bar-row chart-bar-row--narrow">
             <span style="text-align:right;font-size:var(--fs-source)">테스트</span>
-            <div style="height:24px;background:var(--c-accent-light);border-radius:0 3px 3px 0;width:52%"></div>
+            <div style="height:var(--bar-h);background:var(--c-accent-light);border-radius:0 3px 3px 0;width:52%"></div>
             <span style="font-size:var(--fs-chart-val);font-weight:700">52%</span>
           </div>
-          <div style="display:grid;grid-template-columns:100px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+          <div class="chart-bar-row chart-bar-row--narrow">
             <span style="text-align:right;font-size:var(--fs-source)">문서화</span>
-            <div style="height:24px;background:var(--c-accent-light);border-radius:0 3px 3px 0;width:45%"></div>
+            <div style="height:var(--bar-h);background:var(--c-accent-light);border-radius:0 3px 3px 0;width:45%"></div>
             <span style="font-size:var(--fs-chart-val);font-weight:700">45%</span>
           </div>
-          <div style="display:grid;grid-template-columns:100px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+          <div class="chart-bar-row chart-bar-row--narrow">
             <span style="text-align:right;font-size:var(--fs-source)">설계</span>
-            <div style="height:24px;background:var(--c-neutral);border-radius:0 3px 3px 0;width:31%"></div>
+            <div style="height:var(--bar-h);background:var(--c-neutral);border-radius:0 3px 3px 0;width:31%"></div>
             <span style="font-size:var(--fs-chart-val);font-weight:700">31%</span>
           </div>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:var(--sp-md)">
+      <div class="chart-stack" style="gap:var(--sp-md)">
         <div style="font-size:var(--fs-body);font-weight:700">생산성 향상률 (기능별)</div>
-        <div style="display:flex;flex-direction:column;gap:var(--sp-sm);flex:1;justify-content:center">
-          <div style="display:grid;grid-template-columns:100px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+        <div class="chart-stack">
+          <div class="chart-bar-row chart-bar-row--narrow">
             <span style="text-align:right;font-size:var(--fs-source)">코드 생성</span>
-            <div style="height:24px;background:var(--c-accent);border-radius:0 3px 3px 0;width:82%"></div>
+            <div style="height:var(--bar-h);background:var(--c-accent);border-radius:0 3px 3px 0;width:82%"></div>
             <span style="font-size:var(--fs-chart-val);font-weight:700">41%</span>
           </div>
-          <div style="display:grid;grid-template-columns:100px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+          <div class="chart-bar-row chart-bar-row--narrow">
             <span style="text-align:right;font-size:var(--fs-source)">테스트</span>
-            <div style="height:24px;background:var(--c-accent-light);border-radius:0 3px 3px 0;width:56%"></div>
+            <div style="height:var(--bar-h);background:var(--c-accent-light);border-radius:0 3px 3px 0;width:56%"></div>
             <span style="font-size:var(--fs-chart-val);font-weight:700">28%</span>
           </div>
-          <div style="display:grid;grid-template-columns:100px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+          <div class="chart-bar-row chart-bar-row--narrow">
             <span style="text-align:right;font-size:var(--fs-source)">문서화</span>
-            <div style="height:24px;background:var(--c-accent-light);border-radius:0 3px 3px 0;width:44%"></div>
+            <div style="height:var(--bar-h);background:var(--c-accent-light);border-radius:0 3px 3px 0;width:44%"></div>
             <span style="font-size:var(--fs-chart-val);font-weight:700">22%</span>
           </div>
-          <div style="display:grid;grid-template-columns:100px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+          <div class="chart-bar-row chart-bar-row--narrow">
             <span style="text-align:right;font-size:var(--fs-source)">설계</span>
-            <div style="height:24px;background:var(--c-neutral);border-radius:0 3px 3px 0;width:30%"></div>
+            <div style="height:var(--bar-h);background:var(--c-neutral);border-radius:0 3px 3px 0;width:30%"></div>
             <span style="font-size:var(--fs-chart-val);font-weight:700">15%</span>
           </div>
         </div>
       </div>
     </div>
-    <div style="display:flex;gap:var(--sp-2xl);font-size:var(--fs-source);justify-content:center">
-      <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:var(--c-accent);display:inline-block"></span> 높음 (60%+)</span>
-      <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:var(--c-accent-light);display:inline-block"></span> 중간 (30~60%)</span>
-      <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:12px;height:12px;background:var(--c-neutral);display:inline-block"></span> 낮음 (~30%)</span>
+    <div class="chart-legend">
+      <span class="chart-legend-item"><span style="width:var(--legend-dot);height:var(--legend-dot);background:var(--c-accent);display:inline-block"></span> 높음 (60%+)</span>
+      <span class="chart-legend-item"><span style="width:var(--legend-dot);height:var(--legend-dot);background:var(--c-accent-light);display:inline-block"></span> 중간 (30~60%)</span>
+      <span class="chart-legend-item"><span style="width:var(--legend-dot);height:var(--legend-dot);background:var(--c-neutral);display:inline-block"></span> 낮음 (~30%)</span>
     </div>
     <div class="callout">채택률과 생산성 향상률 사이의 <strong>양의 상관관계(r=0.89)</strong>는 조기 도입이 생산성 격차를 결정함을 시사한다</div>
   </div>
@@ -864,7 +864,7 @@
       <span>비관 (감소 전망) ►</span>
       <span>순변화</span>
     </div>
-    <div style="display:flex;flex-direction:column;gap:var(--sp-xs);flex:1;justify-content:center">
+    <div class="chart-stack" style="gap:var(--sp-xs)">
       <div class="divergent-row"><span class="divergent-label">인도</span><div class="divergent-bar-pos"><div style="width:85%">72%</div></div><div class="divergent-bar-neg"><div style="width:15%">8%</div></div><span class="divergent-delta" style="color:var(--c-accent)">+64</span></div>
       <div class="divergent-row"><span class="divergent-label">인도네시아</span><div class="divergent-bar-pos"><div style="width:72%">61%</div></div><div class="divergent-bar-neg"><div style="width:20%">12%</div></div><span class="divergent-delta" style="color:var(--c-accent)">+49</span></div>
       <div class="divergent-row"><span class="divergent-label">미국</span><div class="divergent-bar-pos"><div style="width:58%">45%</div></div><div class="divergent-bar-neg"><div style="width:35%">22%</div></div><span class="divergent-delta" style="color:var(--c-accent)">+23</span></div>
@@ -899,20 +899,20 @@
     </div>
     <div class="split-light">
       <div style="font-size:var(--fs-source);font-weight:700;margin-bottom:var(--sp-sm)">탈탄소 수준별 TSR 초과 성과 (2020~2024, pp)</div>
-      <div style="display:flex;flex-direction:column;gap:var(--sp-lg);flex:1;justify-content:center">
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+      <div class="chart-stack" style="gap:var(--sp-lg)">
+        <div class="chart-bar-row">
           <span style="text-align:right;font-size:var(--fs-source)">상위 25%</span>
-          <div style="height:28px;background:var(--c-accent);border-radius:0 3px 3px 0;width:94%"></div>
+          <div style="height:var(--bar-h-lg);background:var(--c-accent);border-radius:0 3px 3px 0;width:94%"></div>
           <span style="font-size:var(--fs-chart-val);font-weight:700;color:var(--c-accent-dark)">+4.7</span>
         </div>
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+        <div class="chart-bar-row">
           <span style="text-align:right;font-size:var(--fs-source)">중위 50%</span>
-          <div style="height:28px;background:var(--c-accent-light);border-radius:0 3px 3px 0;width:42%"></div>
+          <div style="height:var(--bar-h-lg);background:var(--c-accent-light);border-radius:0 3px 3px 0;width:42%"></div>
           <span style="font-size:var(--fs-chart-val);font-weight:700">+2.1</span>
         </div>
-        <div style="display:grid;grid-template-columns:120px 1fr 50px;align-items:center;gap:var(--sp-sm)">
+        <div class="chart-bar-row">
           <span style="text-align:right;font-size:var(--fs-source)">하위 25%</span>
-          <div style="height:28px;background:var(--c-danger);border-radius:0 3px 3px 0;width:25%"></div>
+          <div style="height:var(--bar-h-lg);background:var(--c-danger);border-radius:0 3px 3px 0;width:25%"></div>
           <span style="font-size:var(--fs-chart-val);font-weight:700;color:var(--c-danger)">−1.2</span>
         </div>
       </div>
@@ -949,11 +949,11 @@
       <div class="heatmap-row-label">건강·웰니스</div>
       <div class="heatmap-cell heatmap-cell--high">+15</div><div class="heatmap-cell heatmap-cell--mid">+5</div><div class="heatmap-cell heatmap-cell--mid">+8</div><div class="heatmap-cell heatmap-cell--high">+28</div><div class="heatmap-cell heatmap-cell--mid">+10</div><div class="heatmap-cell heatmap-cell--high">+14</div>
     </div>
-    <div style="display:flex;gap:var(--sp-2xl);font-size:var(--fs-source);justify-content:flex-end">
-      <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:16px;height:16px;background:var(--c-accent);display:inline-block"></span> 강한 증가 (+15 이상)</span>
-      <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:16px;height:16px;background:var(--c-accent-light);display:inline-block"></span> 증가 (+5~14)</span>
-      <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:16px;height:16px;background:var(--c-neutral);display:inline-block"></span> 보합 (−4~+4)</span>
-      <span style="display:flex;align-items:center;gap:var(--sp-sm)"><span style="width:16px;height:16px;background:var(--c-danger);display:inline-block"></span> 감소 (−5 이하)</span>
+    <div class="chart-legend" style="justify-content:flex-end">
+      <span class="chart-legend-item"><span style="width:var(--legend-dot-lg);height:var(--legend-dot-lg);background:var(--c-accent);display:inline-block"></span> 강한 증가 (+15 이상)</span>
+      <span class="chart-legend-item"><span style="width:var(--legend-dot-lg);height:var(--legend-dot-lg);background:var(--c-accent-light);display:inline-block"></span> 증가 (+5~14)</span>
+      <span class="chart-legend-item"><span style="width:var(--legend-dot-lg);height:var(--legend-dot-lg);background:var(--c-neutral);display:inline-block"></span> 보합 (−4~+4)</span>
+      <span class="chart-legend-item"><span style="width:var(--legend-dot-lg);height:var(--legend-dot-lg);background:var(--c-danger);display:inline-block"></span> 감소 (−5 이하)</span>
     </div>
   </div>
   <footer class="slot-footer">
@@ -1004,7 +1004,7 @@
     <div class="compare-col">
       <h3 style="color:var(--c-danger)">전통적 비용 절감</h3>
       <p style="font-size:var(--fs-body);color:var(--c-text-body)">일회성 비용 삭감 중심의 하향식 접근</p>
-      <div style="font-size:var(--fs-body);display:flex;flex-direction:column;gap:var(--sp-md)">
+      <div class="chart-stack" style="font-size:var(--fs-body);gap:var(--sp-md)">
         <p class="bullet-text"><strong>인력 감축</strong> 중심의 비용 절감 — 단기 효과는 있으나 역량 유실 리스크</p>
         <p class="bullet-text"><strong>일괄 예산 삭감</strong> — 전략적 투자와 비효율을 구분하지 않는 획일적 접근</p>
         <p class="bullet-text">외부 컨설팅 의존적 <strong>프로젝트형 절감</strong> — 내부 역량 축적 없이 반복</p>
@@ -1015,7 +1015,7 @@
     <div class="compare-col">
       <h3 style="color:var(--c-accent-dark)">AI 기반 구조적 혁신</h3>
       <p style="font-size:var(--fs-body);color:var(--c-text-body)">기술과 프로세스 혁신을 결합한 지속 가능한 접근</p>
-      <div style="font-size:var(--fs-body);display:flex;flex-direction:column;gap:var(--sp-md)">
+      <div class="chart-stack" style="font-size:var(--fs-body);gap:var(--sp-md)">
         <p class="bullet-text"><strong>프로세스 자동화</strong>와 AI 예측 모델로 운영 효율을 구조적으로 개선</p>
         <p class="bullet-text"><strong>데이터 기반 의사결정</strong> — 실시간 비용 모니터링과 이상 탐지로 선제 대응</p>
         <p class="bullet-text">내부 <strong>CoE(전문 역량 센터)</strong> 구축으로 지속적 개선 역량 내재화</p>
