@@ -989,6 +989,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--sp-sm);
+  justify-content: space-between;  /* 바↔불릿 수직 분산 */
 }
 .multi-col-region h4 { font-size: var(--fs-body); font-weight: 700; text-align: center; }
 
@@ -1055,12 +1056,13 @@
   background: var(--c-split-dark-bg);
   color: var(--c-white);
   padding: var(--sp-3xl) var(--sp-3xl) var(--sp-2xl) var(--pad-x);
-  display: flex; flex-direction: column; justify-content: center; gap: var(--sp-xl);
+  display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-xl);
 }
 .split-light {
   background: var(--c-white);
   padding: var(--sp-2xl) var(--pad-x-right) 0 var(--sp-3xl);
   display: flex; flex-direction: column; gap: var(--sp-lg);
+  justify-content: space-between;  /* 차트↔callout 수직 분산 */
 }
 
 /* ═══ LAYOUT: Heatmap (히트맵 격자) ═══ */
@@ -1224,7 +1226,7 @@
   flex-direction: column;
   gap: var(--sp-md);  /* 12px — BCG 행 pitch 41px ≈ bar 28px + gap 12px */
   flex: 1;
-  justify-content: center;
+  justify-content: space-evenly;  /* 수직 공간 균등 분산 — center는 빈 공간 발생 */
 }
 
 /* 범례 */
