@@ -28,8 +28,8 @@
 | A2 | 컬럼 비율 | 허용 비율 사용: 전폭(1fr), 65:35, 30:70, 25:75, 50:50, 40:60(Split Layout 전용). **3컬럼**: 30:40:30(Before/After 전용). CSS custom property 오버라이드(--col-primary 등)로 미세 조정 허용 | 허용 비율 외 고정 px 사용 |
 | A3 | 수평 기준선 | 동일 역할 요소(예: 3개 exec-row의 라벨, 5개 rank-item)가 CSS class로 정렬됨 | 같은 역할 요소의 y 시작점이 CSS로 보장되지 않음 |
 | A4 | 반복 간격 | 반복 요소 컨테이너에 단일 gap 토큰(var(--sp-*)) 사용 | 동일 반복 그룹 내 2개 이상 다른 gap 값 혼용 |
-| A5 | 좌우 여백 | 슬라이드 외곽 좌/우에 var(--pad-x) 또는 var(--pad-x-right) 적용 | 외곽 여백이 pad-x와 불일치 |
-| A6 | 엣지 정렬 | 배경색 행의 컨테이너 padding=0, 콘텐츠는 내부 padding으로 인덴트 | 배경색 행에 직접 padding이 있어 엣지가 안 맞음 |
+| A5 | 좌우 여백 | `.slot-header`, `.slot-footer`, `.slot-body`(또는 layout 클래스)에 var(--pad-x) 적용. **PASS 기준**: CSS 클래스에 pad-x 토큰이 정의되어 있으면 PASS. 2컬럼 레이아웃에서 좌측 컬럼의 padding-left=pad-x, 우측 컬럼/패널의 padding-right=pad-x-right이면 PASS. 패널 내부 padding은 A5 대상 아님 | CSS 클래스에 pad-x 토큰이 전혀 없는 슬라이드 |
+| A6 | 엣지 정렬 | **배경색 전폭 행**(ranked-bar, callout 등)이 부모 컨테이너 너비를 가득 채움. 구현 방법: negative margin + padding 또는 container padding=0. **PASS 기준**: CSS 클래스에서 배경색 행이 정의되어 있으면 PASS. 2컬럼 레이아웃의 secondary-panel 배경은 A6 대상이 아닌 컬럼 분할 디자인 | 배경색 행이 부모보다 좁게 렌더링되어 좌우 여백이 보임 |
 | A7 | Grid 기준선 | 같은 슬라이드 내 인접 행이 동일 grid-template-columns 공유 | 인접 행의 grid 컬럼 수/비율이 다름 (의도적 변형 제외) |
 
 ### B 그룹: 코드 품질
