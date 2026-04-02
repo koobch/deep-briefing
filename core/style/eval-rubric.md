@@ -1,4 +1,4 @@
-# 슬라이드 15축 평가 루브릭 (Evaluation Rubric)
+# 슬라이드 16축 평가 루브릭 (Evaluation Rubric)
 
 > 이 파일은 슬라이드 프로토타입의 품질 평가 기준을 정의한다.
 > Claude/Codex/기타 LLM이 이 파일을 읽고 동일한 기준으로 평가해야 한다.
@@ -6,19 +6,19 @@
 ## 평가 방법
 
 1. `slide-system.css`와 `prototype-v6.html`을 읽는다
-2. 각 슬라이드(SLIDE 1~22)에 대해 15축을 PASS/FAIL/EXEMPT 판정한다
+2. 각 슬라이드(SLIDE 1~22)에 대해 16축을 PASS/FAIL/EXEMPT 판정한다
 3. EXEMPT는 해당 슬라이드에 적용 불가능한 축이다 (FAIL 카운트에서 제외)
 
 ## 면제 슬라이드 (Exempt Slides)
 
 | 슬라이드 | 유형 | 면제 축 | 이유 |
 |---------|------|---------|------|
-| Slide 2 | Agenda | A1~A7, C2, C3, C5 | grid-row:1/-1 전폭 레이아웃, 목차 용도, photo-panel 장식 색상 면제 |
-| Slide 10 | Cover EP | A1~A7, C3, C5 | grid-row:1/-1 전폭 레이아웃, 표지 |
-| Slide 11 | Cover Global | A1~A7, C3, C5 | grid-row:1/-1 전폭 레이아웃, 표지 |
-| Slide 22 | Back Cover | A1~A7, C3, C5 | grid-row:1/-1 전폭 레이아웃, 뒷표지 |
+| Slide 2 | Agenda | A1~A7, C2, C3, C5, D1 | grid-row:1/-1 전폭 레이아웃, 목차 용도, photo-panel 장식 색상 면제 |
+| Slide 10 | Cover EP | A1~A7, C3, C5, D1 | grid-row:1/-1 전폭 레이아웃, 표지 |
+| Slide 11 | Cover Global | A1~A7, C3, C5, D1 | grid-row:1/-1 전폭 레이아웃, 표지 |
+| Slide 22 | Back Cover | A1~A7, C3, C5, D1 | grid-row:1/-1 전폭 레이아웃, 뒷표지 |
 
-## 15축 정의
+## 16축 정의
 
 ### A 그룹: 정렬 원칙 (P1~P7)
 
@@ -50,12 +50,24 @@
 | C4 | 인라인 스타일 | HTML inline style에 **구조적 레이아웃 속성 없음**: `display`, `grid-template-columns`, `grid-template-rows`, `flex-direction`. **허용**: 데이터값(width%, left%, bottom%), 토큰 오버라이드(font-size:var(), color:var(), gap:var()), 프레젠테이셔널 속성(font-weight, text-align, margin, padding with var(), line-height, letter-spacing, text-transform, font-style), 배경/색상(background:var(), color:var()) | display:/grid-template-columns:/grid-template-rows:/flex-direction: 가 HTML inline style에 존재 |
 | C5 | Source/Footer | "Source:" 접두사 + 출처 + 날짜 + 분석주체 포함. 날짜는 괄호 유무 모두 허용. 세미콜론(;) 구분 권장하나 쉼표(,)도 허용. 페이지 번호 존재. **면제**: 출처가 자명한 경우(예: "BCG 클라이언트 프로젝트 사례") 날짜 생략 허용 | Source 텍스트 없음 또는 "Source:" 접두사 없음 |
 
+### D 그룹: 공간 활용
+
+| 축 | 이름 | PASS 조건 | FAIL 조건 |
+|---|------|----------|----------|
+| D1 | 공간 활용 | 슬라이드 본문(slot-body) 영역에서 콘텐츠가 수직 공간의 80% 이상 활용. chart-stack, ranked-icons 등 주요 컨테이너가 flex:1로 공간을 채움. **면제**: Cover(Slide 10, 11), Back Cover(Slide 22), Agenda(Slide 2) — 장식/표지 용도 | 콘텐츠 위아래에 연속 빈 공간 80px 이상 존재. 차트/텍스트가 중앙에 몰리고 위아래가 비어있음 |
+
 ## 출력 형식
 
 ```
-| Slide | A1 | A2 | A3 | A4 | A5 | A6 | A7 | B1 | B2 | B3 | C1 | C2 | C3 | C4 | C5 | Fails |
+| Slide | A1 | A2 | A3 | A4 | A5 | A6 | A7 | B1 | B2 | B3 | C1 | C2 | C3 | C4 | C5 | D1 | Fails |
 ```
 
 - P = PASS, F = FAIL, X = EXEMPT
 - AxisFails 행: 각 축별 FAIL 수 (EXEMPT 제외)
 - Total 행: 총 FAIL 수
+
+## D1 검증 방법
+
+- Puppeteer로 slot-body 영역의 콘텐츠 bounding box 측정
+- (콘텐츠 높이 / slot-body 높이) × 100 = 활용률
+- 80% 미만 = FAIL
