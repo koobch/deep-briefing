@@ -430,6 +430,22 @@
 
 **체인 연결**: 이 유형의 핵심 수치는 다음 유형의 문제 정의/배경이 된다
 
+### CSS 클래스 매핑
+| 섹션 | HTML 클래스 | 비고 |
+|------|-----------|------|
+| 좌측 KPI 패널 | `.kpi-panel` | flex column, 중앙 정렬, 배경 #f1f2f1 |
+| 핵심 수치 | `.kpi-number` | font-size: --fs-big, weight 800 |
+| 우측 상세 | `.bignumber-detail` | padding, flex column |
+| KPI 목록 | `.bignumber-kpi-list` | flex column, gap --sp-xs |
+| 하단 2분할 | `.spread-2` | grid 1fr 1fr |
+
+**주의**: `.metric-value`, `.metric-label`은 `.case-metrics` 하위에서만 작동 — Big Number에서는 `.kpi-number` 사용
+
+### 차트 바 작성 규칙
+- `chart-bar-row` 내 바 `<div>`에 `chart-bar` 클래스 불요 — CSS가 자동으로 `height: var(--bar-h)` 적용
+- `chart-dual-bar` 내 바 `<div>`도 동일 — 자동 높이 적용
+- **바에 필요한 인라인**: `background:var(--c-*);width:N%` 만 지정
+
 ---
 
 ## 유형 4: Before/After (Current → 전환 → Impact)

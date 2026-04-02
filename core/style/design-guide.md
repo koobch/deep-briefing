@@ -166,6 +166,39 @@
 [라벨 140px] [gap 8px] [바1 + 4px + 바2] [gap 8px] [값 50px]
 ```
 
+**차트 바 자동 높이 규칙** (필수):
+- `.chart-bar-row > div` 및 `.chart-dual-bar > div`에 CSS가 자동으로 `height: var(--bar-h)` 적용
+- HTML에서 바 `<div>`에 `chart-bar` 클래스나 인라인 height를 명시하지 않아도 됨
+- **금지**: 바 `<div>`에 인라인 `height:Npx` 직접 지정 → 토큰 무시됨
+
+### Scatter 버블 크기 패턴
+
+> 데이터 시각화에서 버블 크기가 데이터값(예: 매출 규모)을 나타낼 때 사용
+
+```html
+<!-- CSS custom property로 버블 크기 지정 -->
+<div class="scatter-point" style="left:12%;bottom:25%;--bbl:56px;background:var(--c-accent)">A사</div>
+```
+
+- CSS에서 `width: var(--bbl, var(--fs-title)); height: var(--bbl, var(--fs-title))` 으로 소비
+- `--bbl` 미지정 시 기본 크기 `--fs-title` (48px) 적용
+- **규칙**: 인라인에 `width:Npx;height:Npx` 대신 `--bbl:Npx`로 토큰화
+
+### Agenda 장식 클래스
+
+> Agenda 사진 패널의 장식 요소는 CSS 클래스로 관리 (인라인 raw px 금지)
+
+| 클래스 | 역할 |
+|-------|------|
+| `.agenda-deco-texture` | 반복 그라데이션 텍스처 오버레이 |
+| `.agenda-deco-box-lg` | 큰 초록 사각형 (사진 대체) |
+| `.agenda-deco-box-sm` | 작은 다크 바 |
+| `.agenda-deco-title` | 보고서 제목 텍스트 위치 |
+| `.agenda-deco-label` | "AGENDA" 라벨 위치 |
+
+- 위치/크기는 CSS에서 fallback 값으로 정의 (예: `top: var(--agenda-deco-top, 81px)`)
+- 커스텀 값 필요 시 인라인에서 CSS custom property로 오버라이드
+
 ### 패널 텍스트 밀도 규칙
 
 | 항목 | BCG 기준 | CSS 값 |
