@@ -36,7 +36,7 @@
 
 | 축 | 이름 | PASS 조건 | FAIL 조건 |
 |---|------|----------|----------|
-| B1 | 토큰 일관성 | CSS 클래스 body 내 모든 간격/크기가 var() 토큰 사용. **면제**: :root 토큰 정의, .proto-tag, border-width(1~3px), border-radius, clip-path, border shorthand(`1px solid var(...)`) | CSS 클래스 body에 var()로 감싸지 않은 raw px 값 존재 |
+| B1 | 토큰 일관성 | CSS 클래스 body 내 모든 간격/크기가 var() 토큰 사용. **면제**: :root 토큰 정의, .proto-tag, border(1~3px solid ...), border-radius, clip-path, calc() 내부에서 var()와 결합된 px(예: `calc(-1 * var(--sp-lg) / 2 - 8px)`), ::after/::before 의사 요소의 위치 계산 px | CSS 클래스 body에 var()로 감싸지 않은 독립적 raw px 값 (예: `padding: 40px`, `gap: 16px`) |
 | B2 | 콘텐츠 밀도 | 본문 2줄+, 패널 3문단+, 차트 4항목+(단, 강조형 레이아웃인 Split Layout/Big Number는 3항목 허용, Before/After는 3컬럼×4행 구조 자체로 밀도 충족), Table 행에 bold+설명 | section-map 최소 요구량 미달 |
 | B3 | 레이아웃 정확도 | section-map.md에 정의된 핵심 섹션 구조와 일치. **유연성**: callout이 annotation 역할을 대체할 수 있으며, 선택적(optional) 섹션의 생략은 허용 | 필수 섹션 누락 또는 구조 순서 오류 |
 
@@ -48,7 +48,7 @@
 | C2 | 색상 토큰 | HTML 인라인의 모든 color/background가 var(--c-*) 토큰 사용. **면제**: 차트 데이터 바/버블의 background (데이터 시각화 구분색) — 단, 이들도 var(--c-chart-*) 토큰으로 관리되면 PASS | #hex 인라인 (예: `color:#333`) |
 | C3 | Action Title | h1.action-title 텍스트가 주장형 문장 (동사 포함, 결론을 진술). **예외**: "사례 \|" 접두사 슬라이드(Case Study)는 성과 서술형 허용 (예: "...달성한 기업 사례") | 주제형 명사 종결 (예: "시장 분석", "비용 현황"). 단, Case Study의 성과 서술은 FAIL 아님 |
 | C4 | 인라인 스타일 | HTML inline style에 **구조적 레이아웃 속성 없음**: `display`, `grid-template-columns`, `grid-template-rows`, `flex-direction`. **허용**: 데이터값(width%, left%, bottom%), 토큰 오버라이드(font-size:var(), color:var(), gap:var()), 프레젠테이셔널 속성(font-weight, text-align, margin, padding with var(), line-height, letter-spacing, text-transform, font-style), 배경/색상(background:var(), color:var()) | display:/grid-template-columns:/grid-template-rows:/flex-direction: 가 HTML inline style에 존재 |
-| C5 | Source/Footer | "Source: [출처] ([날짜]); [분석주체]" 형식 + 페이지 번호 | 형식 미준수 또는 Source/Footer 누락 |
+| C5 | Source/Footer | "Source:" 접두사 + 출처 + 날짜 + 분석주체 포함. 날짜는 괄호 유무 모두 허용. 세미콜론(;) 구분 권장하나 쉼표(,)도 허용. 페이지 번호 존재. **면제**: 출처가 자명한 경우(예: "BCG 클라이언트 프로젝트 사례") 날짜 생략 허용 | Source 텍스트 없음 또는 "Source:" 접두사 없음 |
 
 ## 출력 형식
 
