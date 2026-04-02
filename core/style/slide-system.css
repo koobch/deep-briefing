@@ -1208,7 +1208,8 @@
   grid-template-columns: var(--chart-label-w) 1fr var(--chart-val-w);
 }
 
-/* 수평 바 */
+/* 수평 바 — 그리드 2번째 컬럼(바 영역)에 기본 높이 적용 */
+.chart-bar-row > div:not(.chart-dual-bar),
 .chart-bar {
   height: var(--bar-h);
   border-radius: var(--bar-radius);
@@ -1288,6 +1289,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--sp-xs);  /* 4px — 듀얼바 간 시각적 분리 강화 */
+}
+.chart-dual-bar > div {
+  height: var(--bar-h);
+  border-radius: var(--bar-radius);
 }
 
 /* Cover 로고/시리즈 위치 */
