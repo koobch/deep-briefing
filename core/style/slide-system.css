@@ -105,26 +105,30 @@
   --cover-box-max-w: 800px; /* Cover 박스 최대 폭 */
   --accent-line-h: 2px;     /* 헤더 하단 구분선 */
   --rank-icon-size: 72px;   /* 순위 아이콘 크기 */
+  --rank-label-min-h: 66px; /* 순위 라벨 최소 높이 (5개 컬럼 하단 정렬용) */
   --agenda-check-w: 60px;   /* Agenda 체크 폭 */
   --agenda-check-h: 56px;   /* Agenda 체크 높이 */
   --agenda-check-offset: 8px; /* Agenda 체크 우측 오프셋 */
   --heatmap-label-w: 160px; /* 히트맵 행 라벨 폭 */
-  --framework-ring-size: 480px; /* Framework 원형 다이어그램 크기 */
+  --framework-ring-size: 520px; /* Framework 원형 다이어그램 크기 (본문 810px 대비 64%) */
+  --framework-label-offset: 48px; /* 링 라벨이 링 밖으로 완전히 벗어나는 오프셋 */
 
-  /* 차트 컴포넌트 토큰 */
-  --bar-h: 24px;           /* 수평 바 기본 높이 */
-  --bar-h-lg: 28px;        /* 수평 바 큰 높이 */
+  /* 차트 컴포넌트 토큰 (BCG 342 ref-spec 통계 기반) */
+  --bar-h: 28px;           /* 수평 바 기본 높이 (BCG 중앙값 30px, 듀얼바 고려 28px) */
+  --bar-h-lg: 32px;        /* 수평 바 큰 높이 (BCG 33~37px 범위) */
   --bar-radius: 0 3px 3px 0; /* 바 우측 라운드 */
-  --chart-label-w: 120px;  /* 차트 라벨 컬럼 폭 */
+  --chart-label-w: 140px;  /* 차트 라벨 컬럼 폭 (한글 2줄 라벨 대응) */
   --chart-val-w: 50px;     /* 차트 값 컬럼 폭 */
-  --legend-dot: 12px;      /* 범례 도트 크기 */
-  --legend-dot-lg: 16px;   /* 범례 도트 큰 크기 */
+  --legend-dot: 16px;      /* 범례 도트 크기 (BCG 29×22px, 도트형 축소) */
+  --legend-dot-lg: 20px;   /* 범례 도트 큰 크기 */
+  --legend-swatch-w: 24px; /* 범례 스와치 폭 (직사각형, BCG 29px 축소) */
 
   /* 레이아웃 구조 토큰 */
   --case-label-w: 180px;
   --table-label-w: 200px;
   --divergent-label-w: 120px;
   --divergent-delta-w: 60px;
+  --divergent-bar-min-w: 40px; /* 바 내 텍스트 최소 표시 폭 */
   --matrix-axis-w: 40px;
   --matrix-header-h: 36px;
   --divergent-row-h: 36px;
@@ -282,7 +286,7 @@
 .exec-label .topic {
   font-size: var(--fs-body);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;  /* 3단계 규칙: tight (짧은 라벨) */
   color: var(--c-text);
 }
 
@@ -357,7 +361,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--sp-lg);
+  gap: var(--sp-2xl);  /* 24px — BCG 문단 간 시각 갭 26px 근사 */
 }
 .secondary-panel .panel-text strong { font-weight: 700; }
 .secondary-panel .panel-text p { margin: 0; }
@@ -371,7 +375,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--sp-xl);
+  gap: var(--sp-2xl);  /* 24px — panel-text와 통일 */
 }
 .secondary-panel .panel-text-short strong { font-weight: 700; }
 .secondary-panel .panel-text-short p { margin: 0; }
@@ -453,6 +457,8 @@
 .ranked-icons .rank-num {
   font-size: var(--fs-rank);
   font-weight: 800;
+  color: var(--c-accent-dark);
+  line-height: 1.15;  /* tight — 짧은 라벨 */
 }
 .ranked-icons .rank-icon {
   width: var(--rank-icon-size); height: var(--rank-icon-size);
@@ -465,7 +471,7 @@
 .ranked-icons .rank-label {
   font-size: var(--fs-label);
   line-height: 1.3;
-  min-height: var(--agenda-item-h);
+  min-height: var(--rank-label-min-h);
 }
 
 .ranked-detail-grid {
@@ -486,6 +492,32 @@
 .agenda-photo-panel {
   position: relative;
   overflow: hidden;
+}
+/* 장식 요소 (사진 대체 컴포지션) */
+.agenda-deco-texture {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(120deg, rgba(200,100,80,0.15) 0 var(--sp-4xl), transparent var(--sp-4xl) calc(var(--sp-4xl) * 3));
+  filter: blur(2px);
+}
+.agenda-deco-box-lg {
+  position: absolute; top: var(--agenda-deco-top, 81px); left: var(--agenda-deco-left, 36px);
+  width: var(--agenda-deco-w-lg, 703px); height: var(--agenda-deco-h-lg, 398px);
+  background: var(--c-agenda-green-light); z-index: 1;
+}
+.agenda-deco-box-sm {
+  position: absolute; top: var(--agenda-deco-top-sm, 445px); left: var(--agenda-deco-left-sm, 33px);
+  width: var(--agenda-deco-w-sm, 436px); height: var(--agenda-deco-h-sm, 71px);
+  background: var(--c-accent-dark); z-index: 1;
+}
+.agenda-deco-title {
+  position: absolute; left: var(--agenda-deco-text-left, 111px); top: var(--agenda-deco-title-top, 160px);
+  font-size: var(--fs-agenda-title); font-weight: 700; color: var(--c-agenda-green-dark);
+  line-height: 1.15; z-index: 2;
+}
+.agenda-deco-label {
+  position: absolute; left: var(--agenda-deco-text-left, 111px); top: var(--agenda-deco-label-top, 357px);
+  font-size: var(--fs-agenda-label); color: var(--c-agenda-label);
+  z-index: 2; font-style: italic;
 }
 
 .agenda-desc {
@@ -572,10 +604,10 @@
   font-size: var(--fs-body);
   font-weight: 700;
   text-align: center;
-  clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+  clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%);
 }
 .process-step:not(:first-child) {
-  clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%, 15% 50%);
+  clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%, 12% 50%);
 }
 .process-detail {
   font-size: var(--fs-body);
@@ -848,7 +880,7 @@
   font-size: var(--fs-subq);
   font-weight: 700;
   color: var(--c-text-sub);
-  line-height: 1.25;
+  line-height: 1.3;  /* 3단계 규칙: normal (1.25 금지) */
   margin-bottom: var(--sp-xl);
 }
 
@@ -1001,14 +1033,14 @@
 .divergent-bar-pos { display: flex; justify-content: flex-end; }
 .divergent-bar-neg { display: flex; justify-content: flex-start; }
 .divergent-bar-pos > div {
-  background: var(--c-accent); height: 28px; border-radius: 3px 0 0 3px;
+  background: var(--c-accent); height: var(--bar-h); border-radius: 3px 0 0 3px;
   display: flex; align-items: center; justify-content: center;
-  color: var(--c-white); font-size: var(--fs-source); font-weight: 700; min-width: 40px;
+  color: var(--c-white); font-size: var(--fs-source); font-weight: 700; min-width: var(--divergent-bar-min-w);
 }
 .divergent-bar-neg > div {
-  background: var(--c-danger); height: 28px; border-radius: 0 3px 3px 0;
+  background: var(--c-danger); height: var(--bar-h); border-radius: 0 3px 3px 0;
   display: flex; align-items: center; justify-content: center;
-  color: var(--c-white); font-size: var(--fs-source); font-weight: 700; min-width: 40px;
+  color: var(--c-white); font-size: var(--fs-source); font-weight: 700; min-width: var(--divergent-bar-min-w);
 }
 .divergent-delta { font-size: var(--fs-source); font-weight: 700; text-align: center; }
 
@@ -1068,7 +1100,7 @@
   margin-left: var(--sp-4xl); /* Y축 라벨 공간 확보 */
 }
 .scatter-point {
-  position: absolute; width: var(--fs-title); height: var(--fs-title); border-radius: 50%;
+  position: absolute; width: var(--bbl, var(--fs-title)); height: var(--bbl, var(--fs-title)); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: var(--fs-copyright); font-weight: 700; color: var(--c-white);
 }
@@ -1140,6 +1172,7 @@
 .framework-ring-label {
   position: absolute; font-size: var(--fs-body); font-weight: 700;
   background: var(--c-accent); color: var(--c-white); padding: var(--sp-sm) var(--sp-lg); border-radius: var(--sp-xs);
+  white-space: nowrap;  /* 라벨 줄바꿈 방지 */
 }
 .framework-center {
   font-size: var(--fs-col-title); font-weight: 700; color: var(--c-accent-dark); text-align: center;
@@ -1148,8 +1181,8 @@
   display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-lg);
 }
 .framework-legend-item { display: flex; gap: var(--sp-sm); align-items: flex-start; }
-.framework-legend-num { font-size: var(--fs-subq); font-weight: 700; color: var(--c-accent); min-width: 36px; }
-.framework-legend-desc { font-size: var(--fs-source); line-height: 1.3; }
+.framework-legend-num { font-size: var(--fs-subq); font-weight: 700; color: var(--c-accent); min-width: var(--sp-3xl); }
+.framework-legend-desc { font-size: var(--fs-body); line-height: 1.3; }
 
 /* ═══ LAYOUT: Back Cover ═══ */
 .layout-back-cover {
@@ -1188,7 +1221,7 @@
 .chart-stack {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-sm);
+  gap: var(--sp-md);  /* 12px — BCG 행 pitch 41px ≈ bar 28px + gap 12px */
   flex: 1;
   justify-content: center;
 }
@@ -1199,6 +1232,7 @@
   gap: var(--sp-2xl);
   font-size: var(--fs-source);
   justify-content: center;
+  margin-bottom: var(--sp-md);  /* 범례↔차트 간격 12px (BCG 기준) */
 }
 .chart-legend-item {
   display: flex;
@@ -1209,10 +1243,19 @@
   width: var(--legend-dot);
   height: var(--legend-dot);
   display: inline-block;
+  border-radius: 2px;  /* BCG 스와치는 약간 라운드된 사각형 */
 }
 .chart-legend-dot--lg {
   width: var(--legend-dot-lg);
   height: var(--legend-dot-lg);
+  border-radius: 2px;
+}
+/* 범례 스와치 (BCG 원본: 29×22px 직사각형) */
+.chart-legend-swatch {
+  width: var(--legend-swatch-w);
+  height: var(--legend-dot);
+  display: inline-block;
+  border-radius: 2px;
 }
 
 /* 바 내부 라벨 (1위 항목 등 — 바 안에 텍스트 표시) */
@@ -1244,7 +1287,7 @@
 .chart-dual-bar {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-2xs);
+  gap: var(--sp-xs);  /* 4px — 듀얼바 간 시각적 분리 강화 */
 }
 
 /* Cover 로고/시리즈 위치 */

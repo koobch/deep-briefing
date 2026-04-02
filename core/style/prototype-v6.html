@@ -74,11 +74,11 @@
 
   <div class="layout-agenda" style="grid-row:1/-1">
     <div class="agenda-photo-panel" style="background:linear-gradient(135deg,var(--c-agenda-bg-1),var(--c-agenda-bg-2) 30%,var(--c-agenda-bg-3) 70%,var(--c-agenda-bg-4));overflow:hidden">
-      <div style="position:absolute;inset:0;background:repeating-linear-gradient(120deg,rgba(200,100,80,0.15) 0 40px,transparent 40px 120px);filter:blur(2px)"></div>
-      <div style="position:absolute;top:81px;left:36px;width:703px;height:398px;background:var(--c-agenda-green-light);z-index:1"></div>
-      <div style="position:absolute;top:445px;left:33px;width:436px;height:71px;background:var(--c-accent-dark);z-index:1"></div>
-      <div style="position:absolute;left:111px;top:160px;font-size:var(--fs-agenda-title);font-weight:700;color:var(--c-agenda-green-dark);line-height:1.15;z-index:2">BCG 경영진<br>인사이트</div>
-      <div style="position:absolute;left:111px;top:357px;font-size:var(--fs-agenda-label);color:var(--c-agenda-label);z-index:2;font-style:italic">AGENDA</div>
+      <div class="agenda-deco-texture"></div>
+      <div class="agenda-deco-box-lg"></div>
+      <div class="agenda-deco-box-sm"></div>
+      <div class="agenda-deco-title">BCG 경영진<br>인사이트</div>
+      <div class="agenda-deco-label">AGENDA</div>
     </div>
 
     <div class="agenda-items">
@@ -121,7 +121,7 @@
 
       <div class="chart-stack">
         <!-- 지역별 범례 -->
-        <div class="chart-legend" style="margin-bottom:var(--sp-sm)">
+        <div class="chart-legend">
           <span style="font-weight:700;color:var(--c-text-sub)">아시아태평양¹</span>
           <span class="chart-legend-item"><span style="width:var(--legend-dot);height:var(--legend-dot);background:var(--c-chart-blue-dk)"></span> 미국 대선 전</span>
           <span class="chart-legend-item"><span style="width:var(--legend-dot);height:var(--legend-dot);background:var(--c-chart-blue-lt)"></span> 미국 대선 후</span>
@@ -403,8 +403,8 @@
   <div class="slot-body layout-process">
     <div class="col-left-narrow" style="gap:var(--sp-md);padding-bottom:var(--sp-md)">
       <h3 style="font-size:var(--fs-subq);font-weight:700;margin-bottom:var(--sp-xs)">제품 포트폴리오 최적화</h3>
-      <p style="font-size:var(--fs-body);line-height:1.25;margin-bottom:var(--sp-sm)">빠르게 변화하는 시장에서 제품 복잡성 증가와 우선순위 변화가 구조적 비용 상승과 수익성 압박을 초래하고 있다</p>
-      <div style="font-size:var(--fs-body);line-height:1.25">
+      <p style="font-size:var(--fs-body);line-height:1.3;margin-bottom:var(--sp-sm)">빠르게 변화하는 시장에서 제품 복잡성 증가와 우선순위 변화가 구조적 비용 상승과 수익성 압박을 초래하고 있다</p>
+      <div style="font-size:var(--fs-body);line-height:1.3">
         <p class="bullet-text">제품 복잡성 (과다 SKU)</p>
         <p class="bullet-text">원자재 및 부품 비용 상승</p>
         <p class="bullet-text">제조·공급망 복잡성 비용</p>
@@ -417,16 +417,16 @@
     </div>
 
     <div class="process-panel" style="padding-top:calc(var(--accent-bar-h) + var(--sp-xl));padding-bottom:var(--sp-2xl)">
-      <h3 style="font-size:var(--fs-body-lg);font-weight:700;line-height:1.2">고부가가치 제품에 자원을 집중하여 운영 효율을 개선하고 공급망 복잡성을 줄인다</h3>
+      <h3 style="font-size:var(--fs-body-lg);font-weight:700;line-height:1.15">고부가가치 제품에 자원을 집중하여 운영 효율을 개선하고 공급망 복잡성을 줄인다</h3>
       <div style="font-size:var(--fs-body);font-weight:600;margin-bottom:var(--sp-2xs)">최적화 레버</div>
       <div class="chart-stack" style="font-size:var(--fs-body)">
         <div>
           <p><strong style="font-size:var(--fs-subq);margin-right:var(--sp-sm)">#1</strong> 저볼륨 구성을 통합하여 "롱테일"을 제거하고 볼륨과 매출을 유지한다</p>
-          <p style="font-size:var(--fs-body);color:var(--c-text-body);margin-top:var(--sp-2xs);padding-left:var(--sp-3xl);line-height:1.25">매출 하위 20% SKU가 전체 복잡성 비용의 <strong>60% 이상</strong>을 차지하며, 통합 시 운영 효율이 크게 개선된다</p>
+          <p style="font-size:var(--fs-body);color:var(--c-text-body);margin-top:var(--sp-2xs);padding-left:var(--sp-3xl);line-height:1.3">매출 하위 20% SKU가 전체 복잡성 비용의 <strong>60% 이상</strong>을 차지하며, 통합 시 운영 효율이 크게 개선된다</p>
         </div>
         <div>
           <p><strong style="font-size:var(--fs-subq);margin-right:var(--sp-sm)">#2</strong> 고객 중심 설계-가치 접근법으로 제품 포트폴리오의 가치와 비용을 재조정한다</p>
-          <p style="font-size:var(--fs-body);color:var(--c-text-body);margin-top:var(--sp-2xs);padding-left:var(--sp-3xl);line-height:1.25">고객이 실제로 가치를 인식하는 기능에 집중하고, <strong>과잉 사양을 제거</strong>하여 원가를 10~30% 절감할 수 있다</p>
+          <p style="font-size:var(--fs-body);color:var(--c-text-body);margin-top:var(--sp-2xs);padding-left:var(--sp-3xl);line-height:1.3">고객이 실제로 가치를 인식하는 기능에 집중하고, <strong>과잉 사양을 제거</strong>하여 원가를 10~30% 절감할 수 있다</p>
         </div>
       </div>
 
@@ -719,10 +719,10 @@
             <div class="chart-bar chart-bar--labeled" style="background:var(--c-accent);width:85%"><span style="font-size:var(--fs-source);color:var(--c-white);font-weight:700">공급망 최적화 42%</span></div>
           </div>
           <div class="chart-legend-item">
-            <div style="background:var(--c-accent-light);width:72%"></div><span style="font-size:var(--fs-source);font-weight:700">인력 생산성 36%</span>
+            <div class="chart-bar" style="background:var(--c-accent-light);width:72%"></div><span style="font-size:var(--fs-source);font-weight:700">인력 생산성 36%</span>
           </div>
           <div class="chart-legend-item">
-            <div style="background:var(--c-neutral);width:58%"></div><span style="font-size:var(--fs-source);font-weight:700">IT 통합 29%</span>
+            <div class="chart-bar" style="background:var(--c-neutral);width:58%"></div><span style="font-size:var(--fs-source);font-weight:700">IT 통합 29%</span>
           </div>
         </div>
         <div style="margin-top:var(--sp-md);font-size:var(--fs-source);line-height:1.3">
@@ -738,10 +738,10 @@
             <div class="chart-bar chart-bar--labeled" style="background:var(--c-accent);width:78%"><span style="font-size:var(--fs-source);color:var(--c-white);font-weight:700">에너지 비용 39%</span></div>
           </div>
           <div class="chart-legend-item">
-            <div style="background:var(--c-accent-light);width:70%"></div><span style="font-size:var(--fs-source);font-weight:700">규제 대응 35%</span>
+            <div class="chart-bar" style="background:var(--c-accent-light);width:70%"></div><span style="font-size:var(--fs-source);font-weight:700">규제 대응 35%</span>
           </div>
           <div class="chart-legend-item">
-            <div style="background:var(--c-neutral);width:54%"></div><span style="font-size:var(--fs-source);font-weight:700">포트폴리오 27%</span>
+            <div class="chart-bar" style="background:var(--c-neutral);width:54%"></div><span style="font-size:var(--fs-source);font-weight:700">포트폴리오 27%</span>
           </div>
         </div>
         <div style="margin-top:var(--sp-md);font-size:var(--fs-source);line-height:1.3">
@@ -757,10 +757,10 @@
             <div class="chart-bar chart-bar--labeled" style="background:var(--c-accent);width:82%"><span style="font-size:var(--fs-source);color:var(--c-white);font-weight:700">수출 다변화 41%</span></div>
           </div>
           <div class="chart-legend-item">
-            <div style="background:var(--c-accent-light);width:66%"></div><span style="font-size:var(--fs-source);font-weight:700">디지털 전환 33%</span>
+            <div class="chart-bar" style="background:var(--c-accent-light);width:66%"></div><span style="font-size:var(--fs-source);font-weight:700">디지털 전환 33%</span>
           </div>
           <div class="chart-legend-item">
-            <div style="background:var(--c-neutral);width:50%"></div><span style="font-size:var(--fs-source);font-weight:700">인재 확보 25%</span>
+            <div class="chart-bar" style="background:var(--c-neutral);width:50%"></div><span style="font-size:var(--fs-source);font-weight:700">인재 확보 25%</span>
           </div>
         </div>
         <div style="margin-top:var(--sp-md);font-size:var(--fs-source);line-height:1.3">
@@ -973,15 +973,15 @@
     <div style="font-size:var(--fs-source);color:var(--c-text-muted)">버블 크기 = 보험료 수입 규모</div>
     <div class="scatter-area">
       <div class="scatter-axis-y">합산비율 개선 (pp, 3년간)</div>
-      <div class="scatter-point" style="left:12%;bottom:25%;width:56px;height:56px;background:var(--c-accent)">A사</div>
-      <div class="scatter-point" style="left:28%;bottom:40%;width:44px;height:44px;background:var(--c-accent-light)">B사</div>
-      <div class="scatter-point" style="left:42%;bottom:55%;width:60px;height:60px;background:var(--c-accent)">C사</div>
-      <div class="scatter-point" style="left:55%;bottom:35%;width:40px;height:40px;background:var(--c-neutral)">D사</div>
-      <div class="scatter-point" style="left:62%;bottom:70%;width:52px;height:52px;background:var(--c-accent-dark);font-size:var(--fs-copyright)">E사</div>
-      <div class="scatter-point" style="left:75%;bottom:82%;width:64px;height:64px;background:var(--c-accent-dark)">F사</div>
-      <div class="scatter-point" style="left:82%;bottom:60%;width:48px;height:48px;background:var(--c-accent-light)">G사</div>
-      <div class="scatter-point" style="left:35%;bottom:18%;width:36px;height:36px;background:var(--c-danger);font-size:var(--fs-copyright)">H사</div>
-      <div class="scatter-point" style="left:18%;bottom:12%;width:42px;height:42px;background:var(--c-danger)">I사</div>
+      <div class="scatter-point" style="left:12%;bottom:25%;--bbl:56px;background:var(--c-accent)">A사</div>
+      <div class="scatter-point" style="left:28%;bottom:40%;--bbl:44px;background:var(--c-accent-light)">B사</div>
+      <div class="scatter-point" style="left:42%;bottom:55%;--bbl:60px;background:var(--c-accent)">C사</div>
+      <div class="scatter-point" style="left:55%;bottom:35%;--bbl:40px;background:var(--c-neutral)">D사</div>
+      <div class="scatter-point" style="left:62%;bottom:70%;--bbl:52px;background:var(--c-accent-dark);font-size:var(--fs-copyright)">E사</div>
+      <div class="scatter-point" style="left:75%;bottom:82%;--bbl:64px;background:var(--c-accent-dark)">F사</div>
+      <div class="scatter-point" style="left:82%;bottom:60%;--bbl:48px;background:var(--c-accent-light)">G사</div>
+      <div class="scatter-point" style="left:35%;bottom:18%;--bbl:36px;background:var(--c-danger);font-size:var(--fs-copyright)">H사</div>
+      <div class="scatter-point" style="left:18%;bottom:12%;--bbl:42px;background:var(--c-danger)">I사</div>
       <div style="position:absolute;left:0;bottom:50%;width:100%;border-top:1px dashed var(--c-border)"></div>
       <div style="position:absolute;left:50%;bottom:0;height:100%;border-left:1px dashed var(--c-border)"></div>
       <div style="position:absolute;right:var(--sp-sm);bottom:52%;font-size:var(--fs-source);color:var(--c-text-muted)">업계 평균</div>
@@ -1076,10 +1076,10 @@
   <div class="slot-body layout-framework">
     <div class="framework-diagram">
       <div class="framework-ring">
-        <div class="framework-ring-label" style="top:calc(-1 * var(--sp-lg) - var(--sp-2xs));left:50%;transform:translateX(-50%)">① 비용 투명성</div>
-        <div class="framework-ring-label" style="right:calc(-1 * var(--sp-lg) - var(--sp-2xs));top:50%;transform:translateY(-50%)">② AI 자동화</div>
-        <div class="framework-ring-label" style="bottom:calc(-1 * var(--sp-lg) - var(--sp-2xs));left:50%;transform:translateX(-50%)">③ 프로세스 혁신</div>
-        <div class="framework-ring-label" style="left:calc(-1 * var(--sp-lg) - var(--sp-2xs));top:50%;transform:translateY(-50%)">④ 비용 문화</div>
+        <div class="framework-ring-label" style="top:calc(-1 * var(--framework-label-offset));left:50%;transform:translateX(-50%)">① 비용 투명성</div>
+        <div class="framework-ring-label" style="right:calc(-1 * var(--framework-label-offset));top:50%;transform:translateY(-50%)">② AI 자동화</div>
+        <div class="framework-ring-label" style="bottom:calc(-1 * var(--framework-label-offset));left:50%;transform:translateX(-50%)">③ 프로세스 혁신</div>
+        <div class="framework-ring-label" style="left:calc(-1 * var(--framework-label-offset));top:50%;transform:translateY(-50%)">④ 비용 문화</div>
         <div class="framework-center">지속 가능한<br>비용 혁신</div>
       </div>
     </div>

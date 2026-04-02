@@ -137,6 +137,54 @@
 - 플로우 박스는 `width: 100%`로 컬럼 폭에 맞춤
 - 아이콘은 고정 크기(72px) + 중앙 정렬
 
+### 차트 지오메트리 규칙 (342 ref-spec 통계 기반)
+
+> BCG Executive Perspectives 17개 PDF에서 수평 바 차트 342개 요소 실측 분석 결과
+
+| 항목 | BCG 기준 | CSS 토큰 | 비고 |
+|------|---------|---------|------|
+| 바 높이 (단일) | 중앙값 30px, 범위 18~37px | `--bar-h: 28px` | 듀얼바 시 28px×2+4px=60px |
+| 바 높이 (강조) | 33~37px | `--bar-h-lg: 32px` | 1위 항목, 핵심 바 |
+| 행 pitch | 중앙값 41px | bar-h + chart-stack gap | pitch = 바 높이 + 행 간격 |
+| 행 간격 | pitch - bar_h ≈ 12px | chart-stack `gap: --sp-md` | 12px |
+| 라벨 컬럼 폭 | 한글 2줄 대응 | `--chart-label-w: 140px` | 영문은 120px 가능 |
+| 값 컬럼 폭 | 2~3자리 수치 | `--chart-val-w: 50px` | — |
+| 듀얼바 간 간격 | 시각 분리 | `--sp-xs: 4px` | Pre/Post 비교 |
+| 범례 도트 | BCG 29×22px 스와치 | `--legend-dot: 16px` | 도트형 축소 |
+| 범례 스와치 | 직사각형 | `.chart-legend-swatch: 24×16px` | BCG 원본 형태 |
+| 범례↔차트 간격 | — | `chart-legend margin-bottom: --sp-md` | 12px |
+
+**차트 행 3컬럼 그리드**:
+```
+[라벨 140px] [gap 8px] [바 1fr] [gap 8px] [값 50px]
+```
+
+**듀얼바 행 구조**:
+```
+[라벨 140px] [gap 8px] [바1 + 4px + 바2] [gap 8px] [값 50px]
+     ↕ 12px (chart-stack gap)
+[라벨 140px] [gap 8px] [바1 + 4px + 바2] [gap 8px] [값 50px]
+```
+
+### 패널 텍스트 밀도 규칙
+
+| 항목 | BCG 기준 | CSS 값 |
+|------|---------|--------|
+| 문단 내 행간 | line-height 1.3 | 3단계 규칙: normal |
+| 문단 간 간격 (4개+) | 시각 갭 ~26px | `panel-text gap: --sp-2xl (24px)` |
+| 문단 간 간격 (3개 이하) | 더 넓게 | `panel-text-short gap: --sp-2xl (24px)` |
+| 패널 폰트 (4개+) | 22px (ko) | `--fs-body-lg` |
+| 패널 폰트 (3개 이하) | 28px (ko) | `--fs-panel` |
+
+### 도형 비율 규칙
+
+| 도형 | 크기 | CSS 토큰 | 비고 |
+|------|------|---------|------|
+| Ranked 아이콘 | 70~83px | `--rank-icon-size: 72px` | BCG 범위 내 |
+| Framework 링 | 본문 64% | `--framework-ring-size: 520px` | 본문 ~810px 기준 |
+| Framework 라벨 오프셋 | 링 밖 완전 이탈 | `--framework-label-offset: 48px` | 라벨 높이(~45px) 이상 |
+| Process 쉐브론 | 88%/12% 비율 | clip-path polygon | 화살촉 12% 폭 |
+
 ---
 
 ## B. 타이포그래피
