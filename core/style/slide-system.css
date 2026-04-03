@@ -868,6 +868,53 @@
 }
 .callout strong { font-weight: 700; }
 
+/* 하단 채우기 요소 */
+.read-more-link {
+  border: 1px solid var(--c-accent);
+  padding: var(--sp-sm) var(--sp-xl);
+  font-size: var(--fs-source);
+  color: var(--c-accent-dark);
+  font-style: italic;
+  margin-top: auto;
+  display: inline-block;
+}
+
+.annotation-bar {
+  font-size: var(--fs-source);
+  color: var(--c-text-muted);
+  padding-top: var(--sp-sm);
+  border-top: 1px solid var(--c-border);
+  margin-top: var(--sp-md);
+}
+
+.bottom-filler {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.icon-desc-row {
+  display: grid;
+  grid-template-columns: var(--sp-4xl) auto 1fr;
+  gap: var(--sp-sm);
+  align-items: start;
+  padding: var(--sp-sm) 0;
+  border-bottom: 1px solid var(--c-border);
+}
+.icon-desc-row:last-child {
+  border-bottom: none;
+}
+.icon-desc-row .icon-desc-title {
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+.icon-desc-row .icon-desc-bullets {
+  font-size: var(--fs-source);
+  line-height: 1.3;
+  color: var(--c-text-body);
+}
+
 /* 불릿 텍스트 */
 .bullet-text::before {
   content: "•";
