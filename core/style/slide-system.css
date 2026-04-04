@@ -817,7 +817,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-lg);
-  padding: 0;
+  padding: var(--sp-md);
+  background: var(--c-accent);  /* 연속 초록 배경 — Impact 연두와 좌우 끝 정렬 */
+  border-radius: var(--sp-xs);
 }
 .case-flow-item {
   display: flex;
@@ -827,7 +829,7 @@
   position: relative;
 }
 .case-flow-box {
-  background: var(--c-accent);
+  background: var(--c-accent-dark);
   color: var(--c-white);
   padding: var(--sp-md) var(--sp-lg);
   font-weight: 700;
@@ -838,7 +840,7 @@
 }
 .case-flow-desc {
   font-size: var(--fs-body);
-  color: var(--c-text-body);
+  color: var(--c-white);
   text-align: center;
   line-height: 1.3;
 }
