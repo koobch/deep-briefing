@@ -1074,6 +1074,7 @@
   gap: 0;
   align-items: center;
   min-height: var(--divergent-row-h);
+  flex: 1;  /* 행이 가용 공간 균등 분할 */
 }
 .divergent-label { font-size: var(--fs-source); text-align: right; padding-right: var(--sp-lg); }
 .divergent-bar-pos { display: flex; justify-content: flex-end; }
@@ -1116,7 +1117,7 @@
   padding: var(--sp-xl) var(--pad-x) 0;
   gap: var(--sp-lg);
 }
-.heatmap-grid { display: grid; grid-template-columns: var(--heatmap-label-w) repeat(6, 1fr); gap: var(--sp-2xs); flex: 1; align-content: center; }
+.heatmap-grid { display: grid; grid-template-columns: var(--heatmap-label-w) repeat(6, 1fr); gap: var(--sp-xs); flex: 1; align-content: stretch; }
 .heatmap-cell {
   display: flex; align-items: center; justify-content: center;
   font-size: var(--fs-source); font-weight: 700; color: var(--c-white);
@@ -1249,6 +1250,7 @@
   grid-template-columns: var(--chart-label-w) 1fr var(--chart-val-w);
   gap: var(--sp-sm);
   align-items: center;
+  flex: 1;  /* chart-stack 내에서 행이 가용 공간 균등 분할 */
 }
 .chart-bar-row--narrow {
   grid-template-columns: var(--chart-label-w) 1fr var(--chart-val-w);
