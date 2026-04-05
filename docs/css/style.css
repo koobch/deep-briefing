@@ -492,18 +492,9 @@ body {
   opacity: 0.25;
 }
 
-/* Core와 Extended 사이 */
+/* Core와 Extended — 같은 Level 1이므로 구분선 없음 */
 .arch-level--extended {
-  padding-top: 24px;
-}
-
-.arch-level--extended::before {
-  content: '';
-  display: block;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--color-people), transparent);
-  margin-bottom: 16px;
-  opacity: 0.2;
+  padding-top: 8px;
 }
 
 /* Cross 위 구분선 */
