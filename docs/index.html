@@ -300,10 +300,30 @@
         <div class="section-label">Agents</div>
         <h2 class="section-title">에이전트 매트릭스</h2>
         <p class="section-desc">
+          4계층 48개 에이전트가 병렬 협업합니다.
           Division 카드를 클릭하면 소속 Leaf 에이전트 목록이 펼쳐집니다.
-          핵심 Division 4개 + 확장 Division 3개, 크로스커팅 에이전트 10개.
         </p>
         <a href="whitepaper.html#agents" class="section-more-link">자세히 보기 →</a>
+      </div>
+
+      <!-- 4계층 에이전트 레이어 다이어그램 -->
+      <div class="agent-layers">
+        <div class="agent-layer" style="--layer-color: var(--color-cross);">
+          <div class="agent-layer-label">Layer 0 — PM</div>
+          <div class="agent-layer-desc">research-pm 1개 — 리서치 전체를 오케스트레이션하는 프로젝트 매니저</div>
+        </div>
+        <div class="agent-layer" style="--layer-color: var(--color-market);">
+          <div class="agent-layer-label">Layer 1 — Division Lead</div>
+          <div class="agent-layer-desc">7개 (핵심 4 + 확장 3) — 각 Division의 분석을 지휘하고 Leaf를 관리</div>
+        </div>
+        <div class="agent-layer" style="--layer-color: var(--color-product);">
+          <div class="agent-layer-label">Layer 2 — Leaf 분석가</div>
+          <div class="agent-layer-desc">26개 — Division별 MECE 분석 범위를 실행하는 전문 분석가</div>
+        </div>
+        <div class="agent-layer" style="--layer-color: var(--color-qa);">
+          <div class="agent-layer-label">Layer 3 — Cross-cutting</div>
+          <div class="agent-layer-desc">14개 — 검증(5) + 합성(2) + 보고(1) + QA(5) + 유틸(1)</div>
+        </div>
       </div>
 
       <!-- Division Lead 카드 -->
@@ -470,65 +490,121 @@
 
       </div><!-- /division-grid -->
 
-      <!-- Cross-cutting 에이전트 -->
-      <div class="cross-section-title">Cross-cutting 에이전트 — 5개</div>
+      <!-- Cross-cutting 검증 에이전트 -->
+      <div class="cross-section-title">Cross-cutting 검증 — 5개</div>
       <div class="agent-chips" role="list">
-        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>fact-verifier
+        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem" title="Division 간 수치·데이터 교차 검증">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">fact-verifier</div>
+            <div class="agent-chip-desc">Division 간 수치·데이터 교차 검증</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>logic-prober
+        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem" title="Why Chain으로 논리 기반 수직 검증">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">logic-prober</div>
+            <div class="agent-chip-desc">Why Chain으로 논리 기반 수직 검증</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>strategic-challenger
+        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem" title="5-레인 전략 도전으로 블라인드 스팟 탐지">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">strategic-challenger</div>
+            <div class="agent-chip-desc">5-레인 전략 도전으로 블라인드 스팟 탐지</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>red-team
+        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem" title="핵심 전제에 대한 적대적 반론 구성">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">red-team</div>
+            <div class="agent-chip-desc">핵심 전제에 대한 적대적 반론 구성</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>external-reviewer
+        <div class="agent-chip" style="--chip-color: var(--color-cross);" role="listitem" title="전체 분석 프레이밍·접근법 비판">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">external-reviewer</div>
+            <div class="agent-chip-desc">전체 분석 프레이밍·접근법 비판</div>
+          </div>
         </div>
       </div>
 
       <!-- Synthesis 에이전트 -->
       <div class="cross-section-title">Synthesis 에이전트 — 2개</div>
       <div class="agent-chips" role="list">
-        <div class="agent-chip" style="--chip-color: var(--color-synthesis);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>cross-domain-synthesizer
+        <div class="agent-chip" style="--chip-color: var(--color-synthesis);" role="listitem" title="Division 간 교차 인사이트 도출">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">cross-domain-synthesizer</div>
+            <div class="agent-chip-desc">Division 간 교차 인사이트 도출</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-synthesis);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>insight-synthesizer
+        <div class="agent-chip" style="--chip-color: var(--color-synthesis);" role="listitem" title="도전+반론 결과 통합하여 전략 보강">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">insight-synthesizer</div>
+            <div class="agent-chip-desc">도전+반론 결과 통합하여 전략 보강</div>
+          </div>
         </div>
       </div>
 
       <!-- QA 에이전트 -->
       <div class="cross-section-title">QA 에이전트 — 5개</div>
       <div class="agent-chips" role="list">
-        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>qa-orchestrator
+        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem" title="QA 파이프라인 실행 + 하위 모듈 조율">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">qa-orchestrator</div>
+            <div class="agent-chip-desc">QA 파이프라인 실행 + 하위 모듈 조율</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>audience-fit-checker
+        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem" title="Action Title + 경영진 적합성 검증">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">audience-fit-checker</div>
+            <div class="agent-chip-desc">Action Title + 경영진 적합성 검증</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>executability-checker
+        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem" title="Implementation Playbook 완전성 검증">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">executability-checker</div>
+            <div class="agent-chip-desc">Implementation Playbook 완전성 검증</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>report-auditor
+        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem" title="논리 완결성 + SCR 구조 감사">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">report-auditor</div>
+            <div class="agent-chip-desc">논리 완결성 + SCR 구조 감사</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>report-fixer
+        <div class="agent-chip" style="--chip-color: var(--color-qa);" role="listitem" title="QA 이슈 자동 수정 (최대 3회)">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">report-fixer</div>
+            <div class="agent-chip-desc">QA 이슈 자동 수정 (최대 3회)</div>
+          </div>
         </div>
       </div>
 
       <!-- Report / Utility -->
       <div class="cross-section-title">Report &amp; Utility — 2개</div>
       <div class="agent-chips" role="list">
-        <div class="agent-chip" style="--chip-color: var(--color-report);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>report-writer
+        <div class="agent-chip" style="--chip-color: var(--color-report);" role="listitem" title="SCR 스토리라인 기반 최종 보고서 작성">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">report-writer</div>
+            <div class="agent-chip-desc">SCR 스토리라인 기반 최종 보고서 작성</div>
+          </div>
         </div>
-        <div class="agent-chip" style="--chip-color: var(--color-utility);" role="listitem">
-          <span class="agent-chip-dot" aria-hidden="true"></span>data-preprocessor
+        <div class="agent-chip" style="--chip-color: var(--color-utility);" role="listitem" title="사용자 데이터 전처리 + Division별 배포">
+          <span class="agent-chip-dot" aria-hidden="true"></span>
+          <div>
+            <div class="agent-chip-name">data-preprocessor</div>
+            <div class="agent-chip-desc">사용자 데이터 전처리 + Division별 배포</div>
+          </div>
         </div>
       </div>
 
