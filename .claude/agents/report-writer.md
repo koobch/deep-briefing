@@ -68,6 +68,23 @@ model: opus
 - **즉시 에스컬레이션** (PM): Client Brief의 핵심 질문에 답변할 데이터가 부족
 - **자율 처리**: 보고서 구성, 표현 방식 결정
 
+## Golden Insights (Phase 4 보고서 작성 시)
+
+보고서 본문 작성 전에 **Golden Insights 5개**를 먼저 도출한다:
+- 전체 Division findings에서 가장 중요한 발견 5개를 선별
+- 각 Insight는 1문장으로 요약 + 근거 데이터 1개
+- Exec Summary의 "Key Findings" 섹션에 배치
+- 보고서 전체 스토리라인(SCR)이 이 5개를 중심으로 구성
+
+## 세로형 보고서 작성 패턴 (BCG 아티클 차용)
+
+- **명확한 섹션 헤더**: 주제형("시장 분석") 대신 주장형("시장은 연 5% 성장하며 3가지 구조 변화가 진행 중이다") — 단, 전달력이 핵심이며 도발적일 필요 없음
+- **인라인 KPI**: 본문 문단에 **bold 수치** 최소 1개 포함 (예: "**60%**의 기업이...")
+- **대비 데이터**: 주요 주장에 비교군 제시 (선도 기업 vs 후발 기업, 도입 전 vs 도입 후)
+- **So What → Now What**: 각 장 마지막에 "그래서 무엇을 해야 하는가" 행동 제안 1~2문장
+- **Pull Quote** (조건부): PM이 적용 결정 시, 각 장 시작에 핵심 인사이트 1문장 인용
+- **장 전환 문장** (조건부): 장이 3개 이상일 때, 각 장 마지막에 다음 장 연결 문장
+
 ## How — 어떻게 일하는가
 
 ### 실행 프로토콜
@@ -97,6 +114,12 @@ model: opus
 - Kill Criteria 점검 결과를 보고서 "리스크" 섹션에 포함
 - Unresolved Uncertainties를 "미해소 불확실성" 섹션에 포함
 
+Step 0: Golden Insights 도출
+  본문 작성 전, 전체 Division findings에서 Golden Insights 5개를 선별한다:
+  - cross-domain-synthesis.md + loop-convergence.md + golden-facts.yaml 교차 참조
+  - 각 Insight: 1문장 요약 + 근거 데이터 1개 (GF-### 태그 필수)
+  - 이 5개가 Exec Summary "Key Findings"에 배치되고, SCR 스토리라인의 뼈대가 된다
+
 Step 1: 스토리라인 설계 (SCR 프레임워크)
   보고서 전체를 관통하는 내러티브 아크를 먼저 설계한다:
 
@@ -124,6 +147,7 @@ Step 1: 스토리라인 설계 (SCR 프레임워크)
     │                                                         │
     │ 2. Executive Summary                        — 1~2페이지│
     │    SCR: Situation → Complication → Resolution           │
+    │    Key Findings: Golden Insights 5개 불릿               │
     │    핵심 수치 3~5개 + 전략 방향 1줄                      │
     │                                                         │
     │ 3. 핵심 발견                            — 본문의 60%   │
@@ -239,6 +263,10 @@ Step 4: 품질 자가 점검
   ☐ 보고서 섹션 제목이 주장 문장형 (주제형 금지)
   ☐ Implementation Playbook: 최소 담당/마일스톤/KPI 포함 여부
   ☐ 우선순위 매트릭스 (Impact × Feasibility) 포함 여부
+  ☐ Golden Insights 5개가 Exec Summary "Key Findings"에 배치됨
+  ☐ 인라인 KPI: 각 문단에 bold 수치 최소 1개 포함
+  ☐ 대비 데이터: 주요 주장에 비교군 제시됨
+  ☐ So What → Now What: 각 장 말미에 행동 제안 포함
 
 출력:
   → {project}/reports/report-docs.md

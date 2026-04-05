@@ -635,6 +635,37 @@ Research Plan 수립 시, PM은 Client Brief를 기반으로 확장 Division 활
 
 산출물: `{project}/01-research-plan.md`
 
+#### Step 0-B.6: 조건부 패턴 적용 판단
+
+PM은 주제 특성을 분석하여 다음 패턴의 적용 여부를 결정한다:
+
+```
+판단 항목:
+┌─────────────────────┬────────────────────────────────────────────┐
+│ 패턴                 │ 적용 기준                                  │
+├─────────────────────┼────────────────────────────────────────────┤
+│ 핵심 이슈 유형        │ "도전형" (장벽/리스크 중심)                  │
+│                     │ vs "기회형" (성장/혁신 중심)                  │
+│                     │ → Division Brief에 명시                     │
+├─────────────────────┼────────────────────────────────────────────┤
+│ Pull Quote          │ 경영진 보고서이면 적용,                      │
+│                     │ 데이터 분석이면 생략                         │
+├─────────────────────┼────────────────────────────────────────────┤
+│ 시나리오 프레이밍     │ 불확실성이 높으면 적용                       │
+│                     │ (AI 전환, 지정학, 규제 변화 등)               │
+├─────────────────────┼────────────────────────────────────────────┤
+│ 장 전환 문장         │ 보고서 장이 3개 이상이면 적용                 │
+└─────────────────────┴────────────────────────────────────────────┘
+
+결정 결과는 {project}/01-research-plan.md에 "적용 패턴" 섹션으로 기록:
+  applied_patterns:
+    issue_type: "도전형" | "기회형"
+    pull_quote: true | false
+    scenario_framing: true | false
+    chapter_transitions: true | false
+    rationale: "판단 근거 1~2문장"
+```
+
 #### Step 0-B.5: API Readiness Check
 
 Research Plan 확정 후, Division 배치와 데이터 소스 매핑을 기반으로 필요 API를 동적으로 판정한다.
@@ -770,6 +801,57 @@ checkpoint.yaml에 다음을 기록한 후에만 Division Briefs 작성 진입:
 
 > Phase 0.5 자동화 플로우(Quick Scan → 가설 도출 → 사용자 정렬 → Division Brief 주입)는
 > `core/orchestration/sync-protocol.md`의 "Phase 0.5 자동화 플로우" 섹션을 따른다.
+
+#### 반전 질문 (Provocative Reframing)
+
+가설을 생성할 때, 클라이언트 질문을 그대로 받지 않고 **반전 질문 1개**를 반드시 포함한다.
+
+```
+목적: 확증 편향을 사전 차단하고, 분석의 깊이를 확보한다.
+
+규칙:
+- 클라이언트의 핵심 질문을 뒤집어 "왜 실패하는가?" 또는 "왜 안 되는가?" 관점으로 재구성
+- 예: "왜 AI 도입이 성공하는가?" → "왜 60%의 기업이 AI에서 가치를 얻지 못하는가?"
+- 예: "이 시장에 진출해야 하는가?" → "이 시장에서 철수한 기업들의 공통 실패 요인은?"
+
+기록:
+- hypotheses.yaml에 contrarian_question 필드로 기록:
+    contrarian_question:
+      original: "클라이언트 원래 질문"
+      reframed: "반전된 질문"
+      purpose: "이 반전이 드러내려는 맹점"
+
+활용:
+- 이 질문은 Phase 3 red-team의 출발점이 된다
+- Division Lead에게 Division Brief를 통해 전달하여 반증 데이터 수집 근거로 활용
+```
+
+#### 구조적 전환점 식별 (Structural Inflection Points)
+
+Phase 0.5 Quick Scan 후, 해당 산업/주제에서 진행 중인 **구조적 전환점 3~4개**를 식별한다.
+
+```
+목적: 과거 트렌드 연장이 아닌 구조적 변화를 분석의 축으로 설정한다.
+
+식별 기준:
+- 기존 가치 사슬의 해체/재편 (예: 부동산 → 생태계 전환)
+- 비용 구조의 근본 변화 (예: 비용 절감 → AI 기반 구조 혁신)
+- 규제/정책 프레임의 전환 (예: 자율 규제 → 의무 규제)
+- 소비자/고객 행동의 비가역적 변화 (예: 오프라인 → 디지털 전환)
+
+산출물:
+- {project}/01-research-plan.md에 structural_inflections 섹션으로 기록:
+    structural_inflections:
+      - inflection: "전환점 설명"
+        evidence: "이 전환이 진행 중이라는 근거"
+        impact: "리서치 질문에 미치는 영향"
+        relevant_divisions: [Market, Product]  # 이 전환을 분석할 Division
+      - inflection: ...
+
+활용:
+- Division Brief에 포함하여 각 Division이 이를 기준으로 분석
+- Phase 3 사고 루프에서 전환점 기반 시나리오 프레이밍의 근거로 활용
+```
 
 ### Phase 0.5 전: Division Briefs 작성 (Independent CLI Protocol)
 
