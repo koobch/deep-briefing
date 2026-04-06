@@ -183,6 +183,12 @@ Division Brief에 포함된 primary_data_gaps (Phase 0.5 식별분) 확인:
 - 사례가 없는 분석 항목은 사례 없이 진행 가능 (필수가 아닌 권장)
 ```
 
+### source_index 등록 시 summary 필수
+
+source_index에 새 출처를 등록할 때 `summary` 필드에 **핵심 정보 1~2줄 요약**을 반드시 기록한다.
+- 예: "570명 C-level 임원 대상 비용 관리 우선순위 설문, 2024년 4분기 실시"
+- 요약이 없으면 source-registry.csv에 빈 칸으로 남아 추적성이 저하된다
+
 ### 출력 규칙
 
 - `core/protocols/output-format.md`의 표준 스키마 준수

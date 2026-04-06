@@ -113,12 +113,14 @@ source_index:
     url: "https://dart.fss.or.kr/..."
     accessed: 2026-03-11
     reliability: high                # high | medium | low
+    summary: "핵심 정보 1~2줄 요약"    # Phase 4.5 source-registry 생성 시 사용
   - id: S05
     type: estimate
     name: "업계 리서치 기관 Annual Report 2025"
     url: null                        # 유료 보고서 — URL 없음
     accessed: 2026-03-01
     reliability: medium
+    summary: "핵심 정보 1~2줄 요약"    # Phase 4.5 source-registry 생성 시 사용
     note: "추정치 기반. 다른 독립 소스와 교차 검증 필요"
 
 # ============================================================
