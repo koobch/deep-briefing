@@ -163,6 +163,14 @@ const PHASES = [
     agents: ['report-writer', 'insight-synthesizer'],
   },
   {
+    id:    'phase-4-5',
+    num:   'P4.5',
+    label: '출처 레지스트리',
+    title: 'Phase 4.5 — 출처 레지스트리',
+    desc:  '통합 출처 추적. generate-source-registry.py로 source_index + golden-facts + 보고서를 통합하여 14컬럼 source-registry.csv 생성. 전체 출처의 일관성·완전성 검증.',
+    agents: ['research-pm'],
+  },
+  {
     id:    'phase-5',
     num:   'P5',
     label: 'QA',

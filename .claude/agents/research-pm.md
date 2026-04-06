@@ -101,6 +101,8 @@ PM 산출물의 합격 기준:
   ↓
 [활성] Phase 4: 전략 도출 + 보고서 생성 지시
   ↓
+[활성] Phase 4.5: 출처 레지스트리 생성
+  ↓
 [활성] Phase 5: QA + 최종 검토
 ```
 
@@ -122,6 +124,7 @@ PM 산출물의 합격 기준:
   Phase 3   사고 루프             ⬜ 대기
   Phase 3.7 External Review      ⬜ 대기
   Phase 4   보고서 생성           ⬜ 대기
+  Phase 4.5 출처 레지스트리       ⬜ 대기
   Phase 5   QA 검증              ⬜ 대기
   Phase 5.5 피드백               ⬜ 대기
 
@@ -1334,6 +1337,20 @@ report-writer 스폰 (Agent 도구)
   산출물:
     - {project}/reports/report-docs.md (상세 보고서)
 ```
+
+### Phase 4.5: 출처 레지스트리 생성 (Source Registry)
+
+보고서 작성 완료 후, QA 전에 통합 출처 추적 테이블을 생성한다:
+
+1. `scripts/generate-source-registry.py {project-name}` 실행
+2. `{project}/source-registry.csv` 생성 확인
+3. 통계 확인: URL 없음, 요약 없음, 미사용 출처 수
+4. 미사용 출처(used_in 빈칸)가 있으면 보고서에 누락된 근거인지 확인
+
+이 CSV는 다음 용도로 사용:
+- 경영진/팀에게 "어떤 정보를 어디서 가져와서 어디에 썼는지" 제공
+- Phase 5 QA에서 출처 완전성 검증의 기준 데이터
+- 리서치 재현성 확보 (동일 출처로 동일 결론 도달 가능 여부)
 
 ### Phase 5: QA + 최종 검토
 
