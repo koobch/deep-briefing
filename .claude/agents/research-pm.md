@@ -373,6 +373,7 @@ Interactive/Team 모드: PM이 각 Phase 전환 시점에 능동적으로 확인
   13. 성공 기준은 무엇인가? (매출 목표, 시장 점유율, MAU 등)
   14. 리서치 결과에 따라 "안 한다"도 옵션인가?
   15. 보고서 톤/형식 선호가 있는가?
+  16. 보고서 형식: 세로형 보고서만 / 슬라이드만 / 둘 다? (기본: 세로형만. 슬라이드 선택 시 발표 시간도 확인)
 
 Quick 모드: 그룹 0 Quick(Q0-1~3, C1~C3) + 그룹 1 + 그룹 2 + 그룹 4 일부(13, 15번만) = ~14개 질문
 Deep 모드: 전체 5개 그룹 = 18~22개 질문
@@ -1188,42 +1189,32 @@ Step 4: cross-domain-synthesizer 스폰 (Agent 도구)
 
 ### Phase 3: 사고 루프 (Thinking Loop)
 
-순서 고정: logic-prober → strategic-challenger → red-team → insight-synthesizer
+순서: [LP + SC 병렬] → RT → IS (3단계)
 
 ```
-Step 1: logic-prober 스폰 (Agent 도구)
-  입력: cross-domain-synthesis + strategic_impact: high Claim
-  수행: 재귀적 Why Chain (수직 검증)
-  출력: {project}/thinking-loop/why-probe.md
+Step 1: logic-prober + strategic-challenger 병렬 스폰 (Agent 도구 × 2, 단일 메시지)
+  ※ 두 에이전트의 입력이 동일 (cross-domain-synthesis + Division 출력)하므로 병렬 실행 가능
 
-  ★ Interactive/Team: Step 1 완료 후 사용자에게 공유
-    "논리 검증(Why Chain) 결과입니다:
-     - 발견된 논리 단절: {N}건 (critical {N}, major {N})
-     - 주요 단절: '{단절 요약}'
-     이 부분에 대해 아시는 정보가 있으신가요?
+  ┌─ logic-prober ─────────────────────────┬─ strategic-challenger ──────────────────┐
+  │ 입력: cross-domain-synthesis +          │ 입력: cross-domain-synthesis +           │
+  │       strategic_impact: high Claim      │       Division 출력                      │
+  │ 수행: 재귀적 Why Chain (수직 검증)       │ 수행: 5-레인 도전                        │
+  │ 출력: thinking-loop/why-probe.md        │   레인 1: 대안 전략 생성 (최소 2개)       │
+  │                                        │   레인 2: 실패 시뮬레이션                 │
+  │                                        │   레인 3: 경쟁자 대응                     │
+  │                                        │   레인 4: 비대칭 사고                     │
+  │                                        │   레인 5: 포트폴리오 자기모순 (EP-027)    │
+  │                                        │ 출력: thinking-loop/strategic-challenge.md│
+  └────────────────────────────────────────┴─────────────────────────────────────────┘
+
+  ★ Interactive/Team: Step 1 양쪽 완료 후 사용자에게 공유
+    "논리 검증 + 전략 도전 결과입니다:
+     - 논리 단절: {N}건 / 대안 전략: {N}개 / 실패 시나리오: {N}건
+     - 주요 발견: '{요약}'
      보강할 근거나 다른 관점이 있으면 공유해주세요."
-    → 사용자 피드백이 있으면 strategic-challenger에 추가 컨텍스트로 전달
-
-Step 2: strategic-challenger 스폰 (Agent 도구)
-  입력: cross-domain-synthesis + why-probe 결과
-  수행: 5-레인 도전
-    레인 1: 대안 전략 생성 (최소 2개)
-    레인 2: 실패 시뮬레이션
-    레인 3: 경쟁자 대응
-    레인 4: 비대칭 사고
-    레인 5: 포트폴리오 자기모순 탐지 (EP-027)
-  출력: {project}/thinking-loop/strategic-challenge.md
-
-  ★ Interactive/Team: Step 2 완료 후 사용자에게 공유
-    "전략 도전(5-레인) 결과입니다:
-     - 대안 전략 {N}개 제시
-     - 실패 시나리오 {N}건
-     - 주요 도전: '{도전 요약}'
-     이 대안들에 대해 어떻게 보시나요?
-     본인의 경험에서 더 현실적인 대안이 있다면 알려주세요."
     → 사용자 피드백이 있으면 red-team에 추가 컨텍스트로 전달
 
-Step 2.5: red-team 스폰 (Agent 도구) — Devil's Advocate
+Step 2: red-team 스폰 (Agent 도구) — Devil's Advocate (Step 1 양쪽 완료 후)
   ※ 조건부 실행:
     if mode == "interactive" OR mode == "team":
       → 스폰 (기본 활성)
@@ -1321,7 +1312,7 @@ Step 3: 외부 모델 리뷰 (선택적)
 > **Phase 4 진입 조건**: loop-convergence.md(converged: true) + strategy-articulations.md 존재 + self-critique.md 존재
 > Auto 모드 예외: 약점 체크리스트 FLAG 0~1건이면 self-critique.md 면제
 
-### Phase 4: 전략 도출 + 보고서 생성
+### Phase 4-A: 세로형 보고서 생성
 
 전략 도출은 Phase 3(사고 루프)의 insight-synthesizer가 `loop-convergence.md`에서 수행.
 PM은 수렴 판정 후, report-writer에게 전략 + 보고서 생성을 일괄 지시한다.
@@ -1336,6 +1327,33 @@ report-writer 스폰 (Agent 도구)
     - Client Brief (톤, 형식 선호, 발표 시간)
   산출물:
     - {project}/reports/report-docs.md (상세 보고서)
+```
+
+### Phase 4-B: 슬라이드 덱 생성 (선택적)
+
+Client Brief에서 슬라이드 형식이 요청된 경우에만 실행한다.
+report-docs.md를 입력으로 core/style/ 슬라이드 시스템을 적용하여 프레젠테이션 슬라이드를 생성한다.
+
+```
+활성화 조건:
+  - Client Brief의 보고서 형식에 "슬라이드" 또는 "둘 다" 선택된 경우
+  - report-docs.md 존재 (Phase 4-A 완료)
+
+slide-writer 스폰 (Agent 도구)
+  입력:
+    - {project}/reports/report-docs.md (세로형 보고서)
+    - {project}/findings/golden-facts.yaml (수치 SSOT)
+    - {project}/00-client-brief.md (발표 시간, 형식 선호)
+    - core/style/section-map.md (22개 슬라이드 유형)
+    - core/style/slide-system.css (스타일 시스템)
+    - core/style/design-guide.md (디자인 규칙)
+  산출물:
+    - {project}/reports/slides/slide-deck.html (슬라이드 덱)
+    - {project}/reports/slides/slide-outline.yaml (구성 메타데이터)
+
+Phase 4-B 미실행 시:
+  - Client Brief에 슬라이드 미요청 → 건너뛰고 Phase 4.5로 진행
+  - 사용자가 나중에 요청하면 Phase 5.5 피드백에서 추가 실행 가능
 ```
 
 ### Phase 4.5: 출처 레지스트리 생성 (Source Registry)

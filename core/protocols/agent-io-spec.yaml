@@ -1,0 +1,326 @@
+# agent-io-spec.yaml — 에이전트 간 I/O 인터페이스 명세
+#
+# 모든 에이전트는 이 파일의 스키마를 준수하여 입출력한다.
+# 프롬프트 자연어가 아닌 구조화된 계약으로 통신 규약을 강제한다.
+
+---
+
+# ============================================================
+# 1. Division Brief 스키마 (PM → Lead)
+# ============================================================
+# PM이 Phase 1 시작 전 각 Division에 전달하는 지시서
+# 경로: {project}/division-briefs/{division}.md
+
+division_brief:
+  required_fields:
+    - field: division
+      type: string
+      description: "Division 이름 (market, product, capability, finance, people-org, operations, regulatory)"
+
+    - field: decision_questions
+      type: list
+      description: "이 Division이 답해야 할 핵심 질문 (DQ). 최소 1개"
+      example: "한국 게임 시장에서 AI NPC 기술의 시장 규모와 성장 전망은?"
+
+    - field: hypotheses
+      type: list
+      description: "Phase 0.5에서 도출된 가설 중 이 Division 관련 항목. 검증/반증 대상"
+      example: "H-01: AI NPC 시장은 2027년까지 연 25% 성장할 것이다"
+
+    - field: data_gaps
+      type: list
+      description: "Phase 0.5 Quick Scan에서 식별된 데이터 갭. 우선 해소 대상"
+      example: "한국 AI NPC 시장 규모 공식 통계 부재"
+
+    - field: active_leaves
+      type: list
+      description: "스폰할 Leaf 에이전트 ID 목록. Research Plan에서 결정"
+      example: "[market-sizing, competitive-landscape, customer-analysis]"
+
+    - field: scope_boundaries
+      type: string
+      description: "분석 범위의 명시적 경계 (포함/제외)"
+
+  optional_fields:
+    - field: benchmarks_enabled
+      type: boolean
+      description: "벤치마크/피어 비교 분석 활성화 여부"
+
+    - field: primary_data_gaps
+      type: list
+      description: "1차 데이터 수집이 필요한 항목"
+
+    - field: special_instructions
+      type: string
+      description: "Division 특화 추가 지시 (EP 패턴, 제외 방향 등)"
+
+# ============================================================
+# 2. Lead ↔ Leaf 통신 계약
+# ============================================================
+
+lead_to_leaf:
+  # Lead가 Leaf 스폰 시 전달해야 하는 필수 컨텍스트
+  required_context:
+    - item: client_brief_summary
+      description: "Client Brief에서 이 Leaf 관련 부분 요약 (전문 불필요)"
+
+    - item: division_brief_excerpt
+      description: "Division Brief의 해당 Leaf 관련 DQ + 가설 + 데이터갭"
+
+    - item: analysis_scope
+      description: "이 Leaf의 분석 범위 (Leaf md의 MECE 구조 참조)"
+
+    - item: data_sources
+      description: "사용 가능한 데이터 소스 목록 (domains/{domain}/data-sources.md 참조)"
+
+    - item: domain_knowledge
+      description: "도메인 축적 지식 중 이 Leaf 관련 항목 (learned-*.yaml)"
+
+  # Leaf가 Lead에 반환해야 하는 필수 출력
+  leaf_output_contract:
+    format: "core/protocols/output-format.md 4-Layer 표준"
+    required_sections:
+      - section: claims
+        description: "Layer 0 — 결론 목록 (ID, claim, confidence, strategic_impact)"
+        min_count: 1
+
+      - section: evidence
+        description: "Layer 1 — 각 Claim의 근거 + 반증"
+        rule: "모든 claim_id에 대해 1개 이상 evidence 필수"
+
+      - section: source_index
+        description: "Layer 3 — 원본 소스 목록 (ID, type, name, url, reliability)"
+        min_count: 1
+
+      - section: cross_domain_tags
+        description: "다른 Division에 영향을 미치는 발견 태깅"
+        rule: "선택적이나 발견 시 반드시 기록"
+
+    file_path: "findings/{division}/{leaf-id}.yaml"
+
+# ============================================================
+# 3. .done 스키마 (Lead → PM)
+# ============================================================
+# Division의 Phase 완료를 PM에 알리는 시그널 파일
+
+done_signal:
+  file_path: "findings/{division}/.done"
+  required_fields:
+    - field: division
+      type: string
+
+    - field: phase
+      type: string
+      description: "완료된 Phase (1, 2, '2-in-progress')"
+      values: ["1", "2", "2-in-progress"]
+
+    - field: completed_at
+      type: datetime
+      format: "YYYY-MM-DDTHH:MM:SS"
+
+    - field: status
+      type: string
+      values: ["success", "partial", "error"]
+
+    - field: output_files
+      type: list
+      description: "이 Phase에서 생성/갱신된 파일 경로 목록"
+
+    - field: summary
+      type: string
+      description: "Division 핵심 발견 1문장"
+
+    - field: confidence_summary
+      type: object
+      description: "Claim별 confidence 분포 {high: N, medium: N, low: N, unverified: N}"
+
+    - field: leaf_count
+      type: integer
+      description: "실제 스폰된 Leaf 수"
+
+# ============================================================
+# 4. .progress 스키마 (Lead 내부, 부분 완료 추적)
+# ============================================================
+
+progress_tracking:
+  file_path: "findings/{division}/.progress"
+  required_fields:
+    - field: division
+      type: string
+
+    - field: phase
+      type: integer
+      description: "현재 활성 Phase (1 또는 2)"
+
+    - field: updated_at
+      type: datetime
+
+    - field: leaves_completed
+      type: list
+      item_fields: [agent, file, completed_at]
+
+    - field: leaves_pending
+      type: list
+      item_fields: [agent, reason]
+      description: "미완료 Leaf 목록. 재투입 시 이 목록만 스폰"
+
+    - field: synthesis_status
+      type: string
+      values: ["pending", "in-progress", "completed"]
+
+  phase_transition_rules:
+    - "Phase 2 시작 시: send-phase2.sh가 .progress를 Phase 2용으로 리셋"
+    - "Phase 1 이력은 .progress.phase1-backup에 백업"
+    - "재투입 시 phase 필드가 현재 Phase와 일치하는지 먼저 확인"
+
+# ============================================================
+# 5. .status 스키마 (Lead → 모니터, 실시간 상태)
+# ============================================================
+
+status_tracking:
+  file_path: "findings/{division}/.status"
+  required_fields:
+    - field: division
+      type: string
+
+    - field: phase
+      type: integer
+
+    - field: status
+      type: string
+      values: ["running", "completed", "error"]
+
+    - field: updated_at
+      type: datetime
+
+    - field: current_leaf
+      type: string
+      description: "현재 실행 중인 Leaf ID"
+
+    - field: leaves_done
+      type: integer
+
+    - field: leaves_total
+      type: integer
+
+    - field: last_event
+      type: string
+      description: "최근 이벤트 설명 (사람 읽기용)"
+
+  monitoring_rules:
+    - "spawn-leads.sh 모니터가 updated_at 30분 무변경 시 stuck 경고"
+    - ".status 미존재 시 .done만 확인 (하위 호환)"
+
+# ============================================================
+# 6. Cross-cutting 에이전트 입출력 매트릭스
+# ============================================================
+
+cross_cutting_io:
+  # 각 에이전트가 읽는 파일 / 쓰는 파일의 명시적 매트릭스
+  agents:
+    fact-verifier:
+      reads:
+        - "findings/{division}/division-synthesis.yaml (모든 활성 Division)"
+        - "findings/golden-facts.yaml (기존 SSOT)"
+      writes:
+        - "findings/golden-facts.yaml (SSOT 갱신 — 유일한 쓰기 권한)"
+        - "qa/fact-verification-report.yaml"
+      trigger: "Phase 0.5, Sync Round 1/2"
+
+    logic-prober:
+      reads:
+        - "sync/cross-domain-synthesis.md"
+        - "findings/{division}/division-synthesis.yaml (주요 Claim)"
+      writes:
+        - "thinking-loop/why-probe.md"
+      trigger: "Phase 3 Step 1 (SC와 병렬 실행)"
+
+    strategic-challenger:
+      reads:
+        - "sync/cross-domain-synthesis.md"
+        - "findings/{division}/division-synthesis.yaml"
+      writes:
+        - "thinking-loop/strategic-challenge.md"
+      trigger: "Phase 3 Step 1 (LP와 병렬 실행)"
+
+    red-team:
+      reads:
+        - "thinking-loop/strategic-challenge.md (SC 결과 참조 — Step 1 완료 후)"
+        - "sync/cross-domain-synthesis.md"
+        - "findings/golden-facts.yaml"
+      writes:
+        - "thinking-loop/red-team-report.md"
+      trigger: "Phase 3 Step 2 (LP+SC 양쪽 완료 후)"
+
+    insight-synthesizer:
+      reads:
+        - "thinking-loop/why-probe.md"
+        - "thinking-loop/strategic-challenge.md"
+        - "thinking-loop/red-team-report.md"
+        - "sync/cross-domain-synthesis.md"
+      writes:
+        - "thinking-loop/loop-convergence.md"
+        - "thinking-loop/strategy-articulations.md"
+      trigger: "Phase 3 Step 3 (LP+SC+RT 모두 완료 후)"
+
+    external-reviewer:
+      reads:
+        - "thinking-loop/loop-convergence.md"
+        - "thinking-loop/strategy-articulations.md"
+        - "sync/cross-domain-synthesis.md"
+      writes:
+        - "thinking-loop/self-critique.md"
+        - "thinking-loop/external-review.md"
+      trigger: "Phase 3.7"
+
+    cross-domain-synthesizer:
+      reads:
+        - "findings/{division}/division-synthesis.yaml (모든 활성 Division)"
+      writes:
+        - "sync/cross-domain-synthesis.md"
+        - "sync/cross-domain-synthesis.yaml"
+      trigger: "Sync Round 2"
+
+    report-writer:
+      reads:
+        - "sync/cross-domain-synthesis.md"
+        - "thinking-loop/loop-convergence.md"
+        - "thinking-loop/strategy-articulations.md"
+        - "thinking-loop/self-critique.md"
+        - "thinking-loop/external-review.md (선택)"
+        - "findings/golden-facts.yaml"
+        - "00-client-brief.md"
+      writes:
+        - "reports/report-docs.md"
+      trigger: "Phase 4-A"
+
+    slide-writer:
+      reads:
+        - "reports/report-docs.md"
+        - "findings/golden-facts.yaml"
+        - "00-client-brief.md"
+        - "core/style/section-map.md"
+        - "core/style/slide-system.css"
+        - "core/style/design-guide.md"
+      writes:
+        - "reports/slides/slide-deck.html"
+        - "reports/slides/slide-outline.yaml"
+      trigger: "Phase 4-B (선택적)"
+
+    qa-orchestrator:
+      reads:
+        - "reports/report-docs.md"
+        - "findings/golden-facts.yaml"
+        - "reports/slides/ (존재 시)"
+      writes:
+        - "qa/qa-report.yaml"
+        - "qa/fact-verification.yaml"
+      trigger: "Phase 5"
+
+    data-preprocessor:
+      reads:
+        - "data/user-provided/ (사용자 제공 원본)"
+      writes:
+        - "data/processed/{division}/"
+        - "00.5-data-quality-report.md"
+      trigger: "Phase 0-C"
