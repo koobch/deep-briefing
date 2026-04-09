@@ -52,9 +52,11 @@ model: opus
    c. `.claude/agents/leaves/finance/{leaf-id}.md` (범용 Leaf 역할 정의 + 내부 MECE 분석 구조)
    d. 정의 파일 없음 → Agent 도구 prompt에 역할을 직접 기술하여 동적 스폰
       (상세: `core/templates/division-lead-template.md` "동적 스폰" 참조)
-3. 전체 워크플로우 실행:
-   - Leaf 4명 스폰 (revenue-growth, cost-efficiency, investment-returns, valuation-risk)
-   - 출력 수집 → 반려 체크 → 아래 VL-1.5/VL-2 체크리스트 실행 → 모순 해소 → 교차 합성
+3. 전체 워크플로우 실행 (2-Wave 의존성 순서):
+   - **Wave 1** (병렬 스폰): revenue-growth, cost-efficiency, investment-returns
+   - **Wave 2** (Wave 1 완료 후): valuation-risk — 이 Leaf는 Wave 1의 3개 Leaf 출력을 통합하므로 반드시 Wave 1 전체 완료 후 스폰
+   - Wave 1 완료 확인: 3개 Leaf의 출력 YAML이 모두 findings/finance/에 존재하는지 확인
+   - Wave 2 완료 후: 전체 출력 수집 → 반려 체크 → 아래 VL-1.5/VL-2 체크리스트 실행 → 모순 해소 → 교차 합성
 
    #### Leaf 개수 결정 원칙
    1. Research Plan의 agent_roster에 명시된 Leaf는 반드시 스폰

@@ -68,7 +68,7 @@ if [ -z "$AUTO_PERMISSIONS" ]; then
   echo ""
 fi
 
-SESSION="research-v2"
+SESSION="research-${PROJECT}"
 
 # --- Division 자동 감지 (division-briefs/*.md에서) ---
 BRIEFS_DIR="${REPO_DIR}/${PROJECT}/division-briefs"
@@ -175,7 +175,7 @@ FIRST_AGENT="${AGENTS[0]}"
 FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${REPO_DIR}/${PROJECT}/division-briefs/${FIRST_DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${FIRST_DIV}/ 에만 저장하라.'"
 
 # pane ID를 명시적으로 캡처하여 매핑 (밀림 원천 차단)
-PANE_MAP_FILE="/tmp/research-v2-pane-map.txt"
+PANE_MAP_FILE="/tmp/research-${PROJECT}-pane-map.txt"
 > "$PANE_MAP_FILE"
 
 tmux new-session -d -s "$SESSION" -n "leads" -c "$REPO_DIR"
@@ -252,7 +252,7 @@ HEALTH_CHECK_INTERVAL=60  # 1분마다 pane 상태 확인
 LAST_HEALTH_CHECK=0
 
 # pane 매핑 파일
-PANE_MAP="/tmp/research-v2-pane-map.txt"
+PANE_MAP="/tmp/research-${PROJECT}-pane-map.txt"
 
 while [ "$COMPLETED" -lt "$TOTAL" ]; do
   COMPLETED=0
@@ -278,12 +278,26 @@ while [ "$COMPLETED" -lt "$TOTAL" ]; do
       exit 1
     fi
 
-    # pane 생존 확인 (1분마다)
+    # pane 생존 + .status stuck 확인 (1분마다)
     if [ -f "$PANE_MAP" ] && [ $((ELAPSED - LAST_HEALTH_CHECK)) -ge "$HEALTH_CHECK_INTERVAL" ]; then
       LAST_HEALTH_CHECK=$ELAPSED
       for div in "${STALLED_DIVS[@]}"; do
         PANE_ID=$(grep "^${div}=" "$PANE_MAP" 2>/dev/null | cut -d= -f2)
         if [ -n "$PANE_ID" ]; then
+          # .status 기반 stuck 감지 (pane 살아있어도 30분 무변경이면 경고)
+          STATUS_FILE="${PROJECT_DIR}/findings/${div}/.status"
+          if [ -f "$STATUS_FILE" ]; then
+            STATUS_MTIME=$(stat -f %m "$STATUS_FILE" 2>/dev/null || stat -c %Y "$STATUS_FILE" 2>/dev/null || echo 0)
+            NOW_TS=$(date +%s)
+            STALE_SECS=$((NOW_TS - STATUS_MTIME))
+            if [ "$STALE_SECS" -gt 1800 ]; then
+              echo "⚠️ [${div}] .status 파일 ${STALE_SECS}초 무변경 — stuck 의심"
+              if command -v osascript &>/dev/null; then
+                osascript -e "display notification \"${div} stuck 의심 (${STALE_SECS}초 무변경)\" with title \"Deep-Briefing ⚠️\" sound name \"Basso\"" 2>/dev/null
+              fi
+            fi
+          fi
+
           # pane이 존재하는지 확인
           if ! tmux list-panes -t "$SESSION_NAME" -F '#{pane_id}' 2>/dev/null | grep -Fxq "$PANE_ID"; then
             echo "⚠️ [${div}] pane ${PANE_ID} 사망 감지 (경과: ${ELAPSED}초)"
@@ -296,7 +310,7 @@ while [ "$COMPLETED" -lt "$TOTAL" ]; do
               echo "detected_at: $(date -u +%Y-%m-%dT%H:%M:%S)" >> "${PROJECT_DIR}/findings/${div}/.crash"
 
               # 자동 재스폰 시도 (1회)
-              CRASH_COUNT_FILE="/tmp/research-v2-crash-${div}"
+              CRASH_COUNT_FILE="/tmp/research-${PROJECT}-crash-${div}"
               CRASH_COUNT=0
               if [ -f "$CRASH_COUNT_FILE" ]; then
                 CRASH_COUNT=$(cat "$CRASH_COUNT_FILE")
@@ -306,7 +320,7 @@ while [ "$COMPLETED" -lt "$TOTAL" ]; do
                 echo "🔄 ${div} 자동 재스폰 시도 (1/1)..."
                 echo $((CRASH_COUNT + 1)) > "$CRASH_COUNT_FILE"
                 # 실제 재스폰: 새 tmux pane 생성 + Division Lead CLI 재실행
-                NEW_PANE=$(tmux split-window -t "$SESSION" -v -P -F '#{pane_id}' "claude --agent-file .claude/agents/${div}-lead.md --project-dir ${PROJECT_DIR}" 2>/dev/null)
+                NEW_PANE=$(tmux split-window -t "$SESSION" -v -P -F '#{pane_id}' "claude ${AUTO_PERMISSIONS} --agent ${div}-lead '${PROJECT_DIR}/findings/${div}/.progress를 읽고 미완료 Leaf만 재실행하라.'" 2>/dev/null)
                 if [ -n "$NEW_PANE" ]; then
                   tmux select-layout -t "$SESSION" tiled 2>/dev/null
                   # pane 매핑 갱신
@@ -348,9 +362,9 @@ fi
 MONITOR_EOF
 )
 
-echo "$MONITOR_SCRIPT" > "/tmp/research-v2-monitor.sh"
-chmod +x "/tmp/research-v2-monitor.sh"
-bash "/tmp/research-v2-monitor.sh" "${REPO_DIR}/${PROJECT}" "$SESSION" "$DIVISION_LIST" &
+echo "$MONITOR_SCRIPT" > "/tmp/research-${PROJECT}-monitor.sh"
+chmod +x "/tmp/research-${PROJECT}-monitor.sh"
+bash "/tmp/research-${PROJECT}-monitor.sh" "${REPO_DIR}/${PROJECT}" "$SESSION" "$DIVISION_LIST" &
 MONITOR_PID=$!
 echo "완료 감지 모니터 시작 (PID: ${MONITOR_PID})"
 echo "  ${NUM_DIVISIONS}개 Division .done 파일이 모두 생성되면 알림이 표시됩니다."

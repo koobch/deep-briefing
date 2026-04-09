@@ -10,16 +10,6 @@
 
 set -euo pipefail
 
-SESSION="research-v2"
-WINDOW="${SESSION}:leads"
-
-# --- tmux 세션 확인 ---
-if ! tmux has-session -t "$SESSION" 2>/dev/null; then
-  echo "오류: tmux 세션 '${SESSION}'이 없습니다."
-  echo "  먼저 spawn-leads.sh를 실행하세요."
-  exit 1
-fi
-
 # --- 인자 파싱 ---
 PROJECT=""
 TARGET_DIV=""
@@ -55,11 +45,21 @@ if [[ -z "$PROJECT" ]]; then
   exit 1
 fi
 
+SESSION="research-${PROJECT}"
+WINDOW="${SESSION}:leads"
+
+# --- tmux 세션 확인 ---
+if ! tmux has-session -t "$SESSION" 2>/dev/null; then
+  echo "오류: tmux 세션 '${SESSION}'이 없습니다."
+  echo "  먼저 spawn-leads.sh를 실행하세요."
+  exit 1
+fi
+
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 # --- pane 매핑 파일에서 Division-pane 매핑 로드 ---
-PANE_MAP="/tmp/research-v2-pane-map.txt"
+PANE_MAP="/tmp/research-${PROJECT}-pane-map.txt"
 if [[ ! -f "$PANE_MAP" ]]; then
   echo "오류: pane 매핑 파일이 없습니다 (${PANE_MAP})"
   echo "  spawn-leads.sh가 정상 실행되었는지 확인하세요."

@@ -90,10 +90,10 @@ generate_instruction() {
 }
 
 # --- tmux 세션 생성 ---
-SESSION="research-v2-p${PHASE}"
+SESSION="research-${PROJECT}-p${PHASE}"
 tmux kill-session -t "$SESSION" 2>/dev/null || true
 
-PANE_MAP_FILE="/tmp/research-v2-pane-map-p${PHASE}.txt"
+PANE_MAP_FILE="/tmp/research-${PROJECT}-pane-map-p${PHASE}.txt"
 > "$PANE_MAP_FILE"
 
 # 첫 Division
@@ -144,7 +144,7 @@ fi
 DIVISION_LIST=$(IFS=,; echo "${DIVISIONS[*]}")
 
 (
-  ERROR_LOG="/tmp/research-v2-error-p${PHASE}.log"
+  ERROR_LOG="/tmp/research-${PROJECT}-error-p${PHASE}.log"
   > "$ERROR_LOG"
   POLL_COUNT=0
   MAX_POLLS=180  # 30분 (10초 × 180)

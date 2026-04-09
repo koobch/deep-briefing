@@ -528,6 +528,33 @@ PM이 사용자에게 가설 목록을 제시:
 3. Division 완료 대기
 ```
 
+### .status 파일 (실시간 진행 상태 — Lead 필수 갱신)
+
+Lead는 Leaf 시작/완료마다 `findings/{division}/.status`를 갱신한다.
+PM의 spawn-leads.sh 모니터가 이 파일의 `updated_at`을 확인하여 stuck 상태를 감지한다.
+
+```yaml
+# findings/{division}/.status
+division: {division}
+phase: 1                              # 현재 Phase
+status: running                       # running | completed | error
+updated_at: YYYY-MM-DDTHH:MM:SS      # 마지막 갱신 시각
+current_leaf: market-sizing           # 현재 실행 중인 Leaf (없으면 synthesis 등)
+leaves_done: 2                        # 완료된 Leaf 수
+leaves_total: 5                       # 전체 Leaf 수
+last_event: "market-sizing 완료"      # 최근 이벤트 (사람 읽기용)
+```
+
+**갱신 규칙:**
+- Leaf 스폰 시: `current_leaf` 갱신, `status: running`
+- Leaf 완료 시: `leaves_done` 증가, `current_leaf`을 다음 Leaf로 갱신
+- 전체 완료 시: `status: completed`
+- 에러 발생 시: `status: error`, `last_event`에 에러 요약
+
+**stuck 감지 (spawn-leads.sh 모니터):**
+- `.status`의 `updated_at`이 30분 이상 무변경 → stuck 의심 경고 발송
+- `.status`가 없으면 `.done`만 확인 (하위 호환)
+
 ### Division Lead의 역할
 
 ```
@@ -558,15 +585,20 @@ PM이 사용자에게 가설 목록을 제시:
 5. 완료 → 상위 에이전트(Lead)에 반환
 ```
 
-### .progress 파일 (부분 완료 추적)
+### .progress 파일 (부분 완료 추적 — Phase 1/2 공용)
 
 Lead가 각 Leaf 완료 시 `findings/{division}/.progress`를 갱신한다.
 토큰 제한/세션 중단 시 재투입하면 이 파일을 읽어 완료된 Leaf를 건너뛴다.
 
+**Phase 전환 규칙:**
+- Phase 2 시작 시 `send-phase2.sh`가 `.progress`를 Phase 2용으로 리셋 (Phase 1 이력은 `.progress.phase1-backup`에 백업)
+- `phase` 필드는 현재 활성 Phase를 나타냄 (1 또는 2)
+- Lead는 재투입 시 `phase` 필드를 확인하여 현재 Phase에 맞는 Leaf만 건너뜀
+
 ```yaml
 # findings/{division}/.progress
 division: {division}
-phase: 1
+phase: 2              # 1 또는 2 — 현재 활성 Phase
 updated_at: YYYY-MM-DDTHH:MM:SS
 
 leaves_completed:
@@ -584,13 +616,35 @@ leaves_pending:
 synthesis_status: pending  # pending | in-progress | completed
 ```
 
+### .done 파일 Phase 전환 관리
+
+`.done` 파일의 `phase` 필드로 PM이 각 Division의 Phase 완료 상태를 판단한다.
+
+```yaml
+# findings/{division}/.done — Phase 상태 추적
+division: {division}
+phase: 2                   # 완료된 Phase 번호 (1 또는 2)
+                           # Phase 2 시작 시: "2-in-progress"
+                           # Phase 2 완료 시: 2
+completed_at: YYYY-MM-DDTHH:MM:SS
+```
+
+**Phase 전환 시나리오:**
+- Phase 1 완료: `.done`에 `phase: 1` 기록
+- Phase 2 시작: `send-phase2.sh`가 미완료 Division의 `.done`을 `phase: 2-in-progress`로 갱신
+- Phase 2 완료: Lead가 `.done`을 `phase: 2`로 갱신
+- Phase 2 재실행: `send-phase2.sh`가 `phase: 2` Division은 건너뛰고, 나머지만 재스폰
+
 **Lead 재투입 프로토콜:**
 ```
 1. .progress 파일 존재 확인
-2. leaves_completed 목록의 파일이 실제 존재하는지 검증
-3. leaves_pending만 Agent 도구로 스폰
-4. 모든 Leaf 완료 → synthesis 실행 → .done 작성
-5. .progress 파일은 .done 작성 후에도 유지 (이력용)
+2. .progress의 phase 필드가 현재 Phase와 일치하는지 확인
+   - 불일치: 이전 Phase 이력 → 처음부터 실행
+   - 일치: 부분 완료 상태 → 아래 3번으로
+3. leaves_completed 목록의 파일이 실제 존재하는지 검증
+4. leaves_pending만 Agent 도구로 스폰
+5. 모든 Leaf 완료 → synthesis 실행 → .done 작성 (phase: {현재 Phase})
+6. .progress 파일은 .done 작성 후에도 유지 (이력용)
 ```
 
 ## Sync Round 1

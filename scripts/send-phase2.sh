@@ -5,7 +5,7 @@
 #   ./scripts/send-phase2.sh <project-name> [--auto]
 #
 # 동작:
-#   1. 기존 research-v2 tmux 세션을 정리 (Phase 1 완료 후 idle 상태)
+#   1. 기존 research-${PROJECT} tmux 세션을 정리 (Phase 1 완료 후 idle 상태)
 #   2. 새 tmux 세션 생성 + Division별 깨끗한 claude 프로세스 스폰
 #   3. Division은 division-briefs/*.md에서 자동 감지 (spawn-leads.sh와 동일)
 #
@@ -32,7 +32,7 @@ for arg in "$@"; do
   esac
 done
 
-SESSION="research-v2-p2"
+SESSION="research-${PROJECT}-p2"
 
 # --- Division 자동 감지 ---
 BRIEFS_DIR="${REPO_DIR}/${PROJECT}/division-briefs"
@@ -76,29 +76,93 @@ if [ ! -f "${REPO_DIR}/${PROJECT}/sync/round-1-briefing.md" ]; then
   echo "  ⚠ sync/round-1-briefing.md 없음"
 fi
 
-# --- 기존 세션 정리 ---
-tmux kill-session -t "research-v2" 2>/dev/null && echo "기존 research-v2 세션 정리" || true
-tmux kill-session -t "$SESSION" 2>/dev/null || true
+# --- Phase 2 완료/미완료 Division 분류 ---
+INCOMPLETE_DIVS=()
+INCOMPLETE_AGENTS=()
+COMPLETED_DIVS=()
+
+for ((i=0; i<NUM_DIVISIONS; i++)); do
+  div="${DIVISIONS[$i]}"
+  agent="${AGENTS[$i]}"
+  DONE_FILE="${REPO_DIR}/${PROJECT}/findings/${div}/.done"
+  if grep -q "phase: 2" "$DONE_FILE" 2>/dev/null; then
+    COMPLETED_DIVS+=("$div")
+    echo "  ✅ ${div} — Phase 2 이미 완료 (건너뜀)"
+  else
+    INCOMPLETE_DIVS+=("$div")
+    INCOMPLETE_AGENTS+=("${agent}")
+  fi
+done
+
+NUM_INCOMPLETE=${#INCOMPLETE_DIVS[@]}
+
+if [ "$NUM_INCOMPLETE" -eq 0 ]; then
+  echo ""
+  echo "✅ 모든 Division이 Phase 2를 완료했습니다."
+  echo "PM CLI에서 Sync Round 2를 시작하세요."
+  exit 0
+fi
 
 echo ""
-echo "=== Phase 2 새 tmux 세션 생성 ==="
+echo "Phase 2 미완료: ${NUM_INCOMPLETE}개 — ${INCOMPLETE_DIVS[*]}"
+if [ ${#COMPLETED_DIVS[@]} -gt 0 ]; then
+  echo "Phase 2 완료 (건너뜀): ${#COMPLETED_DIVS[@]}개 — ${COMPLETED_DIVS[*]}"
+fi
 
-# --- 새 세션 + N-pane: spawn-leads.sh와 동일한 방식 ---
-# 첫 번째 Division
-FIRST_DIV="${DIVISIONS[0]}"
-FIRST_AGENT="${AGENTS[0]}"
-FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${PROJECT}/sync/round-1-briefing.md와 ${PROJECT}/sync/phase2-${FIRST_DIV}.md를 읽고 Phase 2 심화 리서치를 수행하라. 결과를 ${PROJECT}/findings/${FIRST_DIV}/에 업데이트하고 .done 파일의 phase를 2로 갱신하라.'"
+# --- .done 파일 Phase 전환: 미완료 Division만 phase: 2-in-progress로 갱신 ---
+for div in "${INCOMPLETE_DIVS[@]}"; do
+  DONE_FILE="${REPO_DIR}/${PROJECT}/findings/${div}/.done"
+  FINDINGS_DIR="${REPO_DIR}/${PROJECT}/findings/${div}"
+  mkdir -p "$FINDINGS_DIR"
+  # .done이 존재하면 phase를 2-in-progress로 갱신, 없으면 신규 생성
+  cat > "$DONE_FILE" << DONE_EOF
+division: ${div}
+phase: 2-in-progress
+started_at: $(date -u +%Y-%m-%dT%H:%M:%S)
+DONE_EOF
+  echo "  📝 ${div}/.done → phase: 2-in-progress"
+done
+
+# --- .progress 파일 Phase 2용 리셋 (미완료 Division만) ---
+for div in "${INCOMPLETE_DIVS[@]}"; do
+  PROGRESS_FILE="${REPO_DIR}/${PROJECT}/findings/${div}/.progress"
+  if [ -f "$PROGRESS_FILE" ]; then
+    # Phase 1 이력 백업 후 Phase 2용으로 리셋
+    cp "$PROGRESS_FILE" "${PROGRESS_FILE}.phase1-backup"
+  fi
+  cat > "$PROGRESS_FILE" << PROGRESS_EOF
+division: ${div}
+phase: 2
+updated_at: $(date -u +%Y-%m-%dT%H:%M:%S)
+leaves_completed: []
+leaves_in_progress: []
+synthesis_status: pending
+PROGRESS_EOF
+  echo "  📝 ${div}/.progress → Phase 2 리셋"
+done
+
+# --- 기존 세션 정리 (Phase 1 세션만. Phase 2 세션이 이미 있으면 정리 후 재생성) ---
+tmux kill-session -t "research-${PROJECT}" 2>/dev/null && echo "기존 Phase 1 세션 정리" || true
+tmux kill-session -t "$SESSION" 2>/dev/null && echo "기존 Phase 2 세션 정리 (미완료 Division 재스폰)" || true
+
+echo ""
+echo "=== Phase 2 tmux 세션 생성 (미완료 ${NUM_INCOMPLETE}개 Division) ==="
+
+# --- 새 세션 + N-pane: 미완료 Division만 스폰 ---
+FIRST_DIV="${INCOMPLETE_DIVS[0]}"
+FIRST_AGENT="${INCOMPLETE_AGENTS[0]}"
+FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${PROJECT}/sync/round-1-briefing.md와 ${PROJECT}/sync/phase2-${FIRST_DIV}.md를 읽고 Phase 2 심화 리서치를 수행하라. ${PROJECT}/findings/${FIRST_DIV}/.progress를 확인하여 완료된 Leaf는 건너뛰어라. 결과를 ${PROJECT}/findings/${FIRST_DIV}/에 업데이트하고 .done 파일의 phase를 2로 갱신하라.'"
 
 tmux new-session -d -s "$SESSION" -n "phase2" -c "$REPO_DIR"
 sleep 0.3
 tmux send-keys -t "${SESSION}:phase2" "$FIRST_CMD" Enter
 echo "  ✅ ${FIRST_AGENT} → pane 0"
 
-# 나머지 Division
-for ((i=1; i<NUM_DIVISIONS; i++)); do
-  DIV="${DIVISIONS[$i]}"
-  AGENT="${AGENTS[$i]}"
-  CMD="claude ${AUTO_PERMISSIONS} --agent ${AGENT} '${PROJECT}/sync/round-1-briefing.md와 ${PROJECT}/sync/phase2-${DIV}.md를 읽고 Phase 2 심화 리서치를 수행하라. 결과를 ${PROJECT}/findings/${DIV}/에 업데이트하고 .done 파일의 phase를 2로 갱신하라.'"
+# 나머지 미완료 Division
+for ((i=1; i<NUM_INCOMPLETE; i++)); do
+  DIV="${INCOMPLETE_DIVS[$i]}"
+  AGENT="${INCOMPLETE_AGENTS[$i]}"
+  CMD="claude ${AUTO_PERMISSIONS} --agent ${AGENT} '${PROJECT}/sync/round-1-briefing.md와 ${PROJECT}/sync/phase2-${DIV}.md를 읽고 Phase 2 심화 리서치를 수행하라. ${PROJECT}/findings/${DIV}/.progress를 확인하여 완료된 Leaf는 건너뛰어라. 결과를 ${PROJECT}/findings/${DIV}/에 업데이트하고 .done 파일의 phase를 2로 갱신하라.'"
 
   if (( i % 2 == 1 )); then
     tmux split-window -v -t "${SESSION}:phase2" -c "$REPO_DIR"
@@ -113,7 +177,7 @@ done
 tmux select-layout -t "${SESSION}:phase2" tiled
 
 echo ""
-echo "${NUM_DIVISIONS}개 Division Phase 2 실행 완료!"
+echo "${NUM_INCOMPLETE}개 Division Phase 2 실행! (${#COMPLETED_DIVS[@]}개는 이미 완료)"
 echo ""
 echo "접속: tmux attach -t ${SESSION}"
 echo "종료: tmux kill-session -t ${SESSION}"
@@ -152,7 +216,7 @@ done
 MONITOR_EOF
 )
 
-echo "$MONITOR_SCRIPT" > "/tmp/research-v2-p2-monitor.sh"
-chmod +x "/tmp/research-v2-p2-monitor.sh"
-bash "/tmp/research-v2-p2-monitor.sh" "${REPO_DIR}/${PROJECT}" "$DIVISION_LIST" &
+echo "$MONITOR_SCRIPT" > "/tmp/research-${PROJECT}-p2-monitor.sh"
+chmod +x "/tmp/research-${PROJECT}-p2-monitor.sh"
+bash "/tmp/research-${PROJECT}-p2-monitor.sh" "${REPO_DIR}/${PROJECT}" "$DIVISION_LIST" &
 echo "완료 감지 모니터 시작"

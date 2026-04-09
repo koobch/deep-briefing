@@ -939,8 +939,15 @@ def main():
     else:
         print(f"경고: report-docs.md 없음: {report_docs_path}")
 
-        all_report_numbers.extend(nums)
-    elif not args.report_only:
+    # report-only가 아니면 reports/ 디렉토리의 다른 마크다운도 추출
+    if not args.report_only:
+        reports_dir = os.path.join(project_dir, "reports")
+        if os.path.isdir(reports_dir):
+            for fname in os.listdir(reports_dir):
+                fpath = os.path.join(reports_dir, fname)
+                if fpath != report_docs_path and fname.endswith('.md'):
+                    nums = extractor.extract_from_markdown(fpath)
+                    all_report_numbers.extend(nums)
 
     if not all_report_numbers:
         print("경고: 보고서에서 수치를 추출할 수 없습니다.")
@@ -952,9 +959,9 @@ def main():
 
     # 4. Confidence-prominence 체크
     cp_checker = ConfidenceProminenceChecker()
-        if os.path.exists(report_path):
-            issues = cp_checker.check(facts, report_path)
-            verification.confidence_issues.extend(issues)
+    if os.path.exists(report_docs_path):
+        issues = cp_checker.check(facts, report_docs_path)
+        verification.confidence_issues.extend(issues)
 
     # 5. 리포트 출력
     writer = VerificationReportWriter()
