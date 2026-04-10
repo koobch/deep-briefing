@@ -1352,12 +1352,14 @@ slide-writer 스폰 (Agent 도구)
     - {project}/reports/report-docs.md (세로형 보고서)
     - {project}/findings/golden-facts.yaml (수치 SSOT)
     - {project}/00-client-brief.md (발표 시간, 형식 선호)
-    - core/style/section-map.md (22개 슬라이드 유형)
-    - core/style/slide-system.css (스타일 시스템)
-    - core/style/design-guide.md (디자인 규칙)
+    - core/style/v2/examples/sample.slides.md (포맷 레퍼런스)
   산출물:
-    - {project}/reports/slides/slide-deck.html (슬라이드 덱)
+    - {project}/reports/slides/slides.md (Markdown DSL 소스)
     - {project}/reports/slides/slide-outline.yaml (구성 메타데이터)
+    - {project}/reports/slides/slide-meta.yaml (QA 호환)
+  렌더링:
+    - scripts/build-slides.sh {project}/reports/slides/slides.md
+    → {project}/reports/slides/slide-deck.html (단일 HTML, 36KB)
 
 Phase 4-B 미실행 시:
   - Client Brief에 슬라이드 미요청 → 건너뛰고 Phase 4-C 또는 Phase 4.5로 진행

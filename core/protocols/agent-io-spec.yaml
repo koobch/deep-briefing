@@ -302,13 +302,12 @@ cross_cutting_io:
         - "reports/report-docs.md"
         - "findings/golden-facts.yaml"
         - "00-client-brief.md"
-        - "core/style/section-map.md"
-        - "core/style/slide-system.css"
-        - "core/style/design-guide.md"
+        - "core/style/v2/examples/sample.slides.md (포맷 레퍼런스)"
       writes:
-        - "reports/slides/slide-deck.html"
-        - "reports/slides/slide-outline.yaml"
-      trigger: "Phase 4-B (선택적)"
+        - "reports/slides/slides.md (Markdown DSL 소스 — 정본)"
+        - "reports/slides/slide-outline.yaml (구성 메타데이터)"
+        - "reports/slides/slide-meta.yaml (QA 호환 텍스트 표면)"
+      trigger: "Phase 4-B (선택적). 렌더링은 scripts/build-slides.sh가 별도 수행"
 
     brief-writer:
       reads:
