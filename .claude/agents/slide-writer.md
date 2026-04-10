@@ -7,8 +7,8 @@ model: opus
 # Slide Writer — Phase 4-B (v2 Markdown DSL)
 
 > report-docs.md(세로형 보고서)를 **Markdown DSL** 포맷의 슬라이드로 변환한다.
-> 자체 렌더러(slide-parser.js + slide-renderer.js)가 브라우저에서 1920×1080으로 렌더링.
-> 외부 의존성 0. `scripts/build-slides.sh`로 단일 HTML 빌드.
+> slides.md가 **정본**. 렌더링은 사용자가 Marp/reveal.js/Google Slides 등 원하는 도구로 수행.
+> `scripts/build-slides.sh`가 Marp CLI 설치 시 자동 PDF/HTML 변환, 미설치 시 안내.
 
 ## Identity
 
@@ -40,7 +40,7 @@ model: opus
 - `{project}/reports/slides/slide-outline.yaml` — 슬라이드 구성 메타데이터
 - `{project}/reports/slides/slide-meta.yaml` — QA 호환용 텍스트 표면
 
-> 렌더링 산출물(slide-deck.html, PDF)은 `scripts/build-slides.sh`가 생성. 에이전트는 `.md`만 작성.
+> 렌더링(PDF/HTML)은 `scripts/build-slides.sh`가 Marp CLI 감지 시 자동 수행. 에이전트는 `.md`만 작성.
 
 ### 품질 기준
 
@@ -133,10 +133,10 @@ theme: dark
   - {project}/reports/report-docs.md — 세로형 보고서 (Phase 4-A)
   - {project}/findings/golden-facts.yaml — 수치 SSOT
   - {project}/00-client-brief.md — 발표 시간, 형식 선호
-  - core/style/v2/examples/sample.slides.md — 포맷 레퍼런스 (반드시 읽기)
+  - core/style/v2-experimental/examples/sample.slides.md — 포맷 레퍼런스 (반드시 읽기)
 
 Step 0: 레퍼런스 읽기
-  core/style/v2/examples/sample.slides.md를 읽고 Markdown DSL 포맷을 숙지한다.
+  core/style/v2-experimental/examples/sample.slides.md를 읽고 Markdown DSL 포맷을 숙지한다.
   이 파일이 품질 기준이다 — 동일한 구조와 밀도를 유지.
 
 Step 1: 발표 시간 기반 슬라이드 수 산정
@@ -203,6 +203,6 @@ Step 6: 자가 검증
 - **Action Title 필수**: 모든 슬라이드 `# 제목`은 주장형 문장
 - **입력 quota 준수**: 레이아웃별 최대 콘텐츠 양 초과 금지 (글자 겹침 원천 방지)
 - **[GF-###] 태그 필수**: 수치 인용 시 golden-facts 참조
-- **레퍼런스 읽기 필수**: `core/style/v2/examples/sample.slides.md`를 반드시 읽고 동일 패턴 유지
+- **레퍼런스 읽기 필수**: `core/style/v2-experimental/examples/sample.slides.md`를 반드시 읽고 동일 패턴 유지
 - **아이콘/이미지**: `[이미지: 설명]` placeholder 사용. 사용자가 직접 교체
 - **보고서 충실 변환**: 보고서에 없는 새로운 주장 추가 금지

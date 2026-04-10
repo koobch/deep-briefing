@@ -1352,14 +1352,15 @@ slide-writer 스폰 (Agent 도구)
     - {project}/reports/report-docs.md (세로형 보고서)
     - {project}/findings/golden-facts.yaml (수치 SSOT)
     - {project}/00-client-brief.md (발표 시간, 형식 선호)
-    - core/style/v2/examples/sample.slides.md (포맷 레퍼런스)
+    - core/style/v2-experimental/examples/sample.slides.md (포맷 레퍼런스)
   산출물:
-    - {project}/reports/slides/slides.md (Markdown DSL 소스)
+    - {project}/reports/slides/slides.md (Marp 호환 Markdown — 정본)
     - {project}/reports/slides/slide-outline.yaml (구성 메타데이터)
     - {project}/reports/slides/slide-meta.yaml (QA 호환)
-  렌더링:
+  렌더링 (선택적):
     - scripts/build-slides.sh {project}/reports/slides/slides.md
-    → {project}/reports/slides/slide-deck.html (단일 HTML, 36KB)
+    → Marp CLI 설치 시: PDF + HTML 자동 생성
+    → 미설치 시: 변환 방법 안내 (Marp/reveal.js/Google Slides 등)
 
 Phase 4-B 미실행 시:
   - Client Brief에 슬라이드 미요청 → 건너뛰고 Phase 4-C 또는 Phase 4.5로 진행
