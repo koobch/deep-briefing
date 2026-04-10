@@ -70,12 +70,21 @@ Phase 3    사고 루프 (Thinking Loop)
     |      Step 3: → insight-synthesizer (통합 + 수렴 판정)
     |      수렴 조건: 논리 단절 P1/P2 0 + Critical/Major 블라인드 스팟 0 + Strong 반론 대응 + BASE 자력 실현
     v
-Phase 4    보고서 생성
-    |      report-writer: SCR 스토리라인 → report-docs.md + report-slides.md
+Phase 4-A  세로형 보고서 생성
+    |      report-writer: SCR 스토리라인 → report-docs.md
     |      Trust Badge (검증 배지) 삽입 + Implementation Playbook
     v
+Phase 4-B  슬라이드 덱 생성 (선택적)
+    |      slide-writer: report-docs.md → slide-deck.html + slide-outline.yaml + slide-meta.yaml
+    |      core/style/ 22개 슬라이드 유형 적용
+    v
+Phase 4.5  출처 레지스트리
+    |      generate-source-registry.py → source-registry.csv (14컬럼)
+    v
 Phase 5    QA 자동 수정 루프
-    |      qa-orchestrator: 4개 내장 검증 + 3개 에이전트 스폰
+    |      qa-orchestrator: 5개 내장 검증 + 3개 에이전트 스폰
+    |      → verify-facts.py (수치 검증)
+    |      → verify-source-traceability.py ([S##]/[GF-###] 태그 검증)
     |      → audience-fit-checker (Action Title + SCR)
     |      → executability-checker (Playbook 검증)
     |      → report-auditor (논리 감사)
