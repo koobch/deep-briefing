@@ -160,6 +160,24 @@ echo "프로젝트: ${PROJECT}"
 echo "Division: ${NUM_DIVISIONS}개"
 echo ""
 
+# --- Lead 통합 컨텍스트 생성 (토큰 절감) ---
+echo "=== Lead 통합 컨텍스트 생성 ==="
+if [ -f "${SCRIPT_DIR}/compile-lead-context.sh" ]; then
+  bash "${SCRIPT_DIR}/compile-lead-context.sh" "${PROJECT}" 2>&1
+  COMPILE_EXIT=$?
+  if [ "$COMPILE_EXIT" -eq 0 ]; then
+    echo "  ✅ lead-context-{division}.md 생성 완료"
+    USE_LEAD_CONTEXT=true
+  else
+    echo "  ⚠️  compile-lead-context.sh 실패 (exit: ${COMPILE_EXIT}). Division Brief 직접 참조로 fallback"
+    USE_LEAD_CONTEXT=false
+  fi
+else
+  echo "  ⚠️  compile-lead-context.sh 없음. Division Brief 직접 참조로 fallback"
+  USE_LEAD_CONTEXT=false
+fi
+echo ""
+
 # --- 기존 세션 정리 ---
 tmux kill-session -t "$SESSION" 2>/dev/null || true
 
@@ -172,7 +190,11 @@ echo "tmux 세션 '${SESSION}' 생성 중..."
 # 첫 번째 Division: 세션 생성과 동시에 명령 전송
 FIRST_DIV="${DIVISIONS[0]}"
 FIRST_AGENT="${AGENTS[0]}"
-FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${REPO_DIR}/${PROJECT}/division-briefs/${FIRST_DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${FIRST_DIV}/ 에만 저장하라. 완료 시 .done 파일에 phase: 1과 status: success를 기록하라.'"
+if [ "$USE_LEAD_CONTEXT" = true ] && [ -f "${REPO_DIR}/${PROJECT}/lead-context-${FIRST_DIV}.md" ]; then
+  FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${REPO_DIR}/${PROJECT}/lead-context-${FIRST_DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${FIRST_DIV}/ 에만 저장하라. 완료 시 .done 파일에 phase: 1과 status: success를 기록하라.'"
+else
+  FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${REPO_DIR}/${PROJECT}/division-briefs/${FIRST_DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${FIRST_DIV}/ 에만 저장하라. 완료 시 .done 파일에 phase: 1과 status: success를 기록하라.'"
+fi
 
 # pane ID를 명시적으로 캡처하여 매핑 (밀림 원천 차단)
 PANE_MAP_FILE="/tmp/research-${PROJECT}-pane-map.txt"
@@ -191,7 +213,11 @@ echo "  ✅ ${FIRST_AGENT} → ${FIRST_PANE}"
 for ((i=1; i<NUM_DIVISIONS; i++)); do
   DIV="${DIVISIONS[$i]}"
   AGENT="${AGENTS[$i]}"
-  CMD="claude ${AUTO_PERMISSIONS} --agent ${AGENT} '${REPO_DIR}/${PROJECT}/division-briefs/${DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${DIV}/ 에만 저장하라. 완료 시 .done 파일에 phase: 1과 status: success를 기록하라.'"
+  if [ "$USE_LEAD_CONTEXT" = true ] && [ -f "${REPO_DIR}/${PROJECT}/lead-context-${DIV}.md" ]; then
+    CMD="claude ${AUTO_PERMISSIONS} --agent ${AGENT} '${REPO_DIR}/${PROJECT}/lead-context-${DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${DIV}/ 에만 저장하라. 완료 시 .done 파일에 phase: 1과 status: success를 기록하라.'"
+  else
+    CMD="claude ${AUTO_PERMISSIONS} --agent ${AGENT} '${REPO_DIR}/${PROJECT}/division-briefs/${DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${DIV}/ 에만 저장하라. 완료 시 .done 파일에 phase: 1과 status: success를 기록하라.'"
+  fi
 
   # split + pane ID 캡처 (-P -F로 생성된 pane ID를 반환)
   if (( i % 2 == 1 )); then
@@ -213,6 +239,17 @@ tmux select-layout -t "${SESSION}:leads" tiled
 echo ""
 echo "${NUM_DIVISIONS}개 Division Lead CLI 실행 완료!"
 echo ""
+
+# --- checkpoint.yaml 갱신 ---
+CHECKPOINT="${REPO_DIR}/${PROJECT}/findings/checkpoint.yaml"
+cat > "$CHECKPOINT" << CKPT_EOF
+project: ${PROJECT}
+current_phase: "1-division-research"
+current_status: in-progress
+last_updated: $(date -u +%Y-%m-%dT%H:%M:%S)
+active_divisions: [$(IFS=,; echo "${DIVISIONS[*]}")]
+CKPT_EOF
+echo "checkpoint.yaml → Phase 1 in-progress"
 
 # pane 매핑 표시
 PANE_LIST=$(tmux list-panes -t "${SESSION}:leads" -F '#{pane_index}: #{pane_id}')

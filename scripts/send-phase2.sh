@@ -220,4 +220,14 @@ MONITOR_EOF
 echo "$MONITOR_SCRIPT" > "/tmp/research-${PROJECT}-p2-monitor.sh"
 chmod +x "/tmp/research-${PROJECT}-p2-monitor.sh"
 bash "/tmp/research-${PROJECT}-p2-monitor.sh" "${REPO_DIR}/${PROJECT}" "$DIVISION_LIST" &
+# --- checkpoint.yaml 갱신 ---
+CHECKPOINT="${REPO_DIR}/${PROJECT}/findings/checkpoint.yaml"
+cat > "$CHECKPOINT" << CKPT_EOF
+project: ${PROJECT}
+current_phase: "2-cross-reflection"
+current_status: in-progress
+last_updated: $(date -u +%Y-%m-%dT%H:%M:%S)
+active_divisions: [$(IFS=,; echo "${DIVISIONS[*]}")]
+CKPT_EOF
+echo "checkpoint.yaml → Phase 2 in-progress"
 echo "완료 감지 모니터 시작"
