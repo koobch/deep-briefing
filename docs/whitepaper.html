@@ -47,7 +47,7 @@
             <span class="wp-sidebar-logo-dot"></span>
             Deep-Briefing
           </div>
-          <span class="wp-sidebar-version">v4.6</span>
+          <span class="wp-sidebar-version">v4.7</span>
         </div>
 
         <nav class="wp-toc" aria-label="목차">
@@ -89,7 +89,7 @@
         <header class="wp-hero">
           <div class="wp-hero-meta">
             <span class="wp-hero-badge">백서 (Whitepaper)</span>
-            <span class="wp-hero-version">v4.6 · 2026년 4월</span>
+            <span class="wp-hero-version">v4.7 · 2026년 4월</span>
           </div>
           <h1 class="wp-hero-title">Deep-Briefing</h1>
           <p class="wp-hero-subtitle">AI 멀티 에이전트가 수행하는 전략 리서치 시스템 — 48개 전문 에이전트가 병렬로 협력하여 컨설팅급 분석을 자동화합니다.</p>
@@ -1450,14 +1450,28 @@ Layer 3: Source
                 <li><strong>하단 채우기 CSS</strong>: read-more-link, annotation-bar, bottom-filler, icon-desc-row</li>
               </ul>
             </div>
-            <div class="wp-changelog-item wp-changelog-item--current">
-              <div class="wp-changelog-version">v4.6 <span class="wp-changelog-current-badge">현재</span></div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.7</div>
               <div class="wp-changelog-meta">2026년 4월</div>
               <ul class="wp-list wp-list--compact">
                 <li><strong>BCG 아티클 18개 패턴 차용</strong>: 반전 질문, Golden Insights, SCR+PCS 2계층, 3-Layer 시나리오</li>
                 <li><strong>세로형 보고서 템플릿</strong>: vertical-report-template.md (인라인 KPI, Pull Quote, So What→Now What)</li>
                 <li><strong>통합 출처 추적</strong>: generate-source-registry.py → 14컬럼 source-registry.csv</li>
                 <li><strong>Division Lead 강화</strong>: 핵심 이슈 도출(조건부) + 분석 내 케이스 임베딩</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item wp-changelog-item--current">
+              <div class="wp-changelog-version">v4.7 <span class="wp-changelog-current-badge">현재</span></div>
+              <div class="wp-changelog-meta">2026년 4월 — 아키텍처 리뷰 + Codex 교차검증 4회</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>Phase 4-A/4-B 분리</strong>: 세로 보고서(4-A) + 슬라이드(4-B, 선택적). slide-writer 에이전트 신규 (에이전트 49개)</li>
+                <li><strong>agent-io-spec.yaml</strong>: 에이전트 간 I/O 인터페이스 6개 스키마 (Division Brief, Lead↔Leaf 계약, .done/.progress/.status, Cross-cutting 매트릭스)</li>
+                <li><strong>Phase 3 병렬화</strong>: logic-prober + strategic-challenger 병렬 실행 → red-team → insight-synthesizer. SC Step 9 LP 보강 패스 추가</li>
+                <li><strong>Phase 2 재개</strong>: .done phase/status 분리, .progress 부분 재개 보존, 미완료 Division만 재스폰</li>
+                <li><strong>출처 추적 강화</strong>: generate-source-registry.py 3중 수정 (source_id 호환 + [GF-###] 스캔 + golden_facts 매핑), verify-source-traceability.py 신규 (QA Step 2 자동화, [GF-###] 역참조 포함)</li>
+                <li><strong>Phase 4.5 전환표 등록</strong>: source-registry.csv 생성을 Phase 전환 게이트로 공식화</li>
+                <li><strong>프로세스 안정성</strong>: compile-lead-context.sh 자동 호출 (토큰 85% 절감 실현), checkpoint.yaml 보존 갱신, 모니터 status:success 오판 방지, .status 기반 30분 stuck 감지, tmux 세션명 프로젝트별 동적화</li>
+                <li><strong>버그 수정</strong>: verify-facts.py 문법 오류 (Codex 발견), spawn-leads.sh --agent-file→--agent 플래그, finance-lead valuation-risk 2-Wave 의존성 순서</li>
               </ul>
             </div>
             <div class="wp-changelog-item wp-changelog-item--future">
@@ -1486,7 +1500,7 @@ Layer 3: Source
           <div class="wp-footer-inner">
             <span class="wp-footer-logo">Deep-Briefing</span>
             <span class="wp-footer-sep">·</span>
-            <span class="wp-footer-meta">v4.6 · 2026년 4월</span>
+            <span class="wp-footer-meta">v4.7 · 2026년 4월</span>
             <span class="wp-footer-sep">·</span>
             <a href="index.html" class="wp-footer-link">대시보드로 이동</a>
           </div>
