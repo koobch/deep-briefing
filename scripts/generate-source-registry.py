@@ -60,6 +60,7 @@ def main():
                 continue
 
     # 2. golden-facts.yaml에서 source_id 역참조
+    gf_to_sources = {}  # fact_id → [source_id, ...] (보고서 [GF-###] 태그 역참조용)
     gf_path = os.path.join(findings_dir, "golden-facts.yaml")
     if os.path.isfile(gf_path):
         try:
@@ -68,22 +69,22 @@ def main():
             facts = gf_data.get("facts", []) if gf_data else []
             for fact in facts:
                 fact_id = fact.get("id", "")
+                # (a) sources(복수) / source_id(단수) 양쪽 호환
                 fact_sources = fact.get("sources", [])
+                if not fact_sources and fact.get("source_id"):
+                    fact_sources = [fact.get("source_id")]
+                # fact_id → source_id 매핑 저장
+                gf_to_sources[fact_id] = fact_sources
                 for sid in fact_sources:
                     if sid in sources:
+                        # (c) golden_facts 필드에 fact_id 추가
                         existing = sources[sid].get("golden_facts", "")
                         if fact_id not in existing:
                             sources[sid]["golden_facts"] = f"{existing}, {fact_id}".strip(", ")
-                        # claims도 매핑
-                        claim_ids = fact.get("claims", [])
-                        for cid in claim_ids:
-                            existing_c = sources[sid].get("claims", "")
-                            if cid not in existing_c:
-                                sources[sid]["claims"] = f"{existing_c}, {cid}".strip(", ")
         except Exception:
             pass
 
-    # 3. 보고서에서 [S##] 참조 파싱
+    # 3. 보고서에서 [S##] / [GF-###] 참조 파싱
     reports_dir = os.path.join(project_dir, "reports")
     if os.path.isdir(reports_dir):
         for md_path in glob.glob(os.path.join(reports_dir, "*.md")):
@@ -99,6 +100,15 @@ def main():
                         existing_used = sources[sid].get("used_in", "")
                         if report_name not in existing_used:
                             sources[sid]["used_in"] = f"{existing_used}, {report_name}".strip(", ")
+                # (b) [GF-001] 등의 패턴 → source_id 역참조하여 used_in 기록
+                gf_refs = re.findall(r'\[GF-(\d{3})\]', content)
+                for gf_num in gf_refs:
+                    gf_id = f"GF-{gf_num}"
+                    for sid in gf_to_sources.get(gf_id, []):
+                        if sid in sources:
+                            existing_used = sources[sid].get("used_in", "")
+                            if report_name not in existing_used:
+                                sources[sid]["used_in"] = f"{existing_used}, {report_name}".strip(", ")
             except Exception:
                 continue
 
