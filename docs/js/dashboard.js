@@ -171,6 +171,14 @@ const PHASES = [
     agents: ['slide-writer'],
   },
   {
+    id:    'phase-4c',
+    num:   'P4-C',
+    label: '원페이퍼',
+    title: 'Phase 4-C — 경영진 원페이퍼 (선택적)',
+    desc:  'report-docs.md를 1~2페이지 BLUF 구조로 압축. Key Findings 3개 + Recommended Actions + Risk Alert. 독립적 의사결정 문서.',
+    agents: ['brief-writer'],
+  },
+  {
     id:    'phase-4-5',
     num:   'P4.5',
     label: '출처 레지스트리',

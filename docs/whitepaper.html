@@ -92,10 +92,10 @@
             <span class="wp-hero-version">v4.7 · 2026년 4월</span>
           </div>
           <h1 class="wp-hero-title">Deep-Briefing</h1>
-          <p class="wp-hero-subtitle">AI 멀티 에이전트가 수행하는 전략 리서치 시스템 — 49개 전문 에이전트가 병렬로 협력하여 컨설팅급 분석을 자동화합니다.</p>
+          <p class="wp-hero-subtitle">AI 멀티 에이전트가 수행하는 전략 리서치 시스템 — 50개 전문 에이전트가 병렬로 협력하여 컨설팅급 분석을 자동화합니다.</p>
           <div class="wp-hero-stats">
             <div class="wp-hero-stat">
-              <span class="wp-hero-stat-value">49</span>
+              <span class="wp-hero-stat-value">50</span>
               <span class="wp-hero-stat-label">에이전트</span>
             </div>
             <div class="wp-hero-stat-divider"></div>
@@ -125,7 +125,7 @@
           </div>
 
           <h3 class="wp-h3">Deep-Briefing이란</h3>
-          <p>Deep-Briefing은 <strong>49개의 전문 AI 에이전트</strong>가 협력하여 수행하는 <strong>전략 리서치 시스템</strong>입니다. 4계층 에이전트 계층(PM → Lead → Leaf + Cross-cutting/QA)이 병렬로 작동하며, 파일 시스템 기반 통신으로 프로젝트 의존성 없이 자동 스케일합니다.</p>
+          <p>Deep-Briefing은 <strong>50개의 전문 AI 에이전트</strong>가 협력하여 수행하는 <strong>전략 리서치 시스템</strong>입니다. 4계층 에이전트 계층(PM → Lead → Leaf + Cross-cutting/QA)이 병렬로 작동하며, 파일 시스템 기반 통신으로 프로젝트 의존성 없이 자동 스케일합니다.</p>
 
           <div class="wp-card">
             <div class="wp-card-label">핵심 특징</div>
@@ -860,6 +860,16 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
             </ul>
           </div>
 
+          <div class="wp-card">
+            <div class="wp-card-label"><code>brief-writer</code> — 경영진 원페이퍼 (Phase 4-C, 선택적)</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: report-docs.md를 1~2페이지 BLUF 구조로 압축한 독립적 의사결정 문서</li>
+              <li><strong>BLUF</strong>: 핵심 결론 1문장(15단어 이내) + 근거 2줄을 문서 최상단에 배치</li>
+              <li><strong>구성</strong>: Key Findings 3개 + Financial Snapshot + Recommended Actions(3~5개, 담당/90일 마일스톤) + Risk Alert</li>
+              <li><strong>활성 시점</strong>: Phase 4-C (Interactive/Team 기본, Auto는 Client Brief 명시 시)</li>
+            </ul>
+          </div>
+
           <h4 class="wp-h4">QA 에이전트 (Phase 5) — 5개</h4>
 
           <div class="wp-card">
@@ -937,10 +947,10 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
                 <tr><td>검증 (Cross-cutting)</td><td>fact-verifier, logic-prober, strategic-challenger, red-team</td><td>4</td></tr>
                 <tr><td>리뷰</td><td>external-reviewer</td><td>1</td></tr>
                 <tr><td>합성</td><td>cross-domain-synthesizer, insight-synthesizer</td><td>2</td></tr>
-                <tr><td>보고</td><td>report-writer, slide-writer</td><td>2</td></tr>
+                <tr><td>보고</td><td>report-writer, slide-writer, brief-writer</td><td>3</td></tr>
                 <tr><td>QA</td><td>qa-orchestrator, audience-fit-checker, executability-checker, report-auditor, report-fixer</td><td>5</td></tr>
                 <tr><td>유틸리티</td><td>data-preprocessor</td><td>1</td></tr>
-                <tr><td colspan="2"><strong>합계</strong></td><td><strong>49</strong></td></tr>
+                <tr><td colspan="2"><strong>합계</strong></td><td><strong>50</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -1179,6 +1189,7 @@ Layer 3: Source
                 <ul class="wp-list wp-list--compact">
                   <li>report-writer: SCR 스토리라인 → report-docs.md (Phase 4-A)</li>
                   <li>slide-writer: report-docs.md → slide-deck.html (Phase 4-B, 선택적)</li>
+                  <li>brief-writer: report-docs.md → one-pager.md (Phase 4-C, 선택적)</li>
                   <li>Trust Badge (검증 배지) 삽입 + Implementation Playbook</li>
                 </ul>
               </div>

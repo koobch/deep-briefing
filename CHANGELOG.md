@@ -5,6 +5,25 @@
 
 ---
 
+## v4.8 — 2026-04-10 (경영진 원페이퍼 추가)
+
+### Agents
+- **brief-writer.md 신규**: Phase 4-C 경영진 원페이퍼 에이전트 (BLUF + Key Findings 3 + Recommended Actions + Risk Alert, 1~2페이지)
+- **research-pm.md**: Phase 4-C 트리거 + brief-writer 스폰 로직, 인터뷰 질문 16번 원페이퍼 옵션 추가
+
+### Protocols
+- **agent-io-spec.yaml**: brief-writer I/O 매트릭스 추가
+- **sync-protocol.md**: Phase 4→4.5 전환 게이트에 one-pager.md 포함
+
+### Docs
+- **CLAUDE.md**: 흐름 문자열 Phase 4-C 추가, 에이전트 50개 (비Leaf 24), Report 3개
+- **ARCHITECTURE.md**: Phase 4-C 원페이퍼 단계 추가
+- **whitepaper.html**: 에이전트 50개, brief-writer 카드/테이블/Phase 흐름
+- **index.html**: 에이전트 50개, Phase 13개, brief-writer 칩
+- **dashboard.js**: Phase 4-C 모델 추가
+
+---
+
 ## v4.7 — 2026-04-10 (아키텍처 리뷰 + Codex 교차검증 4회)
 
 ### Agents

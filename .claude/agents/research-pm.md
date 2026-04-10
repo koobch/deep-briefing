@@ -373,7 +373,7 @@ Interactive/Team 모드: PM이 각 Phase 전환 시점에 능동적으로 확인
   13. 성공 기준은 무엇인가? (매출 목표, 시장 점유율, MAU 등)
   14. 리서치 결과에 따라 "안 한다"도 옵션인가?
   15. 보고서 톤/형식 선호가 있는가?
-  16. 보고서 형식: 세로형 보고서만 / 슬라이드만 / 둘 다? (기본: 세로형만. 슬라이드 선택 시 발표 시간도 확인)
+  16. 보고서 형식: 세로형 보고서 / 슬라이드 / 원페이퍼(1~2p 경영진 요약) 중 어떤 조합? (기본: 세로형+원페이퍼. 슬라이드 선택 시 발표 시간도 확인)
 
 Quick 모드: 그룹 0 Quick(Q0-1~3, C1~C3) + 그룹 1 + 그룹 2 + 그룹 4 일부(13, 15번만) = ~14개 질문
 Deep 모드: 전체 5개 그룹 = 18~22개 질문
@@ -1360,8 +1360,34 @@ slide-writer 스폰 (Agent 도구)
     - {project}/reports/slides/slide-outline.yaml (구성 메타데이터)
 
 Phase 4-B 미실행 시:
-  - Client Brief에 슬라이드 미요청 → 건너뛰고 Phase 4.5로 진행
+  - Client Brief에 슬라이드 미요청 → 건너뛰고 Phase 4-C 또는 Phase 4.5로 진행
   - 사용자가 나중에 요청하면 Phase 5.5 피드백에서 추가 실행 가능
+```
+
+### Phase 4-C: 경영진 원페이퍼 생성 (선택적)
+
+경영진이 짧은 시간에 핵심만 검토할 수 있는 1~2페이지 독립 의사결정 문서.
+report-docs.md를 BLUF(Bottom Line Up Front) 구조로 압축한다.
+Phase 4-B(슬라이드)와 병렬 실행 가능.
+
+```
+활성화 조건:
+  - Client Brief의 report_format에 "원페이퍼" 또는 "one-pager" 포함
+  - 또는 모드가 Interactive/Team (기본 활성화)
+  - Auto 모드: Client Brief에 명시적 요청 시에만
+
+brief-writer 스폰 (Agent 도구)
+  입력:
+    - {project}/reports/report-docs.md (세로형 보고서)
+    - {project}/findings/golden-facts.yaml (수치 SSOT)
+    - {project}/thinking-loop/loop-convergence.md (전략)
+    - {project}/thinking-loop/strategy-articulations.md (DQ별 답변)
+    - {project}/00-client-brief.md (의사결정 대상, 톤)
+  산출물:
+    - {project}/reports/one-pager.md (1~2페이지)
+
+Phase 4-C 미실행 시:
+  - 건너뛰고 Phase 4.5로 진행
 ```
 
 ### Phase 4.5: 출처 레지스트리 생성 (Source Registry)

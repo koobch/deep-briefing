@@ -310,6 +310,17 @@ cross_cutting_io:
         - "reports/slides/slide-outline.yaml"
       trigger: "Phase 4-B (선택적)"
 
+    brief-writer:
+      reads:
+        - "reports/report-docs.md"
+        - "findings/golden-facts.yaml"
+        - "thinking-loop/loop-convergence.md"
+        - "thinking-loop/strategy-articulations.md"
+        - "00-client-brief.md"
+      writes:
+        - "reports/one-pager.md"
+      trigger: "Phase 4-C (선택적 — Interactive/Team 기본, Auto는 Client Brief 명시 시)"
+
     qa-orchestrator:
       reads:
         - "reports/report-docs.md"

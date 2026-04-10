@@ -78,6 +78,10 @@ Phase 4-B  슬라이드 덱 생성 (선택적)
     |      slide-writer: report-docs.md → slide-deck.html + slide-outline.yaml + slide-meta.yaml
     |      core/style/ 22개 슬라이드 유형 적용
     v
+Phase 4-C  경영진 원페이퍼 (선택적, 4-B와 병렬 가능)
+    |      brief-writer: report-docs.md → one-pager.md (1~2p BLUF 구조)
+    |      Key Findings 3개 + Recommended Actions + Risk Alert
+    v
 Phase 4.5  출처 레지스트리
     |      generate-source-registry.py → source-registry.csv (14컬럼)
     v
