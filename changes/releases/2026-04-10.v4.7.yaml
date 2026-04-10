@@ -37,9 +37,9 @@ categories:
     - "CLAUDE.md: 에이전트 49개 + Phase 4-A/4-B 흐름"
 
 docs_required:
-  - docs/index.html          # 부분 반영 — slide-writer 카드, Phase 모델 상세화 필요
-  - docs/js/dashboard.js     # 미반영 — Phase 4-A/4-B 모델 추가 필요
-  - docs/whitepaper.html     # 부분 반영 — 본문 에이전트 테이블에 slide-writer 행 추가 필요
+  - docs/index.html          # ✅ 완료 — slide-writer 칩, Phase 12개, Report 3개
+  - docs/js/dashboard.js     # ✅ 완료 — Phase 4-A/4-B 모델 분리
+  - docs/whitepaper.html     # ✅ 완료 — 49개 에이전트, slide-writer 카드/테이블, Phase 흐름
 
 breaking: []
 migration_notes:
