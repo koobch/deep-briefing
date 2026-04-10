@@ -824,11 +824,11 @@ Step 2: Tension 해소 프로토콜
     - report-writer에 미해소 목록 전달 → 보고서에도 명시
     - 미해소 real_tension 3건+ → PM이 Phase 1 부분 재실행 제안
 
-Step 2.5: fact-verifier 재투입
+Step 3: fact-verifier 재투입 (검증된 facts 기반 synthesis를 위해 반드시 synthesizer 전에 실행)
   - Phase 2에서 변경/추가된 Claim에 대해 VL-3 교차 검증 재실행
   - tension 해소 과정에서 새로 생성된 Claim 검증
   - Sync Round 1의 methodology_flags 해소 여부 확인
-Step 3: cross-domain-synthesizer 스폰
+Step 4: cross-domain-synthesizer 스폰 (Step 3 완료 후)
 ```
 
 ### cross-domain-synthesizer의 역할

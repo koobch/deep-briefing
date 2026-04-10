@@ -150,6 +150,18 @@ Step 8: 종합 — 블라인드 스팟 목록
   > Critical → P1, Major → P2, Minor → P3.
   > 모든 블라인드 스팟 출력 시 `unified_severity: P1|P2|P3` 필드를 반드시 병기한다.
 
+Step 9: LP 보강 패스 (병렬 실행 후 보강 — why-probe.md 존재 시에만)
+  logic-prober와 병렬 실행된 경우, LP가 먼저 완료되어 why-probe.md가 생성됐을 수 있다.
+  이 Step은 LP의 논리 단절 발견을 활용하여 도전 결과를 보강한다:
+  1. {project}/thinking-loop/why-probe.md 존재 확인
+     - 미존재 → 이 Step 건너뜀 (LP가 아직 미완료이거나 병렬 아닌 경우)
+  2. why-probe.md의 논리 단절 목록(data_gap, leap, circular, implicit, correlation) 읽기
+  3. Step 1~5에서 이미 다룬 단절과 비교 → 미다룬 항목 식별
+  4. 미다룬 항목에 대해 추가 도전 수행:
+     - 해당 논리 단절이 전략에 미치는 영향
+     - 단절이 해소되지 않을 경우의 리스크
+  5. strategic-challenge.md에 `[LP 보강]` 태그로 추가 기재
+
 출력: → {project}/thinking-loop/strategic-challenge.md
 ```
 

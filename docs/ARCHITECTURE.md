@@ -65,10 +65,9 @@ Sync R2    Tension 해소 + Cross-domain Synthesis
     |      cross-domain-synthesizer → 교차 인사이트 도출
     v
 Phase 3    사고 루프 (Thinking Loop)
-    |      logic-prober (Why Chain)
-    |      → strategic-challenger (5-레인 도전)
-    |      → red-team (적대적 반론) [Auto --deep / Interactive,Team 기본]
-    |      → insight-synthesizer (통합 + 수렴 판정)
+    |      Step 1: logic-prober (Why Chain) + strategic-challenger (5-레인 도전) [병렬 실행]
+    |      Step 2: → red-team (적대적 반론) [Auto --deep / Interactive,Team 기본]
+    |      Step 3: → insight-synthesizer (통합 + 수렴 판정)
     |      수렴 조건: 논리 단절 P1/P2 0 + Critical/Major 블라인드 스팟 0 + Strong 반론 대응 + BASE 자력 실현
     v
 Phase 4    보고서 생성

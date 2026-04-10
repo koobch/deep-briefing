@@ -110,9 +110,13 @@ Step 1: mechanical-validator (수치 정합성)
   - UNTRACKED: 보고서 수치가 golden-facts에 미등록 → fact-verifier에 등록 요청
 
 Step 2: source-traceability-checker ([S##] 태그 검증)
-  - 보고서의 모든 [S##] 태그가 source_index에 존재하는지
-  - source_index에 해당 수치가 실제로 있는지
-  - unverified 0건 달성
+  실행: python3 scripts/verify-source-traceability.py {project}
+  검증 항목:
+  - 보고서의 모든 [S##] 태그가 source_index에 존재하는지 (MATCHED/UNMATCHED)
+  - source_index에 있으나 보고서 미참조 소스 식별 (UNUSED — WARNING)
+  - 제로패딩 정규화 (S1 = S01)
+  산출물: {project}/qa/source-traceability.yaml
+  PASS 기준: UNMATCHED 0건 (UNUSED는 WARNING으로 허용)
 
 Step 3: source-url-verifier (URL 검증)
   L1 접근성: source_index의 모든 URL에 HTTP HEAD 요청

@@ -1122,6 +1122,14 @@ Step 4: fact-verifier 투입 (Agent 도구)
 
 Step 5: Sync Briefing 작성
   → {project}/sync/round-1-briefing.md
+
+Step 6: Division별 Phase 2 지시서 작성
+  활성 Division 각각에 대해 sync/phase2-{div}.md 생성:
+  - round-1-briefing의 교차 라우팅 결과 중 해당 Division 관련 항목 발췌
+  - tension 해소 지시 + 심화 리서치 방향
+  - 사용자 피드백(Interactive/Team) 반영
+  → {project}/sync/phase2-{div}.md (Division 수만큼)
+  ※ send-phase2.sh가 이 파일의 존재를 전제 조건으로 체크함
 ```
 
 #### Interactive/Team 모드: 사용자 게이트
