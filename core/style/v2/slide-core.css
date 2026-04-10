@@ -1,0 +1,482 @@
+/* ═══════════════════════════════════════════════════════════
+   Deep-Briefing Slide System v2 — 자체 렌더러
+   외부 의존성 0 · 1920×1080 · 6 레이아웃 패밀리
+   BCG Executive Perspectives 디자인 토큰 기반
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── 디자인 토큰 ─────────────────────────────────────── */
+:root {
+  /* 캔버스 */
+  --slide-w: 1920px;
+  --slide-h: 1080px;
+  --header-h: 188px;
+  --pad-x: 77px;
+  --pad-y: 28px;
+
+  /* 폰트 */
+  --font: 'Pretendard Variable', 'Pretendard', 'Noto Sans KR', system-ui, sans-serif;
+
+  /* 타이포 스케일 */
+  --fs-title: 48px;
+  --fs-subq: 32px;
+  --fs-body: 24px;
+  --fs-label: 20px;
+  --fs-source: 18px;
+  --fs-big: 72px;
+  --fs-kicker: 14px;
+
+  /* 줄 높이 (3단계 — 겹침 방지) */
+  --lh-tight: 1.25;
+  --lh-normal: 1.5;
+  --lh-loose: 1.7;
+
+  /* 색상 — BCG 팔레트 */
+  --c-text: #000000;
+  --c-text-body: #3e3e3e;
+  --c-text-muted: #7f7f7f;
+  --c-white: #ffffff;
+  --c-accent: #29b974;
+  --c-accent-dark: #187955;
+  --c-accent-label: #74e0ac;
+  --c-panel-bg: #f1f2f1;
+  --c-callout-bg: #d0f5e2;
+  --c-border: #b1b2b1;
+  --c-danger: #c0392b;
+  --c-neutral: #c7c7c7;
+  --c-header-bg: linear-gradient(135deg, #004d33 0%, #002e1f 40%, #1a1a2e 100%);
+
+  /* 간격 (4px 기반) */
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 12px;
+  --sp-lg: 16px;
+  --sp-xl: 24px;
+  --sp-2xl: 32px;
+  --sp-3xl: 44px;
+}
+
+/* 한글 보정 — 별도 폰트 크기 조정 대신 줄 높이로 보정 */
+:lang(ko) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ─── 슬라이드 셸 ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+  font-family: var(--font);
+}
+
+.slide {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  background: var(--c-white);
+  display: grid;
+  grid-template-rows: var(--header-h) 1fr auto;
+  overflow: hidden;
+  position: relative;
+  /* 인쇄 시 페이지 분할 */
+  break-after: page;
+}
+
+/* compact 모드 — slide-fit.js가 추가 */
+.slide.compact {
+  --fs-title: 40px;
+  --fs-subq: 28px;
+  --fs-body: 20px;
+  --fs-label: 18px;
+  --lh-normal: 1.35;
+}
+
+/* ─── 3-Slot: 헤더 / 본문 / 푸터 ──────────────────────── */
+
+/* 헤더 */
+.slot-header {
+  background: var(--c-header-bg);
+  padding: var(--sp-xl) var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--sp-xs);
+  border-bottom: 2px solid var(--c-accent);
+}
+
+.slot-header .kicker {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  color: var(--c-accent-label);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.slot-header .title {
+  font-size: var(--fs-title);
+  font-weight: 700;
+  color: var(--c-white);
+  line-height: var(--lh-tight);
+  /* 제목 최대 3줄 — 겹침 방지 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 본문 */
+.slot-body {
+  padding: var(--sp-2xl) var(--pad-x) var(--sp-lg);
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* 푸터 */
+.slot-footer {
+  padding: var(--sp-md) var(--pad-x) var(--pad-y);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: var(--fs-source);
+  color: var(--c-text-muted);
+}
+
+.slot-footer .source { flex: 1; }
+.slot-footer .page-num { font-size: var(--fs-label); color: #898989; }
+
+/* ─── 공통 컴포넌트 ────────────────────────────────────── */
+
+.callout {
+  background: var(--c-callout-bg);
+  border-left: 3px solid var(--c-accent);
+  padding: var(--sp-md) var(--sp-lg);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--c-text-body);
+  margin-top: var(--sp-lg);
+}
+
+.metric-card {
+  background: var(--c-panel-bg);
+  border-radius: 8px;
+  padding: var(--sp-xl);
+  text-align: center;
+}
+
+.metric-card .metric-value {
+  font-size: var(--fs-big);
+  font-weight: 700;
+  color: var(--c-accent);
+  line-height: 1;
+}
+
+.metric-card .metric-label {
+  font-size: var(--fs-label);
+  color: var(--c-text-muted);
+  margin-top: var(--sp-sm);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--c-text);
+  padding: var(--sp-sm) var(--sp-md);
+  border-bottom: 2px solid var(--c-accent);
+}
+
+td {
+  padding: var(--sp-sm) var(--sp-md);
+  border-bottom: 1px solid var(--c-border);
+  color: var(--c-text-body);
+}
+
+ul, ol {
+  padding-left: var(--sp-xl);
+  font-size: var(--fs-body);
+  line-height: var(--lh-loose);
+  color: var(--c-text-body);
+}
+
+li { margin-bottom: var(--sp-xs); }
+
+li::marker { color: var(--c-accent); }
+
+strong { color: var(--c-accent); font-weight: 600; }
+
+h3 {
+  font-size: var(--fs-subq);
+  font-weight: 600;
+  color: var(--c-text);
+  margin-bottom: var(--sp-md);
+}
+
+/* ─── 레이아웃 패밀리 1: hero ──────────────────────────── */
+/* 용도: cover, cover-split, agenda, back-cover */
+
+.layout-hero .slot-header { display: none; }
+.layout-hero .slot-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--c-header-bg);
+  padding: var(--sp-3xl) var(--pad-x);
+}
+
+.layout-hero .hero-title {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--c-white);
+  line-height: var(--lh-tight);
+  max-width: 1400px;
+}
+
+.layout-hero .hero-subtitle {
+  font-size: var(--fs-subq);
+  font-weight: 300;
+  color: var(--c-accent-label);
+  margin-top: var(--sp-xl);
+}
+
+.layout-hero .hero-meta {
+  font-size: var(--fs-label);
+  color: var(--c-text-muted);
+  margin-top: var(--sp-lg);
+}
+
+/* ─── 레이아웃 패밀리 2: summary ───────────────────────── */
+/* 용도: exec-summary, introduction */
+
+.layout-summary .slot-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.summary-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  flex: 1;
+  min-height: 0;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.summary-row:last-child { border-bottom: none; }
+
+.summary-label {
+  background: var(--c-accent);
+  color: var(--c-white);
+  padding: var(--sp-xl) var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.summary-body {
+  padding: var(--sp-xl) var(--sp-2xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--c-text-body);
+}
+
+/* ─── 레이아웃 패밀리 3: two-panel ─────────────────────── */
+/* 용도: chart+panel, split, comparison, big-number */
+
+.layout-two-panel .slot-body {
+  display: grid;
+  gap: 0;
+}
+
+/* 비율 모디파이어 */
+.layout-two-panel.ratio-65-35 .slot-body { grid-template-columns: 65fr 35fr; }
+.layout-two-panel.ratio-50-50 .slot-body { grid-template-columns: 1fr 1fr; }
+.layout-two-panel.ratio-40-60 .slot-body { grid-template-columns: 40fr 60fr; }
+.layout-two-panel.ratio-30-70 .slot-body { grid-template-columns: 30fr 70fr; }
+
+.main-pane {
+  padding: var(--sp-xl) var(--sp-2xl) var(--sp-xl) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.side-pane {
+  background: var(--c-panel-bg);
+  padding: var(--sp-xl) var(--sp-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--c-text-body);
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ─── 레이아웃 패밀리 4: three-stage ──────────────────── */
+/* 용도: before/after, process */
+
+.layout-three-stage .slot-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-sm);
+}
+
+.stage-col {
+  padding: var(--sp-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.stage-col .stage-title {
+  font-size: var(--fs-subq);
+  font-weight: 600;
+  color: var(--c-text);
+  border-bottom: 2px solid var(--c-accent);
+  padding-bottom: var(--sp-sm);
+}
+
+/* ─── 레이아웃 패밀리 5: repeat-grid ──────────────────── */
+/* 용도: multi-column, dual-chart, divergent, heatmap */
+
+.layout-repeat-grid .slot-body {
+  display: grid;
+  gap: var(--sp-lg);
+  padding: var(--sp-xl) var(--pad-x);
+}
+
+.layout-repeat-grid.cols-2 .slot-body { grid-template-columns: 1fr 1fr; }
+.layout-repeat-grid.cols-3 .slot-body { grid-template-columns: 1fr 1fr 1fr; }
+.layout-repeat-grid.cols-4 .slot-body { grid-template-columns: repeat(4, 1fr); }
+
+.grid-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ─── 레이아웃 패밀리 6: row-structured ───────────────── */
+/* 용도: table/list, case-study, ranked, framework */
+
+.layout-rows .slot-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.row-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  padding: var(--sp-lg) 0;
+  border-bottom: 1px solid var(--c-border);
+  min-height: 0;
+}
+
+.row-item:last-child { border-bottom: none; }
+
+.row-rank {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--c-accent);
+  text-align: center;
+}
+
+.row-body {
+  padding: 0 var(--sp-xl);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--c-text-body);
+}
+
+.row-meta {
+  font-size: var(--fs-label);
+  color: var(--c-text-muted);
+  text-align: right;
+  padding-right: var(--sp-lg);
+}
+
+/* ─── SVG 차트 유틸리티 ────────────────────────────────── */
+
+.chart-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.chart-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 바 차트 */
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  width: 100%;
+}
+
+.bar-item {
+  display: grid;
+  grid-template-columns: 120px 1fr 80px;
+  align-items: center;
+  gap: var(--sp-md);
+  font-size: var(--fs-body);
+}
+
+.bar-label { color: var(--c-text-body); text-align: right; }
+.bar-track { height: 28px; background: var(--c-panel-bg); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--c-accent); border-radius: 4px; transition: width 0.3s; }
+.bar-value { font-weight: 600; color: var(--c-text); }
+
+/* ─── 인쇄 ─────────────────────────────────────────────── */
+
+@media print {
+  body {
+    background: none;
+    padding: 0;
+    gap: 0;
+  }
+
+  .slide {
+    break-after: page;
+    box-shadow: none;
+  }
+
+  @page {
+    size: 1920px 1080px;
+    margin: 0;
+  }
+
+  /* 색상 보존 */
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
