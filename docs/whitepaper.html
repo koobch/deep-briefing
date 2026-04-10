@@ -840,13 +840,23 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
           <h4 class="wp-h4">보고 에이전트 (Phase 4) — 1개</h4>
 
           <div class="wp-card">
-            <div class="wp-card-label"><code>report-writer</code> — 보고서 생성</div>
+            <div class="wp-card-label"><code>report-writer</code> — 세로형 보고서 생성 (Phase 4-A)</div>
             <ul class="wp-list">
-              <li><strong>역할</strong>: 전체 리서치 결과를 경영진 대상 보고서로 변환</li>
+              <li><strong>역할</strong>: 전체 리서치 결과를 경영진 대상 세로형 보고서(report-docs.md)로 변환</li>
               <li><strong>SCR 스토리라인</strong>: Situation(현황) → Complication(문제) → Resolution(해결) 구조로 스토리 구성</li>
-              <li><strong>Action Title</strong>: 모든 섹션 제목을 주장 문장형으로 작성 (주제형 금지. 예: "시장 현황" → "동남아 시장이 3년 내 2배 성장할 것")</li>
+              <li><strong>Action Title</strong>: 모든 섹션 제목을 주장 문장형으로 작성 (주제형 금지)</li>
               <li><strong>Implementation Playbook</strong>: 전략 제안에 담당/마일스톤/KPI/의존성을 포함한 실행 계획</li>
-              <li><strong>활성 시점</strong>: Phase 4</li>
+              <li><strong>활성 시점</strong>: Phase 4-A</li>
+            </ul>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>slide-writer</code> — 슬라이드 덱 생성 (Phase 4-B, 선택적)</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: report-docs.md를 core/style/ 22개 슬라이드 유형으로 변환</li>
+              <li><strong>산출물</strong>: slide-deck.html + slide-outline.yaml + slide-meta.yaml (QA 호환)</li>
+              <li><strong>슬라이드 수</strong>: Client Brief 발표 시간 기반 (1분당 1~1.5장)</li>
+              <li><strong>활성 시점</strong>: Phase 4-B (Client Brief에서 슬라이드 요청 시에만)</li>
             </ul>
           </div>
 
@@ -927,7 +937,7 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
                 <tr><td>검증 (Cross-cutting)</td><td>fact-verifier, logic-prober, strategic-challenger, red-team</td><td>4</td></tr>
                 <tr><td>리뷰</td><td>external-reviewer</td><td>1</td></tr>
                 <tr><td>합성</td><td>cross-domain-synthesizer, insight-synthesizer</td><td>2</td></tr>
-                <tr><td>보고</td><td>report-writer</td><td>1</td></tr>
+                <tr><td>보고</td><td>report-writer, slide-writer</td><td>2</td></tr>
                 <tr><td>QA</td><td>qa-orchestrator, audience-fit-checker, executability-checker, report-auditor, report-fixer</td><td>5</td></tr>
                 <tr><td>유틸리티</td><td>data-preprocessor</td><td>1</td></tr>
                 <tr><td colspan="2"><strong>합계</strong></td><td><strong>49</strong></td></tr>
@@ -1165,11 +1175,11 @@ Layer 3: Source
             <div class="wp-phase-item">
               <div class="wp-phase-num">4</div>
               <div class="wp-phase-body">
-                <h4 class="wp-phase-title">보고서 생성</h4>
+                <h4 class="wp-phase-title">Phase 4-A: 세로형 보고서 + Phase 4-B: 슬라이드 (선택적)</h4>
                 <ul class="wp-list wp-list--compact">
-                  <li>report-writer: SCR 스토리라인 → report-docs.md</li>
-                  <li>Trust Badge (검증 배지) 삽입</li>
-                  <li>Implementation Playbook 작성</li>
+                  <li>report-writer: SCR 스토리라인 → report-docs.md (Phase 4-A)</li>
+                  <li>slide-writer: report-docs.md → slide-deck.html (Phase 4-B, 선택적)</li>
+                  <li>Trust Badge (검증 배지) 삽입 + Implementation Playbook</li>
                 </ul>
               </div>
             </div>
