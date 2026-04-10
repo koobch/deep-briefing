@@ -1372,6 +1372,7 @@ Phase 4-B(슬라이드)와 병렬 실행 가능.
 
 ```
 활성화 조건:
+  - report-docs.md 존재 (Phase 4-A 완료 필수)
   - Client Brief의 report_format에 "원페이퍼" 또는 "one-pager" 포함
   - 또는 모드가 Interactive/Team (기본 활성화)
   - Auto 모드: Client Brief에 명시적 요청 시에만

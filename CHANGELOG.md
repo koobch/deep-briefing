@@ -19,7 +19,7 @@
 - **CLAUDE.md**: 흐름 문자열 Phase 4-C 추가, 에이전트 50개 (비Leaf 24), Report 3개
 - **ARCHITECTURE.md**: Phase 4-C 원페이퍼 단계 추가
 - **whitepaper.html**: 에이전트 50개, brief-writer 카드/테이블/Phase 흐름
-- **index.html**: 에이전트 50개, Phase 13개, brief-writer 칩
+- **index.html**: 에이전트 50개, Phase 12개, brief-writer 칩
 - **dashboard.js**: Phase 4-C 모델 추가
 
 ---
