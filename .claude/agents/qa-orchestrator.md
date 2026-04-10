@@ -86,6 +86,7 @@ model: sonnet
 ```
 입력:
   - {project}/reports/report-docs.md — 상세 보고서
+  - {project}/reports/one-pager.md — 경영진 원페이퍼 (존재 시)
   - {project}/findings/golden-facts.yaml — 수치 SSOT
   - {project}/findings/{division}/ — Division 출력 (source 추적 시)
 
