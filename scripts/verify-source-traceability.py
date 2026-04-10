@@ -30,6 +30,9 @@ except ImportError:
 # 보고서에서 [S##] 또는 [S###] 태그를 추출하는 정규표현식
 TAG_PATTERN = re.compile(r"\[S(\d{1,3})\]")
 
+# [GF-###] 태그 추출 (golden-facts 역참조용)
+GF_PATTERN = re.compile(r"\[GF-(\d{3})\]")
+
 # 주변 컨텍스트 추출 길이 (앞뒤 각 40자)
 CONTEXT_CHARS = 40
 
@@ -148,12 +151,44 @@ def runVerification(projectDir: str) -> dict:
     reportPath = os.path.join(projectDir, "reports", "report-docs.md")
     findingsDir = os.path.join(projectDir, "findings")
 
-    # 1. 보고서에서 태그 추출
+    # 1. 보고서에서 [S##] 태그 추출
     reportTags = extractReportTags(reportPath)
 
     # 보고서 파일 존재 여부 확인
     if not os.path.isfile(reportPath):
         print(f"경고: 보고서 파일을 찾을 수 없습니다: {reportPath}")
+
+    # 1-b. 보고서에서 [GF-###] 태그 추출 → golden-facts 역참조로 source_id 추가
+    gfPath = os.path.join(findingsDir, "golden-facts.yaml")
+    gfToSources = {}  # GF-001 → [1, 2] (source 숫자 ID)
+    if os.path.isfile(gfPath):
+        try:
+            with open(gfPath, "r", encoding="utf-8") as f:
+                gfData = yaml.safe_load(f) or {}
+            for fact in gfData.get("facts", []):
+                factId = fact.get("id", "")
+                factSources = fact.get("sources", [])
+                if not factSources and fact.get("source_id"):
+                    factSources = [fact.get("source_id")]
+                numericIds = [normalizeSourceId(s) for s in factSources if normalizeSourceId(s) >= 0]
+                if factId and numericIds:
+                    gfToSources[factId] = numericIds
+        except Exception:
+            pass  # golden-facts 파싱 실패 시 건너뜀
+
+    if os.path.isfile(reportPath):
+        with open(reportPath, "r", encoding="utf-8") as f:
+            reportContent = f.read()
+        for gfMatch in GF_PATTERN.finditer(reportContent):
+            gfId = f"GF-{gfMatch.group(1)}"
+            for numId in gfToSources.get(gfId, []):
+                # GF 역참조로 발견된 source를 reportTags에 추가 (중복 방지)
+                reportTags.append({
+                    "numericId": numId,
+                    "tag": f"[{gfId}]→{formatSourceTag(numId)}",
+                    "location": "golden-facts 역참조",
+                    "context": f"{gfId}의 source_id"
+                })
 
     # 2. source_index 수집
     sourceIndex = collectSourceIndex(findingsDir)

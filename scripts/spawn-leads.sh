@@ -240,15 +240,23 @@ echo ""
 echo "${NUM_DIVISIONS}개 Division Lead CLI 실행 완료!"
 echo ""
 
-# --- checkpoint.yaml 갱신 ---
+# --- checkpoint.yaml 갱신 (기존 필드 보존) ---
 CHECKPOINT="${REPO_DIR}/${PROJECT}/findings/checkpoint.yaml"
-cat > "$CHECKPOINT" << CKPT_EOF
+if [ -f "$CHECKPOINT" ]; then
+  # 기존 checkpoint 보존, 핵심 필드만 업데이트
+  sed -i'' -e "s/^current_phase:.*/current_phase: \"1-division-research\"/" "$CHECKPOINT"
+  sed -i'' -e "s/^current_status:.*/current_status: in-progress/" "$CHECKPOINT"
+  sed -i'' -e "s/^last_updated:.*/last_updated: $(date -u +%Y-%m-%dT%H:%M:%S)/" "$CHECKPOINT"
+  sed -i'' -e "s/^active_divisions:.*/active_divisions: [$(IFS=,; echo "${DIVISIONS[*]}")]/" "$CHECKPOINT"
+else
+  cat > "$CHECKPOINT" << CKPT_EOF
 project: ${PROJECT}
 current_phase: "1-division-research"
 current_status: in-progress
 last_updated: $(date -u +%Y-%m-%dT%H:%M:%S)
 active_divisions: [$(IFS=,; echo "${DIVISIONS[*]}")]
 CKPT_EOF
+fi
 echo "checkpoint.yaml → Phase 1 in-progress"
 
 # pane 매핑 표시

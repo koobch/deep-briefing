@@ -124,14 +124,18 @@ DONE_EOF
   echo "  📝 ${div}/.done → phase: 2, status: in_progress"
 done
 
-# --- .progress 파일 Phase 2용 리셋 (미완료 Division만) ---
+# --- .progress 파일 Phase 2 관리 (미완료 Division만) ---
 for div in "${INCOMPLETE_DIVS[@]}"; do
   PROGRESS_FILE="${REPO_DIR}/${PROJECT}/findings/${div}/.progress"
-  if [ -f "$PROGRESS_FILE" ]; then
-    # Phase 1 이력 백업 후 Phase 2용으로 리셋
-    cp "$PROGRESS_FILE" "${PROGRESS_FILE}.phase1-backup"
-  fi
-  cat > "$PROGRESS_FILE" << PROGRESS_EOF
+  if [ -f "$PROGRESS_FILE" ] && grep -q "phase: 2" "$PROGRESS_FILE" 2>/dev/null; then
+    # Phase 2 .progress가 이미 존재 → 부분 완료 상태 보존 (재개용)
+    echo "  ♻️  ${div}/.progress → Phase 2 기존 진행분 보존 (부분 재개)"
+  else
+    # Phase 1 .progress이거나 미존재 → Phase 2용 초기화
+    if [ -f "$PROGRESS_FILE" ]; then
+      cp "$PROGRESS_FILE" "${PROGRESS_FILE}.phase1-backup"
+    fi
+    cat > "$PROGRESS_FILE" << PROGRESS_EOF
 division: ${div}
 phase: 2
 updated_at: $(date -u +%Y-%m-%dT%H:%M:%S)
@@ -139,7 +143,8 @@ leaves_completed: []
 leaves_in_progress: []
 synthesis_status: pending
 PROGRESS_EOF
-  echo "  📝 ${div}/.progress → Phase 2 리셋"
+    echo "  📝 ${div}/.progress → Phase 2 초기화"
+  fi
 done
 
 # --- 기존 세션 정리 (Phase 1 세션만. Phase 2 세션이 이미 있으면 정리 후 재생성) ---
@@ -220,14 +225,21 @@ MONITOR_EOF
 echo "$MONITOR_SCRIPT" > "/tmp/research-${PROJECT}-p2-monitor.sh"
 chmod +x "/tmp/research-${PROJECT}-p2-monitor.sh"
 bash "/tmp/research-${PROJECT}-p2-monitor.sh" "${REPO_DIR}/${PROJECT}" "$DIVISION_LIST" &
-# --- checkpoint.yaml 갱신 ---
+# --- checkpoint.yaml 갱신 (기존 필드 보존) ---
 CHECKPOINT="${REPO_DIR}/${PROJECT}/findings/checkpoint.yaml"
-cat > "$CHECKPOINT" << CKPT_EOF
+if [ -f "$CHECKPOINT" ]; then
+  sed -i'' -e "s/^current_phase:.*/current_phase: \"2-cross-reflection\"/" "$CHECKPOINT"
+  sed -i'' -e "s/^current_status:.*/current_status: in-progress/" "$CHECKPOINT"
+  sed -i'' -e "s/^last_updated:.*/last_updated: $(date -u +%Y-%m-%dT%H:%M:%S)/" "$CHECKPOINT"
+  sed -i'' -e "s/^active_divisions:.*/active_divisions: [$(IFS=,; echo "${DIVISIONS[*]}")]/" "$CHECKPOINT"
+else
+  cat > "$CHECKPOINT" << CKPT_EOF
 project: ${PROJECT}
 current_phase: "2-cross-reflection"
 current_status: in-progress
 last_updated: $(date -u +%Y-%m-%dT%H:%M:%S)
 active_divisions: [$(IFS=,; echo "${DIVISIONS[*]}")]
 CKPT_EOF
+fi
 echo "checkpoint.yaml → Phase 2 in-progress"
 echo "완료 감지 모니터 시작"

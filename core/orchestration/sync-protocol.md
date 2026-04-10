@@ -882,6 +882,9 @@ Step 1: logic-prober + strategic-challenger (병렬 실행)
   ※ 두 에이전트의 입력이 동일 (cross-domain-synthesis + Division 출력)하므로 병렬 가능
   ※ PM이 Agent 도구로 2개를 동시 스폰 (단일 메시지에 2개 tool call)
 
+  ※ SC는 완료 후, why-probe.md가 존재하면 LP 보강 패스(SC Step 9)를 자동 실행하여
+    LP가 발견한 논리 단절 중 미다룬 항목에 대해 추가 도전 수행 (strategic-challenger.md 참조)
+
 Step 2: red-team (적대적 반론 — Step 1 완료 후 순차)
   - 활성화: Team/Interactive 기본. Auto는 --deep 시에만
   - 입력: strategic-challenge.md (SC 결과에 의존) + cross-domain-synthesis
