@@ -152,7 +152,7 @@ echo "=== Phase 2 tmux 세션 생성 (미완료 ${NUM_INCOMPLETE}개 Division) =
 # --- 새 세션 + N-pane: 미완료 Division만 스폰 ---
 FIRST_DIV="${INCOMPLETE_DIVS[0]}"
 FIRST_AGENT="${INCOMPLETE_AGENTS[0]}"
-FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${PROJECT}/sync/round-1-briefing.md와 ${PROJECT}/sync/phase2-${FIRST_DIV}.md를 읽고 Phase 2 심화 리서치를 수행하라. ${PROJECT}/findings/${FIRST_DIV}/.progress를 확인하여 완료된 Leaf는 건너뛰어라. 결과를 ${PROJECT}/findings/${FIRST_DIV}/에 업데이트하고 .done 파일의 phase를 2로 갱신하라.'"
+FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${PROJECT}/sync/round-1-briefing.md와 ${PROJECT}/sync/phase2-${FIRST_DIV}.md를 읽고 Phase 2 심화 리서치를 수행하라. ${PROJECT}/findings/${FIRST_DIV}/.progress를 확인하여 완료된 Leaf는 건너뛰어라. 결과를 ${PROJECT}/findings/${FIRST_DIV}/에 업데이트하고 .done 파일에 phase: 2와 status: success를 기록하라.'"
 
 tmux new-session -d -s "$SESSION" -n "phase2" -c "$REPO_DIR"
 sleep 0.3
@@ -163,7 +163,7 @@ echo "  ✅ ${FIRST_AGENT} → pane 0"
 for ((i=1; i<NUM_INCOMPLETE; i++)); do
   DIV="${INCOMPLETE_DIVS[$i]}"
   AGENT="${INCOMPLETE_AGENTS[$i]}"
-  CMD="claude ${AUTO_PERMISSIONS} --agent ${AGENT} '${PROJECT}/sync/round-1-briefing.md와 ${PROJECT}/sync/phase2-${DIV}.md를 읽고 Phase 2 심화 리서치를 수행하라. ${PROJECT}/findings/${DIV}/.progress를 확인하여 완료된 Leaf는 건너뛰어라. 결과를 ${PROJECT}/findings/${DIV}/에 업데이트하고 .done 파일의 phase를 2로 갱신하라.'"
+  CMD="claude ${AUTO_PERMISSIONS} --agent ${AGENT} '${PROJECT}/sync/round-1-briefing.md와 ${PROJECT}/sync/phase2-${DIV}.md를 읽고 Phase 2 심화 리서치를 수행하라. ${PROJECT}/findings/${DIV}/.progress를 확인하여 완료된 Leaf는 건너뛰어라. 결과를 ${PROJECT}/findings/${DIV}/에 업데이트하고 .done 파일에 phase: 2와 status: success를 기록하라.'"
 
   if (( i % 2 == 1 )); then
     tmux split-window -v -t "${SESSION}:phase2" -c "$REPO_DIR"
@@ -196,7 +196,7 @@ TOTAL=${#DIVS[@]}
 while true; do
   COMPLETED=0
   for div in "${DIVS[@]}"; do
-    if grep -q "phase: 2" "${PROJECT_DIR}/findings/${div}/.done" 2>/dev/null; then
+    if grep -q "phase: 2" "${PROJECT_DIR}/findings/${div}/.done" 2>/dev/null && grep -q "status: success" "${PROJECT_DIR}/findings/${div}/.done" 2>/dev/null; then
       ((COMPLETED++))
     fi
   done

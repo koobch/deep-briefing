@@ -172,7 +172,7 @@ echo "tmux 세션 '${SESSION}' 생성 중..."
 # 첫 번째 Division: 세션 생성과 동시에 명령 전송
 FIRST_DIV="${DIVISIONS[0]}"
 FIRST_AGENT="${AGENTS[0]}"
-FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${REPO_DIR}/${PROJECT}/division-briefs/${FIRST_DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${FIRST_DIV}/ 에만 저장하라.'"
+FIRST_CMD="claude ${AUTO_PERMISSIONS} --agent ${FIRST_AGENT} '${REPO_DIR}/${PROJECT}/division-briefs/${FIRST_DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${FIRST_DIV}/ 에만 저장하라. 완료 시 .done 파일에 phase: 1과 status: success를 기록하라.'"
 
 # pane ID를 명시적으로 캡처하여 매핑 (밀림 원천 차단)
 PANE_MAP_FILE="/tmp/research-${PROJECT}-pane-map.txt"
@@ -191,7 +191,7 @@ echo "  ✅ ${FIRST_AGENT} → ${FIRST_PANE}"
 for ((i=1; i<NUM_DIVISIONS; i++)); do
   DIV="${DIVISIONS[$i]}"
   AGENT="${AGENTS[$i]}"
-  CMD="claude ${AUTO_PERMISSIONS} --agent ${AGENT} '${REPO_DIR}/${PROJECT}/division-briefs/${DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${DIV}/ 에만 저장하라.'"
+  CMD="claude ${AUTO_PERMISSIONS} --agent ${AGENT} '${REPO_DIR}/${PROJECT}/division-briefs/${DIV}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${REPO_DIR}/${PROJECT}/findings/${DIV}/ 에만 저장하라. 완료 시 .done 파일에 phase: 1과 status: success를 기록하라.'"
 
   # split + pane ID 캡처 (-P -F로 생성된 pane ID를 반환)
   if (( i % 2 == 1 )); then
@@ -259,7 +259,7 @@ while [ "$COMPLETED" -lt "$TOTAL" ]; do
   STALLED_DIVS=()
 
   for div in "${DIVS[@]}"; do
-    if [ -f "${PROJECT_DIR}/findings/${div}/.done" ]; then
+    if [ -f "${PROJECT_DIR}/findings/${div}/.done" ] && grep -q "status: success" "${PROJECT_DIR}/findings/${div}/.done" 2>/dev/null; then
       ((COMPLETED++))
     else
       STALLED_DIVS+=("$div")

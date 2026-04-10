@@ -71,10 +71,10 @@ generate_instruction() {
 
   case "$PHASE" in
     1)
-      echo "claude ${AUTO_PERMISSIONS} --agent ${agent} '${base}/division-briefs/${div}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${base}/findings/${div}/ 에만 저장하라.'"
+      echo "claude ${AUTO_PERMISSIONS} --agent ${agent} '${base}/division-briefs/${div}.md를 읽고 Phase 1 리서치를 시작하라. 모든 출력은 반드시 ${base}/findings/${div}/ 에만 저장하라. 완료 시 .done 파일에 phase: 1과 status: success를 기록하라.'"
       ;;
     2)
-      echo "claude ${AUTO_PERMISSIONS} --agent ${agent} '${base}/sync/round-1-briefing.md와 ${base}/sync/phase2-${div}.md를 읽고 Phase 2 심화 리서치를 수행하라. 결과를 ${base}/findings/${div}/에 업데이트하고 .done 파일의 phase를 2로 갱신하라.'"
+      echo "claude ${AUTO_PERMISSIONS} --agent ${agent} '${base}/sync/round-1-briefing.md와 ${base}/sync/phase2-${div}.md를 읽고 Phase 2 심화 리서치를 수행하라. 결과를 ${base}/findings/${div}/에 업데이트하고 .done 파일에 phase: 2와 status: success를 기록하라.'"
       ;;
     feedback)
       echo "claude ${AUTO_PERMISSIONS} --agent ${agent} '${base}/sync/feedback-${div}.md를 읽고 피드백을 반영하여 리서치를 보강하라. 결과를 ${base}/findings/${div}/에 업데이트하라.'"
@@ -156,10 +156,11 @@ DIVISION_LIST=$(IFS=,; echo "${DIVISIONS[*]}")
 
     for div in "${DIVISIONS[@]}"; do
       DONE=false
-      if [ "$PHASE" = "1" ]; then
-        [ -f "${REPO_DIR}/${PROJECT}/findings/${div}/.done" ] && DONE=true
-      else
-        grep -q "phase: ${PHASE}" "${REPO_DIR}/${PROJECT}/findings/${div}/.done" 2>/dev/null && DONE=true
+      DONE_FILE="${REPO_DIR}/${PROJECT}/findings/${div}/.done"
+      if [ -f "$DONE_FILE" ] && grep -q "status: success" "$DONE_FILE" 2>/dev/null; then
+        if [ "$PHASE" = "1" ] || grep -q "phase: ${PHASE}" "$DONE_FILE" 2>/dev/null; then
+          DONE=true
+        fi
       fi
 
       if $DONE; then
