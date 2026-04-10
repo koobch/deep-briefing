@@ -110,17 +110,19 @@ done_signal:
       type: string
 
     - field: phase
+      type: integer
+      description: "Phase 번호 (1 또는 2). 상태는 status 필드로 분리"
+      values: [1, 2]
+
+    - field: status
       type: string
-      description: "완료된 Phase (1, 2, '2-in-progress')"
-      values: ["1", "2", "2-in-progress"]
+      description: "Phase 진행 상태. phase와 분리하여 명확한 상태 표현"
+      values: ["in_progress", "success", "partial", "error"]
 
     - field: completed_at
       type: datetime
       format: "YYYY-MM-DDTHH:MM:SS"
-
-    - field: status
-      type: string
-      values: ["success", "partial", "error"]
+      description: "status가 success/partial일 때만 기록"
 
     - field: output_files
       type: list
@@ -159,10 +161,10 @@ progress_tracking:
       type: list
       item_fields: [agent, file, completed_at]
 
-    - field: leaves_pending
+    - field: leaves_in_progress
       type: list
       item_fields: [agent, reason]
-      description: "미완료 Leaf 목록. 재투입 시 이 목록만 스폰"
+      description: "미완료/진행 중 Leaf 목록. 재투입 시 이 목록만 스폰"
 
     - field: synthesis_status
       type: string
@@ -237,11 +239,12 @@ cross_cutting_io:
 
     strategic-challenger:
       reads:
-        - "sync/cross-domain-synthesis.md"
+        - "sync/cross-domain-synthesis.md (필수)"
+        - "thinking-loop/why-probe.md (선택적 보강 — 병렬 실행 시 미존재 가능)"
         - "findings/{division}/division-synthesis.yaml"
       writes:
         - "thinking-loop/strategic-challenge.md"
-      trigger: "Phase 3 Step 1 (LP와 병렬 실행)"
+      trigger: "Phase 3 Step 1 (LP와 병렬 실행. why-probe 없이도 동작)"
 
     red-team:
       reads:

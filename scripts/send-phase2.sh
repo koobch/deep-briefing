@@ -85,7 +85,7 @@ for ((i=0; i<NUM_DIVISIONS; i++)); do
   div="${DIVISIONS[$i]}"
   agent="${AGENTS[$i]}"
   DONE_FILE="${REPO_DIR}/${PROJECT}/findings/${div}/.done"
-  if grep -q "phase: 2" "$DONE_FILE" 2>/dev/null; then
+  if grep -q "status: success" "$DONE_FILE" 2>/dev/null && grep -q "phase: 2" "$DONE_FILE" 2>/dev/null; then
     COMPLETED_DIVS+=("$div")
     echo "  ✅ ${div} — Phase 2 이미 완료 (건너뜀)"
   else
@@ -117,10 +117,11 @@ for div in "${INCOMPLETE_DIVS[@]}"; do
   # .done이 존재하면 phase를 2-in-progress로 갱신, 없으면 신규 생성
   cat > "$DONE_FILE" << DONE_EOF
 division: ${div}
-phase: 2-in-progress
+phase: 2
+status: in_progress
 started_at: $(date -u +%Y-%m-%dT%H:%M:%S)
 DONE_EOF
-  echo "  📝 ${div}/.done → phase: 2-in-progress"
+  echo "  📝 ${div}/.done → phase: 2, status: in_progress"
 done
 
 # --- .progress 파일 Phase 2용 리셋 (미완료 Division만) ---

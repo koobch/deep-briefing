@@ -37,8 +37,9 @@ model: opus
 ### 산출물
 
 - 주 산출물: `{project}/reports/slides/` 디렉토리
-  - `slide-deck.html` — 전체 슬라이드 덱 (core/style/slide-system.css 연결)
-  - `slide-outline.yaml` — 슬라이드 구성 메타데이터 (슬라이드 번호, 유형, Action Title, 소스 섹션 매핑)
+  - `slide-deck.html` — 전체 슬라이드 덱 (core/style/slide-system.css 연결, 렌더 정본)
+  - `slide-outline.yaml` — 슬라이드 구성 메타데이터 (슬라이드 번호, 유형, Action Title, source_sections, claim_ids, gf_refs, confidence_gate, speaker_intent)
+  - `slide-meta.yaml` — QA/테스트 호환용 텍스트 표면 (각 슬라이드의 Action Title + 본문 텍스트를 플레인텍스트로 추출. EP-028/EP-030 등 기존 grep 기반 검증 체인이 HTML 대신 이 파일을 대상으로 동작)
 
 ### 품질 기준
 

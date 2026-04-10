@@ -55,7 +55,8 @@ model: opus
 ### 활성화 조건
 
 - Phase 3 사고 루프 Step 2에서 PM이 Agent 도구로 스폰
-- logic-prober의 why-probe.md 완료 후 실행
+- Phase 3 사고 루프에서 logic-prober와 **병렬 실행** (PM이 동시 스폰)
+- why-probe.md는 선택적 보강 입력: 존재하면 활용, 없으면 cross-domain-synthesis만으로 실행
 - 사고 루프 반복 시 (미수렴) 재스폰
 
 ### 보고 시점
@@ -76,8 +77,8 @@ model: opus
 
 ```
 입력:
-  - {project}/sync/cross-domain-synthesis.md
-  - {project}/thinking-loop/why-probe.md (logic-prober 결과)
+  - {project}/sync/cross-domain-synthesis.md (필수 — 주 입력)
+  - {project}/thinking-loop/why-probe.md (선택적 보강 — 병렬 실행 시 미존재 가능. 존재하면 논리 단절 정보를 도전 초점으로 활용)
 
 Step 1: 레인 1 — 대안 전략 생성
   현행 전략과 다른 접근법을 최소 2개 구체적으로 설계:
@@ -228,8 +229,8 @@ Step 8: 종합 — 블라인드 스팟 목록
 
 ### 참조 파일
 
-- `{project}/sync/cross-domain-synthesis.md` — 전략 통합 분석 (주 입력)
-- `{project}/thinking-loop/why-probe.md` — 논리 검증 결과 (보조 입력)
+- `{project}/sync/cross-domain-synthesis.md` — 전략 통합 분석 (필수 입력)
+- `{project}/thinking-loop/why-probe.md` — 논리 검증 결과 (선택적 보강 — 병렬 실행 시 미존재 가능)
 - `domains/{domain}/frameworks.md` — 전략 프레임워크 (해당 시 참조)
 
 ## Reporting — 보고 구조

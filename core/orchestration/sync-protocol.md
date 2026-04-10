@@ -609,7 +609,7 @@ leaves_completed:
     file: findings/market/competitive-landscape.yaml
     completed_at: YYYY-MM-DDTHH:MM:SS
 
-leaves_pending:
+leaves_in_progress:
   - agent: market-dynamics
     reason: "세션 중단으로 미완료"
 
@@ -623,17 +623,16 @@ synthesis_status: pending  # pending | in-progress | completed
 ```yaml
 # findings/{division}/.done — Phase 상태 추적
 division: {division}
-phase: 2                   # 완료된 Phase 번호 (1 또는 2)
-                           # Phase 2 시작 시: "2-in-progress"
-                           # Phase 2 완료 시: 2
-completed_at: YYYY-MM-DDTHH:MM:SS
+phase: 2                          # Phase 번호 (1 또는 2)
+status: success                   # in_progress | success | partial | error
+completed_at: YYYY-MM-DDTHH:MM:SS  # status가 success/partial일 때만
 ```
 
 **Phase 전환 시나리오:**
-- Phase 1 완료: `.done`에 `phase: 1` 기록
-- Phase 2 시작: `send-phase2.sh`가 미완료 Division의 `.done`을 `phase: 2-in-progress`로 갱신
-- Phase 2 완료: Lead가 `.done`을 `phase: 2`로 갱신
-- Phase 2 재실행: `send-phase2.sh`가 `phase: 2` Division은 건너뛰고, 나머지만 재스폰
+- Phase 1 완료: `.done`에 `phase: 1`, `status: success` 기록
+- Phase 2 시작: `send-phase2.sh`가 미완료 Division의 `.done`을 `phase: 2`, `status: in_progress`로 갱신
+- Phase 2 완료: Lead가 `.done`을 `phase: 2`, `status: success`로 갱신
+- Phase 2 재실행: `send-phase2.sh`가 `phase: 2, status: success` Division은 건너뛰고, 나머지만 재스폰
 
 **Lead 재투입 프로토콜:**
 ```
