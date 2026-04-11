@@ -5,6 +5,39 @@
 
 ---
 
+## v4.9 — 2026-04-11 (슬라이드 시스템 제거 — 보고서 2종 체계 확정)
+
+### 의사결정 기록
+- **제거 사유**: slide-writer(Phase 4-B)의 슬라이드 품질이 기대에 미달. v1(CSS+HTML), v2(자체 JS 렌더러), Marp CLI 연동 모두 시도했으나 만족스러운 결과를 얻지 못함
+- **핵심 판단**: 이 프로젝트는 리서치 시스템이지 슬라이드 도구가 아님. 슬라이드 렌더링 엔진 구축은 범위 밖
+- **Codex 교차검증**: "슬라이드 렌더러를 만들지 않고 구조화된 Markdown만 정본으로 출력하는 것이 제약조건을 가장 잘 만족" (D > B > A > E > C 순서 권고)
+- **보존**: `core/style/` 하위 디자인 가이드/CSS/section-map은 레퍼런스로 보존 (git 히스토리에 전체 이력 존재)
+
+### Agents
+- **slide-writer.md 삭제**: Phase 4-B 에이전트 제거. 에이전트 49개
+- **brief-writer.md 수정**: "Phase 4-B 병렬" 참조 제거
+
+### Protocols
+- **agent-io-spec.yaml**: slide-writer 항목 삭제, qa-orchestrator reads에서 slides/ 제거
+- **sync-protocol.md**: Step 4-B 블록 삭제, 전환표에서 슬라이드 조건 제거
+
+### Scripts
+- **build-slides.sh 삭제**
+- **core/style/v2-experimental/ 삭제**: 자체 렌더러 실험 코드 (slide-core.css, slide-parser.js, slide-renderer.js, slide-fit.js)
+
+### Docs
+- 모든 문서에서 slide-writer/Phase 4-B 참조 제거 (CLAUDE.md, research-pm.md, ARCHITECTURE.md, whitepaper.html, index.html, dashboard.js)
+- 보고서 체계: 3종(세로+슬라이드+원페이퍼) → **2종(세로+원페이퍼)**
+
+### 시도 이력 (레퍼런스)
+- v1: CSS Grid + 고정 px (글자 겹침, 빈 공간)
+- v2: 자체 JS 파서/렌더러 (더 심각한 렌더링 문제)
+- Marp CLI: 품질 좋으나 외부 의존성/공급망 보안 우려
+- Marp 패턴 차용 + 자체 렌더러: 외부 의존성 0이나 CSS 품질 미달
+- 최종 결정: 슬라이드 렌더러를 내장하지 않음
+
+---
+
 ## v4.8 — 2026-04-10 (경영진 원페이퍼 추가)
 
 ### Agents
