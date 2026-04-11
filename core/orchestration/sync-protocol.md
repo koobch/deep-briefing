@@ -1040,6 +1040,18 @@ PM이 사용자에게 외부 모델 리뷰 옵션을 제시한다.
    - {project}/reports/report-docs.md (세로형 전략 보고서)
 ```
 
+### Step 4-C: 경영진 원페이퍼 생성 (선택적)
+
+```
+활성화 조건: Client Brief에서 원페이퍼 요청 또는 Interactive/Team 모드
+전제: report-docs.md 존재 (Phase 4-A 완료)
+
+1. PM이 brief-writer 스폰 (.claude/agents/brief-writer.md)
+2. 입력: report-docs.md + golden-facts.yaml + loop-convergence.md + strategy-articulations.md
+3. 산출물: {project}/reports/one-pager.md (1~2페이지 BLUF 구조)
+4. 미실행 시: 건너뛰고 Phase 4.5로 진행
+```
+
 ## 세션 Checkpoint 관리
 
 ### checkpoint.yaml 업데이트 규칙

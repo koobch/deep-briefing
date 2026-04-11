@@ -99,7 +99,9 @@ PM 산출물의 합격 기준:
   ↓
 [활성] Phase 3.7: External Review (self-critique + 외부 모델 피드백)
   ↓
-[활성] Phase 4: 전략 도출 + 보고서 생성 지시
+[활성] Phase 4-A: 세로형 보고서 생성
+  ↓
+[활성] Phase 4-C: 경영진 원페이퍼 (선택적)
   ↓
 [활성] Phase 4.5: 출처 레지스트리 생성
   ↓
@@ -123,7 +125,8 @@ PM 산출물의 합격 기준:
   Sync R2   Cross-domain         ⬜ 대기
   Phase 3   사고 루프             ⬜ 대기
   Phase 3.7 External Review      ⬜ 대기
-  Phase 4   보고서 생성           ⬜ 대기
+  Phase 4-A 세로 보고서           ⬜ 대기
+  Phase 4-C 원페이퍼 (선택)      ⬜ 대기
   Phase 4.5 출처 레지스트리       ⬜ 대기
   Phase 5   QA 검증              ⬜ 대기
   Phase 5.5 피드백               ⬜ 대기
