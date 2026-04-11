@@ -312,7 +312,7 @@ cross_cutting_io:
       reads:
         - "reports/report-docs.md"
         - "findings/golden-facts.yaml"
-        - "reports/slides/ (존재 시)"
+        - "reports/one-pager.md (존재 시)"
       writes:
         - "qa/qa-report.yaml"
         - "qa/fact-verification.yaml"
