@@ -33,8 +33,8 @@
   <section class="metrics-section" aria-label="핵심 지표">
     <div class="container">
       <div class="metrics-grid">
-        <div class="metric-card" style="--accent: var(--color-market);" data-target="50" role="region" aria-label="총 에이전트 수">
-          <div class="metric-value" aria-live="polite">50</div>
+        <div class="metric-card" style="--accent: var(--color-market);" data-target="49" role="region" aria-label="총 에이전트 수">
+          <div class="metric-value" aria-live="polite">49</div>
           <div class="metric-label">에이전트</div>
         </div>
         <div class="metric-card" style="--accent: var(--color-product);" data-target="12" role="region" aria-label="총 Phase 수">
@@ -63,7 +63,6 @@
         <button class="tab-btn"        data-tab="knowledge"    role="tab" aria-selected="false" aria-controls="section-knowledge">지식 시스템</button>
         <button class="tab-btn"        data-tab="api"          role="tab" aria-selected="false" aria-controls="section-api">API</button>
         <button class="tab-btn"        data-tab="commands"     role="tab" aria-selected="false" aria-controls="section-commands">명령어</button>
-        <button class="tab-btn"        data-tab="slides"       role="tab" aria-selected="false" aria-controls="section-slides">슬라이드</button>
       </div>
     </div>
   </nav>
@@ -256,7 +255,6 @@
               <div class="arch-cross-group-label">보고서</div>
               <div class="arch-cross-chips">
                 <span class="arch-chip arch-chip--report">report-writer</span>
-                <span class="arch-chip arch-chip--report">slide-writer</span>
               </div>
             </div>
 
@@ -313,7 +311,7 @@
         <div class="section-label">Agents</div>
         <h2 class="section-title">에이전트 매트릭스</h2>
         <p class="section-desc">
-          4계층 50개 에이전트가 병렬 협업합니다.
+          4계층 49개 에이전트가 병렬 협업합니다.
           Division 카드를 클릭하면 소속 Leaf 에이전트 목록이 펼쳐집니다.
         </p>
         <a href="whitepaper.html#agents" class="section-more-link">자세히 보기 →</a>
@@ -603,20 +601,13 @@
       </div>
 
       <!-- Report / Utility -->
-      <div class="cross-section-title">Report &amp; Utility — 4개</div>
+      <div class="cross-section-title">Report &amp; Utility — 3개</div>
       <div class="agent-chips" role="list">
         <div class="agent-chip" style="--chip-color: var(--color-report);" role="listitem" title="SCR 스토리라인 기반 세로형 보고서 작성 (Phase 4-A)">
           <span class="agent-chip-dot" aria-hidden="true"></span>
           <div>
             <div class="agent-chip-name">report-writer</div>
             <div class="agent-chip-desc">SCR 스토리라인 기반 세로형 보고서 작성 (Phase 4-A)</div>
-          </div>
-        </div>
-        <div class="agent-chip" style="--chip-color: var(--color-report);" role="listitem" title="보고서를 슬라이드 덱으로 변환 (Phase 4-B, 선택적)">
-          <span class="agent-chip-dot" aria-hidden="true"></span>
-          <div>
-            <div class="agent-chip-name">slide-writer</div>
-            <div class="agent-chip-desc">보고서를 슬라이드 덱으로 변환 (Phase 4-B, 선택적)</div>
           </div>
         </div>
         <div class="agent-chip" style="--chip-color: var(--color-report);" role="listitem" title="1~2페이지 경영진 원페이퍼 BLUF 요약 (Phase 4-C, 선택적)">
@@ -981,32 +972,6 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       섹션 7: 슬라이드 시스템
-  ══════════════════════════════════════════════════════════════ -->
-  <section class="section" id="section-slides" data-tab="slides" role="tabpanel" aria-labelledby="tab-slides">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Slide System</div>
-        <h2 class="section-title">슬라이드 시스템</h2>
-        <p class="section-desc">
-          BCG Executive Perspectives 레퍼런스 기반 22유형 슬라이드 생성 체계.
-          16축 자동 평가 루브릭과 시각 검증 스크립트로 품질을 보장합니다.
-        </p>
-      </div>
-
-      <div class="card-grid card-grid--2col">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">핵심 파일</h3>
-          </div>
-          <div class="card-body">
-            <table class="table table--compact">
-              <thead><tr><th>파일</th><th>역할</th></tr></thead>
-              <tbody>
-                <tr><td><code>slide-system.css</code></td><td>CSS 토큰 시스템 + 22유형 레이아웃</td></tr>
-                <tr><td><code>design-guide.md</code></td><td>레이아웃·타이포·색상·콘텐츠 작성법</td></tr>
-                <tr><td><code>section-map.md</code></td><td>유형별 섹션 구조·내용 패턴</td></tr>
                 <tr><td><code>eval-rubric.md</code></td><td>16축 평가 루브릭 (A7+B3+C5+D1)</td></tr>
                 <tr><td><code>element-catalog.md</code></td><td>BCG 322p 실측 카탈로그</td></tr>
                 <tr><td><code>visual-checker.js</code></td><td>Puppeteer 자동 빈 공간 탐지</td></tr>
@@ -1017,71 +982,6 @@
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">22개 슬라이드 유형</h3>
-          </div>
-          <div class="card-body">
-            <div class="tag-group">
-              <span class="tag" style="--accent: var(--color-market);">Cover (EP/Global)</span>
-              <span class="tag" style="--accent: var(--color-market);">Exec Summary</span>
-              <span class="tag" style="--accent: var(--color-market);">Agenda</span>
-              <span class="tag" style="--accent: var(--color-market);">Introduction</span>
-              <span class="tag" style="--accent: var(--color-product);">Insight+Chart</span>
-              <span class="tag" style="--accent: var(--color-product);">Big Number</span>
-              <span class="tag" style="--accent: var(--color-product);">Ranked</span>
-              <span class="tag" style="--accent: var(--color-product);">Table/List</span>
-              <span class="tag" style="--accent: var(--color-capability);">Process</span>
-              <span class="tag" style="--accent: var(--color-capability);">Before/After</span>
-              <span class="tag" style="--accent: var(--color-capability);">Case Study</span>
-              <span class="tag" style="--accent: var(--color-capability);">Multi-Column</span>
-              <span class="tag" style="--accent: var(--color-finance);">Dual Chart</span>
-              <span class="tag" style="--accent: var(--color-finance);">Divergent Bar</span>
-              <span class="tag" style="--accent: var(--color-finance);">Split Layout</span>
-              <span class="tag" style="--accent: var(--color-finance);">Heatmap</span>
-              <span class="tag" style="--accent: var(--color-people);">Scatter</span>
-              <span class="tag" style="--accent: var(--color-people);">Comparison</span>
-              <span class="tag" style="--accent: var(--color-people);">Matrix 2×2</span>
-              <span class="tag" style="--accent: var(--color-people);">Framework</span>
-              <span class="tag" style="--accent: var(--color-people);">Back Cover</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-grid card-grid--2col" style="margin-top: 2rem;">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">16축 평가 루브릭</h3>
-          </div>
-          <div class="card-body">
-            <table class="table table--compact">
-              <thead><tr><th>그룹</th><th>축</th><th>검증 내용</th></tr></thead>
-              <tbody>
-                <tr><td><strong>A (정렬)</strong></td><td>A1~A7</td><td>3행 그리드, 컬럼 비율, 수평 기준선, 반복 간격, 여백, 엣지 정렬, Grid 기준선</td></tr>
-                <tr><td><strong>B (코드)</strong></td><td>B1~B3</td><td>토큰 일관성, 콘텐츠 밀도, 레이아웃 정확도</td></tr>
-                <tr><td><strong>C (세부)</strong></td><td>C1~C5</td><td>타이포 위계, 색상 토큰, Action Title, 인라인 스타일, Source/Footer</td></tr>
-                <tr><td><strong>D (공간)</strong></td><td>D1</td><td>공간 활용률 82%+ / 빈 공간 50px 기준</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">자동 검증</h3>
-          </div>
-          <div class="card-body">
-            <pre class="code-block"><code># 22슬라이드 빈 공간 자동 검증
-node core/style/visual-checker.js
-
-# 결과: 0 FAIL / 17 검사
-# MAX_GAP=50px, MIN_RATIO=82%</code></pre>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- ─── 푸터 ─────────────────────────────────────────────────── -->
   <footer class="footer" role="contentinfo">
     <div class="container">

@@ -373,7 +373,7 @@ Interactive/Team 모드: PM이 각 Phase 전환 시점에 능동적으로 확인
   13. 성공 기준은 무엇인가? (매출 목표, 시장 점유율, MAU 등)
   14. 리서치 결과에 따라 "안 한다"도 옵션인가?
   15. 보고서 톤/형식 선호가 있는가?
-  16. 보고서 형식: 세로형 보고서 / 슬라이드 / 원페이퍼(1~2p 경영진 요약) 중 어떤 조합? (기본: 세로형+원페이퍼. 슬라이드 선택 시 발표 시간도 확인)
+  16. 보고서 형식: 세로형 보고서 / 원페이퍼(1~2p 경영진 요약) 중 어떤 조합? (기본: 세로형+원페이퍼)
 
 Quick 모드: 그룹 0 Quick(Q0-1~3, C1~C3) + 그룹 1 + 그룹 2 + 그룹 4 일부(13, 15번만) = ~14개 질문
 Deep 모드: 전체 5개 그룹 = 18~22개 질문
@@ -1337,41 +1337,10 @@ report-writer 스폰 (Agent 도구)
     - {project}/reports/report-docs.md (상세 보고서)
 ```
 
-### Phase 4-B: 슬라이드 덱 생성 (선택적)
-
-Client Brief에서 슬라이드 형식이 요청된 경우에만 실행한다.
-report-docs.md를 입력으로 core/style/ 슬라이드 시스템을 적용하여 프레젠테이션 슬라이드를 생성한다.
-
-```
-활성화 조건:
-  - Client Brief의 보고서 형식에 "슬라이드" 또는 "둘 다" 선택된 경우
-  - report-docs.md 존재 (Phase 4-A 완료)
-
-slide-writer 스폰 (Agent 도구)
-  입력:
-    - {project}/reports/report-docs.md (세로형 보고서)
-    - {project}/findings/golden-facts.yaml (수치 SSOT)
-    - {project}/00-client-brief.md (발표 시간, 형식 선호)
-    - core/style/v2-experimental/examples/sample.slides.md (포맷 레퍼런스)
-  산출물:
-    - {project}/reports/slides/slides.md (Marp 호환 Markdown — 정본)
-    - {project}/reports/slides/slide-outline.yaml (구성 메타데이터)
-    - {project}/reports/slides/slide-meta.yaml (QA 호환)
-  렌더링 (선택적):
-    - scripts/build-slides.sh {project}/reports/slides/slides.md
-    → Marp CLI 설치 시: PDF + HTML 자동 생성
-    → 미설치 시: 변환 방법 안내 (Marp/reveal.js/Google Slides 등)
-
-Phase 4-B 미실행 시:
-  - Client Brief에 슬라이드 미요청 → 건너뛰고 Phase 4-C 또는 Phase 4.5로 진행
-  - 사용자가 나중에 요청하면 Phase 5.5 피드백에서 추가 실행 가능
-```
-
 ### Phase 4-C: 경영진 원페이퍼 생성 (선택적)
 
 경영진이 짧은 시간에 핵심만 검토할 수 있는 1~2페이지 독립 의사결정 문서.
 report-docs.md를 BLUF(Bottom Line Up Front) 구조로 압축한다.
-Phase 4-B(슬라이드)와 병렬 실행 가능.
 
 ```
 활성화 조건:

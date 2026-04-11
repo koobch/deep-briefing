@@ -163,14 +163,6 @@ const PHASES = [
     agents: ['report-writer'],
   },
   {
-    id:    'phase-4b',
-    num:   'P4-B',
-    label: '슬라이드',
-    title: 'Phase 4-B — 슬라이드 (선택적)',
-    desc:  'report-docs.md를 core/style/ 22개 슬라이드 유형으로 변환. slide-deck.html + slide-outline.yaml + slide-meta.yaml 생성. Client Brief에서 슬라이드 요청 시에만 활성화.',
-    agents: ['slide-writer'],
-  },
-  {
     id:    'phase-4c',
     num:   'P4-C',
     label: '원페이퍼',

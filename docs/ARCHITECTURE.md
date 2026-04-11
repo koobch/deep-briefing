@@ -38,7 +38,7 @@
 | **EXC** | executability-checker | Implementation Playbook 검증 |
 | **RA** | report-auditor | 논리 완결성 + SCR 구조 감사 |
 | **RF** | report-fixer | 이슈 자동 수정 (최대 3회) |
-| **RW** | report-writer | 보고서 + 슬라이드 생성 |
+| **RW** | report-writer | 세로형 보고서 생성 |
 
 추가: **fact-verifier** (VL-3 교차 검증), **cross-domain-synthesizer** (Division 간 합성), **data-preprocessor** (데이터 전처리)
 
@@ -74,11 +74,7 @@ Phase 4-A  세로형 보고서 생성
     |      report-writer: SCR 스토리라인 → report-docs.md
     |      Trust Badge (검증 배지) 삽입 + Implementation Playbook
     v
-Phase 4-B  슬라이드 덱 생성 (선택적)
-    |      slide-writer: report-docs.md → slide-deck.html + slide-outline.yaml + slide-meta.yaml
-    |      core/style/ 22개 슬라이드 유형 적용
-    v
-Phase 4-C  경영진 원페이퍼 (선택적, 4-B와 병렬 가능)
+Phase 4-C  경영진 원페이퍼 (선택적)
     |      brief-writer: report-docs.md → one-pager.md (1~2p BLUF 구조)
     |      Key Findings 3개 + Recommended Actions + Risk Alert
     v

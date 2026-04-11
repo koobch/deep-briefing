@@ -30,7 +30,6 @@ model: opus
 
 제외 (다른 에이전트 관할):
 - 세로형 보고서 작성 → report-writer (Phase 4-A)
-- 슬라이드 생성 → slide-writer (Phase 4-B)
 - 보고서 QA/감사 → qa-orchestrator, report-auditor
 - 팩트 검증 → fact-verifier
 ```
@@ -61,7 +60,7 @@ model: opus
 - Phase 4-C에서 PM이 Agent 도구로 스폰
 - **전제**: report-docs.md 존재 (Phase 4-A 완료)
 - **트리거**: Client Brief에서 "원페이퍼" 또는 모드가 Interactive/Team인 경우 기본 활성화
-- Phase 4-B(슬라이드)와 병렬 실행 가능
+- Phase 4-A(보고서) 완료 후 실행
 
 ### 에스컬레이션 조건
 

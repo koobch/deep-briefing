@@ -297,18 +297,6 @@ cross_cutting_io:
         - "reports/report-docs.md"
       trigger: "Phase 4-A"
 
-    slide-writer:
-      reads:
-        - "reports/report-docs.md"
-        - "findings/golden-facts.yaml"
-        - "00-client-brief.md"
-        - "core/style/v2-experimental/examples/sample.slides.md (포맷 레퍼런스)"
-      writes:
-        - "reports/slides/slides.md (Marp 호환 Markdown — 정본)"
-        - "reports/slides/slide-outline.yaml (구성 메타데이터)"
-        - "reports/slides/slide-meta.yaml (QA 호환 텍스트 표면)"
-      trigger: "Phase 4-B (선택적). 렌더링은 scripts/build-slides.sh (Marp CLI 감지형)"
-
     brief-writer:
       reads:
         - "reports/report-docs.md"
