@@ -1,0 +1,41 @@
+/* ===================================================================
+   Deep-Briefing Report Templates — Print Stylesheet
+   인쇄 및 Chrome headless PDF 변환 전용
+   =================================================================== */
+
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+
+  /* 화면 전용 요소 숨김 */
+  .rt-screen-only,
+  nav.rt-toc-sidebar {
+    display: none !important;
+  }
+
+  /* 페이지 분할 힌트 */
+  h2 {
+    break-before: auto;
+    break-after: avoid;
+  }
+
+  h3, h4 {
+    break-after: avoid;
+  }
+
+  table, figure, blockquote {
+    break-inside: avoid;
+  }
+
+  /* 링크 URL 표시 (footnote 스타일) */
+  a[href]::after {
+    content: "";  /* 본문 URL 노출 생략 (Source Index에 일괄 표시) */
+  }
+
+  /* 컬러 인쇄 보장 */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

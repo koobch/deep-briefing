@@ -1,0 +1,337 @@
+/* ===================================================================
+   one-pager.css — 경영진 원페이퍼 (A4 1~2페이지)
+   인쇄/이메일/PDF 호환 최우선
+   =================================================================== */
+
+body.rt-one-pager {
+  background: var(--rt-paper-3);
+  padding: var(--rt-sp-6) 0;
+  font-size: 11.5px; /* 1페이지 강제를 위해 약간 축소 */
+  line-height: 1.45;
+}
+
+/* ─── A4 페이지 시뮬레이션 (화면) ─────────────────────────── */
+.rt-page {
+  width: var(--rt-a4-w);
+  min-height: var(--rt-a4-h);
+  max-width: 210mm;
+  margin: 0 auto var(--rt-sp-6);
+  padding: 16mm 18mm;
+  background: var(--rt-paper);
+  box-shadow: var(--rt-shadow-card);
+  position: relative;
+
+  /* 1페이지 강제: 넘치면 시각적 경고 */
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: var(--rt-sp-4);
+}
+
+/* ─── 헤더: 프로젝트명/날짜/기밀등급 ─────────────────────── */
+.rt-op-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: var(--rt-sp-3);
+  border-bottom: 2px solid var(--rt-accent);
+}
+
+.rt-op-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--rt-ink-strong);
+  letter-spacing: -0.01em;
+}
+
+.rt-op-subtitle {
+  display: block;
+  font-size: var(--rt-fs-caption);
+  font-weight: 500;
+  color: var(--rt-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+.rt-op-meta {
+  text-align: right;
+  font-size: var(--rt-fs-caption);
+  color: var(--rt-ink-muted);
+}
+
+.rt-op-classification {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--rt-ink-strong);
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-family: var(--rt-font-mono);
+  font-size: 9px;
+  margin-left: var(--rt-sp-2);
+}
+
+.rt-op-classification.public { background: var(--rt-success); }
+.rt-op-classification.internal { background: var(--rt-warning); }
+.rt-op-classification.confidential { background: var(--rt-danger); }
+
+/* ─── BLUF 섹션 ─────────────────────────────────────────── */
+.rt-op-bluf {
+  background: var(--rt-accent);
+  color: #fff;
+  padding: var(--rt-sp-4) var(--rt-sp-5);
+  border-radius: var(--rt-radius-md);
+}
+
+.rt-op-bluf-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.75;
+  margin-bottom: var(--rt-sp-2);
+}
+
+.rt-op-bluf-statement {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: var(--rt-sp-2);
+  color: #fff;
+}
+
+.rt-op-bluf-reason {
+  font-size: 11px;
+  line-height: 1.4;
+  opacity: 0.92;
+  color: #fff;
+}
+
+/* BLUF 내부의 <strong> — base.css의 파란색 오버라이드.
+   어두운 배경에서 색상 대비 대신 밑줄로 강조 (검은 텍스트 방지). */
+.rt-op-bluf strong,
+.rt-op-bluf b,
+.rt-op-bluf-statement strong,
+.rt-op-bluf-reason strong {
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.7);
+}
+
+.rt-op-bluf mark.rt-tag-gf,
+.rt-op-bluf mark.rt-tag-s {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+/* ─── 본문: 단일 컬럼 수직 스택 (A4 1페이지 피라미드 흐름) ─────── */
+.rt-op-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rt-sp-3);
+}
+
+/* 본문 각 섹션 컨테이너 */
+.rt-op-body > section {
+  width: 100%;
+}
+
+.rt-op-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rt-accent);
+  margin-bottom: var(--rt-sp-2);
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--rt-accent-line);
+}
+
+/* Key Findings — 1~6을 수직으로 쭉 배치 (전폭 사용) */
+.rt-op-findings {
+  counter-reset: finding;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rt-op-finding {
+  counter-increment: finding;
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: var(--rt-sp-2);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.rt-op-finding::before {
+  content: counter(finding);
+  font-family: var(--rt-font-mono);
+  font-weight: 700;
+  color: var(--rt-accent);
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+/* Financial Snapshot */
+.rt-op-snapshot table {
+  font-size: 10px;
+  margin: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.rt-op-snapshot th,
+.rt-op-snapshot td {
+  padding: 6px 8px;
+  vertical-align: middle;      /* 셀 수직 중앙 정렬 */
+  text-align: center;           /* 기본 가운데 정렬 (수치 표 특성) */
+  line-height: 1.35;
+}
+
+.rt-op-snapshot thead th {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* 1열(지표명)은 좌측 정렬이 더 읽기 쉬움 — 요청에 따라 중앙 정렬로 통일 */
+.rt-op-snapshot tbody td:first-child {
+  text-align: center;
+  font-weight: 600;
+  color: var(--rt-ink-strong);
+}
+
+/* 수치 셀은 tabular-nums로 자릿수 정렬 */
+.rt-op-snapshot tbody td {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Recommended Actions — 단일 컬럼에서 그대로 수직 배치 ─── */
+.rt-op-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rt-op-action {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: var(--rt-sp-3);
+  padding: var(--rt-sp-2) var(--rt-sp-3);
+  background: var(--rt-paper-2);
+  border-left: 3px solid var(--rt-accent);
+  font-size: 10.5px;
+  line-height: 1.35;
+  align-items: center;
+}
+
+.rt-op-action-priority {
+  font-family: var(--rt-font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--rt-accent);
+  padding: 1px 6px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.rt-op-action-priority.p0 { background: var(--rt-danger); }
+.rt-op-action-priority.p1 { background: var(--rt-warning); }
+.rt-op-action-priority.p2 { background: var(--rt-ink-muted); }
+
+.rt-op-action-meta {
+  font-size: 9px;
+  color: var(--rt-ink-muted);
+  font-family: var(--rt-font-mono);
+}
+
+/* ─── Risk Alert ─────────────────────────────────────── */
+.rt-op-risks {
+  padding: var(--rt-sp-3) var(--rt-sp-4);
+  background: #fdf3f2;
+  border-left: 3px solid var(--rt-danger);
+  border-radius: 0 var(--rt-radius-sm) var(--rt-radius-sm) 0;
+  font-size: 10.5px;
+}
+
+.rt-op-risks .rt-op-section-title {
+  color: var(--rt-danger);
+  border-color: var(--rt-danger);
+}
+
+.rt-op-risk {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.rt-op-risk::before {
+  content: "⚠ ";
+  color: var(--rt-danger);
+  font-weight: 700;
+}
+
+/* ─── 푸터: Trust Badge 최소화 ─────────────────────────── */
+.rt-op-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--rt-sp-3);
+  border-top: 1px solid var(--rt-rule);
+  font-size: 9px;
+  color: var(--rt-ink-faint);
+  font-family: var(--rt-font-mono);
+}
+
+.rt-op-trust-mini {
+  display: flex;
+  gap: var(--rt-sp-3);
+}
+
+.rt-op-trust-mini span {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rt-op-trust-mini .pass::before {
+  content: "✓";
+  color: var(--rt-success);
+  font-weight: 700;
+}
+
+/* ─── 인쇄/PDF: A4 1페이지 강제 ─────────────────────────── */
+@media print {
+  body.rt-one-pager {
+    background: #fff;
+    padding: 0;
+  }
+
+  .rt-page {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    page-break-after: avoid;
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 14mm;
+}
+
+/* ─── 반응형: 모바일 ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .rt-page {
+    width: 100%;
+    padding: 16px;
+  }
+}

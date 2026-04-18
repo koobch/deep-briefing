@@ -160,3 +160,75 @@ Auto 모드에서는 생략.
 - **cross_division**: 복수 Division 재투입 → Sync Round 재실행 → 보고서 재작성 → QA
 
 상세: `sync-protocol.md` Phase 5.5 참조.
+
+## Phase 4.7: HTML/PDF 내보내기
+
+### 트리거
+Phase 5 QA PASS + Phase 5.5 피드백 확정 이후.
+MD 정본이 최종 형태로 확정된 시점에서 **단 1회** 실행.
+
+### 전제 조건
+- `reports/report-docs.md` 존재 (Phase 4-A 산출)
+- `reports/one-pager.md` 존재 (Phase 4-C 산출, 선택적)
+- `findings/golden-facts.yaml` 존재 (Phase 0.5+)
+- `qa/qa-report.md` PASS 판정 (Trust Badge용)
+
+### 실행 순서
+
+```
+Step 1: HTML 3종 생성
+  PM 실행 (Bash 도구):
+    python3 scripts/render-report-html.py {project-name}
+
+  산출:
+    {project}/reports/report-docs.html  (본문 태그 → sources.html 딥링크)
+    {project}/reports/one-pager.html    (태그 자동 제거, A4 1p)
+    {project}/reports/sources.html      (Golden Facts + Source Index 통합)
+
+Step 2: PDF 변환 (one-pager 한정)
+  PM 실행 (Bash 도구):
+    python3 scripts/render-onepager-pdf.py {project-name}
+
+  산출:
+    {project}/reports/one-pager.pdf     (Chrome headless, A4 1p)
+
+Step 3: 사용자에게 산출물 경로 안내
+  PM → 사용자:
+    ✅ HTML/PDF 생성 완료
+    - report-docs.html : 상세 보고서 (브라우저)
+    - one-pager.html/pdf : 경영진 원페이퍼
+    - sources.html : 출처 인덱스 (딥링크 지원)
+```
+
+### 옵션
+
+```
+# 특정 산출물만 생성
+--only {docs|one-pager|sources}
+
+# 태그 처리 모드 변경
+--docs-tags {link|mark|strip}          # 기본: link
+--one-pager-tags {link|mark|strip}     # 기본: strip
+
+# PDF 변환 대상
+--target {one-pager|docs|both}         # 기본: one-pager만
+```
+
+### 재실행 조건
+
+아래 파일 중 하나라도 변경되면 HTML 재생성:
+- `reports/report-docs.md`
+- `reports/one-pager.md`
+- `findings/golden-facts.yaml`
+- `findings/**/*.yaml` (source_index 포함)
+- `qa/qa-report.md` (Trust Badge 갱신)
+
+**HTML 직접 수정 금지** — MD 정본 수정 후 재생성 원칙.
+
+### 실패 처리
+
+- MD 없음 → 해당 보고서만 SKIP (다른 보고서 진행)
+- Chrome 미설치 → weasyprint fallback, 둘 다 없으면 PDF만 생략
+- golden-facts.yaml 비어 있음 → sources.html 생성 생략
+
+상세: `core/protocols/html-export-protocol.md` 참조.

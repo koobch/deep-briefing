@@ -35,7 +35,9 @@ model: opus
 
 ### 산출물
 
-- 주 산출물: `{project}/reports/report-docs.md` — 상세 전략 보고서
+- 주 산출물: `{project}/reports/report-docs.md` — 상세 전략 보고서 (Markdown 정본)
+
+**중요**: report-docs.md는 SSOT(Single Source of Truth)이다. HTML/PDF 변환은 Phase 4.7(QA PASS 이후)에서 `scripts/render-report-html.py`가 자동 처리한다. 본 에이전트는 HTML/PDF 산출물을 생성하지 않는다 — MD에만 집중한다.
 
 ### 품질 기준
 
@@ -310,3 +312,18 @@ Step 4: 품질 자가 점검
 - 미해소 리스크를 숨기지 않는다 — "미해소 리스크" 섹션에 명시
 - 전략 제안은 loop-convergence.md에 근거한다 — 보고서 작성 중 새로운 전략을 임의로 추가하지 않는다
 - 보고서의 모든 수치는 golden-facts.yaml과 정확히 일치해야 한다
+
+## Phase 4.7 (HTML/PDF 변환) 핸드오프
+
+- 본 에이전트는 **MD만 생성**한다. HTML/PDF는 Phase 4.7 스크립트가 담당.
+- MD 작성 시 고려사항:
+  - `[GF-###]`, `[S##]` 태그는 Phase 4.7에서 sources.html 딥링크로 변환됨 → **태그 형식 일관성** 유지
+  - 표(`|...|` Markdown table) 포맷은 HTML table로 그대로 변환됨 → 복잡한 병합셀 사용 금지
+  - blockquote(`> ...`)는 Pull Quote로 강조됨 → 핵심 인사이트에만 사용
+  - h2 섹션 제목은 TOC 사이드바에 자동 등록됨 → **Action Title** 규칙 필수
+- HTML/PDF 수정이 필요하면 MD 정본을 수정 후 재생성 — HTML 직접 편집 금지
+- **Classification**: 보고서 상단 또는 `## Classification` 섹션에 `internal` / `public` / `confidential` 중 하나 명시
+  - **CONFIDENTIAL 시 Phase 4.7 내보내기가 기본 차단됨**. PM 승인 후 `--allow-confidential-export` 플래그로만 허용 (우회는 `qa/audit-log.md` 기록)
+  - CONFIDENTIAL HTML에는 워터마크(SVG tile) + 페이지 배너(@page @top-center) 자동 삽입
+- **Phase 4.7 안전장치**: Phase 5 QA PASS가 없으면 기본 차단. Critical/Major > 0이면 차단 (`--skip-qa-check`로 프리뷰만 허용)
+- 상세: `core/protocols/html-export-protocol.md` 참조

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Source Index — {{ meta.project | default('전략 보고서') }}</title>
+<meta name="generator" content="deep-briefing render-report-html.py">
+<style>
+{{ css_tokens }}
+{{ css_base }}
+{{ css_print }}
+{{ css_sources }}
+</style>
+</head>
+<body class="rt-sources" data-classification="{{ meta.classification | default('internal') }}">
+<div class="rt-src-layout">
+
+  {# ─── 헤더 ─── #}
+  <header class="rt-src-header">
+    <div>
+      <h1 class="rt-src-title">Source Index</h1>
+      <div class="rt-src-subtitle">
+        {{ meta.project | default('전략 보고서') }}
+        {% if meta.last_verified %} · 최종 검증 {{ meta.last_verified }}{% endif %}
+      </div>
+    </div>
+    <div class="rt-src-meta">
+      <span class="count">{{ golden_facts | length }} + {{ source_index | length }}</span>
+      Golden Facts + Sources
+    </div>
+  </header>
+
+  {# ─── 탭 ─── #}
+  <div class="rt-src-tabs" role="tablist">
+    <button class="rt-src-tab active" data-panel="gf" role="tab">
+      Golden Facts <span class="count">{{ golden_facts | length }}</span>
+    </button>
+    <button class="rt-src-tab" data-panel="s" role="tab">
+      Source Index <span class="count">{{ source_index | length }}</span>
+    </button>
+  </div>
+
+  {# ─── 검색 ─── #}
+  <input type="search" class="rt-src-search" placeholder="🔍 검색 (ID, 소스명, 지표, URL...)" id="rt-src-search">
+
+  {# ─── Golden Facts 패널 ─── #}
+  <section class="rt-src-panel active" data-panel="gf" id="panel-gf">
+    {% if golden_facts %}
+    <div class="rt-gf-list">
+      {% for f in golden_facts %}
+      <div class="rt-gf-card" id="gf-{{ f.id | default('') | replace('GF-', '') | lower }}" data-search="{{ f.id }} {{ f.metric | default('') }} {{ f.entity | default('') }} {{ f.category | default('') }}">
+        <div class="rt-gf-card-header">
+          <span class="rt-gf-id">{{ f.id }}</span>
+          {% if f.category %}<span class="rt-gf-category">{{ f.category }}</span>{% endif %}
+          {% if f.confidence %}
+          <span class="rt-gf-confidence {{ f.confidence | replace('[', '') | replace(']', '') | lower }}">{{ f.confidence }}</span>
+          {% endif %}
+        </div>
+        {% if f.metric or f.entity %}
+        <div class="rt-gf-metric">
+          {% if f.entity %}{{ f.entity }}{% if f.entity_label %} {{ f.entity_label }}{% endif %} — {% endif %}{{ f.metric | default('') }}
+        </div>
+        {% endif %}
+        {% if f.value is not none %}
+        <div class="rt-gf-value">
+          <span class="num">{{ f.value }}</span>
+          {% if f.unit %}<span class="unit">{{ f.unit }}</span>{% endif %}
+          {% if f.as_of %}<span class="as-of">as of {{ f.as_of }}</span>{% endif %}
+        </div>
+        {% endif %}
+        <div class="rt-gf-meta">
+          {% if f.source_id %}
+          <div class="rt-gf-meta-field">
+            <strong>Source</strong>
+            <a class="rt-gf-source-link" href="#s-{{ f.source_id | replace('S', '') | lower }}">{{ f.source_id }}</a>
+          </div>
+          {% endif %}
+          {% if f.source_detail %}
+          <div class="rt-gf-meta-field">
+            <strong>Detail</strong>
+            {{ f.source_detail }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="rt-src-empty">
+      아직 Golden Facts가 등록되지 않았습니다.<br>
+      Phase 0.5 또는 Phase 1 완료 후 fact-verifier가 등록합니다.
+    </div>
+    {% endif %}
+  </section>
+
+  {# ─── Source Index 패널 ─── #}
+  <section class="rt-src-panel" data-panel="s" id="panel-s">
+    {% if source_index %}
+    <div class="rt-s-list">
+      {% for s in source_index %}
+      <div class="rt-s-card" id="s-{{ s.id | default('') | replace('S', '') | lower }}" data-search="{{ s.id }} {{ s.name | default('') }} {{ s.url | default('') }} {{ s._division | default('') }}">
+        <span class="rt-s-id">{{ s.id }}</span>
+        <div class="rt-s-body">
+          <div class="rt-s-name">{{ s.name | default('(unnamed)') }}</div>
+          {% if s.url and (s.url.startswith('http://') or s.url.startswith('https://') or s.url.startswith('mailto:')) %}
+          <a class="rt-s-url" href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.url }}</a>
+          {% elif s.url %}
+          <span class="rt-s-url" style="color: var(--rt-danger)">{{ s.url }} (차단된 링크 스킴)</span>
+          {% else %}
+          <span class="rt-s-url" style="color: var(--rt-ink-faint)">URL 없음 (유료/내부 자료)</span>
+          {% endif %}
+          {% if s.summary %}<div class="rt-s-summary">{{ s.summary }}</div>{% endif %}
+          {% if s.note %}<div class="rt-s-note">⚠ {{ s.note }}</div>{% endif %}
+        </div>
+        <div class="rt-s-tags">
+          {% if s.type %}<span class="rt-s-type {{ s.type | lower }}">{{ s.type }}</span>{% endif %}
+          {% if s.reliability %}<span class="rt-s-reliability {{ s.reliability | lower }}">{{ s.reliability }}</span>{% endif %}
+          {% if s.accessed %}<span class="rt-s-accessed">{{ s.accessed }}</span>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="rt-src-empty">
+      Source Index가 비어 있습니다.<br>
+      Division별 산출물(<code>findings/{division}/*.yaml</code>)의 <code>source_index</code>가 집계됩니다.
+    </div>
+    {% endif %}
+  </section>
+
+</div>
+
+{# ─── 뒤로가기 버튼 (URL 파라미터로 출처로 진입 시 표시) ─── #}
+<a href="javascript:history.back()" class="rt-src-back rt-screen-only" id="rt-src-back" style="display: none;">보고서로 돌아가기</a>
+
+<script>
+// ─── 탭 전환 ───
+document.querySelectorAll('.rt-src-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.panel;
+    document.querySelectorAll('.rt-src-tab').forEach(t => t.classList.toggle('active', t === tab));
+    document.querySelectorAll('.rt-src-panel').forEach(p => {
+      p.classList.toggle('active', p.dataset.panel === target);
+    });
+  });
+});
+
+// ─── URL 해시 기반 자동 패널 전환 ───
+function openPanelFromHash() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  const isGf = hash.startsWith('#gf-');
+  const isS = hash.startsWith('#s-');
+  if (isGf || isS) {
+    const target = isGf ? 'gf' : 's';
+    document.querySelectorAll('.rt-src-tab').forEach(t => t.classList.toggle('active', t.dataset.panel === target));
+    document.querySelectorAll('.rt-src-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === target));
+    // 해시 스크롤 다시 트리거
+    const el = document.querySelector(hash);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
+  }
+}
+window.addEventListener('hashchange', openPanelFromHash);
+window.addEventListener('DOMContentLoaded', openPanelFromHash);
+
+// ─── 참조 페이지에서 진입 시 뒤로가기 버튼 표시 ───
+if (document.referrer && document.referrer.includes('report-docs.html')) {
+  document.getElementById('rt-src-back').style.display = 'inline-flex';
+}
+
+// ─── 검색 ───
+const searchInput = document.getElementById('rt-src-search');
+searchInput.addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase().trim();
+  document.querySelectorAll('.rt-gf-card, .rt-s-card').forEach(card => {
+    const text = (card.dataset.search || '').toLowerCase();
+    card.style.display = (!q || text.includes(q)) ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>

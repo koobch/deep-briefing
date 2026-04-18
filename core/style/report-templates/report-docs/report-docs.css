@@ -1,0 +1,396 @@
+/* ===================================================================
+   report-docs.css — 세로형 상세 보고서 (15~30페이지)
+   McKinsey/BCG 스타일, 좌측 TOC 사이드바 + 메인 본문
+   =================================================================== */
+
+body.rt-docs {
+  background: var(--rt-paper-3);
+}
+
+/* ─── 전체 레이아웃: 사이드바 + 본문 ─────────────────────── */
+.rt-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+/* ─── 좌측 TOC 사이드바 (화면 전용) ─────────────────────── */
+nav.rt-toc-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--rt-paper);
+  border-right: 1px solid var(--rt-rule);
+  padding: var(--rt-sp-7) var(--rt-sp-5);
+  font-size: var(--rt-fs-small);
+}
+
+.rt-toc-title {
+  font-size: var(--rt-fs-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rt-ink-faint);
+  margin-bottom: var(--rt-sp-4);
+}
+
+.rt-toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rt-toc-list li { margin-bottom: var(--rt-sp-2); }
+
+.rt-toc-list a {
+  display: block;
+  padding: var(--rt-sp-1) var(--rt-sp-3);
+  color: var(--rt-ink-muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  line-height: 1.4;
+}
+
+.rt-toc-list a:hover {
+  color: var(--rt-ink-strong);
+  background: var(--rt-paper-2);
+}
+
+.rt-toc-list a.active {
+  color: var(--rt-accent);
+  border-left-color: var(--rt-accent);
+  background: var(--rt-accent-bg);
+  font-weight: 500;
+}
+
+/* ─── 본문 영역 ─────────────────────────────────────────── */
+main.rt-main {
+  padding: var(--rt-page-pad-y) var(--rt-page-pad-x);
+  max-width: calc(var(--rt-page-max) + var(--rt-page-pad-x) * 2);
+  margin: 0 auto;
+  background: var(--rt-paper);
+  box-shadow: var(--rt-shadow-card);
+}
+
+/* ─── 표지 ─────────────────────────────────────────────── */
+.rt-cover {
+  padding: var(--rt-sp-10) 0 var(--rt-sp-9);
+  border-bottom: 3px solid var(--rt-accent);
+  margin-bottom: var(--rt-sp-8);
+}
+
+.rt-cover-kicker {
+  font-size: var(--rt-fs-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--rt-accent);
+  margin-bottom: var(--rt-sp-3);
+}
+
+.rt-cover-title {
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--rt-ink-strong);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--rt-sp-4);
+}
+
+.rt-cover-subtitle {
+  font-size: var(--rt-fs-h3);
+  color: var(--rt-ink-muted);
+  font-weight: 400;
+  margin-bottom: var(--rt-sp-6);
+}
+
+.rt-cover-meta {
+  display: flex;
+  gap: var(--rt-sp-6);
+  font-size: var(--rt-fs-small);
+  color: var(--rt-ink-muted);
+}
+
+.rt-cover-meta span strong {
+  display: block;
+  color: var(--rt-ink-strong);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: var(--rt-fs-caption);
+  margin-bottom: 2px;
+}
+
+/* ─── Trust Badge (검증 배지) ─────────────────────────────── */
+.rt-trust-badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rt-sp-3);
+  padding: var(--rt-sp-4) var(--rt-sp-5);
+  background: var(--rt-paper-2);
+  border: 1px solid var(--rt-rule);
+  border-radius: var(--rt-radius-md);
+  margin-bottom: var(--rt-sp-7);
+  font-size: var(--rt-fs-small);
+}
+
+.rt-trust-badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background: var(--rt-paper);
+  border: 1px solid var(--rt-rule);
+  border-radius: 100px;
+  color: var(--rt-ink-muted);
+  font-weight: 500;
+}
+
+.rt-trust-badge-item.pass {
+  background: #e8f4ee;
+  border-color: #a9d4bd;
+  color: var(--rt-success);
+}
+
+.rt-trust-badge-item.warn {
+  background: #fdf3e4;
+  border-color: #e6c598;
+  color: var(--rt-warning);
+}
+
+/* ─── Executive Summary ─────────────────────────────────── */
+.rt-exec-summary {
+  background: var(--rt-paper-2);
+  border-left: 4px solid var(--rt-accent);
+  padding: var(--rt-sp-6) var(--rt-sp-6);
+  margin-bottom: var(--rt-sp-8);
+  border-radius: 0 var(--rt-radius-md) var(--rt-radius-md) 0;
+}
+
+.rt-exec-summary h2 {
+  margin-top: 0;
+  border: none;
+  padding: 0;
+}
+
+/* Key Findings 카드 */
+.rt-key-findings {
+  display: grid;
+  gap: var(--rt-sp-3);
+  margin-top: var(--rt-sp-5);
+}
+
+.rt-key-finding {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: var(--rt-sp-3);
+  padding: var(--rt-sp-3) var(--rt-sp-4);
+  background: var(--rt-paper);
+  border: 1px solid var(--rt-rule);
+  border-radius: var(--rt-radius-md);
+}
+
+.rt-key-finding-num {
+  font-family: var(--rt-font-mono);
+  font-size: var(--rt-fs-h3);
+  font-weight: 700;
+  color: var(--rt-accent);
+  line-height: 1;
+}
+
+.rt-key-finding-text {
+  font-size: var(--rt-fs-body);
+  line-height: var(--rt-lh-normal);
+}
+
+.rt-key-finding-text strong {
+  color: var(--rt-accent);
+}
+
+/* ─── 장(Chapter) 헤더 ─────────────────────────────────── */
+.rt-chapter {
+  margin-top: var(--rt-sp-9);
+}
+
+.rt-chapter-num {
+  display: inline-block;
+  font-family: var(--rt-font-mono);
+  font-size: var(--rt-fs-caption);
+  font-weight: 700;
+  color: var(--rt-accent);
+  background: var(--rt-accent-bg);
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: var(--rt-sp-3);
+  letter-spacing: 0.08em;
+}
+
+/* Pull Quote */
+.rt-pullquote {
+  font-family: var(--rt-font-serif);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--rt-ink-strong);
+  padding: var(--rt-sp-5) 0 var(--rt-sp-5) var(--rt-sp-5);
+  border-left: 3px solid var(--rt-accent);
+  margin: var(--rt-sp-6) 0;
+}
+
+/* So What 박스 */
+.rt-so-what {
+  background: var(--rt-accent-bg);
+  border-radius: var(--rt-radius-md);
+  padding: var(--rt-sp-4) var(--rt-sp-5);
+  margin: var(--rt-sp-5) 0;
+  border-left: 4px solid var(--rt-accent);
+}
+
+.rt-so-what-label {
+  display: block;
+  font-size: var(--rt-fs-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rt-accent);
+  margin-bottom: var(--rt-sp-2);
+}
+
+/* ─── 리스크 섹션 ─────────────────────────────────────── */
+.rt-risk {
+  background: #fdf3f2;
+  border-left: 4px solid var(--rt-danger);
+  border-radius: 0 var(--rt-radius-md) var(--rt-radius-md) 0;
+  padding: var(--rt-sp-4) var(--rt-sp-5);
+  margin: var(--rt-sp-5) 0;
+}
+
+.rt-risk-label {
+  display: inline-block;
+  font-size: var(--rt-fs-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rt-danger);
+  margin-bottom: var(--rt-sp-2);
+}
+
+/* ─── Implementation Playbook 카드 ─────────────────────── */
+.rt-initiative {
+  background: var(--rt-paper);
+  border: 1px solid var(--rt-rule);
+  border-radius: var(--rt-radius-md);
+  padding: var(--rt-sp-5);
+  margin-bottom: var(--rt-sp-4);
+  box-shadow: var(--rt-shadow-card);
+}
+
+.rt-initiative-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--rt-sp-3);
+  padding-bottom: var(--rt-sp-2);
+  border-bottom: 1px solid var(--rt-rule);
+}
+
+.rt-initiative-title {
+  font-size: var(--rt-fs-h3);
+  font-weight: 700;
+  color: var(--rt-ink-strong);
+}
+
+.rt-initiative-priority {
+  font-family: var(--rt-font-mono);
+  font-size: var(--rt-fs-caption);
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.rt-initiative-priority.p0 { background: var(--rt-danger); color: #fff; }
+.rt-initiative-priority.p1 { background: var(--rt-warning); color: #fff; }
+.rt-initiative-priority.p2 { background: var(--rt-ink-muted); color: #fff; }
+
+.rt-initiative-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--rt-sp-3);
+  font-size: var(--rt-fs-small);
+}
+
+.rt-initiative-field strong {
+  display: block;
+  font-size: var(--rt-fs-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rt-ink-faint);
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+/* ─── Source Index ─────────────────────────────────────── */
+.rt-source-index {
+  margin-top: var(--rt-sp-9);
+  padding-top: var(--rt-sp-7);
+  border-top: 2px solid var(--rt-accent);
+}
+
+.rt-source-index table {
+  font-size: var(--rt-fs-caption);
+}
+
+/* ─── 반응형: 태블릿 이하 ─────────────────────────────── */
+@media (max-width: 900px) {
+  .rt-layout {
+    grid-template-columns: 1fr;
+  }
+
+  nav.rt-toc-sidebar {
+    display: none;
+  }
+
+  main.rt-main {
+    padding: var(--rt-sp-6) var(--rt-sp-5);
+  }
+
+  .rt-initiative-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── 인쇄: A4 세로 ─────────────────────────────────────── */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: var(--rt-a4-margin);
+
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: var(--rt-font-sans);
+      font-size: 9pt;
+      color: var(--rt-ink-faint);
+    }
+  }
+
+  .rt-layout {
+    grid-template-columns: 1fr;
+  }
+
+  main.rt-main {
+    box-shadow: none;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .rt-cover {
+    page-break-after: always;
+  }
+
+  .rt-chapter {
+    page-break-before: auto;
+  }
+}

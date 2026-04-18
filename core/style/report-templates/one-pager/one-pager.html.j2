@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>{{ meta.title | default('경영진 원페이퍼') }}{% if meta.classification %} [{{ meta.classification | upper }}]{% endif %}</title>
+<meta name="generator" content="deep-briefing render-report-html.py">
+<meta name="classification" content="{{ meta.classification | default('internal') }}">
+<style>
+{{ css_tokens }}
+{{ css_base }}
+{{ css_print }}
+{{ css_one_pager }}
+</style>
+</head>
+<body class="rt-one-pager" data-classification="{{ meta.classification | default('internal') }}">
+
+<div class="rt-page">
+
+  {# ─── 헤더 ─── #}
+  <header class="rt-op-header">
+    <div>
+      <h1 class="rt-op-title">{{ meta.title | default('경영진 원페이퍼') }}</h1>
+      {% if meta.subtitle %}<span class="rt-op-subtitle">{{ meta.subtitle }}</span>{% endif %}
+    </div>
+    <div class="rt-op-meta">
+      {{ meta.generated_at | default('') }}
+      {% if meta.classification %}
+      <span class="rt-op-classification {{ meta.classification | lower }}">{{ meta.classification | upper }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  {# ─── BLUF ─── #}
+  {% if bluf %}
+  <section class="rt-op-bluf">
+    <span class="rt-op-bluf-label">Bottom Line Up Front</span>
+    <div class="rt-op-bluf-statement">{{ bluf.statement | safe }}</div>
+    {% if bluf.reason %}<div class="rt-op-bluf-reason">{{ bluf.reason | safe }}</div>{% endif %}
+  </section>
+  {% endif %}
+
+  {# ─── 본문: 단일 컬럼 수직 스택 (Pyramid 흐름) ─── #}
+  <section class="rt-op-body">
+
+    {% if key_findings %}
+    <section>
+      <div class="rt-op-section-title">Key Findings</div>
+      <div class="rt-op-findings">
+        {% for f in key_findings %}
+        <div class="rt-op-finding">
+          <span>{{ f | safe }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if financial_table_html %}
+    <section>
+      <div class="rt-op-section-title">Financial Snapshot</div>
+      <div class="rt-op-snapshot">
+        {{ financial_table_html | safe }}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if recommended_actions %}
+    <section>
+      <div class="rt-op-section-title">Recommended Actions</div>
+      <div class="rt-op-actions">
+        {% for a in recommended_actions %}
+        <div class="rt-op-action">
+          <span class="rt-op-action-priority {{ a.priority | lower }}">{{ a.priority | upper }}</span>
+          <span>
+            <strong>{{ a.title }}</strong>
+            {% if a.description %}— {{ a.description | safe }}{% endif %}
+          </span>
+          <span class="rt-op-action-meta">
+            {% if a.owner %}{{ a.owner }}{% endif %}
+            {% if a.milestone %} · {{ a.milestone }}{% endif %}
+          </span>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if risks %}
+    <section class="rt-op-risks">
+      <div class="rt-op-section-title">Risk Alert</div>
+      {% for r in risks %}
+      <span class="rt-op-risk">{{ r | safe }}</span>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+  </section>
+
+  {# ─── 푸터 ─── #}
+  <footer class="rt-op-footer">
+    <div class="rt-op-trust-mini">
+      {% for b in trust_badges | default([]) %}
+      <span class="{{ b.status | default('') }}">{{ b.label }}</span>
+      {% endfor %}
+    </div>
+    <div>{{ meta.project | default('') }} · v{{ meta.version | default('1.0') }}</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

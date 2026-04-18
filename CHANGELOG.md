@@ -5,6 +5,68 @@
 
 ---
 
+## v4.10 — 2026-04-18 (Phase 4.7 HTML/PDF 내보내기 도입)
+
+### 의사결정 기록
+- **배경**: v4.9에서 슬라이드 시스템을 제거하면서 MD가 최종 산출물이 됨. 경영진/실무진이 브라우저·이메일·인쇄로 바로 소비할 수 있는 보조 산출물 필요
+- **핵심 판단**: HTML/PDF는 MD 정본의 **파생물(derivative)** — 에이전트는 MD만 생성, 별도 변환 레이어(Phase 4.7)에서 HTML/PDF 렌더링
+- **QA 불변**: Phase 5 QA 파이프라인은 MD만 검증 (audience-fit-checker, report-auditor 등 기존 로직 100% 유지). HTML 생성은 QA PASS 이후
+- **외부 의존성 최소**: Python `markdown` + `jinja2`(이미 일반 의존성) + Chrome headless(macOS 기본 설치). 신규 의존성 0개(weasyprint는 선택적 fallback)
+
+### Scripts (신규 2개)
+- **scripts/render-report-html.py 신규**: Phase 4.7 MD → HTML 변환기
+  - `reports/report-docs.md` → `report-docs.html` (좌측 TOC 사이드바 + 본문)
+  - `reports/one-pager.md` → `one-pager.html` (A4 1p, 태그 자동 제거, 단일 컬럼 피라미드 레이아웃)
+  - `findings/golden-facts.yaml` + `findings/**/*.yaml` 의 `source_index` → `sources.html` (탭 + 검색 + 딥링크 앵커)
+  - 태그 처리 모드: `link` / `mark` / `strip` (CLI 플래그)
+  - Financial Snapshot 표의 "출처"/"Source" 열 자동 제거 (원페이퍼 한정)
+- **scripts/render-onepager-pdf.py 신규**: Phase 4.7 HTML → PDF 변환기
+  - Chrome headless 우선 (macOS 기본 설치 경로 자동 탐지)
+  - weasyprint fallback (설치된 경우)
+  - Chrome 타임아웃 시 파일 존재 여부로 재판정 (일부 환경의 Chrome 종료 지연 대응)
+
+### Protocols
+- **core/protocols/html-export-protocol.md 신규**: Phase 4.7 전체 프로토콜 명세
+  - 설계 원칙(MD 정본, QA 불변, 출처 분리, 인쇄 호환)
+  - 실행 순서, 산출물 상세, 옵션, 실패 처리, 재실행 조건
+
+### Style (신규 템플릿 디렉토리)
+- **core/style/report-templates/ 신규**:
+  - `shared/tokens.css` — 디자인 토큰 (McKinsey/BCG 컨설팅 팔레트: 딥 네이비 #003a70 + 블루 #0066cc)
+  - `shared/base.css` — 본문 타이포그래피, 리셋, 테이블/리스트/코드
+  - `shared/print.css` — @media print 공통 규칙
+  - `report-docs/{report-docs.css, report-docs.html.j2}` — 세로형 상세 보고서 템플릿
+  - `one-pager/{one-pager.css, one-pager.html.j2}` — A4 1페이지 단일 컬럼 레이아웃
+  - `sources/{sources.css, sources.html.j2}` — 출처 인덱스 (탭 + 검색 + 딥링크)
+  - `README.md` — 템플릿 사용 가이드
+
+### Agents
+- **report-writer.md**: "Phase 4.7 핸드오프" 섹션 추가 — MD만 생성, HTML/PDF는 Phase 4.7 담당
+- **brief-writer.md**: 동일. 추가로 톤 가이드 "개조식(체언 종결)" 명시, Financial Snapshot 출처 열 자동 제거 규칙 안내, P0/P1/P2 액션 포맷 파서 규칙 명시
+
+### Skills
+- **.claude/skills/research/phase-2-synthesis.md**: Phase 4.7 섹션 추가 (Phase 5.5 이후 실행)
+- **.claude/skills/research/SKILL.md**: 실행 시퀀스 + 사용자 개입 포인트 요약 테이블에 Phase 4.7 추가
+
+### Docs
+- **CLAUDE.md**:
+  - 오케스트레이션 흐름에 Phase 4.7 추가
+  - 디렉토리 구조 `core/style/report-templates/` 설명 추가
+  - 핵심 프로토콜 "HTML 내보내기" 항목 추가
+  - 스크립트 테이블에 render-report-html.py / render-onepager-pdf.py 추가
+
+### Dependencies
+- **requirements.txt**: `markdown>=3.5`, `jinja2>=3.1` 명시 (기존에 설치되어 있었으나 문서화)
+
+### 검증
+- 스모크 테스트: GF 17개 + Source 6개 샘플 → 링크 14개 모두 앵커 매칭 (Dangling 0)
+- PDF 생성: Chrome headless A4 1페이지 강제 ✅
+- 출처 열 자동 제거: Financial Snapshot 헤더에서 "출처" 열 탈락 확인 ✅
+- BLUF 박스: 검은 글씨 가독성 이슈 → 흰색 통일 + 밑줄 강조로 해결
+- 레이아웃: 2열 분할 → 단일 컬럼 수직 피라미드 (사용자 피드백 반영)
+
+---
+
 ## v4.9 — 2026-04-11 (슬라이드 시스템 제거 — 보고서 2종 체계 확정)
 
 ### 의사결정 기록

@@ -1,0 +1,291 @@
+/* ===================================================================
+   Deep-Briefing Report Templates — Base Typography & Reset
+   화면/인쇄 공통 베이스 (tokens.css 의존)
+   =================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--rt-font-sans);
+  font-size: var(--rt-fs-body);
+  line-height: var(--rt-lh-normal);
+  color: var(--rt-ink);
+  background: var(--rt-paper-3);
+}
+
+/* ─── 타이포 ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--rt-font-sans);
+  color: var(--rt-ink-strong);
+  line-height: var(--rt-lh-tight);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: var(--rt-fs-h1);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--rt-sp-3);
+}
+
+h2 {
+  font-size: var(--rt-fs-h2);
+  margin-top: var(--rt-sp-8);
+  margin-bottom: var(--rt-sp-3);
+  padding-bottom: var(--rt-sp-2);
+  border-bottom: 2px solid var(--rt-accent);
+}
+
+h3 {
+  font-size: var(--rt-fs-h3);
+  margin-top: var(--rt-sp-6);
+  margin-bottom: var(--rt-sp-2);
+  color: var(--rt-accent);
+}
+
+h4 {
+  font-size: var(--rt-fs-h4);
+  margin-top: var(--rt-sp-4);
+  margin-bottom: var(--rt-sp-2);
+  color: var(--rt-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+p {
+  margin-bottom: var(--rt-sp-3);
+  line-height: var(--rt-lh-normal);
+}
+
+p + p { margin-top: 0; }
+
+strong, b {
+  font-weight: 700;
+  color: var(--rt-ink-strong);
+}
+
+em, i { font-style: italic; }
+
+/* 인라인 KPI 강조 (본문 bold 수치) */
+p strong {
+  color: var(--rt-accent);
+  font-weight: 700;
+}
+
+/* 링크 */
+a {
+  color: var(--rt-accent-2);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--rt-accent); }
+
+/* ─── 리스트 ─────────────────────────────────────────────── */
+ul, ol {
+  margin: 0 0 var(--rt-sp-4) var(--rt-sp-5);
+  padding: 0;
+}
+
+li {
+  margin-bottom: var(--rt-sp-2);
+  line-height: var(--rt-lh-normal);
+}
+
+ul li::marker { color: var(--rt-accent); }
+
+/* ─── 코드/인용 ─────────────────────────────────────────── */
+code {
+  font-family: var(--rt-font-mono);
+  font-size: 0.92em;
+  background: var(--rt-paper-2);
+  padding: 1px 5px;
+  border-radius: var(--rt-radius-sm);
+  color: var(--rt-accent);
+}
+
+pre {
+  font-family: var(--rt-font-mono);
+  background: var(--rt-paper-2);
+  border: 1px solid var(--rt-rule);
+  border-radius: var(--rt-radius-md);
+  padding: var(--rt-sp-4);
+  overflow-x: auto;
+  margin-bottom: var(--rt-sp-4);
+  font-size: var(--rt-fs-small);
+}
+
+blockquote {
+  margin: var(--rt-sp-5) 0;
+  padding: var(--rt-sp-4) var(--rt-sp-5);
+  background: var(--rt-accent-bg);
+  border-left: 4px solid var(--rt-accent);
+  border-radius: 0 var(--rt-radius-md) var(--rt-radius-md) 0;
+  font-size: calc(var(--rt-fs-body) + 1px);
+  color: var(--rt-ink-strong);
+}
+
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ─── 테이블 ─────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--rt-sp-5) 0;
+  font-size: var(--rt-fs-small);
+}
+
+thead {
+  background: var(--rt-accent);
+  color: #ffffff;
+}
+
+th {
+  padding: var(--rt-sp-2) var(--rt-sp-3);
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid var(--rt-accent);
+}
+
+td {
+  padding: var(--rt-sp-2) var(--rt-sp-3);
+  border: 1px solid var(--rt-rule);
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) { background: var(--rt-paper-2); }
+
+/* 수치 컬럼 우측 정렬 힌트 (td:has()로 자동화는 어려움 — 사용자가 클래스 지정) */
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ─── 수평선 ─────────────────────────────────────────────── */
+hr {
+  border: none;
+  border-top: 1px solid var(--rt-rule);
+  margin: var(--rt-sp-7) 0;
+}
+
+/* ─── 이미지/차트 ─────────────────────────────────────────── */
+img, figure {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: var(--rt-sp-5) auto;
+}
+
+figcaption {
+  font-size: var(--rt-fs-caption);
+  color: var(--rt-ink-faint);
+  text-align: center;
+  margin-top: var(--rt-sp-2);
+}
+
+/* ─── CONFIDENTIAL Watermark (기밀 등급 시각 경고) ─────────── */
+/* 화면: fixed 오버레이 / 인쇄: SVG 배경 tile로 매 페이지 반복 보장 */
+
+/* 화면 전용: 화면 중앙 단일 워터마크 */
+body[data-classification="confidential"]::before {
+  content: "CONFIDENTIAL";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(185, 58, 48, 0.08);
+  pointer-events: none;
+  z-index: 9999;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  font-family: var(--rt-font-sans);
+}
+
+/* 화면 상단 경고 배너 (fixed로 모든 뷰포트 상단 고정) */
+body[data-classification="confidential"]::after {
+  content: "⚠ CONFIDENTIAL — 배포 금지, 인쇄/공유 제한";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 6px 12px;
+  background: #b93a30;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.08em;
+  z-index: 10000;
+  font-family: var(--rt-font-sans);
+  pointer-events: none;
+}
+
+/* 인쇄/PDF: 매 페이지 반복되는 tiled 워터마크 배경 */
+@media print {
+  body[data-classification="confidential"] {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><text x='250' y='260' font-family='sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='%23b93a30' fill-opacity='0.10' transform='rotate(-25 250 250)'>CONFIDENTIAL</text></svg>") !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-size: 500px 500px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 화면용 중앙 워터마크는 숨김 (배경이 대신함) */
+  body[data-classification="confidential"]::before {
+    display: none !important;
+  }
+
+  /* 상단 배너는 페이지마다 반복되게 @page running header로 변환 */
+  body[data-classification="confidential"]::after {
+    display: none !important;
+  }
+
+  @page :first {
+    @top-center {
+      content: "⚠ CONFIDENTIAL — 배포 금지, 인쇄/공유 제한";
+      color: #b93a30;
+      font-weight: 700;
+      font-size: 10pt;
+    }
+  }
+  @page {
+    @top-center {
+      content: "⚠ CONFIDENTIAL";
+      color: #b93a30;
+      font-weight: 700;
+      font-size: 9pt;
+    }
+  }
+}
+
+/* ─── GF/S 태그 인라인 하이라이트 ─────────────────────────── */
+/* Python 변환기가 [GF-###]/[S##] 패턴을 <mark> 태그로 래핑 */
+mark.rt-tag-gf,
+mark.rt-tag-s {
+  background: var(--rt-accent-bg);
+  color: var(--rt-accent);
+  padding: 0 4px;
+  border-radius: var(--rt-radius-sm);
+  font-family: var(--rt-font-mono);
+  font-size: 0.85em;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+mark.rt-tag-s {
+  background: var(--rt-paper-2);
+  color: var(--rt-ink-muted);
+}

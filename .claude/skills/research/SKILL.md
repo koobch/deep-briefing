@@ -134,9 +134,10 @@ Phase별 상세 워크플로우는 보조 파일 참조:
 3. **Phase 1**: Division 병렬 리서치 (가설 검증 중심) → [phase-1-parallel.md](phase-1-parallel.md)
 4. **Phase 2~3**: 교차 심화 + 사고 루프 → [phase-2-synthesis.md](phase-2-synthesis.md)
 5. **Phase 3.7**: External Review (약점 체크 + 자기 비판) → [phase-2-synthesis.md](phase-2-synthesis.md)
-6. **Phase 4**: 보고서 생성 → [phase-2-synthesis.md](phase-2-synthesis.md)
-7. **Phase 5**: QA 자동 수정 루프 → [phase-2-synthesis.md](phase-2-synthesis.md)
+6. **Phase 4-A / 4-C**: 세로형 상세 보고서 + 경영진 원페이퍼 (MD) → [phase-2-synthesis.md](phase-2-synthesis.md)
+7. **Phase 5**: QA 자동 수정 루프 (MD) → [phase-2-synthesis.md](phase-2-synthesis.md)
 8. **Phase 5.5**: 사용자 피드백 + 부분 재실행 → [phase-2-synthesis.md](phase-2-synthesis.md)
+9. **Phase 4.7**: HTML/PDF 내보내기 (QA PASS 후 1회) → [phase-2-synthesis.md](phase-2-synthesis.md) + [core/protocols/html-export-protocol.md](../../../core/protocols/html-export-protocol.md)
 
 ## 사용자 개입 포인트 요약
 
@@ -156,6 +157,7 @@ Phase별 상세 워크플로우는 보조 파일 참조:
 | Phase 4 | 보고서 구성 확인 | 보고서 생성 |
 | Phase 5 | PM 최종 확인 | QA 자동 루프 (mechanical + source + confidence + executability-checker + audience-fit-checker + report-auditor → report-fixer) |
 | Phase 5.5 | 피드백 입력 → 확정 | 부분 재실행 + QA |
+| Phase 4.7 | — | HTML/PDF 내보내기 (report-docs.html, one-pager.html, sources.html, one-pager.pdf) |
 | Phase 6 | — | Post-mortem 자동 생성 |
 
 ## 사용자 도메인 지식 수집 프로토콜 (Interactive/Team)

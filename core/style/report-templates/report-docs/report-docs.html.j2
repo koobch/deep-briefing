@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>{{ meta.title | default('전략 보고서') }}{% if meta.classification %} [{{ meta.classification | upper }}]{% endif %}</title>
+<meta name="generator" content="deep-briefing render-report-html.py">
+<meta name="classification" content="{{ meta.classification | default('internal') }}">
+<meta name="project" content="{{ meta.project | default('') }}">
+<meta name="generated-at" content="{{ meta.generated_at }}">
+<style>
+{{ css_tokens }}
+{{ css_base }}
+{{ css_print }}
+{{ css_report_docs }}
+</style>
+</head>
+<body class="rt-docs" data-classification="{{ meta.classification | default('internal') }}">
+<div class="rt-layout">
+
+  {# ─── 좌측 TOC 사이드바 (화면 전용) ─── #}
+  <nav class="rt-toc-sidebar rt-screen-only">
+    <div class="rt-toc-title">목차</div>
+    <ul class="rt-toc-list">
+      {% for item in toc %}
+      <li><a href="#{{ item.anchor }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <main class="rt-main">
+
+    {# ─── 표지 ─── #}
+    <section class="rt-cover">
+      {% if meta.kicker %}<div class="rt-cover-kicker">{{ meta.kicker }}</div>{% endif %}
+      <h1 class="rt-cover-title">{{ meta.title | default('전략 보고서') }}</h1>
+      {% if meta.subtitle %}<p class="rt-cover-subtitle">{{ meta.subtitle }}</p>{% endif %}
+      <div class="rt-cover-meta">
+        {% if meta.project %}<span><strong>Project</strong>{{ meta.project }}</span>{% endif %}
+        {% if meta.generated_at %}<span><strong>Date</strong>{{ meta.generated_at }}</span>{% endif %}
+        {% if meta.classification %}<span><strong>Classification</strong>{{ meta.classification | upper }}</span>{% endif %}
+        {% if meta.distribution %}<span><strong>Distribution</strong>{{ meta.distribution }}</span>{% endif %}
+      </div>
+    </section>
+
+    {# ─── Trust Badge ─── #}
+    {% if trust_badges %}
+    <section class="rt-trust-badge">
+      {% for b in trust_badges %}
+      <span class="rt-trust-badge-item {{ b.status | default('') }}">{{ b.label }}</span>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    {# ─── 본문 (MD → HTML 변환 결과) ─── #}
+    <article class="rt-article">
+      {{ body_html | safe }}
+    </article>
+
+  </main>
+</div>
+
+{# ─── 출처 데이터 임베드 (FF 수정: sources.html 없이도 작동) ─── #}
+<script type="application/json" id="rt-sources-data">{{ sources_json | default('{}') | safe }}</script>
+
+{# ─── 출처 모달 ─── #}
+<div id="rt-source-modal" class="rt-source-modal rt-screen-only" hidden>
+  <div class="rt-source-modal-backdrop" onclick="rtSourceModal.close()"></div>
+  <div class="rt-source-modal-panel" role="dialog" aria-modal="true">
+    <button class="rt-source-modal-close" onclick="rtSourceModal.close()" aria-label="닫기">✕</button>
+    <div class="rt-source-modal-body"></div>
+    <div class="rt-source-modal-footer">
+      <a class="rt-source-modal-full" href="#" target="_blank">전체 Source Index 열기 ↗</a>
+    </div>
+  </div>
+</div>
+
+<style>
+.rt-source-modal { position: fixed; inset: 0; z-index: 10001; }
+.rt-source-modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.rt-source-modal-panel {
+  position: relative; max-width: 560px; margin: 10vh auto;
+  background: #fff; border-radius: 10px; padding: 28px 28px 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25); font-family: var(--rt-font-sans);
+}
+.rt-source-modal-close {
+  position: absolute; top: 12px; right: 12px;
+  background: transparent; border: none; font-size: 20px;
+  cursor: pointer; color: var(--rt-ink-muted);
+}
+.rt-source-modal-body h3 {
+  font-size: 18px; margin: 0 0 8px; color: var(--rt-ink-strong);
+}
+.rt-source-modal-body .rt-modal-id {
+  display: inline-block; font-family: var(--rt-font-mono);
+  background: var(--rt-accent-bg); color: var(--rt-accent);
+  padding: 2px 10px; border-radius: 3px; font-size: 11px; font-weight: 700;
+  margin-bottom: 12px;
+}
+.rt-source-modal-body dl { display: grid; grid-template-columns: 90px 1fr; gap: 6px 16px; font-size: 13px; }
+.rt-source-modal-body dt { color: var(--rt-ink-faint); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+.rt-source-modal-body dd { margin: 0; color: var(--rt-ink); }
+.rt-source-modal-body a { color: var(--rt-accent-2); word-break: break-all; }
+.rt-source-modal-footer {
+  margin-top: 16px; padding-top: 12px;
+  border-top: 1px solid var(--rt-rule); font-size: 12px;
+  display: flex; justify-content: flex-end;
+}
+</style>
+
+<script>
+// 스크롤 위치에 따라 TOC 활성화 (화면 전용)
+(function(){
+  const links = document.querySelectorAll('.rt-toc-list a');
+  const headings = Array.from(document.querySelectorAll('.rt-article h2[id], .rt-article h3[id]'));
+  if (!links.length || !headings.length) return;
+
+  function onScroll() {
+    const y = window.scrollY + 100;
+    let active = headings[0];
+    for (const h of headings) {
+      if (h.offsetTop <= y) active = h;
+    }
+    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + active.id));
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// 출처 모달 (FF 수정): [GF-###]/[S##] 클릭 → 임베드된 sources JSON으로 팝업
+window.rtSourceModal = (function(){
+  const modal = document.getElementById('rt-source-modal');
+  const body = modal && modal.querySelector('.rt-source-modal-body');
+  const footerLink = modal && modal.querySelector('.rt-source-modal-full');
+  let data = {};
+  try {
+    const raw = document.getElementById('rt-sources-data').textContent.trim();
+    if (raw) data = JSON.parse(raw);
+  } catch (e) { console.warn('rt-sources-data parse failed', e); }
+
+  // XSS 방지: 안전한 URL 프로토콜만 허용
+  function isSafeUrl(url) {
+    if (typeof url !== 'string') return false;
+    const trimmed = url.trim().toLowerCase();
+    if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) return true;
+    if (trimmed.startsWith('mailto:')) return true;
+    return false;
+  }
+
+  function addRow(dl, label, value) {
+    if (!value && value !== 0) return;
+    const dt = document.createElement('dt');
+    dt.textContent = label;
+    const dd = document.createElement('dd');
+    dd.textContent = String(value);
+    dl.appendChild(dt);
+    dl.appendChild(dd);
+  }
+
+  function addUrlRow(dl, label, url) {
+    if (!url) return;
+    const dt = document.createElement('dt');
+    dt.textContent = label;
+    const dd = document.createElement('dd');
+    if (isSafeUrl(url)) {
+      const a = document.createElement('a');
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = url;
+      dd.appendChild(a);
+    } else {
+      // 안전하지 않은 스킴 (javascript:, data: 등)은 텍스트로만 표시
+      dd.textContent = url + ' (차단된 링크)';
+      dd.style.color = 'var(--rt-danger)';
+    }
+    dl.appendChild(dt);
+    dl.appendChild(dd);
+  }
+
+  function render(anchorKey) {
+    const entry = data[anchorKey];
+    if (!entry) return false;
+    const isGf = anchorKey.startsWith('gf-');
+
+    // innerHTML 대신 DOM API 사용 — XSS 차단
+    body.replaceChildren();  // 기존 내용 제거
+
+    const idBadge = document.createElement('span');
+    idBadge.className = 'rt-modal-id';
+    idBadge.textContent = entry.id || '';
+    body.appendChild(idBadge);
+
+    const h3 = document.createElement('h3');
+    h3.textContent = entry.title || '(unnamed)';
+    body.appendChild(h3);
+
+    const dl = document.createElement('dl');
+    if (isGf) {
+      if (entry.value !== null && entry.value !== undefined)
+        addRow(dl, 'Value', String(entry.value) + ' ' + (entry.unit || ''));
+      addRow(dl, 'As of', entry.as_of);
+      addRow(dl, 'Confidence', entry.confidence);
+      addRow(dl, 'Category', entry.category);
+      if (entry.source_id) {
+        const sourceText = entry.source_id + (entry.source_detail ? ' — ' + entry.source_detail : '');
+        addRow(dl, 'Source', sourceText);
+      }
+    } else {
+      addRow(dl, 'Type', entry.type);
+      addRow(dl, 'Reliability', entry.reliability);
+      addRow(dl, 'Accessed', entry.accessed);
+      addUrlRow(dl, 'URL', entry.url);
+      addRow(dl, 'Summary', entry.summary);
+    }
+    body.appendChild(dl);
+
+    // Footer "전체 Source Index" — 임베드 데이터로 충분하면 숨김 (dead link 방지)
+    if (Object.keys(data).length > 0) {
+      footerLink.style.display = 'none';
+    } else {
+      footerLink.href = 'sources.html#' + anchorKey;
+      footerLink.style.display = '';
+    }
+    modal.hidden = false;
+    return true;
+  }
+
+  function open(anchorKey) { return render(anchorKey); }
+  function close() { modal.hidden = true; }
+
+  // 본문 [GF-###]/[S##] 클릭 intercept
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a.rt-tag-gf, a.rt-tag-s');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+    const m = href.match(/#(gf-\d+|s-\d+)$/);
+    if (!m) return;
+    if (open(m[1])) {
+      e.preventDefault();  // 데이터 있으면 모달만. 없으면 sources.html로 fallback
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
+
+  return { open, close };
+})();
+</script>
+</body>
+</html>

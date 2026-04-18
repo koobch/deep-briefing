@@ -1,0 +1,95 @@
+/* ===================================================================
+   Deep-Briefing Report Templates — Design Tokens (v4.10)
+   McKinsey/BCG 컨설팅 리포트 스타일 기반
+   세로형 보고서 전용 (슬라이드 아님)
+   =================================================================== */
+
+:root {
+  /* ─── 타이포그래피 ─────────────────────────────────────── */
+  --rt-font-sans: 'Pretendard Variable', 'Pretendard', 'Inter',
+                  'Helvetica Neue', 'Noto Sans KR', system-ui, sans-serif;
+  --rt-font-serif: 'Source Serif Pro', 'Noto Serif KR', Georgia, serif;
+  --rt-font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+
+  /* 본문 폰트 스케일 (세로형 보고서 기준 A4, 1rem = 16px) */
+  --rt-fs-h1: 28px;   /* 보고서 타이틀 */
+  --rt-fs-h2: 22px;   /* Action Title (장) */
+  --rt-fs-h3: 17px;   /* 섹션 */
+  --rt-fs-h4: 14px;   /* 서브 섹션 */
+  --rt-fs-body: 13px;
+  --rt-fs-small: 11px;
+  --rt-fs-caption: 10px;
+  --rt-fs-big: 40px;  /* KPI 강조 숫자 */
+
+  /* 줄 높이 */
+  --rt-lh-tight: 1.25;
+  --rt-lh-normal: 1.55;
+  --rt-lh-loose: 1.75;
+
+  /* ─── 색상 — McKinsey/BCG 하이브리드 팔레트 ─────────────── */
+  --rt-ink: #121417;          /* 본문 */
+  --rt-ink-strong: #000000;   /* 헤더 강조 */
+  --rt-ink-muted: #5b6470;    /* 보조 텍스트 */
+  --rt-ink-faint: #8a93a0;    /* 캡션, 출처 */
+
+  --rt-paper: #ffffff;        /* 페이지 배경 */
+  --rt-paper-2: #f6f8fb;      /* 카드/박스 배경 */
+  --rt-paper-3: #eef1f6;      /* 구분 영역 */
+
+  --rt-rule: #d7dde5;         /* 구분선 */
+  --rt-rule-strong: #9aa4b2;  /* 표 테두리 */
+
+  --rt-accent: #003a70;       /* 딥 네이비 (컨설팅 주색) */
+  --rt-accent-2: #0066cc;     /* 강조 블루 */
+  --rt-accent-bg: #e8eff7;    /* 강조 배경 */
+  --rt-accent-line: #b8ccde;
+
+  --rt-success: #0b7d5a;      /* 긍정 지표 */
+  --rt-warning: #b8741a;      /* 주의 */
+  --rt-danger: #b93a30;       /* 리스크 */
+
+  --rt-chart-1: #003a70;
+  --rt-chart-2: #4a90c4;
+  --rt-chart-3: #7fb3d5;
+  --rt-chart-4: #b6d4e8;
+  --rt-chart-5: #f2994a;
+  --rt-chart-6: #6b7280;
+
+  /* ─── 간격 (4px 그리드) ─────────────────────────────────── */
+  --rt-sp-1: 4px;
+  --rt-sp-2: 8px;
+  --rt-sp-3: 12px;
+  --rt-sp-4: 16px;
+  --rt-sp-5: 20px;
+  --rt-sp-6: 24px;
+  --rt-sp-7: 32px;
+  --rt-sp-8: 40px;
+  --rt-sp-9: 56px;
+  --rt-sp-10: 72px;
+
+  /* ─── 그리드/폭 ─────────────────────────────────────────── */
+  --rt-page-max: 780px;          /* 본문 최대 폭 (가독성 65~75자) */
+  --rt-page-pad-x: 56px;         /* 좌우 여백 */
+  --rt-page-pad-y: 48px;         /* 상하 여백 */
+
+  /* 인쇄용 A4 */
+  --rt-a4-w: 210mm;
+  --rt-a4-h: 297mm;
+  --rt-a4-margin: 18mm;
+
+  /* ─── 테두리/라디우스 ─────────────────────────────────── */
+  --rt-radius-sm: 3px;
+  --rt-radius-md: 6px;
+  --rt-radius-lg: 10px;
+
+  /* ─── 그림자 (종이 인쇄 기준 최소화) ─────────────────────── */
+  --rt-shadow-card: 0 1px 2px rgba(18, 20, 23, 0.04),
+                    0 0 0 1px rgba(18, 20, 23, 0.06);
+}
+
+/* 한글 가독성 보정 */
+:lang(ko),
+html[lang="ko"] body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}

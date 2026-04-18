@@ -29,16 +29,17 @@
 
 - **실행 모델**: PM CLI 1개 + 활성 Division Lead CLI N개 (핵심 4 + 확장 최대 3)
 - **CLI 간 통신**: 파일 시스템 기반 (직접 통신 없음). `findings/`, `sync/` 디렉토리 경유
-- **오케스트레이션 흐름**: Phase 0 → 0.5(가설+데이터갭) → 1(병렬 리서치) → Sync 1 → 2(심화) → Sync 2(긴장해소) → 3(사고 루프+Red Team) → 3.7(External Review) → 4-A(세로 보고서) → 4-C(원페이퍼, 선택적) → 4.5(출처 레지스트리) → 5(QA 자동 루프) → 5.5(피드백)
+- **오케스트레이션 흐름**: Phase 0 → 0.5(가설+데이터갭) → 1(병렬 리서치) → Sync 1 → 2(심화) → Sync 2(긴장해소) → 3(사고 루프+Red Team) → 3.7(External Review) → 4-A(세로 보고서 MD) → 4-C(원페이퍼 MD, 선택적) → 4.5(출처 레지스트리) → 5(QA 자동 루프) → 5.5(피드백) → 4.7(HTML/PDF 내보내기)
 
 ## 디렉토리 구조
 
 ```
 core/                   → 도메인 독립 프레임워크 (재사용)
   orchestration/        → sync-protocol.md, escalation-protocol.md
-  protocols/            → output-format.md (4-Layer), fact-check-protocol.md (VL-1~3)
+  protocols/            → output-format.md (4-Layer), fact-check-protocol.md (VL-1~3), html-export-protocol.md (Phase 4.7)
   templates/            → 에이전트/리드 템플릿, learning-extraction-template 등
   knowledge/            → Layer 0 범용 분석 상식 (common-sense.yaml)
+  style/                → report-templates/ (Phase 4.7 HTML/CSS/Jinja2 템플릿)
   tests/                → 프롬프트 테스트 케이스 (EP-001~033)
 
 domains/                → 도메인 플러그인 (도메인별 지식 베이스)
@@ -134,6 +135,12 @@ Layer 3: 프로젝트 맥락   → {project}/ (일회성)
 - **Action Title**: 모든 보고서 섹션 제목은 주장 문장형 (주제형 금지)
 - **Implementation Playbook**: 전략 제안에 담당/마일스톤/KPI/의존성 포함
 - **API 사용 가이드**: `core/protocols/api-usage-guide.md` — API 우선 원칙, 의사결정 매트릭스, Firecrawl 규칙
+- **HTML 내보내기 (Phase 4.7)**: MD 정본 → HTML/PDF 변환. `core/protocols/html-export-protocol.md` 참조. 산출: `report-docs.html`, `one-pager.html`, `sources.html`, `one-pager.pdf`
+  - **모드별 동작**:
+    - Auto: Phase 5.5 생략 시 Phase 5 PASS 직후 자동 실행
+    - Interactive: Phase 5.5 피드백 확정 후 "HTML/PDF 생성할까요?" 확인 → 승인 시 실행
+    - Team: Interactive와 동일
+  - **안전 장치**: `--require-qa-pass` (기본 활성, Critical/Major > 0 시 차단), `--allow-confidential-export` 없이 CONFIDENTIAL 내보내기 차단, 우회 사용 시 `qa/audit-log.md` 기록
 
 ### 검증 체계
 - VL-1: Leaf 자가 검증 (2소스+, 반증 검토)
@@ -225,6 +232,8 @@ claude
 | `scripts/compile-lead-context.sh {name}` | Lead 부트스트랩 통합 컨텍스트 생성 (토큰 94% 절감) |
 | `scripts/generate-source-registry.py {name}` | source_index + golden-facts + 보고서 통합 → source-registry.csv 생성 |
 | `scripts/check-env.sh` | 세션 시작 시 환경 상태 JSON 점검 (SessionStart 훅, Lead CLI 자동 스킵) |
+| `scripts/render-report-html.py {name}` | Phase 4.7: MD → HTML (report-docs.html, one-pager.html, sources.html). 태그 처리 모드 선택 가능 (link/mark/strip) |
+| `scripts/render-onepager-pdf.py {name}` | Phase 4.7: HTML → PDF (Chrome headless 우선, weasyprint fallback). 기본 one-pager.pdf만 |
 | `start.sh` | 환경 안내 + Claude 실행 래퍼 (Quick Start 진입점) |
 
 ## 권한 정책

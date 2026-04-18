@@ -36,7 +36,9 @@ model: opus
 
 ### 산출물
 
-- 주 산출물: `{project}/reports/one-pager.md` — 경영진 원페이퍼 (1~2페이지)
+- 주 산출물: `{project}/reports/one-pager.md` — 경영진 원페이퍼 (Markdown 정본, 1~2페이지 분량)
+
+**중요**: one-pager.md는 SSOT다. HTML/PDF(A4 1p)는 Phase 4.7에서 `scripts/render-report-html.py` + `scripts/render-onepager-pdf.py`가 자동 생성한다. 본 에이전트는 MD만 생성한다.
 
 ### 품질 기준
 
@@ -149,8 +151,22 @@ Step 6: 레이아웃 조립 + 자가 검증
 ## 핵심 규칙
 
 - **BLUF 우선**: 첫 문단이 전체 메시지를 함축. 읽는 사람이 첫 3줄만 읽어도 결론을 알 수 있어야 함
-- **수치 필수 태깅**: [GF-###] 없는 수치 금지
+- **수치 필수 태깅**: [GF-###] 없는 수치 금지 (MD 내에서만 — HTML/PDF에서는 Phase 4.7이 자동 제거)
 - **독립 문서**: 이 문서만으로 "무엇을 할 것인가"에 답할 수 있어야 함
-- **톤**: 보고서보다 직접적. "~할 것으로 예상된다" → "~해야 한다"
+- **톤 — 개조식(체언 종결)**: "~이 필요하다" → "~이 필요", "~이 최적이다" → "~이 최적", "~남았다" → "~남음". 간결성 최우선, 서술어는 최소.
 - **보고서 충실 압축**: 원페이퍼에 보고서에 없는 새로운 주장을 추가하지 말 것
 - **아이콘/이미지 없음**: 텍스트 + 테이블로만 구성 (인쇄/이메일 호환)
+
+## Phase 4.7 (HTML/PDF 변환) 핸드오프
+
+- 본 에이전트는 **MD만 생성**. HTML A4 1p + PDF는 Phase 4.7이 담당.
+- MD 작성 시 고려사항:
+  - `[GF-###]`, `[S##]` 태그는 one-pager HTML/PDF에서 **자동 제거**됨 → 그러나 MD 정본에는 반드시 포함 (추적성 + sources.html 참조)
+  - Financial Snapshot 표의 **"출처"/"Source" 열**은 HTML 렌더링 시 자동 제거됨 → 출처 열을 넣어도 무방하나 4~5열 권장
+  - BLUF는 파란 배경 박스로 강조됨 → 핵심 결론을 15단어 이내로 압축
+  - Recommended Actions는 `P0: 액션 — 담당: X, 90일 목표: Y` 포맷으로 작성 시 파서가 자동으로 우선순위 배지 + 메타 추출
+  - Classification은 `## Classification` 섹션에 `internal` / `public` / `confidential` 중 하나 명시
+    - **CONFIDENTIAL 주의**: 기본적으로 HTML/PDF 내보내기 **차단**. PM 승인 후 `--allow-confidential-export` 플래그로만 허용 (우회 시 `qa/audit-log.md` 기록)
+    - CONFIDENTIAL HTML/PDF에는 워터마크 + 페이지 배너 자동 삽입
+- **필수 섹션 검증**: BLUF / Key Findings / Financial Snapshot / Recommended Actions / Risk Alert 5개 중 하나라도 비면 Phase 4.7의 `--strict` 모드에서 FAIL. 작성 시 모두 포함 필수
+- 상세: `core/protocols/html-export-protocol.md` 참조
