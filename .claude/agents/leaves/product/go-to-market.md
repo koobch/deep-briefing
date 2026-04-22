@@ -95,3 +95,24 @@ MECE 검증: 경로(채널) × 판매(영업) × 인지(마케팅) × 협력(파
 - `domains/{domain}/knowledge/learned-terms.yaml` — GTM 관련 용어 정의
 - `domains/{domain}/knowledge/learned-frameworks.yaml` — 프레임워크 효과성
 - `domains/{domain}/knowledge/learned-pitfalls.yaml` — 분석 함정
+
+## 필수 커버리지 (v4.11 Analysis Type 프로토콜)
+
+> 추가 스펙: `core/protocols/analysis-type-protocol.md`
+
+- **analysis_type=profile/exploration** 이면: Division Brief의 `baseline_coverage` 리스트 중 본 Leaf가 담당하는 항목을 **가설 유무와 무관하게 항상 수행**한다.
+- **실행 우선순위**: `baseline_coverage` (필수) → `verification_plan` (가설 검증) → cross-domain 질문 응답
+- **Division Brief에 baseline_coverage가 명시되었는데 해당 Leaf 항목이 스킵**된 경우, Lead에 즉시 에스컬레이션 (구성 오류 가능성)
+- **analysis_type=decision** 이면: 기존 v4.10 동작 유지 (verification_plan 중심)
+- **analysis_type=monitoring** 이면: 지정된 `monitoring_metrics`만 수집
+
+### baseline_contract (v4.11 — profile/exploration 필수 산출물)
+- **area**: `GTM 전략`
+- **required_deliverables**:
+  - 채널 믹스 (디지털/오프라인/파트너)
+  - 영업 모델
+  - 마케팅 퍼널
+  - 파트너십 전략
+- **company_profile_addons** (entity_type=company):
+  - entity_type=company 시: 지역별 GTM 차이
+- **iteration_log 기록 의무**: `baseline_area: "GTM 전략"` + `deliverable_status: {각 항목: complete|partial|unavailable}`

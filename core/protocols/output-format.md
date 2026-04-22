@@ -169,6 +169,17 @@ iteration_log:
     evidence_found: "발견한 증거 요약"
     verdict: confirmed | revised | rejected | insufficient
     next_action: "다음 라운드에서 할 일 (해당 시)"
+
+    # v4.11 신규 — analysis_type in [profile, exploration] 시 필수
+    # 상세: core/protocols/analysis-type-protocol.md#6-phase-0-5-분기-로직
+    baseline_area: "담당 baseline 영역 (예: '시장 정의·규모')"    # Leaf의 baseline_contract.area 참조 (catalog §4 정본명과 일치)
+    deliverable_status:                                          # 각 required_deliverable의 수행 상태
+      "TAM/SAM/SOM 산출": complete | partial | unavailable
+      "지역·세그먼트 세분화": complete | partial | unavailable
+      # ... (Leaf의 required_deliverables 리스트와 1:1 매칭)
+    entity_specific_addons_status:                               # v4.11 Round 7 명칭 변경 (company_profile_addons_status → entity_specific)
+      "부문별 매출 breakdown": complete | partial | unavailable  # entity_type=company/market/product/region별 Leaf baseline_contract 참조
+      # Leaf의 company_profile_addons 필드는 역호환을 위해 이름 유지 (실제 의미는 entity_specific)
 ```
 
 ### Lead Agent 출력 (Division Lead / Sub-lead)

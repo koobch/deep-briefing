@@ -1,0 +1,53 @@
+# EP-035: Baseline Coverage 주입 완전성
+# analysis_type=profile일 때 Division Brief에 baseline_coverage가 catalog 기준으로 주입되어야 한다
+
+test_id: EP-035
+name: "Baseline Coverage 주입 — profile 타입 기초 커버리지 강제"
+target_agents: ["research-pm", "market-lead", "product-lead", "capability-lead", "finance-lead"]
+severity: critical
+protocol: "core/protocols/analysis-type-protocol.md#4-baseline-coverage-catalog"
+
+input:
+  scenario: |
+    analysis_type=profile 프로젝트에서 Division Brief를 생성할 때,
+    해당 Division의 baseline_coverage catalog 항목이 전부 주입되어야 한다.
+
+    예: analysis_type=profile + entity_target.type=company ("네이버웹툰") 프로젝트는
+    Market Division Brief에 다음 항목이 baseline_coverage로 기록되어야 한다:
+    - market-sizing: TAM/SAM/SOM, 세분화, 성장률 5년
+    - competitive-landscape: 플레이어 맵, 점유율 Top 5, 진입장벽
+    - channel-landscape: 유통 경로 + 비중
+    - customer-analysis: Persona, JTBD, 규모
+    - market-dynamics: 매크로 트렌드, 규제
+
+  context_files:
+    - "division-briefs/*.md"
+    - "01-research-plan.md"
+
+assertions:
+  - type: "must_contain"
+    pattern: "analysis_type:\\s*profile"
+    description: "profile 타입이 명시되어야 함 (테스트 전제)"
+    applies_when: "Research Plan에 analysis_type: profile"
+
+  - type: "must_contain"
+    pattern: "baseline_coverage:"
+    description: "Division Brief에 baseline_coverage 필드가 존재해야 함 (profile/exploration)"
+
+  - type: "must_contain"
+    pattern: "baseline_coverage:[\\s\\S]{0,4000}area:[\\s\\S]*?leaf:[\\s\\S]*?deliverables:"
+    description: "각 baseline 항목에 area + leaf + deliverables가 명시되어야 함"
+
+  - type: "must_contain"
+    pattern: "baseline_coverage:[\\s\\S]*?required:\\s*true"
+    description: "최소 1개 이상의 baseline 항목이 required=true로 마킹되어야 함"
+
+  - type: "custom"
+    rule: "entity_target.type=company일 때 기업 특화 추가 항목 (실적 추이, 공식 전략, IP 활용, 채널, 경쟁 비교)이 baseline_coverage 또는 Division Brief 본문에 포함되었는가?"
+    severity: major
+    reference: "core/protocols/analysis-type-protocol.md#4-3-기업-profile-특화-추가"
+
+  - type: "custom"
+    rule: "Leaf가 baseline_coverage 항목을 verification_plan보다 먼저 실행했는가?"
+    description: "실행 우선순위: baseline → verification → cross-domain"
+    check_via: "findings/{division}/iteration_log.yaml의 iteration 1 round에 baseline 항목이 기록"

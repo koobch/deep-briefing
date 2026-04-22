@@ -92,3 +92,26 @@ MECE 검증: 누가(플레이어) × 어떤 판(구조) × 왜 유지(장벽) ×
 - `domains/{domain}/knowledge/learned-terms.yaml` — 경쟁 관련 용어 정의
 - `domains/{domain}/knowledge/learned-frameworks.yaml` — 프레임워크 효과성
 - `domains/{domain}/knowledge/learned-pitfalls.yaml` — 분석 함정
+
+## 필수 커버리지 (v4.11 Analysis Type 프로토콜)
+
+> 추가 스펙: `core/protocols/analysis-type-protocol.md`
+
+- **analysis_type=profile/exploration** 이면: Division Brief의 `baseline_coverage` 리스트 중 본 Leaf가 담당하는 항목을 **가설 유무와 무관하게 항상 수행**한다.
+- **실행 우선순위**: `baseline_coverage` (필수) → `verification_plan` (가설 검증) → cross-domain 질문 응답
+- **Division Brief에 baseline_coverage가 명시되었는데 해당 Leaf 항목이 스킵**된 경우, Lead에 즉시 에스컬레이션 (구성 오류 가능성)
+- **analysis_type=decision** 이면: 기존 v4.10 동작 유지 (verification_plan 중심)
+- **analysis_type=monitoring** 이면: 지정된 `monitoring_metrics`만 수집
+
+
+### baseline_contract (v4.11 — profile + entity_type=company 필수 산출물)
+- **area**: `경쟁 구조·주요 플레이어`
+- **required_deliverables**:
+  - 주요 플레이어 Top 5 식별 + 간단 프로파일
+  - **Top 3 정량 비교** (매출/MAU/이익률/점유율 중 적용 가능한 지표)
+  - 진입장벽 평가 (자본/기술/규제/네트워크 효과)
+  - 경쟁 구도 판정 (독점/과점/경쟁/파편화)
+- **company_profile_addons** (entity_type=company):
+  - 타겟 기업 vs 경쟁사 SWOT 대비
+  - 최근 1~2년 경쟁 동향 (M&A, 신규 진입, 철수)
+- **iteration_log 기록 의무**: `baseline_area: "경쟁 구조·주요 플레이어"` + `deliverable_status: {각 항목: complete|partial|unavailable}`

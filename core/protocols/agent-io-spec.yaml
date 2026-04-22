@@ -26,6 +26,17 @@ division_brief:
       type: list
       description: "Phase 0.5에서 도출된 가설 중 이 Division 관련 항목. 검증/반증 대상"
       example: "H-01: AI NPC 시장은 2027년까지 연 25% 성장할 것이다"
+      required_only_when: "analysis_type == decision (v4.11: profile/exploration/monitoring은 선택)"
+
+    - field: verification_plan
+      type: list
+      description: "각 가설에 대한 Division 검증 과제"
+      required_only_when: "hypotheses 존재 시 (analysis_type != monitoring)"
+
+    - field: user_context
+      type: object
+      description: "사용자 프로파일 중 이 Division 관련 맥락 (domain_expertise, decision_role, risk_tolerance 등)"
+      required_since: v4.11
 
     - field: data_gaps
       type: list
@@ -54,6 +65,52 @@ division_brief:
       type: string
       description: "Division 특화 추가 지시 (EP 패턴, 제외 방향 등)"
 
+    # v4.11 신규 — analysis_type 체계 (상세: core/protocols/analysis-type-protocol.md)
+    - field: analysis_type
+      type: enum
+      values: [decision, profile, exploration, monitoring]
+      required_since: v4.11
+      description: "Research Plan에서 전파. 미지정 시 decision 기본값"
+
+    - field: entity_target
+      type: object
+      required_since: v4.11
+      applies_when: "analysis_type in [profile, exploration]"
+      schema:
+        type: "company | market | product | region"
+        name: string
+        scope: string
+
+    - field: baseline_coverage
+      type: list
+      required_since: v4.11
+      applies_when: "analysis_type in [profile, exploration]"
+      item_schema:
+        area: string                    # 예: "시장 정의·규모"
+        required: boolean
+        leaf: string                    # 담당 Leaf ID
+        deliverables: [string, ...]     # catalog §4 기반
+      description: "필수 커버리지 항목. verification_plan보다 우선 실행"
+
+    - field: exploration_space
+      type: object
+      required_since: v4.11
+      applies_when: "analysis_type == exploration"
+      schema:
+        keywords: [string, ...]
+        time_horizon: string
+        signal_types: [string, ...]
+
+    - field: monitoring_metrics
+      type: list
+      required_since: v4.11
+      applies_when: "analysis_type == monitoring"
+      item_schema:
+        metric: string
+        source: string
+        frequency: "daily | weekly | monthly | quarterly | yearly"
+        threshold: string
+
 # ============================================================
 # 2. Lead ↔ Leaf 통신 계약
 # ============================================================
@@ -75,6 +132,31 @@ lead_to_leaf:
 
     - item: domain_knowledge
       description: "도메인 축적 지식 중 이 Leaf 관련 항목 (learned-*.yaml)"
+
+    # v4.11 신규 — analysis_type 전파
+    - item: analysis_type
+      description: "decision | profile | exploration | monitoring. Research Plan의 analysis_type 전파"
+      required_since: v4.11
+
+    - item: entity_target
+      description: "profile 타입 시 분석 대상 엔터티 (type/name/scope)"
+      required_since: v4.11
+      applies_when: "analysis_type in [profile, exploration]"
+
+    - item: baseline_coverage
+      description: "이 Leaf가 담당하는 baseline 항목 (Division Brief의 baseline_coverage 리스트에서 발췌)"
+      required_since: v4.11
+      applies_when: "analysis_type in [profile, exploration]"
+
+    - item: exploration_space
+      description: "탐색 공간 키워드 + 후보 가설 리스트"
+      required_since: v4.11
+      applies_when: "analysis_type == exploration"
+
+    - item: monitoring_metrics
+      description: "추적 지표 + 수집 주기 + 임계값"
+      required_since: v4.11
+      applies_when: "analysis_type == monitoring"
 
   # Leaf가 Lead에 반환해야 하는 필수 출력
   leaf_output_contract:
@@ -313,10 +395,40 @@ cross_cutting_io:
         - "reports/report-docs.md"
         - "findings/golden-facts.yaml"
         - "reports/one-pager.md (존재 시)"
+        - "01-research-plan.md (v4.11 — analysis_type + entity_target + baseline_coverage_summary)"
+        - "division-briefs/*.md (v4.11 — baseline_coverage 리스트)"
       writes:
-        - "qa/qa-report.yaml"
+        - "qa/qa-report.md"                      # (v4.11 정정: 실제 산출물은 .md, 이전 .yaml 명세는 오기)
         - "qa/fact-verification.yaml"
       trigger: "Phase 5"
+      notes: |
+        v4.11 3회차 보정:
+        - qa-report 실제 산출 확장자는 .md (모든 소비자 — render-report-html.py, audience-fit-checker, report-auditor)
+        - 이전 명세 'qa-report.yaml'은 오기였으며 v4.11에서 정정
+        - audience-fit-checker/report-auditor 스폰 시 01-research-plan.md + division-briefs/*.md 전달 의무
+
+    report-writer:                              # v4.11 신규 — I/O 계약 명시
+      reads:
+        - "01-research-plan.md (v4.11 — analysis_type, entity_target, baseline_coverage_summary)"
+        - "00-client-brief.md"
+        - "division-briefs/*.md (v4.11 — baseline_coverage)"
+        - "sync/cross-domain-synthesis.md"
+        - "thinking-loop/loop-convergence.md"
+        - "findings/golden-facts.yaml"
+      writes:
+        - "reports/report-docs.md"
+      trigger: "Phase 4-A"
+      notes: "analysis_type별 Step 0-pre 매트릭스 필수. 상세: report-writer.md"
+
+    brief-writer:                               # v4.11 신규
+      reads:
+        - "reports/report-docs.md"
+        - "01-research-plan.md (v4.11 — analysis_type, entity_target)"
+        - "findings/golden-facts.yaml"
+      writes:
+        - "reports/one-pager.md"
+      trigger: "Phase 4-C (선택적)"
+      notes: "analysis_type별 BLUF/Findings/Actions 구조 분기"
 
     data-preprocessor:
       reads:

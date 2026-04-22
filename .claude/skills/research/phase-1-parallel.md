@@ -18,11 +18,27 @@ Research Plan 완료 후, 각 Division Lead를 위한 지시서를 파일로 작
 각 지시서에 포함할 내용:
 - Client Brief 요약 (해당 Division 관련 부분)
 - Research Plan 중 해당 Division 배치 + 프레임워크
+- **analysis_type** (v4.11): Research Plan의 `analysis_type` 전파
+- **entity_target** (v4.11): profile 타입인 경우 분석 대상 엔터티
 - 활성화할 Sub-lead/Leaf 목록 (agent_roster)
 - EP 경고 + 제외 방향
-- 가설 검증 지시 (Phase 0.5 확정 가설의 verification_plan)
+- **baseline_coverage** (v4.11, profile/exploration 타입 시): 필수 커버리지 리스트. `core/protocols/analysis-type-protocol.md#4-baseline-coverage-catalog` 참조
+- 가설 검증 지시 (decision 타입 주력, profile에서는 보조) — Phase 0.5 확정 가설의 verification_plan
+- **exploration_space** (v4.11, exploration 타입 시): 탐색 키워드 + 시간 범위 + 신호 유형
+- **monitoring_metrics** (v4.11, monitoring 타입 시): 추적 지표 + 수집 주기 + 임계값
 - 사용자 데이터 경로 (해당 시)
 - 출력 저장 경로: `findings/{division}/`
+
+### Division Brief 실행 우선순위 (v4.11)
+
+Division Lead가 Leaf를 스폰할 때 다음 순서로 배치:
+
+1. **baseline_coverage.required=true** 항목 (필수 커버리지 — profile/exploration에서 의무)
+2. **verification_plan** 과제 (가설 검증 — decision 주력)
+3. **exploration_space** 탐색 (exploration 타입)
+4. **cross-domain** 교차 주제 (다른 Division의 질문 응답)
+
+analysis_type이 profile이면서 baseline_coverage 주입이 없으면, Lead는 PM에 즉시 에스컬레이션 (구성 오류 가능성).
 
 ## Step 1-B: Lead CLI 투입 (PM CLI에서 직접 실행)
 

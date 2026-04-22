@@ -69,6 +69,30 @@ model: opus
 - **즉시 에스컬레이션** (PM): report-docs.md에서 Key Findings를 3개 이상 추출할 수 없을 때
 - **자율 처리**: BLUF 문장 구성, Key Findings 선별, 레이아웃 결정
 
+## analysis_type별 원페이퍼 구조 (v4.11 — 필수)
+
+### decision (기본, v4.10 유지)
+- BLUF: "~해야 한다. 왜냐하면 ~"
+- Recommended Actions: P0/P1/P2 필수 (의사결정 실행 단위)
+- Risk Alert: High/Medium 리스크 2~4개
+
+### profile
+- BLUF: 엔터티의 구조적 프로필 1줄 (예: "네이버웹툰은 글로벌 TAM $1.2B 시장에서 점유율 28%인 선도 사업자")
+- Key Findings: baseline_coverage 항목 중 상위 5건
+- Recommended Actions: **선택적** (전략적 제안이 있을 때만)
+- Risk Alert: 변수·불확실성 2~3건
+
+### exploration
+- BLUF: "N개 기회가 확인됨" 형태
+- Key Findings: 확정 가설 2~3개 + 미해결 2~3개 (확정 기준 명시)
+- Recommended Actions: 각 기회별 "추가 검증" 권고 (결정이 아닌 탐색)
+
+### monitoring
+- BLUF: "지난 주기 대비 N개 지표 변화" 요약
+- Key Findings: 지표 대시보드 요약
+- Recommended Actions: 생략 또는 "관찰 강화 필요 영역"만
+- 타이틀: "[엔터티] — [분기/월] 모니터링 리포트"
+
 ## How — 어떻게 일하는가
 
 ### 실행 프로토콜

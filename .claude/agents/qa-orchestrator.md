@@ -158,6 +158,20 @@ Step 7: report-auditor 스폰 (Agent 도구)
   - 논리 완결성 감사 위임
   - 결과를 수신하여 qa-report에 통합
 
+Step 7-pre: QA 에이전트 스폰 시 입력 전달 (v4.11 필수)
+
+audience-fit-checker와 report-auditor를 Agent 도구로 스폰할 때,
+**다음 파일 경로를 context_files로 반드시 전달**:
+  - {project}/reports/report-docs.md
+  - {project}/00-client-brief.md
+  - {project}/01-research-plan.md          # v4.11 analysis_type, entity_target (Check 9 / Step 9.5 필수)
+  - {project}/division-briefs/*.md         # v4.11 baseline_coverage 리스트 (Check 9 / Step 9.5 필수)
+  - {project}/findings/golden-facts.yaml
+  - {project}/sync/tension-resolution.yaml
+
+파일 결여 시 해당 Check는 "입력 부족"으로 skip 표시하되,
+analysis_type=profile/exploration 프로젝트에서 01-research-plan.md가 없으면 **Critical (QA 구성 오류)**.
+
 Step 7.5: Decision Audit (audience-fit-checker의 Check 6~8으로 위임)
   ※ Decision Audit은 audience-fit-checker가 Check 6~8로 실행한다.
   qa-orchestrator는 결과를 수신하여 qa-report에 통합하는 역할만 수행.
@@ -180,6 +194,18 @@ Step 7.5: Decision Audit (audience-fit-checker의 Check 6~8으로 위임)
     - 보고서의 각 전략 제안이 "누가, 뭘, 언제" 수준으로 구체화되는가?
     - "시장을 공략해야 한다" 수준의 일반론 = FAIL
     - "Q3까지 동남아 파일럿 팀(3명) 구성, 예산 $200K" 수준 = PASS
+
+Step 7.6: Baseline Coverage 중복제거 (v4.11 — profile/exploration 한정)
+  analysis_type이 profile/exploration인 경우, 두 모듈이 같은 baseline 항목을 이슈로 올릴 수 있음:
+  - audience-fit-checker Check 9 (형식 수준: 섹션 제목·표 존재)
+  - report-auditor Step 9.5 (내용 수준: 실제 데이터·분석 존재)
+
+  qa-report 통합 시 dedup 규칙:
+  a. 동일한 baseline_area (예: "시장 정의·규모") 이슈가 양쪽 모두에서 올라오면 **1건으로 병합**
+  b. severity는 둘 중 **높은 쪽** 채택 (Critical > Major > Minor)
+  c. 상세 사유는 양쪽 메시지를 "형식: …, 내용: …" 형태로 결합
+  d. issue_id 부여 시 형식 수준(Check 9) issue_id 우선 사용
+  e. 기업 특화 addon 누락은 별도 issue로 유지 (baseline_area와 다른 dimension)
 
 Step 8: 이슈 종합 + 수정 루프
   모든 검증 결과를 종합:

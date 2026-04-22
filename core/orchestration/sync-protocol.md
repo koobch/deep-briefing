@@ -7,13 +7,17 @@
 
 ```
 Phase 0: Client Discovery + Research Plan
+    │   └── Step 0-A.6 (v4.11): analysis_type 판정 (decision/profile/exploration/monitoring)
     │
-Phase 0.5: 가설 생성 + 사용자 정렬
-    │   ├── Quick Scan (활성 Division × 30분 기초 스캔)
-    │   ├── 전략 가설 3~5개 도출
-    │   └── 사용자 가설 채택/수정/추가 → 가설 확정
+Phase 0.5: 가설 생성/baseline 주입 + 사용자 정렬 (v4.11: analysis_type별 분기)
+    │   ├── Quick Scan (활성 Division × 30~60분 기초 스캔)
+    │   ├── decision:   가설 3~5개 필수 → verification_plan 주입
+    │   ├── profile:    baseline_coverage catalog 주입 (+ 선택적 가설 0~2개)
+    │   ├── exploration: 후보 가설 5~8개 + exploration_space 정의
+    │   └── monitoring:  monitoring_metrics 목록 + 수집 주기
     │
-Phase 1: Division 병렬 리서치 (가설 검증/반증 중심)
+Phase 1: Division 병렬 리서치
+    │   └── Leaf 실행 우선순위: baseline_coverage → verification_plan → cross-domain
     │
     ├── [Division 내부] Lead가 리프 스폰 → 리프 자율 반복 → Lead 합성
     │
@@ -24,17 +28,26 @@ Phase 2: 교차 반영 심화 리서치 (각 Division 독립)
 Sync Round 2: PM이 전체 취합 → Cross-domain Synthesis
     │
 Phase 3: 사고 루프 (Thinking Loop)
+    │   └── insight-synthesizer 내부: Exploration 후보 가설 확정 (exploration 타입 한정)
     │
-Phase 4: 전략 도출 + 보고서
+Phase 3.7: External Review (self-critique + 외부 모델 피드백, 선택적)
     │
-Phase 5: QA + 자동 수정 루프
+Phase 4-A / 4-C: 세로형 상세 보고서 + 경영진 원페이퍼 (MD 정본)
+    │
+Phase 4.5: 출처 레지스트리
+    │
+Phase 5: QA + 자동 수정 루프 (v4.11: Check 9 + Step 9.5 baseline 검증)
     │
 Phase 5.5: 사용자 피드백 + 부분 재실행 (선택적)
+    │
+Phase 4.7: HTML/PDF 내보내기 (v4.10, QA PASS 후 1회)
     │
 Phase 6: Post-mortem + 학습 전이 (자동)
 
 ※ 어느 Phase에서든 사용자가 "되돌아가기" 요청 가능 (Interactive/Team)
   → PM이 영향 범위 분석 → 최소 범위 재실행 → 원래 Phase로 복귀
+
+※ 상세: Phase 0-A.6/0.5 분기는 `core/protocols/analysis-type-protocol.md`, Phase 4.7은 `core/protocols/html-export-protocol.md` 참조.
 ```
 
 ## Phase 0-pre: Feasibility Gate
@@ -167,6 +180,25 @@ research_plan:
   question: "핵심 리서치 질문 1문장"
   mode: auto | interactive | team
 
+  # v4.11 필수 필드 (상세: core/protocols/analysis-type-protocol.md)
+  analysis_type: decision | profile | exploration | monitoring   # Step 0-A.6에서 판정
+  analysis_type_rationale: "판정 근거"
+  entity_target:                 # profile 필수 / exploration 선택 / decision·monitoring null 허용
+    type: company | market | product | region | null
+    name: "대상 엔터티명 (null일 때 빈 문자열)"
+    scope: "분석 범위"
+  baseline_coverage_summary:     # profile/exploration 필수 (research-pm 객체 스키마와 통일, v4.11 Round 10)
+    divisions:
+      - division: market
+        areas: ["시장 정의·규모", "경쟁 구조·주요 플레이어", "채널 구조", "고객 세그먼트·JTBD", "매크로·기술·규제 동인"]
+      - division: product
+        areas: ["제품·서비스 포트폴리오", "가치 제안·차별화", "수익 모델·가격", "GTM 전략"]
+      - division: capability
+        areas: ["기술·IP", "전략 자산 + 공식 전략·비전 + IP 활용 사례", "인재·조직 역량", "실행력·변화 수용력"]
+      - division: finance
+        areas: ["매출 구조·추이", "비용 구조·수익성", "투자·자본 배분", "밸류에이션·리스크"]
+    entity_specific_addons: [...]   # entity_target.type별 추가 항목 (catalog §4.3~4.4)
+
   divisions:
     market:
       active: true
@@ -180,12 +212,12 @@ research_plan:
 
     capability:
       active: true
-      leaves: [technology-ip, technology-ip, execution-readiness, strategic-assets]
+      leaves: [technology-ip, human-capital, execution-readiness, strategic-assets]
       priority_focus: "..."
 
     finance:
       active: true
-      leaves: [revenue-growth, investment-returns]
+      leaves: [revenue-growth, cost-efficiency, investment-returns, valuation-risk]
       priority_focus: "..."
 
     # === 확장 Division (주제에 따라 선택 투입) ===
@@ -447,16 +479,56 @@ PM이 사용자에게 가설 목록을 제시:
   "가설 방향 자체를 바꿔야 해" → Step 0.5-B 재실행
 ```
 
-### Step 0.5-D: Division Briefs에 가설 반영
+### Step 0.5-D: Division Briefs에 가설·baseline·entity_target 반영 (v4.11)
+
+**analysis_type별 주입 내용** (상세: `core/protocols/analysis-type-protocol.md#6-phase-0-5-분기-로직`):
+
+| analysis_type | Division Brief 주입 내용 |
+|---------------|-------------------------|
+| decision (v4.10) | 가설 검증 지시 (verification_plan) |
+| profile | **baseline_coverage 리스트** (catalog §4 참조) + entity_target + (선택) verification_plan |
+| exploration | **exploration_space** + 후보 가설 리스트 + 확정 기준 |
+| monitoring | **monitoring_metrics** + 수집 주기 + 임계값 |
 
 ```
-가설 확정 후, Division Briefs에 가설 검증 지시를 추가:
+가설 확정 후, Division Briefs에 analysis_type별 지시 추가:
 
+■ decision 타입 (v4.10 기본 경로):
 각 Division Brief에 추가되는 섹션:
   ## 가설 검증 지시
   이 Division이 담당하는 가설 검증:
     - H-01: [검증] "카테고리A 실현 가능성" → 구체적 조사 항목
     - H-02: [반증 탐색] "매출 공백 규모" → 주력 제품 외 매출원 가능성도 탐색
+
+■ profile 타입 (v4.11):
+  ## baseline_coverage (필수)
+    - area: "시장 정의·규모"
+      required: true
+      leaf: market-sizing
+      deliverables: ["TAM/SAM/SOM", "세분화", "5년 CAGR"]
+    - area: "경쟁 구조·주요 플레이어"
+      required: true
+      leaf: competitive-landscape
+      deliverables: ["플레이어 맵", "Top 5 점유율", "진입장벽"]
+    # ... Division별 catalog 전체
+  ## entity_target
+    type: company
+    name: "네이버웹툰"
+  ## verification_plan (선택, 가설 있을 때만)
+
+■ exploration 타입:
+  ## exploration_space
+    keywords: [...]
+    time_horizon: "2026-2028"
+  ## 후보 가설 (5~8개)
+    - C-01: {후보} — 확정 기준: primary 2소스+ 일치
+
+■ monitoring 타입:
+  ## monitoring_metrics
+    - metric: MAU
+      source: data.ai
+      frequency: monthly
+      threshold: "MoM ±5% 이상 변화 시 경보"
 
   검증 결과 출력:
     각 Leaf 출력의 iteration_log에 가설 ID(H-##)를 태깅하여

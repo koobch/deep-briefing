@@ -460,6 +460,95 @@ Phase 전환 시 PM이 사용자에게 맥락 체크인을 수행한다. user-pr
 4. Research Plan에 domain, domain_path 기록
 ```
 
+#### Step 0-A.6: Analysis Type 판정 (v4.11 신규)
+
+Research Plan 작성 전, 주제의 성격을 분석하여 **analysis_type**을 판정한다.
+이 판정이 Phase 0.5 가설 강제성과 Division Brief 구성을 결정한다.
+
+> 상세 스펙: `core/protocols/analysis-type-protocol.md` 참조
+
+**실행 순서 (엄격)**:
+
+```
+Step 0-A.6-1: CLI `--type` 플래그 우선 파싱
+  /research 인수 문자열에서 `--type {value}` 패턴 검색:
+  - 발견 시: {value}를 analysis_type으로 확정 (휴리스틱 생략)
+    유효 값: decision / profile / exploration / monitoring
+    그 외 값: 경고 출력 후 휴리스틱으로 폴백
+  - 미발견 시: Step 0-A.6-2로 진행
+
+Step 0-A.6-2: 가중치 휴리스틱 판정 (CLI 플래그 없을 때만 실행)
+   (단순 매칭 아님 — 한국어 경계 케이스 오분류 방지)
+
+   ━━ profile 점수 ━━ (기업·시장 전방위 스터디)
+     +3: 특정 기업/제품 고유명사 (예: 네이버웹툰, 엔씨소프트, Meta, 테슬라)
+     +3: "분석", "프로파일", "현황", "개관", "비교", "파악"
+     +2: "전략", "포지션", "사업 구조", "IP 활용", "조직"
+     +1: "경쟁사", "플레이어"
+     예: "네이버웹툰 분석" → 3+3=6 → profile
+         "2026 게임 시장 전망" → +3(전망 가중) + +1(플레이어 관련) → 4
+         "엔씨소프트 IP 전략" → 3(고유명사) + 2(IP 활용/전략) → 5 → profile
+         "경쟁사 분석" → +3(분석) + +1(경쟁사) → 4 → profile
+
+   ━━ decision 점수 ━━ (의사결정 지원)
+     +3: "~할까?", "~해야 하나?", "~해야 할까", "할지 말지"
+     +3: "진출", "투자", "M&A", "인수", "합병", "철수"
+     +2: "결정", "선택", "타당성"
+     +1: "검토" (중립적 맥락)
+     예: "AI 사업 진출할까?" → 3+3=6 → decision
+
+   ━━ exploration 점수 ━━ (기회 탐색·트렌드)
+     +3: "트렌드", "신성장", "떠오르는", "차세대", "emerging"
+     +3: "기회", "발굴", "탐색", "전망" (미래 지향)
+     +2: "최근", "앞으로", "2030", "미래"
+     예: "최근 게임 AI 트렌드" → 3+2=5 → exploration
+         "2026 게임 시장 전망" → 3(전망) + 2(2026) → 5 → exploration (profile 4와 경합)
+
+   ━━ monitoring 점수 ━━ (지속 관찰·지표)
+     +5: "분기별", "월간", "주간", "매일", "주기적"
+     +4: "업데이트", "모니터", "추적", "트래킹", "대시보드"
+     +2: "지표", "KPI", "변화"
+     예: "분기별 경쟁사 업데이트" → 5+4=9 → monitoring
+
+2. 판정 규칙:
+   - 단독 최고 점수 → 그 타입으로 판정
+   - 최고 점수 동률 (2타입+): Interactive/Team은 반드시 사용자 확인, Auto는 우선순위(monitoring > profile > exploration > decision)
+   - 모든 점수 ≤ 2: decision 기본값 + Interactive/Team에서는 사용자 확인
+   - "분석/프로파일" 키워드가 있으면 **고유명사 없어도 profile 후보로 승격** (점수 +2)
+
+3. 경계 케이스 명시 처리:
+   - "엔씨소프트 IP 전략" → profile (고유명사 + IP 활용/전략)
+   - "2026 게임 시장 전망" → exploration (전망 + 2026) vs profile 비교 시 우선 exploration
+   - "경쟁사 분석" → profile (분석 키워드로 고유명사 없어도 승격)
+   - "클라우드 시장은 어떨까?" → 모호 → decision 기본값 + 사용자 확인
+
+4. 판정 결과 + 근거 + 점수 내역을 Research Plan에 기록.
+
+3. 사용자 확인:
+   - Auto 모드: "이 주제는 {type}로 분류했습니다. {type} 방식으로 진행합니다." 안내 후 자동 진행
+   - Interactive/Team: "이 주제는 {type}로 보입니다. 맞나요?
+     (다른 타입 선택 가능: decision/profile/exploration/monitoring)" 확인
+   - CLI 플래그(`--type {type}`) 명시 시: 사용자 입력이 판정을 덮어씀
+
+4. entity_target 추출 (profile 타입일 때 필수):
+   - type: company | market | product | region
+   - name: 주제에서 추출한 엔터티명
+   - scope: 분석 범위 (사용자 확인)
+```
+
+**판정 근거 로그 (Research Plan에 기록)**:
+```yaml
+analysis_type_decision:
+  type: profile
+  rationale: "주제에 '네이버웹툰' 기업 고유명사 + '분석' 키워드 → profile"
+  alternatives_considered: ["decision (기각: 의사결정 질문 아님)"]
+  user_confirmed: true
+  entity_target:
+    type: company
+    name: "네이버웹툰"
+    scope: "글로벌 웹툰 시장에서의 네이버웹툰 포지션·역량"
+```
+
 #### Step 0-B: Research Plan
 
 Client Brief를 기반으로 리서치 설계:
@@ -472,10 +561,43 @@ research_plan:
   question: "핵심 리서치 질문 1문장"
   mode: auto | interactive | team
 
+  # v4.11 신규: Analysis Type (Step 0-A.6에서 판정)
+  # 상세: core/protocols/analysis-type-protocol.md
+  analysis_type: decision | profile | exploration | monitoring
+  analysis_type_rationale: "판정 근거 1~2문장"
+  entity_target:                 # profile 타입 필수 / 다른 타입 선택
+    type: company | market | product | region | null
+    name: "대상 엔터티명"
+    scope: "분석 범위 설명"
+
+  # v4.11 3회차 보정: Research Plan-level baseline_coverage 요약
+  # Division Brief에 주입된 세부 항목들의 요약 인덱스
+  # QA의 Check 9/Step 9.5가 이 필드를 먼저 읽어 coverage 범위를 확인
+  #
+  # **동기화 책임** (v4.11 Cross Round 2):
+  # - 작성 주체: research-pm (Phase 0.5-D Division Brief 생성 직후)
+  # - 동기화 의무: Division Brief의 baseline_coverage와 Plan summary의 **areas 리스트가 일치해야 함**
+  # - 불일치 시: qa-orchestrator Step 7-pre가 Critical로 에스컬레이션
+  # - 재실행 (Phase 5.5 피드백) 시: research-pm이 summary 갱신 의무
+  baseline_coverage_summary:    # analysis_type=profile/exploration일 때 필수
+    divisions:
+      - division: market
+        areas: ["시장 정의·규모", "경쟁 구조·주요 플레이어", "채널 구조", "고객 세그먼트·JTBD", "매크로·기술·규제 동인"]
+      - division: product
+        areas: ["제품·서비스 포트폴리오", "가치 제안·차별화", "수익 모델·가격", "GTM 전략"]
+      - division: capability
+        areas: ["기술·IP", "전략 자산 + 공식 전략·비전 + IP 활용 사례", "인재·조직 역량", "실행력·변화 수용력"]
+      - division: finance
+        areas: ["매출 구조·추이", "비용 구조·수익성", "투자·자본 배분", "밸류에이션·리스크"]
+      # ... 확장 Division (활성 시)
+    entity_specific_addons:     # entity_target.type별 추가 항목 (catalog §4.3~4.4 참조)
+      - "실적 추이 (3년+)"
+      - "공식 전략·비전"
+      # ...
+
   divisions:
     market:
       active: true | false
-      leaves: [활성화할 Leaf 목록]
       leaves: [활성화할 Leaf 목록]
       priority_focus: "Client Brief에서 도출된 시장 분석 초점"
     product:
@@ -1202,8 +1324,25 @@ Step 4: cross-domain-synthesizer 스폰 (Agent 도구)
 
 순서: [LP + SC 병렬] → RT → IS (3단계)
 
+### Step 0-pre: analysis_type별 사고 루프 집행 범위 결정 (v4.11 필수)
+
+Research Plan의 `analysis_type`을 읽고 Step 1~3의 실행 범위를 아래 매트릭스로 결정:
+
+| analysis_type | Step 1 LP | Step 1 SC | Step 2 RT | Step 3 IS |
+|---------------|-----------|-----------|-----------|-----------|
+| decision (v4.10, 기본) | ✅ 전체 실행 | ✅ 전체 실행 | ✅ mode별 Full/Light | ✅ 전체 수렴 판정 |
+| profile | ⚠ 전략 가설 있을 때만 | ⚠ 선택적 (전략 제안 있을 때만) | ⚠ 선택적 (Playbook 있을 때만) | ✅ 인사이트 통합 |
+| exploration | ✅ (후보 가설 수직 검증) | ✅ (후보 가설 도전) | ⚠ 확정 가설만 (후보 제외) | ✅ **후보 확정 + 수렴 (Exploration 확정 Step 포함)** |
+| monitoring | ❌ 스킵 | ❌ 스킵 | ❌ 스킵 | ⚠ 최소 (이상치 요약) |
+
+**실행 가이드**:
+- ⚠ "선택적": 해당 조건 충족 시 실행, 아니면 스킵. 판정 근거를 checkpoint.yaml에 기록
+- ❌ "스킵": 에이전트 스폰하지 않음. checkpoint에 `skipped_by_analysis_type: true` 기록
+- profile 타입에서 Playbook 섹션이 없으면 Step 2(Red Team)도 스킵 (전략 제안이 없으면 반론할 것도 없음)
+
 ```
 Step 1: logic-prober + strategic-challenger 병렬 스폰 (Agent 도구 × 2, 단일 메시지)
+  ※ analysis_type 매트릭스에 따라 스킵 또는 축약 가능 (Step 0-pre 참조)
   ※ 두 에이전트의 입력이 동일 (cross-domain-synthesis + Division 출력)하므로 병렬 실행 가능
 
   ┌─ logic-prober ─────────────────────────┬─ strategic-challenger ──────────────────┐

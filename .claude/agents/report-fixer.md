@@ -102,6 +102,23 @@ Step 1: 이슈 분류 및 우선순위
   - DQ 미답변 (Decision Audit Check 7): strategy-articulations.md에서 해당 DQ 답변을 찾아 보고서에 삽입. 찾을 수 없으면 "[DQ 답변 미생성 — insight-synthesizer 재실행 필요]" 표기
   - 미검증 가정 무표기 (Decision Audit Check 8): 해당 가정에 "[미검증]" 라벨 부착 + Executive Summary에서 confidence: low로 하향
   - 일반론 제안 (Decision Audit Check 9): Division 출력에서 구체적 실행 계획(담당/시점/예산)을 추출하여 보강. 추출 불가 시 "[클라이언트 확인 필요]"
+  - **baseline_coverage 누락 (v4.11, profile/exploration 한정)**:
+    - 각 누락 항목에 대해 해당 Leaf 출력(`findings/{division}/{leaf}/*.yaml`)에서 데이터 추출
+    - 데이터 존재 → 보고서 본문에 **신규 섹션 또는 하위 섹션 추가 허용** (이 경우 "최소 변경 원칙"의 예외)
+    - 데이터 부재 → Leaf 재실행 지시를 qa-orchestrator에 에스컬레이션 (report-fixer 단독 해결 불가)
+    - entity_type=company 기업 특화 항목 누락: 해당 Leaf의 company_profile_addons 참조하여 보강
+    - 추가된 섹션의 제목도 Action Title 규칙 준수
+    - **⚠ 결론 역전 판정 임계값 (v4.11, 명시)**:
+      다음 중 **1건이라도 해당**하면 "결론 뒤집힘"으로 판정 → `structural_conflict`:
+      - (a) Executive Summary의 핵심 1문장(Governing Thought)과 **직접 상반**하는 정량/정성 데이터가 baseline에 포함 (예: Exec Summary "연 30% 성장" vs baseline 매출 추이 "3년 -5%")
+      - (b) Research Plan의 Decision Question 1개+에 대한 답(Go/No-Go/Choice)이 baseline 데이터에 의해 반대로 뒤집힘
+      - (c) Red Team의 Strong 반론 1건+이 baseline으로 새로 입증됨 (원래 Weak/Moderate였던 것이 승격)
+      - (d) 핵심 5개 Claim 중 2건+에 대해 모순 데이터가 발견
+      단일 지엽 데이터 반대 ≠ 결론 뒤집힘. baseline 보강 섹션 추가로 처리 가능.
+      판정 결과:
+      - 결론 뒤집힘 → 수정 중단 + `structural_conflict`로 `unfixable` 기록 + insight-synthesizer 재실행 권고
+      - 결론 유지 → 보고서에 baseline 섹션만 추가 (예외 규칙 적용)
+      - "전략 방향이나 결론을 변경하지 않는다" 원칙(핵심 규칙)과 연결
 
 Step 2: 최소 변경 수정
   각 이슈에 대해:
@@ -176,6 +193,7 @@ fix_result:
 ## 핵심 규칙
 
 - **최소 변경 원칙**: 이슈 수정만 한다. 리팩토링, 구조 변경, 새로운 섹션 추가 금지
+  - **예외 (v4.11)**: `baseline_coverage` 누락 이슈(audience-fit Check 9 / report-auditor Step 9.5)는 섹션 추가를 **허용**. 기초 커버리지는 보고서 완전성의 필수 요소이므로.
 - 수정 시 golden-facts.yaml을 수정하지 않는다 — golden-facts 수정은 fact-verifier만 가능
 - 수정으로 인해 다른 이슈가 발생하면 해당 이슈도 함께 수정
 - 수정 불가 시 억지로 수정하지 않는다 — 수정 불가 판정 후 qa-orchestrator에 에스컬레이션

@@ -152,3 +152,46 @@ PM에 findings를 반환하기 **직전에** 반드시 실행:
    - `_meta.yaml` 갱신 (projects_seen[], counts, maturity)
 
 4. **Leaf 학습 수집**: 각 Leaf 출력의 `_learning_notes` 필드를 확인하여 통합
+
+
+## v4.11 — Analysis Type & Baseline Coverage 체크 (Bootstrap 단계)
+
+> 스펙: `core/protocols/analysis-type-protocol.md`
+
+### Step 0-A: Division Brief 로드 시 analysis_type 확인
+
+Lead가 부트스트랩 시점에 Division Brief에서 다음을 읽는다:
+
+1. **analysis_type** — decision | profile | exploration | monitoring (기본: decision)
+2. **entity_target** — profile 타입일 때 분석 대상 엔터티
+3. **baseline_coverage** — profile/exploration에서 의무 수행 항목 리스트
+4. **verification_plan** — 가설 검증 과제 (decision 주력)
+5. **exploration_space** — exploration 타입 탐색 공간
+6. **monitoring_metrics** — monitoring 타입 지표 목록
+
+### Step 0-B: Leaf 스폰 우선순위 (타입별)
+
+```
+analysis_type=profile:
+  1. baseline_coverage[required=true] 항목 → 담당 Leaf 전부 스폰
+  2. verification_plan 과제 → 보조 Leaf 스폰
+  3. cross-domain 질문 응답
+
+analysis_type=exploration:
+  1. baseline_coverage (광범위 기준선) → 담당 Leaf 스폰
+  2. exploration_space 탐색 → 후보 가설 검증
+  3. cross-domain
+
+analysis_type=decision (v4.10 경로):
+  1. verification_plan → 가설 담당 Leaf 스폰 (기존)
+  2. cross-domain
+
+analysis_type=monitoring:
+  1. monitoring_metrics 지표 수집 → 최소 Leaf 스폰
+```
+
+### Step 0-C: 에스컬레이션 조건 (v4.11)
+
+- analysis_type=profile 인데 baseline_coverage 비어 있음 → PM에 즉시 에스컬레이션 (Division Brief 구성 오류)
+- analysis_type=monitoring 인데 monitoring_metrics 없음 → 동일
+- Leaf가 baseline 항목을 스킵하거나 "가설 미관련" 사유로 처리 안 함 → Lead가 재실행 지시

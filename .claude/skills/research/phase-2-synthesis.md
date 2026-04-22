@@ -67,9 +67,68 @@ PM 실행 (Bash 도구, 반복):
   → 진행할까요? [Y/n]
 ```
 
-## Sync Round 2 + 사고 루프
+## Exploration 후보 가설 확정 (v4.11 — analysis_type=exploration 한정)
 
-Lead CLI들은 Phase 2 완료 후 종료 가능. 이후는 PM CLI에서 진행:
+**적용 조건**: Research Plan의 `analysis_type`이 `exploration`일 때.
+**실행 시점**: Phase 3 사고 루프 말미, insight-synthesizer 수렴 판정과 **동일 Step에서 실행**.
+(v4.11 3회차 보정: 이전 문서에서 "Phase 2 완료 직후"로 적혔던 부분은 오류. insight-synthesizer가 Phase 3에서 실행되므로 Exploration 확정도 Phase 3 Step 3 내 통합).
+
+### Step E-A: 후보 수거
+Phase 0.5에서 제안된 "후보 가설" 리스트(5~8개)와 Phase 1~2 수집 증거를 합친다.
+
+### Step E-B: 각 후보 가설에 대해 판정
+
+| verdict | 조건 | 후속 처리 |
+|---------|------|----------|
+| **confirmed** | primary 2소스+ 일치 또는 primary 1 + secondary 2+ 지지 | 정식 가설로 승격 → hypotheses.yaml에 이전. Phase 3 사고 루프에 포함 |
+| **rejected** | 반증 근거 ≥ 지지 근거 | hypotheses.yaml에 "기각됨" 주석으로 기록. 보고서에 기각 사유 명시 |
+| **insufficient** | 지지/반증 데이터 부족 | "미해결 불확실성" 섹션으로 이전. 추가 리서치 권고 명시 |
+| **revised** | 일부 근거로 방향 수정 | 수정된 가설로 confirmed 경로 재판정 (최대 2회 revised) |
+
+### Step E-C: 확정 책임자
+
+- **insight-synthesizer**가 Phase 3 수렴 판정의 **하위 Step**으로 Exploration 판정 수행 (PM 감독)
+- 순서: Red Team/Strategic Challenger 결과 수집 → Exploration 후보 확정 → 수렴 판정
+- 확정된 가설은 insight-synthesizer의 loop-convergence.md 결과에 반영
+- 판정 결과 → `{project}/thinking-loop/exploration-confirmation.yaml`에 기록
+- Insufficient/Rejected는 보고서 "미해결 불확실성" 섹션에 반영
+
+### Step E-D: 결과 예시
+
+```yaml
+exploration_confirmations:
+  - candidate_id: CH-01
+    original_statement: "LLM API 비용이 2년 내 90% 하락할 것"
+    evidence_for: 3  # primary 2 + secondary 1
+    evidence_against: 0
+    verdict: confirmed
+    promoted_to: H-06
+  - candidate_id: CH-02
+    verdict: insufficient
+    data_gap: "상위 3 벤더의 가격 로드맵 비공개"
+    recommendation: "전문가 인터뷰 필요"
+```
+
+## Sync Round 2 + 사고 루프 (v4.11 — analysis_type별 분기)
+
+Lead CLI들은 Phase 2 완료 후 종료 가능. 이후는 PM CLI에서 진행.
+
+### analysis_type별 Phase 2/3 집행 범위
+
+| Type | cross-domain-synthesizer | logic-prober | strategic-challenger | red-team | insight-synthesizer |
+|------|--------------------------|--------------|---------------------|----------|---------------------|
+| **decision** (기본, v4.10) | ✅ 실행 | ✅ 실행 | ✅ 실행 | ✅ 실행 | ✅ 실행 (전체 사고 루프) |
+| **profile** | ✅ 실행 (교차 인사이트 필요) | ⚠ 선택 (전략 가설 있을 때만) | ⚠ 선택 | ⚠ 선택 (전략 제안이 있을 때만) | ✅ 실행 (인사이트 통합) |
+| **exploration** | ✅ 실행 | ✅ 실행 (후보 가설 검증) | ✅ 실행 | ⚠ 선택 (확정된 가설만) | ✅ 실행 (후보 확정 포함) |
+| **monitoring** | ⚠ 최소 (변화 탐지만) | ❌ 스킵 | ❌ 스킵 | ❌ 스킵 | ⚠ 최소 (이상치 요약만) |
+
+**기본 규칙**:
+- `decision`: v4.10과 동일. 전체 사고 루프 수행.
+- `profile`: Division 간 교차 인사이트는 필수, 사고 루프는 '전략 제안 섹션이 있을 때만'. 기초 전방위 조사의 취지 유지.
+- `exploration`: 후보 가설 확정 과정이 핵심. Red Team은 확정된 가설에만 적용.
+- `monitoring`: Phase 2/3 대폭 축약. cross-domain에서 '지표 변화 탐지'와 '이상치 식별'만 실행.
+
+### 이후 단계
 
 1. cross-domain-synthesizer 스폰 (Agent) → Division 간 교차 인사이트
    - 확장 Division 활성화 시 핵심-확장 간 교차 패턴도 탐색

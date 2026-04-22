@@ -5,6 +5,122 @@
 
 ---
 
+## v4.11 — 2026-04-22 (Analysis Type 체계 도입 — 가설 중심 편향 해소)
+
+### 의사결정 기록
+- **발견된 문제**: "네이버웹툰 분석" 같은 기업·시장 프로파일 요청에도 Phase 0.5 가설 도출 → verification_plan 주입 파이프라인으로 진행되어 시장 규모, 실적 추이, IP 활용, 인력 구성 같은 **기초 전방위 조사**가 누락되는 사례 발생
+- **근본 원인**: Phase 0.5 가설 게이트 강제화 + Division Brief 스펙에 `baseline_coverage` 필드 부재 + analysis_type 개념 부재
+- **해결책**: 4-Type Analysis Taxonomy (decision / profile / exploration / monitoring) 도입. Profile 타입에서는 가설과 독립적으로 baseline_coverage를 Division Brief에 의무 주입
+
+### Protocols (신규 1개)
+- **core/protocols/analysis-type-protocol.md** 신규:
+  - 4가지 Type 정의 + PM 판정 휴리스틱
+  - Baseline Coverage Catalog (7 Division × 필수 항목 매트릭스)
+  - Division Brief 스키마 확장 (`analysis_type`, `baseline_coverage`, `entity_target`, `exploration_space`, `monitoring_metrics`)
+  - Phase 0.5/1 타입별 분기 규칙
+  - 기업 Profile 특화 추가 항목 (실적 추이, 공식 전략, IP 활용 사례, 채널 구조, 경쟁사 비교)
+
+### Agents
+- **research-pm.md**:
+  - Step 0-A.6 신규 — analysis_type 자동 판정 + 사용자 확인 로직
+  - Research Plan YAML 스키마에 `analysis_type`, `analysis_type_rationale`, `entity_target` 필드 추가
+- **market/product/capability/finance/people-org/operations/regulatory-lead.md (7개)**:
+  - "v4.11 Analysis Type & Baseline Coverage 체크" 섹션 추가
+  - Step 0-A: Division Brief에서 analysis_type + baseline_coverage 읽기
+  - Step 0-B: 타입별 Leaf 스폰 우선순위 (baseline → verification → cross-domain)
+  - Step 0-C: 구성 오류 에스컬레이션 조건
+- **leaves/**/*.md (26개)**:
+  - "필수 커버리지 (v4.11 Analysis Type 프로토콜)" 섹션 일괄 추가
+  - analysis_type=profile/exploration 시 baseline_coverage 항목을 가설 유무와 무관하게 수행
+
+### Skills
+- **.claude/skills/research/phase-0-discovery.md**:
+  - Phase 0.5 "v4.11: Analysis Type별 분기" 서두 추가
+  - Step 0.5-B를 4타입 분기 구조로 확장 (decision/profile/exploration/monitoring)
+  - Step 0.5-D에 baseline_coverage, exploration_space, monitoring_metrics 주입 분기 추가
+  - Phase 0.5 완료 게이트를 타입별 조건으로 재구성
+- **.claude/skills/research/phase-1-parallel.md**:
+  - Division Brief 필수 포함 내용에 신규 필드 7개 추가
+  - Leaf 스폰 실행 우선순위 규칙 명시
+- **.claude/skills/research/SKILL.md**:
+  - `/research --type {decision|profile|exploration|monitoring}` CLI 플래그 추가
+  - PM 자동 판정 휴리스틱 안내
+
+### Knowledge
+- **core/knowledge/common-sense.yaml**:
+  - `analysis_principles`에 "전방위 기초 조사" 신규 원칙 추가
+  - 타입별 적용 조건 (`applies_when`) + 7개 baseline_checklist 항목 + 실패 모드 예시
+
+### Docs
+- **CLAUDE.md**:
+  - 오케스트레이션 흐름에 Phase 0-A.6(analysis_type 판정) 반영
+  - "Analysis Type (v4.11)" 섹션 추가 (4타입 요약표)
+
+### 역호환성
+- `analysis_type` 미지정 프로젝트 → 자동 **decision**으로 판정 (v4.10 동작 완전 유지)
+- 모든 신규 필드는 optional
+- 기존 `verification_plan` 경로 완전 보존
+- v4.10 이전 프로젝트 재실행 시 수정 불필요
+
+### 예상 효과
+- "네이버웹툰 분석" 같은 profile 요청 → 시장 규모, 3년 매출 추이, 경쟁사 비교, IP 활용 사례, 미디어 믹스, 조직 구성 등 전방위 커버리지 자동 보장
+- "M&A 타당성 검토" 같은 decision 요청 → v4.10과 동일한 가설 중심 경로
+- "분기별 업데이트" 같은 monitoring → 지표 목록만 확정, Division Brief 최소화
+
+### Codex 교차검증 반영 (3회차 완료 기준)
+
+**1회차 수정 (A/D/G/H)**:
+- research-pm 판정 휴리스틱을 단순 매칭에서 **가중치 룰**로 전환 (profile/decision/exploration/monitoring 각각 +1~+5 점수, 동률 시 사용자 확인)
+- 핵심 Leaf 4개(revenue-growth, strategic-assets, channel-landscape, competitive-landscape)에 **baseline_contract** 블록 추가 (area, required_deliverables, company_profile_addons, iteration_log 기록 의무)
+- 기업 Profile 특화 항목(§4.3)을 해당 Leaf의 필수 산출물로 승격
+- audience-fit-checker **Check 9** + report-auditor **Step 9.5** 신규 (baseline_coverage 검증 로직)
+
+**2회차 수정 (II/JJ/KK/LL/MM/NN/OO/PP)**:
+- 나머지 **22개 Leaf** 전체에 baseline_contract 추가 (catalog 매핑 기반, 총 26/26 완비)
+- **report-fixer**: baseline 누락 수정 매핑 추가 + "섹션 추가 허용 예외" 명시
+- **output-format.md iteration_log**: `baseline_area`, `deliverable_status`, `company_profile_addons_status` 필드 추가
+- **analysis-type-protocol.md §8.5**: "에이전트 프롬프트 + 스크립트 자동화 병행" 실행 모델 명시 + catalog 조회 절차 + `--type` 플래그 파싱 방식
+- **phase-2-synthesis.md**: "Exploration 후보 가설 확정" 섹션 신규 (Step E-A~D, verdict 매트릭스)
+- **analysis-type-protocol.md §4.4**: market/product/region entity_type별 특화 addon 추가
+- **common-sense.yaml**: `applies_when` 해석 가이드 + `applies_when_check` 필드
+
+**3회차 수정 (QQ/RR/TT/UU/VV/WW/XX)**:
+- **market-dynamics**: 규제 항목을 "산업·매크로 영향"으로 축소 (regulatory-outlook 관할 충돌 해소)
+- **report-fixer**: baseline 데이터가 결론 뒤집는 경우 `structural_conflict` 승격 규칙 추가
+- **analysis-type-protocol.md**: "스크립트 자동화가 아닌" 표현을 "병행" 모델로 완화
+- **§4.4 구현 주의**: Leaf contract의 `company_profile_addons` 필드명 역호환 해석 명시 (v4.12에서 리팩토링)
+- **insight-synthesizer.md**: Exploration 후보 가설 확정 책임 명시 + `exploration-confirmation.yaml` 산출물
+- **common-sense.yaml**: `applies_when_check`를 optional로 명확히 정의
+- CHANGELOG(이 섹션) 업데이트
+
+### 예정된 후속 작업
+- Codex 교차검증 4~5회차 (잔여 FAIL 확인)
+- 네이버웹툰 profile 재실행 (`deep-briefing-v4.10-test`)로 실증 검증
+
+---
+
+
+### Cross 검증 3회 + 추가 순차 검증 5회 반영 (총 40건+ FAIL 수정)
+
+**Cross Round 1~3 (Codex + Claude 병렬)**:
+- phase-2-synthesis에 analysis_type × 사고루프 매트릭스 추가 (decision 전체 / profile 선택적 / exploration 후보 확정 / monitoring 축약)
+- report-writer + brief-writer에 타입별 Governing Thought + Step 0-pre 매트릭스
+- audience-fit-checker + report-auditor 출력 스키마에 issue_id + baseline_area 필드 추가
+- agent-io-spec Division Brief + Lead↔Leaf 계약에 analysis_type/entity_target/baseline_coverage/exploration_space/monitoring_metrics 전파 필수
+- sync-protocol Research Plan 스키마 + Division Brief 주입 블록을 analysis_type별 분기로 업데이트
+- Research Plan baseline_coverage_summary 스키마 정정 (divisions 객체형)
+
+**Sequential Round 6~10 (추가 Codex 검증)**:
+- common-sense.yaml: monitoring 타입은 baseline 생략 명시
+- sync-protocol divisions leaves 중복/누락 정정 (capability에 human-capital 추가, finance에 cost-efficiency/valuation-risk 추가)
+- research-pm YAML 구조 정정 (baseline_coverage_summary를 divisions + entity_specific_addons 객체로)
+- Catalog §4 영역명 정본화 + Leaf baseline_contract.area / iteration_log.baseline_area 일관화
+- analysis-type-protocol §3 판정 규칙을 가중치 룰로 상세 기술 (research-pm 본문과 동기화)
+- 확장 Division (People-Org, Operations, Regulatory) 영역명도 Leaf와 일관화
+- output-format.md iteration_log의 company_profile_addons_status → entity_specific_addons_status 명칭 변경 (역호환 주석)
+
+**최종 판정**: Critical 0 / Major 0 (릴리스 승인)
+
 ## v4.10 — 2026-04-18 (Phase 4.7 HTML/PDF 내보내기 도입)
 
 ### 의사결정 기록

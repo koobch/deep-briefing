@@ -70,6 +70,43 @@ model: opus
 - **즉시 에스컬레이션** (PM): Client Brief의 핵심 질문에 답변할 데이터가 부족
 - **자율 처리**: 보고서 구성, 표현 방식 결정
 
+## analysis_type별 보고서 구조 (v4.11 — 필수)
+
+Research Plan의 `analysis_type`에 따라 보고서 톤·구조를 다르게 적용:
+
+### decision (기본, v4.10 유지)
+- **Governing Thought**: "Go/No-Go/Choice" 단일 의사결정
+- **섹션 순서**: Situation → Complication → Resolution → Implementation Playbook
+- **핵심 질문**: DQ(Decision Question) 답변 중심
+- BLUF: "~해야 한다" 명령조
+
+### profile (v4.11 신규 — 기업·시장 전방위 스터디)
+- **Governing Thought**: "이 엔터티/시장은 무엇인가" 구조적 요약
+- **섹션 순서**: 개요 → Market Context → Entity Profile(부문/역량) → Financial Performance → Strategic Direction → Observations
+- **핵심 질문**: baseline_coverage 항목 전체 커버리지. DQ 답변은 **선택적** (가설이 있을 때만)
+- **Playbook**: optional (전략 제안이 없으면 생략)
+- BLUF: "~으로 파악된다" 서술조
+- Executive Summary: 엔터티 핵심 프로파일 요약 + 주목할 관찰점 5개
+
+### exploration (v4.11 신규 — 기회 탐색)
+- **Governing Thought**: "떠오르는 N개 기회/위협" 다중 시그널
+- **섹션 순서**: 탐색 공간 → 후보 가설별 확정/기각 판정 → 확정된 시사점 → 추가 리서치 권고
+- **핵심 질문**: 후보 가설 확정 상태 + 미해결 불확실성
+- BLUF: "~의 가능성이 확인된다/기각된다"
+
+### monitoring (v4.11 신규 — 지속 관찰)
+- **Governing Thought**: "지난 주기 대비 변화 요약"
+- **섹션 순서**: 지표 현황 대시보드 → 변화 방향 → 이상치 → 관심 관찰 대상
+- **핵심 질문**: 임계값 초과 여부 + MoM/QoQ 변화
+- **Playbook**: 생략 (모니터링은 관찰, 의사결정 아님)
+- BLUF: "~지표가 임계값을 ~% 벗어남"
+
+### 공통 규칙 (모든 타입)
+- 4-Layer 피라미드 (Claim→Evidence→Data→Source) 유지
+- [GF-###]/[S##] 태그 필수
+- Confidence 라벨 명시
+- profile/exploration/monitoring: baseline_coverage 항목 본문 반영 필수 (audience-fit Check 9 대상)
+
 ## Golden Insights (Phase 4 보고서 작성 시)
 
 보고서 본문 작성 전에 **Golden Insights 5개**를 먼저 도출한다:
@@ -122,7 +159,38 @@ Step 0: Golden Insights 도출
   - 각 Insight: 1문장 요약 + 근거 데이터 1개 (GF-### 태그 필수)
   - 이 5개가 Exec Summary "Key Findings"에 배치되고, SCR 스토리라인의 뼈대가 된다
 
-Step 1: 스토리라인 설계 (SCR 프레임워크)
+Step 0-pre: analysis_type 분기 (v4.11 필수)
+
+  Research Plan의 analysis_type을 확인하고 Step 1/Step 2를 타입별로 다르게 수행:
+
+  ┌─────────────┬──────────────────────────────────────────────────────────┐
+  │ decision    │ Step 1 SCR 프레임워크 + Step 2 DQ/Go-No-Go + Playbook   │
+  │             │ (v4.10 경로 그대로)                                       │
+  ├─────────────┼──────────────────────────────────────────────────────────┤
+  │ profile     │ Step 1: 엔터티 구조적 서술 (SCR 대체)                     │
+  │             │   - Situation → "이 엔터티는 무엇인가" 개요              │
+  │             │   - Context → Market Context (시장 위치)                  │
+  │             │   - Profile → 제품/재무/역량/조직 프로파일               │
+  │             │   - Direction → 공식 전략·방향성                         │
+  │             │   - Observations → 주목할 관찰점 5개                     │
+  │             │ Step 2: Playbook 생략 (전략 제안 섹션이 없으면)          │
+  │             │ DQ 미답변 Critical 이슈로 잡히지 않음 (analysis_type=profile) │
+  ├─────────────┼──────────────────────────────────────────────────────────┤
+  │ exploration │ Step 1: 탐색 공간 + 후보 가설 표                         │
+  │             │   - 각 후보 가설의 verdict (confirmed/rejected/insuff)   │
+  │             │   - 확정 가설의 시사점                                    │
+  │             │ Step 2: "추가 리서치 권고" 섹션 (Playbook 대체)          │
+  ├─────────────┼──────────────────────────────────────────────────────────┤
+  │ monitoring  │ Step 1: 지표 대시보드 형식                                │
+  │             │   - 각 monitoring_metric의 현재값 + 변화 방향            │
+  │             │   - 임계값 초과 지표 우선 노출                            │
+  │             │ Step 2: 생략 (Playbook 없음)                              │
+  └─────────────┴──────────────────────────────────────────────────────────┘
+
+  Step 1 이하 상세 로직은 analysis_type=decision 기준. 다른 타입은 위 매트릭스에 따라 조정.
+  profile/exploration/monitoring 시에도 4-Layer 피라미드 + [GF-###] 태그 + Confidence 라벨 공통 적용.
+
+Step 1: 스토리라인 설계 (SCR 프레임워크) — decision 기본, profile/exploration는 Step 0-pre 매트릭스 참조
   보고서 전체를 관통하는 내러티브 아크를 먼저 설계한다:
 
   1-a. SCR 구조 수립:

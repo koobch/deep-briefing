@@ -29,7 +29,7 @@
 
 - **실행 모델**: PM CLI 1개 + 활성 Division Lead CLI N개 (핵심 4 + 확장 최대 3)
 - **CLI 간 통신**: 파일 시스템 기반 (직접 통신 없음). `findings/`, `sync/` 디렉토리 경유
-- **오케스트레이션 흐름**: Phase 0 → 0.5(가설+데이터갭) → 1(병렬 리서치) → Sync 1 → 2(심화) → Sync 2(긴장해소) → 3(사고 루프+Red Team) → 3.7(External Review) → 4-A(세로 보고서 MD) → 4-C(원페이퍼 MD, 선택적) → 4.5(출처 레지스트리) → 5(QA 자동 루프) → 5.5(피드백) → 4.7(HTML/PDF 내보내기)
+- **오케스트레이션 흐름**: Phase 0 → **0-A.6(v4.11: analysis_type 판정)** → 0.5(가설+데이터갭, 타입별 분기) → 1(병렬 리서치, baseline_coverage 우선) → Sync 1 → 2(심화) → Sync 2(긴장해소) → 3(사고 루프+Red Team) → 3.7(External Review) → 4-A(세로 보고서 MD) → 4-C(원페이퍼 MD, 선택적) → 4.5(출처 레지스트리) → 5(QA 자동 루프) → 5.5(피드백) → 4.7(HTML/PDF 내보내기)
 
 ## 디렉토리 구조
 
@@ -126,6 +126,20 @@ Layer 3: 프로젝트 맥락   → {project}/ (일회성)
 - **효과**: 프로젝트를 거듭할수록 시스템이 해당 도메인에서 더 똑똑해짐
 
 ## 핵심 프로토콜
+
+### Analysis Type (v4.11)
+주제 성격에 따라 Phase 0.5/1 분기. 상세: `core/protocols/analysis-type-protocol.md`
+
+| Type | 용도 | Phase 0.5 가설 | Division Brief |
+|------|------|---------------|--------------|
+| **decision** | 의사결정 지원 (기본값) | 필수 3~5개 | verification_plan |
+| **profile** | 기업·시장 전방위 스터디 | 선택 0~2개 | **baseline_coverage 의무** |
+| **exploration** | 기회 탐색 | 후보 5~8개 | exploration_space |
+| **monitoring** | 지속 관찰 | 불필요 | monitoring_metrics |
+
+- PM이 Phase 0-A.6에서 주제 키워드로 자동 판정 + Interactive/Team에서 사용자 확인
+- `/research --type {type}` CLI 플래그로 명시 가능
+- 기본값: 지정 없음 → **decision** (v4.10 역호환)
 
 ### 출력 포맷
 - **4-Layer 피라미드**: Layer 0(Claim) → 1(Evidence) → 2(Data) → 3(Source)

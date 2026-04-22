@@ -1,0 +1,71 @@
+# EP-034: Analysis Type 판정 정확성
+# PM이 주제 키워드에 따라 analysis_type을 올바르게 판정해야 한다
+
+test_id: EP-034
+name: "Analysis Type 판정 — 주제 휴리스틱 적합성"
+target_agents: ["research-pm"]
+severity: critical
+protocol: "core/protocols/analysis-type-protocol.md"
+
+input:
+  scenario: |
+    PM이 Phase 0-A.6에서 analysis_type을 가중치 룰로 판정할 때,
+    주제 키워드에 맞는 타입이 선택되어야 한다.
+    v4.11 3회차 보정 후 가중치 룰 기준.
+
+    기본 케이스:
+    1. "네이버웹툰 분석해줘" → profile (고유명사 +3 + 분석 +3 = 6)
+    2. "AI 사업에 진출해야 할까?" → decision (할까 +3 + 진출 +3 = 6)
+    3. "최근 게임 AI 트렌드" → exploration (트렌드 +3 + 최근 +2 = 5)
+    4. "분기별 경쟁사 업데이트" → monitoring (분기별 +5 + 업데이트 +4 = 9)
+    5. "클라우드 시장은 어떨까?" → decision (모든 점수 ≤ 2, 기본값)
+
+    v4.11 경계 케이스 (3회차 추가):
+    6. "2026 게임 시장 전망" → exploration (전망 +3 + 2026 +2 = 5, profile 약간 높을 수 있음, 동률 시 사용자 확인)
+    7. "엔씨소프트 IP 전략" → profile (고유명사 +3 + IP 활용/전략 +2 = 5)
+    8. "경쟁사 분석" → profile (분석 +3 + 경쟁사 +1 = 4, 고유명사 없어도 '분석'으로 승격)
+    9. "경쟁사 분석" + "클라우드 시장은 어떨까?" 같은 복합 → 동률 처리 필요
+    10. "--type profile 명시한 주제" → CLI 플래그가 휴리스틱보다 우선 (Step 0-A.6-1)
+
+  context_files:
+    - "01-research-plan.md"
+
+assertions:
+  - type: "must_contain"
+    pattern: "analysis_type:\\s*(?:decision|profile|exploration|monitoring)"
+    description: "Research Plan에 analysis_type이 4가지 중 하나로 기록되어야 함"
+
+  - type: "must_contain"
+    pattern: "analysis_type_rationale:"
+    description: "판정 근거가 명시적으로 기록되어야 함"
+
+  - type: "must_contain"
+    pattern: "entity_target:[\\s\\S]*?(?:type|name|scope):"
+    description: "profile 타입인 경우 entity_target이 기록되어야 함 (decision/exploration/monitoring은 null 허용)"
+
+  - type: "custom"
+    rule: "주제에 특정 기업/제품 고유명사 + '분석' 키워드가 있으면 profile로 판정되었는가?"
+    severity: critical
+    failure_example: |
+      주제: "네이버웹툰 분석"
+      ✗ analysis_type: decision (오판: 분석 키워드를 가설 질문으로 해석)
+      ✓ analysis_type: profile (정답: 기업 엔터티 중심 전방위 스터디)
+
+  - type: "custom"
+    rule: "사용자 확인 프로세스(Interactive/Team) 또는 자동 안내(Auto)가 수행되었는가?"
+    description: "Auto: '~로 분류했습니다' 메시지 출력 / Interactive: '맞나요?' 확인"
+
+  - type: "custom"
+    rule: "가중치 점수가 동률인 경우 Interactive/Team은 사용자 확인 필수, Auto는 우선순위(monitoring > profile > exploration > decision) 적용"
+    severity: major
+    reference: "research-pm.md Step 0-A.6-2, analysis-type-protocol.md §3"
+
+  - type: "custom"
+    rule: "CLI --type 플래그가 있으면 휴리스틱보다 우선 적용 (Step 0-A.6-1)"
+    severity: critical
+    check_via: "research-pm 로그에서 '--type' 파싱이 휴리스틱 실행 전에 완료되어야 함"
+
+  - type: "custom"
+    rule: "'분석/프로파일' 키워드가 있으면 고유명사 없어도 profile 후보로 승격"
+    severity: major
+    example: "'경쟁사 분석' → profile (+3 for 분석)"

@@ -1,0 +1,60 @@
+# EP-036: Monitoring 타입 간소화
+# analysis_type=monitoring일 때 Division Brief가 최소화되고 지표 중심 경로로 진행되어야 한다
+
+test_id: EP-036
+name: "Monitoring 타입 — 지표 목록 + 수집 주기 중심 실행"
+target_agents: ["research-pm", "market-lead"]
+severity: major
+protocol: "core/protocols/analysis-type-protocol.md#2-4-monitoring"
+
+input:
+  scenario: |
+    analysis_type=monitoring 프로젝트는 가설/baseline 대신
+    monitoring_metrics 목록 + 수집 주기 + 변화 임계값만으로 Division Brief가 구성되어야 한다.
+
+    예: "분기별 국내 웹툰 시장 업데이트" (monitoring)
+    → monitoring_metrics:
+        - metric: MAU
+          source: data.ai
+          frequency: monthly
+          threshold: "MoM ±5% 이상 변화 시 경보"
+        - metric: 광고 단가 (CPM)
+          source: 업계 리포트
+          frequency: quarterly
+        ...
+    → 가설 생략, baseline_coverage 생략, Division Brief 최소 모드.
+
+  context_files:
+    - "division-briefs/*.md"
+    - "hypotheses.yaml"
+
+assertions:
+  - type: "must_contain"
+    pattern: "analysis_type:\\s*monitoring"
+    description: "monitoring 타입이 명시되어야 함 (전제)"
+    applies_when: "Research Plan에 analysis_type: monitoring"
+
+  - type: "must_contain"
+    pattern: "monitoring_metrics:"
+    description: "Division Brief에 monitoring_metrics 필드 존재"
+
+  - type: "must_contain"
+    pattern: "monitoring_metrics:[\\s\\S]*?(metric|지표).+frequency:\\s*(daily|weekly|monthly|quarterly|yearly)"
+    description: "각 지표에 수집 주기(frequency)가 명시되어야 함"
+
+  - type: "must_contain"
+    pattern: "monitoring_metrics:[\\s\\S]*?threshold:"
+    description: "변화 임계값(threshold)이 최소 1개 이상 정의되어야 함"
+
+  - type: "must_not_contain"
+    pattern: "hypotheses:[\\s\\S]{50,}verification_plan:"
+    description: "monitoring에서는 가설/verification_plan이 주요 실행 경로가 아님 (있어도 실행 스킵)"
+
+  - type: "custom"
+    rule: "Phase 2/3 사고 루프가 축약되었는가? (변화 탐지·이상치 분석만)"
+    severity: minor
+    description: "monitoring은 동일 스키마 반복 실행이 목적이므로 Red Team/사고 루프 생략 가능"
+
+  - type: "custom"
+    rule: "baseline_coverage 필드가 비어 있거나 생략되었는가?"
+    description: "monitoring은 catalog를 참조하지 않고 monitoring_metrics로 직접 정의"

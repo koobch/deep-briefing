@@ -81,6 +81,8 @@ model: sonnet
   - {project}/reports/report-docs.md — 상세 보고서
   - {project}/sync/tension-resolution.yaml — 미해소 긴장 목록 (리스크 섹션 반영 검증용)
   - {project}/00-client-brief.md — 핵심 질문 (답변 커버리지 교차 확인)
+  - {project}/01-research-plan.md — v4.11 analysis_type + entity_target (Step 9.5 필수)
+  - {project}/division-briefs/*.md — v4.11 baseline_coverage 리스트 (Step 9.5 필수)
 
 Step 1: Claim → Evidence 연결 검증
   보고서의 각 주요 주장(Claim)에 대해:
@@ -168,10 +170,58 @@ Step 9: Phase 3.7 External Review 반영 검증
 
   - self-critique.md 미존재 시: 이 스텝 스킵
 
+Step 9.5: Baseline Coverage 검증 (v4.11 — profile/exploration 한정)
+  전제: 01-research-plan.md의 `analysis_type`이 `profile` 또는 `exploration`일 때만 실행.
+  (decision/monitoring은 이 Step 스킵)
+
+  입력:
+  - 01-research-plan.md의 `baseline_coverage_summary` (Plan-level 요약 인덱스)
+  - division-briefs/*.md의 `baseline_coverage` 리스트 (Division-level 구체 항목)
+  - 보고서 본문 + Executive Summary
+  - **동기화 검증**: Plan summary의 areas와 Division Brief의 baseline_coverage area가 1:1 일치해야 함. 불일치 시 Critical (issue_type: baseline_coverage_sync_error)
+
+  절차:
+  a. baseline_coverage 리스트 추출 (Research Plan + Division Brief 모두)
+  b. 각 required=true 항목에 대해 보고서 본문에서 관련 섹션/claim 탐색:
+     - 섹션 제목 키워드 매칭
+     - 본문 내 키워드/숫자/표 존재 여부
+     - deliverables 리스트 각 항목이 실제 산출물로 나타나는지
+  c. entity_target.type=company인 경우 기업 특화 추가 항목 대조:
+     - 실적 추이 (3년+): revenue-growth Leaf의 baseline_contract 산출물이 보고서에 반영?
+     - 공식 전략·비전: strategic-assets의 2건+ 인용이 있는가?
+     - IP 활용 사례: strategic-assets의 3건+ 사례가 있는가?
+     - 채널·유통 구조: channel-landscape의 명시적 분석 있는가?
+     - Top 3 정량 경쟁 비교: competitive-landscape의 정량 표가 있는가?
+
+  판정:
+  - required=true 항목 누락 1건+ → Major issue (issue_type: baseline_coverage_missing)
+  - baseline_coverage 필드 자체가 비어 있는데 analysis_type=profile → Critical (issue_type: baseline_coverage_config_error)
+  - 기업 특화 추가 항목 누락 2건+ → Major
+  - 기업 특화 추가 항목 누락 1건 → Minor
+
+  audience-fit-checker의 Check 9와 상호 보완:
+  - audience-fit-checker: 보고서 "형식" 수준 (섹션 제목 존재)
+  - report-auditor: 보고서 "내용" 수준 (실제 데이터·분석 존재)
+
+  참조: core/protocols/analysis-type-protocol.md#7-qa-연계
+
 Step 10: 결과 반환
   qa-orchestrator에 반환:
   - 이슈 목록 (각각 severity: critical/major/minor)
   - 이슈 위치 (보고서 내 섹션/줄)
+
+  **구조화 출력 스키마 (v4.11 — qa-orchestrator dedup용)**:
+  ```yaml
+  issues:
+    - issue_id: RA-S9.5-001                # 모듈(RA) + Step 번호 + 일련번호
+      step: "Step 9.5"                      # 발행한 Step 이름
+      severity: critical | major | minor
+      baseline_area: "시장 정의·규모"       # Step 9.5 전용, 기타는 null
+      message: "누락된 항목 또는 위반 사유"
+      fix_suggestion: "구체 수정 제안"
+      section: "보고서 내 섹션 경로 (있을 시)"
+  ```
+  Step 9.5 이슈는 반드시 baseline_area 필드를 포함해야 qa-orchestrator Step 7.6 dedup이 작동한다.
   - 이슈 유형 (논리 비약/근거 누락/불일치/순환/자기모순)
   - 수정 권고
 ```

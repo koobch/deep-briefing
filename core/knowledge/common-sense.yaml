@@ -194,3 +194,29 @@ analysis_principles:
 
   - name: "반대 의견 포함"
     rule: "핵심 Claim에 대해 반대 의견이나 반증을 1건 이상 포함. 일방적 주장은 분석이 아닌 옹호"
+
+  # ─── applies_when 필드 해석 가이드 (v4.11) ─────────────────
+  # common-sense.yaml은 parser가 없는 에이전트 프롬프트 기반 지식이다.
+  # 필드 정의:
+  #   - `applies_when` (optional): 원칙이 적용되는 조건. 자연어 기술.
+  #     없으면 무조건 적용 (기본 동작).
+  #   - `applies_when_check` (optional): 조건 확인을 위한 구체적 파일/필드 지시.
+  #     에이전트가 Research Plan/Division Brief 등을 읽고 판단.
+  #     없으면 `applies_when`만으로 자체 해석.
+  # 에이전트 의무: 원칙을 읽을 때 applies_when이 있으면 프로젝트 컨텍스트 대조 후 적용 여부 결정.
+  # parser 없음 — 자연어 규칙을 에이전트가 읽고 판단.
+
+  - name: "전방위 기초 조사"                         # v4.11 신규
+    rule: "분석 대상의 맥락을 이해하기 위한 최소 정보는 가설 유무와 무관하게 수집한다. 가설 검증만 수행하면 맥락이 빠진 단편적 분석이 된다."
+    applies_when: "analysis_type in [profile, exploration] (Division Brief의 baseline_coverage 필드 참조). monitoring은 baseline 생략 — monitoring_metrics 경로로 대체"
+    applies_when_check: "Research Plan(`01-research-plan.md`)의 `analysis_type` 필드를 읽어 profile/exploration인지 확인. 해당 시 baseline_coverage 수집 의무. monitoring은 monitoring_metrics만 수집."
+    baseline_checklist:
+      - "대상 엔터티의 핵심 지표 3년 추이 (매출/이익/MAU/인력 중 적용 가능한 것)"
+      - "시장 규모와 성장률 (TAM/SAM/SOM + 5년 성장 동인)"
+      - "경쟁 구조와 주요 플레이어 Top 5 (점유율, 진입장벽, 차별화)"
+      - "조직 규모·인력·핵심 역량 (핵심 리더, 조직도, 스킬 구성)"
+      - "공식 전략·비전 문서 (IR Day, 연차보고서, CEO 발언)"
+      - "채널·유통 구조 (자체 플랫폼, 파트너, B2B/B2C 비중)"
+      - "IP/자산 활용 사례 (라이선싱, 미디어 믹스, 파생 사업) — 기업 분석 시 필수"
+    reference: "core/protocols/analysis-type-protocol.md#4-baseline-coverage-catalog"
+    failure_mode: "가설 검증만으로는 경영진이 '이 회사가 어떤 곳인지' 맥락을 얻지 못한다. '네이버웹툰을 분석해달라'는 요청에 '웹툰 AI 도입 가설 검증' 결과만 주면 오답이다."

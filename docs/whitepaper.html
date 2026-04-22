@@ -47,7 +47,7 @@
             <span class="wp-sidebar-logo-dot"></span>
             Deep-Briefing
           </div>
-          <span class="wp-sidebar-version">v4.9</span>
+          <span class="wp-sidebar-version">v4.11</span>
         </div>
 
         <nav class="wp-toc" aria-label="목차">
@@ -89,7 +89,7 @@
         <header class="wp-hero">
           <div class="wp-hero-meta">
             <span class="wp-hero-badge">백서 (Whitepaper)</span>
-            <span class="wp-hero-version">v4.9 · 2026년 4월</span>
+            <span class="wp-hero-version">v4.11 · 2026년 4월</span>
           </div>
           <h1 class="wp-hero-title">Deep-Briefing</h1>
           <p class="wp-hero-subtitle">AI 멀티 에이전트가 수행하는 전략 리서치 시스템 — 49개 전문 에이전트가 병렬로 협력하여 컨설팅급 분석을 자동화합니다.</p>
@@ -1471,7 +1471,28 @@ Layer 3: Source
               </ul>
             </div>
             <div class="wp-changelog-item wp-changelog-item--current">
-              <div class="wp-changelog-version">v4.9 <span class="wp-changelog-current-badge">현재</span></div>
+              <div class="wp-changelog-version">v4.11 <span class="wp-changelog-current-badge">현재</span></div>
+              <div class="wp-changelog-meta">2026년 4월 — Analysis Type 체계 도입, 가설 중심 편향 해소</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>4-Type Taxonomy</strong>: decision / profile / exploration / monitoring. PM이 Phase 0-A.6에서 주제 키워드로 자동 판정 (가중치 룰)</li>
+                <li><strong>Profile 타입 — 기업·시장 전방위 스터디</strong>: Division Brief에 baseline_coverage 자동 주입. 가설과 독립적으로 시장/재무/IP/인력 등 기초 영역 커버</li>
+                <li><strong>Baseline Coverage Catalog</strong>: 7 Division × 필수 영역 매트릭스. 각 Leaf에 baseline_contract (area + required_deliverables + entity_addons) 명시</li>
+                <li><strong>QA 강화</strong>: audience-fit-checker Check 9 + report-auditor Step 9.5 + qa-orchestrator Step 7.6 dedup. baseline_coverage 미준수를 Major/Critical로 감지</li>
+                <li><strong>Codex 교차검증 10회 (순차 5 + 교차 3 + 추가 순차 5)</strong>: 총 40건+ FAIL 수정 반영</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.10</div>
+              <div class="wp-changelog-meta">2026년 4월 — Phase 4.7 HTML/PDF 내보내기 레이어 도입</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>Phase 4.7 신규</strong>: MD 정본 → HTML/PDF 변환 레이어. QA는 MD만 검증, HTML/PDF는 QA PASS 후 파생 생성</li>
+                <li><strong>핵심 산출물</strong>: report-docs.html (세로형 + 좌측 TOC), one-pager.html (A4 1p), sources.html (출처 인덱스 + 딥링크), one-pager.pdf (Chrome headless)</li>
+                <li><strong>안전장치</strong>: QA PASS 게이트, CONFIDENTIAL 차단 + 우회 audit-log, SVG 워터마크 + @page 배너, XSS 차단 (DOM API + URL 스킴 필터)</li>
+                <li><strong>McKinsey/BCG 스타일</strong>: core/style/report-templates/ (CSS 5 + Jinja2 3). 딥 네이비 #003a70 + 강조 블루 #0066cc</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.9</div>
               <div class="wp-changelog-meta">2026년 4월 — 슬라이드 시스템 제거, 보고서 2종 체계 확정</div>
               <ul class="wp-list wp-list--compact">
                 <li><strong>slide-writer 제거</strong>: v1(CSS)→v2(자체 렌더러)→Marp 시도 후 최종 결정. 리서치 시스템에 슬라이드 렌더러 미내장</li>
@@ -1527,7 +1548,7 @@ Layer 3: Source
           <div class="wp-footer-inner">
             <span class="wp-footer-logo">Deep-Briefing</span>
             <span class="wp-footer-sep">·</span>
-            <span class="wp-footer-meta">v4.9 · 2026년 4월</span>
+            <span class="wp-footer-meta">v4.11 · 2026년 4월</span>
             <span class="wp-footer-sep">·</span>
             <a href="index.html" class="wp-footer-link">대시보드로 이동</a>
           </div>

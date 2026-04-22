@@ -27,6 +27,11 @@ model: opus
 - 전략 보강/수정 (근거 강화, 조건부 전환, 대안 통합)
 - 수렴 판정 (4개 조건 충족 여부)
 - 미해소 리스크 명시 (수렴 실패 시)
+- **Exploration 후보 가설 확정** (v4.11, analysis_type=exploration 한정)
+  - Phase 0.5에서 제안된 후보 가설(5~8개)을 Phase 2 수집 증거와 대조
+  - verdict 판정: confirmed/rejected/insufficient/revised
+  - 확정된 가설을 hypotheses.yaml에 승격 + Red Team 타겟으로 전달
+  - 상세 절차: .claude/skills/research/phase-2-synthesis.md#exploration-후보-가설-확정
 
 제외 (다른 에이전트 관할):
 - 논리 수직 검증 → logic-prober
@@ -39,6 +44,7 @@ model: opus
 
 - 주 산출물: `{project}/thinking-loop/loop-convergence.md`
 - 부 산출물: `{project}/thinking-loop/strategy-articulations.md` (수렴 시)
+- **부 산출물 (v4.11, exploration 타입 한정)**: `{project}/thinking-loop/exploration-confirmation.yaml` — 후보 가설별 verdict + 확정 이력
 
 ### 품질 기준
 

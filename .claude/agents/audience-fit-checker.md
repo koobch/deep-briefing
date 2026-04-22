@@ -137,8 +137,53 @@ Check 8: Actionability (Major)
   - "Q3까지 {팀}이 {구체적 행동}, 예산 {금액}" 수준이 PASS
   severity: 일반론 제안 → Major
 
+Check 9: Baseline Coverage (Major) — v4.11 신규
+  전제: 01-research-plan.md의 `analysis_type`이 `profile` 또는 `exploration`일 때만 실행.
+  (decision/monitoring은 이 체크 스킵)
+
+  절차:
+  1. baseline_coverage 데이터 수집:
+     - 01-research-plan.md의 `baseline_coverage_summary` (Division별 area 요약 인덱스)
+     - division-briefs/*.md의 `baseline_coverage` (area/leaf/deliverables 구체 리스트)
+     - 두 소스는 **동기화되어야 함** — 불일치 시 Critical (구성 오류)
+  2. 각 baseline 항목에 대해 보고서 본문에서 관련 섹션/claim 탐색
+  3. required=true 항목이 본문에서 **명시적으로 다뤄지지 않으면** 누락 판정
+
+  구체 검증:
+    ☐ Market Division의 필수 항목 (시장 규모/경쟁 구조/채널/고객) 각각 본문 섹션/표에 존재
+    ☐ Product Division의 필수 항목 (포트폴리오/가치 제안/수익 모델) 본문 반영
+    ☐ Capability Division의 필수 항목 (기술 IP/전략 자산/인재) 본문 반영
+    ☐ Finance Division의 필수 항목 (매출 구조/비용/수익성/밸류에이션) 본문 반영
+    ☐ entity_target.type=company인 경우 기업 특화 추가 항목:
+        - 실적 추이 3년+ (revenue-growth 소관)
+        - 공식 전략·비전 인용 최소 2건 (strategic-assets 소관)
+        - IP 활용 사례 최소 3건 (strategic-assets 소관)
+        - 채널·유통 구조 명시 (channel-landscape 소관)
+        - Top 3 정량 경쟁 비교 (competitive-landscape 소관)
+
+  severity:
+    - required=true 항목 누락 1건+ → Major
+    - 기업 특화 추가 항목 누락 2건+ → Major
+    - 기업 특화 추가 항목 누락 1건 → Minor
+    - baseline_coverage 필드 자체가 비어 있는데 analysis_type=profile → Critical (구성 오류)
+
+  참조: core/protocols/analysis-type-protocol.md#7-qa-연계
+
 출력:
   각 Check의 PASS/FAIL + severity + 이슈 상세 + 수정 제안
+
+  **구조화 출력 스키마 (v4.11 — qa-orchestrator dedup용)**:
+  ```yaml
+  issues:
+    - issue_id: AFC-C9-001                 # 모듈(AFC) + Check 번호 + 일련번호
+      check: "Check 9"                      # 발행한 체크 이름
+      severity: critical | major | minor
+      baseline_area: "시장 정의·규모"       # Check 9/Step 9.5 전용, 기타는 null
+      message: "누락된 항목 또는 위반 사유"
+      fix_suggestion: "구체 수정 제안"
+      section: "보고서 내 섹션 경로 (있을 시)"
+  ```
+  Check 9 이슈는 반드시 baseline_area 필드를 포함해야 qa-orchestrator Step 7.6 dedup이 작동한다.
 ```
 
 ### 이슈 severity 분류
@@ -153,13 +198,33 @@ Check 8: Actionability (Major)
 | 미검증 가정 무표기 | Major | 의사결정 근거 불투명 |
 | 일반론 제안 | Major | 실행 불가능한 권고 |
 | 전문용어 정의 누락 | Minor | 가독성 저하 (치명적이진 않음) |
+| baseline_coverage 누락 (profile) | Major | v4.11 전방위 기초 조사 원칙 위반 |
+| baseline_coverage 필드 자체 비어 있음 (profile) | Critical | Division Brief 구성 오류 |
+| 기업 특화 추가 항목 1건 누락 (profile+company) | Minor | 보고서 완전성 경미 |
+| 기업 특화 추가 항목 2건+ 누락 (profile+company) | Major | 경영진 기대 수준 미달 |
 
 ## Knowledge — 도메인 지식
 
 ### 참조 파일
 
 - `core/protocols/output-format.md` — 보고서 섹션 제목 규칙
+- `core/protocols/analysis-type-protocol.md` — v4.11 analysis_type + baseline_coverage 스펙
 - `{project}/00-client-brief.md` — 핵심 질문, 톤/형식 선호
+- `{project}/01-research-plan.md` — **Check 9 필수 입력** — analysis_type + entity_target
+- `{project}/division-briefs/*.md` — **Check 9 필수 입력** — baseline_coverage 목록
+- `{project}/reports/report-docs.md` — 검증 대상 보고서
+
+### 실행 입력 계약 (v4.11 명시)
+
+audience-fit-checker 스폰 시 PM 또는 qa-orchestrator가 반드시 다음을 전달:
+```
+context_files:
+  - {project}/reports/report-docs.md      # 검증 대상
+  - {project}/00-client-brief.md          # 핵심 질문 + 톤
+  - {project}/01-research-plan.md         # analysis_type, entity_target (Check 9 필수)
+  - {project}/division-briefs/*.md        # baseline_coverage (Check 9 필수)
+```
+입력 파일 없으면 Check 9 실행 불가 → qa-orchestrator에 에스컬레이션.
 
 ## Reporting — 보고 구조
 
