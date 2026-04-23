@@ -112,7 +112,15 @@ Check 5: Confidence 표기 + 데이터 출처 구분 (Major)
      FAIL 패턴: "시장 규모는 $10B이다" (추정치인데 단정)
      PASS 패턴: "시장 규모는 약 $10B으로 추정된다 [유력]"
 
-Check 6: Decision Question Coverage (Critical)
+Check 6: Decision Question Coverage (analysis_type별 rubric, v4.12 Issue #5)
+
+  analysis_type별 severity/조건 분기:
+  ━━ decision (기본): 모든 DQ 미답변 → Critical (v4.10 동작)
+  ━━ profile: DQ 미답변은 Minor, 대신 intent_coverage_matrix의 priority=must 미답변 → Critical
+  ━━ exploration: 후보 가설 verdict(confirmed/rejected/insufficient) 누락 → Critical, DQ 미답변은 Minor
+  ━━ monitoring: 체크 스킵 (DQ 없음)
+
+  절차 (decision 타입 기준, 아래는 v4.10 호환):
   - {project}/01-research-plan.md의 decision_frame.decision_questions를 참조
   - 보고서(report-docs.md)에서 각 DQ에 대한 명시적 답변 존재 여부 확인:
     - Answer (Go/No-Go/Choice 등)
@@ -128,14 +136,25 @@ Check 7: Assumption Transparency (Major)
   - 미검증 가정이 Executive Summary 전면에 confidence 표기 없이 사용 = Major
   severity: 미검증 가정 무표기 → Major
 
-Check 8: Actionability (Major)
-  - Implementation Playbook의 각 제안이 구체적 실행 수준인지:
-    ☐ 실행 주체(Owner)가 명시
-    ☐ 시점(Timeline)이 명시
-    ☐ 예상 리소스/비용이 명시 (또는 "[클라이언트 확인]")
-  - "~해야 한다" 수준의 일반론은 FAIL
-  - "Q3까지 {팀}이 {구체적 행동}, 예산 {금액}" 수준이 PASS
-  severity: 일반론 제안 → Major
+Check 8: Actionability (analysis_type별, v4.12 Issue #5)
+
+  ━━ analysis_type=decision ━━
+    - Implementation Playbook의 각 제안이 구체적 실행 수준인지:
+      ☐ 실행 주체(Owner) / ☐ 시점(Timeline) / ☐ 예상 리소스(또는 "[클라이언트 확인]")
+    - "~해야 한다" 수준의 일반론은 FAIL, "Q3까지 {팀}이 {구체적 행동}, 예산 {금액}" 수준이 PASS
+    - 일반론 제안 → **Major**
+
+  ━━ analysis_type=profile ━━
+    - Playbook이 선택적 (전략 제안 섹션 없으면 체크 스킵)
+    - 전략 제안이 있는 경우에만 decision 기준 적용 (Major)
+    - Playbook 자체 부재 → 이슈 아님
+
+  ━━ analysis_type=exploration ━━
+    - "추가 검증 권고" 섹션 수준 구체성 확인
+    - 권고가 없으면 Minor (결정 아닌 탐색)
+
+  ━━ analysis_type=monitoring ━━
+    - 체크 스킵 (monitoring은 관찰이며 실행 제안 없음)
 
 Check 9: Baseline Coverage (Major) — v4.11 신규
   전제: 01-research-plan.md의 `analysis_type`이 `profile` 또는 `exploration`일 때만 실행.

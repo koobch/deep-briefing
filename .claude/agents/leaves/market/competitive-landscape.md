@@ -115,3 +115,11 @@ MECE 검증: 누가(플레이어) × 어떤 판(구조) × 왜 유지(장벽) ×
   - 타겟 기업 vs 경쟁사 SWOT 대비
   - 최근 1~2년 경쟁 동향 (M&A, 신규 진입, 철수)
 - **iteration_log 기록 의무**: `baseline_area: "경쟁 구조·주요 플레이어"` + `deliverable_status: {각 항목: complete|partial|unavailable}`
+
+### MECE 경계 강화 (v4.12 Issue #2)
+
+**수치 재산출 금지**: 시장 규모/세분화 규모/성장률 등 **수치는 market-sizing의 SSOT를 재참조**만 한다. 본 Leaf에서 독립적으로 수치 계산하지 말 것.
+- 이 Leaf 관점의 해석·맥락·구조 분석은 계속 수행 (고유 역할)
+- 규모 수치가 필요하면 `[GF-###]` 태그로 market-sizing 결과 인용
+- 상충하는 수치 발견 시 → fact-verifier에 에스컬레이션 (golden-facts.yaml 정정)
+- 삼각검증(VL-1.5)에서 market-sizing과 수치 일치 여부 필수 점검

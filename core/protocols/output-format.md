@@ -65,7 +65,10 @@ iteration: {N}                       # 자율 반복 회차
 claims:
   - id: {PREFIX}-{##}               # 예: MGE-01 (Market-Geography-EastAsia)
     claim: "한 문장 결론"
-    confidence: high | medium | low | unverified
+    confidence: high | medium | low | unverified | insufficient  # v4.12: insufficient 추가
+    # insufficient: 답을 구할 수 없음 (데이터 부족·접근 불가) — 실패 인정 경로
+    # 이 값은 Leaf가 "노력했으나 판단 불가"를 명시할 때 사용 (low보다 더 약함)
+    # 보고서에는 "미해소 불확실성" 섹션에 자동 편입
     # EP-026 확신도 등급 매핑:
     #   high = [확정] — 1차 소스 2개+ 교차 검증 완료
     #   medium = [유력] — 1차 소스 1개 + 보조 소스 뒷받침
@@ -75,6 +78,23 @@ claims:
     # high = 이 Claim이 틀리면 전체 전략 방향이 바뀜
     # medium = 일부 세부 전략에 영향
     # low = 참고 수준
+
+# ============================================================
+# LAYER 0 추가 메타 — domain_knowledge_used (v4.12 Issue #7)
+# ============================================================
+# 각 Claim에 이 Leaf가 실제 적용한 도메인 지식을 명시
+# domains/{domain}/knowledge/learned-*.yaml 항목 인용
+# 미사용 시 명시적으로 "none" + 사유 기록
+domain_knowledge_used:
+  - claim_id: MGE-01
+    frameworks: ["3C (domains/{domain}/frameworks.md)"]
+    learned_patterns: ["경쟁 구도 패턴 A (learned-patterns.yaml#P-03)"]
+    learned_pitfalls: []      # 피한 함정 (해당 시)
+    rationale: "이 프레임워크가 시장 구조 판정에 핵심적이었음"
+  - claim_id: MGE-02
+    frameworks: []
+    learned_patterns: []
+    rationale: "해당 Claim은 공시 원천 데이터만으로 결론 가능 — 프레임워크 불필요"
 
 # ============================================================
 # LAYER 1: EVIDENCE (근거)

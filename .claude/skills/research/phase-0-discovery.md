@@ -362,7 +362,7 @@ Phase 3 Red Team 결과 검토 시에도 동일 패턴:
 - 사용자가 "이대로 진행" 또는 "1" → Phase 1 진입
 - 사용자가 수정 → hypotheses.yaml 갱신
 
-### Step 0.5-D: Division Briefs에 가설 + User Context + baseline_coverage 반영
+### Step 0.5-D: Division Briefs에 가설 + User Context + baseline_coverage + intent_coverage 반영 (v4.12 Issue #4)
 
 **공통**: User Context + analysis_type + entity_target 전파
 
@@ -371,6 +371,38 @@ Phase 3 Red Team 결과 검토 시에도 동일 패턴:
 - **profile**: `baseline_coverage` 리스트를 Division Brief에 주입 (자세한 스키마는 `core/protocols/analysis-type-protocol.md#5-division-brief-스펙-확장`). `required=true` 항목이 `verification_plan`보다 우선 실행되도록 명시
 - **exploration**: `exploration_space` + 후보 가설 리스트(확정 기준 포함) 주입
 - **monitoring**: `monitoring_metrics` + 수집 주기 주입
+
+### intent_coverage_matrix (v4.12 Issue #4 필수)
+
+Client Brief의 **사용자 핵심 의도**가 Phase 1~4 전반에서 손실되지 않도록 매트릭스로 추적한다.
+
+```yaml
+# {project}/intent-coverage.yaml (Phase 0.5-D 생성, Sync/Phase 4에서 갱신)
+intent_coverage:
+  - intent_id: I-01
+    description: "Client Brief의 핵심 질문/제약/성공 기준 1개"
+    source: "00-client-brief.md § 핵심 질문 / 제외 방향 / 성공 기준"
+    priority: must | should | nice
+    assigned_divisions: [market, finance]     # 답변 책임 Division
+    coverage_status:
+      phase_0_5: planned | addressed | skipped
+      phase_1: addressed | partial | unaddressed
+      sync_r1: reviewed | gap | —
+      phase_2: addressed | partial | unaddressed
+      sync_r2: reviewed | gap | —
+      phase_3: addressed | partial | unaddressed  # 사고 루프에서 해당 의도 고려?
+      phase_4: addressed | partial | unaddressed  # 보고서 본문에서 답변?
+    final_verdict: fully_addressed | partially_addressed | unaddressed
+    unaddressed_rationale: "미답변 시 이유 (데이터 부족 / 범위 제외 / 기타)"
+```
+
+**필수 참조 시점**:
+- Sync Round 1/2: PM이 intent_coverage.yaml을 읽고 각 의도의 coverage_status 갱신
+- Phase 4 report-writer: 보고서 본문이 모든 `priority: must` 의도에 답하는지 확인
+- Phase 5 audience-fit-checker Check 4: 핵심 질문 커버리지 검증 시 이 매트릭스 참조
+
+**Sync Layer 0 요약에 의도 손실 방지**:
+Sync Briefing에서는 Layer 0 요약만 읽지만, 각 의도의 `final_verdict`가 `unaddressed`이면 Critical로 에스컬레이션 → Phase 2 지시서에 우선 반영.
 
 #### Division Brief User Context 섹션 (~100 tokens)
 

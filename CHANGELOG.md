@@ -5,6 +5,81 @@
 
 ---
 
+## v4.12 — 2026-04-23 (품질 감사 후속 수정 + Codex 슬라이드 통합)
+
+### 의사결정 기록
+- **배경**: v4.11 완료 후 시스템 전반 품질 감사(Codex + Claude 병렬)에서 13건 이슈 발견. 핵심은 Critical 1건(소스 강도 게이트 형식적 검증), Major 10건(MECE 중복, 모순 해소 rubric 부재, 의도 보존 등). 사용자 요청으로 Codex 슬라이드 생성(Phase 4.8) 통합 포함.
+- **접근**: 이슈 10건 + Phase 4.8을 단일 릴리스 v4.12로 묶고, Issue #1 우선 커밋(68800b8) 후 잔여 이슈 일괄 처리.
+
+### Tier 1 — 필수 수정
+- **Issue #1 (Critical)**: VL-3.5 Source Strength Gate
+  - `scripts/verify-source-strength.py` 신규 — Claim confidence vs 소스 조합 매트릭스 검증
+  - `core/protocols/fact-check-protocol.md` VL-3.5 섹션
+  - `.claude/agents/qa-orchestrator.md` Step 2.5
+- **Issue #2 (Major)**: Leaf MECE 경계 재정의
+  - Market Division 5개 Leaf에 "수치 재산출 금지" 블록 추가
+  - market-sizing을 **수치 SSOT**로 확정 — 다른 Leaf는 [GF-###] 재참조만
+- **Issue #3 (Major)**: Division 모순 해소 rubric
+  - `core/protocols/tension-resolution-rubric.md` 신규 — 4단계 우선순위 (엔터티→소스강도→최신성→사용자의도)
+  - insight-synthesizer 수렴 판정 5조건으로 확장
+
+### Tier 2 — 중요 수정
+- **Issue #4 (Major)**: intent_coverage_matrix
+  - Phase 0.5-D 산출물에 사용자 의도 coverage 추적 매트릭스 추가
+  - Sync Layer 0 요약에서 의도 손실 방지
+- **Issue #5 (Major)**: DQ Check 6~8 analysis_type 분기
+  - audience-fit-checker Check 6/8을 decision/profile/exploration/monitoring 타입별 severity로 분기
+  - profile에서 DQ 미답변이 Critical → Minor로 하향 (intent_coverage가 대체 기준)
+- **Issue #6 (Major)**: Phase 5.5 feedback-impact 자동화
+  - `scripts/feedback-impact.py` 신규 — 피드백 키워드 → minimal/division/cross_division/ambiguous 자동 판정
+  - downstream HTML/PDF/thinking-loop 무효화 자동 감지
+
+### Tier 3 — 문서 보강
+- **Issue #7**: Leaf 출력에 `domain_knowledge_used` 필드 추가 (output-format.md)
+- **Issue #9**: analysis_type 'ambiguous' 중간 상태 + Auto 모드 fallback 처리
+- **Issue #10**: confidence 값에 `insufficient` 추가 — 실패 인정 경로 공식화
+
+### Phase 4.8 신규 — Codex 슬라이드 통합
+- **배경**: 사용자 요청으로 LinkedIn의 `gpt-slide-*` 4단계 스킬 아이디어 통합
+- **원칙**: MD 정본 유지, 외부 도구 위임 (v4.9 슬라이드 제거 결정 존중)
+- **신규 파일**:
+  - `core/protocols/slide-export-protocol.md` — Phase 4.8 전체 프로토콜 명세
+  - `scripts/render-slides-codex.py` — 4단계 파이프라인 (design → plan → prompt → generate)
+- **4단계**:
+  - Step 1: `core/style/report-templates/` CSS 토큰 → DESIGN.md 자동 생성
+  - Step 2: Golden Insights + SCR → slide-outline.yaml (analysis_type별 5~20장)
+  - Step 3: 페이지별 JSON 프롬프트 (layout, content, design_constraints, hint)
+  - Step 4: `codex exec`로 이미지 렌더 → `{project}/slides/page_*.png`
+- **Fallback**:
+  - Codex 미설치 → Step 3까지만 생성, 프롬프트를 사용자가 직접 실행
+  - Canva MCP 옵션은 v4.12.3에서 추가 예정
+
+### 검증
+- **Source Strength**: 스모크 테스트 4 케이스 모두 정상 판정 (OK/MISMATCH/INSUFFICIENT)
+- **feedback-impact**: 4 케이스 (minimal/division/cross_division/ambiguous) 정상 분류
+- **slide-render**: profile 타입 자동 인식 → 14장 프롬프트 생성 확인
+- **Codex 교차 검증**: Issue #1에서 4 Major FAIL 수정 후 PASS
+
+### 역호환
+- 모든 신규 필드 optional
+- Phase 4.8은 명시적 실행 시에만 동작
+- `analysis_type` 미지정 → decision 기본값 (v4.10 이전 호환)
+- confidence 'insufficient'는 새 값, 기존 high/medium/low/unverified 그대로 유효
+
+### 예상 효과
+- 경영진 발표용 슬라이드 이미지 자동 생성 가능 (Codex 환경)
+- 소스 강도가 형식적 태그에서 실질 검증으로 강화
+- 사용자 피드백 처리 시 자동 범위 판정으로 재실행 효율화
+- Division 간 모순이 rubric 기반으로 일관되게 해소
+
+### 예정된 후속 작업 (v4.13)
+- Issue #8: Leaf 무작위 10~20% Layer 3 감사
+- Issue #11: 재현성 · 토큰 예산 관리
+- Phase 4.8-B: Canva MCP 경로
+- 네이버웹툰 profile + 슬라이드 end-to-end 실증
+
+---
+
 ## v4.11 — 2026-04-22 (Analysis Type 체계 도입 — 가설 중심 편향 해소)
 
 ### 의사결정 기록

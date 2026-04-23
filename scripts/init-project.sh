@@ -378,14 +378,20 @@ if [ ! -f "${PROJECT_DIR}/sync/tension-resolution.yaml" ]; then
 # Sync Round 2에서 PM이 관리
 
 project: ${PROJECT}
-tension_resolution: []
+
+# v4.12: 스키마 통일 — \`tensions\`가 정본 (tension-resolution-rubric.md)
+# 역호환: \`tension_resolution\` 키도 insight-synthesizer가 읽을 수 있음
+tensions: []
   # - id: T-01
-  #   type: data_error | perspective_gap | real_tension
+  #   type: 수치 모순 | 전망 모순 | 해석 모순 | 전제 모순 | 범위 모순
+  #   divisions: [market, finance]
   #   description: "긴장 내용"
-  #   between: [division-a, division-b]
-  #   resolution: "해소 방법 + 결과"
-  #   resolved_by: "fact-verifier | cross-domain-synthesizer | 사용자"
-  #   status: resolved | escalated | accepted_as_tradeoff
+  #   resolution:                       # v4.12 rubric 적용
+  #     verdict: a | b | c | d | e | unresolved
+  #     winner: market | finance | both | neither
+  #     applied_rule: "엔터티 라벨 일치 | 소스 강도 | 최신성 | 사용자 의도 | 양측 병기"
+  #     rationale: "..."
+  #     report_treatment: "단일 채택 | 각주 | 리스크 섹션 | 미해결 불확실성"
 TEMPLATE
   echo "  ✅ sync/tension-resolution.yaml (초기화)"
 fi

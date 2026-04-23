@@ -249,14 +249,21 @@ def evaluate_claim(
     )
 
     # 평가
+    # v4.12: declared가 'insufficient'인 경우 실패 인정 경로로 수용 (OK)
+    if declared == "insufficient":
+        return None  # 정직한 실패 인정은 위반이 아님
+
     if max_allowed == "insufficient":
+        # 소스 없음 + declared가 insufficient 외의 값 → 진짜 이슈
+        # declared가 low면 Major, high/medium이면 Critical
+        severity = "critical" if declared in ("high", "medium") else "major"
         return {
             "claim_id": claim_id,
             "declared_confidence": declared,
             "max_allowed_confidence": "insufficient",
             "evidence_sources": evidence_sources_detail,
-            "rule_applied": rule,
-            "severity": "critical",
+            "rule_applied": rule + " (선언이 'insufficient'이면 합법적 실패 인정으로 처리)",
+            "severity": severity,
             "verdict": "INSUFFICIENT",
         }
 

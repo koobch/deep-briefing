@@ -28,6 +28,21 @@ description: 시장 규모·성장률·세분화 구조 분석
 - 매크로/기술 트렌드 → market-dynamics
 ```
 
+### 수치 SSOT 계약 (v4.12 Issue #2)
+
+**market-sizing은 Market Division 내 '규모/수치'의 SSOT이다.**
+
+다른 Leaf(competitive-landscape, customer-analysis, channel-landscape)가 규모 수치를 인용할 때:
+- ✅ market-sizing의 [GF-###] 또는 데이터 파일을 **재참조**
+- ✅ 해당 Leaf 관점의 해석·맥락만 추가 (예: 경쟁사 X의 매출 = 시장 규모의 N%)
+- ❌ 독립적으로 TAM/SAM/SOM 재계산 금지
+- ❌ 상충하는 규모 수치 제시 금지 (공시/API 원본 → fact-verifier 중재)
+
+수치 공유 경로:
+1. market-sizing이 Phase 1에서 규모 확정 → golden-facts.yaml 등록 (fact-verifier 경유)
+2. Sync Round 1에서 Market Division 내 Leaf 간 규모 수치 재사용 동기화
+3. 타 Division(Product/Capability/Finance) 사용 시 [GF-###] 태그로 참조
+
 ## 분석 구조 (내부 MECE)
 
 ```

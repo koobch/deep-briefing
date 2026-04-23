@@ -97,6 +97,17 @@ PM은 Phase 0-A.6에서 주제를 **가중치 룰**로 점수 계산 후 최고 
 - "경쟁사 분석" → profile (분석 +3 + 경쟁사 +1 = 4, 고유명사 없어도 분석으로 승격)
 - "클라우드 시장은 어떨까?" → 모호 (모든 점수 ≤ 2) → decision 기본값 + 사용자 확인
 
+### Ambiguous 중간 상태 (v4.12 Issue #9)
+
+최고 점수가 2 이하이거나 2타입+ 동률인 경우:
+
+1. **Interactive/Team**: Research Plan에 `analysis_type: ambiguous`로 임시 기록, 사용자에게 타입 선택 요청 (필수)
+2. **Auto**: Research Plan에 `analysis_type: decision`으로 판정하되 `ambiguous_fallback: true` 플래그 기록
+   - Phase 5 audience-fit-checker가 이 플래그 존재 시 "타입 판정 확신도 낮음" warning 보고서 메타에 추가
+   - 사용자가 보고서 수령 후 다른 타입으로 판정했다면 Phase 5.5 피드백으로 전체 재실행
+
+**Ambiguous 실패 인정**: 어떤 타입으로도 판정 불가한 주제(예: 너무 광범위/비어있음)는 Phase 0-A에서 사용자에게 주제 재정의 요청. Research Plan 단계 진입 금지.
+
 ### 3.1 사용자 확인 방식
 
 - **Auto 모드**: PM이 판정 → "이 주제는 `{type}`로 분류했습니다. Phase 0.5를 `{type}` 방식으로 진행합니다." 안내 후 자동 진행

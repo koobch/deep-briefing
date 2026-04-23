@@ -29,7 +29,7 @@
 
 - **실행 모델**: PM CLI 1개 + 활성 Division Lead CLI N개 (핵심 4 + 확장 최대 3)
 - **CLI 간 통신**: 파일 시스템 기반 (직접 통신 없음). `findings/`, `sync/` 디렉토리 경유
-- **오케스트레이션 흐름**: Phase 0 → **0-A.6(v4.11: analysis_type 판정)** → 0.5(가설+데이터갭, 타입별 분기) → 1(병렬 리서치, baseline_coverage 우선) → Sync 1 → 2(심화) → Sync 2(긴장해소) → 3(사고 루프+Red Team) → 3.7(External Review) → 4-A(세로 보고서 MD) → 4-C(원페이퍼 MD, 선택적) → 4.5(출처 레지스트리) → 5(QA 자동 루프) → 5.5(피드백) → 4.7(HTML/PDF 내보내기)
+- **오케스트레이션 흐름**: Phase 0 → **0-A.6(v4.11: analysis_type 판정)** → 0.5(가설+데이터갭, 타입별 분기) → 1(병렬 리서치, baseline_coverage 우선) → Sync 1 → 2(심화) → Sync 2(긴장해소) → 3(사고 루프+Red Team+**v4.12 tension rubric**) → 3.7(External Review) → 4-A(세로 보고서 MD) → 4-C(원페이퍼 MD, 선택적) → 4.5(출처 레지스트리) → 5(QA 자동 루프+**v4.12 VL-3.5 Source Strength Gate**) → 5.5(피드백+**v4.12 feedback-impact 자동화**) → 4.7(HTML/PDF) → **4.8(슬라이드 이미지, 선택적)**
 
 ## 디렉토리 구조
 
@@ -248,6 +248,9 @@ claude
 | `scripts/check-env.sh` | 세션 시작 시 환경 상태 JSON 점검 (SessionStart 훅, Lead CLI 자동 스킵) |
 | `scripts/render-report-html.py {name}` | Phase 4.7: MD → HTML (report-docs.html, one-pager.html, sources.html). 태그 처리 모드 선택 가능 (link/mark/strip) |
 | `scripts/render-onepager-pdf.py {name}` | Phase 4.7: HTML → PDF (Chrome headless 우선, weasyprint fallback). 기본 one-pager.pdf만 |
+| `scripts/verify-source-strength.py {name}` | v4.12 VL-3.5: Claim confidence vs 소스 조합 강도 검증. qa/source-strength-report.yaml 생성 |
+| `scripts/feedback-impact.py {name} "{피드백}"` | v4.12: Phase 5.5 피드백 영향 범위 자동 분석 (minimal/division/cross_division). sync/feedback-impact.yaml 생성 |
+| `scripts/render-slides-codex.py {name}` | v4.12 Phase 4.8: Codex gpt-image-2 기반 슬라이드 이미지 생성. 4단계 (design→plan→prompt→generate). Codex CLI 설치 필요 |
 | `start.sh` | 환경 안내 + Claude 실행 래퍼 (Quick Start 진입점) |
 
 ## 권한 정책

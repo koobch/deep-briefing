@@ -45,6 +45,28 @@ model: opus
 - 주 산출물: `{project}/thinking-loop/loop-convergence.md`
 - 부 산출물: `{project}/thinking-loop/strategy-articulations.md` (수렴 시)
 - **부 산출물 (v4.11, exploration 타입 한정)**: `{project}/thinking-loop/exploration-confirmation.yaml` — 후보 가설별 verdict + 확정 이력
+- **부 산출물 (v4.12 Issue #3)**: `{project}/sync/tension-resolution.yaml` 의 resolution 필드 채움 — Division 모순 rubric 적용 결과
+
+### Tension Resolution Rubric 적용 (v4.12 Issue #3)
+
+Phase 3 사고 루프 수렴 판정 직전, `sync/tension-resolution.yaml`의 모든 tension에 rubric 적용:
+
+```
+Step T-1: tension-resolution.yaml 로드
+Step T-2: 각 tension에 4단계 rubric 순차 적용
+  (a) 엔터티 라벨 일치 → (b) 소스 강도 → (c) 최신성 → (d) 사용자 의도 → (e) 양측 병기
+Step T-3: resolution 필드 기록 (verdict, winner, rationale, applied_rule, report_treatment)
+Step T-4: 수렴 판정 5조건에 "미해소 tension 2건+ 없음" 추가
+```
+
+상세: `core/protocols/tension-resolution-rubric.md`
+
+**수렴 판정 5조건 (v4.12 확장)**:
+1. logic-prober critical/major 0건
+2. strategic-challenger critical 0건
+3. red-team Strong 0건 또는 수정 반영
+4. 핵심 전제 검증 완료
+5. **tension-resolution.yaml의 resolution 필드 99%+ 채워짐 (미판정 2건+ 시 미수렴)** ← 신규
 
 ### 품질 기준
 

@@ -47,7 +47,7 @@
             <span class="wp-sidebar-logo-dot"></span>
             Deep-Briefing
           </div>
-          <span class="wp-sidebar-version">v4.11</span>
+          <span class="wp-sidebar-version">v4.12</span>
         </div>
 
         <nav class="wp-toc" aria-label="목차">
@@ -89,7 +89,7 @@
         <header class="wp-hero">
           <div class="wp-hero-meta">
             <span class="wp-hero-badge">백서 (Whitepaper)</span>
-            <span class="wp-hero-version">v4.11 · 2026년 4월</span>
+            <span class="wp-hero-version">v4.12 · 2026년 4월</span>
           </div>
           <h1 class="wp-hero-title">Deep-Briefing</h1>
           <p class="wp-hero-subtitle">AI 멀티 에이전트가 수행하는 전략 리서치 시스템 — 49개 전문 에이전트가 병렬로 협력하여 컨설팅급 분석을 자동화합니다.</p>
@@ -1471,7 +1471,21 @@ Layer 3: Source
               </ul>
             </div>
             <div class="wp-changelog-item wp-changelog-item--current">
-              <div class="wp-changelog-version">v4.11 <span class="wp-changelog-current-badge">현재</span></div>
+              <div class="wp-changelog-version">v4.12 <span class="wp-changelog-current-badge">현재</span></div>
+              <div class="wp-changelog-meta">2026년 4월 — 품질 감사 후속 수정 + Codex 슬라이드 통합 (Phase 4.8)</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>VL-3.5 Source Strength Gate</strong>: Claim confidence가 소스 조합 강도로 뒷받침되는지 자동 검증 (verify-source-strength.py)</li>
+                <li><strong>Leaf MECE 경계 재정의</strong>: market-sizing을 수치 SSOT로 확정, 다른 Leaf는 [GF-###] 재참조만</li>
+                <li><strong>Tension Resolution Rubric</strong>: Division 간 모순을 4단계 우선순위로 자동 해소 (엔터티→소스강도→최신성→사용자의도)</li>
+                <li><strong>intent_coverage_matrix</strong>: 사용자 의도가 Sync 요약에서 손실되지 않도록 Phase 0.5→4 추적 매트릭스</li>
+                <li><strong>feedback-impact 자동화</strong>: Phase 5.5 피드백 → minimal/division/cross_division 자동 판정</li>
+                <li><strong>Phase 4.8 Codex 슬라이드</strong>: MD → Codex gpt-image-2 → PNG 슬라이드 자동 생성 (4단계 파이프라인)</li>
+                <li><strong>analysis_type ambiguous</strong>: 판정 모호 시 중간 상태 + Auto 모드 fallback</li>
+                <li><strong>confidence insufficient</strong>: 실패 인정 경로 공식화 (답 구할 수 없음을 정직하게 표현)</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.11</div>
               <div class="wp-changelog-meta">2026년 4월 — Analysis Type 체계 도입, 가설 중심 편향 해소</div>
               <ul class="wp-list wp-list--compact">
                 <li><strong>4-Type Taxonomy</strong>: decision / profile / exploration / monitoring. PM이 Phase 0-A.6에서 주제 키워드로 자동 판정 (가중치 룰)</li>
@@ -1548,7 +1562,7 @@ Layer 3: Source
           <div class="wp-footer-inner">
             <span class="wp-footer-logo">Deep-Briefing</span>
             <span class="wp-footer-sep">·</span>
-            <span class="wp-footer-meta">v4.11 · 2026년 4월</span>
+            <span class="wp-footer-meta">v4.12 · 2026년 4월</span>
             <span class="wp-footer-sep">·</span>
             <a href="index.html" class="wp-footer-link">대시보드로 이동</a>
           </div>
