@@ -372,6 +372,55 @@ fact_verification_report:
 
 ---
 
+## VL-3.5: Source Strength Gate (v4.12 신규)
+
+### 적용 시점
+VL-3 완료 직후, 보고서 레벨 검증 진입 전.
+자동 스크립트로 기계적 검증만 수행 (에이전트 호출 없음).
+
+### 배경
+VL-1~3은 소스 존재/교차/중복/모순 중심으로 검증한다. 그러나 각 Claim의 `confidence` 선언이 실제 evidence source 조합의 신뢰도로 뒷받침되는지는 게이트가 없었다.
+예: `confidence: high` Claim이 estimate 소스 1개만 가지고 통과되는 케이스.
+
+### 규칙 (output-format.md §소스 추적 규칙 참조)
+| 소스 조합 | 허용 최대 confidence |
+|----------|-------------------|
+| primary 2개+ 일치 | high |
+| primary 1 + secondary 1+ | high |
+| secondary 2개+ 독립 | high |
+| secondary 1개 | medium |
+| primary 1개 (교차 없음) | medium |
+| estimate/unknown만 | low |
+| 소스 없음 | insufficient (Critical) |
+
+### 실행 방법
+```
+python3 scripts/verify-source-strength.py {project}
+
+입력:
+  - findings/**/*.yaml (claims + evidence + source_index)
+출력:
+  - qa/source-strength-report.yaml
+종료 코드:
+  0 PASS / 1 FAIL / 2 실행 오류
+```
+
+### 판정 기준
+- MISMATCH (Major): declared confidence > max_allowed → report-fixer에 confidence 하향 지시
+- INSUFFICIENT (Critical): 소스 없음 → fact-verifier에 소스 보강 지시
+- 모두 OK → VL-3.5 PASS
+
+### 통과 기준
+- [ ] INSUFFICIENT 0건 (Critical)
+- [ ] MISMATCH 0건 (Major) — 또는 report-fixer 후 재검증 PASS
+
+### 에이전트 연계
+- qa-orchestrator가 VL-3 직후 호출
+- MISMATCH → report-fixer가 해당 Claim의 confidence 하향 또는 추가 소스 탐색
+- INSUFFICIENT → fact-verifier 재실행
+
+---
+
 ## 보고서 레벨 검증 (+α)
 
 리서치 팩트체크와 별도로, 보고서 작성 후 수행하는 최종 검증.

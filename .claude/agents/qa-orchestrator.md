@@ -119,6 +119,22 @@ Step 2: source-traceability-checker ([S##] 태그 검증)
   산출물: {project}/qa/source-traceability.yaml
   PASS 기준: UNMATCHED 0건 (UNUSED는 WARNING으로 허용)
 
+Step 2.5: Source Strength Gate (v4.12 신규 — 기계 검증)
+  VL-3 완료 직후, 보고서 레벨 검증 진입 전에 자동 실행.
+  실행: python3 scripts/verify-source-strength.py {project}
+
+  판정:
+  - exit 0 (PASS): 다음 Step으로 진행
+  - exit 1 (FAIL):
+    - MISMATCH (Major): report-fixer 스폰 → declared confidence 하향 또는 추가 소스 탐색
+    - INSUFFICIENT (Critical): fact-verifier 스폰 → 소스 보강 (고유 S## 추가, 미등록 S## 등록)
+    - 수정 후 스크립트 재실행 → 최대 3회 반복
+    - 3회 후 미해결 → PM에 에스컬레이션
+  - exit 2 (RUNTIME): YAML/I/O 오류 → QA 파이프라인 중단, 원인 수정 후 재실행
+
+  산출물: qa/source-strength-report.yaml
+  상세: core/protocols/fact-check-protocol.md#vl-35-source-strength-gate
+
 Step 3: source-url-verifier (URL 검증)
   L1 접근성: source_index의 모든 URL에 HTTP HEAD 요청
   - 200/301/302 = PASS
