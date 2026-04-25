@@ -47,7 +47,7 @@
             <span class="wp-sidebar-logo-dot"></span>
             Deep-Briefing
           </div>
-          <span class="wp-sidebar-version">v4.3</span>
+          <span class="wp-sidebar-version">v4.12</span>
         </div>
 
         <nav class="wp-toc" aria-label="목차">
@@ -89,13 +89,13 @@
         <header class="wp-hero">
           <div class="wp-hero-meta">
             <span class="wp-hero-badge">백서 (Whitepaper)</span>
-            <span class="wp-hero-version">v4.3 · 2026년 3월</span>
+            <span class="wp-hero-version">v4.12 · 2026년 4월</span>
           </div>
           <h1 class="wp-hero-title">Deep-Briefing</h1>
-          <p class="wp-hero-subtitle">AI 멀티 에이전트가 수행하는 전략 리서치 시스템 — 48개 전문 에이전트가 병렬로 협력하여 컨설팅급 분석을 자동화합니다.</p>
+          <p class="wp-hero-subtitle">AI 멀티 에이전트가 수행하는 전략 리서치 시스템 — 49개 전문 에이전트가 병렬로 협력하여 컨설팅급 분석을 자동화합니다.</p>
           <div class="wp-hero-stats">
             <div class="wp-hero-stat">
-              <span class="wp-hero-stat-value">48</span>
+              <span class="wp-hero-stat-value">49</span>
               <span class="wp-hero-stat-label">에이전트</span>
             </div>
             <div class="wp-hero-stat-divider"></div>
@@ -125,7 +125,7 @@
           </div>
 
           <h3 class="wp-h3">Deep-Briefing이란</h3>
-          <p>Deep-Briefing은 <strong>48개의 전문 AI 에이전트</strong>가 협력하여 수행하는 <strong>전략 리서치 시스템</strong>입니다. 4계층 에이전트 계층(PM → Lead → Leaf + Cross-cutting/QA)이 병렬로 작동하며, 파일 시스템 기반 통신으로 프로젝트 의존성 없이 자동 스케일합니다.</p>
+          <p>Deep-Briefing은 <strong>49개의 전문 AI 에이전트</strong>가 협력하여 수행하는 <strong>전략 리서치 시스템</strong>입니다. 4계층 에이전트 계층(PM → Lead → Leaf + Cross-cutting/QA)이 병렬로 작동하며, 파일 시스템 기반 통신으로 프로젝트 의존성 없이 자동 스케일합니다.</p>
 
           <div class="wp-card">
             <div class="wp-card-label">핵심 특징</div>
@@ -295,70 +295,283 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
             <h2 class="wp-section-title">에이전트 상세</h2>
           </div>
 
-          <h3 class="wp-h3">에이전트 인벤토리 (총 48개)</h3>
+          <p>Deep-Briefing은 총 <strong>49개의 전문 에이전트</strong>로 구성됩니다. 각 에이전트는 명확한 역할 경계와 검증 책임을 가지며, 4계층 구조로 조직되어 병렬 리서치를 수행합니다.</p>
+
+          <!-- 4.1 에이전트 계층 구조 -->
+          <h3 class="wp-h3">4.1 에이전트 계층 구조 (4-Layer)</h3>
+
+          <div class="wp-card">
+            <div class="wp-card-label">계층 구조</div>
+            <div class="wp-table-wrap">
+              <table class="wp-table">
+                <thead>
+                  <tr>
+                    <th>Layer</th>
+                    <th>역할</th>
+                    <th>에이전트</th>
+                    <th>수</th>
+                    <th>책임</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Layer 0</strong></td>
+                    <td>PM</td>
+                    <td><code>research-pm</code></td>
+                    <td>1</td>
+                    <td>전체 오케스트레이션, Phase 0~5.5 관리, Division Lead 스폰</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Layer 1</strong></td>
+                    <td>Division Lead</td>
+                    <td>핵심 4 + 확장 3</td>
+                    <td>7</td>
+                    <td>각 Division의 분석 총괄, Leaf 스폰, VL-1.5 삼각 검증</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Layer 2</strong></td>
+                    <td>Leaf 분석가</td>
+                    <td>Division별 MECE 전문가</td>
+                    <td>26</td>
+                    <td>MECE 분석 실행, VL-1 자가 검증 (2소스+, 반증 검토)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Layer 3</strong></td>
+                    <td>Cross-cutting</td>
+                    <td>검증 + 합성 + 보고 + QA + 유틸</td>
+                    <td>14</td>
+                    <td>Division 횡단 검증, 통합, 보고서 생성, 품질 보증</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p>최대 네스팅 깊이는 <strong>Level 2</strong>입니다: PM → Division Lead → Leaf. Cross-cutting 에이전트는 PM이 직접 스폰하므로 별도 네스팅이 발생하지 않습니다.</p>
+
+          <!-- 4.2 PM 에이전트 상세 -->
+          <h3 class="wp-h3">4.2 PM 에이전트 (<code>research-pm</code>)</h3>
+
+          <div class="wp-card">
+            <div class="wp-card-label">역할</div>
+            <p>리서치 전체를 오케스트레이션하는 최상위 에이전트. 클라이언트 브리프 수집부터 최종 보고서 납품까지 Phase 0~5.5의 모든 단계를 관리하며, Division Lead를 스폰하고 Sync Round를 조율합니다.</p>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label">스폰 대상</div>
+            <ul class="wp-list">
+              <li><strong>핵심 Division Lead 4개</strong> (Market, Product, Capability, Finance) — 거의 모든 리서치에서 활성화</li>
+              <li><strong>확장 Division Lead 0~3개</strong> (People-Org, Operations, Regulatory) — 주제에 따라 선택 투입</li>
+              <li><strong>Cross-cutting 에이전트</strong> — Phase 3 이후 검증/합성/보고/QA 에이전트를 단계별 스폰</li>
+            </ul>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label">실행 모드 (3-모드 체계)</div>
+            <div class="wp-table-wrap">
+              <table class="wp-table">
+                <thead>
+                  <tr>
+                    <th>모드</th>
+                    <th>특징</th>
+                    <th>적합 상황</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Auto</strong></td>
+                    <td>직행. 가설 자동 확정, 피드백 생략</td>
+                    <td>반복 리서치, 빠른 탐색이 필요한 경우</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Interactive</strong></td>
+                    <td>매 단계 사용자 게이트 + 가설 검토 + 피드백</td>
+                    <td>중요 의사결정, 방향성 확인이 필요한 경우</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Team</strong></td>
+                    <td>Deep Discovery + 토론 + 전방위 되돌아가기</td>
+                    <td>복잡한 전략 과제, 다각도 검토가 필요한 경우</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label">PM 의사결정 포인트</div>
+            <div class="wp-table-wrap">
+              <table class="wp-table">
+                <thead>
+                  <tr>
+                    <th>Phase</th>
+                    <th>의사결정</th>
+                    <th>설명</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Phase 0</strong></td>
+                    <td>Division 선택</td>
+                    <td>클라이언트 브리프 분석 후 활성화할 Division 결정 (핵심 4 + 확장 0~3)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Phase 0.5</strong></td>
+                    <td>가설 확정</td>
+                    <td>Quick Scan 결과로 3~5개 가설 도출 → 사용자 정렬 후 Division Briefs에 반영</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sync R1</strong></td>
+                    <td>방향 조정</td>
+                    <td>Phase 1 결과 기반 데이터 갭 식별, Phase 2 심화 방향 설정</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Phase 3</strong></td>
+                    <td>사고 루프 관리</td>
+                    <td>검증/도전/반론 에이전트 스폰, 수렴 판정</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Phase 4</strong></td>
+                    <td>보고서 승인</td>
+                    <td>SCR 스토리라인 구조 검토, 최종 보고서 승인</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 4.3 Division Lead 상세 -->
+          <h3 class="wp-h3">4.3 Division Lead (7개)</h3>
+
+          <p>Division Lead는 각 분석 영역의 총괄 책임자입니다. PM으로부터 Division Brief를 받아 Leaf 에이전트를 스폰하고, 결과를 합성하며, VL-1.5(삼각 검증) 및 VL-2(정합성) 검증을 수행합니다.</p>
+
+          <div class="wp-card">
+            <div class="wp-card-label">Lead 스폰 방식</div>
+            <ul class="wp-list">
+              <li><strong>모드 A (tmux 병렬, 기본)</strong>: <code>spawn-leads.sh</code>로 tmux 독립 CLI 스폰. 완전 병렬 실행. 가장 빠른 처리</li>
+              <li><strong>모드 B (Agent tool, tmux 불가 시)</strong>: PM CLI 내에서 Agent tool로 Lead 스폰. 2개씩 순차-병렬 실행</li>
+            </ul>
+          </div>
+
           <div class="wp-table-wrap">
             <table class="wp-table">
               <thead>
                 <tr>
+                  <th>Division Lead</th>
+                  <th>약자</th>
                   <th>구분</th>
-                  <th>에이전트명</th>
-                  <th>수</th>
-                  <th>역할</th>
+                  <th>분석 범위</th>
+                  <th>Leaf 수</th>
+                  <th>활성화 기준</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>PM</strong></td>
-                  <td><code>research-pm</code></td>
-                  <td>1</td>
-                  <td>전체 오케스트레이션, Client Discovery ~ 보고서</td>
-                </tr>
-                <tr>
-                  <td rowspan="7"><strong>Division Lead</strong></td>
                   <td><code>market-lead</code></td>
-                  <td rowspan="7">7</td>
-                  <td>Market Leaf 5개 스폰 + 합성 + VL-1.5/VL-2</td>
+                  <td><strong>M</strong></td>
+                  <td>핵심</td>
+                  <td>시장 규모, 고객, 경쟁, 채널, 역학</td>
+                  <td>5</td>
+                  <td>거의 항상</td>
                 </tr>
                 <tr>
                   <td><code>product-lead</code></td>
-                  <td>Product Leaf 4개 스폰 + 합성 + VL-1.5/VL-2</td>
+                  <td><strong>P</strong></td>
+                  <td>핵심</td>
+                  <td>제품, 차별화, GTM, 가격</td>
+                  <td>4</td>
+                  <td>거의 항상</td>
                 </tr>
                 <tr>
                   <td><code>capability-lead</code></td>
-                  <td>Capability Leaf 4개 스폰 + 합성 + VL-1.5/VL-2</td>
+                  <td><strong>C</strong></td>
+                  <td>핵심</td>
+                  <td>기술, 인재, 자산, 실행력</td>
+                  <td>4</td>
+                  <td>거의 항상</td>
                 </tr>
                 <tr>
                   <td><code>finance-lead</code></td>
-                  <td>Finance Leaf 4개 스폰 + 합성 + VL-1.5/VL-2</td>
+                  <td><strong>F</strong></td>
+                  <td>핵심</td>
+                  <td>매출, 비용, 투자, 가치평가</td>
+                  <td>4</td>
+                  <td>거의 항상</td>
                 </tr>
                 <tr>
                   <td><code>people-org-lead</code></td>
-                  <td>People-Org Leaf 3개 스폰 + 합성 + VL-1.5/VL-2 (선택)</td>
+                  <td><strong>H</strong></td>
+                  <td>확장</td>
+                  <td>조직설계, 인재전략, 문화</td>
+                  <td>3</td>
+                  <td>조직/인력/문화 이슈 시</td>
                 </tr>
                 <tr>
                   <td><code>operations-lead</code></td>
-                  <td>Operations Leaf 3개 스폰 + 합성 + VL-1.5/VL-2 (선택)</td>
+                  <td><strong>O</strong></td>
+                  <td>확장</td>
+                  <td>프로세스, 공급망, 인프라</td>
+                  <td>3</td>
+                  <td>운영/인프라 이슈 시</td>
                 </tr>
                 <tr>
                   <td><code>regulatory-lead</code></td>
-                  <td>Regulatory Leaf 3개 스폰 + 합성 + VL-1.5/VL-2 (선택)</td>
+                  <td><strong>R</strong></td>
+                  <td>확장</td>
+                  <td>규제준수, 규제전망, ESG</td>
+                  <td>3</td>
+                  <td>규제/법률/ESG 이슈 시</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h3 class="wp-h3">Leaf 에이전트 (26개)</h3>
+          <div class="wp-card">
+            <div class="wp-card-label">Division Lead 공통 책임</div>
+            <ul class="wp-list">
+              <li><strong>Leaf 스폰 &amp; 관리</strong>: Division Brief 기반으로 Leaf 에이전트 스폰, 분석 결과 수집</li>
+              <li><strong>VL-1.5 삼각 검증</strong>: Leaf 결과물에 대한 삼각 검증 + 스팟체크 수행</li>
+              <li><strong>VL-2 정합성 검증</strong>: 엔터티/시점/정의 일관성 확인</li>
+              <li><strong>합성 보고</strong>: Leaf 분석 결과를 Division 수준으로 합성하여 <code>findings/</code>에 출력</li>
+              <li><strong>학습 엔진</strong>: Phase 1/2 완료 후 데이터 소스 신뢰도, 프레임워크 효과성, 분석 패턴 등을 <code>learnings/</code>에 추출</li>
+            </ul>
+          </div>
+
+          <!-- 4.4 Leaf 분석가 상세 -->
+          <h3 class="wp-h3">4.4 Leaf 분석가 (26개)</h3>
+
+          <p>Leaf 에이전트는 Division Lead가 스폰하는 최하위 분석 단위입니다. 각 Leaf는 MECE 기반의 분석 프레임워크를 내장하고 있으며, Phase 1(초기 리서치)과 Phase 2(심화 리서치)에서 활성화됩니다. 모든 Leaf는 VL-1(자가 검증: 2소스 이상 + 반증 검토)을 수행합니다.</p>
 
           <h4 class="wp-h4"><span class="wp-h4-bar" style="--bar-color: var(--color-market)"></span>Market Division (5)</h4>
           <div class="wp-table-wrap">
             <table class="wp-table">
-              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th></tr></thead>
+              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th><th>MECE 분석 프레임</th></tr></thead>
               <tbody>
-                <tr><td><code>market-sizing</code></td><td>시장 규모, 성장률, 예측, 세분화</td></tr>
-                <tr><td><code>customer-analysis</code></td><td>고객 세그먼트, 니즈, 의사결정 구조, 구매 경로</td></tr>
-                <tr><td><code>competitive-landscape</code></td><td>경쟁사 지형, 점유율, 강점/약점, 전략</td></tr>
-                <tr><td><code>channel-landscape</code></td><td>유통 채널 구조, 파트너, 직접 vs 간접</td></tr>
-                <tr><td><code>market-dynamics</code></td><td>매크로 트렌드, 규제 변화, 기술 영향, 진입/퇴출 장벽</td></tr>
+                <tr>
+                  <td><code>market-sizing</code></td>
+                  <td>시장 규모, 성장률, 예측, 세분화</td>
+                  <td>TAM/SAM/SOM 산출, CAGR 추정, 시장 세분화 매트릭스 (지역/제품/고객별), Top-Down vs Bottom-Up 교차 검증</td>
+                </tr>
+                <tr>
+                  <td><code>customer-analysis</code></td>
+                  <td>고객 세그먼트, 니즈, 의사결정 구조</td>
+                  <td>페르소나 정의, 구매 여정(Awareness~Advocacy) 매핑, 전환 퍼널 분석, 이탈(Churn) 원인 분석, 세그먼트별 가치 평가</td>
+                </tr>
+                <tr>
+                  <td><code>competitive-landscape</code></td>
+                  <td>경쟁사 지형, 점유율, 전략</td>
+                  <td>Porter 5 Forces 분석, 경쟁 포지셔닝 맵, 점유율 워터폴(증감 요인), 경쟁사별 강점/약점 매트릭스</td>
+                </tr>
+                <tr>
+                  <td><code>channel-landscape</code></td>
+                  <td>유통 채널 구조, 파트너</td>
+                  <td>유통 구조(직접/간접/하이브리드) 분해, 채널별 마진 스택, 채널 파트너 역할 분석, 채널 갈등(Conflict) 식별</td>
+                </tr>
+                <tr>
+                  <td><code>market-dynamics</code></td>
+                  <td>매크로 트렌드, 규제, 기술 영향</td>
+                  <td>PESTLE 분석, 기술 S-커브 단계 판정, 규제 변화 영향도 매핑, 산업 전환점(Inflection Point) 식별</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -366,12 +579,28 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
           <h4 class="wp-h4"><span class="wp-h4-bar" style="--bar-color: var(--color-product)"></span>Product Division (4)</h4>
           <div class="wp-table-wrap">
             <table class="wp-table">
-              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th></tr></thead>
+              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th><th>MECE 분석 프레임</th></tr></thead>
               <tbody>
-                <tr><td><code>product-offering</code></td><td>제품 정의, 포트폴리오, 주요 기능, UX, 로드맵</td></tr>
-                <tr><td><code>value-differentiation</code></td><td>가치 명제, 차별화, 경쟁 우위, Product-Market Fit</td></tr>
-                <tr><td><code>go-to-market</code></td><td>유통 전략, 영업 접근, 마케팅 포지셔닝</td></tr>
-                <tr><td><code>pricing-monetization</code></td><td>가격 전략, 수익 모델, 라이센싱, 구독 vs 일시불</td></tr>
+                <tr>
+                  <td><code>product-offering</code></td>
+                  <td>제품 정의, 포트폴리오, 로드맵</td>
+                  <td>기능 매트릭스(Must/Should/Could/Won't), Kano 모델(기본/성능/감동), 제품 로드맵 분석, 기술 부채 평가</td>
+                </tr>
+                <tr>
+                  <td><code>value-differentiation</code></td>
+                  <td>가치 명제, 차별화, PMF</td>
+                  <td>PMF(Product-Market Fit) 검증, JTBD(Jobs To Be Done) 프레임워크, 경쟁 우위 지속가능성 분석, 가치 명제 캔버스</td>
+                </tr>
+                <tr>
+                  <td><code>go-to-market</code></td>
+                  <td>유통 전략, 영업 모델</td>
+                  <td>채널 전략(직접/파트너/마켓플레이스), 영업 모델(PLG/SLG/CLG) 비교, 파트너십 구조 분석, 지역별 GTM 차이</td>
+                </tr>
+                <tr>
+                  <td><code>pricing-monetization</code></td>
+                  <td>가격 전략, 수익 모델</td>
+                  <td>가격 탄력성(Price Elasticity) 추정, 번들링/언번들링 전략, LTV/CAC 분석, 수익 모델 비교(구독/일시불/프리미엄)</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -379,12 +608,28 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
           <h4 class="wp-h4"><span class="wp-h4-bar" style="--bar-color: var(--color-capability)"></span>Capability Division (4)</h4>
           <div class="wp-table-wrap">
             <table class="wp-table">
-              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th></tr></thead>
+              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th><th>MECE 분석 프레임</th></tr></thead>
               <tbody>
-                <tr><td><code>technology-ip</code></td><td>R&amp;D 역사, 기술 스택, 특허, 모듈화도, 확장성</td></tr>
-                <tr><td><code>human-capital</code></td><td>핵심 인재, 역량 갭, 조직 성숙도, 이직률</td></tr>
-                <tr><td><code>strategic-assets</code></td><td>브랜드 가치, 데이터 자산, 생태계, 파트너십</td></tr>
-                <tr><td><code>execution-readiness</code></td><td>과거 실행 트랙레코드, 프로젝트 성공률, 타이밍 감각</td></tr>
+                <tr>
+                  <td><code>technology-ip</code></td>
+                  <td>R&amp;D 파이프라인, 특허, 기술 성숙도</td>
+                  <td>R&amp;D 투자 대비 산출물 효율, 특허 포트폴리오(인용/피인용), 기술 성숙도(TRL) 평가, 기술 스택 현대화 수준</td>
+                </tr>
+                <tr>
+                  <td><code>human-capital</code></td>
+                  <td>인재 갭, 리더십, 역량 매트릭스</td>
+                  <td>인재 갭 분석(현재 vs 필요), 리더십 파이프라인 깊이, 역량 매트릭스(기술/관리/전략), 핵심 인재 리텐션 리스크</td>
+                </tr>
+                <tr>
+                  <td><code>strategic-assets</code></td>
+                  <td>브랜드, 데이터, 생태계 네트워크</td>
+                  <td>브랜드 자산 가치 추정, 데이터 자산(규모/유일성/활용도), 생태계 네트워크 효과 분석, 파트너십 가치 매핑</td>
+                </tr>
+                <tr>
+                  <td><code>execution-readiness</code></td>
+                  <td>실행 트랙레코드, 민첩성, 변화 관리</td>
+                  <td>과거 전략 실행 성공률, 조직 민첩성(의사결정 속도/적응력), 변화 관리 역량(Change Readiness), 실행 병목 식별</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -392,12 +637,28 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
           <h4 class="wp-h4"><span class="wp-h4-bar" style="--bar-color: var(--color-finance)"></span>Finance Division (4)</h4>
           <div class="wp-table-wrap">
             <table class="wp-table">
-              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th></tr></thead>
+              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th><th>MECE 분석 프레임</th></tr></thead>
               <tbody>
-                <tr><td><code>revenue-growth</code></td><td>매출 추이, 성장률, 매출 구성, 고객당 LTV</td></tr>
-                <tr><td><code>cost-efficiency</code></td><td>원가율, COGS, 운영비, 마진, 스케일 경제</td></tr>
-                <tr><td><code>investment-returns</code></td><td>투자 규모, 자금 사용처, ROI, 펀딩 라운드</td></tr>
-                <tr><td><code>valuation-risk</code></td><td>가치평가, 할인율, 리스크 프리미엄, 센서 분석</td></tr>
+                <tr>
+                  <td><code>revenue-growth</code></td>
+                  <td>매출 드라이버, 전망 시나리오</td>
+                  <td>매출 드라이버 분해(가격 x 수량 x 믹스), 코호트 분석(신규/기존/이탈), 시나리오별 전망(Bull/Base/Bear), 매출원 다각화</td>
+                </tr>
+                <tr>
+                  <td><code>cost-efficiency</code></td>
+                  <td>비용 구조, 벤치마킹</td>
+                  <td>비용 구조 분해(고정/변동, COGS/OPEX), 동종 업계 벤치마킹, 단위 경제학(Unit Economics), 스케일 효과 추정</td>
+                </tr>
+                <tr>
+                  <td><code>investment-returns</code></td>
+                  <td>ROIC, IRR, DCF, 투자 우선순위</td>
+                  <td>ROIC/WACC 스프레드, IRR 시뮬레이션, 현금흐름 DCF 모델링, 투자 우선순위 매트릭스(영향 x 실현 가능성)</td>
+                </tr>
+                <tr>
+                  <td><code>valuation-risk</code></td>
+                  <td>멀티플, 밸류에이션, 리스크</td>
+                  <td>멀티플 분석(EV/EBITDA, P/E, P/S), 시나리오별 밸류에이션, 리스크 매트릭스(확률 x 영향), 민감도 분석(토네이도 차트)</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -405,11 +666,23 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
           <h4 class="wp-h4"><span class="wp-h4-bar" style="--bar-color: var(--color-people)"></span>People &amp; Organization Division (3)</h4>
           <div class="wp-table-wrap">
             <table class="wp-table">
-              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th></tr></thead>
+              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th><th>MECE 분석 프레임</th></tr></thead>
               <tbody>
-                <tr><td><code>org-design</code></td><td>조직 구조, 보고 라인, 의사결정 체계</td></tr>
-                <tr><td><code>talent-strategy</code></td><td>인재 채용, 개발, 보상, 리텐션 전략</td></tr>
-                <tr><td><code>culture-engagement</code></td><td>기업 문화, 심리 안전성, 몰입도, 리더십</td></tr>
+                <tr>
+                  <td><code>org-design</code></td>
+                  <td>조직 구조, 보고 체계, 거버넌스</td>
+                  <td>조직도 분석(Span of Control, 계층 깊이), 보고 체계 효율성, 거버넌스 구조(위원회/의사결정 권한), 조직 복잡도 진단</td>
+                </tr>
+                <tr>
+                  <td><code>talent-strategy</code></td>
+                  <td>채용-유지-육성, 보상 벤치마크</td>
+                  <td>채용-유지-육성 파이프라인 분석, 보상 벤치마크(시장 대비 포지셔닝), 승계 계획(Succession Planning), 핵심 직무 식별</td>
+                </tr>
+                <tr>
+                  <td><code>culture-engagement</code></td>
+                  <td>문화 진단, 변화 수용력, 몰입도</td>
+                  <td>문화 진단(Competing Values Framework), 변화 수용력(ADKAR 모델), 직원 몰입도(eNPS/서베이), 심리 안전성 평가</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -417,11 +690,23 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
           <h4 class="wp-h4"><span class="wp-h4-bar" style="--bar-color: var(--color-operations)"></span>Operations Division (3)</h4>
           <div class="wp-table-wrap">
             <table class="wp-table">
-              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th></tr></thead>
+              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th><th>MECE 분석 프레임</th></tr></thead>
               <tbody>
-                <tr><td><code>process-excellence</code></td><td>핵심 프로세스, 자동화, 품질, 사이클 타임</td></tr>
-                <tr><td><code>supply-chain</code></td><td>소싱, 로지스틱, 공급망 리스크, 재고 관리</td></tr>
-                <tr><td><code>infrastructure</code></td><td>IT 인프라, 클라우드, 보안, 복구력</td></tr>
+                <tr>
+                  <td><code>process-excellence</code></td>
+                  <td>프로세스, 자동화, 품질</td>
+                  <td>린/식스시그마 성숙도, 프로세스 마이닝(병목/재작업), 자동화 기회 매트릭스(효과 x 난이도), 품질 비용(CoQ) 분석</td>
+                </tr>
+                <tr>
+                  <td><code>supply-chain</code></td>
+                  <td>공급망 네트워크, 리드타임, 리스크</td>
+                  <td>공급망 네트워크 맵(Tier 1/2/3), 리드타임 분해, 리스크 매핑(지정학/기후/의존도), 재고 최적화(EOQ/Safety Stock)</td>
+                </tr>
+                <tr>
+                  <td><code>infrastructure</code></td>
+                  <td>IT/물리 인프라, 확장성, 기술 부채</td>
+                  <td>IT 인프라 현대화 수준, 확장성 한계(현재 용량 vs 예상 수요), 기술 부채 정량화, 보안/복구력(RTO/RPO) 평가</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -429,70 +714,233 @@ Leaf Leaf Leaf Leaf    ┌───┼───┬───┐
           <h4 class="wp-h4"><span class="wp-h4-bar" style="--bar-color: var(--color-regulatory)"></span>Regulatory &amp; Governance Division (3)</h4>
           <div class="wp-table-wrap">
             <table class="wp-table">
-              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th></tr></thead>
+              <thead><tr><th>Leaf 에이전트</th><th>분석 범위</th><th>MECE 분석 프레임</th></tr></thead>
               <tbody>
-                <tr><td><code>compliance-status</code></td><td>규제 준수 현황, 감사 결과, 위반 기록</td></tr>
-                <tr><td><code>regulatory-outlook</code></td><td>규제 전망, 정책 변화, 업계 동향, 로비 활동</td></tr>
-                <tr><td><code>esg-governance</code></td><td>ESG 성과, 지배구조, 이사회 구성, 이해관계자 관리</td></tr>
+                <tr>
+                  <td><code>compliance-status</code></td>
+                  <td>규제 준수 현황, 위반 리스크, 라이선스</td>
+                  <td>규제 준수 매트릭스(항목별 준수/미준수), 위반 리스크(과태료/영업정지/형사), 라이선스 현황, 감사 대응력 평가</td>
+                </tr>
+                <tr>
+                  <td><code>regulatory-outlook</code></td>
+                  <td>규제 변화 전망, 산업 정책</td>
+                  <td>규제 변화 타임라인(입법 예고~시행), 산업 정책 트렌드(보호/개방/규제강화), 규제 시나리오(Best/Base/Worst), 정책 영향 분석</td>
+                </tr>
+                <tr>
+                  <td><code>esg-governance</code></td>
+                  <td>ESG 등급, 탄소 배출, 지배구조</td>
+                  <td>ESG 등급(MSCI/Sustainalytics) 벤치마크, 탄소 배출 Scope 1/2/3 분석, 지배구조 점수(이사회 독립성/다양성), 이해관계자 매핑</td>
+                </tr>
               </tbody>
             </table>
           </div>
 
-          <h3 class="wp-h3">Cross-cutting Agents (4)</h3>
-          <div class="wp-table-wrap">
-            <table class="wp-table">
-              <thead><tr><th>에이전트</th><th>역할</th><th>의존성</th></tr></thead>
-              <tbody>
-                <tr><td><code>fact-verifier</code></td><td>VL-3 교차 검증, Golden Facts SSOT 관리</td><td>Sync 1/2</td></tr>
-                <tr><td><code>logic-prober</code></td><td>Why Chain 수직 검증, 인과 관계 추적</td><td>Phase 3</td></tr>
-                <tr><td><code>strategic-challenger</code></td><td>5-레인 도전 (수평 검증), 가정 검토</td><td>Phase 3</td></tr>
-                <tr><td><code>red-team</code></td><td>적대적 반론, 핵심 전제 반증, 역 시나리오</td><td>Phase 3</td></tr>
-              </tbody>
-            </table>
+          <!-- 4.5 Cross-cutting 에이전트 상세 -->
+          <h3 class="wp-h3">4.5 Cross-cutting 에이전트 (15개)</h3>
+
+          <p>Cross-cutting 에이전트는 Division 경계를 넘어 작동합니다. 검증, 합성, 보고, QA의 4가지 기능 그룹으로 나뉘며, PM이 Phase별로 직접 스폰합니다.</p>
+
+          <h4 class="wp-h4">검증 에이전트 (Phase 3) — 4개</h4>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>fact-verifier</code> — 수치 진실성 파수꾼</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: VL-3 교차 검증 수행. Division 간 수치 정합성을 확인하고, 불일치 시 원본 소스까지 추적</li>
+              <li><strong>Golden Facts 관리</strong>: <code>findings/golden-facts.yaml</code>의 유일한 수정 권한 보유. 모든 핵심 수치의 SSOT(Single Source of Truth)</li>
+              <li><strong>검증 방법</strong>: 2개 이상 독립 소스 교차, 시점 일치 확인, 단위/정의 통일, 이상치 플래그</li>
+              <li><strong>활성 시점</strong>: Sync Round 1/2, Phase 3</li>
+            </ul>
           </div>
 
-          <h3 class="wp-h3">Synthesis Agents (2)</h3>
-          <div class="wp-table-wrap">
-            <table class="wp-table">
-              <thead><tr><th>에이전트</th><th>역할</th></tr></thead>
-              <tbody>
-                <tr><td><code>cross-domain-synthesizer</code></td><td>Division 간 통합, Cross-domain 정합성 확보, 시너지 도출</td></tr>
-                <tr><td><code>insight-synthesizer</code></td><td>사고 루프 결과 통합, 전략 보강, 수렴 판정</td></tr>
-              </tbody>
-            </table>
+          <div class="wp-card">
+            <div class="wp-card-label"><code>logic-prober</code> — 수직 논리 검증</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: 재귀적 Why Chain(5 Whys)으로 인과 관계를 수직 추적. 논리 비약(Logical Leap)을 탐지</li>
+              <li><strong>검증 대상</strong>: 각 Division의 핵심 Claim → Evidence → Data → Source 체인의 논리적 타당성</li>
+              <li><strong>산출물</strong>: 논리 비약 목록, 전제 검증 결과, 추가 검증 필요 항목 식별</li>
+              <li><strong>활성 시점</strong>: Phase 3</li>
+            </ul>
           </div>
 
-          <h3 class="wp-h3">Review Agent (1)</h3>
-          <div class="wp-table-wrap">
-            <table class="wp-table">
-              <thead><tr><th>에이전트</th><th>역할</th><th>단계</th></tr></thead>
-              <tbody>
-                <tr><td><code>external-reviewer</code></td><td>자기 비판 + 외부 모델 리뷰, 약점 체크리스트 5항목 검증</td><td>Phase 3.7</td></tr>
-              </tbody>
-            </table>
+          <div class="wp-card">
+            <div class="wp-card-label"><code>strategic-challenger</code> — 수평 5-레인 도전</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: 5개 레인에서 동시 수평 도전을 수행하여 분석의 사각지대를 노출</li>
+              <li><strong>5-레인 구성</strong>:
+                <ul class="wp-list">
+                  <li>대안 시장: 간과된 시장 기회나 위협</li>
+                  <li>기술 변곡: 기술 변화가 분석 전제를 뒤집을 가능성</li>
+                  <li>규제 리스크: 규제 변화로 인한 전략 무효화 시나리오</li>
+                  <li>조직 관성: 실행 가능성을 저해하는 조직적 장벽</li>
+                  <li>타이밍: 시간 변수(너무 빠름/느림)가 전략에 미치는 영향</li>
+                </ul>
+              </li>
+              <li><strong>활성 시점</strong>: Phase 3</li>
+            </ul>
           </div>
 
-          <h3 class="wp-h3">Report &amp; QA Agents (6)</h3>
-          <div class="wp-table-wrap">
-            <table class="wp-table">
-              <thead><tr><th>에이전트</th><th>역할</th><th>단계</th></tr></thead>
-              <tbody>
-                <tr><td><code>report-writer</code></td><td>SCR 스토리라인 → 보고서 생성, Implementation Playbook</td><td>Phase 4</td></tr>
-                <tr><td><code>qa-orchestrator</code></td><td>QA 전체 조율, 4개 내장 검증 + 3개 에이전트 스폰</td><td>Phase 5</td></tr>
-                <tr><td><code>audience-fit-checker</code></td><td>Action Title + SCR + 경영진 적합성 (6 Check)</td><td>Phase 5</td></tr>
-                <tr><td><code>executability-checker</code></td><td>Implementation Playbook 완전성 + 리소스 현실성 (5 Check)</td><td>Phase 5</td></tr>
-                <tr><td><code>report-auditor</code></td><td>논리 완결성 + SCR 구조 + 미해소 긴장 반영</td><td>Phase 5</td></tr>
-                <tr><td><code>report-fixer</code></td><td>이슈 자동 수정, 재검증 (최대 3회)</td><td>Phase 5</td></tr>
-              </tbody>
-            </table>
+          <div class="wp-card">
+            <div class="wp-card-label"><code>red-team</code> — 적대적 반론</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: Devil's Advocate 역할. 핵심 전제를 의도적으로 반증하고, 역 시나리오를 구성</li>
+              <li><strong>검증 방식</strong>:
+                <ul class="wp-list">
+                  <li>핵심 전제 반증: "이 전제가 틀렸다면?"</li>
+                  <li>역 시나리오: 결론의 정반대 상황이 발생할 조건 도출</li>
+                  <li>숨겨진 가정 노출: 분석에 암묵적으로 깔린 미검증 가정 식별</li>
+                </ul>
+              </li>
+              <li><strong>활성 시점</strong>: Phase 3</li>
+            </ul>
           </div>
 
-          <h3 class="wp-h3">Utility Agent (1)</h3>
+          <h4 class="wp-h4">리뷰 에이전트 (Phase 3.7) — 1개</h4>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>external-reviewer</code> — 프레이밍 비판</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: 전체 분석의 프레이밍과 접근법을 비판적으로 검토. Red Team이 개별 Claim 단위라면, External Reviewer는 분석 전체 수준</li>
+              <li><strong>약점 탐지 체크리스트 (5항목)</strong>:
+                <ul class="wp-list">
+                  <li>확증 편향(Confirmation Bias): 우호적 정보만 수집하지 않았는가</li>
+                  <li>반증 부족: 충분한 반대 증거를 검토했는가</li>
+                  <li>Groupthink: Division 간 동질적 결론에 빠지지 않았는가</li>
+                  <li>관점 고정(Anchoring): 초기 가설에 과도하게 고착되지 않았는가</li>
+                  <li>대안 부족: 충분한 전략 대안을 검토했는가</li>
+                </ul>
+              </li>
+              <li><strong>외부 모델 연계</strong>: 선택적으로 Codex, Gemini 등 외부 모델의 리뷰를 수렴 가능</li>
+              <li><strong>산출물</strong>: <code>thinking-loop/self-critique.md</code>, <code>thinking-loop/external-review.md</code></li>
+              <li><strong>활성 시점</strong>: Phase 3.7</li>
+            </ul>
+          </div>
+
+          <h4 class="wp-h4">합성 에이전트 (Sync R2, Phase 3) — 2개</h4>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>cross-domain-synthesizer</code> — Division 간 교차 분석</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: 서로 다른 Division의 분석 결과를 교차하여 시너지와 충돌을 식별</li>
+              <li><strong>분석 관점</strong>: Market 기회 vs Capability 현실, Product 전략 vs Finance 투자 여력, 조직 역량 vs 시장 요구 등</li>
+              <li><strong>산출물</strong>: Cross-domain 정합성 보고서, 시너지/충돌 매트릭스</li>
+              <li><strong>활성 시점</strong>: Sync Round 2</li>
+            </ul>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>insight-synthesizer</code> — 도전 결과 통합</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: Phase 3 사고 루프(logic-prober, strategic-challenger, red-team)의 결과를 통합하여 전략을 보강하거나 수정</li>
+              <li><strong>수렴 판정</strong>: 도전과 반론이 충분히 반영되었는지 판단. 미해소 긴장(Unresolved Tension)은 보고서에 명시적으로 포함</li>
+              <li><strong>산출물</strong>: 통합 인사이트 보고서, 전략 수정 권고, 수렴/발산 판정</li>
+              <li><strong>활성 시점</strong>: Phase 3 후반</li>
+            </ul>
+          </div>
+
+          <h4 class="wp-h4">보고 에이전트 (Phase 4) — 2개</h4>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>report-writer</code> — 세로형 보고서 생성 (Phase 4-A)</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: 전체 리서치 결과를 경영진 대상 세로형 보고서(report-docs.md)로 변환</li>
+              <li><strong>SCR 스토리라인</strong>: Situation(현황) → Complication(문제) → Resolution(해결) 구조로 스토리 구성</li>
+              <li><strong>Action Title</strong>: 모든 섹션 제목을 주장 문장형으로 작성 (주제형 금지)</li>
+              <li><strong>Implementation Playbook</strong>: 전략 제안에 담당/마일스톤/KPI/의존성을 포함한 실행 계획</li>
+              <li><strong>활성 시점</strong>: Phase 4-A</li>
+            </ul>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>brief-writer</code> — 경영진 원페이퍼 (Phase 4-C, 선택적)</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: report-docs.md를 1~2페이지 BLUF 구조로 압축한 독립적 의사결정 문서</li>
+              <li><strong>BLUF</strong>: 핵심 결론 1문장(15단어 이내) + 근거 2줄을 문서 최상단에 배치</li>
+              <li><strong>구성</strong>: Key Findings 3개 + Financial Snapshot + Recommended Actions(3~5개, 담당/90일 마일스톤) + Risk Alert</li>
+              <li><strong>활성 시점</strong>: Phase 4-C (Interactive/Team 기본, Auto는 Client Brief 명시 시)</li>
+            </ul>
+          </div>
+
+          <h4 class="wp-h4">QA 에이전트 (Phase 5) — 5개</h4>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>qa-orchestrator</code> — QA 파이프라인 조율</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: Phase 5 QA 파이프라인을 순차 실행. 3개 검증 에이전트(audience-fit, executability, report-auditor)를 스폰하고 결과를 취합</li>
+              <li><strong>게이트 판정</strong>: Critical/Major 이슈 0건 = PASS. 이슈 발견 시 report-fixer 자동 스폰</li>
+              <li><strong>활성 시점</strong>: Phase 5</li>
+            </ul>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>audience-fit-checker</code> — 경영진 적합성 (6 Check)</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: 보고서가 경영진 독자에게 적합한지 6가지 항목을 검증</li>
+              <li><strong>체크 항목</strong>: Action Title 적절성, SCR 스토리라인 완결성, Executive Summary 품질, 가독성(길이/구조), 용어 적절성, 시각 자료 활용도</li>
+              <li><strong>활성 시점</strong>: Phase 5</li>
+            </ul>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>executability-checker</code> — 실행 가능성 (5 Check)</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: Implementation Playbook의 실행 가능성을 5가지 항목으로 검증</li>
+              <li><strong>체크 항목</strong>: 담당자/팀 명시 여부, 마일스톤 현실성, KPI 측정 가능성, 리소스(예산/인력) 현실성, 의존성/선후행 관계 완전성</li>
+              <li><strong>활성 시점</strong>: Phase 5</li>
+            </ul>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>report-auditor</code> — 논리 완결성</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: 보고서의 논리적 완결성을 검증. SCR 구조가 일관되는지, 미해소 긴장이 적절히 반영되었는지 확인</li>
+              <li><strong>검증 대상</strong>: Claim-Evidence 연결 완결성, Division 간 결론 정합성, 미해소 긴장의 명시적 서술 여부</li>
+              <li><strong>활성 시점</strong>: Phase 5</li>
+            </ul>
+          </div>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>report-fixer</code> — 자동 수정 루프</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: QA에서 발견된 이슈를 자동으로 수정하고, 재검증을 수행</li>
+              <li><strong>수정 루프</strong>: 수정 → 재검증 → 최대 3회 반복. Critical/Major 0건 달성 시 PASS</li>
+              <li><strong>수정 범위</strong>: 문구 수정, 누락 보완, 구조 조정. 분석 내용 자체의 변경은 PM 승인 필요</li>
+              <li><strong>활성 시점</strong>: Phase 5 (qa-orchestrator가 자동 스폰)</li>
+            </ul>
+          </div>
+
+          <h4 class="wp-h4">유틸리티 에이전트 — 1개</h4>
+
+          <div class="wp-card">
+            <div class="wp-card-label"><code>data-preprocessor</code> — 데이터 전처리</div>
+            <ul class="wp-list">
+              <li><strong>역할</strong>: 사용자 제공 데이터 및 API 응답을 전처리하여 Division별로 배포</li>
+              <li><strong>처리 내용</strong>: API 응답 정규화, 데이터 타입 변환, 이상치 탐지, Division별 데이터 분배, 정합성 검증</li>
+              <li><strong>활성 시점</strong>: Phase 0~1 (데이터 수집 단계)</li>
+            </ul>
+          </div>
+
+          <!-- 에이전트 인벤토리 요약 -->
+          <h3 class="wp-h3">에이전트 인벤토리 요약</h3>
           <div class="wp-table-wrap">
             <table class="wp-table">
-              <thead><tr><th>에이전트</th><th>역할</th></tr></thead>
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>에이전트</th>
+                  <th>수</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr><td><code>data-preprocessor</code></td><td>API 응답 정규화, 데이터 타입 변환, 이상치 탐지</td></tr>
+                <tr><td>PM</td><td><code>research-pm</code></td><td>1</td></tr>
+                <tr><td>Division Lead</td><td>market, product, capability, finance, people-org, operations, regulatory</td><td>7</td></tr>
+                <tr><td>Leaf</td><td>Division별 MECE 분석가</td><td>26</td></tr>
+                <tr><td>검증 (Cross-cutting)</td><td>fact-verifier, logic-prober, strategic-challenger, red-team</td><td>4</td></tr>
+                <tr><td>리뷰</td><td>external-reviewer</td><td>1</td></tr>
+                <tr><td>합성</td><td>cross-domain-synthesizer, insight-synthesizer</td><td>2</td></tr>
+                <tr><td>보고</td><td>report-writer, brief-writer</td><td>2</td></tr>
+                <tr><td>QA</td><td>qa-orchestrator, audience-fit-checker, executability-checker, report-auditor, report-fixer</td><td>5</td></tr>
+                <tr><td>유틸리티</td><td>data-preprocessor</td><td>1</td></tr>
+                <tr><td colspan="2"><strong>합계</strong></td><td><strong>49</strong></td></tr>
               </tbody>
             </table>
           </div>
@@ -727,11 +1175,11 @@ Layer 3: Source
             <div class="wp-phase-item">
               <div class="wp-phase-num">4</div>
               <div class="wp-phase-body">
-                <h4 class="wp-phase-title">보고서 생성</h4>
+                <h4 class="wp-phase-title">Phase 4-A: 세로형 보고서 + Phase 4-C: 원페이퍼 (선택적)</h4>
                 <ul class="wp-list wp-list--compact">
-                  <li>report-writer: SCR 스토리라인 → report-docs.md</li>
-                  <li>Trust Badge (검증 배지) 삽입</li>
-                  <li>Implementation Playbook 작성</li>
+                  <li>report-writer: SCR 스토리라인 → report-docs.md (Phase 4-A)</li>
+                  <li>brief-writer: report-docs.md → one-pager.md (Phase 4-C, 선택적)</li>
+                  <li>Trust Badge (검증 배지) 삽입 + Implementation Playbook</li>
                 </ul>
               </div>
             </div>
@@ -980,13 +1428,112 @@ Layer 3: Source
                 <li><strong>PPT/슬라이드 기능 제거</strong>: 보고서 출력을 Markdown 단일 포맷으로 통일</li>
               </ul>
             </div>
-            <div class="wp-changelog-item wp-changelog-item--current">
-              <div class="wp-changelog-version">v4.3 <span class="wp-changelog-current-badge">현재</span></div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.3</div>
               <div class="wp-changelog-meta">2026년 3월</div>
               <ul class="wp-list wp-list--compact">
                 <li><strong>적응형 2-Pass 인터뷰</strong>: Phase 0에서 핵심 맥락 → 심화 질문 2단계 인터뷰 + <code>user-profile.yaml</code> 산출물 추가</li>
                 <li><strong>맥락 체크인</strong>: Sync R1·R2 및 Phase 3.7에서 user-profile 기반 맥락 있는 확인 질문</li>
                 <li><strong>질문 예산</strong>: 3-모드별 질문 횟수 차등 (Auto 3개 / Interactive 최대 10개 / Team 무제한)</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.4</div>
+              <div class="wp-changelog-meta">2026년 4월</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>슬라이드 시스템 구축</strong>: 22유형 프로토타입, CSS 토큰 시스템, BCG 레퍼런스 기반</li>
+                <li><strong>15축 평가 루브릭</strong>: A(정렬) 7축 + B(코드) 3축 + C(세부) 5축</li>
+                <li><strong>section-map.md</strong>: 유형별 섹션 구조·내용 패턴·논리 흐름 정의</li>
+                <li><strong>design-guide.md</strong>: 레이아웃·타이포·색상·콘텐츠 작성법 체계</li>
+                <li><strong>ref-specs JSON</strong>: 342개 슬라이드 실측 좌표·크기 데이터</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.5</div>
+              <div class="wp-changelog-meta">2026년 4월</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>시각 품질 개선</strong>: BCG 342 ref-spec 통계 기반 차트/도형/밀도 토큰 재설정</li>
+                <li><strong>element-catalog.md</strong>: 16개 PDF(322p) 이미지 기반 전수 분석 카탈로그</li>
+                <li><strong>16축 루브릭</strong>: D1 공간 활용 축 추가 (82%+ 활용률, 50px 빈 공간 기준)</li>
+                <li><strong>visual-checker.js</strong>: Puppeteer 기반 자동 빈 공간 탐지 스크립트</li>
+                <li><strong>L.3+ 밀도 규칙</strong>: 유형별 최소 줄 수(18~30줄) + 공간 채우기 5원칙</li>
+                <li><strong>하단 채우기 CSS</strong>: read-more-link, annotation-bar, bottom-filler, icon-desc-row</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.6</div>
+              <div class="wp-changelog-meta">2026년 4월</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>BCG 아티클 18개 패턴 차용</strong>: 반전 질문, Golden Insights, SCR+PCS 2계층, 3-Layer 시나리오</li>
+                <li><strong>세로형 보고서 템플릿</strong>: vertical-report-template.md (인라인 KPI, Pull Quote, So What→Now What)</li>
+                <li><strong>통합 출처 추적</strong>: generate-source-registry.py → 14컬럼 source-registry.csv</li>
+                <li><strong>Division Lead 강화</strong>: 핵심 이슈 도출(조건부) + 분석 내 케이스 임베딩</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item wp-changelog-item--current">
+              <div class="wp-changelog-version">v4.12 <span class="wp-changelog-current-badge">현재</span></div>
+              <div class="wp-changelog-meta">2026년 4월 — 품질 감사 후속 수정 + Codex 슬라이드 통합 (Phase 4.8)</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>VL-3.5 Source Strength Gate</strong>: Claim confidence가 소스 조합 강도로 뒷받침되는지 자동 검증 (verify-source-strength.py)</li>
+                <li><strong>Leaf MECE 경계 재정의</strong>: market-sizing을 수치 SSOT로 확정, 다른 Leaf는 [GF-###] 재참조만</li>
+                <li><strong>Tension Resolution Rubric</strong>: Division 간 모순을 4단계 우선순위로 자동 해소 (엔터티→소스강도→최신성→사용자의도)</li>
+                <li><strong>intent_coverage_matrix</strong>: 사용자 의도가 Sync 요약에서 손실되지 않도록 Phase 0.5→4 추적 매트릭스</li>
+                <li><strong>feedback-impact 자동화</strong>: Phase 5.5 피드백 → minimal/division/cross_division 자동 판정</li>
+                <li><strong>Phase 4.8 Codex 슬라이드</strong>: MD → Codex gpt-image-2 → PNG 슬라이드 자동 생성 (4단계 파이프라인)</li>
+                <li><strong>analysis_type ambiguous</strong>: 판정 모호 시 중간 상태 + Auto 모드 fallback</li>
+                <li><strong>confidence insufficient</strong>: 실패 인정 경로 공식화 (답 구할 수 없음을 정직하게 표현)</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.11</div>
+              <div class="wp-changelog-meta">2026년 4월 — Analysis Type 체계 도입, 가설 중심 편향 해소</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>4-Type Taxonomy</strong>: decision / profile / exploration / monitoring. PM이 Phase 0-A.6에서 주제 키워드로 자동 판정 (가중치 룰)</li>
+                <li><strong>Profile 타입 — 기업·시장 전방위 스터디</strong>: Division Brief에 baseline_coverage 자동 주입. 가설과 독립적으로 시장/재무/IP/인력 등 기초 영역 커버</li>
+                <li><strong>Baseline Coverage Catalog</strong>: 7 Division × 필수 영역 매트릭스. 각 Leaf에 baseline_contract (area + required_deliverables + entity_addons) 명시</li>
+                <li><strong>QA 강화</strong>: audience-fit-checker Check 9 + report-auditor Step 9.5 + qa-orchestrator Step 7.6 dedup. baseline_coverage 미준수를 Major/Critical로 감지</li>
+                <li><strong>Codex 교차검증 10회 (순차 5 + 교차 3 + 추가 순차 5)</strong>: 총 40건+ FAIL 수정 반영</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.10</div>
+              <div class="wp-changelog-meta">2026년 4월 — Phase 4.7 HTML/PDF 내보내기 레이어 도입</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>Phase 4.7 신규</strong>: MD 정본 → HTML/PDF 변환 레이어. QA는 MD만 검증, HTML/PDF는 QA PASS 후 파생 생성</li>
+                <li><strong>핵심 산출물</strong>: report-docs.html (세로형 + 좌측 TOC), one-pager.html (A4 1p), sources.html (출처 인덱스 + 딥링크), one-pager.pdf (Chrome headless)</li>
+                <li><strong>안전장치</strong>: QA PASS 게이트, CONFIDENTIAL 차단 + 우회 audit-log, SVG 워터마크 + @page 배너, XSS 차단 (DOM API + URL 스킴 필터)</li>
+                <li><strong>McKinsey/BCG 스타일</strong>: core/style/report-templates/ (CSS 5 + Jinja2 3). 딥 네이비 #003a70 + 강조 블루 #0066cc</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.9</div>
+              <div class="wp-changelog-meta">2026년 4월 — 슬라이드 시스템 제거, 보고서 2종 체계 확정</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>slide-writer 제거</strong>: v1(CSS)→v2(자체 렌더러)→Marp 시도 후 최종 결정. 리서치 시스템에 슬라이드 렌더러 미내장</li>
+                <li><strong>보고서 2종 확정</strong>: 세로 보고서(Phase 4-A) + 원페이퍼(Phase 4-C). 에이전트 49개</li>
+                <li><strong>core/style/ 보존</strong>: 디자인 가이드/CSS는 레퍼런스로 유지 (git 히스토리에 전체 이력)</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.8</div>
+              <div class="wp-changelog-meta">2026년 4월 — 경영진 원페이퍼 추가</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>brief-writer 에이전트 신규 (Phase 4-C)</strong>: 1~2페이지 경영진 원페이퍼. BLUF + Key Findings + Recommended Actions</li>
+                <li><strong>보고서 체계</strong>: 세로 보고서(4-A) + 원페이퍼(4-C). 에이전트 49개</li>
+              </ul>
+            </div>
+            <div class="wp-changelog-item">
+              <div class="wp-changelog-version">v4.7</div>
+              <div class="wp-changelog-meta">2026년 4월 — 아키텍처 리뷰 + Codex 교차검증 4회</div>
+              <ul class="wp-list wp-list--compact">
+                <li><strong>Phase 4-A 보고서 체계 강화</strong>: report-writer SCR 스토리라인 기반 세로형 보고서 생성</li>
+                <li><strong>agent-io-spec.yaml</strong>: 에이전트 간 I/O 인터페이스 6개 스키마 (Division Brief, Lead↔Leaf 계약, .done/.progress/.status, Cross-cutting 매트릭스)</li>
+                <li><strong>Phase 3 병렬화</strong>: logic-prober + strategic-challenger 병렬 실행 → red-team → insight-synthesizer. SC Step 9 LP 보강 패스 추가</li>
+                <li><strong>Phase 2 재개</strong>: .done phase/status 분리, .progress 부분 재개 보존, 미완료 Division만 재스폰</li>
+                <li><strong>출처 추적 강화</strong>: generate-source-registry.py 3중 수정 (source_id 호환 + [GF-###] 스캔 + golden_facts 매핑), verify-source-traceability.py 신규 (QA Step 2 자동화, [GF-###] 역참조 포함)</li>
+                <li><strong>Phase 4.5 전환표 등록</strong>: source-registry.csv 생성을 Phase 전환 게이트로 공식화</li>
+                <li><strong>프로세스 안정성</strong>: compile-lead-context.sh 자동 호출 (토큰 85% 절감 실현), checkpoint.yaml 보존 갱신, 모니터 status:success 오판 방지, .status 기반 30분 stuck 감지, tmux 세션명 프로젝트별 동적화</li>
+                <li><strong>버그 수정</strong>: verify-facts.py 문법 오류 (Codex 발견), spawn-leads.sh --agent-file→--agent 플래그, finance-lead valuation-risk 2-Wave 의존성 순서</li>
               </ul>
             </div>
             <div class="wp-changelog-item wp-changelog-item--future">
@@ -1015,7 +1562,7 @@ Layer 3: Source
           <div class="wp-footer-inner">
             <span class="wp-footer-logo">Deep-Briefing</span>
             <span class="wp-footer-sep">·</span>
-            <span class="wp-footer-meta">v4.3 · 2026년 3월</span>
+            <span class="wp-footer-meta">v4.12 · 2026년 4월</span>
             <span class="wp-footer-sep">·</span>
             <a href="index.html" class="wp-footer-link">대시보드로 이동</a>
           </div>

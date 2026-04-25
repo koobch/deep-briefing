@@ -492,18 +492,9 @@ body {
   opacity: 0.25;
 }
 
-/* Core와 Extended 사이 */
+/* Core와 Extended — 같은 Level 1이므로 구분선 없음 */
 .arch-level--extended {
-  padding-top: 24px;
-}
-
-.arch-level--extended::before {
-  content: '';
-  display: block;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--color-people), transparent);
-  margin-bottom: 16px;
-  opacity: 0.2;
+  padding-top: 8px;
 }
 
 /* Cross 위 구분선 */
@@ -1047,6 +1038,35 @@ body {
   white-space: nowrap;
 }
 
+/* 에이전트 레이어 다이어그램 */
+.agent-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 32px 0;
+  max-width: 820px;
+}
+
+.agent-layer {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-left: 4px solid var(--layer-color);
+}
+
+.agent-layer-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  min-width: 200px;
+  color: var(--layer-color);
+}
+
+.agent-layer-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
 /* 크로스커팅/기타 섹션 */
 .cross-section-title {
   font-size: 12px;
@@ -1067,9 +1087,9 @@ body {
 
 .agent-chip {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
-  padding: 7px 13px;
+  padding: 10px 13px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -1078,6 +1098,17 @@ body {
   color: var(--text-secondary);
   transition: all var(--transition);
   cursor: default;
+}
+
+.agent-chip-name {
+  font-weight: 600;
+}
+
+.agent-chip-desc {
+  font-size: 0.75rem;
+  font-family: var(--font-body, sans-serif);
+  opacity: 0.7;
+  margin-top: 2px;
 }
 
 .agent-chip:hover {
@@ -1091,6 +1122,7 @@ body {
   border-radius: 50%;
   background: var(--chip-color, var(--text-muted));
   flex-shrink: 0;
+  margin-top: 5px;
 }
 
 /* ─── 지식 시스템 ────────────────────────────────────────────── */
